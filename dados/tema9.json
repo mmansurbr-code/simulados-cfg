@@ -1,0 +1,455 @@
+{
+ "id": "t9",
+ "numero": 9,
+ "titulo": "Alocação de Ativos",
+ "resumo": "Apostila do tema 9, que divide com o tema 5 o maior peso da prova (13% a 17%). Cada bloco traz o conceito, a conta quando há cálculo e as pegadinhas mais comuns.",
+ "topicos": [
+  {
+   "id": "t91",
+   "rotulo": "9.1 Estratégias básicas de alocação de ativos",
+   "html": "<div class=\"num\">9.1</div>\n  <h2>Estratégias básicas de alocação de ativos</h2>\n  <p class=\"why\">Como dividir a carteira entre as classes de ativos (renda fixa, ações, multimercado, exterior, alternativos), que é a decisão que mais pesa no resultado.</p>\n\n  <h3>Gestão ativa, passiva e semiativa</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Estilo</th><th>Objetivo</th><th>Tracking error</th><th>Custo</th></tr>\n    <tr><td><b>Passiva</b> (indexada)</td><td>Replicar o benchmark (ex.: fundo ou ETF de Ibovespa)</td><td>Mínimo, perto de zero</td><td>Baixo</td></tr>\n    <tr><td><b>Semiativa</b> (<i>enhanced indexing</i>)</td><td>Bater o benchmark por pouco, com pequenos desvios controlados</td><td>Baixo, mas positivo</td><td>Médio</td></tr>\n    <tr><td><b>Ativa</b></td><td>Superar o benchmark (gerar <b>alfa</b>) com apostas próprias</td><td>Alto</td><td>Alto</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Tracking error</span>TE = desvio-padrão de (retorno da carteira − retorno do benchmark)</div>\n\n  <h3>Alocação estratégica × tática</h3>\n  <ul>\n    <li><b>Estratégica (AEA, ou \"política de investimento\"):</b> são os pesos-alvo de <b>longo prazo</b> de cada classe. Ela sai da política de investimento do cliente (o IPS: objetivos de retorno e risco e as restrições) combinada com as expectativas de longo prazo para os mercados.</li>\n    <li><b>Tática:</b> são <b>desvios temporários</b> em relação à estratégica, para aproveitar uma oportunidade de curto prazo. Ficam dentro de bandas previstas na política (ex.: ações com alvo de 30% e banda de ±5 p.p.). Quando a visão de curto prazo passa, a carteira volta à estratégica.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo de ajuste tático</span>\n    <p>A política prevê 30% em ações, com banda de 25% a 35%. O gestor espera que as ações superem a renda fixa no próximo trimestre e eleva ações para 34%, reduzindo a renda fixa na mesma medida. Ele não pode ir a 40%, porque passaria da banda, e não muda o alvo de 30%, porque isso seria alterar a estratégica.</p>\n  </div>\n\n  <h3>Alocação estática × dinâmica</h3>\n  <ul>\n    <li><b>Estática:</b> olha um único período. Define os pesos agora e não considera que as decisões futuras dependem do que acontecer até lá.</li>\n    <li><b>Dinâmica:</b> olha <b>vários períodos</b> e reconhece que a alocação ideal muda com o tempo e com a situação do investidor. Exemplos: o <i>glide path</i> dos fundos com data-alvo, que reduz ações à medida que a aposentadoria se aproxima, e a alocação ajustada ao ciclo de vida.</li>\n  </ul>\n\n  <h3>O que define a alocação estratégica</h3>\n  <ul>\n    <li><b>IPS (política de investimento do investidor):</b> o retorno exigido, a tolerância ao risco (que tem dois lados: a <b>capacidade</b> e a <b>disposição</b> de correr risco) e as restrições: liquidez, horizonte, tributação, aspectos legais e regulatórios e circunstâncias únicas.</li>\n    <li><b>Expectativas dos mercados de capitais:</b> o retorno esperado, a volatilidade e as correlações de cada classe no longo prazo.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Quando a disposição e a capacidade de correr risco divergem, vale a <b>menor</b> das duas. Um cliente jovem e rico (com alta capacidade) mas que não suporta perdas (com baixa disposição) fica com tolerância baixa.</div>\n\n  <h3>Processo de eliminação</h3>\n  <p>É usado para escolher a alocação estratégica de um investidor individual entre algumas carteiras candidatas:</p>\n  <ol>\n    <li>Eliminar as carteiras cujo retorno esperado fica <b>abaixo do retorno exigido</b>.</li>\n    <li>Eliminar as que violam a <b>restrição de risco</b>, como a perda máxima tolerada (<i>shortfall risk</i>). Um teste comum é E(R) − 2σ ≥ perda máxima aceita.</li>\n    <li>Entre as que sobraram, escolher a de <b>maior índice de Sharpe</b>. Se a prova pedir, considere também a liquidez e os tributos.</li>\n  </ol>\n  <div class=\"formula\"><span class=\"lbl\">Fórmulas</span>Sharpe = [E(R) − Rf] / σ<br>Safety-first de Roy = [E(R) − R mínimo] / σ   (escolhe-se o maior)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>O cliente exige retorno de 7% ao ano e não aceita perder mais de 10% num ano ruim, testado com E(R) − 2σ ≥ −10%. A taxa livre de risco é 4%.</p>\n    <div class=\"tbl\"><table>\n      <tr><th>Carteira</th><th>E(R)</th><th>σ</th><th>E(R) − 2σ</th><th>Sharpe</th><th>Resultado</th></tr>\n      <tr><td>A</td><td class=\"n\">6%</td><td class=\"n\">5%</td><td class=\"n\">−4%</td><td class=\"n\">0,40</td><td>Eliminada: retorno abaixo de 7%</td></tr>\n      <tr><td>B</td><td class=\"n\">8%</td><td class=\"n\">8%</td><td class=\"n\">−8%</td><td class=\"n\">0,50</td><td>Passa</td></tr>\n      <tr><td>C</td><td class=\"n\">10%</td><td class=\"n\">12%</td><td class=\"n\">−14%</td><td class=\"n\">0,50</td><td>Eliminada: perde mais que 10%</td></tr>\n      <tr><td>D</td><td class=\"n\">9%</td><td class=\"n\">9%</td><td class=\"n\">−9%</td><td class=\"n\">0,56</td><td><b>Escolhida</b>: maior Sharpe entre B e D</td></tr>\n    </table></div>\n  </div>\n\n  <h3>Risco sistemático e importância da alocação</h3>\n  <ul>\n    <li>A alocação estratégica define a exposição da carteira ao <b>risco sistemático</b>, isto é, aos grandes fatores de mercado (ações, juros, câmbio, crédito). Esse é o risco que não se elimina com diversificação e que é remunerado no longo prazo.</li>\n    <li><b>Brinson, Hood e Beebower (1986):</b> a política de alocação explica cerca de <b>90%</b> (93,6% no estudo) da <b>variação dos retornos de um mesmo fundo ao longo do tempo</b>.</li>\n    <li><b>Ibbotson e Kaplan (2000):</b> a alocação explica cerca de 90% da variação no tempo, mas só cerca de <b>40% da diferença de retorno entre fundos</b>, e praticamente 100% do <b>nível</b> médio de retorno.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Os 90% se referem à variação dos retornos <i>ao longo do tempo</i>. Não significam que 90% da diferença entre dois gestores venha da alocação: entre fundos, a parcela é de cerca de 40%.</div>"
+  },
+  {
+   "id": "t92",
+   "rotulo": "9.2 Métodos de alocação",
+   "html": "<div class=\"num\">9.2</div>\n  <h2>Métodos de alocação</h2>\n  <p class=\"why\">As ferramentas que transformam as expectativas e o IPS nos pesos da alocação estratégica.</p>\n\n  <h3>Média-variância (Markowitz e a fronteira eficiente)</h3>\n  <ul>\n    <li><b>Dados de entrada:</b> o retorno esperado e a volatilidade de cada classe e as <b>correlações</b> entre elas.</li>\n    <li><b>Resultado:</b> a <b>fronteira eficiente</b>, que reúne as carteiras com o maior retorno possível para cada nível de risco. A carteira do cliente é o ponto da fronteira que corresponde à sua tolerância ao risco.</li>\n    <li><b>Limitações:</b>\n      <ul>\n        <li>é <b>muito sensível aos retornos esperados</b>: pequenas mudanças nos dados mudam muito os pesos (\"maximizador de erros\");</li>\n        <li>gera carteiras <b>concentradas</b> em poucas classes;</li>\n        <li>é de <b>um único período</b>;</li>\n        <li>ignora os passivos, a liquidez e os tributos;</li>\n        <li>supõe que o risco se resume à variância.</li>\n      </ul></li>\n    <li><b>Soluções usuais:</b> impor limites mínimos e máximos por classe e usar a fronteira reamostrada (<i>resampled</i>, de Michaud), que repete a otimização muitas vezes e tira a média.</li>\n  </ul>\n\n  <h3>Black-Litterman</h3>\n  <ul>\n    <li><b>Ponto de partida:</b> os <b>retornos de equilíbrio</b> implícitos nos pesos de mercado, obtidos por \"otimização reversa\" (que pergunta quais retornos fariam a carteira de mercado ser a ótima).</li>\n    <li><b>Visões do gestor:</b> o gestor acrescenta suas opiniões (ex.: \"ações brasileiras vão superar as globais em 2%\"), cada uma com um <b>grau de confiança</b>.</li>\n    <li><b>Resultado:</b> retornos que misturam o equilíbrio com as visões. Quanto menor a confiança, mais perto da carteira de mercado fica o resultado.</li>\n    <li><b>Vantagem:</b> as carteiras saem mais <b>diversificadas e estáveis</b> que na média-variância pura.</li>\n  </ul>\n\n  <h3>Simulação de Monte Carlo</h3>\n  <ul>\n    <li>Gera milhares de cenários aleatórios de retornos para vários períodos.</li>\n    <li>Lida com o que a média-variância não trata: <b>vários períodos</b>, dependência da trajetória (<i>path dependency</i>), aportes e resgates, tributos e rebalanceamentos.</li>\n    <li><b>Resultado:</b> uma <b>distribuição de resultados</b>, como a probabilidade de atingir a meta ou de o dinheiro acabar antes do fim do horizonte. Ela serve mais para <b>testar</b> uma alocação do que para encontrar os pesos ótimos.</li>\n  </ul>\n\n  <h3>ALM (Asset-Liability Management) × asset-only</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Asset-only</th><th>ALM</th></tr>\n    <tr><td>O que otimiza</td><td>O retorno e o risco dos <b>ativos</b></td><td>O <b>superávit</b> (ativos − passivos)</td></tr>\n    <tr><td>Ativo de menor risco</td><td>O caixa (título curto livre de risco)</td><td>A carteira que <b>replica os passivos</b> (ex.: títulos atrelados ao IPCA com a mesma duration das obrigações)</td></tr>\n    <tr><td>Fronteira</td><td>Fronteira eficiente</td><td>Fronteira eficiente do superávit</td></tr>\n    <tr><td>Quem usa</td><td>Investidores sem obrigações definidas</td><td>Fundos de pensão de <b>benefício definido</b>, seguradoras, bancos e indivíduos com metas definidas</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>No ALM, um título curto pós-fixado <i>não</i> é o ativo sem risco. Se o passivo é longo e corrigido pela inflação, o que reduz o risco do superávit é ter ativos longos e indexados à inflação.</div>\n\n  <h3>Abordagens empíricas (regras práticas)</h3>\n  <ul>\n    <li><b>60/40:</b> 60% em ações e 40% em renda fixa.</li>\n    <li><b>\"100 − idade\" em ações:</b> uma pessoa de 40 anos ficaria com 60% em ações.</li>\n    <li><b>1/N:</b> pesos iguais entre as classes.</li>\n    <li><b>Modelo endowment</b> (das universidades americanas, como Yale): bastante peso em ativos alternativos e ilíquidos.</li>\n    <li>São usadas porque os modelos têm limitações. São simples e evitam erros de estimativa, mas não consideram a situação específica do investidor.</li>\n  </ul>"
+  },
+  {
+   "id": "t93",
+   "rotulo": "9.3 Rebalanceamento de carteiras",
+   "html": "<div class=\"num\">9.3</div>\n  <h2>Rebalanceamento de carteiras</h2>\n  <p class=\"why\">Quando revisar a política e como trazer a carteira de volta aos pesos-alvo.</p>\n\n  <h3>Quando revisar o IPS e a alocação estratégica</h3>\n  <ul>\n    <li>A revisão é necessária quando <b>a situação do investidor muda</b>: o patrimônio (herança, venda de empresa), o horizonte (aposentadoria se aproximando), as necessidades de liquidez, a situação tributária ou as regras legais e regulatórias.</li>\n    <li>Uma oscilação passageira do mercado <b>não</b> justifica mudar o IPS. Para isso existem a tática e o rebalanceamento.</li>\n  </ul>\n\n  <h3>Efeito do tempo (drift)</h3>\n  <p>Sem intervenção, a classe que mais rende ganha peso. Num mercado de alta, as ações passam do alvo e a carteira fica <b>mais arriscada</b> do que a política prevê. Quanto mais tempo sem rebalancear, maior o desvio.</p>\n\n  <h3>Benefícios e custos de rebalancear</h3>\n  <ul>\n    <li><b>Benefícios:</b> manter o risco no nível que o cliente escolheu e a disciplina de \"vender o que subiu e comprar o que caiu\".</li>\n    <li><b>Custos:</b> custos de transação (corretagem, spread, impacto de mercado), <b>tributos</b> sobre os ganhos realizados e o tempo da gestão.</li>\n  </ul>\n\n  <h3>Rebalanceamento por calendário × percentual</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Calendário</th><th>Percentual (por bandas)</th></tr>\n    <tr><td>Gatilho</td><td>Data fixa (mensal, trimestral, anual)</td><td>O peso sai da banda (ex.: alvo de 60% ± 5 p.p.)</td></tr>\n    <tr><td>Vantagem</td><td>Simples e previsível</td><td>Reage ao mercado e controla melhor o risco</td></tr>\n    <tr><td>Desvantagem</td><td>Pode deixar a carteira muito desviada entre uma data e outra, ou rebalancear sem necessidade</td><td>Exige <b>monitoramento frequente</b></td></tr>\n  </table></div>\n\n  <h3>Largura ideal da banda (rebalanceamento percentual)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Fator aumenta…</th><th>Banda fica…</th><th>Por quê</th></tr>\n    <tr><td>Custo de transação</td><td><b>Mais larga</b></td><td>Rebalancear sai caro, então só vale a pena com desvios maiores</td></tr>\n    <tr><td>Tolerância ao risco</td><td><b>Mais larga</b></td><td>O cliente aceita desvios maiores</td></tr>\n    <tr><td>Correlação com o resto da carteira</td><td><b>Mais larga</b></td><td>As classes andam juntas, então os pesos se desviam menos</td></tr>\n    <tr><td>Volatilidade da própria classe</td><td><b>Mais estreita</b></td><td>Cada desvio pesa mais no risco total</td></tr>\n    <tr><td>Volatilidade do resto da carteira</td><td><b>Mais estreita</b></td><td>Pelo mesmo motivo</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Para decorar</b>Custo, tolerância e correlação <b>alargam</b> a banda. As duas volatilidades <b>estreitam</b>.</div>\n\n  <h3>Buy and hold × constant mix × CPPI</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Buy and hold</th><th>Constant mix</th><th>CPPI</th></tr>\n    <tr><td>Regra</td><td>Não mexe na carteira</td><td>Volta sempre aos pesos-alvo</td><td>Ações = m × (carteira − piso)</td></tr>\n    <tr><td>Na alta das ações</td><td>Não faz nada</td><td><b>Vende</b> ações</td><td><b>Compra</b> ações</td></tr>\n    <tr><td>Na queda das ações</td><td>Não faz nada</td><td><b>Compra</b> ações</td><td><b>Vende</b> ações</td></tr>\n    <tr><td>Payoff</td><td>Linear</td><td><b>Côncavo</b></td><td><b>Convexo</b></td></tr>\n    <tr><td>Melhor quando</td><td>O mercado tem tendência forte de alta</td><td>O mercado <b>oscila e volta</b> (lateral)</td><td>O mercado tem <b>tendência</b> (de alta ou de queda)</td></tr>\n    <tr><td>Pior quando</td><td>O mercado cai forte (mas o valor nunca fica abaixo da renda fixa)</td><td>O mercado tem tendência forte</td><td>O mercado oscila e volta</td></tr>\n    <tr><td>Piso</td><td>O valor da renda fixa</td><td>Nenhum</td><td>O piso definido (protegido, salvo em quedas bruscas)</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">CPPI</span>Colchão = carteira − piso<br>Ações = m × colchão   (m &gt; 1)<br>m = 1 → equivale ao buy and hold   ·   m = 0 → tudo em renda fixa</div>\n\n  <h3>Exemplo numérico com os três métodos</h3>\n  <div class=\"ex\"><span class=\"lbl\">Ponto de partida</span>\n    <p>Carteira de 100, com 60 em ações e 40 em renda fixa. A renda fixa rende 0% no período, para simplificar. O CPPI usa piso de 70 e m = 2: o colchão é 30 e as ações ficam em 2 × 30 = 60, então os três métodos começam iguais.</p>\n    <p><b>1º passo: as ações caem 20%.</b> As ações valem 48, a renda fixa 40 e a carteira 88.</p>\n    <div class=\"tbl\"><table>\n      <tr><th>Método</th><th>Ação depois da queda</th><th>Ações / renda fixa</th></tr>\n      <tr><td>Buy and hold</td><td>Nada</td><td class=\"n\">48 / 40</td></tr>\n      <tr><td>Constant mix</td><td>Volta a 60%: 0,6 × 88 = 52,8. <b>Compra 4,8</b> de ações</td><td class=\"n\">52,8 / 35,2</td></tr>\n      <tr><td>CPPI</td><td>Colchão = 88 − 70 = 18. Ações = 2 × 18 = 36. <b>Vende 12</b> de ações</td><td class=\"n\">36 / 52</td></tr>\n    </table></div>\n    <p><b>2º passo: as ações sobem 25%</b> e voltam ao preço inicial.</p>\n    <div class=\"tbl\"><table>\n      <tr><th>Método</th><th>Conta</th><th>Carteira final</th></tr>\n      <tr><td>Buy and hold</td><td>48 × 1,25 + 40</td><td class=\"n\">100,0</td></tr>\n      <tr><td>Constant mix</td><td>52,8 × 1,25 + 35,2</td><td class=\"n\"><b>101,2</b> (ganha quando o mercado volta)</td></tr>\n      <tr><td>CPPI</td><td>36 × 1,25 + 52</td><td class=\"n\"><b>97,0</b> (perde quando o mercado volta)</td></tr>\n    </table></div>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O constant mix é \"vender na alta e comprar na queda\", o que é uma estratégia contrária ao mercado e dá payoff côncavo. O CPPI segue a tendência e dá payoff convexo. Muita gente troca os dois na prova.</div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t9-1",
+   "subtema": "9.1",
+   "enunciado": "Um fundo busca replicar o Ibovespa com o menor tracking error possível. O estilo de gestão é:",
+   "alternativas": [
+    "Ativa",
+    "Semiativa",
+    "Passiva",
+    "Tática"
+   ],
+   "correta": 2,
+   "explicacao": "A gestão passiva busca replicar o benchmark com tracking error mínimo. A semiativa aceita pequenos desvios para tentar bater o índice por pouco."
+  },
+  {
+   "id": "t9-2",
+   "subtema": "9.1",
+   "enunciado": "A estratégia de enhanced indexing é caracterizada por:",
+   "alternativas": [
+    "Tracking error alto e busca de alfa elevado",
+    "Tracking error baixo, mas positivo, com pequenos desvios do benchmark",
+    "Tracking error zero",
+    "Ausência de benchmark"
+   ],
+   "correta": 1,
+   "explicacao": "O enhanced indexing é a gestão semiativa: fica perto do índice, com desvios pequenos e controlados para ganhar um pouco a mais."
+  },
+  {
+   "id": "t9-3",
+   "subtema": "9.1",
+   "enunciado": "A alocação estratégica de ativos é definida a partir:",
+   "alternativas": [
+    "Das previsões de curto prazo do gestor",
+    "Da política de investimento do investidor (IPS) e das expectativas de longo prazo dos mercados",
+    "Do desempenho dos últimos 12 meses",
+    "Da carteira dos concorrentes"
+   ],
+   "correta": 1,
+   "explicacao": "A estratégica combina os objetivos e as restrições do IPS com as expectativas de longo prazo de retorno, risco e correlação."
+  },
+  {
+   "id": "t9-4",
+   "subtema": "9.1",
+   "enunciado": "A alocação tática consiste em:",
+   "alternativas": [
+    "Alterar permanentemente os pesos-alvo",
+    "Desvios temporários em relação à estratégica, dentro de bandas, para aproveitar oportunidades de curto prazo",
+    "Replicar um índice",
+    "Rebalancear por calendário"
+   ],
+   "correta": 1,
+   "explicacao": "A tática é temporária e fica limitada às bandas da política. Alterar o alvo de forma permanente seria mudar a estratégica."
+  },
+  {
+   "id": "t9-5",
+   "subtema": "9.1",
+   "enunciado": "A política prevê 30% em ações, com banda de ±5 p.p. O gestor espera um forte desempenho das ações no próximo trimestre. A ação adequada é:",
+   "alternativas": [
+    "Levar ações a 40%",
+    "Mudar o alvo estratégico para 35%",
+    "Elevar ações para até 35%, dentro da banda",
+    "Zerar a renda fixa"
+   ],
+   "correta": 2,
+   "explicacao": "O ajuste tático pode ir até o limite da banda (35%). Passar disso violaria a política, e mudar o alvo é decisão estratégica."
+  },
+  {
+   "id": "t9-6",
+   "subtema": "9.1",
+   "enunciado": "Uma alocação que considera vários períodos e ajusta os pesos ao longo da vida do investidor, como o glide path dos fundos com data-alvo, é chamada de:",
+   "alternativas": [
+    "Estática",
+    "Dinâmica",
+    "Passiva",
+    "Tática"
+   ],
+   "correta": 1,
+   "explicacao": "A alocação dinâmica é multiperíodo e reconhece que a alocação ideal muda com o tempo. A estática olha um único período."
+  },
+  {
+   "id": "t9-7",
+   "subtema": "9.1",
+   "enunciado": "Um cliente tem alta capacidade de correr risco, mas baixa disposição. A tolerância ao risco a ser considerada é:",
+   "alternativas": [
+    "Alta",
+    "Média",
+    "Baixa",
+    "Indiferente"
+   ],
+   "correta": 2,
+   "explicacao": "Quando capacidade e disposição divergem, vale a menor das duas."
+  },
+  {
+   "id": "t9-8",
+   "subtema": "9.1",
+   "enunciado": "O cliente exige retorno de 7%, aceita perda máxima de 10% (teste E(R) − 2σ) e a taxa livre de risco é 4%. Carteiras: A (6%; σ 5%), B (8%; σ 8%), C (10%; σ 12%), D (9%; σ 9%). Pelo processo de eliminação, escolhe-se:",
+   "alternativas": [
+    "Carteira A",
+    "Carteira B",
+    "Carteira C",
+    "Carteira D"
+   ],
+   "correta": 3,
+   "explicacao": "A é eliminada pelo retorno (6% < 7%). C é eliminada pelo risco (10 − 24 = −14%). Entre B (Sharpe 0,50) e D (Sharpe 0,56), fica D.",
+   "fixa": true
+  },
+  {
+   "id": "t9-9",
+   "subtema": "9.1",
+   "enunciado": "No processo de eliminação, depois de descartar as carteiras que não atingem o retorno exigido nem respeitam a restrição de risco, escolhe-se a de:",
+   "alternativas": [
+    "Maior retorno absoluto",
+    "Menor volatilidade",
+    "Maior índice de Sharpe",
+    "Maior peso em ações"
+   ],
+   "correta": 2,
+   "explicacao": "A última etapa escolhe a melhor relação entre retorno e risco, que é medida pelo índice de Sharpe."
+  },
+  {
+   "id": "t9-10",
+   "subtema": "9.1",
+   "enunciado": "Segundo Brinson, Hood e Beebower, a política de alocação de ativos explica cerca de 90% da:",
+   "alternativas": [
+    "Diferença de retorno entre fundos diferentes",
+    "Variação dos retornos de um fundo ao longo do tempo",
+    "Taxa de administração",
+    "Seleção de ações"
+   ],
+   "correta": 1,
+   "explicacao": "Os 90% se referem à variação dos retornos no tempo. A diferença entre fundos explicada pela alocação é de cerca de 40% (Ibbotson e Kaplan)."
+  },
+  {
+   "id": "t9-11",
+   "subtema": "9.1",
+   "enunciado": "Segundo Ibbotson e Kaplan (2000), a alocação de ativos explica aproximadamente que parcela da diferença de retorno entre fundos?",
+   "alternativas": [
+    "10%",
+    "40%",
+    "90%",
+    "100%"
+   ],
+   "correta": 1,
+   "explicacao": "Cerca de 40% entre fundos, cerca de 90% da variação no tempo e praticamente 100% do nível médio de retorno."
+  },
+  {
+   "id": "t9-12",
+   "subtema": "9.1",
+   "enunciado": "A alocação estratégica determina principalmente a exposição da carteira ao:",
+   "alternativas": [
+    "Risco específico de cada emissor",
+    "Risco sistemático (fatores de mercado)",
+    "Risco operacional",
+    "Risco de liquidação"
+   ],
+   "correta": 1,
+   "explicacao": "A estratégica define quanto a carteira fica exposta aos grandes fatores de mercado, que são o risco não diversificável e remunerado."
+  },
+  {
+   "id": "t9-13",
+   "subtema": "9.2",
+   "enunciado": "Os dados de entrada da otimização média-variância são:",
+   "alternativas": [
+    "Só os retornos esperados",
+    "Retornos esperados, volatilidades e correlações",
+    "Passivos e fluxos de caixa",
+    "Ratings dos emissores"
+   ],
+   "correta": 1,
+   "explicacao": "Markowitz usa o retorno esperado, a variância de cada classe e as covariâncias (ou correlações) entre elas."
+  },
+  {
+   "id": "t9-14",
+   "subtema": "9.2",
+   "enunciado": "Uma crítica clássica à otimização média-variância é que ela:",
+   "alternativas": [
+    "Gera carteiras sempre muito diversificadas",
+    "É pouco sensível aos dados de entrada",
+    "É muito sensível aos retornos esperados e tende a gerar carteiras concentradas",
+    "Considera vários períodos"
+   ],
+   "correta": 2,
+   "explicacao": "Pequenas mudanças nos retornos esperados alteram muito os pesos, que tendem a se concentrar. Por isso ela é chamada de \"maximizador de erros\"."
+  },
+  {
+   "id": "t9-15",
+   "subtema": "9.2",
+   "enunciado": "A fronteira eficiente é formada pelas carteiras que:",
+   "alternativas": [
+    "Têm o menor retorno para cada risco",
+    "Têm o maior retorno esperado para cada nível de risco",
+    "Têm risco zero",
+    "Replicam os passivos"
+   ],
+   "correta": 1,
+   "explicacao": "Na fronteira estão as carteiras não dominadas: nenhuma outra dá mais retorno com o mesmo risco."
+  },
+  {
+   "id": "t9-16",
+   "subtema": "9.2",
+   "enunciado": "O modelo Black-Litterman parte de:",
+   "alternativas": [
+    "Retornos históricos de 10 anos",
+    "Pesos iguais entre as classes",
+    "Retornos de equilíbrio implícitos nos pesos da carteira de mercado",
+    "Simulações aleatórias"
+   ],
+   "correta": 2,
+   "explicacao": "Ele faz uma otimização reversa: descobre os retornos que tornariam a carteira de mercado ótima e depois mistura esses retornos com as visões do gestor."
+  },
+  {
+   "id": "t9-17",
+   "subtema": "9.2",
+   "enunciado": "No Black-Litterman, se o gestor tem pouca confiança nas próprias visões, a carteira resultante fica:",
+   "alternativas": [
+    "Concentrada nas visões",
+    "Próxima da carteira de mercado",
+    "Toda em renda fixa",
+    "Igual à média-variância pura"
+   ],
+   "correta": 1,
+   "explicacao": "Quanto menor a confiança, menor o peso das visões, e o resultado se aproxima do equilíbrio de mercado."
+  },
+  {
+   "id": "t9-18",
+   "subtema": "9.2",
+   "enunciado": "Uma vantagem do Black-Litterman sobre a média-variância tradicional é:",
+   "alternativas": [
+    "Dispensar retornos esperados",
+    "Gerar carteiras mais diversificadas e estáveis",
+    "Garantir retorno mínimo",
+    "Eliminar o risco sistemático"
+   ],
+   "correta": 1,
+   "explicacao": "Por partir do equilíbrio, ele evita pesos extremos e instáveis."
+  },
+  {
+   "id": "t9-19",
+   "subtema": "9.2",
+   "enunciado": "A simulação de Monte Carlo é especialmente útil na alocação porque:",
+   "alternativas": [
+    "Encontra a única carteira ótima analiticamente",
+    "Trata vários períodos, aportes e resgates, tributos e dependência da trajetória, gerando uma distribuição de resultados",
+    "Dispensa hipóteses sobre os retornos",
+    "É de um único período"
+   ],
+   "correta": 1,
+   "explicacao": "O Monte Carlo simula milhares de trajetórias e mostra, por exemplo, a probabilidade de atingir a meta. Serve mais para testar alocações."
+  },
+  {
+   "id": "t9-20",
+   "subtema": "9.2",
+   "enunciado": "O método ALM é mais indicado para:",
+   "alternativas": [
+    "Investidor sem obrigações futuras definidas",
+    "Fundo de pensão de benefício definido",
+    "Fundo de ações passivo",
+    "Day trader"
+   ],
+   "correta": 1,
+   "explicacao": "O ALM considera os passivos e é usado por quem tem obrigações definidas: planos BD, seguradoras e bancos."
+  },
+  {
+   "id": "t9-21",
+   "subtema": "9.2",
+   "enunciado": "No ALM, a variável otimizada é:",
+   "alternativas": [
+    "O retorno dos ativos",
+    "O superávit (ativos − passivos)",
+    "A taxa de administração",
+    "O tracking error"
+   ],
+   "correta": 1,
+   "explicacao": "O ALM busca a fronteira eficiente do superávit, isto é, o retorno e o risco de ativos menos passivos."
+  },
+  {
+   "id": "t9-22",
+   "subtema": "9.2",
+   "enunciado": "Para um plano com passivos longos corrigidos pela inflação, o ativo de menor risco numa abordagem ALM é:",
+   "alternativas": [
+    "Um título pós-fixado curto (caixa)",
+    "Uma carteira de títulos indexados à inflação com duration casada com os passivos",
+    "Ações de dividendos",
+    "Dólar"
+   ],
+   "correta": 1,
+   "explicacao": "No ALM, o ativo sem risco é o que replica os passivos. O caixa, que é o ativo sem risco no asset-only, deixa o superávit exposto aos juros reais."
+  },
+  {
+   "id": "t9-23",
+   "subtema": "9.2",
+   "enunciado": "São exemplos de abordagens empíricas de alocação:",
+   "alternativas": [
+    "Black-Litterman e Monte Carlo",
+    "60/40, \"100 − idade\" e 1/N",
+    "ALM e fronteira eficiente",
+    "CAPM e APT"
+   ],
+   "correta": 1,
+   "explicacao": "São regras práticas, simples e sem otimização, usadas também por causa das limitações dos modelos."
+  },
+  {
+   "id": "t9-24",
+   "subtema": "9.3",
+   "enunciado": "Qual situação justifica revisar o IPS e a alocação estratégica?",
+   "alternativas": [
+    "Queda de 5% da bolsa num mês",
+    "O cliente recebe uma herança relevante e antecipa a aposentadoria",
+    "Alta dos juros numa semana",
+    "Troca do gestor do fundo de ações"
+   ],
+   "correta": 1,
+   "explicacao": "Mudanças na situação do investidor (patrimônio, horizonte, liquidez, tributos, regras legais) justificam a revisão. Oscilações de mercado, não."
+  },
+  {
+   "id": "t9-25",
+   "subtema": "9.3",
+   "enunciado": "Sem rebalanceamento, depois de um longo período de alta das ações, a carteira tende a:",
+   "alternativas": [
+    "Ficar menos arriscada",
+    "Ficar mais arriscada, com ações acima do peso-alvo",
+    "Manter os pesos",
+    "Ficar toda em renda fixa"
+   ],
+   "correta": 1,
+   "explicacao": "A classe que mais rende ganha peso (drift), então o risco passa do previsto na política."
+  },
+  {
+   "id": "t9-26",
+   "subtema": "9.3",
+   "enunciado": "São custos do rebalanceamento:",
+   "alternativas": [
+    "Custos de transação e tributos sobre ganhos realizados",
+    "Só a taxa de performance",
+    "A redução do risco",
+    "O aumento da diversificação"
+   ],
+   "correta": 0,
+   "explicacao": "Rebalancear gera corretagem, spread, impacto de mercado e imposto sobre ganhos realizados. O benefício é o controle do risco."
+  },
+  {
+   "id": "t9-27",
+   "subtema": "9.3",
+   "enunciado": "No rebalanceamento percentual, a carteira é rebalanceada quando:",
+   "alternativas": [
+    "Chega uma data fixa",
+    "O peso de uma classe sai da banda de tolerância",
+    "O gestor muda",
+    "O cliente pede"
+   ],
+   "correta": 1,
+   "explicacao": "O gatilho é o desvio do peso. Por isso ele exige monitoramento frequente, ao contrário do rebalanceamento por calendário."
+  },
+  {
+   "id": "t9-28",
+   "subtema": "9.3",
+   "enunciado": "No rebalanceamento percentual, custos de transação mais altos levam a uma banda:",
+   "alternativas": [
+    "Mais estreita",
+    "Mais larga",
+    "Igual",
+    "Nula"
+   ],
+   "correta": 1,
+   "explicacao": "Se rebalancear é caro, só compensa com desvios maiores. Custo, tolerância ao risco e correlação alargam a banda."
+  },
+  {
+   "id": "t9-29",
+   "subtema": "9.3",
+   "enunciado": "Uma classe de ativos mais volátil deve ter uma banda de rebalanceamento:",
+   "alternativas": [
+    "Mais larga",
+    "Mais estreita",
+    "Igual às demais",
+    "Sem banda"
+   ],
+   "correta": 1,
+   "explicacao": "As duas volatilidades, a da classe e a do resto da carteira, estreitam a banda, porque cada desvio pesa mais no risco."
+  },
+  {
+   "id": "t9-30",
+   "subtema": "9.3",
+   "enunciado": "A estratégia constant mix:",
+   "alternativas": [
+    "Compra ações na alta e vende na queda, com payoff convexo",
+    "Vende ações na alta e compra na queda, com payoff côncavo",
+    "Não negocia, com payoff linear",
+    "Mantém sempre um piso garantido"
+   ],
+   "correta": 1,
+   "explicacao": "O constant mix vai contra o mercado para voltar aos pesos-alvo. Vai melhor em mercados que oscilam e voltam e pior em tendências."
+  },
+  {
+   "id": "t9-31",
+   "subtema": "9.3",
+   "enunciado": "A estratégia CPPI tem melhor desempenho em mercados:",
+   "alternativas": [
+    "Laterais, que oscilam e voltam",
+    "Com tendência forte de alta ou de queda",
+    "Sem nenhuma volatilidade",
+    "Ela é sempre a melhor"
+   ],
+   "correta": 1,
+   "explicacao": "O CPPI segue a tendência (compra na alta, vende na queda) e tem payoff convexo. Ele perde nos mercados que oscilam e voltam."
+  },
+  {
+   "id": "t9-32",
+   "subtema": "9.3",
+   "enunciado": "Carteira de 100, piso de 80 e multiplicador 3. Pelo CPPI, a exposição inicial em ações é:",
+   "alternativas": [
+    "20",
+    "40",
+    "60",
+    "80"
+   ],
+   "correta": 2,
+   "explicacao": "Colchão = 100 − 80 = 20. Ações = 3 × 20 = 60."
+  },
+  {
+   "id": "t9-33",
+   "subtema": "9.3",
+   "enunciado": "Carteira 60/40 (ações/renda fixa) de 100. As ações caem 20% e a renda fixa rende 0%. Para voltar ao constant mix, o gestor deve:",
+   "alternativas": [
+    "Vender 4,8 de ações",
+    "Comprar 4,8 de ações",
+    "Comprar 12 de ações",
+    "Não fazer nada"
+   ],
+   "correta": 1,
+   "explicacao": "A carteira vai a 88 (48 + 40). A meta é 60% × 88 = 52,8 em ações, então ele compra 4,8, vendendo renda fixa."
+  }
+ ]
+}

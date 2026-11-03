@@ -1,0 +1,139 @@
+{
+ "id": "rev",
+ "numero": 99,
+ "titulo": "Revisão geral",
+ "resumo": "Questões avulsas de outros temas (matemática financeira, renda fixa, economia, carteiras e derivativos), do primeiro protótipo do app.",
+ "topicos": [],
+ "questoes": [
+  {
+   "id": "rev-mf1",
+   "subtema": "Matemática Financeira",
+   "enunciado": "Um investidor aplica R$ 10.000,00 a juros compostos de 1% ao mês por 12 meses. Qual o valor de resgate?",
+   "alternativas": [
+    "R$ 11.200,00",
+    "R$ 11.268,25",
+    "R$ 11.000,00",
+    "R$ 12.682,50"
+   ],
+   "correta": 1,
+   "explicacao": "VF = 10.000 × (1,01)^12 = 10.000 × 1,126825 = R$ 11.268,25. R$ 11.200,00 seria o resultado com juros simples (12 × 1% = 12%)."
+  },
+  {
+   "id": "rev-mf2",
+   "subtema": "Matemática Financeira",
+   "enunciado": "Qual a taxa anual equivalente a 1% ao mês no regime de juros compostos?",
+   "alternativas": [
+    "12,00% a.a.",
+    "11,36% a.a.",
+    "12,68% a.a.",
+    "13,00% a.a."
+   ],
+   "correta": 2,
+   "explicacao": "Taxa equivalente: (1 + 0,01)^12 − 1 = 0,1268 → 12,68% a.a. Os 12% seriam a taxa proporcional, válida só em juros simples."
+  },
+  {
+   "id": "rev-rf1",
+   "subtema": "Renda Fixa",
+   "enunciado": "Qual a duration de Macaulay de um título prefixado sem cupom (zero cupom) que vence em 3 anos?",
+   "alternativas": [
+    "Menor que 3 anos",
+    "Exatamente 3 anos",
+    "Maior que 3 anos",
+    "Depende da taxa de juros"
+   ],
+   "correta": 1,
+   "explicacao": "Um zero cupom tem um único fluxo, no vencimento. Por isso sua duration de Macaulay é igual ao prazo: 3 anos, qualquer que seja a taxa."
+  },
+  {
+   "id": "rev-rf2",
+   "subtema": "Renda Fixa",
+   "enunciado": "Dois títulos prefixados têm o mesmo vencimento e a mesma taxa. Um paga cupons semestrais e o outro é zero cupom. Se os juros subirem, qual deve ter a maior queda de preço?",
+   "alternativas": [
+    "O título com cupons",
+    "O zero cupom",
+    "Os dois caem igualmente",
+    "Nenhum, pois ambos são prefixados"
+   ],
+   "correta": 1,
+   "explicacao": "Os cupons antecipam parte do fluxo e reduzem a duration. O zero cupom concentra tudo no vencimento, tem maior duration e por isso é mais sensível à variação dos juros."
+  },
+  {
+   "id": "rev-ec1",
+   "subtema": "Economia",
+   "enunciado": "Uma aplicação rendeu 12% no ano, com inflação de 4% no mesmo período. Qual foi a taxa real de juros?",
+   "alternativas": [
+    "8,00%",
+    "7,69%",
+    "16,48%",
+    "3,00%"
+   ],
+   "correta": 1,
+   "explicacao": "Pela equação de Fisher: (1 + nominal) / (1 + inflação) − 1 = 1,12 / 1,04 − 1 = 7,69%. Subtrair direto (12% − 4% = 8%) é só uma aproximação."
+  },
+  {
+   "id": "rev-ec2",
+   "subtema": "Economia",
+   "enunciado": "Em geral, qual o efeito esperado de uma alta da taxa Selic pelo Banco Central?",
+   "alternativas": [
+    "Estimular a concessão de crédito",
+    "Reduzir pressões inflacionárias",
+    "Valorizar títulos prefixados já emitidos",
+    "Desvalorizar o real frente ao dólar"
+   ],
+   "correta": 1,
+   "explicacao": "Juros mais altos encarecem o crédito e desestimulam consumo e investimento, reduzindo a demanda e a inflação. Prefixados já emitidos perdem valor, e o real tende a se valorizar."
+  },
+  {
+   "id": "rev-gc1",
+   "subtema": "Gestão de Carteiras",
+   "enunciado": "Pelo CAPM, qual o retorno esperado de uma ação com beta 1,2, se a taxa livre de risco é 10% e o retorno esperado do mercado é 15%?",
+   "alternativas": [
+    "15%",
+    "16%",
+    "18%",
+    "12%"
+   ],
+   "correta": 1,
+   "explicacao": "E(R) = Rf + β × (Rm − Rf) = 10% + 1,2 × (15% − 10%) = 10% + 6% = 16%."
+  },
+  {
+   "id": "rev-gc2",
+   "subtema": "Gestão de Carteiras",
+   "enunciado": "Uma carteira teve retorno de 14% com volatilidade de 8%. A taxa livre de risco foi 10%. Qual o índice de Sharpe?",
+   "alternativas": [
+    "0,50",
+    "1,75",
+    "0,40",
+    "1,25"
+   ],
+   "correta": 0,
+   "explicacao": "Sharpe = (retorno − livre de risco) / volatilidade = (14% − 10%) / 8% = 0,50. O 1,75 seria 14/8, esquecendo de descontar a taxa livre de risco."
+  },
+  {
+   "id": "rev-dv1",
+   "subtema": "Derivativos",
+   "enunciado": "Qual a perda máxima para o comprador de uma opção de compra (call) europeia?",
+   "alternativas": [
+    "Ilimitada",
+    "O preço de exercício",
+    "O prêmio pago",
+    "A diferença entre o preço do ativo e o exercício"
+   ],
+   "correta": 2,
+   "explicacao": "O comprador tem o direito, não a obrigação. Se não valer a pena exercer, ele deixa a opção virar pó e perde só o prêmio pago. Quem tem perda potencial ilimitada é o vendedor descoberto da call."
+  },
+  {
+   "id": "rev-dv2",
+   "subtema": "Derivativos",
+   "enunciado": "Um investidor compra uma put com strike de R$ 30,00 pagando prêmio de R$ 2,00. No vencimento, a partir de qual preço do ativo ele passa a ter lucro?",
+   "alternativas": [
+    "Abaixo de R$ 28,00",
+    "Abaixo de R$ 30,00",
+    "Acima de R$ 32,00",
+    "Abaixo de R$ 32,00"
+   ],
+   "correta": 0,
+   "explicacao": "A put ganha valor quando o ativo cai abaixo do strike. Para cobrir o prêmio de R$ 2,00, o ativo precisa ficar abaixo de 30 − 2 = R$ 28,00 (ponto de equilíbrio)."
+  }
+ ]
+}
