@@ -1,0 +1,732 @@
+{
+ "id": "t10",
+ "numero": 10,
+ "titulo": "Novas Tecnologias em Finanças",
+ "resumo": "Apostila do tema 10, um dos de menor peso na prova (3% a 7%), mas cobrado em questões conceituais diretas. Cada bloco traz o conceito, a regra-chave da realidade brasileira e as pegadinhas mais comuns.",
+ "topicos": [
+  {
+   "id": "t101",
+   "rotulo": "10.1 Fintechs e seus segmentos, inclusive na gestão de investimentos",
+   "html": "<div class=\"num\">10.1</div>\n  <h2>Fintechs e seus segmentos, inclusive na gestão de investimentos</h2>\n  <p class=\"why\">O que é uma fintech, em que segmentos elas atuam, que licenças o Banco Central criou para elas e como mudaram a distribuição e a gestão de investimentos.</p>\n\n  <h3>O que é uma fintech</h3>\n  <ul>\n    <li>O termo junta <i>financial</i> e <i>technology</i>. Designa empresas que usam <b>tecnologia de forma intensiva</b> para oferecer serviços financeiros com <b>modelos de negócio inovadores</b>: atendimento 100% digital, processos automatizados, custo baixo e ganho de escala.</li>\n    <li>Fintech é uma descrição do <b>modelo de negócio</b>, não um tipo jurídico. Uma fintech pode ser uma instituição autorizada pelo BCB, uma participante registrada na CVM ou uma empresa de tecnologia que presta serviço a instituições financeiras.</li>\n    <li><b>Efeitos no sistema:</b> mais concorrência, tarifas e spreads menores, inclusão financeira, produtos mais personalizados e pressão para os bancos tradicionais se digitalizarem.</li>\n    <li><b>Riscos:</b> risco cibernético e de vazamento de dados, dependência de terceiros (nuvem, parceiros), crescimento rápido sem estrutura de controles e possível <b>arbitragem regulatória</b> (fazer o mesmo que um banco com menos exigências).</li>\n  </ul>\n\n  <h3>Principais segmentos</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Segmento</th><th>O que faz</th><th>Exemplos de atividade</th></tr>\n    <tr><td><b>Pagamentos</b></td><td>Transferências, carteiras digitais, maquininhas, contas de pagamento</td><td>Contas pré-pagas, credenciadoras, iniciadoras de pagamento</td></tr>\n    <tr><td><b>Crédito</b></td><td>Empréstimo por plataforma digital, com análise de crédito automatizada</td><td>SCD, SEP (empréstimo entre pessoas), crédito consignado digital</td></tr>\n    <tr><td><b>Bancos digitais</b></td><td>Conta, cartão, crédito e investimentos sem agência física</td><td>Bancos e instituições de pagamento 100% digitais</td></tr>\n    <tr><td><b>Investimentos</b> (<i>wealthtech</i>)</td><td>Distribuição, consultoria e gestão automatizadas</td><td>Plataformas e corretoras digitais, robo-advisors, consolidadores de carteira</td></tr>\n    <tr><td><b>Financiamento coletivo</b></td><td>Captação de pequenas empresas junto a muitos investidores pela internet</td><td>Plataformas de investimento participativo reguladas pela CVM</td></tr>\n    <tr><td><b>Seguros</b> (<i>insurtech</i>)</td><td>Contratação digital e seguros sob demanda</td><td>Seguro por uso, cotação automática</td></tr>\n    <tr><td><b>Câmbio e remessas</b></td><td>Câmbio e envio de recursos ao exterior com custo menor</td><td>Contas globais, remessas internacionais</td></tr>\n    <tr><td><b>Gestão financeira</b></td><td>Organização das finanças de pessoas e empresas</td><td>Aplicativos de controle de gastos, conciliação, cobrança</td></tr>\n    <tr><td><b>Criptoativos</b></td><td>Compra, venda e custódia de ativos virtuais</td><td>Exchanges e custodiantes de criptoativos</td></tr>\n    <tr><td><b>RegTech</b></td><td>Tecnologia para cumprir a regulação</td><td>KYC digital, prevenção à lavagem, monitoramento de enquadramento (ver 10.4)</td></tr>\n  </table></div>\n\n  <h3>Licenças criadas para fintechs no Brasil</h3>\n  <ul>\n    <li><b>SCD (Sociedade de Crédito Direto):</b> concede crédito por <b>plataforma eletrônica</b> usando <b>apenas capital próprio</b>. <b>Não capta depósitos</b> do público. Para crescer, pode ceder ou vender a carteira de crédito (por exemplo, a um FIDC).</li>\n    <li><b>SEP (Sociedade de Empréstimo entre Pessoas):</b> é o <b>P2P lending</b>. A plataforma <b>intermedeia</b> o empréstimo entre credores (investidores) e devedores. O dinheiro dos credores financia diretamente o empréstimo, e o <b>risco de crédito é dos credores</b>, não da SEP.</li>\n    <li>As duas foram criadas pelo CMN em 2018 e são <b>autorizadas e supervisionadas pelo Banco Central</b>.</li>\n    <li><b>Instituições de pagamento</b> (Lei 12.865/2013): emissor de moeda eletrônica (administra contas pré-pagas), emissor de instrumento de pagamento pós-pago (cartão), credenciador (maquininha) e <b>iniciador de transação de pagamento</b>, figura ligada ao Open Finance.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Para decorar</span>SCD → empresta o próprio capital, risco é da SCD<br>SEP → aproxima credor e devedor, risco é do credor<br>Nenhuma das duas capta depósito do público</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>\"Fintech\" não significa \"não regulada\". Quem faz atividade financeira (crédito, pagamento, distribuição de valores mobiliários) precisa da autorização correspondente do BCB ou da CVM, seja ou não chamada de fintech.</div>\n\n  <h3>Fintechs na gestão de investimentos</h3>\n  <ul>\n    <li><b>Distribuição:</b> plataformas abertas (marketplaces de fundos) e corretoras digitais levaram ao varejo produtos de muitas gestoras (<b>arquitetura aberta</b>), com aplicações mínimas baixas e menos custo. Isso abriu espaço para gestoras independentes, que antes dependiam da rede dos grandes bancos.</li>\n    <li><b>Consultoria e gestão automatizadas:</b> robo-advisors montam e rebalanceiam carteiras a partir de um questionário de perfil (ver 10.3).</li>\n    <li><b>Consolidação:</b> aplicativos que reúnem os investimentos que o cliente tem em várias instituições, tarefa facilitada pelo Open Finance (ver 10.4).</li>\n    <li><b>Middle e back office:</b> sistemas de dados, cálculo de risco, controle de enquadramento, boletagem, relatórios a clientes e envio de informações a reguladores, muitas vezes contratados como serviço (SaaS).</li>\n    <li><b>Dados e análise:</b> uso de dados alternativos e machine learning na pesquisa de investimentos.</li>\n    <li><b>Financiamento coletivo de investimento</b> (Res. CVM 88): plataformas registradas na CVM fazem ofertas públicas de pequenas empresas com dispensa de registro, sujeitas a limites de captação por empresa e a limites anuais de investimento para o investidor de varejo.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso prático</span>\n    <p>Uma corretora digital vende pelo aplicativo fundos de 60 gestoras. O cliente responde ao questionário de perfil no celular e recebe sugestões automáticas. A tecnologia muda o canal, mas não as obrigações: a corretora continua obrigada a verificar a <b>adequação</b> do produto ao perfil (suitability, Res. CVM 30), a conhecer o cliente (KYC) e a cumprir as regras de prevenção à lavagem de dinheiro.</p>\n  </div>"
+  },
+  {
+   "id": "t102",
+   "rotulo": "10.2 Blockchain e Distributed Ledger Technology (DLT)",
+   "html": "<div class=\"num\">10.2</div>\n  <h2>Blockchain e Distributed Ledger Technology (DLT)</h2>\n  <p class=\"why\">Como funciona um registro distribuído, o que o blockchain acrescenta e onde a tecnologia já aparece em finanças: tokenização, liquidação, criptoativos e o Drex.</p>\n\n  <h3>DLT: o livro-razão distribuído</h3>\n  <ul>\n    <li><b>DLT</b> (<i>Distributed Ledger Technology</i>) é um registro de transações (um \"livro-razão\") <b>compartilhado e replicado entre vários participantes</b>, chamados de <b>nós</b>. Não há um administrador central que mantenha a única cópia oficial.</li>\n    <li>Os nós concordam sobre qual é o registro válido por meio de um <b>mecanismo de consenso</b>.</li>\n    <li>Num sistema tradicional, cada instituição tem seu próprio registro e precisa conciliá-lo com o das outras. Na DLT, todos compartilham o <b>mesmo registro</b>, o que reduz conciliações e intermediários.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Hierarquia</span>DLT (gênero) ⊃ blockchain (espécie) ⊃ redes específicas (Bitcoin, Ethereum…)<br>Todo blockchain é DLT; nem toda DLT é blockchain</div>\n\n  <h3>Blockchain</h3>\n  <ul>\n    <li>É o tipo de DLT em que as transações são agrupadas em <b>blocos</b>, e cada bloco guarda o <b>hash</b> (uma \"impressão digital\" criptográfica) do bloco anterior, formando uma <b>cadeia</b>.</li>\n    <li>Se alguém alterar uma transação antiga, o hash daquele bloco muda e quebra o encadeamento de todos os seguintes. Por isso a alteração é <b>facilmente detectada</b>, o que dá <b>imutabilidade</b> prática ao registro: só se acrescentam dados, não se apagam.</li>\n    <li><b>Criptografia de chave pública e privada:</b> a chave privada assina as transações (prova de que o dono autorizou), e a chave pública permite que qualquer um verifique a assinatura. Quem perde a chave privada perde o acesso aos ativos.</li>\n  </ul>\n\n  <h3>Mecanismos de consenso</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Mecanismo</th><th>Como funciona</th><th>Ponto de atenção</th></tr>\n    <tr><td><b>Proof of Work</b> (PoW)</td><td>\"Mineradores\" competem resolvendo um problema computacional; quem resolve primeiro valida o bloco (ex.: Bitcoin)</td><td>Muito seguro, mas <b>consome muita energia</b> e é lento</td></tr>\n    <tr><td><b>Proof of Stake</b> (PoS)</td><td>Validadores são escolhidos conforme a quantidade de moedas que deixam bloqueadas como garantia (<i>stake</i>) (ex.: Ethereum, desde 2022)</td><td>Gasta muito menos energia; críticas sobre concentração</td></tr>\n    <tr><td>Consenso entre <b>participantes autorizados</b></td><td>Usado em redes permissionadas: um grupo conhecido de validadores aprova as transações</td><td>Mais rápido e eficiente; menos descentralizado</td></tr>\n  </table></div>\n\n  <h3>Redes públicas × permissionadas</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Pública (permissionless)</th><th>Permissionada (permissioned)</th></tr>\n    <tr><td>Quem participa e valida</td><td>Qualquer pessoa</td><td>Só participantes <b>autorizados</b></td></tr>\n    <tr><td>Identidade</td><td>Pseudônima (endereços)</td><td>Participantes identificados</td></tr>\n    <tr><td>Velocidade e custo</td><td>Menor velocidade, custo variável</td><td>Maior velocidade, custo menor</td></tr>\n    <tr><td>Exemplos</td><td>Bitcoin, Ethereum</td><td>Redes de consórcio de bancos, piloto do Drex</td></tr>\n  </table></div>\n\n  <h3>Smart contracts, tokens e oráculos</h3>\n  <ul>\n    <li><b>Smart contract:</b> um <b>programa</b> gravado na rede que executa regras automaticamente quando condições predefinidas são atendidas (ex.: pagar o cupom de um título tokenizado na data). Não é, por si só, um contrato jurídico.</li>\n    <li><b>Token:</b> representação digital de um direito ou valor registrada na DLT.</li>\n    <li><b>Tokenização:</b> representar em tokens direitos sobre ativos do \"mundo real\", como recebíveis, cotas de fundos, títulos de dívida ou imóveis. Permite fracionar o ativo, negociar 24 horas e liquidar mais rápido.</li>\n    <li><b>Oráculo:</b> a fonte externa que leva à rede dados do mundo real (preço, taxa, evento). A rede garante que o dado não foi alterado depois de gravado, mas <b>não garante que ele estava certo</b> na origem.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Imutabilidade é integridade do registro, não veracidade da informação. Um dado errado gravado no blockchain continua errado, e corrigi-lo exige uma nova transação de ajuste.</div>\n\n  <h3>Usos em finanças e investimentos</h3>\n  <ul>\n    <li><b>Liquidação DvP atômica:</b> ativo e dinheiro trocam de mãos <b>ao mesmo tempo</b>, e um só ocorre se o outro ocorrer. Elimina o risco de entregar sem receber e pode encurtar o ciclo de liquidação.</li>\n    <li><b>Tokenização</b> de títulos, recebíveis e cotas de fundos; mercados de acesso para pequenas empresas.</li>\n    <li><b>Criptoativos e stablecoins</b> (criptoativos que buscam manter valor estável, em geral atrelados a uma moeda como o dólar).</li>\n    <li><b>Pagamentos internacionais</b> mais rápidos, trade finance e cadastro compartilhado de clientes (KYC).</li>\n    <li><b>CBDC</b> (moeda digital de banco central).</li>\n  </ul>\n  <h3>A realidade brasileira</h3>\n  <ul>\n    <li><b>Drex:</b> plataforma desenvolvida pelo BCB para o <b>real digital</b> e a liquidação de ativos tokenizados, incluindo depósitos tokenizados emitidos pelos bancos. Os pilotos usaram <b>DLT permissionada</b> com participantes autorizados. O cronograma e o desenho final ainda estão em evolução.</li>\n    <li><b>Pix:</b> sistema de pagamentos instantâneos <b>centralizado</b>, operado pelo BCB. <b>Não usa blockchain</b> e não é moeda digital.</li>\n    <li><b>Criptoativos:</b> o marco legal (Lei 14.478/2022) regula os prestadores de serviços de ativos virtuais, cuja supervisão cabe ao BCB. Quando um criptoativo se enquadra como <b>valor mobiliário</b> (por exemplo, um contrato de investimento coletivo), vale a competência da <b>CVM</b>, conforme o Parecer de Orientação CVM 40. A forma tecnológica não muda a natureza do ativo.</li>\n    <li><b>Fundos:</b> a regulação de fundos (Res. CVM 175) admite exposição a criptoativos dentro de regras e limites, e há ETFs de criptoativos negociados na B3.</li>\n  </ul>\n\n  <h3>Vantagens e limitações</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Vantagens</th><th>Limitações</th></tr>\n    <tr><td>Transparência e rastreabilidade</td><td>Escalabilidade (redes públicas processam poucas transações por segundo)</td></tr>\n    <tr><td>Imutabilidade prática do histórico</td><td>Erros não se apagam; dependência de oráculos</td></tr>\n    <tr><td>Sem ponto único de falha (resiliência)</td><td>Alto consumo de energia no PoW</td></tr>\n    <tr><td>Menos intermediários e conciliações</td><td>Privacidade (dados visíveis a todos os nós) e conflito com a LGPD</td></tr>\n    <tr><td>Liquidação mais rápida, inclusive atômica</td><td>Insegurança jurídica, governança e perda de chaves privadas</td></tr>\n  </table></div>"
+  },
+  {
+   "id": "t103",
+   "rotulo": "10.3 Abordagens quantitativas: HFT, robo-advisors, algo-trading e machine learning",
+   "html": "<div class=\"num\">10.3</div>\n  <h2>Abordagens quantitativas: HFT, robo-advisors, algo-trading e machine learning</h2>\n  <p class=\"why\">Como algoritmos e dados passaram a gerar decisões e executar ordens, e quais são os riscos que o gestor e o regulador precisam controlar.</p>\n\n  <h3>Algo-trading (negociação algorítmica)</h3>\n  <ul>\n    <li>Uso de <b>programas</b> que geram e/ou executam ordens automaticamente segundo <b>regras predefinidas</b> (preço, volume, horário, sinais estatísticos).</li>\n    <li><b>Algoritmos de execução:</b> servem para executar uma ordem grande com o menor custo e impacto possível, fatiando-a em ordens menores. A decisão de comprar já foi tomada; o algoritmo cuida de <i>como</i> comprar.</li>\n    <li><b>Algoritmos de estratégia:</b> decidem <i>o que</i> e <i>quando</i> negociar (seguir tendência, arbitragem, reversão à média, arbitragem estatística).</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Algoritmo de execução</th><th>Objetivo</th></tr>\n    <tr><td><b>VWAP</b></td><td>Executar perto do preço médio <b>ponderado pelo volume</b> do período, negociando mais nos horários de maior volume</td></tr>\n    <tr><td><b>TWAP</b></td><td>Distribuir a ordem <b>igualmente no tempo</b> (ex.: um lote a cada 10 minutos)</td></tr>\n    <tr><td><b>POV</b> (<i>percentage of volume</i>)</td><td>Participar com um percentual fixo do volume negociado no mercado</td></tr>\n    <tr><td><b>Implementation shortfall</b></td><td>Minimizar a diferença entre o preço no momento da decisão e o preço efetivamente obtido</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Vantagens:</b> velocidade, disciplina (sem viés emocional), menor custo de execução, capacidade de monitorar muitos ativos ao mesmo tempo, trilha de auditoria.</li>\n    <li><b>Riscos:</b> erro de programação (um algoritmo defeituoso pode enviar milhares de ordens erradas em segundos), risco de modelo e comportamento em manada entre algoritmos parecidos.</li>\n  </ul>\n\n  <h3>High-Frequency Trading (HFT)</h3>\n  <ul>\n    <li>É um <b>subconjunto do algo-trading</b>, definido pela <b>velocidade</b> e pelo <b>giro</b>: latência de micro a nanossegundos, enorme quantidade de ordens (muitas canceladas), posições de <b>curtíssimo prazo</b> e, em geral, encerramento do dia <b>zerado</b>.</li>\n    <li>Usa <b>colocation</b> (servidores instalados junto aos da bolsa, para reduzir a latência) e acesso direto ao mercado.</li>\n    <li>Ganha pouco por operação, em grande número de operações.</li>\n    <li><b>Estratégias típicas:</b> formação de mercado (<i>market making</i>), arbitragem de latência entre mercados e arbitragem estatística.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Benefícios atribuídos ao HFT</th><th>Críticas e riscos</th></tr>\n    <tr><td>Mais liquidez e <b>spreads menores</b> em condições normais</td><td>Liquidez que <b>desaparece</b> no estresse (\"liquidez fantasma\")</td></tr>\n    <tr><td>Formação de preço mais rápida e eficiente</td><td>Amplificação de quedas bruscas (ex.: <i>flash crash</i> de maio de 2010 nos EUA)</td></tr>\n    <tr><td>Arbitragem alinha preços entre mercados</td><td>Vantagem tecnológica sobre os demais participantes; sobrecarga dos sistemas</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>HFT não é ilegal em si. O que é vedado é usar a velocidade para <b>manipular</b>: <i>spoofing</i> e <i>layering</i> (enviar ofertas sem intenção de executá-las, para induzir os outros, e cancelá-las em seguida) configuram manipulação ou prática não equitativa (Res. CVM 62). As bolsas impõem controles de risco pré-negociação, limites de ordens, <i>circuit breakers</i> e <i>kill switch</i>.</div>\n\n  <h3>Robo-advisors</h3>\n  <ul>\n    <li>Plataformas digitais que <b>automatizam</b> o processo de aconselhamento e gestão: aplicam um <b>questionário de perfil</b>, recomendam uma alocação (em geral com ETFs e fundos de baixo custo), executam e fazem o <b>rebalanceamento automático</b>.</li>\n    <li><b>Vantagens:</b> custo baixo, aplicação mínima baixa, escala, disciplina e acesso a carteiras diversificadas para quem não teria um gestor dedicado.</li>\n    <li><b>Limitações:</b> o questionário capta mal situações complexas (tributação, sucessão, passivos), os modelos tendem a ser padronizados, não há apoio humano nas crises e pode haver conflito de interesses se o robô privilegiar produtos da casa.</li>\n    <li><b>Modelo híbrido:</b> o robô faz a parte operacional e um profissional humano atende o cliente nos pontos que exigem julgamento.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Regra-chave no Brasil</span>Robô que recomenda carteira    → consultoria de valores mobiliários (Res. CVM 19)<br>Robô que decide e executa       → administração de carteiras (Res. CVM 21)<br>Em ambos: pessoa registrada na CVM responde pelo algoritmo + suitability (Res. CVM 30)</div>\n  <div class=\"ex\"><span class=\"lbl\">Caso prático</span>\n    <p>Uma gestora lança um aplicativo que, a partir de 10 perguntas, monta para cada cliente uma carteira de ETFs e a rebalanceia sozinha, sem pedir autorização a cada ordem. Isso é <b>gestão discricionária</b>: a atividade exige registro de administrador de carteiras na CVM, e o diretor responsável responde pelas decisões do algoritmo como responderia pelas de um gestor humano. A automação não afasta o dever de suitability nem o de agir no melhor interesse do cliente.</p>\n  </div>\n\n  <h3>Machine learning (aprendizado de máquina)</h3>\n  <p>Ramo da inteligência artificial em que o modelo <b>aprende padrões a partir dos dados</b>, em vez de seguir regras escritas uma a uma pelo programador.</p>\n  <div class=\"tbl\"><table>\n    <tr><th>Tipo</th><th>Como aprende</th><th>Exemplos em finanças</th></tr>\n    <tr><td><b>Supervisionado</b></td><td>Com dados <b>rotulados</b> (entradas e resultado conhecido). Tarefas de <b>regressão</b> (prever um número) e <b>classificação</b> (prever uma categoria)</td><td>Prever inadimplência, classificar emissores, prever retornos</td></tr>\n    <tr><td><b>Não supervisionado</b></td><td>Com dados <b>sem rótulo</b>, buscando estrutura: <b>clusterização</b> e redução de dimensão (ex.: PCA)</td><td>Segmentar clientes, agrupar ativos parecidos, identificar regimes de mercado</td></tr>\n    <tr><td><b>Por reforço</b></td><td>Um agente age, recebe <b>recompensa ou punição</b> e aprende por tentativa e erro</td><td>Execução ótima de ordens, estratégias de negociação</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Deep learning:</b> redes neurais com muitas camadas, capazes de capturar relações não lineares complexas.</li>\n    <li><b>Processamento de linguagem natural (NLP):</b> extrai informação de textos, como o tom de atas do Copom, notícias, relatórios de empresas e redes sociais (análise de sentimento).</li>\n    <li><b>Big data e dados alternativos:</b> imagens de satélite, transações de cartão, dados da web. Seu uso deve respeitar a LGPD e as regras sobre informação privilegiada.</li>\n  </ul>\n  <h3>Riscos do machine learning</h3>\n  <ul>\n    <li><b>Overfitting (sobreajuste):</b> o modelo \"decora\" o ruído dos dados de treino, vai muito bem no backtest e mal fora da amostra. Remédios: separar dados de treino, validação e teste, validação cruzada, testes fora da amostra (<i>walk-forward</i>) e modelos mais simples (regularização).</li>\n    <li><b>Data snooping:</b> testar tantas hipóteses nos mesmos dados que alguma \"funciona\" por acaso.</li>\n    <li><b>Caixa-preta:</b> dificuldade de explicar por que o modelo decidiu algo, o que é problema para o comitê de investimentos, o cliente e o regulador.</li>\n    <li><b>Mudança de regime:</b> mercados não são estáveis; padrões do passado podem deixar de valer.</li>\n    <li><b>Viés e qualidade dos dados:</b> dados ruins ou enviesados geram decisões ruins ou discriminatórias.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Desempenho excelente no backtest e fraco fora da amostra é o sinal clássico de <b>overfitting</b>, não de \"falta de dados de treino\". E aprendizado <b>não supervisionado</b> é o que trabalha sem rótulos, como na segmentação de clientes.</div>"
+  },
+  {
+   "id": "t104",
+   "rotulo": "10.4 Open Banking / Open Finance, Sandbox Regulatório e RegTech",
+   "html": "<div class=\"num\">10.4</div>\n  <h2>Open Banking / Open Finance, Sandbox Regulatório e RegTech</h2>\n  <p class=\"why\">Três respostas regulatórias à inovação: abrir os dados do cliente para ampliar a concorrência, criar um ambiente controlado de testes e usar tecnologia para cumprir e supervisionar a regulação.</p>\n\n  <h3>Open Banking e Open Finance: conceito</h3>\n  <ul>\n    <li><b>Compartilhamento padronizado</b> de dados e serviços entre instituições autorizadas, por meio de <b>APIs</b> (interfaces que permitem a comunicação segura entre sistemas), <b>com consentimento do cliente</b>.</li>\n    <li>Princípio central: <b>os dados pertencem ao cliente</b>, não à instituição. É o cliente que decide com quem compartilhar, para quê e por quanto tempo.</li>\n    <li>Regulado conjuntamente pelo <b>CMN e pelo BCB</b> (Resolução Conjunta nº 1/2020 e normas posteriores). Começou como Open Banking e passou a se chamar <b>Open Finance</b> quando o escopo foi além dos produtos bancários.</li>\n    <li>Seguros têm iniciativa própria, o <b>Open Insurance</b>, regulada pela SUSEP.</li>\n  </ul>\n\n  <h3>Fases de implementação</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Fase</th><th>Início</th><th>O que passou a ser compartilhado</th></tr>\n    <tr><td><b>1</b></td><td>2021</td><td><b>Dados públicos das instituições</b>: produtos e serviços, tarifas, taxas e canais de atendimento</td></tr>\n    <tr><td><b>2</b></td><td>2021</td><td><b>Dados cadastrais e transacionais dos clientes</b> (contas, cartões, operações de crédito), mediante consentimento</td></tr>\n    <tr><td><b>3</b></td><td>2021–2022</td><td><b>Serviços</b>: <b>iniciação de transação de pagamento</b> (ex.: Pix iniciado por outra instituição) e encaminhamento de proposta de crédito</td></tr>\n    <tr><td><b>4</b></td><td>2022 em diante</td><td><b>Outros produtos</b>: câmbio, <b>investimentos</b>, seguros, previdência e credenciamento. É a passagem a <b>Open Finance</b></td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Para decorar</span>Fase 1 = dados da instituição · Fase 2 = dados do cliente<br>Fase 3 = serviços (pagamento e crédito) · Fase 4 = investimentos, seguros, previdência, câmbio</div>\n\n  <h3>Regras gerais de funcionamento</h3>\n  <ul>\n    <li><b>Participação:</b> obrigatória para as instituições dos segmentos <b>S1 e S2</b> (os maiores conglomerados); voluntária para as demais instituições autorizadas, que, ao aderir, também passam a compartilhar seus dados (reciprocidade).</li>\n    <li><b>Consentimento:</b> deve ser livre, informado, com <b>finalidade determinada</b> e <b>prazo definido</b>, e pode ser <b>revogado a qualquer momento</b> pelo cliente. Consentimentos genéricos ou \"para qualquer finalidade\" não valem.</li>\n    <li><b>Jornada:</b> consentimento na instituição que recebe os dados → <b>autenticação</b> na instituição que tem os dados → <b>confirmação</b>. Só então o compartilhamento começa.</li>\n    <li><b>Gratuidade</b> para o cliente, padrões técnicos e de segurança comuns, diretório de participantes e estrutura de governança própria.</li>\n    <li>O cumprimento da <b>LGPD</b> e do sigilo bancário continua exigido; o Open Finance é uma exceção controlada ao sigilo, autorizada pelo cliente.</li>\n  </ul>\n\n  <h3>Objetivos e benefícios</h3>\n  <ul>\n    <li><b>Aumentar a concorrência</b> e reduzir a assimetria de informação entre o banco que já tem o cliente e os concorrentes.</li>\n    <li><b>Crédito mais barato e mais acessível</b>, porque um novo credor pode ver o histórico do cliente em outras instituições.</li>\n    <li><b>Inclusão financeira</b>, produtos personalizados e portabilidade facilitada.</li>\n    <li><b>Para a gestão e a distribuição de investimentos:</b> visão <b>consolidada</b> do patrimônio do cliente em várias instituições, recomendações e suitability mais bem informados, e pagamentos e aplicações iniciados por outras instituições.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>No Open Finance quem decide o compartilhamento é o <b>cliente</b>, e não a instituição que detém os dados nem o BCB. A obrigatoriedade de participar recai sobre as <b>instituições</b> (S1 e S2), nunca sobre o cliente.</div>\n\n  <h3>Sandbox regulatório</h3>\n  <ul>\n    <li>Ambiente <b>experimental</b> em que empresas selecionadas recebem <b>autorização temporária</b> para testar produtos, serviços ou modelos de negócio <b>inovadores</b>, com <b>dispensa de alguns requisitos regulatórios</b>, por <b>prazo determinado</b>, com <b>limites</b> (número de clientes, volume, tipo de investidor) e sob <b>acompanhamento</b> do regulador.</li>\n    <li><b>No Brasil:</b> CVM (<b>Resolução CVM 29</b>), BCB (regras do CMN e do BCB) e SUSEP mantêm seus próprios sandboxes. O Marco Legal das Startups (Lei Complementar 182/2021) também prevê o instrumento.</li>\n    <li><b>Funcionamento:</b> o regulador abre um processo de seleção por ciclos; o candidato demonstra que o modelo é <b>inovador</b>, que traz <b>benefício</b> ao mercado ou ao investidor, que tem capacidade técnica e financeira e que tem um <b>plano de saída ordenada</b>. Os clientes devem ser informados de que se trata de atividade experimental.</li>\n    <li><b>Ao fim do prazo:</b> o participante obtém a autorização definitiva (cumprindo então toda a regulação) ou encerra a atividade. A autorização temporária <b>não se converte automaticamente</b> em definitiva.</li>\n    <li>Regras de proteção básicas, como as de <b>prevenção à lavagem de dinheiro</b>, continuam valendo. O regulador pode suspender ou cancelar a autorização se houver risco ao investidor.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Quem ganha</th><th>Benefício pretendido</th></tr>\n    <tr><td>Empresas</td><td>Testar o modelo com menor custo e tempo de entrada, com segurança jurídica</td></tr>\n    <tr><td>Regulador</td><td><b>Aprender</b> com o teste e avaliar se a regulação precisa ser ajustada</td></tr>\n    <tr><td>Mercado e investidores</td><td>Mais concorrência e inovação, com riscos contidos pelos limites do teste</td></tr>\n  </table></div>\n  <div class=\"ex\"><span class=\"lbl\">Caso prático</span>\n    <p>Uma startup quer criar um mercado de ações tokenizadas de pequenas empresas, mas as regras de mercado organizado foram escritas para bolsas tradicionais. Pelo sandbox da CVM, ela recebe autorização temporária, com teto de volume e de emissões, para operar com algumas exigências afastadas. A CVM acompanha os resultados e pode usá-los para mudar a norma. Foi o caminho de iniciativas do primeiro ciclo do sandbox da CVM, como a BEE4.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Sandbox não é dispensa permanente nem geral da regulação. É temporário, limitado, monitorado e só para modelos <b>inovadores</b>. Uma atividade comum que já cabe na regulação existente não precisa de sandbox.</div>\n\n  <h3>RegTech e SupTech</h3>\n  <ul>\n    <li><b>RegTech</b> (<i>regulatory technology</i>): tecnologia usada pelas <b>entidades reguladas</b> para cumprir a regulação de forma mais barata, rápida e confiável.</li>\n    <li><b>SupTech</b> (<i>supervisory technology</i>): tecnologia usada pelos <b>supervisores</b> (CVM, BCB, autorreguladores como ANBIMA e BSM) para supervisionar o mercado, por exemplo com análise de grandes volumes de dados e IA para detectar indícios de irregularidade e definir prioridades de supervisão baseada em risco.</li>\n  </ul>\n  <h3>RegTech na gestão de investimentos</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Área</th><th>Aplicação</th></tr>\n    <tr><td><b>Enquadramento</b></td><td><b>Pre-trade compliance</b>: o sistema de ordens bloqueia operações que desenquadrariam a carteira (limites por emissor, por classe de ativo, regulamento do fundo); post-trade, monitora desenquadramentos passivos</td></tr>\n    <tr><td><b>Cadastro e KYC</b></td><td>Onboarding digital com validação de documentos e biometria; atualização cadastral</td></tr>\n    <tr><td><b>PLD/FT</b> (Res. CVM 50)</td><td>Monitoramento automático de operações atípicas, listas restritivas e pessoas politicamente expostas</td></tr>\n    <tr><td><b>Conduta</b></td><td>Monitoramento de investimentos pessoais de funcionários, comunicações e operações (insider trading, front-running), rateio justo de ordens entre carteiras</td></tr>\n    <tr><td><b>Riscos</b></td><td>Cálculo automatizado de risco de mercado, liquidez e crédito, testes de estresse</td></tr>\n    <tr><td><b>Reporte</b></td><td>Geração e envio automatizado de informes periódicos a reguladores e autorreguladores</td></tr>\n    <tr><td><b>Gestão de normas</b></td><td>Acompanhamento de novas normas e mapeamento das obrigações para os processos internos</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Benefícios:</b> menor custo de conformidade, menos erro humano, resposta mais rápida, trilha de auditoria e monitoramento contínuo em vez de amostral.</li>\n    <li><b>Limites:</b> dependem da qualidade dos dados e da parametrização, trazem risco de modelo e de fornecedor e exigem cuidado com a LGPD.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Contratar uma RegTech <b>não transfere a responsabilidade</b> regulatória. Se o sistema falhar e o fundo desenquadrar, quem responde perante a CVM é a gestora e seu diretor responsável, não o fornecedor do software.</div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t10-1",
+   "subtema": "10.1",
+   "enunciado": "O termo fintech designa:",
+   "alternativas": [
+    "Exclusivamente os bancos digitais autorizados pelo Banco Central",
+    "Empresas que usam tecnologia de forma intensiva para oferecer serviços financeiros com modelos de negócio inovadores",
+    "Qualquer empresa de tecnologia, mesmo sem relação com serviços financeiros",
+    "Um tipo jurídico específico de instituição financeira criado pela CVM"
+   ],
+   "correta": 1,
+   "explicacao": "Fintech descreve um modelo de negócio (serviço financeiro com uso intensivo de tecnologia), não um tipo jurídico. Pode ser instituição autorizada pelo BCB, participante registrado na CVM ou fornecedora de tecnologia."
+  },
+  {
+   "id": "t10-2",
+   "subtema": "10.1",
+   "enunciado": "Uma fintech concede empréstimos por meio de plataforma eletrônica usando exclusivamente capital próprio, sem captar recursos do público. Ela se enquadra como:",
+   "alternativas": [
+    "Sociedade de Empréstimo entre Pessoas (SEP)",
+    "Instituição de pagamento credenciadora",
+    "Plataforma de investimento participativo",
+    "Sociedade de Crédito Direto (SCD)"
+   ],
+   "correta": 3,
+   "explicacao": "A SCD empresta o próprio capital por plataforma eletrônica e não capta depósitos. A SEP apenas intermedeia empréstimos entre credores e devedores."
+  },
+  {
+   "id": "t10-3",
+   "subtema": "10.1",
+   "enunciado": "Na Sociedade de Empréstimo entre Pessoas (SEP), o risco de crédito das operações recai principalmente sobre:",
+   "alternativas": [
+    "Os credores (investidores) que financiam os empréstimos",
+    "A própria SEP, com seu capital",
+    "O Fundo Garantidor de Créditos (FGC)",
+    "O Banco Central do Brasil"
+   ],
+   "correta": 0,
+   "explicacao": "A SEP é o P2P lending: aproxima credores e devedores, e o dinheiro dos credores financia diretamente o empréstimo. O risco de inadimplência é deles, sem cobertura do FGC."
+  },
+  {
+   "id": "t10-4",
+   "subtema": "10.1",
+   "enunciado": "Sobre a SCD e a SEP, é correto afirmar que:",
+   "alternativas": [
+    "Ambas podem captar depósitos à vista do público",
+    "São registradas na CVM como plataformas de financiamento coletivo",
+    "São instituições autorizadas e supervisionadas pelo Banco Central do Brasil",
+    "Dispensam autorização por serem fintechs"
+   ],
+   "correta": 2,
+   "explicacao": "SCD e SEP foram criadas pelo CMN em 2018 e dependem de autorização do BCB. Nenhuma delas capta depósitos do público."
+  },
+  {
+   "id": "t10-5",
+   "subtema": "10.1",
+   "enunciado": "Uma plataforma na internet permite que pequenas empresas captem recursos de muitos investidores por meio de ofertas públicas de valores mobiliários com dispensa de registro. Trata-se de:",
+   "alternativas": [
+    "Um robo-advisor",
+    "Uma plataforma de investimento participativo (crowdfunding de investimento), regulada pela CVM",
+    "Uma Sociedade de Crédito Direto",
+    "Uma iniciadora de transação de pagamento"
+   ],
+   "correta": 1,
+   "explicacao": "O financiamento coletivo de investimento (Res. CVM 88) envolve oferta de valores mobiliários, por isso é regulado pela CVM, com limites de captação e de investimento para o varejo."
+  },
+  {
+   "id": "t10-6",
+   "subtema": "10.1",
+   "enunciado": "Insurtech, wealthtech e regtech são fintechs voltadas, respectivamente, a:",
+   "alternativas": [
+    "Crédito, câmbio e pagamentos",
+    "Pagamentos, seguros e criptoativos",
+    "Regulação, seguros e crédito",
+    "Seguros, investimentos/gestão de patrimônio e cumprimento regulatório"
+   ],
+   "correta": 3,
+   "explicacao": "Insurtech atua em seguros, wealthtech em investimentos e gestão de patrimônio e regtech em tecnologia para cumprimento da regulação."
+  },
+  {
+   "id": "t10-7",
+   "subtema": "10.1",
+   "enunciado": "A instituição de pagamento que emite moeda eletrônica e administra contas de pagamento pré-pagas é o:",
+   "alternativas": [
+    "Emissor de moeda eletrônica",
+    "Credenciador",
+    "Emissor de instrumento de pagamento pós-pago",
+    "Iniciador de transação de pagamento"
+   ],
+   "correta": 0,
+   "explicacao": "O emissor de moeda eletrônica administra contas pré-pagas. O pós-pago é o emissor de cartão de crédito; o credenciador habilita lojistas; o iniciador dispara pagamentos a partir de contas em outras instituições."
+  },
+  {
+   "id": "t10-8",
+   "subtema": "10.1",
+   "enunciado": "Uma das principais mudanças que as plataformas digitais de investimento trouxeram para o investidor de varejo foi:",
+   "alternativas": [
+    "A eliminação do risco de mercado dos produtos",
+    "O acesso a produtos de muitas gestoras (arquitetura aberta), com custos e aplicações mínimas menores",
+    "A dispensa da verificação de suitability",
+    "A garantia de rentabilidade mínima"
+   ],
+   "correta": 1,
+   "explicacao": "Os marketplaces e corretoras digitais ampliaram a oferta e reduziram custos e mínimos, abrindo espaço para gestoras independentes. O risco dos produtos e as obrigações regulatórias continuam."
+  },
+  {
+   "id": "t10-9",
+   "subtema": "10.1",
+   "enunciado": "Uma gestora contrata uma fintech que agrega dados de mercado, calcula o risco das carteiras, controla o enquadramento e gera os relatórios para os cotistas. Esse uso de fintech na gestão de investimentos se dá principalmente em:",
+   "alternativas": [
+    "Distribuição de cotas ao varejo",
+    "Concessão de crédito",
+    "Middle e back office",
+    "Emissão de moeda eletrônica"
+   ],
+   "correta": 2,
+   "explicacao": "Dados, risco, enquadramento e relatórios são funções de middle e back office, frequentemente contratadas como serviço (SaaS) de fintechs."
+  },
+  {
+   "id": "t10-10",
+   "subtema": "10.1",
+   "enunciado": "Entre os riscos associados ao crescimento das fintechs, destaca-se:",
+   "alternativas": [
+    "A redução da concorrência no sistema financeiro",
+    "O aumento obrigatório das tarifas bancárias",
+    "A impossibilidade de atender clientes digitais",
+    "O risco cibernético e de proteção de dados, além de possível arbitragem regulatória"
+   ],
+   "correta": 3,
+   "explicacao": "As fintechs aumentam a concorrência, mas trazem riscos cibernéticos, de dados, de dependência de terceiros e de arbitragem regulatória."
+  },
+  {
+   "id": "t10-11",
+   "subtema": "10.1",
+   "enunciado": "Uma corretora digital oferece pelo aplicativo fundos de dezenas de gestoras. Em relação à verificação da adequação dos produtos ao perfil do cliente (suitability), a corretora:",
+   "alternativas": [
+    "Fica dispensada, por atuar apenas por meio digital",
+    "Continua obrigada a verificá-la, podendo usar meios digitais para isso",
+    "Só precisa verificá-la para investidores profissionais",
+    "Transfere a obrigação para o gestor de cada fundo"
+   ],
+   "correta": 1,
+   "explicacao": "A tecnologia muda o canal, não a obrigação. O distribuidor continua sujeito ao dever de suitability (Res. CVM 30), ao KYC e às regras de prevenção à lavagem de dinheiro."
+  },
+  {
+   "id": "t10-12",
+   "subtema": "10.2",
+   "enunciado": "A Distributed Ledger Technology (DLT) caracteriza-se por:",
+   "alternativas": [
+    "Um banco de dados centralizado, mantido por uma única instituição",
+    "Um sistema de pagamentos instantâneos operado pelo BCB",
+    "Um registro compartilhado e replicado entre vários participantes (nós), sincronizado por um mecanismo de consenso",
+    "Um algoritmo de negociação de alta frequência"
+   ],
+   "correta": 2,
+   "explicacao": "Na DLT não há uma cópia oficial única: o livro-razão é replicado entre os nós, que concordam sobre o registro válido por meio do consenso."
+  },
+  {
+   "id": "t10-13",
+   "subtema": "10.2",
+   "enunciado": "No blockchain, cada bloco guarda o hash do bloco anterior. A principal consequência disso é:",
+   "alternativas": [
+    "Tornar a alteração de registros passados facilmente detectável, o que dá imutabilidade prática ao histórico",
+    "Tornar as transações anônimas e impossíveis de rastrear",
+    "Permitir que qualquer participante altere livremente o histórico",
+    "Dispensar o mecanismo de consenso"
+   ],
+   "correta": 0,
+   "explicacao": "Alterar um bloco antigo muda seu hash e quebra o encadeamento com todos os blocos seguintes, o que denuncia a adulteração."
+  },
+  {
+   "id": "t10-14",
+   "subtema": "10.2",
+   "enunciado": "Sobre a relação entre blockchain e DLT, é correto afirmar que:",
+   "alternativas": [
+    "Toda DLT é um blockchain",
+    "São tecnologias sem relação entre si",
+    "DLT é o nome de uma criptomoeda",
+    "Blockchain é um tipo de DLT, em que os registros são organizados em blocos encadeados"
+   ],
+   "correta": 3,
+   "explicacao": "DLT é o gênero e blockchain é uma espécie. Todo blockchain é DLT, mas há DLTs que não organizam os dados em cadeia de blocos."
+  },
+  {
+   "id": "t10-15",
+   "subtema": "10.2",
+   "enunciado": "Proof of Work (PoW) e Proof of Stake (PoS) são exemplos de:",
+   "alternativas": [
+    "Contratos inteligentes",
+    "Mecanismos de consenso",
+    "Tipos de stablecoin",
+    "Fases do Open Finance"
+   ],
+   "correta": 1,
+   "explicacao": "São formas de os nós chegarem a acordo sobre o registro válido. O PoW usa poder computacional e consome muita energia; o PoS usa ativos bloqueados como garantia."
+  },
+  {
+   "id": "t10-16",
+   "subtema": "10.2",
+   "enunciado": "Uma rede DLT em que apenas participantes previamente autorizados e identificados podem validar transações é chamada de:",
+   "alternativas": [
+    "Rede pública não permissionada",
+    "Rede permissionada (permissioned)",
+    "Rede peer-to-peer aberta",
+    "Rede de Proof of Work"
+   ],
+   "correta": 1,
+   "explicacao": "Nas redes permissionadas só participam e validam os autorizados. Isso as torna mais rápidas e controláveis, e é o modelo usado em consórcios de bancos e no piloto do Drex."
+  },
+  {
+   "id": "t10-17",
+   "subtema": "10.2",
+   "enunciado": "Smart contracts são:",
+   "alternativas": [
+    "Contratos em papel registrados em cartório e digitalizados",
+    "Contratos derivativos negociados em bolsa",
+    "Programas gravados na rede que executam regras automaticamente quando condições predefinidas são atendidas",
+    "Acordos de confidencialidade entre os nós da rede"
+   ],
+   "correta": 2,
+   "explicacao": "O smart contract é código que se executa sozinho, como pagar o cupom de um título tokenizado na data. Não é, por si só, um contrato jurídico."
+  },
+  {
+   "id": "t10-18",
+   "subtema": "10.2",
+   "enunciado": "A tokenização de ativos consiste em:",
+   "alternativas": [
+    "Representar digitalmente direitos sobre um ativo, como recebíveis, cotas ou imóveis, em tokens registrados em DLT",
+    "Converter ativos financeiros em dinheiro físico",
+    "Criar senhas de acesso a aplicativos de investimento",
+    "Substituir o ativo por um derivativo de balcão"
+   ],
+   "correta": 0,
+   "explicacao": "O token representa o direito sobre o ativo. Permite fracionar, negociar a qualquer hora e liquidar mais rápido, inclusive de forma atômica."
+  },
+  {
+   "id": "t10-19",
+   "subtema": "10.2",
+   "enunciado": "Em uma DLT, a liquidação \"entrega contra pagamento\" atômica significa que:",
+   "alternativas": [
+    "O pagamento ocorre em D+2",
+    "O ativo é sempre entregue antes do pagamento",
+    "Uma câmara central garante a operação depois da negociação",
+    "Ativo e pagamento são transferidos simultaneamente, e um só ocorre se o outro ocorrer"
+   ],
+   "correta": 3,
+   "explicacao": "Na liquidação atômica as duas pernas se executam juntas ou nenhuma se executa, o que elimina o risco de entregar sem receber."
+  },
+  {
+   "id": "t10-20",
+   "subtema": "10.2",
+   "enunciado": "O Drex é:",
+   "alternativas": [
+    "O sistema de pagamentos instantâneos do Banco Central",
+    "A plataforma em desenvolvimento pelo BCB para o real digital e a liquidação de ativos tokenizados, testada com DLT permissionada",
+    "Uma criptomoeda privada sem lastro",
+    "Um índice de ações de fintechs da B3"
+   ],
+   "correta": 1,
+   "explicacao": "O Drex é a iniciativa do BCB para o real digital e ativos tokenizados. Não confundir com o Pix, que é o sistema de pagamentos instantâneos."
+  },
+  {
+   "id": "t10-21",
+   "subtema": "10.2",
+   "enunciado": "Sobre o Pix, é correto afirmar que:",
+   "alternativas": [
+    "Funciona sobre um blockchain público",
+    "É uma criptomoeda emitida pelo BCB",
+    "É o mesmo que o Drex",
+    "É um sistema de pagamentos instantâneos centralizado, operado pelo BCB, que não usa DLT"
+   ],
+   "correta": 3,
+   "explicacao": "O Pix é centralizado: as transações são liquidadas na infraestrutura do BCB. Não usa blockchain e não é moeda digital."
+  },
+  {
+   "id": "t10-22",
+   "subtema": "10.2",
+   "enunciado": "Sobre as limitações do blockchain, é correto afirmar que:",
+   "alternativas": [
+    "A imutabilidade garante que a informação inserida na rede é verdadeira",
+    "O Proof of Work consome pouca energia",
+    "Erros gravados não se apagam, e a veracidade dos dados de entrada depende de fontes externas (oráculos)",
+    "As redes públicas têm escalabilidade ilimitada"
+   ],
+   "correta": 2,
+   "explicacao": "A rede garante a integridade do registro, não a veracidade do dado de origem. Um erro gravado só se corrige com nova transação de ajuste."
+  },
+  {
+   "id": "t10-23",
+   "subtema": "10.2",
+   "enunciado": "Segundo o entendimento da CVM (Parecer de Orientação 40), um criptoativo:",
+   "alternativas": [
+    "Nunca é valor mobiliário, por ser digital",
+    "Será valor mobiliário quando se enquadrar na definição legal, como contrato de investimento coletivo, independentemente da tecnologia usada",
+    "É sempre valor mobiliário",
+    "É moeda de curso legal no Brasil"
+   ],
+   "correta": 1,
+   "explicacao": "O que define a competência da CVM é a natureza econômica do ativo, não a tecnologia. Se o token é um investimento coletivo com expectativa de retorno pelo esforço de terceiros, é valor mobiliário."
+  },
+  {
+   "id": "t10-24",
+   "subtema": "10.3",
+   "enunciado": "Algo-trading (negociação algorítmica) consiste em:",
+   "alternativas": [
+    "Usar programas que geram e/ou executam ordens automaticamente segundo regras predefinidas",
+    "Negociar apenas com base em análise fundamentalista discricionária",
+    "Negociar exclusivamente criptoativos",
+    "Terceirizar a gestão a um robo-advisor"
+   ],
+   "correta": 0,
+   "explicacao": "O algoritmo segue regras de preço, volume, horário ou sinais estatísticos, seja para decidir o que negociar, seja para executar uma ordem já decidida."
+  },
+  {
+   "id": "t10-25",
+   "subtema": "10.3",
+   "enunciado": "O High-Frequency Trading (HFT) é caracterizado por:",
+   "alternativas": [
+    "Posições mantidas por meses ou anos",
+    "Decisões tomadas por um comitê de investimentos mensal",
+    "Baixa velocidade de execução e poucas ordens",
+    "Latência ultrabaixa, grande número de ordens, posições de curtíssimo prazo e uso de colocation"
+   ],
+   "correta": 3,
+   "explicacao": "O HFT ganha pouco por operação em enorme número de operações, com latência mínima e servidores junto à bolsa, e costuma encerrar o dia zerado."
+  },
+  {
+   "id": "t10-26",
+   "subtema": "10.3",
+   "enunciado": "Sobre a relação entre HFT e algo-trading, é correto afirmar que:",
+   "alternativas": [
+    "Todo algo-trading é HFT",
+    "HFT é um subconjunto do algo-trading, que se distingue pela velocidade e pelo giro",
+    "As duas atividades são proibidas no Brasil",
+    "O HFT não usa algoritmos"
+   ],
+   "correta": 1,
+   "explicacao": "Todo HFT é algorítmico, mas muitos algoritmos (como os de execução VWAP ou TWAP de um gestor) não são de alta frequência."
+  },
+  {
+   "id": "t10-27",
+   "subtema": "10.3",
+   "enunciado": "Um gestor quer comprar um lote grande de ações ao longo do dia, negociando mais nos horários de maior volume para se aproximar do preço médio ponderado pelo volume. O algoritmo de execução adequado é o:",
+   "alternativas": [
+    "TWAP",
+    "Market making",
+    "VWAP",
+    "Arbitragem estatística"
+   ],
+   "correta": 2,
+   "explicacao": "O VWAP mira o preço médio ponderado pelo volume. O TWAP distribui a ordem igualmente no tempo, sem considerar o volume."
+  },
+  {
+   "id": "t10-28",
+   "subtema": "10.3",
+   "enunciado": "Entre os benefícios atribuídos ao HFT, está:",
+   "alternativas": [
+    "A redução dos spreads e o aumento da liquidez em condições normais de mercado",
+    "A eliminação de quedas bruscas de preços",
+    "A garantia de lucro para o investidor de varejo",
+    "A redução da necessidade de supervisão do mercado"
+   ],
+   "correta": 0,
+   "explicacao": "Em condições normais o HFT estreita spreads e acelera a formação de preços. A crítica é que essa liquidez pode sumir no estresse, como no flash crash de 2010."
+  },
+  {
+   "id": "t10-29",
+   "subtema": "10.3",
+   "enunciado": "Um operador envia grandes ofertas sem intenção de executá-las, para induzir os demais participantes, e as cancela em seguida (spoofing/layering). Essa conduta é:",
+   "alternativas": [
+    "Uma estratégia legítima de formação de mercado",
+    "Obrigatória para os formadores de mercado",
+    "Uma técnica de machine learning",
+    "Vedada, podendo configurar manipulação ou prática não equitativa"
+   ],
+   "correta": 3,
+   "explicacao": "A velocidade em si é permitida; usá-la para criar aparência artificial de oferta ou demanda é manipulação, vedada pela regulação da CVM."
+  },
+  {
+   "id": "t10-30",
+   "subtema": "10.3",
+   "enunciado": "Robo-advisors são:",
+   "alternativas": [
+    "Robôs de alta frequência que fazem formação de mercado",
+    "Plataformas que automatizam a definição do perfil, a recomendação e/ou a gestão e o rebalanceamento de carteiras, em geral com baixo custo",
+    "Sistemas do BCB para supervisão de fintechs",
+    "Analistas humanos que atendem por videoconferência"
+   ],
+   "correta": 1,
+   "explicacao": "O robo-advisor aplica um questionário de perfil, propõe uma alocação (em geral com ETFs e fundos de baixo custo) e faz o rebalanceamento automático."
+  },
+  {
+   "id": "t10-31",
+   "subtema": "10.3",
+   "enunciado": "Uma gestora lança um aplicativo que monta para cada cliente uma carteira de ETFs e a rebalanceia sozinho, sem pedir autorização a cada ordem. No Brasil, essa atividade:",
+   "alternativas": [
+    "Dispensa registro na CVM, por ser automatizada",
+    "Exige apenas autorização do Banco Central",
+    "É administração de carteiras: exige registro na CVM, um responsável que responde pelo algoritmo e a verificação de suitability",
+    "Só pode atender investidores qualificados"
+   ],
+   "correta": 2,
+   "explicacao": "Decidir e executar sem consultar o cliente é gestão discricionária (Res. CVM 21). A automação não afasta a responsabilidade do diretor nem o dever de suitability."
+  },
+  {
+   "id": "t10-32",
+   "subtema": "10.3",
+   "enunciado": "Uma limitação típica dos robo-advisors é:",
+   "alternativas": [
+    "Custo de gestão mais alto que o de um gestor tradicional",
+    "Exigência de aplicação mínima elevada",
+    "Impossibilidade de rebalancear a carteira",
+    "Dificuldade de captar, por um questionário padronizado, situações complexas como planejamento sucessório e tributário"
+   ],
+   "correta": 3,
+   "explicacao": "Robo-advisors são baratos e acessíveis, mas o questionário padronizado capta mal situações complexas. Daí os modelos híbridos, com apoio humano."
+  },
+  {
+   "id": "t10-33",
+   "subtema": "10.3",
+   "enunciado": "No machine learning, o aprendizado supervisionado:",
+   "alternativas": [
+    "Treina o modelo com dados rotulados (entradas e resultado conhecido) para prever o resultado em dados novos",
+    "Usa dados sem rótulo para encontrar agrupamentos",
+    "Aprende por tentativa e erro com base em recompensas",
+    "Dispensa o uso de dados históricos"
+   ],
+   "correta": 0,
+   "explicacao": "No supervisionado o modelo aprende com exemplos de resposta conhecida, como prever inadimplência a partir de contratos já liquidados ou inadimplidos."
+  },
+  {
+   "id": "t10-34",
+   "subtema": "10.3",
+   "enunciado": "Segmentar a base de clientes em grupos com características semelhantes, sem categorias definidas previamente, é tarefa típica de:",
+   "alternativas": [
+    "Aprendizado supervisionado (regressão)",
+    "Aprendizado por reforço",
+    "Aprendizado não supervisionado (clusterização)",
+    "High-frequency trading"
+   ],
+   "correta": 2,
+   "explicacao": "Sem rótulos, o modelo busca estrutura nos dados. Clusterização e redução de dimensão (como PCA) são técnicas não supervisionadas."
+  },
+  {
+   "id": "t10-35",
+   "subtema": "10.3",
+   "enunciado": "Um modelo de machine learning apresenta excelente desempenho no backtest e desempenho fraco fora da amostra. O problema mais provável é:",
+   "alternativas": [
+    "Underfitting (subajuste)",
+    "Overfitting (sobreajuste) aos dados de treino",
+    "Excesso de dados fora da amostra",
+    "Latência alta na execução"
+   ],
+   "correta": 1,
+   "explicacao": "O modelo decorou o ruído dos dados de treino. Remédios: validação cruzada, testes fora da amostra (walk-forward) e modelos mais simples."
+  },
+  {
+   "id": "t10-36",
+   "subtema": "10.3",
+   "enunciado": "Um agente computacional aprende a fatiar ordens grandes recebendo recompensa quando reduz o custo de execução e punição quando o aumenta. Trata-se de:",
+   "alternativas": [
+    "Aprendizado não supervisionado",
+    "Análise fundamentalista",
+    "Regressão linear",
+    "Aprendizado por reforço"
+   ],
+   "correta": 3,
+   "explicacao": "O aprendizado por reforço funciona por tentativa e erro, guiado por recompensas e punições."
+  },
+  {
+   "id": "t10-37",
+   "subtema": "10.3",
+   "enunciado": "Analisar automaticamente o tom de atas do Copom e de notícias para gerar sinais de investimento é uma aplicação de:",
+   "alternativas": [
+    "Processamento de linguagem natural (NLP)",
+    "Proof of Stake",
+    "TWAP",
+    "Open Banking"
+   ],
+   "correta": 0,
+   "explicacao": "O NLP extrai informação de textos, por exemplo para a análise de sentimento de documentos e notícias."
+  },
+  {
+   "id": "t10-38",
+   "subtema": "10.4",
+   "enunciado": "O Open Finance no Brasil consiste em:",
+   "alternativas": [
+    "A obrigação de os bancos divulgarem seus balanços diariamente",
+    "O compartilhamento padronizado de dados e serviços entre instituições autorizadas, por meio de APIs, com consentimento do cliente",
+    "A abertura de capital obrigatória das fintechs",
+    "O sistema de pagamentos instantâneos do BCB"
+   ],
+   "correta": 1,
+   "explicacao": "O Open Finance, regulado pelo CMN e pelo BCB, permite que o cliente leve seus dados e serviços para outras instituições de forma padronizada e segura."
+  },
+  {
+   "id": "t10-39",
+   "subtema": "10.4",
+   "enunciado": "No Open Finance, quem decide se os dados de um cliente serão compartilhados com outra instituição é:",
+   "alternativas": [
+    "A instituição que detém os dados",
+    "O Banco Central",
+    "O próprio cliente, por meio de consentimento",
+    "A instituição que vai receber os dados"
+   ],
+   "correta": 2,
+   "explicacao": "O princípio é que os dados pertencem ao cliente. Sem o consentimento dele não há compartilhamento."
+  },
+  {
+   "id": "t10-40",
+   "subtema": "10.4",
+   "enunciado": "A fase do Open Banking que tratou do compartilhamento de dados públicos das instituições, como produtos, tarifas e canais de atendimento, foi a:",
+   "alternativas": [
+    "Fase 1",
+    "Fase 2",
+    "Fase 3",
+    "Fase 4"
+   ],
+   "correta": 0,
+   "explicacao": "Fase 1: dados das instituições. Fase 2: dados dos clientes. Fase 3: serviços. Fase 4: investimentos, seguros, previdência e câmbio."
+  },
+  {
+   "id": "t10-41",
+   "subtema": "10.4",
+   "enunciado": "A iniciação de transação de pagamento, como um Pix disparado por outra instituição a partir da conta do cliente, foi introduzida na:",
+   "alternativas": [
+    "Fase 1",
+    "Fase 2",
+    "Fase 3",
+    "Fase 4"
+   ],
+   "correta": 2,
+   "explicacao": "A fase 3 trouxe os serviços: iniciação de pagamento e encaminhamento de proposta de crédito."
+  },
+  {
+   "id": "t10-42",
+   "subtema": "10.4",
+   "enunciado": "A ampliação do escopo para câmbio, investimentos, seguros e previdência, que marcou a passagem de Open Banking para Open Finance, ocorreu na:",
+   "alternativas": [
+    "Fase 1",
+    "Fase 2",
+    "Fase 3",
+    "Fase 4"
+   ],
+   "correta": 3,
+   "explicacao": "A fase 4 levou o compartilhamento para além dos produtos bancários, o que deu origem ao nome Open Finance."
+  },
+  {
+   "id": "t10-43",
+   "subtema": "10.4",
+   "enunciado": "O compartilhamento de dados cadastrais e transacionais dos clientes, como contas, cartões e operações de crédito, mediante consentimento, foi introduzido na:",
+   "alternativas": [
+    "Fase 1",
+    "Fase 2",
+    "Fase 3",
+    "Fase 4"
+   ],
+   "correta": 1,
+   "explicacao": "A fase 2 foi a primeira a envolver dados dos próprios clientes, sempre com consentimento."
+  },
+  {
+   "id": "t10-44",
+   "subtema": "10.4",
+   "enunciado": "Sobre o consentimento no Open Finance, é correto afirmar que:",
+   "alternativas": [
+    "Uma vez dado, não pode ser revogado",
+    "Pode ser genérico, valendo para qualquer finalidade",
+    "Deve ter finalidade determinada e prazo definido, e o cliente pode revogá-lo a qualquer momento",
+    "É dado pela instituição transmissora em nome do cliente"
+   ],
+   "correta": 2,
+   "explicacao": "O consentimento é do cliente, específico quanto à finalidade, com prazo, e revogável a qualquer tempo."
+  },
+  {
+   "id": "t10-45",
+   "subtema": "10.4",
+   "enunciado": "A participação no Open Finance é obrigatória para:",
+   "alternativas": [
+    "As instituições dos segmentos S1 e S2",
+    "Todas as fintechs, sem exceção",
+    "Apenas as cooperativas de crédito",
+    "Os clientes pessoa física"
+   ],
+   "correta": 0,
+   "explicacao": "As maiores instituições (S1 e S2) são obrigadas a participar; para as demais a adesão é voluntária, com reciprocidade. Para o cliente, compartilhar é sempre uma escolha."
+  },
+  {
+   "id": "t10-46",
+   "subtema": "10.4",
+   "enunciado": "Um benefício esperado do Open Finance para a gestão e a distribuição de investimentos é:",
+   "alternativas": [
+    "A garantia de rentabilidade aos investidores",
+    "A dispensa de cumprimento da LGPD",
+    "A redução da concorrência entre distribuidores",
+    "A visão consolidada do patrimônio do cliente em várias instituições, permitindo recomendações e suitability mais bem informados"
+   ],
+   "correta": 3,
+   "explicacao": "Com os dados de investimentos compartilhados (fase 4), o distribuidor ou consultor enxerga o patrimônio total do cliente, com o consentimento dele."
+  },
+  {
+   "id": "t10-47",
+   "subtema": "10.4",
+   "enunciado": "O sandbox regulatório é:",
+   "alternativas": [
+    "Uma dispensa permanente de toda a regulação para fintechs",
+    "Um ambiente experimental em que participantes autorizados testam, por prazo determinado, com limites e sob supervisão, modelos de negócio inovadores, com dispensa de alguns requisitos regulatórios",
+    "Um fundo de investimento em startups administrado pela CVM",
+    "Um segmento de negociação da B3 para empresas de tecnologia"
+   ],
+   "correta": 1,
+   "explicacao": "O sandbox é temporário, limitado e monitorado. Serve para testar inovações que a regulação existente não comporta bem."
+  },
+  {
+   "id": "t10-48",
+   "subtema": "10.4",
+   "enunciado": "No sandbox regulatório da CVM (Resolução CVM 29), é correto afirmar que:",
+   "alternativas": [
+    "A autorização temporária dispensa o participante de todas as normas, inclusive as de prevenção à lavagem de dinheiro",
+    "A autorização temporária se converte automaticamente em registro definitivo ao fim do prazo",
+    "O participante opera com limites e prazo determinado, sob acompanhamento da CVM, e deve informar aos clientes a natureza experimental da atividade",
+    "Só bancos podem participar"
+   ],
+   "correta": 2,
+   "explicacao": "A dispensa é parcial e temporária. Ao fim do prazo, o participante precisa obter a autorização definitiva ou encerrar a atividade de forma ordenada."
+  },
+  {
+   "id": "t10-49",
+   "subtema": "10.4",
+   "enunciado": "Um dos objetivos do sandbox regulatório para o próprio regulador é:",
+   "alternativas": [
+    "Aprender com os testes e avaliar a necessidade de ajustar a regulação",
+    "Aumentar a arrecadação de taxas de fiscalização",
+    "Escolher previamente os vencedores do mercado",
+    "Restringir a entrada de novos concorrentes"
+   ],
+   "correta": 0,
+   "explicacao": "O sandbox gera conhecimento para o regulador, que pode adaptar as normas a modelos inovadores, além de estimular a concorrência."
+  },
+  {
+   "id": "t10-50",
+   "subtema": "10.4",
+   "enunciado": "Uma empresa quer usar o sandbox da CVM para distribuir cotas de fundos por um aplicativo comum, atividade que já é plenamente regulada e praticada por diversas corretoras. O pedido tende a ser:",
+   "alternativas": [
+    "Aceito, porque toda atividade digital é inovadora",
+    "Aceito, desde que a empresa tenha capital elevado",
+    "Recusado, porque o sandbox só aceita bancos",
+    "Recusado, porque o sandbox se destina a modelos de negócio inovadores, e essa atividade já cabe na regulação existente"
+   ],
+   "correta": 3,
+   "explicacao": "Um dos critérios centrais é a inovação. Atividade já comportada pela regulação vigente deve seguir o caminho normal de autorização."
+  },
+  {
+   "id": "t10-51",
+   "subtema": "10.4",
+   "enunciado": "RegTech refere-se a:",
+   "alternativas": [
+    "Tecnologias usadas pelas entidades reguladas para cumprir as exigências regulatórias de forma mais eficiente",
+    "Tecnologias de negociação de alta frequência",
+    "Normas sobre tecnologia editadas pelo Banco Central",
+    "Moedas digitais emitidas por bancos centrais"
+   ],
+   "correta": 0,
+   "explicacao": "RegTech é a tecnologia do lado dos regulados. Quando é o supervisor que usa a tecnologia, fala-se em SupTech."
+  },
+  {
+   "id": "t10-52",
+   "subtema": "10.4",
+   "enunciado": "Quando a CVM ou o BCB usam análise de grandes volumes de dados e inteligência artificial para supervisionar o mercado, fala-se em:",
+   "alternativas": [
+    "RegTech",
+    "Insurtech",
+    "SupTech",
+    "Open Insurance"
+   ],
+   "correta": 2,
+   "explicacao": "SupTech é a tecnologia aplicada pelos supervisores, por exemplo para detectar indícios de irregularidade e priorizar a supervisão baseada em risco."
+  },
+  {
+   "id": "t10-53",
+   "subtema": "10.4",
+   "enunciado": "Uma gestora implanta um sistema que bloqueia, antes do envio, ordens que desenquadrariam os fundos (pre-trade compliance) e passa a monitorar automaticamente os investimentos pessoais dos funcionários. É correto afirmar que:",
+   "alternativas": [
+    "Com o sistema, a responsabilidade regulatória passa ao fornecedor do software",
+    "Trata-se de SupTech, por envolver supervisão",
+    "Esse tipo de controle automatizado é vedado pela CVM",
+    "Trata-se de RegTech, e a responsabilidade pelo cumprimento das regras continua sendo da gestora e de seu diretor responsável"
+   ],
+   "correta": 3,
+   "explicacao": "Ferramentas de RegTech tornam o controle mais eficiente, mas não transferem a responsabilidade regulatória, que permanece com a instituição regulada."
+  },
+  {
+   "id": "t10-54",
+   "subtema": "10.4",
+   "enunciado": "Uma aplicação típica de RegTech na prevenção à lavagem de dinheiro em uma gestora ou distribuidora é:",
+   "alternativas": [
+    "O monitoramento automático de operações atípicas e o cruzamento de clientes com listas restritivas e de pessoas politicamente expostas",
+    "A formação de mercado com alta frequência",
+    "A tokenização das cotas dos fundos",
+    "O cálculo do VWAP das ordens"
+   ],
+   "correta": 0,
+   "explicacao": "Monitorar operações atípicas, listas restritivas e PEP é aplicação clássica de RegTech em PLD/FT (Res. CVM 50)."
+  }
+ ]
+}

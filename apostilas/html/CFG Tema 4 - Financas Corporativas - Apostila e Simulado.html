@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFG Tema 4 · Finanças Corporativas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: apostila em coluna de leitura com índice lateral fixo; simulado no fim como "folha de prova". */
+:root{
+  --bg:#f3f5f6; --paper:#ffffff; --ink:#15222c; --muted:#5a6873; --line:#d8dfe3;
+  --accent:#0f6b64; --accent-soft:#e2f0ee; --formula:#fff6e0; --formula-ink:#6a4a00;
+  --ok:#1d7a3e; --ok-soft:#e3f3e8; --bad:#b3261e; --bad-soft:#fbe6e4;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);margin:0}
+.wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px;max-width:1180px;margin:0 auto;padding-inline:24px;padding-block:32px 80px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:14px}
+nav.toc .k{font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+nav.toc a{display:grid;grid-template-columns:34px 1fr;gap:4px;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--accent-soft);outline:none}
+nav.toc a span:first-child{font-family:var(--f-mono);color:var(--accent);font-size:13px}
+nav.toc a.quiz{margin-top:10px;background:var(--accent);color:var(--paper);font-weight:600}
+nav.toc a.quiz span:first-child{color:var(--paper)}
+main{min-width:0}
+header.hero{padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font:650 clamp(32px,5vw,48px)/1.08 var(--f-display);margin:12px 0 14px;text-wrap:balance}
+h2{font:650 30px/1.15 var(--f-display);margin:0 0 6px;text-wrap:balance}
+h3{font:600 17px/1.3 var(--f-body);margin:26px 0 8px}
+.lede{max-width:66ch;color:var(--muted);font-size:17px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section.topic{padding-block:40px 8px;border-bottom:1px solid var(--line)}
+.num{font:500 13px/1 var(--f-mono);color:var(--accent);letter-spacing:.06em}
+.why{color:var(--muted);max-width:66ch;margin:0 0 6px}
+p,li{max-width:70ch}
+ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600}
+td.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.formula{background:var(--formula);color:var(--formula-ink);border-radius:8px;padding:12px 16px;margin:12px 0;font:15px/1.6 var(--f-mono);overflow-x:auto}
+.formula .lbl{display:block;font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+.ex{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:14px 0}
+.ex .lbl{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ex p{margin:6px 0}
+.pegadinha{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:14px 0}
+.pegadinha b:first-child{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--bad);display:block;margin-bottom:6px}
+code{font-family:var(--f-mono);font-size:.92em}
+/* Simulado */
+#simulado{padding-top:44px}
+.qbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 20px}
+.qbar label{font-size:14px;color:var(--muted)}
+select,button{font:inherit}
+select{padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+button{cursor:pointer;border-radius:6px;padding:9px 16px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-weight:600}
+button.ghost{background:transparent;color:var(--accent)}
+button:focus-visible,select:focus-visible,.opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.45;cursor:default}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px}
+.qhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.progress{height:4px;background:var(--line);border-radius:4px;margin:10px 0 18px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.qtext{font:600 18px/1.45 var(--f-body);margin:0 0 16px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:28px 1fr;gap:8px;text-align:left;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-weight:400}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .l{font-family:var(--f-mono);color:var(--muted)}
+.opt.ok{background:var(--ok-soft);border-color:var(--ok)}
+.opt.bad{background:var(--bad-soft);border-color:var(--bad)}
+.opt:disabled{cursor:default;opacity:1}
+.fb{margin-top:16px;padding:12px 16px;border-radius:8px;background:var(--accent-soft)}
+.fb strong.ok{color:var(--ok)} .fb strong.bad{color:var(--bad)}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.score{font:650 44px/1 var(--f-display)}
+.bars{display:grid;gap:8px;margin:18px 0}
+.bar{display:grid;grid-template-columns:minmax(0,210px) 1fr 70px;gap:10px;align-items:center;font-size:14px}
+.bar .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--accent)}
+.bar .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
+.hint{font-size:13px;color:var(--muted)}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:12px;padding-inline:16px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:4px}
+  nav.toc .k{width:100%}
+  nav.toc a{grid-template-columns:auto 1fr;padding:5px 8px;border:1px solid var(--line)}
+  .bar{grid-template-columns:1fr 60px}
+  .bar .t{grid-column:1/-1;order:3}
+}
+@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .wrap{display:block;max-width:none;padding:0}
+  nav.toc{display:none}
+  section.topic{break-inside:auto;padding-block:18px 4px}
+  h2,h3{break-after:avoid}
+  table,.formula,.ex,.pegadinha{break-inside:avoid}
+  .formula{background:#f6f1e2;color:#000}
+  th{background:#e8eef0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <div class="k">Tema 4 · índice</div>
+  <a href="#t41"><span>4.1</span><span>Orçamento de capital</span></a>
+  <a href="#t42"><span>4.2</span><span>Estrutura e custo de capital</span></a>
+  <a href="#t43"><span>4.3</span><span>Proventos, emissão e recompra</span></a>
+  <a href="#t44"><span>4.4</span><span>Reestruturação de empresas</span></a>
+  <a href="#t45"><span>4.5</span><span>Governança corporativa</span></a>
+  <a href="#simulado" class="quiz"><span>✓</span><span>Simulado (80 questões)</span></a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">CFG · Certificação ANBIMA de Fundamentos em Gestão</div>
+  <h1>Finanças Corporativas</h1>
+  <p class="lede">Apostila do tema 4, que vale de 3% a 7% da prova. É o olhar de dentro da empresa: como ela escolhe projetos, quanto custa o seu capital, como devolve dinheiro ao acionista, como se reestrutura e como é governada. Cada bloco traz o conceito, a fórmula, um exemplo resolvido (com a sequência na HP 12C quando ajuda) e as pegadinhas mais comuns. O simulado no fim corrige na hora e mostra o desempenho por subtema.</p>
+  <div class="meta"><span>Base <b>Orientações de Estudo CFG (D.02.84)</b></span><span>Peso <b>3–7%</b></span><span>Subtemas <b>4.1 a 4.5</b></span></div>
+</header>
+
+<!-- 4.1 -->
+<section class="topic" id="t41">
+  <div class="num">4.1</div>
+  <h2>Orçamento de capital</h2>
+  <p class="why">Como decidir se um projeto de investimento cria valor: payback, VPL e TIR, os conflitos entre eles, a inflação e as ferramentas para medir o risco do projeto.</p>
+
+  <h3>Payback simples e payback descontado</h3>
+  <ul>
+    <li><b>Payback simples:</b> tempo até que a soma dos fluxos de caixa recupere o investimento inicial, <b>sem descontar</b> os fluxos.</li>
+    <li><b>Payback descontado:</b> a mesma ideia, mas com cada fluxo trazido a valor presente pelo custo de capital. É sempre <b>maior</b> (ou igual) ao simples.</li>
+    <li><b>Limitações dos dois:</b> ignoram os fluxos <b>depois</b> do ponto de recuperação e não dizem se o projeto cria valor. O simples ainda ignora o valor do dinheiro no tempo. Servem como medida de <b>liquidez e risco</b> ("em quanto tempo o dinheiro volta"), não como critério principal.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Fração do último ano</span>Payback = anos completos antes da recuperação + (saldo que falta recuperar ÷ fluxo do ano seguinte)</div>
+  <div class="ex"><span class="lbl">Exemplo: projeto P, custo de capital de 10%</span>
+    <div class="tbl"><table>
+      <tr><th>Ano</th><th>Fluxo</th><th>Acumulado</th><th>VP a 10%</th><th>VP acumulado</th></tr>
+      <tr><td class="n">0</td><td class="n">−1.000</td><td class="n">−1.000</td><td class="n">−1.000,00</td><td class="n">−1.000,00</td></tr>
+      <tr><td class="n">1</td><td class="n">300</td><td class="n">−700</td><td class="n">272,73</td><td class="n">−727,27</td></tr>
+      <tr><td class="n">2</td><td class="n">400</td><td class="n">−300</td><td class="n">330,58</td><td class="n">−396,69</td></tr>
+      <tr><td class="n">3</td><td class="n">500</td><td class="n">+200</td><td class="n">375,66</td><td class="n">−21,03</td></tr>
+      <tr><td class="n">4</td><td class="n">200</td><td class="n">+400</td><td class="n">136,60</td><td class="n">+115,57</td></tr>
+    </table></div>
+    <p><b>Payback simples:</b> depois de 2 anos faltam 300, e o ano 3 gera 500. Payback = 2 + 300/500 = <b>2,6 anos</b>.</p>
+    <p><b>Payback descontado:</b> depois de 3 anos faltam 21,03 em valor presente, e o ano 4 traz 136,60. Payback = 3 + 21,03/136,60 = <b>3,15 anos</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Um projeto pode ter payback curto e VPL negativo (se os fluxos param logo depois), ou payback longo e VPL muito positivo (fluxos grandes no fim). O payback não substitui o VPL.</div>
+
+  <h3>Valor Presente Líquido (VPL)</h3>
+  <ul>
+    <li>É a soma dos fluxos de caixa descontados ao <b>custo de capital</b> (a taxa mínima de atratividade), incluindo o investimento inicial.</li>
+    <li><b>Regra:</b> VPL &gt; 0 → aceita (o projeto rende mais que o custo de capital e cria valor para o acionista). VPL &lt; 0 → rejeita. Entre projetos excludentes, escolhe-se o de <b>maior VPL</b>.</li>
+    <li>O VPL é <b>aditivo</b>: o VPL de dois projetos juntos é a soma dos VPLs.</li>
+  </ul>
+  <div class="formula"><span class="lbl">VPL</span>VPL = CF<sub>0</sub> + CF<sub>1</sub>/(1+r) + CF<sub>2</sub>/(1+r)² + … + CF<sub>n</sub>/(1+r)<sup>n</sup></div>
+  <div class="ex"><span class="lbl">Exemplo: projeto P a 10%</span>
+    <p>VPL = −1.000 + 272,73 + 330,58 + 375,66 + 136,60 = <b>+115,57</b>. O projeto cria valor.</p>
+    <p><b>HP 12C:</b> <code>f</code> <code>REG</code>, 1000 <code>CHS</code> <code>g</code> <code>CF0</code>, 300 <code>g</code> <code>CFj</code>, 400 <code>g</code> <code>CFj</code>, 500 <code>g</code> <code>CFj</code>, 200 <code>g</code> <code>CFj</code>, 10 <code>i</code>, <code>f</code> <code>NPV</code> → 115,57. Em seguida <code>f</code> <code>IRR</code> → 15,32%.</p>
+  </div>
+
+  <h3>O gráfico do VPL × taxa de desconto (perfil do VPL)</h3>
+  <ul>
+    <li>No eixo horizontal fica a taxa de desconto e no vertical o VPL. Para um projeto <b>convencional</b> (saída no início, entradas depois) a curva é <b>decrescente</b> e convexa.</li>
+    <li>O ponto em que a curva corta o <b>eixo vertical</b> (taxa = 0) é a soma simples dos fluxos. No projeto P, 400.</li>
+    <li>O ponto em que corta o <b>eixo horizontal</b> (VPL = 0) é a <b>TIR</b>. No projeto P, 15,32%.</li>
+    <li>Projetos com fluxos mais <b>distantes</b> (longos) têm curva mais <b>inclinada</b>: o VPL é mais sensível à taxa.</li>
+    <li>Quando as curvas de dois projetos se cruzam, a taxa do cruzamento é a <b>taxa de Fisher</b> (crossover rate).</li>
+  </ul>
+
+  <h3>TIR × VPL e projetos mutuamente exclusivos</h3>
+  <ul>
+    <li><b>TIR:</b> a taxa que zera o VPL. Regra: TIR &gt; custo de capital → aceita.</li>
+    <li>Para um projeto <b>isolado e convencional</b>, TIR e VPL dão a mesma resposta (aceitar ou rejeitar).</li>
+    <li><b>Problemas da TIR:</b>
+      <ul>
+        <li><b>Projetos mutuamente exclusivos</b> com escala ou distribuição no tempo diferentes: a TIR pode apontar um projeto e o VPL outro. Vale o <b>VPL</b>.</li>
+        <li>A TIR supõe que os fluxos intermediários são <b>reinvestidos à própria TIR</b>. O VPL supõe reinvestimento ao custo de capital, que é mais realista.</li>
+        <li>Fluxos <b>não convencionais</b> (troca de sinal mais de uma vez) podem gerar <b>várias TIRs</b> ou nenhuma.</li>
+        <li>A TIR é uma porcentagem e ignora a <b>escala</b>: 50% sobre 10 vale menos que 20% sobre 1.000.</li>
+      </ul></li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo de conflito (custo de capital de 10%)</span>
+    <div class="tbl"><table>
+      <tr><th>Projeto</th><th>Ano 0</th><th>Ano 1</th><th>Ano 2</th><th>Ano 3</th><th>TIR</th><th>VPL a 10%</th></tr>
+      <tr><td>C</td><td class="n">−500</td><td class="n">600</td><td class="n">0</td><td class="n">0</td><td class="n">20,0%</td><td class="n">45,45</td></tr>
+      <tr><td>E</td><td class="n">−500</td><td class="n">0</td><td class="n">0</td><td class="n">800</td><td class="n">16,96%</td><td class="n"><b>101,05</b></td></tr>
+    </table></div>
+    <p>A TIR prefere C; o VPL prefere E. Como são excludentes, escolhe-se <b>E</b>, que acrescenta mais valor ao acionista.</p>
+    <p><b>Taxa de Fisher:</b> TIR do fluxo diferencial E − C = (0; −600; 0; +800) → 800/600 = (1+x)², x = <b>15,47%</b>. Abaixo de 15,47% o VPL prefere E; acima, prefere C. O conflito só aparece quando o custo de capital está abaixo da taxa de Fisher.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>"Escolha o projeto de maior TIR" está errado para projetos mutuamente exclusivos. O critério correto é o maior VPL ao custo de capital da empresa.</div>
+
+  <h3>Inflação no orçamento de capital</h3>
+  <ul>
+    <li><b>Consistência:</b> fluxos <b>nominais</b> descontados pela taxa <b>nominal</b>; fluxos <b>reais</b> pela taxa <b>real</b>. Feito certo, o VPL é o mesmo.</li>
+    <li>Misturar (fluxo real com taxa nominal) <b>subestima</b> o VPL; fluxo nominal com taxa real <b>superestima</b>.</li>
+    <li><b>Efeitos reais da inflação:</b>
+      <ul>
+        <li>a depreciação é calculada sobre o custo histórico, então o <b>benefício fiscal da depreciação perde valor real</b> e o imposto real sobe;</li>
+        <li>a necessidade de capital de giro (estoques, recebíveis) cresce em termos nominais;</li>
+        <li>inflação maior que a esperada <b>transfere riqueza</b> do credor para o devedor de dívida prefixada;</li>
+        <li>receitas e custos podem não acompanhar a inflação na mesma velocidade.</li>
+      </ul></li>
+  </ul>
+  <div class="formula"><span class="lbl">Equação de Fisher</span>(1 + nominal) = (1 + real) × (1 + inflação)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Taxa real de 6%, inflação de 4,5%. Nominal = 1,06 × 1,045 − 1 = <b>10,77%</b> (somar daria 10,50%, que é só uma aproximação).</p>
+    <p>Fluxo real de 100 nos anos 1 e 2: VP real = 100/1,06 + 100/1,06² = 183,34. Em termos nominais os fluxos são 104,50 e 109,20; descontados a 10,77% dão os mesmos 183,34.</p>
+  </div>
+
+  <h3>Sensibilidade, cenários e Monte Carlo</h3>
+  <div class="tbl"><table>
+    <tr><th>Técnica</th><th>Como funciona</th><th>Ponto forte</th><th>Limitação</th></tr>
+    <tr><td><b>Sensibilidade</b></td><td>Muda <b>uma variável por vez</b> (preço, volume, custo, taxa) e mede o efeito no VPL</td><td>Mostra quais variáveis mais pesam</td><td>Ignora que as variáveis mudam juntas</td></tr>
+    <tr><td><b>Cenários</b></td><td>Muda <b>várias variáveis ao mesmo tempo</b>, de forma coerente (pessimista, base, otimista)</td><td>Captura a interação entre variáveis</td><td>Poucos cenários; probabilidades subjetivas</td></tr>
+    <tr><td><b>Monte Carlo</b></td><td>Atribui uma <b>distribuição de probabilidade</b> a cada variável (com correlações) e sorteia milhares de combinações</td><td>Gera a <b>distribuição do VPL</b> (média, desvio, probabilidade de VPL &lt; 0)</td><td>Depende das distribuições assumidas; dá trabalho; não diz qual taxa usar</td></tr>
+  </table></div>
+  <div class="ex"><span class="lbl">Exemplo de cenários</span>
+    <p>VPL pessimista −200 (25%), base 150 (50%) e otimista 400 (25%). VPL esperado = 0,25 × (−200) + 0,50 × 150 + 0,25 × 400 = <b>125</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>O Monte Carlo não elimina o risco nem "acha" o VPL certo: ele descreve a dispersão possível dos resultados. Também não se deve descontar os fluxos simulados por uma taxa que já embute o risco e depois ainda penalizar pela dispersão (dupla contagem).</div>
+</section>
+
+<!-- 4.2 -->
+<section class="topic" id="t42">
+  <div class="num">4.2</div>
+  <h2>Estrutura de capital e custo de capital</h2>
+  <p class="why">Quanto a empresa deve se financiar com dívida e com capital próprio, o que dizem Modigliani e Miller e como calcular o CMPC (WACC), que é a taxa usada para descontar os projetos.</p>
+
+  <h3>Risco do credor × risco do acionista</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Credor (dívida)</th><th>Acionista (capital próprio)</th></tr>
+    <tr><td>Remuneração</td><td>Juros contratados, <b>limitados</b></td><td>Lucro <b>residual</b>, ilimitado (dividendos e valorização)</td></tr>
+    <tr><td>Prioridade</td><td><b>Recebe primeiro</b> na operação e na falência</td><td>Recebe por último</td></tr>
+    <tr><td>Proteções</td><td>Garantias, covenants</td><td>Voto, controle</td></tr>
+    <tr><td>Risco e retorno exigido</td><td>Menores</td><td><b>Maiores</b></td></tr>
+  </table></div>
+  <ul>
+    <li>Mais dívida torna o lucro do acionista <b>mais volátil</b> (alavancagem financeira): o risco do acionista sobe, e a partir de certo ponto o do credor também.</li>
+    <li>Os interesses podem conflitar: o acionista de uma empresa muito endividada tem incentivo a aceitar projetos arriscados (ganha se der certo, o credor perde se der errado) e a <b>subinvestir</b> em projetos seguros.</li>
+  </ul>
+
+  <h3>Estrutura de capital alvo</h3>
+  <p>É a proporção de dívida e capital próprio que a empresa persegue no longo prazo. A estrutura real oscila em torno dela (emissões são em lotes, preços de mercado variam). Fatores que pesam na escolha:</p>
+  <ul>
+    <li><b>Risco do negócio</b> (volatilidade das vendas, alavancagem operacional): mais risco → menos dívida.</li>
+    <li><b>Impostos:</b> alíquota alta → dívida mais atraente (juros dedutíveis).</li>
+    <li><b>Tipo de ativo:</b> ativos <b>tangíveis</b>, que servem de garantia, suportam mais dívida; intangíveis (marcas, P&amp;D) suportam menos.</li>
+    <li><b>Estabilidade do fluxo de caixa</b> e lucratividade; <b>flexibilidade financeira</b> (reserva de capacidade de endividamento).</li>
+    <li>Custos de dificuldades financeiras, rating desejado, práticas do setor, condições de mercado e preferências da administração.</li>
+  </ul>
+
+  <h3>Modigliani e Miller sem impostos</h3>
+  <ul>
+    <li><b>Hipóteses:</b> mercados perfeitos, sem impostos, sem custos de falência ou de transação, informação simétrica, investidores tomam emprestado à mesma taxa das empresas.</li>
+    <li><b>Proposição I:</b> o valor da empresa <b>não depende</b> da estrutura de capital: V<sub>L</sub> = V<sub>U</sub>. O que importa são os ativos e os fluxos que eles geram ("o tamanho da pizza não muda com o modo de fatiar").</li>
+    <li><b>Proposição II:</b> o custo do capital próprio <b>sobe linearmente</b> com D/E, porque o acionista assume mais risco. O ganho de usar dívida "barata" é compensado exatamente pela alta de r<sub>E</sub>, e o <b>CMPC fica constante</b> = r<sub>0</sub>.</li>
+  </ul>
+  <div class="formula"><span class="lbl">MM II sem impostos</span>r<sub>E</sub> = r<sub>0</sub> + (r<sub>0</sub> − r<sub>D</sub>) × D/E<br>r<sub>0</sub> = custo de capital da empresa sem dívida (custo dos ativos)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>r<sub>0</sub> = 10%, r<sub>D</sub> = 6%, D/E = 1. r<sub>E</sub> = 10% + (10% − 6%) × 1 = <b>14%</b>. CMPC = 0,5 × 6% + 0,5 × 14% = 10% = r<sub>0</sub>.</p>
+  </div>
+
+  <h3>MM com impostos e teoria do trade-off estático</h3>
+  <ul>
+    <li><b>Com IR corporativo</b>, os juros são dedutíveis: o governo "fica" com menos. O valor da empresa alavancada é o da não alavancada <b>mais o valor presente do benefício fiscal</b>. Para dívida perpétua, VP do benefício = t × D.</li>
+    <li>r<sub>E</sub> ainda sobe com a dívida, mas mais devagar, e o <b>CMPC cai</b> com a alavancagem. Levado ao extremo, o ótimo seria 100% de dívida.</li>
+    <li><b>Trade-off estático:</b> na prática, mais dívida aumenta a probabilidade e o custo esperado de <b>dificuldades financeiras</b> (custos diretos de falência, como advogados e perda de valor dos ativos, e indiretos, como perda de clientes, fornecedores e funcionários e custos de agência). A estrutura ótima é onde o <b>benefício fiscal marginal = custo marginal esperado de dificuldades financeiras</b>. Nesse ponto o valor da empresa é máximo e o CMPC é mínimo.</li>
+  </ul>
+  <div class="formula"><span class="lbl">MM com impostos</span>V<sub>L</sub> = V<sub>U</sub> + t × D<br>r<sub>E</sub> = r<sub>0</sub> + (r<sub>0</sub> − r<sub>D</sub>) × (1 − t) × D/E<br>Trade-off: V<sub>L</sub> = V<sub>U</sub> + t × D − VP(custos de dificuldades financeiras)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Mesmos dados (r<sub>0</sub> = 10%, r<sub>D</sub> = 6%, D/E = 1) com IR de 34%: r<sub>E</sub> = 10% + 4% × 0,66 × 1 = <b>12,64%</b>. CMPC = 0,5 × 6% × 0,66 + 0,5 × 12,64% = <b>8,30%</b>, abaixo dos 10% sem dívida.</p>
+    <p>Uma empresa sem dívida vale 50 milhões e emite 20 milhões de dívida perpétua para recomprar ações: V<sub>L</sub> = 50 + 0,34 × 20 = <b>56,8 milhões</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Na MM sem impostos o CMPC é constante mesmo com dívida mais barata que o capital próprio. Quem diz "a dívida é mais barata, logo o CMPC cai" esquece que r<sub>E</sub> sobe. A queda do CMPC só aparece por causa do benefício fiscal.</div>
+
+  <h3>Custo médio ponderado de capital (CMPC / WACC)</h3>
+  <ul>
+    <li>É o retorno mínimo que a empresa precisa obter sobre os ativos para remunerar credores e acionistas. É a taxa de desconto do <b>fluxo de caixa livre da firma</b> e dos projetos com risco igual ao da empresa.</li>
+    <li>Projetos com risco diferente do da empresa exigem taxa ajustada (CMPC de uma divisão ou de empresas comparáveis).</li>
+  </ul>
+  <div class="formula"><span class="lbl">CMPC</span>CMPC = w<sub>D</sub> × r<sub>D</sub> × (1 − t) + w<sub>P</sub> × r<sub>P</sub> + w<sub>E</sub> × r<sub>E</sub><br>w = peso de cada fonte (dívida, preferenciais com dividendo fixo, capital próprio); soma = 1</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Estrutura alvo: 70% capital próprio e 30% dívida. r<sub>E</sub> = 16%, r<sub>D</sub> = 12% antes do IR, alíquota de 34%.</p>
+    <p>CMPC = 0,30 × 12% × 0,66 + 0,70 × 16% = 2,376% + 11,2% = <b>13,58%</b>.</p>
+  </div>
+
+  <h3>O papel dos impostos</h3>
+  <ul>
+    <li>Os juros são despesa <b>dedutível</b> na base do IR e da CSLL (no Brasil, alíquota combinada usual de <b>34%</b>), então o custo efetivo da dívida é r<sub>D</sub> × (1 − t).</li>
+    <li>Os dividendos não são dedutíveis, então o capital próprio <b>não</b> recebe o ajuste. Exceção brasileira: os <b>juros sobre capital próprio (JCP)</b> são dedutíveis dentro dos limites legais, o que reduz um pouco o custo do capital próprio.</li>
+    <li>Se a empresa não tem lucro tributável (prejuízo), o benefício fiscal não é aproveitado e o custo da dívida é o próprio r<sub>D</sub>.</li>
+  </ul>
+
+  <h3>Pesos do CMPC</h3>
+  <ol>
+    <li><b>Estrutura de capital alvo</b> da empresa: é a preferida, porque o CMPC deve refletir como a empresa vai se financiar.</li>
+    <li>Na falta de informação sobre o alvo: a estrutura atual a <b>valores de mercado</b> (valor de mercado das ações e da dívida), ou a <b>tendência</b> dessa estrutura.</li>
+    <li>A <b>média de empresas comparáveis</b> do setor.</li>
+  </ol>
+  <div class="pegadinha"><b>Pegadinha</b>Valores <b>contábeis</b> do patrimônio líquido não são os pesos corretos: o PL contábil pode estar muito longe do valor de mercado. Para a dívida, o valor contábil costuma ser uma aproximação aceitável.</div>
+
+  <h3>Custo da dívida: YTM e rating</h3>
+  <ul>
+    <li><b>Método YTM:</b> o custo da dívida é a taxa que o mercado exige <b>hoje</b> (yield to maturity) das debêntures da empresa, e não o cupom contratado no passado. Ele é a TIR do título ao preço de mercado.</li>
+    <li><b>Método do rating:</b> se a empresa não tem dívida negociada, usa-se a taxa de títulos de empresas com o <b>mesmo rating</b> e prazo, ou seja, a taxa do título público de mesmo prazo mais o spread típico do rating.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo: YTM</span>
+    <p>Debênture prefixada com valor de face de 1.000, cupom anual de 12%, 3 anos até o vencimento, negociada a 1.050. IR de 34%.</p>
+    <p><b>HP 12C:</b> 1050 <code>CHS</code> <code>PV</code>, 120 <code>PMT</code>, 1000 <code>FV</code>, 3 <code>n</code>, <code>i</code> → <b>9,99%</b>. Custo após o IR = 9,99% × 0,66 = <b>6,59%</b>.</p>
+    <p>O cupom (12%) não é o custo atual: como o título negocia acima do par, o mercado exige menos que o cupom.</p>
+  </div>
+  <div class="ex"><span class="lbl">Exemplo: rating</span>
+    <p>Empresa com rating AA, sem dívida negociada. Título público prefixado de 3 anos a 11%; spread típico de debêntures AA de 3 anos: 1,20 p.p. Custo antes do IR = 12,20%; após o IR = 12,20% × 0,66 = <b>8,05%</b>.</p>
+  </div>
+
+  <h3>Custo do capital próprio: CAPM e modelo de dividendos</h3>
+  <div class="formula"><span class="lbl">CAPM</span>r<sub>E</sub> = R<sub>f</sub> + β × [E(R<sub>m</sub>) − R<sub>f</sub>]</div>
+  <div class="formula"><span class="lbl">Modelo de desconto de dividendos (Gordon)</span>P<sub>0</sub> = D<sub>1</sub> / (r<sub>E</sub> − g)   →   r<sub>E</sub> = D<sub>1</sub>/P<sub>0</sub> + g<br>D<sub>1</sub> = D<sub>0</sub> × (1 + g)   ·   g sustentável = taxa de retenção × ROE</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p><b>CAPM:</b> R<sub>f</sub> = 10%, β = 1,3, prêmio de mercado 5,5%. r<sub>E</sub> = 10% + 1,3 × 5,5% = <b>17,15%</b>.</p>
+    <p><b>DDM:</b> dividendo recém-pago D<sub>0</sub> = 1,50, crescimento de 4% ao ano, preço de 25. D<sub>1</sub> = 1,56. r<sub>E</sub> = 1,56/25 + 4% = <b>10,24%</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>No Gordon, use o dividendo do <b>próximo</b> período (D<sub>1</sub>). Se a questão dá o dividendo "recém-pago" ou "do último ano", multiplique por (1 + g) antes de dividir pelo preço. No CAPM, cuidado para não somar o retorno de mercado inteiro no lugar do prêmio.</div>
+
+  <h3>Prêmio de risco país</h3>
+  <ul>
+    <li>Em mercados emergentes há riscos que o beta medido contra um índice global (ou americano) não capta: instabilidade política, risco de <b>default soberano</b>, controles de capital, risco cambial e de inflação, regras que mudam.</li>
+    <li>Por isso se soma um <b>prêmio de risco país</b> (CRP, country risk premium) ao custo do capital próprio. Uma medida comum é o spread do título soberano em dólar sobre o Treasury (ex.: EMBI+), às vezes ajustado pela volatilidade relativa das ações e dos títulos.</li>
+    <li>O resultado sai em dólar; para chegar à taxa em reais, ajusta-se pelo diferencial de inflação.</li>
+  </ul>
+  <div class="formula"><span class="lbl">CAPM com risco país</span>r<sub>E</sub> (US$) = R<sub>f</sub> (Treasury) + β × prêmio de mercado + CRP<br>r<sub>E</sub> (R$) = (1 + r<sub>E</sub> US$) × (1 + π<sub>Brasil</sub>) / (1 + π<sub>EUA</sub>) − 1</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Treasury 4%, β = 0,9, prêmio de mercado 5%, risco país 2,5 p.p. r<sub>E</sub> = 4% + 0,9 × 5% + 2,5% = <b>11,0% em dólar</b>. Com inflação de 4,5% no Brasil e 2,5% nos EUA: 1,11 × 1,045/1,025 − 1 = <b>13,17% em reais</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Ignorar o risco país subestima o custo de capital e superestima o valor da empresa e o VPL dos projetos no país emergente.</div>
+</section>
+
+<!-- 4.3 -->
+<section class="topic" id="t43">
+  <div class="num">4.3</div>
+  <h2>Proventos, emissão e recompra de ações</h2>
+  <p class="why">Como a empresa devolve caixa ao acionista (dividendos, JCP, recompra), o que muda com bonificações, desdobramentos e grupamentos, e as teorias sobre o efeito da política de dividendos no valor.</p>
+
+  <h3>Proventos e eventos societários</h3>
+  <div class="tbl"><table>
+    <tr><th>Evento</th><th>O que é</th><th>Efeito para o acionista</th></tr>
+    <tr><td><b>Dividendo</b></td><td>Distribuição de parte do lucro em dinheiro. A Lei 6.404 exige um <b>dividendo mínimo obrigatório</b> definido no estatuto (se o estatuto for omisso, 50% do lucro líquido ajustado; estatutos que passam a prever o mínimo não podem fixá-lo abaixo de 25%)</td><td>Recebe caixa; o preço cai aproximadamente o valor do dividendo na data ex. Riqueza total igual (antes de impostos)</td></tr>
+    <tr><td><b>Juros sobre capital próprio (JCP)</b></td><td>Remuneração do capital calculada pela TJLP sobre contas do PL, dentro de limites legais. Pode ser imputada ao dividendo mínimo</td><td>Para a empresa, é <b>dedutível</b> do IR e da CSLL. Para o acionista, sofre IR retido na fonte</td></tr>
+    <tr><td><b>Bonificação em dinheiro</b></td><td>Pagamento extraordinário em dinheiro (participação nos lucros fora do dividendo regular)</td><td>Economicamente igual ao dividendo: caixa na mão, preço ajusta</td></tr>
+    <tr><td><b>Bonificação em ações</b></td><td>Capitalização de reservas com <b>entrega de novas ações</b> aos acionistas, na proporção da participação</td><td>Mais ações, preço menor, <b>riqueza igual</b>. Participação percentual não muda</td></tr>
+    <tr><td><b>Desdobramento (split)</b></td><td>Cada ação vira várias (ex.: 1 para 2), sem mudar o capital</td><td>Quantidade sobe, preço cai na mesma proporção; riqueza igual. Costuma melhorar a liquidez</td></tr>
+    <tr><td><b>Grupamento (inplit)</b></td><td>Várias ações viram uma (ex.: 10 para 1)</td><td>Quantidade cai, preço sobe na proporção; riqueza igual. Usado quando a ação está "centavo"</td></tr>
+    <tr><td><b>Direito de subscrição</b></td><td>Preferência para comprar ações novas num aumento de capital, na proporção da participação</td><td>Pode subscrever (evita diluição) ou vender o direito</td></tr>
+    <tr><td><b>Bônus de subscrição</b></td><td>Título emitido pela companhia que dá direito de <b>subscrever ações</b> em aumento de capital, a preço e prazo predeterminados (funciona como uma opção de compra emitida pela empresa)</td><td>Tem valor próprio e é negociável; o exercício gera diluição</td></tr>
+  </table></div>
+  <div class="ex"><span class="lbl">Exemplo: bonificação e grupamento</span>
+    <p><b>Bonificação de 10%</b> com ação a 44: o investidor com 100 ações passa a ter 110, e o preço teórico vai a 44/1,10 = <b>40</b>. Patrimônio: 100 × 44 = 110 × 40 = 4.400.</p>
+    <p><b>Grupamento de 10 para 1</b> com ação a 0,80: 5.000 ações viram 500, a 8,00. Patrimônio: 4.000 nos dois casos.</p>
+  </div>
+  <p class="hint">Tributação: historicamente dividendos são isentos para a pessoa física e o JCP sofre IR na fonte de 15%. A legislação mudou recentemente (retenção sobre dividendos elevados pagos a pessoas físicas a partir de 2026 e alíquota maior para o JCP); confira a regra cobrada na versão vigente do material da ANBIMA.</p>
+  <div class="pegadinha"><b>Pegadinha</b>Bonificação em ações, desdobramento e grupamento <b>não criam riqueza</b>: só mudam a quantidade de ações e o preço por ação. O valor de mercado total da empresa e a participação de cada acionista ficam iguais.</div>
+
+  <h3>Recompra × dividendos: efeito na riqueza</h3>
+  <p>Num mercado sem impostos nem custos, e com a recompra feita ao preço de mercado, as duas formas de distribuir o mesmo caixa deixam o acionista <b>igualmente rico</b>. As diferenças vêm de impostos, sinalização e flexibilidade.</p>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Empresa com 1 milhão de ações a 50 (valor de 50 milhões) e 5 milhões de caixa excedente.</p>
+    <p><b>Dividendo de 5 por ação:</b> a empresa passa a valer 45 milhões; ação ex-dividendo a 45. Acionista: 45 em ação + 5 em dinheiro = <b>50</b>.</p>
+    <p><b>Recompra a 50:</b> recompra 100 mil ações. Sobram 900 mil ações e 45 milhões de valor: 45/0,9 = <b>50</b> por ação. Quem vendeu recebeu 50; quem ficou tem ação de 50.</p>
+  </div>
+  <ul>
+    <li><b>Vantagens da recompra:</b> flexibilidade (não cria expectativa de repetição), o acionista escolhe se vende, pode ter tratamento tributário melhor (ganho de capital), sinaliza que a ação está barata, compensa a diluição de planos de opções.</li>
+    <li><b>Vantagens do dividendo:</b> todos recebem igualmente, sinal de compromisso com o pagamento, atende investidores que querem renda.</li>
+  </ul>
+
+  <h3>Recompra com dívida e o LPA</h3>
+  <p>Se a empresa toma dívida para recomprar ações, o lucro cai (juros) e o número de ações cai (recompra). O efeito líquido no LPA depende da comparação entre o <b>custo da dívida após o IR</b> e o <b>earnings yield</b> (L/P = LPA ÷ preço, o inverso do P/L).</p>
+  <div class="formula"><span class="lbl">Regra</span>r<sub>D</sub> × (1 − t) &lt; LPA/P  → LPA <b>sobe</b><br>r<sub>D</sub> × (1 − t) &gt; LPA/P  → LPA <b>cai</b><br>r<sub>D</sub> × (1 − t) = LPA/P  → LPA não muda</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Lucro líquido de 10 milhões, 5 milhões de ações, preço de 40. LPA = 2,00; earnings yield = 2/40 = 5%. A empresa toma 40 milhões e recompra 1 milhão de ações. IR de 34%.</p>
+    <div class="tbl"><table>
+      <tr><th>Taxa da dívida</th><th>Custo após IR</th><th>Novo lucro</th><th>Novo LPA</th></tr>
+      <tr><td class="n">6%</td><td class="n">3,96% (&lt; 5%)</td><td class="n">10 − 40 × 3,96% = 8,416</td><td class="n"><b>2,104</b> (sobe)</td></tr>
+      <tr><td class="n">8%</td><td class="n">5,28% (&gt; 5%)</td><td class="n">10 − 40 × 5,28% = 7,888</td><td class="n"><b>1,972</b> (cai)</td></tr>
+    </table></div>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>LPA maior não significa acionista mais rico: a dívida também aumenta o risco do acionista, e o P/L tende a cair. Compare com o custo da dívida <b>depois</b> do IR, não antes.</div>
+
+  <h3>Efeito contábil da recompra: valor patrimonial por ação</h3>
+  <ul>
+    <li>A recompra reduz o PL contábil pelo valor pago (ações em tesouraria).</li>
+    <li>Recompra a preço <b>acima</b> do valor patrimonial por ação (VPA) → o VPA <b>cai</b>. Recompra a preço <b>abaixo</b> do VPA → o VPA <b>sobe</b>.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>PL de 200 milhões e 10 milhões de ações: VPA = 20. Recompra de 1 milhão de ações:</p>
+    <p>A 30 (acima do VPA): (200 − 30)/9 = <b>18,89</b>, cai. A 15 (abaixo do VPA): (200 − 15)/9 = <b>20,56</b>, sobe.</p>
+  </div>
+
+  <h3>Métodos de recompra</h3>
+  <div class="tbl"><table>
+    <tr><th>Método</th><th>Como funciona</th><th>Observação</th></tr>
+    <tr><td><b>Em bolsa (open market)</b></td><td>Compra aos poucos no mercado, ao preço vigente, dentro de um programa aprovado</td><td>O mais comum e flexível; sem prêmio; mais lento</td></tr>
+    <tr><td><b>Oferta a preço fixo (tender offer)</b></td><td>Oferece um preço fixo, em geral com <b>prêmio</b>, por certa quantidade, em prazo definido</td><td>Rápida; sinal forte; mais cara</td></tr>
+    <tr><td><b>Leilão holandês (Dutch auction)</b></td><td>Define uma faixa de preços; os acionistas informam quanto vendem a cada preço; a empresa paga a todos o <b>menor preço</b> que completa a quantidade desejada</td><td>Descobre o preço e tende a custar menos que o preço fixo</td></tr>
+    <tr><td><b>Negociação direta</b></td><td>Compra de um acionista específico (geralmente um grande bloco)</td><td>Risco de favorecer um acionista (greenmail)</td></tr>
+  </table></div>
+
+  <h3>Motivos para a recompra e o que ela sinaliza</h3>
+  <ul>
+    <li><b>Sinalização:</b> a administração acha a ação <b>subavaliada</b>; o mercado costuma reagir positivamente.</li>
+    <li><b>Flexibilidade:</b> distribui caixa excedente sem compromisso de repetir, ao contrário de um aumento de dividendo.</li>
+    <li><b>Compensar diluição</b> de planos de opções para executivos.</li>
+    <li><b>Ajustar a estrutura de capital</b> (aumentar a alavancagem rumo ao alvo).</li>
+    <li><b>Tributação</b> mais favorável para o acionista, quando ganho de capital é menos tributado que dividendo.</li>
+    <li>Pode ser lida negativamente se indicar que a empresa ficou <b>sem projetos</b> de VPL positivo.</li>
+  </ul>
+
+  <h3>Cronograma de pagamento de dividendos e retorno total</h3>
+  <div class="tbl"><table>
+    <tr><th>Data</th><th>O que acontece</th></tr>
+    <tr><td><b>Declaração (aprovação)</b></td><td>O conselho ou a assembleia aprova o valor e as datas</td></tr>
+    <tr><td><b>Data-com</b></td><td>Último dia em que quem compra a ação tem direito ao provento</td></tr>
+    <tr><td><b>Data ex</b></td><td>Primeiro pregão <b>sem direito</b>: o preço passa a refletir a saída do provento e cai aproximadamente o seu valor</td></tr>
+    <tr><td><b>Registro</b></td><td>Data em que se apura quem é acionista (nos EUA, a data ex antecede o registro por causa do prazo de liquidação)</td></tr>
+    <tr><td><b>Pagamento</b></td><td>O dinheiro cai na conta. Não afeta o preço, que já se ajustou na data ex</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Retorno total com eventos</span>Retorno = (n<sub>final</sub> × P<sub>final</sub> + proventos recebidos − n<sub>inicial</sub> × P<sub>inicial</sub>) ÷ (n<sub>inicial</sub> × P<sub>inicial</sub>)<br>Ajuste a quantidade pelo desdobramento, grupamento ou bonificação antes de comparar preços</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Compra de 1 ação a 40. Desdobramento de 1 para 2. Depois, dividendo de 0,50 por ação (já desdobrada). Venda a 22.</p>
+    <p>Retorno = (2 × 22 + 2 × 0,50 − 40)/40 = 5/40 = <b>12,5%</b>. Comparar 22 com 40 sem ajustar daria −45%, que é o erro clássico.</p>
+  </div>
+
+  <h3>Fatores que afetam a política de dividendos</h3>
+  <ul>
+    <li><b>Oportunidades de investimento:</b> muitos projetos com VPL positivo → payout menor.</li>
+    <li><b>Volatilidade do lucro e do fluxo de caixa:</b> lucro instável → payout menor, para não precisar cortar.</li>
+    <li><b>Flexibilidade financeira</b> e acesso a mercados de capitais (emitir ações custa caro).</li>
+    <li><b>Impostos</b> sobre dividendos, JCP e ganhos de capital.</li>
+    <li><b>Restrições</b> legais e contratuais (dividendo mínimo obrigatório, covenants de dívida).</li>
+    <li>Preferências da base acionária (clientela) e estágio de maturidade da empresa.</li>
+  </ul>
+
+  <h3>Abordagens de política de dividendos</h3>
+  <div class="tbl"><table>
+    <tr><th>Abordagem</th><th>Regra</th><th>Prós e contras</th></tr>
+    <tr><td><b>Dividendo residual</b></td><td>Financia primeiro os projetos com VPL positivo, na proporção da estrutura alvo; distribui o que <b>sobra</b> do lucro</td><td>Minimiza emissão de ações e prioriza investimentos; mas os dividendos ficam <b>voláteis</b></td></tr>
+    <tr><td><b>Residual de longo prazo</b></td><td>Projeta os investimentos e lucros de vários anos e distribui o residual total de forma <b>suavizada</b></td><td>Mantém a lógica residual com estabilidade</td></tr>
+    <tr><td><b>Estabilidade de dividendo</b></td><td>Dividendo estável, ajustado devagar e só quando a mudança no lucro parece permanente</td><td>Agrada investidores e evita sinal negativo de cortes; pode exigir captação</td></tr>
+    <tr><td><b>Payout alvo (Lintner)</b></td><td>Persegue uma fração de longo prazo do lucro, ajustando gradualmente o dividendo em direção a ela</td><td>Combina estabilidade com vínculo ao lucro</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Dividendo residual</span>Capital próprio necessário = orçamento de capital × peso do capital próprio na estrutura alvo<br>Dividendo = lucro líquido − capital próprio necessário   (se negativo, dividendo zero)</div>
+  <div class="ex"><span class="lbl">Exemplo: dividendo residual</span>
+    <p>Lucro de 100 milhões, orçamento de capital de 120 milhões, estrutura alvo de 40% dívida e 60% capital próprio. Capital próprio necessário = 0,60 × 120 = 72. Dividendo = 100 − 72 = <b>28 milhões</b>. Os outros 48 milhões do orçamento vêm de dívida.</p>
+  </div>
+  <div class="formula"><span class="lbl">Payout alvo (modelo de ajuste de Lintner)</span>D<sub>1</sub> = D<sub>0</sub> + [(LPA<sub>1</sub> × payout alvo) − D<sub>0</sub>] × fator de ajuste<br>fator de ajuste = 1 / número de anos para chegar ao alvo</div>
+  <div class="ex"><span class="lbl">Exemplo: payout alvo</span>
+    <p>D<sub>0</sub> = 1,00; LPA esperado = 3,00; payout alvo de 50%; ajuste em 2,5 anos (fator 0,4). Dividendo-alvo = 1,50. D<sub>1</sub> = 1,00 + (1,50 − 1,00) × 0,4 = <b>1,20</b>.</p>
+  </div>
+
+  <h3>Por que pagar dividendos ou JCP (visão do emissor) e evolução das políticas</h3>
+  <ul>
+    <li><b>Dividendos:</b> atender o dividendo mínimo obrigatório, sinalizar solidez, atrair investidores que buscam renda, reduzir o caixa à disposição da administração (menos custo de agência).</li>
+    <li><b>JCP:</b> é dedutível do IR e da CSLL, gerando economia fiscal para a empresa. Vale a pena enquanto essa economia superar o imposto a mais que o acionista paga em relação ao dividendo.</li>
+    <li><b>Evolução:</b> nos EUA, a fração de empresas que pagam dividendos caiu desde os anos 1980 e as recompras ganharam espaço; as empresas maduras concentram os pagamentos. No Brasil, o dividendo mínimo obrigatório e o JCP tornam os pagamentos frequentes, e as mudanças na tributação alteram a escolha entre dividendo, JCP e recompra.</li>
+  </ul>
+
+  <h3>Teorias sobre dividendos</h3>
+  <div class="tbl"><table>
+    <tr><th>Teoria</th><th>Ideia</th><th>Implicação para o valor</th></tr>
+    <tr><td><b>Irrelevância (MM)</b></td><td>Em mercados perfeitos, o valor depende só das decisões de investimento. O acionista cria o próprio "dividendo caseiro" vendendo ações ou reinvestindo o dividendo</td><td>A política de dividendos <b>não afeta</b> o valor</td></tr>
+    <tr><td><b>Pássaro na mão (bird-in-the-hand)</b> — Gordon e Lintner</td><td>Dividendo hoje é mais certo que ganho de capital futuro; investidores pagam mais por ele</td><td>Payout maior → custo do capital próprio menor → <b>valor maior</b></td></tr>
+    <tr><td><b>Preferência tributária</b></td><td>Se o ganho de capital é tributado a alíquota menor, ou pode ser diferido, o investidor prefere retenção ou recompra</td><td>Payout <b>menor</b> → valor maior</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>MM chamam o argumento do pássaro na mão de falácia: o risco da empresa vem dos seus ativos e fluxos, não da forma de distribuí-los. O dividendo pago hoje reduz o preço da ação na mesma medida.</div>
+
+  <h3>Sinalização e P/L</h3>
+  <ul>
+    <li><b>Sinalização:</b> a administração sabe mais que o mercado (assimetria de informação). Como os dividendos são "pegajosos" e cortes são punidos, um <b>aumento</b> inesperado e sustentável sinaliza confiança no lucro futuro (preço sobe); um <b>corte</b> sinaliza problemas (preço cai). Iniciar dividendos também é lido como sinal positivo.</li>
+    <li><b>Dividendo regular e P/L maior:</b> pagamentos estáveis reduzem a incerteza percebida e o conflito de agência, o que reduz o custo do capital próprio (k). Pelo Gordon, o P/L sobe quando k cai.</li>
+  </ul>
+  <div class="formula"><span class="lbl">P/L pelo Gordon</span>P<sub>0</sub>/L<sub>1</sub> = payout / (k − g)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Payout de 60% e g = 5%. Com k = 12%, P/L = 0,60/0,07 = <b>8,6</b>. Se a regularidade dos dividendos derruba k para 11%, P/L = 0,60/0,06 = <b>10,0</b>.</p>
+  </div>
+</section>
+
+<!-- 4.4 -->
+<section class="topic" id="t44">
+  <div class="num">4.4</div>
+  <h2>Reestruturação de empresas</h2>
+  <p class="why">Fusões, aquisições, cisões, spin-offs, joint ventures e buyouts: o que é cada operação, por que é feita, como mexe nos preços e quem ganha numa aquisição.</p>
+
+  <h3>Desinvestimento, spin-off e cisão</h3>
+  <div class="tbl"><table>
+    <tr><th>Operação</th><th>O que é</th><th>Quem recebe</th></tr>
+    <tr><td><b>Desinvestimento (venda de ativo ou divisão)</b></td><td>A empresa <b>vende</b> uma divisão ou ativo a um terceiro</td><td>A empresa recebe <b>caixa</b> (ou títulos)</td></tr>
+    <tr><td><b>Spin-off</b></td><td>A divisão vira uma empresa independente e suas ações são <b>distribuídas aos acionistas</b> da controladora, na proporção da participação</td><td>Os acionistas recebem ações da nova empresa; a controladora <b>não recebe caixa</b></td></tr>
+    <tr><td><b>Equity carve-out</b></td><td>Venda ao público (IPO) de uma parte das ações da subsidiária</td><td>A controladora recebe caixa e mantém o controle</td></tr>
+    <tr><td><b>Cisão</b> (Lei 6.404, art. 229)</td><td>A companhia <b>transfere parcelas do seu patrimônio</b> para uma ou mais sociedades, novas ou já existentes. Pode ser <b>total</b> (a cindida se extingue) ou <b>parcial</b> (a cindida continua)</td><td>Os acionistas da cindida recebem ações das sociedades que absorvem o patrimônio</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>No spin-off não entra dinheiro na empresa: é uma separação, não uma venda. Quem recebe algo são os acionistas, que passam a ter ações de duas empresas.</div>
+
+  <h3>Joint ventures</h3>
+  <ul>
+    <li>Empreendimento <b>conjunto</b> de duas ou mais empresas, geralmente por meio de uma nova sociedade, com <b>controle, investimento e riscos compartilhados</b> para um objetivo específico.</li>
+    <li><b>Motivações:</b> dividir custos e riscos de projetos grandes, acesso a novos mercados (inclusive onde há restrição a estrangeiros), combinar tecnologias ou competências, ganhar escala sem uma fusão completa, testar a parceria antes de uma aquisição.</li>
+    <li>Desvantagens: conflitos entre os sócios, divisão do controle e dos resultados.</li>
+  </ul>
+
+  <h3>Fusão × incorporação</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Fusão (art. 228)</th><th>Incorporação (art. 227)</th></tr>
+    <tr><td>Definição</td><td>Duas ou mais sociedades se unem para formar uma <b>sociedade nova</b></td><td>Uma sociedade <b>absorve</b> outra(s)</td></tr>
+    <tr><td>Quem se extingue</td><td><b>Todas</b> as sociedades originais</td><td>Só a(s) incorporada(s); a <b>incorporadora sobrevive</b></td></tr>
+    <tr><td>Exemplo</td><td>A + B → C</td><td>A + B → A</td></tr>
+  </table></div>
+  <p>Em ambas a nova sociedade (ou a incorporadora) <b>sucede</b> em todos os direitos e obrigações. Na linguagem de mercado, "fusões e aquisições" (M&amp;A) inclui também a <b>aquisição de controle</b>, em que a alvo continua existindo como controlada.</p>
+
+  <h3>Desinvestimento voluntário: motivos e etapas</h3>
+  <ul>
+    <li><b>Motivos:</b> a divisão vale mais nas mãos de outro dono (melhor encaixe ou sinergia para o comprador), falta de sinergia com o negócio principal (foco), desempenho fraco, necessidade de caixa ou de reduzir dívida, eliminar o desconto de conglomerado, exigência regulatória ou de defesa da concorrência.</li>
+    <li><b>Etapas do processo:</b> decisão estratégica de vender → preparação (informações, separação contábil e operacional da unidade) → escolha do método (venda privada, leilão, spin-off, carve-out) → busca de compradores e negociação → aprovações e fechamento.</li>
+    <li><b>Avaliação financeira:</b> estimar os fluxos de caixa que a unidade gera com a empresa → descontar à taxa adequada ao <b>risco da unidade</b> → comparar o valor de manter com o preço oferecido, <b>líquido de impostos e custos</b> → vender se o preço líquido for maior.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Uma divisão gera fluxo de caixa livre perpétuo de 10 milhões por ano; o custo de capital adequado ao seu risco é 12%. Valor de manter = 10/0,12 = 83,3 milhões. Um comprador oferece 95 milhões líquidos de impostos e custos: a venda cria 11,7 milhões de valor.</p>
+  </div>
+
+  <h3>LBO e MBO</h3>
+  <ul>
+    <li><b>Leveraged buyout (LBO):</b> aquisição do controle (em geral fechando o capital) financiada <b>majoritariamente com dívida</b>, garantida pelos ativos e pelo fluxo de caixa da própria empresa comprada. Típico de fundos de private equity.</li>
+    <li><b>Management buyout (MBO):</b> LBO em que os compradores são os <b>próprios administradores</b> da empresa, normalmente com apoio de um fundo.</li>
+    <li><b>Motivações:</b> disciplina da dívida (o fluxo de caixa precisa pagar os juros, o que reduz desperdício e custo de agência), benefício fiscal dos juros, alinhamento de incentivos (gestores donos), ganhos de eficiência e venda posterior com lucro. Empresas-alvo típicas: fluxo de caixa estável, pouca dívida, ativos que servem de garantia, setor maduro.</li>
+    <li><b>Riscos:</b> alta alavancagem e risco de dificuldades financeiras; no MBO, conflito de interesse (o gestor comprador sabe mais que os vendedores e tem interesse em preço baixo).</li>
+  </ul>
+
+  <h3>Efeito sobre os preços e ciclo de negócios</h3>
+  <ul>
+    <li><b>Aquisições:</b> a ação da <b>alvo sobe</b>, aproximando-se do preço oferecido (prêmio típico de 30% a 40%); a da <b>adquirente</b> em média fica estável ou <b>cai</b>, porque o mercado desconfia do prêmio pago.</li>
+    <li><b>Spin-offs e desinvestimentos:</b> reação em geral <b>positiva</b> para a controladora (mais foco, fim do desconto de conglomerado, melhor avaliação das partes).</li>
+    <li><b>LBO/MBO:</b> os acionistas vendedores recebem prêmio.</li>
+    <li><b>Ciclo:</b> as ondas de fusões ocorrem em fases de <b>expansão</b> econômica e de mercado acionário em alta, com crédito farto e mais negócios pagos em ações (adquirentes com ações valorizadas). Nas <b>contrações</b> crescem os desinvestimentos, as vendas de ativos para levantar caixa e as aquisições de empresas em dificuldade a preços descontados. LBOs dependem de crédito barato e somem quando o crédito seca.</li>
+  </ul>
+
+  <h3>Valor pós-fusão e ganhos de cada lado</h3>
+  <div class="formula"><span class="lbl">Fórmulas</span>V<sub>AT</sub> = V<sub>A</sub> + V<sub>T</sub> + S − C<br>Prêmio (ganho da alvo) = P<sub>T</sub> − V<sub>T</sub><br>Ganho do adquirente = S − prêmio = S − (P<sub>T</sub> − V<sub>T</sub>)<br>S = sinergias · C = caixa pago · P<sub>T</sub> = preço pago pela alvo</div>
+  <div class="ex"><span class="lbl">Exemplo: pagamento em dinheiro</span>
+    <p>Adquirente vale 500 milhões, alvo vale 100 milhões, sinergias de 30 milhões, preço pago de 120 milhões em dinheiro.</p>
+    <p>V<sub>AT</sub> = 500 + 100 + 30 − 120 = <b>510</b>. Ganho da alvo = 120 − 100 = <b>20</b>. Ganho do adquirente = 30 − 20 = <b>10</b> (510 − 500).</p>
+  </div>
+  <div class="ex"><span class="lbl">Exemplo: pagamento em ações</span>
+    <p>Adquirente: 50 milhões de ações a 10 (500 milhões). Alvo: 20 milhões de ações a 5 (100 milhões). Sinergias de 30 milhões. Troca de 0,6 ação da adquirente por ação da alvo → emissão de 12 milhões de ações.</p>
+    <p>Sem saída de caixa: V<sub>AT</sub> = 500 + 100 + 30 = 630, com 62 milhões de ações → preço = <b>10,16</b>.</p>
+    <p>Acionistas da alvo: 12 × 10,16 = 121,94 → ganho de <b>21,94</b>. Acionistas da adquirente: 50 × 10,16 = 508,06 → ganho de <b>8,06</b>. Soma = 30 = sinergia.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>No pagamento em ações, o prêmio efetivo da alvo <b>não</b> é calculado com o preço de antes do anúncio (12 × 10 = 120): os acionistas da alvo viram sócios da combinada e dividem as sinergias e os riscos. Em dinheiro, o risco de a sinergia não se materializar fica todo com o adquirente.</div>
+
+  <h3>Quando uma fusão cria ou destrói valor</h3>
+  <ul>
+    <li><b>Cria valor:</b> sinergias reais de custo (escala, eliminação de duplicidades) e de receita (venda cruzada, poder de mercado), benefícios fiscais, troca de uma gestão ineficiente, aquisição de competências, preço pago abaixo do valor presente das sinergias.</li>
+    <li><b>Destrói valor:</b> <b>pagar demais</b> (prêmio maior que as sinergias), <b>excesso de confiança</b> dos gestores (hubris) e a "maldição do vencedor" em leilões, sinergias superestimadas, falhas de integração e choque de culturas, diversificação sem sinergia (o acionista diversifica sozinho, mais barato), motivações da administração (construir impérios, aumentar a própria remuneração).</li>
+  </ul>
+</section>
+
+<!-- 4.5 -->
+<section class="topic" id="t45">
+  <div class="num">4.5</div>
+  <h2>Governança corporativa</h2>
+  <p class="why">As regras e estruturas que protegem o acionista (e os demais interessados) dos conflitos de interesse dentro da empresa. Para o gestor de recursos, é parte da análise de risco de cada investimento.</p>
+
+  <h3>Definição e relevância</h3>
+  <ul>
+    <li>Segundo o IBGC, governança corporativa é o <b>sistema pelo qual as empresas são dirigidas, monitoradas e incentivadas</b>, envolvendo os relacionamentos entre sócios, conselho de administração, diretoria, órgãos de fiscalização e controle e demais partes interessadas.</li>
+    <li><b>Relevância:</b> reduz os conflitos de agência e o risco de expropriação, melhora a qualidade das decisões e das informações, facilita o acesso a capital e <b>reduz o custo de capital</b>. Empresas bem governadas tendem a ser avaliadas com prêmio.</li>
+  </ul>
+
+  <h3>Objetivos e atributos de um bom sistema</h3>
+  <ul>
+    <li><b>Objetivos:</b> alinhar os interesses de gestores e conselheiros aos dos acionistas, tratar todos os acionistas com equidade, proteger os ativos e garantir informação confiável.</li>
+    <li><b>Princípios do IBGC</b> (Código das Melhores Práticas): <b>transparência</b>, <b>equidade</b>, <b>prestação de contas</b> (accountability) e <b>responsabilidade corporativa</b>. A 6ª edição do código (2023) passou a listar integridade, transparência, equidade, responsabilização e sustentabilidade.</li>
+    <li><b>Atributos:</b> conselho com membros independentes e qualificados; separação entre presidente do conselho e diretor-presidente; comitês (auditoria, remuneração, indicação); auditoria independente; controles internos e gestão de riscos; remuneração atrelada ao desempenho de longo prazo; direitos dos acionistas claros; divulgação tempestiva e completa.</li>
+  </ul>
+
+  <h3>Independência do conselho de administração</h3>
+  <ul>
+    <li><b>Conselheiro independente:</b> não tem vínculo relevante com a companhia, o acionista controlador ou a administração que possa comprometer seu julgamento (não é empregado ou diretor, nem foi recentemente; não é parente de controlador ou administrador; não presta serviços relevantes à companhia; não é o próprio controlador).</li>
+    <li><b>Grau de independência</b> = proporção de conselheiros independentes no conselho.</li>
+    <li><b>Por que importa:</b> o conselho fiscaliza a diretoria e decide em nome de todos os acionistas. Independentes trazem julgamento isento, protegem os minoritários e reduzem o risco de decisões em benefício de controladores ou gestores (ex.: transações com partes relacionadas).</li>
+    <li><b>Novo Mercado (B3):</b> no mínimo <b>2 conselheiros independentes ou 20%</b> do conselho, o que for maior; vedado acumular presidente do conselho e diretor-presidente (salvo vacância).</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Ser eleito pelos minoritários não torna o conselheiro independente, e ser indicado pelo controlador não o impede de ser: o critério é a ausência de vínculos que comprometam o julgamento.</div>
+
+  <h3>Direitos do acionista: votação, propostas, classes e defesas</h3>
+  <div class="tbl"><table>
+    <tr><th>Mecanismo</th><th>O que é</th><th>Visão do acionista minoritário</th></tr>
+    <tr><td><b>Voto múltiplo</b> (art. 141)</td><td>Cada ação tem tantos votos quantos forem os cargos do conselho, e os votos podem ser <b>concentrados</b> num candidato. Pode ser pedido por quem tem pelo menos 10% do capital votante (a CVM reduz o percentual conforme o capital)</td><td><b>Favorável</b>: aumenta a chance de eleger um representante</td></tr>
+    <tr><td><b>Voto em separado</b></td><td>Minoritários com participação mínima elegem um conselheiro em votação separada</td><td>Favorável</td></tr>
+    <tr><td><b>Voto a distância e propostas de acionistas</b></td><td>Acionistas podem incluir candidatos e propostas no boletim de voto a distância e votar sem ir à assembleia</td><td>Favorável: facilita a participação e a fiscalização</td></tr>
+    <tr><td><b>Classes de ações</b></td><td>Ordinárias (ON, com voto) e preferenciais (PN, sem voto ou com voto restrito, com prioridade em dividendos). Desde 2021 é permitido o <b>voto plural</b> (até 10 votos por ação ON de certa classe, por prazo limitado)</td><td><b>Desfavorável</b> se separa controle e capital: o controlador manda com pouco capital próprio</td></tr>
+    <tr><td><b>Tag along</b> (art. 254-A)</td><td>Na venda do controle, o comprador deve fazer oferta aos ON minoritários por no mínimo <b>80%</b> do preço pago ao controlador. No Novo Mercado, <b>100%</b> para todas as ações</td><td>Favorável: divide o prêmio de controle</td></tr>
+    <tr><td><b>Poison pill</b> (cláusula de proteção à dispersão)</td><td>Quem atingir certa participação (ex.: 20% a 30%) é obrigado a fazer OPA para todos, em geral com prêmio</td><td><b>Ambígua</b>: protege contra tomada de controle barata, mas pode <b>entrincheirar</b> a gestão e afastar ofertas boas</td></tr>
+    <tr><td><b>Outras defesas</b></td><td>Conselho com mandatos escalonados, golden parachutes (indenizações generosas a executivos demitidos após aquisição), supermaioria para aprovar a operação</td><td>Em geral <b>desfavoráveis</b>: dificultam a disciplina do mercado de controle</td></tr>
+  </table></div>
+
+  <h3>Conflitos de interesse</h3>
+  <ul>
+    <li><b>Administradores × acionistas</b> (problema de agência clássico, principal-agente): os gestores podem buscar benefícios próprios (remuneração excessiva, mordomias), construir impérios, evitar riscos que interessam ao acionista ou se entrincheirar no cargo. Remédios: remuneração variável ligada a resultados de longo prazo e a ações, conselho independente, mercado de controle ativo.</li>
+    <li><b>Conselheiros × acionistas:</b> conselheiros sem independência podem favorecer a gestão ou o controlador que os indicou; acúmulo de cargos e falta de tempo.</li>
+    <li><b>Controlador × minoritários</b> (principal-principal): é o conflito <b>mais relevante no Brasil</b>, onde o controle é concentrado. Riscos: transações com partes relacionadas em condições desfavoráveis, remuneração excessiva de familiares, uso de informação privilegiada, decisões que beneficiam outras empresas do controlador (tunneling).</li>
+    <li><b>Acionistas × credores:</b> substituição de ativos (projetos mais arriscados) e distribuição excessiva de caixa em empresas endividadas.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>O golden parachute protege o executivo, não o acionista. E nos EUA o problema típico é gestor × acionista disperso; no Brasil, controlador × minoritário.</div>
+</section>
+
+<!-- Simulado -->
+<section id="simulado">
+  <div class="num">Simulado</div>
+  <h2>80 questões do tema 4</h2>
+  <p class="why">A correção sai a cada resposta. No fim aparecem a nota por subtema e a lista dos erros para revisar.</p>
+  <div class="qbar">
+    <label for="filt">Questões:</label>
+    <select id="filt"><option value="all">Todas (80)</option><option value="4.1">Só 4.1</option><option value="4.2">Só 4.2</option><option value="4.3">Só 4.3</option><option value="4.4">Só 4.4</option><option value="4.5">Só 4.5</option></select>
+    <label><input type="checkbox" id="shuf"> embaralhar</label>
+    <button id="start">Começar</button>
+  </div>
+  <div id="quiz"></div>
+</section>
+
+</main>
+</div>
+
+<script>
+const Q=[
+{s:"4.1",q:"Um projeto exige investimento de R$ 800 e gera R$ 200, R$ 300, R$ 400 e R$ 300 nos anos 1 a 4. O payback simples é de:",o:["2,75 anos","2,50 anos","3,00 anos","3,51 anos"],a:0,e:"Acumulado: −800 → −600 → −300 → +100. No ano 3 faltam 300 dos 400 gerados: 2 + 300/400 = 2,75 anos. 3,51 anos é o payback descontado a 12%."},
+{s:"4.1",q:"Um projeto exige R$ 800 e gera R$ 200, R$ 300, R$ 400 e R$ 300 nos anos 1 a 4. Com custo de capital de 12%, o payback descontado é de aproximadamente:",o:["3,51 anos","2,75 anos","3,25 anos","O projeto não se paga em 4 anos"],a:0,e:"VPs: 178,57; 239,16; 284,71; 190,66. Acumulado: −621,43 → −382,27 → −97,56 → +93,10. Payback = 3 + 97,56/190,66 = 3,51 anos. O descontado é sempre maior que o simples (2,75)."},
+{s:"4.1",q:"Fluxo de caixa: −R$ 2.000 hoje e R$ 800, R$ 900 e R$ 1.000 nos anos 1, 2 e 3. Com custo de capital de 10% ao ano, o VPL é:",o:["R$ 700,00","R$ 222,39","R$ 202,17","R$ 2.222,39"],a:1,e:"VP das entradas = 727,27 + 743,80 + 751,31 = 2.222,39. VPL = 2.222,39 − 2.000 = 222,39. HP 12C: 2000 CHS g CF0, 800 g CFj, 900 g CFj, 1000 g CFj, 10 i, f NPV. R$ 202,17 é o erro de não lançar o investimento em CF0 (todos os fluxos ficam um período adiantados); R$ 700 é a soma sem desconto."},
+{s:"4.1",q:"Um projeto custa R$ 1.000 e gera R$ 400 por ano durante 3 anos. A TIR é aproximadamente:",o:["6,67%","13,33%","20,00%","9,70%"],a:3,e:"HP 12C: 1000 CHS PV, 400 PMT, 3 n, i → 9,70%. 20% é o ganho total sem considerar o tempo (1.200/1.000 − 1); 6,67% é esse ganho dividido por 3."},
+{s:"4.1",q:"No gráfico do VPL em função da taxa de desconto de um projeto convencional, o ponto em que a curva cruza o eixo horizontal corresponde:",o:["Ao payback descontado","Ao custo de capital da empresa","À soma simples dos fluxos","À TIR do projeto"],a:3,e:"No eixo horizontal o VPL é zero, e a taxa que zera o VPL é a TIR. A soma simples dos fluxos é o ponto onde a curva corta o eixo vertical (taxa zero)."},
+{s:"4.1",q:"Em relação ao gráfico do VPL × taxa de desconto, é correto afirmar que, para projetos convencionais:",o:["O VPL cresce com a taxa de desconto","Todas as curvas cortam o eixo horizontal no mesmo ponto","Projetos com fluxos concentrados no fim têm curva mais inclinada, isto é, VPL mais sensível à taxa","A curva é uma reta horizontal"],a:2,e:"A curva é decrescente. Fluxos mais distantes são descontados por mais períodos, então o VPL varia mais com a taxa."},
+{s:"4.1",q:"Projetos mutuamente exclusivos, custo de capital de 10%. X: investe R$ 1.000 e recebe R$ 1.200 em 1 ano (TIR de 20%). Y: investe R$ 1.000 e recebe R$ 1.400 em 2 anos (TIR de 18,3%). A decisão correta é:",o:["Y, porque tem o maior VPL (R$ 157,02 contra R$ 90,91)","X, porque tem a maior TIR","Os dois, porque ambos têm TIR acima de 10%","Nenhum, porque as TIRs divergem"],a:0,e:"VPL X = 1.200/1,1 − 1.000 = 90,91. VPL Y = 1.400/1,21 − 1.000 = 157,02. Entre projetos excludentes vale o maior VPL. A TIR erra aqui porque supõe reinvestimento à própria TIR."},
+{s:"4.1",q:"X: −R$ 1.000 hoje e +R$ 1.200 no ano 1. Y: −R$ 1.000 hoje, nada no ano 1 e +R$ 1.400 no ano 2. A partir de que custo de capital X passa a ter VPL maior que Y?",o:["16,67%","10,00%","18,32%","20,00%"],a:0,e:"Taxa de Fisher = TIR do fluxo diferencial Y − X: 0; −1.200; +1.400. 1.400/1.200 − 1 = 16,67%. Abaixo disso Y tem maior VPL; acima, X."},
+{s:"4.1",q:"Um projeto tem fluxos de caixa não convencionais, com o sinal trocando duas vezes (−, +, −). O problema potencial da TIR nesse caso é:",o:["A TIR fica sempre igual ao custo de capital","Pode haver mais de uma TIR, ou nenhuma","O VPL não pode ser calculado","O payback fica negativo"],a:1,e:"Cada troca de sinal pode gerar uma raiz. Com fluxos não convencionais, a TIR pode ser múltipla ou não existir; o VPL continua funcionando."},
+{s:"4.1",q:"A taxa real exigida de um projeto é 6% ao ano e a inflação esperada é 4,5% ao ano. A taxa nominal que deve descontar os fluxos nominais é:",o:["10,50%","1,44%","6,00%","10,77%"],a:3,e:"Fisher: 1,06 × 1,045 − 1 = 10,77%. Somar (10,50%) é só uma aproximação. Fluxo nominal com taxa nominal; fluxo real com taxa real."},
+{s:"4.1",q:"Um analista projetou os fluxos de caixa em termos reais (sem inflação), mas os descontou pela taxa nominal. O efeito sobre o VPL calculado é:",o:["Superestimá-lo","Nenhum","Subestimá-lo","Depende do payback"],a:2,e:"A taxa nominal embute a inflação, que não está nos fluxos. Desconta-se demais, e o VPL sai menor que o correto."},
+{s:"4.1",q:"Quando a inflação fica acima do esperado, o benefício fiscal da depreciação de um projeto, calculado sobre o custo histórico do ativo, tende a:",o:["Ganhar valor real","Ficar inalterado em termos reais","Aumentar a dedução nominal","Perder valor real, reduzindo o VPL"],a:3,e:"A depreciação é fixa em reais nominais. Com mais inflação, essa economia de imposto vale menos em termos reais, e o imposto real pago sobe."},
+{s:"4.1",q:"Cenários de um projeto: pessimista, VPL de −R$ 300 (probabilidade de 30%); base, R$ 100 (50%); otimista, R$ 500 (20%). O VPL esperado é:",o:["R$ 100","R$ 60","R$ 140","R$ 500"],a:1,e:"0,3 × (−300) + 0,5 × 100 + 0,2 × 500 = −90 + 50 + 100 = 60. R$ 100 é o cenário base, e também a média simples sem ponderar pelas probabilidades."},
+{s:"4.1",q:"A técnica que altera uma variável de cada vez (preço, volume ou custo), mantendo as demais constantes, para medir o impacto no VPL é a:",o:["Análise de cenários","Simulação de Monte Carlo","Análise de sensibilidade","Taxa de Fisher"],a:2,e:"A sensibilidade muda uma variável por vez. Cenários mudam várias ao mesmo tempo de forma coerente; Monte Carlo sorteia todas a partir de distribuições."},
+{s:"4.1",q:"A principal vantagem da simulação de Monte Carlo sobre a análise de cenários na avaliação de risco de um projeto é:",o:["Gerar uma distribuição de probabilidade do VPL, combinando muitas variáveis aleatórias e suas correlações","Dispensar hipóteses sobre as variáveis","Eliminar o risco do projeto","Indicar a taxa de desconto correta"],a:0,e:"O Monte Carlo produz a distribuição completa (média, dispersão, probabilidade de VPL negativo). Ele depende das distribuições assumidas e não elimina o risco."},
+{s:"4.2",q:"Comparado ao acionista da mesma empresa, o credor:",o:["Tem retorno limitado aos juros contratados e prioridade no recebimento, portanto menor risco","Tem retorno ilimitado e menor prioridade","Corre exatamente o mesmo risco","Recebe o lucro residual"],a:0,e:"O credor recebe primeiro e um valor contratado; o acionista recebe o que sobra, com retorno potencialmente ilimitado e maior risco."},
+{s:"4.2",q:"Mantido o risco do negócio, um aumento da alavancagem financeira faz o risco do acionista:",o:["Aumentar, porque o lucro residual fica mais volátil","Cair, porque a dívida é mais barata","Ficar igual","Ser transferido integralmente aos credores"],a:0,e:"Os juros são fixos; com mais dívida, qualquer oscilação do lucro operacional pesa mais no lucro do acionista. Por isso o custo do capital próprio sobe (MM II)."},
+{s:"4.2",q:"Qual característica tende a levar uma empresa a ter MENOS dívida na estrutura de capital alvo?",o:["Fluxo de caixa estável e previsível","Alíquota de imposto de renda elevada","Ativos predominantemente intangíveis e alto risco do negócio","Ativos tangíveis que podem servir de garantia"],a:2,e:"Intangíveis não servem de garantia e perdem valor em dificuldades; risco alto do negócio aumenta a chance de não pagar. As outras três alternativas favorecem mais dívida."},
+{s:"4.2",q:"Segundo a Proposição I de Modigliani e Miller sem impostos, o valor da empresa:",o:["Aumenta com o uso de dívida","Diminui com o uso de dívida","Independe da estrutura de capital","É máximo com 50% de dívida"],a:2,e:"Em mercados perfeitos e sem impostos, V alavancada = V não alavancada: o valor vem dos ativos, não da forma de financiá-los."},
+{s:"4.2",q:"No mundo de MM sem impostos, quando a empresa aumenta a proporção de dívida, o CMPC:",o:["Cai, porque a dívida é mais barata","Fica constante, porque a alta do custo do capital próprio compensa exatamente a dívida mais barata","Sobe, porque o risco aumenta","Cai até zero"],a:1,e:"Pela MM II, r_E sobe linearmente com D/E, e o CMPC fica igual a r0. Só com impostos o CMPC cai com a alavancagem."},
+{s:"4.2",q:"Uma empresa tem custo de capital sem dívida (r0) de 12%, custo da dívida de 7% e D/E de 0,5. Sem impostos, pela MM II, o custo do capital próprio é:",o:["12,00%","13,65%","9,50%","14,50%"],a:3,e:"r_E = 12% + (12% − 7%) × 0,5 = 14,5%. 13,65% seria o resultado com IR de 34%."},
+{s:"4.2",q:"Mesma empresa (r0 = 12%, r_D = 7%, D/E = 0,5), agora com IR de 34%. Pela MM com impostos, o custo do capital próprio é:",o:["14,50%","13,65%","12,00%","11,01%"],a:1,e:"r_E = 12% + (12% − 7%) × (1 − 0,34) × 0,5 = 12% + 1,65% = 13,65%. Com impostos, r_E sobe mais devagar com a dívida."},
+{s:"4.2",q:"Uma empresa sem dívida vale R$ 50 milhões. Ela emite R$ 20 milhões de dívida perpétua e usa o dinheiro para recomprar ações. Alíquota de IR de 34%. Pela MM com impostos, o novo valor da empresa é:",o:["R$ 50,0 milhões","R$ 56,8 milhões","R$ 70,0 milhões","R$ 43,2 milhões"],a:1,e:"V_L = V_U + t × D = 50 + 0,34 × 20 = 56,8 milhões. O ganho é o valor presente do benefício fiscal dos juros."},
+{s:"4.2",q:"Pela teoria do trade-off estático, a estrutura ótima de capital ocorre quando:",o:["A dívida é zero","A dívida é 100% do capital","O custo do capital próprio é mínimo","O benefício fiscal marginal da dívida se iguala ao custo marginal esperado de dificuldades financeiras"],a:3,e:"Mais dívida traz benefício fiscal, mas aumenta os custos esperados de dificuldades financeiras. O ótimo é onde os efeitos marginais se igualam; ali o valor é máximo e o CMPC é mínimo."},
+{s:"4.2",q:"Valores de mercado: ações R$ 600 milhões e dívida R$ 400 milhões. Custo do capital próprio de 15%, custo da dívida de 10% antes do IR, alíquota de 34%. O CMPC é:",o:["13,00%","12,36%","9,90%","11,64%"],a:3,e:"CMPC = 0,6 × 15% + 0,4 × 10% × (1 − 0,34) = 9% + 2,64% = 11,64%. 13% é o erro de esquecer o benefício fiscal (9% + 4%)."},
+{s:"4.2",q:"O custo da dívida entra no CMPC multiplicado por (1 − t) porque:",o:["O credor paga IR sobre os juros recebidos","A dívida não tem risco","Os juros são dedutíveis na base do IR e da CSLL da empresa","Os dividendos também são dedutíveis"],a:2,e:"A dedutibilidade dos juros reduz o imposto pago pela empresa, então o custo efetivo da dívida é r_D × (1 − t). Dividendos não são dedutíveis."},
+{s:"4.2",q:"Para definir os pesos da dívida e do capital próprio no CMPC, a abordagem preferida é usar:",o:["A estrutura de capital alvo; na falta dela, os valores de mercado atuais ou a média de empresas comparáveis","O valor contábil do patrimônio líquido","Pesos iguais para todas as fontes","A participação do acionista controlador"],a:0,e:"O CMPC deve refletir como a empresa vai se financiar daqui em diante. O PL contábil pode estar muito longe do valor de mercado."},
+{s:"4.2",q:"Uma debênture prefixada de valor de face R$ 1.000, cupom anual de 10% e 5 anos até o vencimento é negociada a R$ 950. Com alíquota de IR de 34%, o custo da dívida após o IR, pelo método YTM, é aproximadamente:",o:["10,00%","7,50%","11,37%","6,60%"],a:1,e:"HP 12C: 950 CHS PV, 100 PMT, 1000 FV, 5 n, i → YTM de 11,37%. Após o IR: 11,37% × 0,66 = 7,50%. 6,60% é o erro de usar o cupom (10% × 0,66); 11,37% é o custo antes do IR."},
+{s:"4.2",q:"Uma empresa com rating AA não tem dívida negociada. O título público prefixado de 3 anos paga 11% e debêntures AA de 3 anos negociam a spread de 1,20 p.p. sobre ele. Com IR de 34%, o custo da dívida após o IR é:",o:["12,20%","7,26%","11,00%","8,05%"],a:3,e:"Método do rating: 11% + 1,20 p.p. = 12,20% antes do IR. Após o IR: 12,20% × 0,66 = 8,05%. 7,26% é esquecer o spread (11% × 0,66)."},
+{s:"4.2",q:"Taxa livre de risco de 10,5%, beta de 1,2 e prêmio de risco de mercado de 6%. Pelo CAPM, o custo do capital próprio é:",o:["16,50%","7,20%","19,80%","17,70%"],a:3,e:"r_E = 10,5% + 1,2 × 6% = 17,70%. 16,50% ignora o beta; 7,20% esquece a taxa livre de risco."},
+{s:"4.2",q:"Uma ação negocia a R$ 35, acabou de pagar dividendo de R$ 2,00 e o dividendo cresce 6% ao ano indefinidamente. Pelo modelo de dividendos (Gordon), o custo do capital próprio é:",o:["11,71%","5,71%","6,06%","12,06%"],a:3,e:"D1 = 2,00 × 1,06 = 2,12. r_E = 2,12/35 + 6% = 6,06% + 6% = 12,06%. 11,71% é o erro de usar o dividendo já pago (D0) no lugar de D1."},
+{s:"4.2",q:"Para estimar em dólar o custo do capital próprio de uma empresa brasileira: Treasury de 4,5%, beta de 1,1, prêmio de mercado de 5,5% e prêmio de risco país de 3 p.p. O resultado é:",o:["13,55%","10,55%","10,00%","16,85%"],a:0,e:"r_E = 4,5% + 1,1 × 5,5% + 3% = 4,5% + 6,05% + 3% = 13,55%. Sem o risco país daria 10,55%, subestimando o custo de capital."},
+{s:"4.2",q:"Por que incluir um prêmio de risco país no custo do capital próprio de uma empresa de mercado emergente?",o:["Para remunerar riscos adicionais (político, de default soberano, cambial) não capturados pelo beta","Porque o beta medido contra um índice global já captura todos os riscos locais","Porque isso reduz o custo de capital","Porque a CVM exige"],a:0,e:"O beta contra um índice global não capta os riscos específicos do país. Omitir o prêmio subestima o custo de capital e superestima o valor."},
+{s:"4.3",q:"Para a companhia pagadora, a principal vantagem dos juros sobre capital próprio (JCP) em relação ao dividendo é:",o:["Não ter limite de valor","Ser dedutível da base do IR e da CSLL","Ser isento de imposto para o acionista","Não reduzir o patrimônio líquido"],a:1,e:"O JCP é despesa dedutível para a empresa, dentro dos limites legais (TJLP sobre contas do PL). Para o acionista, sofre retenção de IR na fonte."},
+{s:"4.3",q:"A ação está a R$ 44 antes de uma bonificação de 10% em ações. Um investidor tem 100 ações. Depois do evento, ele terá:",o:["110 ações a R$ 40,00","110 ações a R$ 44,00","100 ações a R$ 40,00","110 ações a R$ 39,60"],a:0,e:"Recebe 1 ação para cada 10: 110 ações. Preço teórico = 44/1,10 = 40. Patrimônio: 4.400 antes e depois. 39,60 é o erro de aplicar desconto de 10% (44 × 0,9)."},
+{s:"4.3",q:"Uma companhia faz grupamento de 10 ações para 1 quando a ação está a R$ 0,80. Um investidor com 5.000 ações passa a ter:",o:["50.000 ações a R$ 0,08","500 ações a R$ 0,80","500 ações a R$ 8,00","5.000 ações a R$ 8,00"],a:2,e:"Cada 10 ações viram 1: 500 ações. O preço sobe 10 vezes: R$ 8,00. O patrimônio continua em R$ 4.000."},
+{s:"4.3",q:"Um desdobramento de 1 para 2, isoladamente, altera a riqueza do acionista em:",o:["+100%","−50%","Depende do LPA","Nada: a quantidade dobra e o preço cai à metade"],a:3,e:"Desdobramento, grupamento e bonificação em ações só mudam a quantidade e o preço por ação; não criam nem destroem riqueza."},
+{s:"4.3",q:"O bônus de subscrição confere ao titular o direito de:",o:["Receber ações gratuitas por capitalização de reservas","Receber um dividendo mínimo","Votar em assembleia sem ser acionista","Subscrever ações em aumento de capital, a preço e prazo predeterminados"],a:3,e:"É um título emitido pela companhia que funciona como uma opção de compra de ações novas. Ações gratuitas por capitalização de reservas são a bonificação."},
+{s:"4.3",q:"Uma empresa tem 1 milhão de ações a R$ 50 e R$ 5 milhões de caixa excedente. Sem impostos e custos, compare um dividendo de R$ 5 por ação com uma recompra ao preço de R$ 50:",o:["O dividendo deixa o acionista mais rico","A riqueza é a mesma, R$ 50 por ação original, nos dois casos","A recompra deixa o acionista mais rico","A recompra reduz o preço da ação para R$ 45"],a:1,e:"Dividendo: ação ex a 45 + 5 em dinheiro = 50. Recompra: compra 100 mil ações; sobram 900 mil valendo 45 milhões = 50 por ação. Diferenças só surgem com impostos, sinalização ou preço de recompra fora do mercado."},
+{s:"4.3",q:"Lucro líquido de R$ 20 milhões, 10 milhões de ações a R$ 25. A empresa toma R$ 25 milhões a 10% ao ano antes do IR (alíquota de 34%) e recompra 1 milhão de ações. O novo LPA é aproximadamente:",o:["R$ 2,00","R$ 2,22","R$ 1,94","R$ 2,04"],a:3,e:"Juros após IR = 25 × 10% × 0,66 = 1,65 milhão. Novo lucro = 18,35 milhões; ações = 9 milhões; LPA = 2,04. Subiu porque o custo após IR (6,6%) é menor que o earnings yield (2/25 = 8%). R$ 1,94 é o erro de não abater o IR dos juros; R$ 2,22 ignora os juros."},
+{s:"4.3",q:"Uma recompra de ações financiada com dívida aumenta o LPA quando:",o:["O custo da dívida após o IR é menor que o earnings yield (LPA/preço)","O custo da dívida antes do IR é maior que o P/L","O preço da ação está acima do valor patrimonial","Sempre, porque o número de ações cai"],a:0,e:"O lucro cai pelo custo da dívida após o IR e o número de ações cai na proporção do earnings yield. Se o custo após o IR for maior que o L/P, o LPA cai."},
+{s:"4.3",q:"PL contábil de R$ 50 milhões e 5 milhões de ações (VPA de R$ 10). A empresa recompra 500 mil ações a R$ 8. O novo valor patrimonial por ação é:",o:["R$ 10,22","R$ 10,00","R$ 9,78","R$ 11,11"],a:0,e:"Novo PL = 50 − 0,5 × 8 = 46 milhões; ações = 4,5 milhões; VPA = 10,22. Recompra abaixo do VPA eleva o VPA; acima, reduz. R$ 11,11 esquece de abater o valor pago do PL."},
+{s:"4.3",q:"Na recompra de ações por leilão holandês (Dutch auction), a empresa:",o:["Compra aos poucos em bolsa, ao preço de mercado","Define uma faixa de preços, recebe as ofertas dos acionistas e paga a todos o menor preço que completa a quantidade desejada","Negocia diretamente com um único grande acionista","Oferece a todos um preço fixo com prêmio"],a:1,e:"O leilão holandês descobre o preço dentro da faixa e paga um preço único. O preço fixo com prêmio é a tender offer; a compra gradual em bolsa é a open market."},
+{s:"4.3",q:"O anúncio de um programa de recompra de ações costuma ser interpretado pelo mercado como sinal de que:",o:["A administração considera a ação cara","A empresa vai emitir ações em breve","A administração considera a ação subavaliada","O lucro futuro deve cair"],a:2,e:"A administração tem informação privilegiada; recomprar indica que ela acha que o preço está abaixo do valor. Pode ser lido negativamente se indicar falta de projetos."},
+{s:"4.3",q:"Em qual data o preço da ação passa a refletir a saída do dividendo, caindo aproximadamente o valor do provento?",o:["Data de declaração","Data ex-dividendo (primeiro pregão sem direito)","Data-com","Data de pagamento"],a:1,e:"Na data-com a ação ainda carrega o direito. No primeiro pregão sem direito (data ex) o preço se ajusta. O pagamento não afeta o preço."},
+{s:"4.3",q:"Um investidor compra uma ação a R$ 60. A empresa faz um desdobramento de 1 para 3. Depois, ele recebe dividendo de R$ 0,40 por ação (já desdobrada) e vende tudo a R$ 21 por ação. O retorno total foi:",o:["5,00%","−64,33%","2,00%","7,00%"],a:3,e:"Ele fica com 3 ações. Retorno = (3 × 21 + 3 × 0,40 − 60)/60 = 4,20/60 = 7%. 5% esquece os dividendos; −64,33% é comparar 21 com 60 sem ajustar a quantidade."},
+{s:"4.3",q:"Qual fator tende a REDUZIR o payout de uma empresa?",o:["Fluxo de caixa estável e previsível","Muitas oportunidades de investimento com VPL positivo","Base acionária que prefere renda corrente","Baixo endividamento e amplo acesso a crédito"],a:1,e:"Com bons projetos, a empresa retém o lucro para investir em vez de distribuir. Os demais fatores favorecem payout maior."},
+{s:"4.3",q:"Lucro líquido de R$ 50 milhões, orçamento de capital de R$ 60 milhões, estrutura alvo de 30% dívida e 70% capital próprio, 10 milhões de ações. Pela política de dividendo residual, o dividendo por ação é:",o:["R$ 0,80","R$ 3,20","R$ 2,00","Zero"],a:0,e:"Capital próprio necessário = 0,70 × 60 = 42. Residual = 50 − 42 = 8 milhões, ou R$ 0,80 por ação. R$ 3,20 é o erro de usar o peso da dívida (50 − 18)."},
+{s:"4.3",q:"A principal desvantagem da política de dividendo residual pura é:",o:["Obrigar a empresa a emitir ações para pagar dividendos","Levar a empresa a recusar projetos com VPL positivo","Gerar dividendos voláteis, que oscilam com o lucro e com os investimentos","Ser incompatível com qualquer estrutura de capital"],a:2,e:"Como o dividendo é o que sobra depois dos investimentos, ele varia muito de ano a ano. A versão de longo prazo suaviza esse efeito."},
+{s:"4.3",q:"Dividendo do último ano de R$ 0,80. LPA esperado de R$ 2,50, payout alvo de 40% e fator de ajuste de 0,5. Pela abordagem do payout alvo, o dividendo esperado é:",o:["R$ 1,00","R$ 0,80","R$ 0,90","R$ 1,25"],a:2,e:"Dividendo-alvo = 2,50 × 40% = 1,00. D1 = 0,80 + (1,00 − 0,80) × 0,5 = 0,90. R$ 1,00 seria o ajuste total imediato."},
+{s:"4.3",q:"A política que distribui um dividendo estável, ajustando-o devagar e só quando a mudança no lucro parece permanente, é a de:",o:["Dividendo residual","Payout constante a cada ano","Estabilidade de dividendo","Recompra programada"],a:2,e:"Na estabilidade de dividendo, a empresa evita cortes e só sobe o dividendo quando acredita que o novo nível de lucro é sustentável."},
+{s:"4.3",q:"A teoria do pássaro na mão (bird-in-the-hand) defende que:",o:["Investidores preferem dividendos certos hoje a ganhos de capital incertos, então payout maior reduz o custo do capital próprio e aumenta o valor","A política de dividendos é irrelevante para o valor","Dividendos reduzem o valor por causa dos impostos","A recompra é sempre superior ao dividendo"],a:0,e:"É a visão de Gordon e Lintner. MM (irrelevância) contestam: o risco vem dos ativos, não da forma de distribuição. A preferência tributária defende payout menor."},
+{s:"4.3",q:"Se os ganhos de capital são tributados a alíquota menor (ou podem ser diferidos) que os dividendos, a teoria da preferência tributária recomenda:",o:["Payout alto","Payout baixo, privilegiando retenção ou recompra","Indiferença entre dividendo e retenção","Pagamento em bonificação de ações"],a:1,e:"Se o dividendo é mais tributado, o investidor fica mais rico recebendo via valorização; logo, payout menor aumenta o valor para ele."},
+{s:"4.3",q:"Segundo MM, um acionista de uma empresa que não paga dividendos e que deseja renda corrente pode:",o:["Exigir judicialmente o dividendo","Nada, pois perde valor","Converter as ações em debêntures","Vender parte das ações, criando um dividendo caseiro"],a:3,e:"No mundo de MM, o investidor ajusta sozinho o fluxo que deseja (vende ações ou reinveste dividendos), por isso a política de dividendos é irrelevante."},
+{s:"4.3",q:"Pela teoria da sinalização, um aumento inesperado e sustentável do dividendo tende a:",o:["Elevar o preço, porque sinaliza confiança da administração nos lucros futuros","Reduzir o preço, porque a empresa ficou sem projetos","Não ter efeito, porque dividendos são irrelevantes","Sinalizar dificuldade financeira"],a:0,e:"Com assimetria de informação e dividendos difíceis de cortar, a administração só aumenta o dividendo se acredita que o lucro maior é duradouro."},
+{s:"4.3",q:"Payout de 60% e crescimento de 5% ao ano. Se a política de dividendos regulares reduzir o custo do capital próprio de 13% para 11%, o P/L projetado (P0/L1) passa de:",o:["8,6 para 10,0","4,6 para 5,5","7,5 para 10,0","10,0 para 7,5"],a:2,e:"P/L = payout/(k − g). Com k = 13%: 0,60/0,08 = 7,5. Com k = 11%: 0,60/0,06 = 10,0. Dividendos regulares reduzem a incerteza e o custo de capital, elevando o P/L."},
+{s:"4.4",q:"Na operação de spin-off, a controladora:",o:["Vende a divisão a um terceiro e recebe caixa","Distribui aos seus acionistas as ações da nova empresa formada pela divisão, sem receber caixa","Une-se a um concorrente para formar uma nova sociedade","Vende ao público parte das ações da subsidiária num IPO"],a:1,e:"No spin-off os acionistas da controladora passam a ter ações das duas empresas. Vender a um terceiro é desinvestimento; vender parte num IPO é equity carve-out."},
+{s:"4.4",q:"Pela Lei 6.404/76, a operação pela qual a companhia transfere parcelas do seu patrimônio para uma ou mais sociedades, extinguindo-se ou não, é a:",o:["Incorporação","Cisão","Fusão","Transformação"],a:1,e:"Cisão (art. 229): total, se a cindida se extingue; parcial, se continua. Na incorporação uma absorve outra; na fusão todas se unem numa nova."},
+{s:"4.4",q:"Na incorporação, diferentemente da fusão:",o:["Todas as sociedades envolvidas se extinguem e surge uma nova","Uma sociedade absorve a outra, que se extingue, e a incorporadora continua existindo","Nenhuma sociedade se extingue","O pagamento é obrigatoriamente em dinheiro"],a:1,e:"Incorporação: A + B → A. Fusão: A + B → C, com a extinção de todas as originais."},
+{s:"4.4",q:"Qual NÃO é uma motivação típica para formar uma joint venture?",o:["Dividir custos e riscos de um projeto grande","Obter o controle total e exclusivo do negócio","Ter acesso a um novo mercado ou tecnologia com um parceiro local","Combinar competências sem uma fusão completa"],a:1,e:"Joint venture é empreendimento conjunto, com controle e riscos compartilhados. Quem quer controle total faz uma aquisição."},
+{s:"4.4",q:"Qual NÃO é uma razão usual para um desinvestimento voluntário?",o:["Aumentar a diversificação do conglomerado","A divisão vale mais nas mãos de outro dono","Falta de sinergia com o negócio principal","Necessidade de caixa ou de reduzir dívida"],a:0,e:"Desinvestir reduz a diversificação e aumenta o foco. Diversificar seria motivo para adquirir, não para vender."},
+{s:"4.4",q:"Na avaliação financeira de um desinvestimento, a empresa deve vender a divisão quando:",o:["O lucro contábil da divisão é negativo","A divisão tem payback longo","O preço oferecido, líquido de impostos e custos, supera o valor presente dos fluxos que a divisão gera para a empresa","O comprador é um concorrente"],a:2,e:"Compara-se o valor de manter (fluxos descontados à taxa adequada ao risco da divisão) com o preço líquido. Ex.: FCL perpétuo de 10 a 12% vale 83,3; uma oferta líquida de 95 justifica a venda."},
+{s:"4.4",q:"O leveraged buyout (LBO) é uma aquisição:",o:["Financiada majoritariamente com dívida, garantida pelos ativos e pelo fluxo de caixa da própria empresa adquirida","Paga exclusivamente com ações do comprador","Feita pelos funcionários, sem uso de dívida","Sempre hostil, por oferta pública"],a:0,e:"No LBO a dívida é paga com o caixa da própria empresa comprada. Quando os compradores são os próprios administradores, chama-se MBO."},
+{s:"4.4",q:"Qual empresa é a candidata mais típica a um LBO?",o:["Startup de tecnologia sem receita","Empresa em recuperação judicial com prejuízos recorrentes","Empresa madura, com fluxo de caixa estável, pouca dívida e ativos que servem de garantia","Banco com alta alavancagem regulatória"],a:2,e:"O LBO depende de caixa previsível para servir a dívida e de ativos como garantia. A disciplina da dívida e o benefício fiscal são as motivações."},
+{s:"4.4",q:"Adquirente vale R$ 800 milhões e a alvo, R$ 200 milhões. As sinergias somam R$ 50 milhões. O adquirente paga R$ 230 milhões em dinheiro. O ganho dos acionistas do adquirente é:",o:["R$ 50 milhões","R$ 30 milhões","R$ 80 milhões","R$ 20 milhões"],a:3,e:"Prêmio = 230 − 200 = 30 (ganho da alvo). Ganho do adquirente = sinergia − prêmio = 50 − 30 = 20. Confere: V_AT = 800 + 200 + 50 − 230 = 820, e 820 − 800 = 20."},
+{s:"4.4",q:"Adquirente vale R$ 800 milhões e a alvo, R$ 200 milhões. Sinergias de R$ 50 milhões; pagamento de R$ 230 milhões em dinheiro. O valor da empresa combinada após a aquisição é:",o:["R$ 1.050 milhões","R$ 1.000 milhões","R$ 820 milhões","R$ 850 milhões"],a:2,e:"V_AT = V_A + V_T + S − C = 800 + 200 + 50 − 230 = 820. R$ 1.050 esquece de abater o caixa pago."},
+{s:"4.4",q:"Adquirente: 100 milhões de ações a R$ 20. Alvo: 40 milhões de ações a R$ 10. Sinergias de R$ 120 milhões. O pagamento é em ações: 0,6 ação da adquirente por ação da alvo. O ganho dos acionistas da alvo é aproximadamente:",o:["R$ 80,00 milhões","R$ 120,00 milhões","R$ 87,74 milhões","R$ 32,26 milhões"],a:2,e:"Novas ações = 24 milhões. Valor combinado = 2.000 + 400 + 120 = 2.520; ações = 124 milhões; preço = 20,32. Alvo recebe 24 × 20,32 = 487,74; ganho = 87,74. R$ 80 usa o preço pré-anúncio (24 × 20 − 400); R$ 32,26 é o ganho da adquirente."},
+{s:"4.4",q:"Numa aquisição paga com ações, em vez de dinheiro, o risco de as sinergias não se concretizarem:",o:["É compartilhado com os acionistas da alvo, que se tornam sócios da empresa combinada","Fica todo com os acionistas do adquirente","Fica todo com os acionistas da alvo","Desaparece"],a:0,e:"Com pagamento em dinheiro, a alvo recebe um valor fixo e o adquirente assume todo o risco. Com ações, os dois grupos dividem o resultado."},
+{s:"4.4",q:"No anúncio de uma aquisição, o efeito típico observado nos preços das ações é:",o:["As duas ações caem","A ação do adquirente sobe muito e a da alvo cai","Não há efeito nos preços","A ação da alvo sobe, aproximando-se do preço ofertado, e a do adquirente fica estável ou cai"],a:3,e:"A alvo captura o prêmio; o mercado costuma desconfiar do preço pago pelo adquirente. Spin-offs, ao contrário, costumam ter reação positiva para a controladora."},
+{s:"4.4",q:"Qual fator mais frequentemente leva uma aquisição a destruir valor para o acionista do adquirente?",o:["Sinergias de custo bem dimensionadas","Pagar prêmio maior que o valor presente das sinergias, por excesso de confiança da administração","Fazer due diligence detalhada","Comprar uma empresa mal administrada e substituir a gestão"],a:1,e:"Hubris e a maldição do vencedor levam a prêmios excessivos. Se o prêmio supera a sinergia, o ganho do adquirente (S − prêmio) é negativo."},
+{s:"4.5",q:"Segundo o IBGC, governança corporativa é:",o:["O conjunto de normas contábeis aplicáveis às companhias abertas","A área da empresa responsável pelo relacionamento com investidores","O regulamento de listagem da B3","O sistema pelo qual as empresas são dirigidas, monitoradas e incentivadas, envolvendo sócios, conselho, diretoria, órgãos de fiscalização e demais partes interessadas"],a:3,e:"Governança é o sistema de direção, monitoramento e incentivos. Normas contábeis, RI e regulamentos de listagem são partes ou instrumentos dele."},
+{s:"4.5",q:"Qual dos itens abaixo NÃO é um princípio básico de governança corporativa do IBGC?",o:["Transparência","Equidade","Sigilo das decisões do acionista controlador","Prestação de contas (accountability)"],a:2,e:"Os princípios clássicos são transparência, equidade, prestação de contas e responsabilidade corporativa (a 6ª edição acrescenta integridade e fala em sustentabilidade). Sigilo das decisões do controlador contraria a transparência."},
+{s:"4.5",q:"Um conselheiro de administração é considerado independente quando:",o:["Não tem vínculo relevante com a companhia, o controlador ou a administração que possa comprometer seu julgamento","É eleito pelos acionistas minoritários","Não recebe remuneração","Tem mais de 10 anos no cargo"],a:0,e:"O critério é a ausência de vínculos que comprometam o julgamento. Ser eleito pelos minoritários não basta; mandatos muito longos, inclusive, podem reduzir a independência."},
+{s:"4.5",q:"Pelo regulamento do Novo Mercado da B3, o conselho de administração deve ter:",o:["Maioria de conselheiros independentes","Apenas conselheiros independentes","Nenhuma exigência de independência","No mínimo 2 conselheiros independentes ou 20% do conselho, o que for maior"],a:3,e:"O Novo Mercado exige no mínimo 2 ou 20% de independentes, o que for maior, e veda acumular os cargos de presidente do conselho e diretor-presidente."},
+{s:"4.5",q:"Do ponto de vista do acionista minoritário, o voto múltiplo na eleição do conselho é:",o:["Desfavorável, pois concentra o poder no controlador","Irrelevante, pois só vale para preferencialistas","Proibido pela Lei das S.A.","Favorável, pois permite concentrar votos em poucos candidatos e aumenta a chance de eleger um representante"],a:3,e:"No voto múltiplo cada ação tem tantos votos quantos forem os cargos, e o acionista pode concentrá-los num só candidato (art. 141 da Lei 6.404)."},
+{s:"4.5",q:"Pela Lei 6.404/76 (art. 254-A), na alienação de controle de companhia aberta, o comprador deve oferecer aos acionistas minoritários titulares de ações com voto no mínimo:",o:["100% do preço pago por ação do bloco de controle","80% do preço pago por ação do bloco de controle","50% do preço pago por ação do bloco de controle","O valor patrimonial da ação"],a:1,e:"O tag along legal é de 80% para as ações ordinárias. O Novo Mercado eleva para 100%."},
+{s:"4.5",q:"Estruturas com classes de ações que separam o direito de voto do capital (ações sem voto ou voto plural) são vistas pelo acionista minoritário como:",o:["Favoráveis, porque aumentam o dividendo","Neutras em qualquer caso","Desfavoráveis, porque permitem que o controlador mande com pouco capital próprio e aumentam o risco de expropriação","Obrigatórias no Novo Mercado"],a:2,e:"Quanto maior a distância entre controle e participação econômica, maior o incentivo do controlador a extrair benefícios privados. O Novo Mercado admite só ações ordinárias."},
+{s:"4.5",q:"Uma cláusula estatutária de proteção à dispersão acionária (poison pill à brasileira) obriga quem atinge determinada participação a:",o:["Vender as ações excedentes em 30 dias","Fazer oferta pública de aquisição para todos os acionistas, geralmente com prêmio","Renunciar ao direito de voto","Pagar dividendo extraordinário"],a:1,e:"Encarece a tomada de controle. Pode proteger contra aquisições baratas, mas também entrincheirar a gestão e afastar ofertas boas para o acionista."},
+{s:"4.5",q:"No Brasil, onde o controle acionário costuma ser concentrado, o conflito de agência mais relevante tende a ser entre:",o:["Credores e fornecedores","Conselheiros e auditores","Acionista controlador e acionistas minoritários","Governo e clientes"],a:2,e:"É o conflito principal-principal: risco de transações com partes relacionadas e de benefícios privados do controlador. Em mercados de capital disperso (EUA), predomina o conflito gestor × acionista."},
+{s:"4.5",q:"Qual mecanismo ajuda a alinhar os interesses dos administradores aos dos acionistas?",o:["Salário fixo elevado sem metas","Golden parachute generoso","Remuneração variável atrelada ao desempenho de longo prazo e ao preço da ação","Mandato sem prazo para o diretor-presidente"],a:2,e:"Remuneração ligada a resultados de longo prazo aproxima os interesses. Golden parachute e mandatos sem prazo protegem o executivo e favorecem o entrincheiramento."}
+];
+
+const $=s=>document.querySelector(s);
+let L=[],i=0,ans=[];
+function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+$('#start').onclick=()=>{
+  const f=$('#filt').value;L=Q.filter(x=>f==='all'||x.s===f);
+  if($('#shuf').checked)L=L.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+  // alternativas sempre embaralhadas, para a letra certa não se repetir
+  L=L.map(x=>{if(x.f)return x;const p=x.o.map((o,k)=>[Math.random(),o,k]).sort((a,b)=>a[0]-b[0]);return {...x,o:p.map(v=>v[1]),a:p.findIndex(v=>v[2]===x.a)}});
+  i=0;ans=[];show();
+};
+function show(){
+  const x=L[i];
+  $('#quiz').innerHTML=`<div class="card"><div class="qhead"><span>Questão ${i+1} de ${L.length}</span><span>Subtema ${x.s}</span></div>
+  <div class="progress"><i style="width:${i/L.length*100}%"></i></div>
+  <p class="qtext">${esc(x.q)}</p><div class="opts">${x.o.map((o,k)=>`<button class="opt" data-k="${k}"><span class="l">${'ABCD'[k]})</span><span>${esc(o)}</span></button>`).join('')}</div>
+  <div id="fb"></div><div class="nav2"><span></span><button id="next" disabled>${i+1<L.length?'Próxima':'Ver resultado'}</button></div></div>`;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+  $('#next').onclick=()=>{i++;i<L.length?show():result()};
+}
+function pick(k){
+  const x=L[i],ok=k===x.a;ans[i]=ok;
+  document.querySelectorAll('.opt').forEach((b,j)=>{b.disabled=true;if(j===x.a)b.classList.add('ok');else if(j===k)b.classList.add('bad')});
+  $('#fb').innerHTML=`<div class="fb"><strong class="${ok?'ok':'bad'}">${ok?'Certo.':'Errado. Resposta: '+'ABCD'[x.a]+'.'}</strong> ${esc(x.e)}</div>`;
+  $('#next').disabled=false;$('#next').focus();
+}
+function result(){
+  const n=ans.filter(Boolean).length,by={};
+  L.forEach((x,j)=>{by[x.s]=by[x.s]||[0,0];by[x.s][1]++;if(ans[j])by[x.s][0]++});
+  const wrong=L.map((x,j)=>[x,j]).filter(([x,j])=>!ans[j]);
+  $('#quiz').innerHTML=`<div class="card"><div class="score">${n}/${L.length}</div><p class="hint">${Math.round(n/L.length*100)}% de acerto. A prova da CFG exige 70%.</p>
+  <div class="bars">${Object.keys(by).sort().map(s=>{const [a,t]=by[s];return `<div class="bar"><span>Subtema ${s}</span><span class="t"><i style="width:${a/t*100}%"></i></span><span class="v">${a}/${t}</span></div>`}).join('')}</div>
+  ${wrong.length?`<h3>Para revisar</h3><ul>${wrong.map(([x])=>`<li><b>${x.s}</b> · ${esc(x.q)}<br><span class="hint">Resposta: ${esc(x.o[x.a])}. ${esc(x.e)}</span></li>`).join('')}</ul>`:'<p>Nenhum erro.</p>'}
+  <div class="nav2"><button class="ghost" onclick="document.getElementById('start').click()">Refazer</button></div></div>`;
+}
+</script>
+</body>
+</html>

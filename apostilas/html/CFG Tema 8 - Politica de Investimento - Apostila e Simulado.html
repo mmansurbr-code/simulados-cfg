@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFG Tema 8 · Política de Investimento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: apostila em coluna de leitura com índice lateral fixo; simulado no fim como "folha de prova". */
+:root{
+  --bg:#f3f5f6; --paper:#ffffff; --ink:#15222c; --muted:#5a6873; --line:#d8dfe3;
+  --accent:#0f6b64; --accent-soft:#e2f0ee; --formula:#fff6e0; --formula-ink:#6a4a00;
+  --ok:#1d7a3e; --ok-soft:#e3f3e8; --bad:#b3261e; --bad-soft:#fbe6e4;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);margin:0}
+.wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px;max-width:1180px;margin:0 auto;padding-inline:24px;padding-block:32px 80px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:14px}
+nav.toc .k{font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+nav.toc a{display:grid;grid-template-columns:34px 1fr;gap:4px;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--accent-soft);outline:none}
+nav.toc a span:first-child{font-family:var(--f-mono);color:var(--accent);font-size:13px}
+nav.toc a.quiz{margin-top:10px;background:var(--accent);color:var(--paper);font-weight:600}
+nav.toc a.quiz span:first-child{color:var(--paper)}
+main{min-width:0}
+header.hero{padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font:650 clamp(32px,5vw,48px)/1.08 var(--f-display);margin:12px 0 14px;text-wrap:balance}
+h2{font:650 30px/1.15 var(--f-display);margin:0 0 6px;text-wrap:balance}
+h3{font:600 17px/1.3 var(--f-body);margin:26px 0 8px}
+.lede{max-width:66ch;color:var(--muted);font-size:17px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section.topic{padding-block:40px 8px;border-bottom:1px solid var(--line)}
+.num{font:500 13px/1 var(--f-mono);color:var(--accent);letter-spacing:.06em}
+.why{color:var(--muted);max-width:66ch;margin:0 0 6px}
+p,li{max-width:70ch}
+ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600}
+td.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.formula{background:var(--formula);color:var(--formula-ink);border-radius:8px;padding:12px 16px;margin:12px 0;font:15px/1.6 var(--f-mono);overflow-x:auto}
+.formula .lbl{display:block;font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+.ex{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:14px 0}
+.ex .lbl{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ex p{margin:6px 0}
+.pegadinha{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:14px 0}
+.pegadinha b:first-child{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--bad);display:block;margin-bottom:6px}
+code{font-family:var(--f-mono);font-size:.92em}
+/* Simulado */
+#simulado{padding-top:44px}
+.qbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 20px}
+.qbar label{font-size:14px;color:var(--muted)}
+select,button{font:inherit}
+select{padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+button{cursor:pointer;border-radius:6px;padding:9px 16px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-weight:600}
+button.ghost{background:transparent;color:var(--accent)}
+button:focus-visible,select:focus-visible,.opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.45;cursor:default}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px}
+.qhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.progress{height:4px;background:var(--line);border-radius:4px;margin:10px 0 18px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.qtext{font:600 18px/1.45 var(--f-body);margin:0 0 16px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:28px 1fr;gap:8px;text-align:left;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-weight:400}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .l{font-family:var(--f-mono);color:var(--muted)}
+.opt.ok{background:var(--ok-soft);border-color:var(--ok)}
+.opt.bad{background:var(--bad-soft);border-color:var(--bad)}
+.opt:disabled{cursor:default;opacity:1}
+.fb{margin-top:16px;padding:12px 16px;border-radius:8px;background:var(--accent-soft)}
+.fb strong.ok{color:var(--ok)} .fb strong.bad{color:var(--bad)}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.score{font:650 44px/1 var(--f-display)}
+.bars{display:grid;gap:8px;margin:18px 0}
+.bar{display:grid;grid-template-columns:minmax(0,210px) 1fr 70px;gap:10px;align-items:center;font-size:14px}
+.bar .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--accent)}
+.bar .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
+.hint{font-size:13px;color:var(--muted)}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:12px;padding-inline:16px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:4px}
+  nav.toc .k{width:100%}
+  nav.toc a{grid-template-columns:auto 1fr;padding:5px 8px;border:1px solid var(--line)}
+  .bar{grid-template-columns:1fr 60px}
+  .bar .t{grid-column:1/-1;order:3}
+}
+@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .wrap{display:block;max-width:none;padding:0}
+  nav.toc{display:none}
+  section.topic{break-inside:auto;padding-block:18px 4px}
+  h2,h3{break-after:avoid}
+  table,.formula,.ex,.pegadinha{break-inside:avoid}
+  .formula{background:#f6f1e2;color:#000}
+  th{background:#e8eef0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <div class="k">Tema 8 · índice</div>
+  <a href="#t81"><span>8.1</span><span>Processo de gestão</span></a>
+  <a href="#t82"><span>8.2</span><span>IPS individual</span></a>
+  <a href="#t83"><span>8.3</span><span>IPS institucional e previdência</span></a>
+  <a href="#simulado" class="quiz"><span>✓</span><span>Simulado (54 questões)</span></a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">CFG · Certificação ANBIMA de Fundamentos em Gestão</div>
+  <h1>Política de Investimento (IPS)</h1>
+  <p class="lede">Apostila do tema 8, que trata do documento que vem antes de qualquer alocação: o que o cliente precisa, quanto risco ele pode e quer correr e o que limita a carteira. Cada bloco traz o conceito, a conta quando há cálculo, um caso resolvido e as pegadinhas mais comuns. O simulado no fim corrige na hora e mostra o desempenho por subtema.</p>
+  <div class="meta"><span>Base <b>Orientações de Estudo CFG (D.02.84)</b></span><span>Peso <b>3–7%</b></span><span>Subtemas <b>8.1 a 8.3</b></span></div>
+</header>
+
+<!-- 8.1 -->
+<section class="topic" id="t81">
+  <div class="num">8.1</div>
+  <h2>O processo de gestão de carteiras individuais e institucionais</h2>
+  <p class="why">A gestão é um ciclo de três etapas que se repete. O IPS nasce na primeira e é o padrão contra o qual tudo o mais é medido.</p>
+
+  <h3>Visão geral</h3>
+  <p>O processo é <b>contínuo, sistemático e retroalimentado</b>: o que se aprende no monitoramento volta para o planejamento. Vale igualmente para pessoas físicas e para instituições (fundos de pensão, seguradoras, fundações); muda o conteúdo do IPS, não a lógica.</p>
+  <div class="tbl"><table>
+    <tr><th>Etapa</th><th>Componentes</th><th>Produto</th></tr>
+    <tr><td><b>Planejamento</b></td><td>1. Identificar e especificar os <b>objetivos e restrições</b> do investidor<br>2. Redigir o <b>IPS</b><br>3. Formar as <b>expectativas de mercado de capitais</b> (retorno, risco, correlações)<br>4. Definir a <b>alocação estratégica</b> (IPS + expectativas)</td><td>IPS e alocação estratégica</td></tr>
+    <tr><td><b>Execução</b></td><td>1. <b>Composição/seleção da carteira</b> (otimização, escolha de ativos, fundos e gestores)<br>2. <b>Implementação</b>: execução das ordens, com atenção a custos explícitos (corretagem, impostos) e implícitos (spread, impacto de mercado, custo de oportunidade)</td><td>A carteira montada</td></tr>
+    <tr><td><b>Realimentação</b> (<i>feedback</i>)</td><td>1. <b>Monitoramento</b> das condições do investidor e do mercado<br>2. <b>Rebalanceamento</b> (ver Tema 9.3)<br>3. <b>Avaliação de desempenho</b>: medição, atribuição e avaliação contra o benchmark e os objetivos do IPS</td><td>Ajustes e, se preciso, revisão do IPS</td></tr>
+  </table></div>
+  <div class="ex"><span class="lbl">Exemplo do ciclo</span>
+    <p>Uma fundação define no IPS que precisa distribuir 5% ao ano e tem horizonte perpétuo (planejamento). O gestor seleciona fundos e executa as compras em lotes para reduzir o impacto (execução). Um ano depois, a fundação recebe uma doação grande e passa a ter um compromisso de obra em 18 meses: o monitoramento detecta a nova necessidade de liquidez e o processo <b>volta ao planejamento</b> para revisar o IPS (realimentação).</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>As <b>expectativas de mercado</b> e a <b>alocação estratégica</b> pertencem ao <b>planejamento</b>, não à execução. Já a avaliação de desempenho é <b>realimentação</b>. E o processo não é linear "de uma vez só": a mudança nas circunstâncias do cliente leva à revisão do IPS.</div>
+</section>
+
+<!-- 8.2 -->
+<section class="topic" id="t82">
+  <div class="num">8.2</div>
+  <h2>A composição de um IPS individual</h2>
+  <p class="why">É o maior subtema: conhecer o cliente (perfis situacional e psicológico), fixar retorno e risco e listar as restrições. A prova cobra muito em forma de caso.</p>
+
+  <h3>O que é o IPS e o que ele não é</h3>
+  <ul>
+    <li><b>IPS (<i>Investment Policy Statement</i>, política de investimento):</b> documento escrito, acordado entre cliente e gestor, que registra os <b>objetivos de retorno e de risco</b>, as <b>restrições</b> (horizonte, liquidez, aspectos legais, tributos, circunstâncias específicas), as <b>responsabilidades</b> de cada parte, o <b>benchmark</b> e as regras de <b>monitoramento, revisão e rebalanceamento</b>.</li>
+    <li><b>Recomendação de carteira:</b> é a aplicação do IPS às condições de mercado de um dado momento (quais classes, fundos e pesos). A carteira muda quando o mercado muda; o IPS muda só quando a <b>situação do investidor</b> muda.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Um IPS bem feito costuma ser <b>estável</b>: uma queda da bolsa não exige reescrevê-lo. E ele <b>não garante</b> retorno nem elimina risco; ele dá disciplina e um padrão de comparação.</div>
+
+  <h3>Vantagens do IPS</h3>
+  <div class="tbl"><table>
+    <tr><th>Para o cliente</th><th>Para o gestor</th></tr>
+    <tr><td>Obriga a explicitar e entender as próprias necessidades e limites; protege contra decisões emocionais em momentos de estresse; dá portabilidade (outro gestor consegue seguir o mesmo documento); permite cobrar o gestor por critérios objetivos.</td><td>Orienta todas as decisões; documenta o que foi combinado (proteção em disputas e na verificação de <i>suitability</i>); define o benchmark pelo qual será avaliado; facilita a continuidade se o gestor for substituído.</td></tr>
+  </table></div>
+
+  <h3>Perfil situacional</h3>
+  <p>Descreve a situação objetiva do investidor, a partir de três elementos:</p>
+  <ul>
+    <li><b>Fonte da riqueza:</b> quem construiu o patrimônio <b>ativamente</b>, assumindo riscos (empreendedor, empresário), tende a ter <b>maior disposição</b> ao risco e confiança no próprio controle. Quem o obteve <b>passivamente</b> (herança, salário estável, prêmio) tende a ter menor disposição e mais medo de perder o que não sabe repor.</li>
+    <li><b>Medida da riqueza (subjetiva):</b> não é o valor absoluto, mas como o investidor <b>percebe</b> o patrimônio frente às suas necessidades. Quem acha que "tem pouco" tende a ser mais avesso a perdas; quem vê a carteira como uma fatia pequena do seu patrimônio total (incluindo capital humano ou uma empresa) tende a aceitar mais risco.</li>
+    <li><b>Estágio de vida:</b> idade, horizonte, renda futura, dependentes.</li>
+  </ul>
+
+  <h3>Os quatro estágios de vida</h3>
+  <div class="tbl"><table>
+    <tr><th>Fase</th><th>Características</th><th>Tolerância ao risco típica</th></tr>
+    <tr><td><b>Fundação</b></td><td>Início da vida adulta: formação, carreira, negócio próprio nascendo. Patrimônio financeiro pequeno, grande capital humano, necessidade de liquidez.</td><td>Capacidade em tese alta pelo horizonte, mas limitada pela pouca reserva e pela liquidez</td></tr>
+    <tr><td><b>Acumulação</b></td><td>Renda crescente, poupança regular, horizonte longo; pode haver gastos grandes (filhos, casa).</td><td><b>Alta</b>: o tempo e a renda futura absorvem perdas</td></tr>
+    <tr><td><b>Manutenção</b></td><td>Perto ou já na aposentadoria. Foco em preservar o padrão de vida e o patrimônio.</td><td><b>Moderada a baixa</b>: menos tempo para recuperar perdas</td></tr>
+    <tr><td><b>Distribuição</b></td><td>Patrimônio acima do necessário; foco em transferir o excedente (herdeiros, doações) e no planejamento sucessório e tributário.</td><td>Depende: a parte "excedente" pode ter horizonte longo (o dos herdeiros)</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>As fases <b>não</b> são definidas só pela idade. Um jovem que vendeu uma empresa pode já estar na fase de distribuição; e um investidor pode estar em duas fases ao mesmo tempo.</div>
+
+  <h3>Perfil psicológico: os quatro tipos padrão</h3>
+  <p>A tipologia combina o grau de aversão ao risco com o modo de decidir (por emoção ou por raciocínio):</p>
+  <div class="tbl"><table>
+    <tr><th>Tipo</th><th>Como decide</th><th>Carteira típica</th></tr>
+    <tr><td><b>Cuidadoso</b> (<i>cautious</i>)</td><td>Busca segurança acima de tudo, tem forte aversão a perdas, é indeciso, não gosta de decidir e também resiste a conselhos.</td><td>Baixa volatilidade, pouco giro, muito em renda fixa e poupança</td></tr>
+    <tr><td><b>Metódico</b> (<i>methodical</i>)</td><td>Baseia-se em fatos, pesquisas e números; é disciplinado e conservador; não cria apego emocional aos ativos; busca informações que confirmem sua visão.</td><td>Conservadora, bem documentada</td></tr>
+    <tr><td><b>Espontâneo</b> (<i>spontaneous</i>)</td><td>Decide rápido, segue modas, tem medo de "ficar de fora", reajusta a carteira o tempo todo e desconfia de conselhos.</td><td><b>Alto giro</b>, custos de transação altos, risco maior</td></tr>
+    <tr><td><b>Individualista</b> (<i>individualistic</i>)</td><td>Independente e confiante; faz a própria análise, de forma racional; gosta de controlar as decisões e aceita risco moderado a alto.</td><td>Diversificada segundo suas próprias convicções, longo prazo</td></tr>
+  </table></div>
+  <p><b>Limitações do método:</b> as pessoas raramente se encaixam em um tipo puro; o comportamento muda com o momento do mercado e com o assunto (alguém pode ser cuidadoso com a aposentadoria e espontâneo com uma "carteira para brincar"); a classificação é subjetiva e pode rotular o cliente; descreve atitudes, mas não mede a <b>capacidade</b> financeira de correr risco.</p>
+
+  <h3>Questionários de suitability (API, Análise do Perfil do Investidor)</h3>
+  <ul>
+    <li><b>O que são:</b> questionários padronizados (objetivo, horizonte, conhecimento, reação a perdas, situação financeira) que geram uma pontuação e um perfil (ex.: conservador, moderado, arrojado). No Brasil, a verificação de adequação é exigida pela <b>Resolução CVM 30/2021</b> e pelas regras da ANBIMA.</li>
+    <li><b>Vantagens:</b> simples, baratos, padronizados, comparáveis entre clientes; geram registro documental; forçam o cliente a pensar no risco.</li>
+    <li><b>Desvantagens:</b> respostas sensíveis à forma de perguntar (<i>framing</i>) e ao humor do mercado; autoavaliação pode ser irrealista; captam melhor a <b>disposição</b> do que a <b>capacidade</b>; a pontuação reduz o cliente a uma nota; não substituem a conversa com o gestor.</li>
+  </ul>
+
+  <h3>Papel dos perfis situacional e psicológico</h3>
+  <p>O <b>situacional</b> ajuda a medir principalmente a <b>capacidade</b> de correr risco (patrimônio, renda, horizonte, necessidades). O <b>psicológico</b> ajuda a medir principalmente a <b>disposição</b> e a antecipar comportamentos (vender no pânico, girar demais). Os dois juntos formam a tolerância ao risco do IPS e orientam como o gestor deve se comunicar com o cliente.</p>
+
+  <h3>Objetivos de retorno</h3>
+  <ul>
+    <li><b>Retorno requerido (exigido):</b> o necessário para atingir os objetivos <b>essenciais</b> (pagar as despesas de vida, aposentadoria, compromissos). É o que entra no IPS como objetivo de retorno.</li>
+    <li><b>Retorno desejado:</b> o que o cliente <b>gostaria</b> de obter (objetivos aspiracionais). Só é perseguido se for compatível com a tolerância ao risco.</li>
+    <li>Se o retorno requerido exigir mais risco do que o cliente tolera, o gestor <b>não</b> aumenta o risco: o cliente precisa rever os objetivos (gastar menos, poupar mais, adiar a meta).</li>
+    <li>O objetivo de retorno deve ser expresso de forma <b>coerente com a meta</b>: real ou nominal, antes ou depois dos impostos e das taxas.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Retorno exigido</span>Retorno real exigido = despesa anual (a preços de hoje) / patrimônio investível<br>Nominal (multiplicativo) = (1 + real) × (1 + inflação) − 1<br>Nominal (aproximação aditiva) = real + inflação<br>Antes de impostos = retorno líquido / (1 − alíquota)<br>Meta de valor futuro: r = (VF / VP)<sup>1/n</sup> − 1</div>
+  <div class="ex"><span class="lbl">Caso resolvido: retorno exigido</span>
+    <p>Sr. Carlos, 62 anos, aposentado, tem R$ 3.000.000 aplicados, mas vai dar R$ 500.000 à filha daqui a 3 meses para a compra de um imóvel. Precisa retirar R$ 150.000 por ano, corrigidos pela inflação, esperada em 4,5% ao ano.</p>
+    <p>Patrimônio investível = 3.000.000 − 500.000 = <b>2.500.000</b> (a doação é necessidade de liquidez e sai da base).<br>
+    Retorno real exigido = 150.000 / 2.500.000 = <b>6,0%</b>.<br>
+    Nominal = 1,06 × 1,045 − 1 = <b>10,77%</b> (pela aproximação aditiva, 10,5%).</p>
+    <p>Se os rendimentos pagassem 15% de IR e a meta de 6% fosse líquida, o retorno real bruto exigido seria 6% / 0,85 = <b>7,06%</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Esquecer de tirar da base os desembolsos já previstos (compra de imóvel, reserva de emergência) subestima o retorno exigido. E somar real + inflação é só aproximação: a conta exata é multiplicativa.</div>
+
+  <h3>Objetivos de risco: capacidade × disposição</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Capacidade (<i>ability</i>)</th><th>Disposição (<i>willingness</i>)</th></tr>
+    <tr><td>Natureza</td><td><b>Objetiva</b>: quanto o cliente <b>pode</b> perder sem comprometer seus objetivos</td><td><b>Subjetiva</b>: quanto ele <b>quer</b> arriscar; atitude psicológica</td></tr>
+    <tr><td>Aumenta com</td><td>Horizonte longo, patrimônio grande frente às necessidades, renda estável, poucas obrigações, flexibilidade dos objetivos</td><td>Riqueza construída ativamente, experiência, confiança, perfil individualista</td></tr>
+    <tr><td>Como medir</td><td>Perfil situacional, fluxo de caixa, balanço</td><td>Perfil psicológico, questionário, histórico de comportamento</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Capacidade baixa e disposição alta:</b> prevalece a <b>capacidade</b>. A tolerância é baixa; o gestor explica ao cliente por que ele não pode correr o risco que gostaria. A disposição não cria capacidade.</li>
+    <li><b>Capacidade alta e disposição baixa:</b> o gestor deve <b>educar</b> o cliente, mostrando que ele pode correr mais risco e o custo de ser conservador demais. Se a disposição continuar baixa, ela é <b>respeitada</b> e a tolerância fica baixa (ou moderada, se a educação funcionar).</li>
+    <li>Regra prática: na divergência, a tolerância do IPS tende à <b>menor</b> das duas (ver também Tema 9.1).</li>
+  </ul>
+  <p>O objetivo de risco pode ser <b>absoluto</b> (ex.: "não perder mais de 10% em um ano", volatilidade máxima) ou <b>relativo</b> (tracking error frente a um benchmark).</p>
+
+  <h3>Restrições do IPS</h3>
+  <div class="tbl"><table>
+    <tr><th>Restrição</th><th>O que olhar</th><th>Exemplo</th></tr>
+    <tr><td><b>Horizonte</b></td><td>Pode ser de <b>um estágio</b> ou de <b>múltiplos estágios</b> (ex.: acumulação até a aposentadoria e depois distribuição). Horizonte longo, em geral, aumenta a capacidade de risco.</td><td>Casal de 45 anos: estágio 1 até 60 anos (acumulação), estágio 2 de 60 a 90 anos (consumo)</td></tr>
+    <tr><td><b>Liquidez</b></td><td>Despesas correntes, <b>reserva de emergência</b>, desembolsos planejados (casa, estudo), <b>eventos de liquidez negativos</b> inesperados, ativos ilíquidos já existentes (imóvel, participação em empresa).</td><td>Separar 6 a 12 meses de despesas em aplicação de liquidez diária</td></tr>
+    <tr><td><b>Legal e regulatória</b></td><td>Para pessoas físicas costuma ser pouco relevante, mas inclui: vedação de negociar ações da própria companhia em períodos de silêncio/informação privilegiada, regras de trusts e holdings, testamento, restrições de produtos (investidor qualificado/profissional). Para instituições é central.</td><td>Diretor de companhia aberta sujeito a período de vedação</td></tr>
+    <tr><td><b>Impostos</b></td><td>Alíquotas sobre rendimentos e ganhos, isenções (LCI, LCA, debêntures incentivadas, dividendos), tabela regressiva, come-cotas, previdência (PGBL/VGBL), sucessão (ITCMD).</td><td>Cliente na alíquota máxima prefere ativos isentos comparando a taxa líquida</td></tr>
+    <tr><td><b>Circunstâncias específicas</b></td><td>Tudo o que é próprio do cliente: restrições éticas/ESG, posição concentrada em uma ação herdada ou da empresa onde trabalha, apoio a parentes, saúde, desejo de doar.</td><td>Cliente que não aceita ações de empresas de tabaco</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>Uma posição concentrada na empresa em que o cliente trabalha <b>reduz</b> a capacidade de risco do resto da carteira, porque o emprego (capital humano) e o investimento dependem do mesmo emissor. E o imóvel em que a pessoa mora não conta como liquidez.</div>
+
+  <h3>Caso resolvido: IPS de um investidor individual</h3>
+  <div class="ex"><span class="lbl">Caso Dra. Ana</span>
+    <p>Dra. Ana, 52 anos, médica com consultório próprio, renda alta e estável, solteira, sem dependentes. Patrimônio financeiro de R$ 4.000.000; mora em imóvel próprio quitado. Quer se aposentar aos 62 e então gastar R$ 200.000 por ano (em valores de hoje). Não suportou ver a carteira cair 15% em 2020 e vendeu ações na baixa. Não quer investir em empresas de armas. Está na alíquota máxima do IR e faz declaração completa.</p>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Conteúdo do IPS</th></tr>
+      <tr><td>Retorno</td><td>Exigido real ≈ 200.000 / 4.000.000 = <b>5% ao ano</b> após a aposentadoria; até lá, os aportes da renda ajudam (o exigido na acumulação é menor). Expresso em termos reais e líquidos de impostos.</td></tr>
+      <tr><td>Risco</td><td>Capacidade <b>acima da média</b> (patrimônio alto frente às necessidades, renda estável, 10 anos até a aposentadoria). Disposição <b>abaixo da média</b> (vendeu na queda). Conclusão: tolerância <b>moderada/abaixo da média</b>, com trabalho de educação.</td></tr>
+      <tr><td>Horizonte</td><td>Longo, <b>dois estágios</b>: 10 anos de acumulação + aposentadoria (≈ 25 a 30 anos).</td></tr>
+      <tr><td>Liquidez</td><td>Baixa no dia a dia (renda cobre as despesas); manter reserva de emergência.</td></tr>
+      <tr><td>Legal</td><td>Sem restrições relevantes.</td></tr>
+      <tr><td>Impostos</td><td>Alíquota máxima e declaração completa: avaliar <b>PGBL</b> (até 12% da renda bruta tributável) e ativos isentos.</td></tr>
+      <tr><td>Circunstâncias</td><td>Exclusão do setor de armas.</td></tr>
+    </table></div>
+  </div>
+
+  <h3>Falhas comuns na composição de um IPS</h3>
+  <ul>
+    <li>Objetivo de retorno <b>vago</b> ("o maior possível") ou acima do que a tolerância ao risco permite.</li>
+    <li>Tolerância ao risco baseada <b>só no questionário</b> (só disposição), ignorando a capacidade, ou vice-versa.</li>
+    <li>Confundir retorno <b>desejado</b> com <b>requerido</b>.</li>
+    <li>Não deduzir da base desembolsos previstos; ignorar a reserva de emergência.</li>
+    <li>Misturar retorno nominal com meta real, ou bruto com líquido.</li>
+    <li>Colocar no IPS a carteira específica (fundos e pesos) em vez de diretrizes.</li>
+    <li>Ignorar a posição concentrada, os impostos ou a sucessão; não prever revisão periódica.</li>
+  </ul>
+</section>
+
+<!-- 8.3 -->
+<section class="topic" id="t83">
+  <div class="num">8.3</div>
+  <h2>A composição de um IPS institucional</h2>
+  <p class="why">Foco nos fundos de pensão (entidades fechadas) e nos planos abertos PGBL e VGBL. O mesmo esqueleto do IPS individual, com passivos, meta atuarial e regras legais muito mais pesadas.</p>
+
+  <h3>Planos BD, CD e CV</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Benefício Definido (BD)</th><th>Contribuição Definida (CD)</th><th>Contribuição Variável (CV)</th></tr>
+    <tr><td>O que é fixado</td><td>O <b>benefício</b> (por fórmula: salário, tempo de serviço)</td><td>A <b>contribuição</b>; o benefício depende do saldo acumulado</td><td>Mistura: <b>acumulação como CD</b>; na concessão pode haver <b>renda vitalícia</b> com características de BD</td></tr>
+    <tr><td>Quem corre o risco de investimento e atuarial</td><td>O <b>plano/patrocinador</b> (déficit gera contribuição extra)</td><td>O <b>participante</b></td><td>Participante na acumulação; o plano, na parte de renda vitalícia</td></tr>
+    <tr><td>Contas</td><td>Fundo mútuo</td><td>Contas individuais</td><td>Individuais na acumulação</td></tr>
+    <tr><td>Gestão</td><td>Precisa de <b>ALM</b> e meta atuarial</td><td>Perfis de investimento escolhidos pelo participante</td><td>Combina os dois</td></tr>
+  </table></div>
+  <p>No Brasil, os fundos de pensão são as <b>EFPC</b> (entidades fechadas, Lei Complementar 109/2001; LC 108/2001 para patrocinadoras públicas), supervisionadas pela <b>Previc</b>. Os planos abertos (PGBL e VGBL) são das <b>EAPC</b> e seguradoras, supervisionadas pela <b>Susep</b>. A maioria dos planos BD está fechada a novas adesões; os novos são CD ou CV.</p>
+
+  <h3>Tolerância ao risco de um fundo de pensão BD</h3>
+  <div class="tbl"><table>
+    <tr><th>Característica</th><th>Maior tolerância quando…</th><th>Menor tolerância quando…</th></tr>
+    <tr><td><b>Situação atuarial</b></td><td><b>Superávit</b> (ativos &gt; passivo atuarial): há colchão</td><td><b>Déficit</b>: perdas aumentam o buraco e as contribuições extras</td></tr>
+    <tr><td><b>Lucratividade da patrocinadora</b></td><td>Patrocinadora lucrativa e sólida, capaz de cobrir déficits</td><td>Patrocinadora com lucro fraco ou alta alavancagem</td></tr>
+    <tr><td><b>Correlação entre riscos do fundo e da patrocinadora</b></td><td><b>Baixa</b> correlação (o fundo não perde justo quando a empresa vai mal)</td><td><b>Alta</b> correlação (ex.: fundo cheio de ações do mesmo setor da patrocinadora)</td></tr>
+    <tr><td><b>Cláusulas do plano</b></td><td>Sem opções de saque antecipado</td><td>Permite aposentadoria antecipada, resgate em parcela única (<i>lump sum</i>): mais liquidez, menos risco</td></tr>
+    <tr><td><b>Características dos beneficiários</b></td><td>Participantes <b>jovens</b>, poucos aposentados (plano "imaturo"), passivo de prazo longo</td><td>Muitos <b>aposentados</b> (plano "maduro"), passivo curto, pagamentos correntes altos</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Situação atuarial</span>Superávit (déficit) = ativos do plano − provisões matemáticas (valor presente dos benefícios)<br>Índice de solvência (funded ratio) = ativos / passivo atuarial   (&gt;100% superávit; &lt;100% déficit)</div>
+
+  <h3>ALM em um plano BD</h3>
+  <ul>
+    <li>O ALM projeta o <b>fluxo dos passivos</b> (benefícios futuros) e escolhe a carteira que melhor administra o <b>superávit</b> (ativos − passivos), e não o retorno dos ativos isolados. A teoria está no Tema 9.2.</li>
+    <li>Técnicas: <b>casamento de fluxos</b> (<i>cash-flow matching</i>), <b>imunização</b> por duration e uma carteira de retorno que busca superar a meta.</li>
+    <li>No Brasil, os passivos são corrigidos por um índice de preços (INPC ou IPCA) e descontados a uma taxa real; o ativo que mais se aproxima do "sem risco" do plano são as <b>NTN-B</b> com duration próxima à do passivo.</li>
+    <li>A etapa de concessão (aposentados) pede mais casamento e liquidez; a de acumulação permite mais carteira de retorno.</li>
+  </ul>
+
+  <h3>Objetivos, restrições e IPS de um plano BD</h3>
+  <ul>
+    <li><b>Retorno:</b> no mínimo a <b>meta atuarial</b> (taxa real usada para descontar o passivo + índice de inflação do plano). Ex.: INPC + 4,5% ao ano. A taxa real é limitada pela taxa parâmetro divulgada pela Previc, com base na curva de juros reais dos títulos públicos.</li>
+    <li><b>Risco:</b> medido em termos de <b>superávit</b> (volatilidade do superávit, probabilidade de déficit), avaliando os cinco fatores da tabela acima.</li>
+    <li><b>Horizonte:</b> longo, em geral; mais curto em planos maduros ou fechados a novos participantes.</li>
+    <li><b>Liquidez:</b> pagamentos de benefícios menos contribuições recebidas; maior em planos maduros.</li>
+    <li><b>Legal e regulatória:</b> LC 109/2001, normas do CNPC e da Previc e a <b>Resolução CMN 4.994/2022</b>, que fixa limites por segmento (renda fixa, renda variável, estruturado, imobiliário, operações com participantes, exterior) e por emissor. A EFPC precisa ter uma <b>política de investimentos</b> aprovada pelo conselho deliberativo, para cada plano.</li>
+    <li><b>Impostos:</b> os rendimentos das carteiras das EFPC são isentos durante a acumulação (o IR incide no benefício ou resgate do participante).</li>
+    <li><b>Circunstâncias específicas:</b> política de investimento responsável (ASG), restrições a investir na patrocinadora.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Meta atuarial nominal</span>Meta = (1 + inflação do plano) × (1 + taxa real atuarial) − 1</div>
+  <div class="ex"><span class="lbl">Caso resolvido: plano BD</span>
+    <p>Plano BD da Metalúrgica Alfa: ativos de R$ 900 milhões, provisões matemáticas de R$ 1 bilhão. Meta atuarial INPC + 4,5%; INPC esperado de 4%. 60% dos participantes já estão aposentados. A patrocinadora é cíclica e está com lucro em queda.</p>
+    <p>Solvência = 900 / 1.000 = <b>90%</b>: déficit de R$ 100 milhões.<br>
+    Meta nominal = 1,04 × 1,045 − 1 = <b>8,68%</b>.</p>
+    <p>Tolerância ao risco: <b>baixa</b> (déficit, plano maduro, patrocinadora frágil). Recomendação: núcleo de <b>NTN-B casadas com o passivo</b> (imunização), benchmark principal <b>INPC + 4,5%</b> para o plano e IMA-B para a parcela de títulos indexados, parcela pequena de renda variável e multimercado, liquidez para cobrir a folha de benefícios, tudo dentro dos limites da Res. CMN 4.994. Ações da própria patrocinadora devem ser evitadas, pela alta correlação com o risco dela.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Um plano em déficit <b>não</b> deve "correr mais risco para tirar o atraso". Déficit reduz a tolerância; a correção vem de contribuições extraordinárias (equacionamento), não de apostas. E o benchmark de um BD deve ser coerente com o passivo (índice de inflação + juro real), não o CDI.</div>
+
+  <h3>PGBL × VGBL</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>PGBL</th><th>VGBL</th></tr>
+    <tr><td>Natureza</td><td>Plano de previdência complementar aberta</td><td>Seguro de vida com cobertura por sobrevivência</td></tr>
+    <tr><td>Dedução no IR</td><td>Contribuições dedutíveis até <b>12% da renda bruta tributável</b>, só na <b>declaração completa</b> e para quem contribui ao INSS ou regime próprio</td><td><b>Não</b> dedutível</td></tr>
+    <tr><td>Base do IR no resgate/benefício</td><td><b>Valor total</b> (contribuições + rendimentos)</td><td><b>Só os rendimentos</b></td></tr>
+    <tr><td>Indicado para</td><td>Quem faz declaração completa e ainda não usou os 12%</td><td>Declaração simplificada, isentos, ou quem quer aplicar além dos 12%</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>Regime de tributação</th><th>Regra</th></tr>
+    <tr><td><b>Progressivo</b></td><td>Tabela do IR da pessoa física; retenção de 15% na fonte no resgate, com ajuste na declaração anual</td></tr>
+    <tr><td><b>Regressivo</b> (definitivo)</td><td>Pelo prazo de cada aporte: 35% até 2 anos, 30% (2–4), 25% (4–6), 20% (6–8), 15% (8–10) e <b>10% acima de 10 anos</b></td></tr>
+  </table></div>
+  <p>Desde a Lei 14.803/2024, a escolha do regime pode ser feita até o primeiro resgate ou recebimento do benefício. Não há come-cotas nos fundos de previdência.</p>
+  <div class="ex"><span class="lbl">Exemplo: PGBL × VGBL</span>
+    <p>Renda bruta tributável de R$ 200.000, declaração completa, alíquota marginal de 27,5%. Limite dedutível no PGBL = 12% × 200.000 = <b>R$ 24.000</b>; economia de IR no ano ≈ 27,5% × 24.000 = <b>R$ 6.600</b> (é um diferimento: o IR vem no resgate).</p>
+    <p>Resgate de R$ 150.000 de aportes que somaram R$ 100.000, todos com mais de 10 anos (alíquota de 10%). PGBL: 10% × 150.000 = <b>R$ 15.000</b>. VGBL: 10% × 50.000 = <b>R$ 5.000</b>.</p>
+  </div>
+
+  <h3>Características dos planos abertos</h3>
+  <ul>
+    <li><b>Portabilidade:</b> transferência dos recursos entre planos ou entidades, <b>sem incidência de IR</b>, feita diretamente entre as instituições (o dinheiro não passa pelo participante). Só entre planos de <b>mesma natureza</b>: PGBL → PGBL, VGBL → VGBL. Pode haver prazo de carência previsto no regulamento.</li>
+    <li><b>Segregação patrimonial:</b> os recursos ficam em <b>FIE</b> (Fundos de Investimento Especialmente constituídos) e os ativos garantidores das provisões não se confundem com o patrimônio da seguradora: não respondem por suas dívidas nem entram na sua liquidação.</li>
+    <li><b>Encargos:</b> <b>taxa de carregamento</b> (sobre as contribuições, na entrada, ou sobre o resgate/portabilidade, na saída; limitada a 10%), <b>taxa de administração</b> do FIE (sobre o patrimônio) e, eventualmente, taxa de performance. Hoje muitos planos não cobram carregamento.</li>
+    <li><b>Subtipos:</b> além do PGBL/VGBL padrão (sem garantia de rentabilidade), há planos com garantia mínima, como o <b>PRGP</b> (remuneração garantida e performance) e o <b>PAGP</b> (atualização garantida e performance), hoje pouco comercializados. Pela política de investimento dos FIE, os planos se classificam em <b>Soberano</b> (só títulos públicos federais), <b>Renda Fixa</b> (renda fixa, sem renda variável) e <b>Composto</b> (admite renda variável dentro dos limites regulatórios).</li>
+    <li>Na sucessão, os recursos vão aos beneficiários indicados e, em regra, não entram no inventário (o ITCMD depende da legislação estadual).</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>No PGBL o IR do resgate incide sobre o <b>total</b>, não só sobre o ganho, porque as contribuições foram deduzidas antes. E não existe portabilidade entre PGBL e VGBL.</div>
+</section>
+
+<!-- Simulado -->
+<section id="simulado">
+  <div class="num">Simulado</div>
+  <h2>54 questões do tema 8</h2>
+  <p class="why">A correção sai a cada resposta. No fim aparecem a nota por subtema e a lista dos erros para revisar.</p>
+  <div class="qbar">
+    <label for="filt">Questões:</label>
+    <select id="filt"><option value="all">Todas (54)</option><option value="8.1">Só 8.1</option><option value="8.2">Só 8.2</option><option value="8.3">Só 8.3</option></select>
+    <label><input type="checkbox" id="shuf"> embaralhar</label>
+    <button id="start">Começar</button>
+  </div>
+  <div id="quiz"></div>
+</section>
+
+</main>
+</div>
+
+<script>
+const Q=[
+{s:"8.1",q:"No processo de gestão de carteiras, a identificação dos objetivos e restrições do investidor e a redação do IPS fazem parte da etapa de:",o:["Planejamento", "Avaliação de desempenho", "Execução", "Realimentação"],a:0,e:"O planejamento abrange objetivos e restrições, o IPS, as expectativas de mercado e a alocação estratégica."},
+{s:"8.1",q:"A formação das expectativas de mercado de capitais (retornos, volatilidades e correlações de longo prazo) pertence à etapa de:",o:["Monitoramento", "Planejamento", "Execução", "Realimentação"],a:1,e:"As expectativas de mercado são combinadas com o IPS para definir a alocação estratégica, ainda no planejamento."},
+{s:"8.1",q:"A seleção dos ativos e gestores e a execução das ordens de compra e venda, com atenção aos custos de transação, correspondem à etapa de:",o:["Realimentação", "Elaboração do IPS", "Execução", "Planejamento"],a:2,e:"A execução transforma a alocação estratégica numa carteira real: composição da carteira e implementação das ordens."},
+{s:"8.1",q:"Monitoramento, rebalanceamento e avaliação de desempenho são componentes da etapa de:",o:["Planejamento", "Execução", "Alocação estratégica", "Realimentação (feedback)"],a:3,e:"A realimentação acompanha investidor e mercado, rebalanceia e avalia o resultado contra o IPS e o benchmark."},
+{s:"8.1",q:"Um ano após montar a carteira, o gestor descobre que o cliente vai se aposentar 5 anos antes do previsto. Pelo processo de gestão, ele deve:",o:["Voltar à etapa de planejamento e revisar o IPS", "Manter tudo, pois o IPS não pode ser alterado", "Trocar o benchmark sem consultar o cliente", "Apenas rebalancear a carteira aos pesos atuais"],a:0,e:"O processo é retroalimentado: uma mudança nas circunstâncias do cliente, detectada no monitoramento, leva à revisão do IPS e da alocação estratégica."},
+{s:"8.1",q:"Sobre o processo de gestão de carteiras, é correto afirmar que:",o:["Só se aplica a investidores institucionais", "É contínuo e retroalimentado, valendo para investidores individuais e institucionais", "Começa pela seleção dos ativos e depois define os objetivos", "É linear e termina com a execução das ordens"],a:1,e:"As três etapas se repetem continuamente; o que muda entre individual e institucional é o conteúdo do IPS, não a lógica."},
+{s:"8.2",q:"A principal diferença entre o IPS e a recomendação de uma carteira é que:",o:["O IPS lista os fundos e os pesos de cada um", "A carteira é estável e o IPS muda a cada oscilação do mercado", "O IPS registra objetivos, restrições e diretrizes; a carteira aplica essas diretrizes às condições de mercado do momento", "São sinônimos"],a:2,e:"O IPS muda quando a situação do investidor muda; a carteira pode mudar com o mercado, sempre dentro do IPS."},
+{s:"8.2",q:"NÃO é uma vantagem do IPS:",o:["Dar disciplina ao cliente em momentos de estresse do mercado", "Servir de padrão para avaliar o gestor", "Facilitar a continuidade caso o gestor seja substituído", "Garantir que o retorno requerido será atingido"],a:3,e:"O IPS orienta, documenta e disciplina, mas não garante retorno nem elimina o risco."},
+{s:"8.2",q:"Roberto construiu sozinho uma rede de lojas, assumindo riscos ao longo de 25 anos. Pela fonte da riqueza, espera-se que ele tenha:",o:["Disposição ao risco acima da média", "Disposição ao risco abaixo da média", "Capacidade de risco nula", "Necessidade de liquidez elevada"],a:0,e:"Quem gerou a riqueza ativamente, como empreendedor, costuma ter mais disposição ao risco e confiança no próprio controle."},
+{s:"8.2",q:"Mariana herdou R$ 5 milhões dos pais e nunca trabalhou com investimentos. Em comparação com quem construiu a riqueza como empresário, ela tende a ter:",o:["Maior disposição ao risco", "Menor disposição ao risco", "A mesma disposição, pois o valor é igual", "Horizonte necessariamente curto"],a:1,e:"Riqueza obtida passivamente (herança, salário) costuma vir com menor disposição ao risco e mais medo de perder o que não se sabe repor."},
+{s:"8.2",q:"A 'medida da riqueza' no perfil situacional refere-se a:",o:["O valor da carteira de ações", "O valor de mercado exato do patrimônio", "A percepção subjetiva do investidor sobre o tamanho do seu patrimônio frente às suas necessidades", "A renda anual declarada"],a:2,e:"É subjetiva: quem acha que tem pouco tende a ser mais avesso a perdas, mesmo com patrimônio elevado."},
+{s:"8.2",q:"Pedro, 27 anos, terminou a residência médica, está abrindo o consultório, tem pouco patrimônio financeiro e grande capital humano. Ele está no estágio de:",o:["Acumulação", "Manutenção", "Distribuição", "Fundação"],a:3,e:"A fundação é a fase de formação e início de carreira ou negócio, com patrimônio pequeno e necessidade de liquidez."},
+{s:"8.2",q:"O estágio de vida em que a renda é crescente, há poupança regular e horizonte longo, permitindo em geral maior tolerância ao risco, é o de:",o:["Acumulação", "Distribuição", "Fundação", "Manutenção"],a:0,e:"Na acumulação, o tempo e a renda futura absorvem perdas, o que aumenta a capacidade de risco."},
+{s:"8.2",q:"Um casal de 66 anos, aposentado, tem como foco preservar o padrão de vida e o patrimônio. Eles estão no estágio de:",o:["Distribuição", "Manutenção", "Acumulação", "Fundação"],a:1,e:"A manutenção é a fase próxima ou dentro da aposentadoria, com foco em preservar o padrão de vida; tolerância moderada a baixa."},
+{s:"8.2",q:"Um empresário de 45 anos vendeu sua empresa, tem patrimônio muito acima do que vai gastar na vida e quer planejar a transferência do excedente aos filhos e a uma fundação. Ele está no estágio de:",o:["Manutenção", "Acumulação", "Distribuição", "Fundação"],a:2,e:"A distribuição é caracterizada pela transferência do excedente. Os estágios não dependem só da idade."},
+{s:"8.2",q:"O investidor que busca segurança acima de tudo, tem forte aversão a perdas, é indeciso e resiste tanto a decidir quanto a aceitar conselhos é classificado como:",o:["Individualista", "Metódico", "Espontâneo", "Cuidadoso"],a:3,e:"O cuidadoso prefere baixa volatilidade, pouco giro e segurança; tem dificuldade de decidir."},
+{s:"8.2",q:"Um cliente decide com base em fatos, relatórios e números, é disciplinado e conservador e não cria apego emocional aos ativos. Seu tipo padrão é:",o:["Metódico", "Cuidadoso", "Espontâneo", "Individualista"],a:0,e:"O metódico se apoia em pesquisa e dados, é conservador e tende a buscar informações que confirmem sua visão."},
+{s:"8.2",q:"Lucas troca a carteira toda semana para seguir as 'ações da moda', tem medo de ficar de fora das altas e paga muita corretagem. Seu tipo padrão é:",o:["Individualista", "Espontâneo", "Cuidadoso", "Metódico"],a:1,e:"O espontâneo decide rápido, segue modas e tem alto giro, com custos de transação elevados."},
+{s:"8.2",q:"O investidor independente e confiante, que faz a própria análise de forma racional, gosta de controlar as decisões e aceita risco moderado a alto, é o:",o:["Metódico", "Espontâneo", "Individualista", "Cuidadoso"],a:2,e:"O individualista é autoconfiante e analítico; diferente do espontâneo, decide com análise, não por impulso."},
+{s:"8.2",q:"Uma limitação da classificação em tipos padrão de investidor é que:",o:["Ela mede com precisão a capacidade financeira de correr risco", "Ela é exigida por lei em substituição ao suitability", "Ela só se aplica a investidores institucionais", "As pessoas raramente se encaixam em um tipo puro e o comportamento muda com o contexto"],a:3,e:"A tipologia simplifica: há tipos mistos, o comportamento varia com o mercado e ela descreve atitude, não capacidade financeira."},
+{s:"8.2",q:"Uma desvantagem dos questionários de suitability (API) na avaliação do perfil do investidor é que:",o:["As respostas são sensíveis à forma da pergunta e ao momento do mercado, e captam mais a disposição que a capacidade", "Não permitem comparar clientes", "São caros e demorados", "Não geram registro documental"],a:0,e:"São simples, baratos e documentados, mas sofrem com framing, autoavaliação irrealista e foco na disposição."},
+{s:"8.2",q:"No entendimento de um investidor individual, o perfil situacional e o perfil psicológico ajudam a medir, respectivamente:",o:["A disposição e a capacidade de risco", "A capacidade e a disposição de risco", "O retorno desejado e o retorno requerido", "A liquidez e o horizonte"],a:1,e:"O situacional (patrimônio, renda, horizonte, necessidades) indica a capacidade; o psicológico indica a disposição e os comportamentos prováveis."},
+{s:"8.2",q:"Sobre retorno requerido e retorno desejado, é correto afirmar que:",o:["São sempre iguais", "O desejado é o necessário para cobrir as despesas essenciais", "O requerido é o necessário para atingir os objetivos essenciais; o desejado é aspiracional e só é perseguido se compatível com a tolerância ao risco", "O IPS deve ter como objetivo de retorno o desejado, mesmo que exija risco acima da tolerância"],a:2,e:"O requerido entra no IPS; o desejado depende de caber no risco tolerado. Se nem o requerido couber, o cliente precisa rever os objetivos."},
+{s:"8.2",q:"Cliente com carteira de R$ 2.500.000 precisa retirar R$ 125.000 por ano, corrigidos pela inflação, esperada em 4% ao ano. O retorno nominal exigido (cálculo multiplicativo) é de aproximadamente:",o:["10,00%", "5,00%", "9,00%", "9,20%"],a:3,e:"Real = 125.000 / 2.500.000 = 5%. Nominal = 1,05 × 1,04 − 1 = 9,20%. A soma simples (9%) é só aproximação."},
+{s:"8.2",q:"Uma cliente precisa de retorno real líquido de 6% ao ano e seus investimentos pagam 15% de IR sobre os rendimentos. O retorno real bruto exigido é de aproximadamente:",o:["7,06%", "5,10%", "7,50%", "6,90%"],a:0,e:"Bruto = líquido / (1 − alíquota) = 6% / 0,85 = 7,06%."},
+{s:"8.2",q:"Um investidor tem R$ 500.000 e quer chegar a R$ 1.000.000 em 10 anos, sem novos aportes. O retorno anual exigido é de aproximadamente:",o:["5,00%", "7,18%", "6,50%", "10,00%"],a:1,e:"r = (1.000.000 / 500.000)^(1/10) − 1 = 2^0,1 − 1 ≈ 7,18% ao ano."},
+{s:"8.2",q:"Sr. Jorge tem R$ 1.000.000 aplicados, vai usar R$ 200.000 daqui a 6 meses para comprar um apartamento e precisa de R$ 48.000 por ano (corrigidos pela inflação) para complementar a aposentadoria. O retorno real exigido sobre a carteira investível é de:",o:["5,3%", "4,8%", "6,0%", "4,0%"],a:2,e:"A compra do imóvel é necessidade de liquidez e sai da base: 1.000.000 − 200.000 = 800.000. Real exigido = 48.000 / 800.000 = 6,0%."},
+{s:"8.2",q:"Julia, 70 anos, viúva, depende da carteira para viver e o patrimônio mal cobre suas despesas, mas diz que adora risco e quer 80% em ações. A tolerância ao risco a registrar no IPS é:",o:["Média, fazendo a média entre capacidade e disposição", "Indefinida até o próximo questionário", "Alta, pois prevalece a vontade da cliente", "Baixa, pois prevalece a baixa capacidade; o gestor deve explicar à cliente por que não pode correr esse risco"],a:3,e:"Com capacidade baixa e disposição alta, prevalece a capacidade. A disposição não cria capacidade de absorver perdas."},
+{s:"8.2",q:"Fábio, 35 anos, renda alta e estável, patrimônio grande frente às necessidades e horizonte longo, tem baixíssima disposição ao risco. O curso de ação recomendado é:",o:["Educar o cliente sobre sua capacidade e o custo de ser conservador demais; se a disposição continuar baixa, respeitá-la", "Recusar o cliente", "Ignorar a disposição e montar carteira agressiva", "Considerar a tolerância alta, pois a capacidade é alta"],a:0,e:"Com capacidade alta e disposição baixa, o gestor educa. Se não houver mudança, prevalece a menor das duas."},
+{s:"8.2",q:"Um casal de 45 anos planeja acumular até os 60 e depois viver dos investimentos até cerca de 90 anos. A restrição de horizonte do IPS deve ser descrita como:",o:["Curto prazo, de estágio único", "Longo prazo, de múltiplos estágios", "Indefinida", "Igual ao prazo do título mais longo da carteira"],a:1,e:"Há dois estágios (acumulação e consumo), ambos longos. IPS bem feitos descrevem horizontes multiestágio."},
+{s:"8.2",q:"Um diretor de companhia aberta não pode negociar ações da empresa durante os períodos de vedação. No IPS, essa limitação é uma restrição:",o:["De liquidez", "Tributária", "Legal e regulatória", "De horizonte"],a:2,e:"Vedações a negociar por informação privilegiada são restrição legal e regulatória, uma das poucas relevantes para pessoas físicas."},
+{s:"8.2",q:"Uma cliente não aceita investir em empresas de tabaco e de armas, e tem 40% do patrimônio em ações da empresa onde trabalha. No IPS, esses pontos devem constar como:",o:["Restrição de horizonte", "Objetivo de retorno", "Restrição de liquidez", "Circunstâncias específicas"],a:3,e:"Preferências éticas e posições concentradas são circunstâncias específicas do cliente. A posição concentrada também reduz a capacidade de risco."},
+{s:"8.2",q:"Um cliente na alíquota máxima do IR compara um CDB a 100% do CDI e uma LCI isenta a 90% do CDI. Considerar essa diferença no IPS diz respeito à restrição:",o:["Tributária", "De horizonte", "Legal", "De liquidez"],a:0,e:"Impostos são restrição própria do IPS: a comparação deve ser feita pelo retorno líquido."},
+{s:"8.2",q:"O IPS de um cliente de 68 anos, aposentado e que depende da carteira, diz: 'Objetivo de retorno: o maior possível. Tolerância ao risco: alta, conforme o questionário. Liquidez: nenhuma necessidade.' A principal falha é:",o:["Não citar a taxa de administração", "Objetivo de retorno vago e tolerância baseada só no questionário, ignorando a baixa capacidade e a necessidade de liquidez do cliente", "Ter sido escrito em linguagem simples", "Prever revisão anual"],a:1,e:"O retorno precisa ser o requerido e mensurável; a tolerância deve considerar a capacidade; quem vive da carteira tem necessidade de liquidez."},
+{s:"8.2",q:"Pela regra prática do IPS, quando a capacidade e a disposição de correr risco divergem, a tolerância registrada tende a:",o:["Ser a maior das duas", "Ser a média das duas", "Ser a menor das duas", "Ser definida apenas pelo gestor"],a:2,e:"Vale a mais restritiva. Com disposição baixa e capacidade alta, cabe primeiro o trabalho de educação."},
+{s:"8.3",q:"Em um plano de Benefício Definido (BD), o risco de investimento e o risco atuarial recaem principalmente sobre:",o:["A Previc", "A seguradora", "O participante", "O plano e a patrocinadora"],a:3,e:"No BD o benefício é fixado por fórmula; se os ativos não bastam, há déficit, coberto por contribuições extras."},
+{s:"8.3",q:"Em um plano de Contribuição Definida (CD):",o:["O benefício depende do saldo acumulado na conta individual e o risco de investimento é do participante", "Não há contas individuais", "O benefício é fixado por fórmula de salário e tempo de serviço", "A patrocinadora garante o benefício"],a:0,e:"No CD fixa-se a contribuição; o benefício é o resultado do saldo acumulado."},
+{s:"8.3",q:"O plano de Contribuição Variável (CV) caracteriza-se por:",o:["Benefício definido desde a adesão", "Acumulação como CD e, na concessão, possibilidade de renda vitalícia com características de BD", "Ausência de contribuições", "Ser exclusivo de entidades abertas"],a:1,e:"O CV é híbrido: contas individuais na acumulação e, na fase de benefício, pode haver renda vitalícia com risco atuarial do plano."},
+{s:"8.3",q:"Um plano BD tem ativos de R$ 900 milhões e provisões matemáticas de R$ 1 bilhão. O índice de solvência e a situação do plano são:",o:["10%, déficit", "111%, superávit", "90%, déficit de R$ 100 milhões", "90%, superávit de R$ 100 milhões"],a:2,e:"Solvência = 900 / 1.000 = 90%. Ativos abaixo do passivo: déficit de R$ 100 milhões."},
+{s:"8.3",q:"Um plano BD está em déficit atuarial. Em relação à tolerância ao risco, espera-se que ela seja:",o:["Irrelevante para o IPS", "Igual à de um plano em superávit", "Maior, para recuperar o déficit com mais retorno", "Menor, pois novas perdas aumentam o déficit e as contribuições extras"],a:3,e:"Déficit reduz a tolerância; a correção vem do equacionamento (contribuições extraordinárias), não de apostas."},
+{s:"8.3",q:"Qual combinação aumenta a tolerância ao risco de um fundo de pensão BD?",o:["Patrocinadora lucrativa e baixa correlação entre os riscos do fundo e os da patrocinadora", "Patrocinadora com lucro em queda e fundo concentrado no setor dela", "Plano maduro, com maioria de aposentados", "Cláusula que permite resgate em parcela única a qualquer momento"],a:0,e:"Patrocinadora sólida pode cobrir déficits, e baixa correlação evita que fundo e empresa sofram ao mesmo tempo."},
+{s:"8.3",q:"Dois planos BD têm a mesma solvência. O plano A tem participantes jovens e poucos aposentados; o plano B tem 70% de aposentados. Em comparação com A, o plano B tende a ter:",o:["Maior tolerância ao risco e menor necessidade de liquidez", "Menor tolerância ao risco e maior necessidade de liquidez", "Horizonte mais longo", "A mesma tolerância"],a:1,e:"Plano maduro tem passivo mais curto e pagamentos correntes altos: menos tolerância e mais liquidez."},
+{s:"8.3",q:"Uma cláusula que permite aposentadoria antecipada com recebimento em parcela única (lump sum) tende a:",o:["Aumentar a tolerância ao risco", "Reduzir a necessidade de liquidez", "Aumentar a necessidade de liquidez e reduzir a tolerância ao risco", "Não afetar o IPS"],a:2,e:"Opções de saque antecipado tornam os fluxos de saída maiores e incertos, pedindo mais liquidez e menos risco."},
+{s:"8.3",q:"A meta atuarial de um plano é INPC + 4,5% ao ano. Com INPC esperado de 4%, a meta nominal (cálculo multiplicativo) é de aproximadamente:",o:["4,50%", "9,00%", "8,50%", "8,68%"],a:3,e:"Meta = 1,04 × 1,045 − 1 = 8,68%. A soma simples (8,5%) subestima."},
+{s:"8.3",q:"No ALM de um plano BD brasileiro com benefícios corrigidos pelo INPC, a carteira que mais reduz o risco do superávit é composta por:",o:["NTN-B com duration próxima à do passivo", "Dólar e ouro", "Títulos pós-fixados atrelados ao CDI", "Ações de empresas de dividendos"],a:0,e:"No ALM, o ativo de menor risco replica o passivo: títulos indexados à inflação com duration casada (imunização)."},
+{s:"8.3",q:"Para um plano BD com meta atuarial INPC + 4,5%, o benchmark de longo prazo mais coerente é:",o:["Ibovespa", "INPC + 4,5% (ou um índice de NTN-B, como o IMA-B, para a parcela indexada)", "Dólar", "CDI"],a:1,e:"O benchmark deve refletir o passivo: inflação + juro real. O CDI não acompanha o passivo atuarial."},
+{s:"8.3",q:"Os limites de aplicação por segmento (renda fixa, renda variável, estruturado, imobiliário, exterior) dos recursos dos planos das entidades fechadas de previdência complementar são fixados:",o:["Livremente pelo gestor contratado", "Pela própria patrocinadora", "Por resolução do Conselho Monetário Nacional (atualmente a Res. CMN 4.994/2022)", "Pela Susep"],a:2,e:"As EFPC seguem as regras do CMN (Res. 4.994/2022), além da LC 109/2001 e das normas do CNPC e da Previc."},
+{s:"8.3",q:"Um profissional liberal faz declaração completa do IR, contribui para o INSS e ainda não fez previdência neste ano. Para aproveitar o benefício fiscal, o plano indicado é o:",o:["VGBL, pois é dedutível sem limite", "VGBL, pois o IR do resgate incide sobre o total", "Nenhum, pois previdência não tem benefício fiscal", "PGBL, pois as contribuições são dedutíveis até 12% da renda bruta tributável"],a:3,e:"O PGBL permite deduzir até 12% da renda bruta tributável na declaração completa. O VGBL não é dedutível."},
+{s:"8.3",q:"Um investidor com renda bruta tributável de R$ 200.000, declaração completa e alíquota marginal de 27,5% aporta o máximo dedutível em PGBL. O aporte e a economia de IR no ano são, aproximadamente:",o:["R$ 24.000 e R$ 6.600", "R$ 24.000 e R$ 3.600", "R$ 55.000 e R$ 24.000", "R$ 20.000 e R$ 5.500"],a:0,e:"Limite = 12% × 200.000 = 24.000. Economia ≈ 27,5% × 24.000 = 6.600 (é um diferimento: o IR vem no resgate)."},
+{s:"8.3",q:"Um participante resgata R$ 150.000 de um plano para o qual aportou R$ 100.000, tudo há mais de 10 anos, no regime regressivo (10%). O IR é de:",o:["R$ 5.000 em ambos", "R$ 15.000 no PGBL e R$ 5.000 no VGBL", "R$ 5.000 no PGBL e R$ 15.000 no VGBL", "R$ 15.000 em ambos"],a:1,e:"No PGBL a base é o total (10% × 150.000); no VGBL, só o rendimento (10% × 50.000)."},
+{s:"8.3",q:"Sobre a portabilidade em planos de previdência aberta, é correto afirmar que:",o:["É permitida de PGBL para VGBL, com IR sobre o ganho", "Os recursos passam pela conta do participante antes de ir à nova entidade", "É feita diretamente entre as entidades, sem incidência de IR, entre planos de mesma natureza", "É proibida entre seguradoras diferentes"],a:2,e:"Portabilidade só PGBL → PGBL ou VGBL → VGBL, direto entre as instituições e sem IR."},
+{s:"8.3",q:"A segregação patrimonial dos recursos de PGBL e VGBL significa que:",o:["Os recursos ficam numa conta da seguradora e entram na liquidação dela", "O participante pode sacar a qualquer momento sem IR", "A seguradora garante rentabilidade mínima", "Os ativos garantidores, aplicados nos FIE, não se confundem com o patrimônio da seguradora e não respondem por suas dívidas"],a:3,e:"Os recursos ficam em fundos especialmente constituídos (FIE), separados do patrimônio da seguradora."},
+{s:"8.3",q:"A taxa de carregamento de um plano de previdência aberta é cobrada:",o:["Sobre as contribuições (na entrada) ou sobre o valor resgatado/portado (na saída)", "Somente sobre o ganho acima do CDI", "Pela Susep, como taxa de fiscalização", "Sobre o patrimônio do fundo, diariamente"],a:0,e:"O carregamento incide sobre aportes ou resgates; a taxa de administração é a que incide sobre o patrimônio do FIE."},
+{s:"8.3",q:"O plano de previdência aberta cujo FIE só pode aplicar em títulos públicos federais é classificado como:",o:["Renda Fixa", "Soberano", "Multimercado livre", "Composto"],a:1,e:"Soberano: só títulos públicos federais. Renda Fixa admite outros títulos de renda fixa; Composto admite renda variável dentro dos limites."}
+];
+const $=s=>document.querySelector(s);
+let L=[],i=0,ans=[];
+function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+$('#start').onclick=()=>{
+  const f=$('#filt').value;L=Q.filter(x=>f==='all'||x.s===f);
+  if($('#shuf').checked)L=L.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+  // alternativas sempre embaralhadas, para a letra certa não se repetir
+  L=L.map(x=>{if(x.f)return x;const p=x.o.map((o,k)=>[Math.random(),o,k]).sort((a,b)=>a[0]-b[0]);return {...x,o:p.map(v=>v[1]),a:p.findIndex(v=>v[2]===x.a)}});
+  i=0;ans=[];show();
+};
+function show(){
+  const x=L[i];
+  $('#quiz').innerHTML=`<div class="card"><div class="qhead"><span>Questão ${i+1} de ${L.length}</span><span>Subtema ${x.s}</span></div>
+  <div class="progress"><i style="width:${i/L.length*100}%"></i></div>
+  <p class="qtext">${esc(x.q)}</p><div class="opts">${x.o.map((o,k)=>`<button class="opt" data-k="${k}"><span class="l">${'ABCD'[k]})</span><span>${esc(o)}</span></button>`).join('')}</div>
+  <div id="fb"></div><div class="nav2"><span></span><button id="next" disabled>${i+1<L.length?'Próxima':'Ver resultado'}</button></div></div>`;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+  $('#next').onclick=()=>{i++;i<L.length?show():result()};
+}
+function pick(k){
+  const x=L[i],ok=k===x.a;ans[i]=ok;
+  document.querySelectorAll('.opt').forEach((b,j)=>{b.disabled=true;if(j===x.a)b.classList.add('ok');else if(j===k)b.classList.add('bad')});
+  $('#fb').innerHTML=`<div class="fb"><strong class="${ok?'ok':'bad'}">${ok?'Certo.':'Errado. Resposta: '+'ABCD'[x.a]+'.'}</strong> ${esc(x.e)}</div>`;
+  $('#next').disabled=false;$('#next').focus();
+}
+function result(){
+  const n=ans.filter(Boolean).length,by={};
+  L.forEach((x,j)=>{by[x.s]=by[x.s]||[0,0];by[x.s][1]++;if(ans[j])by[x.s][0]++});
+  const wrong=L.map((x,j)=>[x,j]).filter(([x,j])=>!ans[j]);
+  $('#quiz').innerHTML=`<div class="card"><div class="score">${n}/${L.length}</div><p class="hint">${Math.round(n/L.length*100)}% de acerto. A prova da CFG exige 70%.</p>
+  <div class="bars">${Object.keys(by).sort().map(s=>{const [a,t]=by[s];return `<div class="bar"><span>Subtema ${s}</span><span class="t"><i style="width:${a/t*100}%"></i></span><span class="v">${a}/${t}</span></div>`}).join('')}</div>
+  ${wrong.length?`<h3>Para revisar</h3><ul>${wrong.map(([x])=>`<li><b>${x.s}</b> · ${esc(x.q)}<br><span class="hint">Resposta: ${esc(x.o[x.a])}. ${esc(x.e)}</span></li>`).join('')}</ul>`:'<p>Nenhum erro.</p>'}
+  <div class="nav2"><button class="ghost" onclick="document.getElementById('start').click()">Refazer</button></div></div>`;
+}
+</script>
+</body>
+</html>

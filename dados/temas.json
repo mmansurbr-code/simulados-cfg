@@ -9,6 +9,33 @@
   "questoes": 62
  },
  {
+  "id": "t2",
+  "numero": 2,
+  "titulo": "Economia",
+  "resumo": "Apostila do tema 2, que vale de 3% a 7% da prova. Cobre a microeconomia (oferta e demanda, consumidor, firma e estruturas de mercado) e a macroeconomia aplicada ao Brasil: indicadores, SFN, política fiscal, política monetária e inflação, câmbio e contas externas. Cada bloco traz o conceito, a fórmula ou a regra, um exemplo resolvido e a pegadinha mais comum.",
+  "arquivo": "tema2.json",
+  "topicos": 2,
+  "questoes": 91
+ },
+ {
+  "id": "t3",
+  "numero": 3,
+  "titulo": "Análise de Relatórios Financeiros",
+  "resumo": "Apostila do tema 3, que vale de 3% a 7% da prova. O tema cobre a leitura do balanço, da DRE e da DFC, os índices de liquidez, endividamento e rentabilidade e os sinais de manipulação contábil. Todos os índices são calculados sobre uma mesma empresa de exemplo, a Cia. Alfa. Cada bloco traz o conceito, a fórmula, a conta e as pegadinhas mais comuns.",
+  "arquivo": "tema3.json",
+  "topicos": 3,
+  "questoes": 56
+ },
+ {
+  "id": "t4",
+  "numero": 4,
+  "titulo": "Finanças Corporativas",
+  "resumo": "Apostila do tema 4, que vale de 3% a 7% da prova. É o olhar de dentro da empresa: como ela escolhe projetos, quanto custa o seu capital, como devolve dinheiro ao acionista, como se reestrutura e como é governada. Cada bloco traz o conceito, a fórmula, um exemplo resolvido (com a sequência na HP 12C quando ajuda) e as pegadinhas mais comuns.",
+  "arquivo": "tema4.json",
+  "topicos": 5,
+  "questoes": 80
+ },
+ {
   "id": "t5",
   "numero": 5,
   "titulo": "Mercados e Instrumentos Financeiros",
@@ -27,6 +54,24 @@
   "questoes": 78
  },
  {
+  "id": "t7",
+  "numero": 7,
+  "titulo": "Finanças Comportamentais",
+  "resumo": "Apostila do tema 7, de peso menor na prova (3% a 7%), mas com questões quase sempre em forma de caso: a prova descreve um investidor e pergunta qual viés está agindo. Cada bloco traz o conceito, a definição, um caso e as pegadinhas mais comuns, seguindo a classificação de vieses do programa ANBIMA.",
+  "arquivo": "tema7.json",
+  "topicos": 4,
+  "questoes": 53
+ },
+ {
+  "id": "t8",
+  "numero": 8,
+  "titulo": "Política de Investimento (IPS)",
+  "resumo": "Apostila do tema 8, que trata do documento que vem antes de qualquer alocação: o que o cliente precisa, quanto risco ele pode e quer correr e o que limita a carteira. Cada bloco traz o conceito, a conta quando há cálculo, um caso resolvido e as pegadinhas mais comuns.",
+  "arquivo": "tema8.json",
+  "topicos": 3,
+  "questoes": 54
+ },
+ {
   "id": "t9",
   "numero": 9,
   "titulo": "Alocação de Ativos",
@@ -34,6 +79,15 @@
   "arquivo": "tema9.json",
   "topicos": 3,
   "questoes": 33
+ },
+ {
+  "id": "t10",
+  "numero": 10,
+  "titulo": "Novas Tecnologias em Finanças",
+  "resumo": "Apostila do tema 10, um dos de menor peso na prova (3% a 7%), mas cobrado em questões conceituais diretas. Cada bloco traz o conceito, a regra-chave da realidade brasileira e as pegadinhas mais comuns.",
+  "arquivo": "tema10.json",
+  "topicos": 4,
+  "questoes": 54
  },
  {
   "id": "t11",

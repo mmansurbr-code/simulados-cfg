@@ -1,0 +1,719 @@
+{
+ "id": "t7",
+ "numero": 7,
+ "titulo": "Finanças Comportamentais",
+ "resumo": "Apostila do tema 7, de peso menor na prova (3% a 7%), mas com questões quase sempre em forma de caso: a prova descreve um investidor e pergunta qual viés está agindo. Cada bloco traz o conceito, a definição, um caso e as pegadinhas mais comuns, seguindo a classificação de vieses do programa ANBIMA.",
+ "topicos": [
+  {
+   "id": "t71",
+   "rotulo": "7.1 Teoria tradicional × finanças comportamentais",
+   "html": "<div class=\"num\">7.1</div>\n  <h2>Teoria tradicional × finanças comportamentais</h2>\n  <p class=\"why\">O ponto de partida do tema: o que a teoria clássica supõe sobre o investidor, onde essas premissas falham e como isso ajuda a explicar as anomalias de mercado.</p>\n\n  <h3>As premissas da teoria tradicional</h3>\n  <ul>\n    <li><b>Agente racional</b> (<i>homo economicus</i>): tem informação completa, processa tudo corretamente e escolhe o que <b>maximiza sua utilidade esperada</b>.</li>\n    <li><b>Atualização bayesiana:</b> ao receber informação nova, revisa as crenças na medida certa, nem mais nem menos.</li>\n    <li><b>Preferências estáveis e consistentes:</b> a forma de apresentar o problema não muda a escolha; o investidor é <b>avesso ao risco</b> de modo uniforme e avalia a <b>riqueza final</b>.</li>\n    <li><b>Expectativas racionais:</b> as previsões não têm erro sistemático; os erros são aleatórios e se cancelam.</li>\n    <li>Daí vêm a teoria moderna de carteiras (Markowitz), o CAPM e a <b>hipótese de mercados eficientes</b> (HME).</li>\n  </ul>\n\n  <h3>As premissas das finanças comportamentais</h3>\n  <ul>\n    <li><b>Racionalidade limitada</b> (Herbert Simon): por falta de tempo, de informação e de capacidade de processamento, as pessoas buscam uma solução <b>satisfatória</b> (<i>satisficing</i>), não a ótima.</li>\n    <li><b>Heurísticas:</b> atalhos mentais que simplificam a decisão. Funcionam na maior parte do tempo, mas geram <b>vieses sistemáticos</b>, que não se cancelam.</li>\n    <li><b>Emoções</b> influenciam a decisão: medo, arrependimento, prazer e dor afetam escolhas que a teoria trata como frias.</li>\n    <li>As preferências dependem do <b>ponto de referência</b> e da <b>forma de apresentação</b> (Teoria da Perspectiva, em 7.2).</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Teoria tradicional</th><th>Finanças comportamentais</th></tr>\n    <tr><td>Natureza</td><td><b>Normativa</b>: como as pessoas <i>deveriam</i> decidir</td><td><b>Descritiva</b>: como as pessoas <i>de fato</i> decidem</td></tr>\n    <tr><td>Investidor</td><td>Racional, com informação completa</td><td>Racionalidade limitada, usa heurísticas, sujeito a emoções</td></tr>\n    <tr><td>Erros</td><td>Aleatórios, se cancelam</td><td>Sistemáticos, na mesma direção</td></tr>\n    <tr><td>Risco</td><td>Aversão ao risco sobre a riqueza final</td><td>Aversão à <b>perda</b> em relação a um ponto de referência</td></tr>\n    <tr><td>Mercado</td><td>Eficiente: preço = valor fundamental</td><td>Pode desviar do valor por períodos longos</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Definição · micro × macro</span>Finanças comportamentais micro: vieses dos investidores individuais.<br>Finanças comportamentais macro: efeitos agregados no mercado (anomalias, bolhas).</div>\n\n  <h3>Mercados eficientes: o que a HME diz</h3>\n  <ul>\n    <li><b>Fraca:</b> os preços refletem toda a informação de preços e volumes passados; a análise técnica não gera retorno anormal.</li>\n    <li><b>Semiforte:</b> refletem toda a informação <b>pública</b>; a análise fundamentalista também não gera retorno anormal de forma consistente.</li>\n    <li><b>Forte:</b> refletem toda a informação, inclusive a privilegiada.</li>\n  </ul>\n  <p>A HME não exige que <i>todos</i> sejam racionais. A defesa clássica tem dois argumentos: (1) os erros dos investidores irracionais são aleatórios e <b>se cancelam</b>; (2) se não se cancelarem, os <b>arbitradores</b> racionais compram o que está barato e vendem o que está caro até o preço voltar ao valor justo.</p>\n\n  <h3>A resposta comportamental: vieses correlacionados e limites à arbitragem</h3>\n  <ul>\n    <li>Os vieses são <b>sistemáticos e compartilhados</b> (muitos investidores erram na mesma direção), então não se cancelam.</li>\n    <li>A arbitragem tem <b>limites</b>:\n      <ul>\n        <li><b>risco fundamental:</b> não existe substituto perfeito para o ativo mal precificado;</li>\n        <li><b>risco de <i>noise traders</i>:</b> o desvio pode <b>aumentar</b> antes de corrigir, e o arbitrador pode ter de sair no prejuízo (chamada de margem, resgates). \"O mercado pode ficar irracional mais tempo do que você consegue ficar solvente\";</li>\n        <li><b>custos de implementação:</b> corretagem, aluguel caro ou indisponível para venda a descoberto, restrições regulatórias.</li>\n      </ul></li>\n    <li>Conclusão: os preços podem ficar <b>longe do valor fundamental</b> por muito tempo, mesmo sem oportunidade de lucro fácil e sem risco.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span>\n    <p>Um gestor vê uma ação claramente sobreprecificada, negociada a 60 com valor justo estimado em 35. Para vender a descoberto ele paga aluguel alto, corre o risco de o doador pedir a ação de volta e sabe que, se a euforia continuar, a ação pode ir a 80 antes de cair, gerando prejuízo e resgates no fundo. Ele desiste. A ineficiência persiste porque a arbitragem tem limites, não porque ninguém a enxergou.</p>\n  </div>\n\n  <h3>Anomalias e as explicações comportamentais (item k)</h3>\n  <p>Anomalia é um padrão de retorno que a HME e os modelos tradicionais (como o CAPM) não explicam.</p>\n  <div class=\"tbl\"><table>\n    <tr><th>Anomalia</th><th>O que é</th><th>Explicação comportamental</th></tr>\n    <tr><td><b>Momentum</b></td><td>Ações que subiram nos últimos 3 a 12 meses continuam subindo no curto prazo</td><td><b>Sub-reação</b> a notícias (conservadorismo) seguida de manada e extrapolação</td></tr>\n    <tr><td><b>Drift pós-anúncio de resultados</b></td><td>O preço continua se movendo na direção da surpresa por semanas</td><td><b>Sub-reação</b> por conservadorismo e ancoragem nas projeções anteriores</td></tr>\n    <tr><td><b>Reversão de longo prazo</b> (De Bondt e Thaler)</td><td>As perdedoras de 3 a 5 anos superam as vencedoras nos anos seguintes</td><td><b>Sobrerreação</b> por representatividade: extrapolar o passado recente</td></tr>\n    <tr><td><b>Valor × crescimento</b></td><td>Ações \"de valor\" (P/L baixo) superam as de crescimento no longo prazo</td><td>Representatividade: confunde \"boa empresa\" com \"bom investimento\"; o crescimento é extrapolado demais</td></tr>\n    <tr><td><b>Bolhas e crashes</b></td><td>Preços muito acima do valor, seguidos de queda abrupta</td><td>Excesso de confiança, manada (aversão ao arrependimento), disponibilidade e extrapolação</td></tr>\n    <tr><td><b>Efeito janeiro / calendário</b></td><td>Retornos anormais em certas épocas</td><td>Venda de perdedoras no fim do ano por motivos fiscais e contabilidade mental</td></tr>\n    <tr><td><b>Enigma do prêmio de ações</b></td><td>O prêmio histórico das ações é alto demais para a aversão ao risco \"racional\"</td><td><b>Aversão míope à perda</b> (Benartzi e Thaler): aversão à perda + avaliação frequente da carteira</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Para decorar</span>Sub-reação (conservadorismo, ancoragem) → momentum e drift no curto prazo.<br>Sobrerreação (representatividade, excesso de confiança) → reversão no longo prazo.</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Finanças comportamentais <b>não</b> dizem que é fácil bater o mercado. Os limites à arbitragem explicam justamente por que uma anomalia pode persistir <i>sem</i> oferecer lucro sem risco. Outra troca comum: a teoria tradicional é <b>normativa</b> (como deveria ser) e a comportamental é <b>descritiva</b> (como é), não o contrário.</div>"
+  },
+  {
+   "id": "t72",
+   "rotulo": "7.2 Teoria da Perspectiva (Prospect Theory)",
+   "html": "<div class=\"num\">7.2</div>\n  <h2>Teoria da Perspectiva (Prospect Theory)</h2>\n  <p class=\"why\">A alternativa de Kahneman e Tversky (1979) à utilidade esperada. É a base de vários vieses do tema, principalmente a aversão à perda e o efeito disposição.</p>\n\n  <h3>Premissas centrais</h3>\n  <ul>\n    <li><b>Ponto de referência:</b> as pessoas avaliam <b>ganhos e perdas</b> em relação a uma referência (o preço de compra, o saldo do mês passado, a meta), e não a riqueza final.</li>\n    <li><b>Aversão à perda:</b> uma perda dói cerca de <b>2 a 2,5 vezes</b> mais do que um ganho do mesmo tamanho dá prazer.</li>\n    <li><b>Sensibilidade decrescente:</b> a diferença entre ganhar 100 e 200 pesa mais que a diferença entre ganhar 1.100 e 1.200. O mesmo vale para perdas.</li>\n    <li><b>Ponderação de probabilidades:</b> as pessoas não usam as probabilidades objetivas, mas <b>pesos de decisão</b>: superponderam probabilidades pequenas e subponderam as médias e altas.</li>\n  </ul>\n\n  <h3>A função valor</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Região</th><th>Formato</th><th>Comportamento diante do risco</th></tr>\n    <tr><td>Ganhos (acima da referência)</td><td><b>Côncava</b></td><td><b>Avesso ao risco</b>: prefere o ganho certo</td></tr>\n    <tr><td>Perdas (abaixo da referência)</td><td><b>Convexa</b></td><td><b>Propenso ao risco</b>: prefere arriscar para tentar evitar a perda</td></tr>\n    <tr><td>Inclinação</td><td colspan=\"2\">Mais <b>íngreme nas perdas</b> do que nos ganhos (aversão à perda): a curva tem formato de \"S\" assimétrico</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Definição · função valor</span>v(x) definida sobre ganhos e perdas x em relação ao ponto de referência<br>Côncava em ganhos · convexa em perdas · |v(−x)| ≈ 2 a 2,5 × v(x)</div>\n\n  <h3>As duas fases da decisão</h3>\n  <ol>\n    <li><b>Edição (enquadramento):</b> o problema é simplificado e organizado. Inclui codificar os resultados como ganhos ou perdas, combinar e segregar resultados, cancelar componentes comuns e simplificar probabilidades. É aqui que o <b>enquadramento</b> (<i>framing</i>) muda a decisão.</li>\n    <li><b>Avaliação:</b> cada alternativa recebe um valor = Σ peso de decisão × v(resultado), e escolhe-se a de maior valor.</li>\n  </ol>\n  <div class=\"formula\"><span class=\"lbl\">Utilidade esperada × perspectiva</span>Utilidade esperada:  U = Σ p<sub>i</sub> × u(riqueza final<sub>i</sub>)<br>Perspectiva:  V = Σ π(p<sub>i</sub>) × v(ganho ou perda<sub>i</sub>)</div>\n\n  <h3>Efeitos que caem na prova</h3>\n  <ul>\n    <li><b>Efeito certeza:</b> entre ganhar 3.000 com certeza e ter 80% de chance de ganhar 4.000 (valor esperado de 3.200), a maioria fica com o certo.</li>\n    <li><b>Efeito reflexo:</b> invertendo os sinais (perder 3.000 com certeza ou ter 80% de chance de perder 4.000), a maioria prefere <b>arriscar</b>. A preferência pelo risco se inverte entre ganhos e perdas.</li>\n    <li><b>Loteria e seguro ao mesmo tempo:</b> explicados pela superponderação de probabilidades pequenas (do prêmio e da catástrofe).</li>\n    <li><b>Efeito disposição</b> (Shefrin e Statman): vender cedo as ações com lucro (aversão ao risco nos ganhos) e segurar as com prejuízo (busca de risco nas perdas), tomando o preço de compra como referência.</li>\n    <li><b>Tentar zerar o prejuízo</b> (<i>break-even effect</i>): depois de uma perda, o investidor aumenta o risco para voltar ao ponto de referência.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span>\n    <p>Um cliente compra duas ações a R$ 20. A ação A vai a R$ 26 e a ação B cai a R$ 14. Ele precisa de caixa e vende a A (\"garantir o lucro\"), mantendo a B \"até voltar aos 20\". Os fundamentos da B pioraram e os da A melhoraram. Pela teoria tradicional, a decisão deveria olhar o futuro de cada ação; pela Teoria da Perspectiva, o preço de compra virou referência: na A ele está na região côncava (avesso ao risco) e na B, na convexa (propenso ao risco). É o efeito disposição.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Aversão à perda <b>não</b> é o mesmo que aversão ao risco. Na região de perdas a pessoa <b>busca</b> risco. E a função valor é medida sobre <b>ganhos e perdas</b> em relação à referência, não sobre a riqueza final, que é o que faz a utilidade esperada. Também cuidado: a função é côncava nos ganhos e <b>convexa</b> nas perdas (não o contrário).</div>"
+  },
+  {
+   "id": "t73",
+   "rotulo": "7.3 Erros cognitivos e vieses emocionais",
+   "html": "<div class=\"num\">7.3</div>\n  <h2>Erros cognitivos e vieses emocionais</h2>\n  <p class=\"why\">O coração do tema: reconhecer cada viés num caso concreto e saber se ele é cognitivo ou emocional, porque isso muda a forma de lidar com ele.</p>\n\n  <h3>Limitações cognitivas (item d)</h3>\n  <ul>\n    <li><b>Atenção e memória limitadas:</b> ninguém processa toda a informação disponível; lembramos melhor do que é recente e marcante.</li>\n    <li><b>Excesso de informação:</b> diante de muitos dados, o investidor simplifica, olha só parte deles ou adia a decisão.</li>\n    <li><b>Heurísticas:</b> atalhos como \"o que se parece com X se comporta como X\" (representatividade) ou \"parto de um número e ajusto\" (ancoragem).</li>\n    <li><b>Impacto:</b> decisões consistentes com a heurística, não com o ótimo: carteiras concentradas, giro excessivo, reação lenta ou exagerada a notícias.</li>\n  </ul>\n\n  <h3>Erro cognitivo × viés emocional (item e)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Erro cognitivo</th><th>Viés emocional</th></tr>\n    <tr><td>Origem</td><td>Falha de <b>raciocínio</b>, de memória ou de processamento da informação</td><td><b>Sentimentos</b>, impulsos, intuição; o investidor sabe o certo e faz outra coisa</td></tr>\n    <tr><td>Facilidade de corrigir</td><td><b>Mais fácil</b>: informação, educação, conselho</td><td><b>Mais difícil</b>: estão enraizados</td></tr>\n    <tr><td>Como lidar</td><td><b>Moderar</b> (corrigir)</td><td>Em geral, <b>adaptar</b> a recomendação ao viés</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Classificação do programa ANBIMA</span>Erros cognitivos: conservadorismo, confirmação, representatividade, ilusão de controle, hindsight, ancoragem, framing<br>Vieses emocionais: disponibilidade, aversão à perda, excesso de confiança, autocontrole, status quo, aversão ao arrependimento</div>\n\n  <h3>Erros cognitivos (item f)</h3>\n  <p><b>Conservadorismo.</b> Manter a visão ou a previsão anterior e incorporar a informação nova <b>de menos</b>. Gera sub-reação.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O analista projetava lucro de R$ 10 por ação. A empresa divulga um trimestre muito acima do esperado e um contrato novo relevante. Ele sobe a projeção só para R$ 10,30, \"para não exagerar\".</p></div>\n\n  <p><b>Confirmação.</b> Buscar, valorizar e lembrar o que <b>confirma</b> a crença e descartar o que a contradiz.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>Depois de comprar a ação, o investidor só lê relatórios favoráveis e chama de \"mal feita\" toda análise negativa. Resultado típico: concentração e manutenção de posições ruins.</p></div>\n\n  <p><b>Representatividade.</b> Julgar pela <b>semelhança com um estereótipo</b>, ignorando a taxa-base e o tamanho da amostra.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>\"Empresa boa é ação boa\": o investidor compra a líder do setor sem olhar o preço. Ou conclui que o gestor é excelente porque o fundo foi bem em três anos seguidos, sem considerar que poucos anos dizem pouco.</p></div>\n\n  <p><b>Ilusão de controle.</b> Acreditar que <b>pode controlar ou influenciar</b> resultados que não controla.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O investidor acha que, por acompanhar a tela o dia inteiro e escolher pessoalmente o momento de cada ordem, consegue influenciar o resultado. Opera demais e concentra em poucas ações \"que acompanha de perto\".</p></div>\n\n  <p><b>Hindsight (viés retrospectivo).</b> Depois do fato, achar que ele era <b>previsível</b> (\"eu sabia\").</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>Após uma queda forte da bolsa, o cliente diz que \"estava na cara\" e critica o gestor por não ter previsto. O viés distorce a avaliação de gestores e gera falsa confiança na própria capacidade de prever.</p></div>\n\n  <p><b>Ancoragem.</b> Partir de um <b>número inicial</b> (a âncora) e ajustar pouco a partir dele, mesmo que ele seja irrelevante.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>A ação caiu de R$ 80 para R$ 50 e o investidor conclui que está \"barata\" só porque já valeu R$ 80, sem refazer a análise. Âncoras comuns: preço de compra, máxima histórica, preço-alvo divulgado.</p></div>\n\n  <p><b>Framing (enquadramento).</b> A decisão muda conforme a <b>forma de apresentação</b> de um problema que é o mesmo.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O mesmo produto é aceito quando apresentado como \"95% de chance de não perder\" e rejeitado como \"5% de chance de perder\". No questionário de perfil, perguntas formuladas em termos de ganho ou de perda geram respostas diferentes.</p></div>\n\n  <h3>Vieses emocionais (item g)</h3>\n  <p><b>Disponibilidade.</b> Estimar a probabilidade de um evento pela <b>facilidade de lembrar</b> de exemplos: o que é recente, marcante ou muito noticiado parece mais provável.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>Depois de uma sequência de notícias sobre fraude contábil em uma empresa, o investidor passa a achar que qualquer ação pode ser fraude e sai da bolsa. Ou escolhe fundos só entre as gestoras que vê em propaganda.</p></div>\n\n  <p><b>Aversão à perda.</b> Sentir a perda muito mais do que o ganho equivalente; evitar realizar perdas.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O investidor recusa uma aposta com 50% de chance de ganhar R$ 1.500 e 50% de perder R$ 1.000, apesar do valor esperado positivo. Na carteira, segura ações perdedoras e vende cedo as vencedoras (efeito disposição).</p></div>\n\n  <p><b>Excesso de confiança.</b> Superestimar o próprio conhecimento, a capacidade de prever e a precisão das informações. Inclui a <b>autoatribuição</b>: sucesso é mérito, fracasso é azar.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O analista diz ter \"98% de certeza\" de que o retorno ficará entre 9% e 11%, e o realizado cai fora do intervalo com frequência. O investidor confiante opera demais, diversifica pouco e subestima o risco.</p></div>\n\n  <p><b>Autocontrole.</b> Falta de disciplina para trocar o consumo de hoje por objetivos de longo prazo.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O cliente de 45 anos sabe que precisa poupar para a aposentadoria, mas gasta o bônus todo ano e adia os aportes. Mais tarde tende a compensar assumindo risco demais.</p></div>\n\n  <p><b>Status quo.</b> Preferir manter a situação atual por inércia, mesmo quando mudar seria melhor.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>O funcionário mantém por 15 anos a opção padrão do plano de previdência, sem revisar, apesar de casamento, filhos e aumento de renda. Ou mantém intactas as ações que herdou.</p></div>\n\n  <p><b>Aversão ao arrependimento.</b> Evitar decisões (ou escolher a \"segura\" e popular) por medo de se arrepender se der errado.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span><p>Depois de uma perda, o investidor fica só em renda fixa curta para não repetir a sensação de ter errado. Ou compra só o que todos estão comprando: se der errado, \"pelo menos não errou sozinho\" (comportamento de manada).</p></div>\n\n  <h3>Tabela-resumo dos vieses</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Viés</th><th>Tipo (programa)</th><th>Definição curta</th><th>Exemplo típico</th></tr>\n    <tr><td><b>Conservadorismo</b></td><td>Cognitivo</td><td>Atualiza pouco a visão diante de informação nova</td><td>Analista mal revisa a projeção após resultado surpreendente</td></tr>\n    <tr><td><b>Confirmação</b></td><td>Cognitivo</td><td>Busca o que confirma, ignora o que contradiz</td><td>Só lê relatórios positivos da ação que comprou</td></tr>\n    <tr><td><b>Representatividade</b></td><td>Cognitivo</td><td>Julga pela semelhança a um estereótipo; ignora taxa-base e amostra</td><td>\"Empresa boa = ação boa\"; fundo bom em 3 anos = gestor genial</td></tr>\n    <tr><td><b>Ilusão de controle</b></td><td>Cognitivo</td><td>Acha que controla o que não controla</td><td>Opera o dia todo achando que influencia o resultado</td></tr>\n    <tr><td><b>Hindsight</b></td><td>Cognitivo</td><td>Depois do fato, acha que era previsível</td><td>\"Era óbvio que a bolsa ia cair\"</td></tr>\n    <tr><td><b>Ancoragem</b></td><td>Cognitivo</td><td>Parte de um número inicial e ajusta pouco</td><td>Ação \"barata\" porque já valeu mais</td></tr>\n    <tr><td><b>Framing</b></td><td>Cognitivo</td><td>A forma de apresentar muda a escolha</td><td>\"95% de não perder\" × \"5% de perder\"</td></tr>\n    <tr><td><b>Disponibilidade</b></td><td>Emocional</td><td>Probabilidade julgada pela facilidade de lembrar</td><td>Foge da bolsa após notícias de fraude</td></tr>\n    <tr><td><b>Aversão à perda</b></td><td>Emocional</td><td>Perda dói ~2× mais que o ganho equivalente</td><td>Segura perdedoras, vende vencedoras</td></tr>\n    <tr><td><b>Excesso de confiança</b></td><td>Emocional</td><td>Superestima conhecimento e precisão; autoatribuição</td><td>Giro excessivo, carteira concentrada</td></tr>\n    <tr><td><b>Autocontrole</b></td><td>Emocional</td><td>Prioriza o consumo de hoje sobre o longo prazo</td><td>Adia a poupança para a aposentadoria</td></tr>\n    <tr><td><b>Status quo</b></td><td>Emocional</td><td>Inércia: mantém a situação atual</td><td>Nunca revisa a opção padrão do plano</td></tr>\n    <tr><td><b>Aversão ao arrependimento</b></td><td>Emocional</td><td>Evita decidir por medo de se arrepender</td><td>Segue a manada; fica parado após perda</td></tr>\n  </table></div>\n\n  <h3>Pares que a prova adora confundir</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Par</th><th>Como separar</th></tr>\n    <tr><td>Conservadorismo × confirmação</td><td>Conservadorismo: recebe a notícia e <b>atualiza pouco</b>. Confirmação: <b>filtra</b> a notícia, buscando só o que concorda.</td></tr>\n    <tr><td>Conservadorismo × ancoragem</td><td>Conservadorismo: apego à <b>previsão anterior</b>. Ancoragem: apego a um <b>número de partida</b>, mesmo irrelevante (preço de compra, máxima).</td></tr>\n    <tr><td>Conservadorismo × status quo</td><td>Conservadorismo é sobre <b>crenças</b> (cognitivo). Status quo é sobre <b>ações</b>, por inércia (emocional).</td></tr>\n    <tr><td>Representatividade × disponibilidade</td><td>Representatividade: \"parece com\". Disponibilidade: \"lembro fácil\".</td></tr>\n    <tr><td>Ilusão de controle × excesso de confiança</td><td>Ilusão de controle: crê que <b>influencia</b> o resultado. Excesso de confiança: superestima o que <b>sabe</b> ou a precisão das previsões.</td></tr>\n    <tr><td>Ilusão de controle × autocontrole</td><td>Nomes parecidos, vieses diferentes: o primeiro é cognitivo (controlar o mercado); o segundo, emocional (controlar a si mesmo, poupar).</td></tr>\n    <tr><td>Hindsight × aversão ao arrependimento</td><td>Hindsight olha para <b>trás</b> (\"eu sabia\"). Arrependimento olha para <b>frente</b> (evita decidir para não se arrepender).</td></tr>\n    <tr><td>Aversão à perda × aversão ao arrependimento</td><td>Perda: a dor do <b>prejuízo</b>. Arrependimento: a dor de ter <b>decidido errado</b>, até sem prejuízo (ex.: vendeu e a ação subiu).</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Siga a classificação do <b>programa ANBIMA</b>, que põe <b>disponibilidade</b> e <b>excesso de confiança</b> entre os vieses emocionais. Na literatura (Pompian e o currículo do CFA), a <b>disponibilidade</b> é um erro <b>cognitivo</b> de processamento de informação. O <b>excesso de confiança</b> é emocional no currículo atual do CFA, mas aparece como cognitivo em edições anteriores do livro de Pompian e tem componentes cognitivos (ilusão de conhecimento). Na prova da CFG, responda \"emocional\" para os dois.</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>A literatura divide os cognitivos em <b>perseverança de crença</b> (conservadorismo, confirmação, representatividade, ilusão de controle, hindsight) e <b>processamento de informação</b> (ancoragem, framing, contabilidade mental, disponibilidade). Contabilidade mental e efeito dotação (supervalorizar o que já se tem) não estão na lista do programa, mas podem aparecer como alternativa errada.</div>"
+  },
+  {
+   "id": "t74",
+   "rotulo": "7.4 Vieses na prática: investidores, carteiras e assessoria",
+   "html": "<div class=\"num\">7.4</div>\n  <h2>Vieses na prática: investidores, carteiras e assessoria</h2>\n  <p class=\"why\">Como os vieses aparecem nos dados reais, como afetam a construção da carteira e o que o assessor faz com eles.</p>\n\n  <h3>Comportamentos observados nos investidores (item h)</h3>\n  <ul>\n    <li><b>Efeito disposição</b> (Shefrin e Statman, 1985; Odean, 1998): investidores vendem vencedoras com mais frequência que perdedoras. Causa: aversão à perda e Teoria da Perspectiva.</li>\n    <li><b>Giro excessivo</b> (Barber e Odean, \"Trading is hazardous to your wealth\"): os que mais operam têm retorno líquido menor. Causa: <b>excesso de confiança</b>; o efeito é mais forte em homens jovens.</li>\n    <li><b>Home bias</b> (viés doméstico) e familiaridade: concentração em ativos locais, na empresa em que se trabalha ou em marcas conhecidas.</li>\n    <li><b>Manada:</b> seguir o que os outros fazem; ligado à aversão ao arrependimento e à disponibilidade.</li>\n    <li><b>Perseguir retorno:</b> aplicar no fundo que mais rendeu no ano (representatividade, disponibilidade) e resgatar depois da queda.</li>\n  </ul>\n\n  <h3>Como as expectativas dos investidores movem os mercados</h3>\n  <ul>\n    <li>Quando muitos <b>extrapolam</b> retornos recentes, os preços sobem além do valor (momentum e, depois, reversão).</li>\n    <li>O <b>sentimento</b> do investidor (otimismo ou pessimismo coletivo) afeta mais as ações difíceis de avaliar e de arbitrar: pequenas, novas, voláteis.</li>\n    <li><b>Bolhas</b> seguem um ciclo típico: notícia real → otimismo → excesso de confiança e manada → preços desligados dos fundamentos → choque → pânico e venda forçada (aversão à perda, disponibilidade da queda recente).</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span>\n    <p>Depois de dois anos de alta forte em um setor, os fundos temáticos captam recordes. Novos investidores entram porque \"todo mundo está ganhando\" e projetam a alta para frente. Quando o resultado das empresas decepciona, a queda é rápida e as saídas aceleram a queda. Expectativas extrapolativas criaram o excesso de alta e o excesso de queda.</p>\n  </div>\n\n  <h3>Fatores comportamentais na construção da carteira (item i)</h3>\n  <ul>\n    <li><b>Teoria comportamental de carteiras</b> (Shefrin e Statman): o investidor monta uma <b>pirâmide em camadas</b>, uma para cada objetivo (proteção na base, aspiração no topo), e trata cada camada isoladamente, <b>ignorando as correlações</b> entre elas (contabilidade mental). A carteira total pode não estar na fronteira eficiente.</li>\n    <li><b>Diversificação ingênua (1/N)</b> (Benartzi e Thaler): divide igualmente entre as opções oferecidas, então o menu (o <b>framing</b>) define a alocação.</li>\n    <li><b>Concentração:</b> na ação do empregador, em ativos locais ou conhecidos (familiaridade, excesso de confiança, ilusão de controle).</li>\n    <li><b>Inércia:</b> carteira nunca rebalanceada ou opção padrão nunca revista (status quo).</li>\n    <li><b>Ferramentas que usam o viés a favor:</b> adesão automática e opção padrão bem desenhada (status quo); compromisso de aumentar a contribuição a cada aumento futuro de salário, como o <i>Save More Tomorrow</i> (autocontrole e aversão à perda, já que o salário líquido não cai).</li>\n  </ul>\n\n  <h3>Moderar ou adaptar? (alocação ajustada ao comportamento)</h3>\n  <p>A carteira \"racional\" (média-variância) só funciona se o cliente conseguir mantê-la. Pompian propõe ajustar a alocação conforme dois fatores: o <b>nível de patrimônio</b> em relação às necessidades (o risco ao padrão de vida) e o <b>tipo de viés</b>.</p>\n  <div class=\"tbl\"><table>\n    <tr><th>Situação</th><th>Recomendação</th></tr>\n    <tr><td>Viés <b>cognitivo</b> e patrimônio <b>apertado</b> (alto risco ao padrão de vida)</td><td><b>Moderar</b>: corrigir o viés com informação e manter a alocação racional</td></tr>\n    <tr><td>Viés <b>emocional</b> e patrimônio <b>folgado</b> (baixo risco ao padrão de vida)</td><td><b>Adaptar</b>: aceitar desvio da alocação racional para o cliente conseguir seguir o plano</td></tr>\n    <tr><td>Casos mistos</td><td>Combinar: moderar os cognitivos e adaptar os emocionais, na medida do patrimônio</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Regra</span>Mais patrimônio + viés emocional → adaptar.<br>Menos patrimônio + viés cognitivo → moderar.</div>\n\n  <h3>Relação entre cliente e assessor (item j)</h3>\n  <ul>\n    <li><b>Benefícios</b> de entender o comportamento do cliente: relação mais sólida e confiante, cliente que entende o porquê das decisões, <b>disciplina nos momentos de estresse</b> (menos resgates em pânico), carteira que o cliente consegue manter, menos troca de assessor.</li>\n    <li><b>O IPS como âncora de disciplina:</b> uma política escrita, com objetivos e regras de rebalanceamento, protege contra decisões impulsivas.</li>\n    <li><b>Suitability e framing:</b> o questionário de perfil pode ser distorcido pela forma das perguntas e pelo humor do mercado (disponibilidade). Bom perfilamento combina questionário e conversa.</li>\n    <li><b>Comunicação:</b> com vieses <b>cognitivos</b>, educar e mostrar dados; com vieses <b>emocionais</b>, falar de metas de vida e segurança, não de desvio-padrão e Sharpe.</li>\n    <li><b>Os vieses do assessor também contam:</b> excesso de confiança, confirmação e hindsight afetam as recomendações dele.</li>\n  </ul>\n\n  <h3>Tipos comportamentais de investidor (Pompian)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Tipo</th><th>Perfil</th><th>Vieses dominantes</th><th>Como lidar</th></tr>\n    <tr><td><b>Preservador passivo</b></td><td>Baixa tolerância ao risco, foco em preservar patrimônio</td><td>Emocionais: aversão à perda, status quo (e dotação)</td><td>Paciência, foco em segurança e metas</td></tr>\n    <tr><td><b>Seguidor amigável</b></td><td>Segue amigos, mídia e modas; superestima a própria tolerância</td><td>Cognitivos: disponibilidade, hindsight, framing; aversão ao arrependimento</td><td>Educação, mostrar o efeito na carteira total</td></tr>\n    <tr><td><b>Individualista independente</b></td><td>Pensa por conta própria, pesquisa, tolerância moderada a alta</td><td>Cognitivos: conservadorismo, confirmação, representatividade</td><td>Educação com dados; deixá-lo participar</td></tr>\n    <tr><td><b>Acumulador ativo</b></td><td>Empreendedor, alta tolerância ao risco, quer controlar</td><td>Emocionais: excesso de confiança, ilusão de controle, autocontrole</td><td>Assessor firme, estrutura e limites claros</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>\"Adaptar\" não significa fazer tudo o que o cliente quer: é aceitar um desvio <i>controlado</i> da alocação ótima quando o viés é difícil de mudar e o patrimônio permite. Com patrimônio apertado, o erro custa caro, e o assessor deve <b>moderar</b> o viés mesmo que seja emocional. Os tipos de investidor de Pompian não estão nominalmente no programa, mas ajudam a ler os casos.</div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t7-1",
+   "subtema": "7.1",
+   "enunciado": "Qual premissa pertence à teoria tradicional de finanças?",
+   "alternativas": [
+    "Agentes racionais que maximizam a utilidade esperada e atualizam suas crenças corretamente diante de informação nova",
+    "Agentes com racionalidade limitada que usam atalhos mentais",
+    "Decisões que mudam conforme a forma de apresentação do problema",
+    "Perdas que pesam mais que ganhos de mesmo valor"
+   ],
+   "correta": 0,
+   "explicacao": "A teoria tradicional supõe o homo economicus: racional, com informação completa e atualização bayesiana. As outras três alternativas são premissas das finanças comportamentais."
+  },
+  {
+   "id": "t7-2",
+   "subtema": "7.1",
+   "enunciado": "Herbert Simon propôs que, por limitações de tempo, informação e capacidade de processamento, as pessoas buscam soluções satisfatórias, e não ótimas. Esse conceito é chamado de:",
+   "alternativas": [
+    "Hipótese dos mercados eficientes",
+    "Expectativas racionais",
+    "Racionalidade limitada",
+    "Teoria da Perspectiva"
+   ],
+   "correta": 2,
+   "explicacao": "Racionalidade limitada (satisficing) é o conceito de Simon. Expectativas racionais e HME são da teoria tradicional; a Teoria da Perspectiva é de Kahneman e Tversky."
+  },
+  {
+   "id": "t7-3",
+   "subtema": "7.1",
+   "enunciado": "Qual afirmação contrasta corretamente a teoria tradicional e as finanças comportamentais?",
+   "alternativas": [
+    "A tradicional é descritiva e a comportamental é normativa",
+    "As duas supõem investidores plenamente racionais",
+    "A comportamental conclui que a diversificação não tem valor",
+    "A tradicional é normativa (como se deveria decidir) e a comportamental é descritiva (como de fato se decide)"
+   ],
+   "correta": 3,
+   "explicacao": "A teoria tradicional prescreve a decisão ótima; as finanças comportamentais descrevem o comportamento real. Inverter os dois termos é a pegadinha clássica."
+  },
+  {
+   "id": "t7-4",
+   "subtema": "7.1",
+   "enunciado": "Os defensores da hipótese de mercados eficientes argumentam que os vieses individuais não afetam os preços porque:",
+   "alternativas": [
+    "Os investidores irracionais são a maioria",
+    "Os erros dos investidores se cancelam e os arbitradores racionais corrigem os desvios de preço",
+    "O regulador impede desvios de preço",
+    "Os preços não reagem a notícias"
+   ],
+   "correta": 1,
+   "explicacao": "São os dois argumentos clássicos: erros aleatórios se cancelam e a arbitragem corrige o que sobrar. As finanças comportamentais respondem que os vieses são correlacionados e que a arbitragem tem limites."
+  },
+  {
+   "id": "t7-5",
+   "subtema": "7.1",
+   "enunciado": "Um gestor identifica uma ação claramente sobreprecificada, mas não a vende a descoberto porque o aluguel é caro e a ação pode subir ainda mais antes de corrigir, gerando prejuízo e resgates no fundo. A situação ilustra:",
+   "alternativas": [
+    "Os limites à arbitragem",
+    "A forma forte de eficiência",
+    "Ilusão de controle",
+    "Efeito disposição"
+   ],
+   "correta": 0,
+   "explicacao": "Custos de implementação e o risco de noise traders (o desvio aumentar antes de corrigir) limitam a arbitragem e deixam a ineficiência persistir. Não há viés do gestor aqui: a decisão dele é racional."
+  },
+  {
+   "id": "t7-6",
+   "subtema": "7.1",
+   "enunciado": "Empresas que divulgam lucro acima do esperado continuam tendo retorno anormal positivo por semanas após o anúncio. A explicação comportamental mais associada a essa anomalia é:",
+   "alternativas": [
+    "Sobrerreação causada por excesso de confiança",
+    "Aversão míope à perda",
+    "Sub-reação causada por conservadorismo",
+    "Efeito janeiro"
+   ],
+   "correta": 2,
+   "explicacao": "O drift pós-anúncio é sub-reação: os investidores atualizam pouco a visão anterior (conservadorismo, ancoragem). Sobrerreação está ligada à reversão de longo prazo."
+  },
+  {
+   "id": "t7-7",
+   "subtema": "7.1",
+   "enunciado": "De Bondt e Thaler mostraram que as ações perdedoras dos últimos 3 a 5 anos tendem a superar as vencedoras nos anos seguintes. A explicação comportamental é:",
+   "alternativas": [
+    "Sub-reação por conservadorismo",
+    "Ancoragem no preço de compra",
+    "Viés de status quo",
+    "Sobrerreação, associada à representatividade e à extrapolação do passado recente"
+   ],
+   "correta": 3,
+   "explicacao": "Os investidores extrapolam o desempenho passado (representatividade), exageram preços e depois ocorre a reversão. Sub-reação e conservadorismo explicam o momentum de curto prazo, não a reversão de longo prazo."
+  },
+  {
+   "id": "t7-8",
+   "subtema": "7.1",
+   "enunciado": "Quais fatores comportamentais são típicos da formação de bolhas de preços?",
+   "alternativas": [
+    "Conservadorismo e ancoragem, que levam à sub-reação",
+    "Excesso de confiança, comportamento de manada e extrapolação de retornos recentes",
+    "Racionalidade plena e arbitragem eficiente",
+    "Apenas status quo e autocontrole"
+   ],
+   "correta": 1,
+   "explicacao": "Bolhas combinam excesso de confiança, manada (aversão ao arrependimento) e extrapolação. Conservadorismo e ancoragem levam à sub-reação, o oposto de uma bolha."
+  },
+  {
+   "id": "t7-9",
+   "subtema": "7.1",
+   "enunciado": "Benartzi e Thaler explicaram o enigma do prêmio de ações pela combinação de aversão à perda com a avaliação muito frequente da carteira. Esse conceito é:",
+   "alternativas": [
+    "Contabilidade mental",
+    "Aversão míope à perda",
+    "Viés de confirmação",
+    "Efeito certeza"
+   ],
+   "correta": 1,
+   "explicacao": "Aversão míope à perda: quem olha a carteira com frequência vê mais perdas, sofre mais e exige prêmio maior para ter ações."
+  },
+  {
+   "id": "t7-10",
+   "subtema": "7.1",
+   "enunciado": "O ramo das finanças comportamentais que estuda se os mercados como um todo apresentam anomalias e desvios em relação à eficiência é chamado de:",
+   "alternativas": [
+    "Finanças comportamentais macro",
+    "Finanças comportamentais micro",
+    "Teoria moderna de carteiras",
+    "Análise técnica"
+   ],
+   "correta": 0,
+   "explicacao": "O ramo macro trata do mercado e das anomalias; o micro trata dos vieses dos investidores individuais."
+  },
+  {
+   "id": "t7-11",
+   "subtema": "7.2",
+   "enunciado": "Na Teoria da Perspectiva, a função valor é:",
+   "alternativas": [
+    "Convexa para ganhos e côncava para perdas",
+    "Côncava para ganhos, convexa para perdas e mais inclinada na região de perdas",
+    "Linear em toda a riqueza",
+    "Côncava em toda a riqueza final"
+   ],
+   "correta": 1,
+   "explicacao": "Côncava nos ganhos (aversão ao risco), convexa nas perdas (busca de risco) e mais íngreme nas perdas (aversão à perda). A primeira alternativa inverte os formatos."
+  },
+  {
+   "id": "t7-12",
+   "subtema": "7.2",
+   "enunciado": "Na Teoria da Perspectiva, os resultados são avaliados em relação a:",
+   "alternativas": [
+    "Um ponto de referência, como ganhos ou perdas",
+    "A riqueza final total do investidor",
+    "O valor presente dos fluxos de caixa",
+    "O retorno do CDI no período"
+   ],
+   "correta": 0,
+   "explicacao": "A teoria avalia variações em relação a uma referência (por exemplo, o preço de compra). A riqueza final é a base da utilidade esperada."
+  },
+  {
+   "id": "t7-13",
+   "subtema": "7.2",
+   "enunciado": "Diante de ganho certo de R$ 500 ou 50% de chance de ganhar R$ 1.000, a maioria escolhe o certo. Diante de perda certa de R$ 500 ou 50% de chance de perder R$ 1.000, a maioria prefere arriscar. Isso mostra que as pessoas são:",
+   "alternativas": [
+    "Propensas ao risco nos ganhos e avessas ao risco nas perdas",
+    "Neutras ao risco",
+    "Avessas ao risco nos ganhos e propensas ao risco nas perdas",
+    "Sempre avessas ao risco"
+   ],
+   "correta": 2,
+   "explicacao": "É o efeito reflexo: a preferência pelo risco se inverte entre ganhos (côncava) e perdas (convexa)."
+  },
+  {
+   "id": "t7-14",
+   "subtema": "7.2",
+   "enunciado": "A mesma pessoa compra bilhete de loteria e contrata seguro residencial. A Teoria da Perspectiva explica esse comportamento por:",
+   "alternativas": [
+    "Função valor linear",
+    "Subponderação de probabilidades pequenas",
+    "Expectativas racionais",
+    "Superponderação de probabilidades pequenas"
+   ],
+   "correta": 3,
+   "explicacao": "Os pesos de decisão superestimam eventos pouco prováveis: o prêmio da loteria e a catástrofe coberta pelo seguro. Subponderar probabilidades pequenas levaria ao comportamento oposto."
+  },
+  {
+   "id": "t7-15",
+   "subtema": "7.2",
+   "enunciado": "Segundo a Teoria da Perspectiva, o processo de decisão tem duas fases:",
+   "alternativas": [
+    "Coleta de dados e arbitragem",
+    "Edição (enquadramento) e avaliação",
+    "Otimização e rebalanceamento",
+    "Análise fundamentalista e análise técnica"
+   ],
+   "correta": 1,
+   "explicacao": "Na edição o problema é organizado e codificado como ganho ou perda (onde atua o framing); na avaliação cada alternativa recebe seu valor ponderado."
+  },
+  {
+   "id": "t7-16",
+   "subtema": "7.2",
+   "enunciado": "Pela aversão à perda descrita na Teoria da Perspectiva, uma perda de R$ 1.000 causa um desconforto aproximadamente:",
+   "alternativas": [
+    "Igual à metade do prazer de ganhar R$ 1.000",
+    "Igual ao prazer de ganhar R$ 1.000",
+    "De duas a duas vezes e meia o prazer de ganhar R$ 1.000",
+    "Dez vezes maior que o prazer de ganhar R$ 1.000"
+   ],
+   "correta": 2,
+   "explicacao": "Os estudos de Kahneman e Tversky estimam o coeficiente de aversão à perda em torno de 2 a 2,5."
+  },
+  {
+   "id": "t7-17",
+   "subtema": "7.2",
+   "enunciado": "Um investidor vende rapidamente as ações com lucro e mantém as que estão no prejuízo, esperando que voltem ao preço de compra. Pela Teoria da Perspectiva, isso ocorre porque ele:",
+   "alternativas": [
+    "É avesso ao risco na região de ganhos e propenso ao risco na região de perdas, usando o preço de compra como referência",
+    "É neutro ao risco e maximiza a utilidade esperada",
+    "Diversifica de forma ingênua entre as ações",
+    "Avalia a carteira pela riqueza final"
+   ],
+   "correta": 0,
+   "explicacao": "É o efeito disposição: na região côncava ele garante o ganho; na convexa ele arrisca para tentar evitar a perda. A avaliação pela riqueza final é da utilidade esperada."
+  },
+  {
+   "id": "t7-18",
+   "subtema": "7.2",
+   "enunciado": "Qual é a diferença central entre a Teoria da Perspectiva e a teoria da utilidade esperada?",
+   "alternativas": [
+    "A utilidade esperada avalia ganhos e perdas em relação a uma referência; a perspectiva usa a riqueza final",
+    "As duas usam probabilidades objetivas sobre a riqueza final",
+    "A perspectiva supõe agentes plenamente racionais",
+    "A perspectiva avalia ganhos e perdas em relação a uma referência e usa pesos de decisão; a utilidade esperada usa a riqueza final e as probabilidades objetivas"
+   ],
+   "correta": 3,
+   "explicacao": "A perspectiva troca a riqueza final pelo ponto de referência e as probabilidades por pesos de decisão. A primeira alternativa inverte as teorias."
+  },
+  {
+   "id": "t7-19",
+   "subtema": "7.2",
+   "enunciado": "Depois de perder 30% na bolsa, um investidor passa a operar ativos mais arriscados para tentar zerar o prejuízo. Na função valor da Teoria da Perspectiva, ele está:",
+   "alternativas": [
+    "Na região côncava, de aversão ao risco",
+    "Na região convexa, de busca de risco nas perdas",
+    "Exatamente no ponto de referência",
+    "Superponderando probabilidades altas"
+   ],
+   "correta": 1,
+   "explicacao": "Abaixo da referência a função é convexa e a pessoa aceita mais risco para voltar ao ponto de partida (break-even effect)."
+  },
+  {
+   "id": "t7-20",
+   "subtema": "7.2",
+   "enunciado": "Entre ganhar R$ 3.000 com certeza e ter 80% de chance de ganhar R$ 4.000 (valor esperado de R$ 3.200), a maioria escolhe o ganho certo. Esse resultado é conhecido como:",
+   "alternativas": [
+    "Efeito certeza",
+    "Efeito reflexo",
+    "Efeito dotação",
+    "Efeito disposição"
+   ],
+   "correta": 0,
+   "explicacao": "O efeito certeza é a preferência exagerada pelo resultado certo em relação a um provável. O efeito reflexo é a inversão dessa preferência quando os resultados viram perdas."
+  },
+  {
+   "id": "t7-21",
+   "subtema": "7.3",
+   "enunciado": "Os erros cognitivos, ao contrário dos vieses emocionais:",
+   "alternativas": [
+    "Decorrem de sentimentos e impulsos e são difíceis de corrigir",
+    "Só afetam investidores pessoa física",
+    "Decorrem de falhas de raciocínio, memória ou processamento de informação e tendem a ser corrigidos com informação e educação",
+    "Não afetam decisões de investimento"
+   ],
+   "correta": 2,
+   "explicacao": "Erros cognitivos vêm de raciocínio falho e podem ser moderados com informação. A primeira alternativa descreve os vieses emocionais."
+  },
+  {
+   "id": "t7-22",
+   "subtema": "7.3",
+   "enunciado": "Segundo a classificação do programa da CFG, qual dos vieses abaixo é emocional?",
+   "alternativas": [
+    "Ancoragem",
+    "Framing",
+    "Representatividade",
+    "Disponibilidade"
+   ],
+   "correta": 3,
+   "explicacao": "O programa ANBIMA lista disponibilidade entre os vieses emocionais. Ancoragem, framing e representatividade são erros cognitivos. Na literatura de Pompian a disponibilidade é cognitiva, mas na prova vale a classificação do programa."
+  },
+  {
+   "id": "t7-23",
+   "subtema": "7.3",
+   "enunciado": "Segundo a classificação do programa da CFG, qual dos vieses abaixo é um erro cognitivo?",
+   "alternativas": [
+    "Autocontrole",
+    "Ilusão de controle",
+    "Aversão ao arrependimento",
+    "Excesso de confiança"
+   ],
+   "correta": 1,
+   "explicacao": "Ilusão de controle é cognitiva. Autocontrole, aversão ao arrependimento e excesso de confiança são emocionais no programa. Não confunda ilusão de controle com autocontrole."
+  },
+  {
+   "id": "t7-24",
+   "subtema": "7.3",
+   "enunciado": "Heurísticas, no contexto das finanças comportamentais, são:",
+   "alternativas": [
+    "Modelos de otimização usados pelos gestores",
+    "Atalhos mentais que simplificam decisões, em geral úteis, mas fonte de vieses sistemáticos",
+    "Erros aleatórios que se cancelam no agregado",
+    "Normas regulatórias sobre suitability"
+   ],
+   "correta": 1,
+   "explicacao": "Heurísticas são regras práticas de decisão. Os erros que elas geram são sistemáticos, e não aleatórios, e por isso não se cancelam."
+  },
+  {
+   "id": "t7-25",
+   "subtema": "7.3",
+   "enunciado": "Um analista projetava lucro de R$ 10 por ação. A empresa divulga resultado muito acima do esperado e um contrato novo relevante, e ele eleva a projeção apenas para R$ 10,30, mantendo essencialmente a visão anterior. O viés é:",
+   "alternativas": [
+    "Confirmação",
+    "Hindsight",
+    "Conservadorismo",
+    "Disponibilidade"
+   ],
+   "correta": 2,
+   "explicacao": "Conservadorismo é incorporar pouco a informação nova e se apegar à previsão anterior. Na confirmação, o analista filtraria a notícia, buscando só o que concorda com ele; aqui ele aceitou a notícia, mas atualizou pouco."
+  },
+  {
+   "id": "t7-26",
+   "subtema": "7.3",
+   "enunciado": "Depois de comprar uma ação, o investidor passa a ler só relatórios favoráveis à empresa e descarta análises negativas como mal feitas. O viés é:",
+   "alternativas": [
+    "Viés de confirmação",
+    "Conservadorismo",
+    "Status quo",
+    "Ancoragem"
+   ],
+   "correta": 0,
+   "explicacao": "Confirmação é buscar e valorizar o que confirma a crença e rejeitar o que a contradiz. O conservadorismo é atualizar pouco diante da informação, não filtrá-la."
+  },
+  {
+   "id": "t7-27",
+   "subtema": "7.3",
+   "enunciado": "Um fundo rendeu muito acima do mercado nos últimos três anos. O investidor conclui que o gestor é excepcional e aplica grande parte do patrimônio, sem analisar a estratégia nem considerar que três anos é pouco tempo. O viés é:",
+   "alternativas": [
+    "Ancoragem",
+    "Ilusão de controle",
+    "Framing",
+    "Representatividade"
+   ],
+   "correta": 3,
+   "explicacao": "Representatividade: julgar pela semelhança com o estereótipo de bom gestor, ignorando o tamanho da amostra e a taxa-base. Ancoragem envolveria partir de um número inicial."
+  },
+  {
+   "id": "t7-28",
+   "subtema": "7.3",
+   "enunciado": "O investidor acredita que, por acompanhar a tela o dia inteiro e escolher pessoalmente o momento de cada ordem, consegue influenciar o resultado das operações. Ele opera muito e concentra em poucas ações. O viés é:",
+   "alternativas": [
+    "Hindsight",
+    "Ilusão de controle",
+    "Autocontrole",
+    "Conservadorismo"
+   ],
+   "correta": 1,
+   "explicacao": "Ilusão de controle é acreditar que influencia resultados que não controla. Autocontrole é falta de disciplina para poupar, outro viés apesar do nome parecido."
+  },
+  {
+   "id": "t7-29",
+   "subtema": "7.3",
+   "enunciado": "Após uma queda forte da bolsa, o cliente afirma que era óbvio que ia cair e critica o gestor por não ter previsto. O viés é:",
+   "alternativas": [
+    "Hindsight (viés retrospectivo)",
+    "Aversão ao arrependimento",
+    "Confirmação",
+    "Ancoragem"
+   ],
+   "correta": 0,
+   "explicacao": "Hindsight é achar, depois do fato, que ele era previsível. A aversão ao arrependimento olha para a frente: evita decidir para não se arrepender."
+  },
+  {
+   "id": "t7-30",
+   "subtema": "7.3",
+   "enunciado": "Uma ação caiu de R$ 80 para R$ 50. O investidor conclui que ela está barata só porque já valeu R$ 80, sem refazer a análise da empresa. O viés é:",
+   "alternativas": [
+    "Representatividade",
+    "Aversão à perda",
+    "Ancoragem",
+    "Disponibilidade"
+   ],
+   "correta": 2,
+   "explicacao": "O preço anterior virou âncora e o investidor ajusta pouco a partir dele. Não há perda realizada em jogo (ele está avaliando uma compra), por isso não é aversão à perda."
+  },
+  {
+   "id": "t7-31",
+   "subtema": "7.3",
+   "enunciado": "O mesmo produto é aceito pelos clientes quando apresentado como tendo 95% de chance de não dar prejuízo e rejeitado quando apresentado como tendo 5% de chance de dar prejuízo. O viés é:",
+   "alternativas": [
+    "Disponibilidade",
+    "Conservadorismo",
+    "Ancoragem",
+    "Framing (enquadramento)"
+   ],
+   "correta": 3,
+   "explicacao": "Framing: a forma de apresentar muda a escolha, embora a informação seja a mesma."
+  },
+  {
+   "id": "t7-32",
+   "subtema": "7.3",
+   "enunciado": "Depois de uma sequência de notícias sobre fraude contábil em uma empresa listada, o investidor passa a superestimar a chance de fraude em qualquer ação e tira todo o dinheiro da bolsa. O viés é:",
+   "alternativas": [
+    "Representatividade",
+    "Disponibilidade",
+    "Hindsight",
+    "Conservadorismo"
+   ],
+   "correta": 1,
+   "explicacao": "Disponibilidade: o evento recente e muito noticiado vem fácil à memória e parece mais provável. É emocional pelo programa ANBIMA (cognitivo na literatura de Pompian)."
+  },
+  {
+   "id": "t7-33",
+   "subtema": "7.3",
+   "enunciado": "Um investidor escolhe fundos apenas entre as gestoras que vê com frequência em propagandas e reportagens, sem comparar com as demais. O viés predominante é:",
+   "alternativas": [
+    "Disponibilidade",
+    "Ilusão de controle",
+    "Autocontrole",
+    "Aversão à perda"
+   ],
+   "correta": 0,
+   "explicacao": "Ele considera apenas as opções que vêm fácil à memória, o que caracteriza a disponibilidade."
+  },
+  {
+   "id": "t7-34",
+   "subtema": "7.3",
+   "enunciado": "Um investidor recusa uma aposta com 50% de chance de ganhar R$ 1.500 e 50% de chance de perder R$ 1.000, apesar de o valor esperado ser positivo. O viés que melhor explica a recusa é:",
+   "alternativas": [
+    "Autocontrole",
+    "Status quo",
+    "Aversão à perda",
+    "Ilusão de controle"
+   ],
+   "correta": 2,
+   "explicacao": "Como a perda pesa cerca de duas vezes o ganho, a perda de R$ 1.000 'vale' mais que o ganho de R$ 1.500. É aversão à perda."
+  },
+  {
+   "id": "t7-35",
+   "subtema": "7.3",
+   "enunciado": "Um investidor atribui seus ganhos à própria habilidade e suas perdas ao azar ou ao mercado. Por isso opera com frequência e concentra a carteira. O viés é:",
+   "alternativas": [
+    "Ilusão de controle",
+    "Hindsight",
+    "Representatividade",
+    "Excesso de confiança, na forma de autoatribuição"
+   ],
+   "correta": 3,
+   "explicacao": "A autoatribuição faz parte do excesso de confiança (emocional, pelo programa). A ilusão de controle seria acreditar que influencia o resultado; aqui ele superestima a própria habilidade."
+  },
+  {
+   "id": "t7-36",
+   "subtema": "7.3",
+   "enunciado": "Um analista afirma ter 98% de certeza de que o retorno de uma ação ficará entre 9% e 11% no ano, e com frequência o realizado cai fora de intervalos assim. O viés é:",
+   "alternativas": [
+    "Conservadorismo",
+    "Ancoragem",
+    "Excesso de confiança",
+    "Framing"
+   ],
+   "correta": 2,
+   "explicacao": "Intervalos de previsão estreitos demais mostram excesso de confiança na precisão das próprias estimativas."
+  },
+  {
+   "id": "t7-37",
+   "subtema": "7.3",
+   "enunciado": "Um cliente de 45 anos sabe que precisa poupar para a aposentadoria, mas gasta todo o bônus anual e adia os aportes ano após ano. O viés é:",
+   "alternativas": [
+    "Status quo",
+    "Autocontrole",
+    "Aversão à perda",
+    "Disponibilidade"
+   ],
+   "correta": 1,
+   "explicacao": "Falta de autocontrole: prioriza o consumo presente sobre o objetivo de longo prazo. Status quo seria manter uma situação por inércia, sem o conflito entre consumo e poupança."
+  },
+  {
+   "id": "t7-38",
+   "subtema": "7.3",
+   "enunciado": "Um funcionário mantém por 15 anos a opção padrão do plano de previdência, sem revisar, apesar de ter casado, ter filhos e aumentado a renda. O viés é:",
+   "alternativas": [
+    "Status quo",
+    "Aversão ao arrependimento",
+    "Autocontrole",
+    "Conservadorismo"
+   ],
+   "correta": 0,
+   "explicacao": "Status quo é a inércia de manter a situação atual. Conservadorismo é sobre crenças e previsões; aqui ele nem chegou a reavaliar, simplesmente não agiu."
+  },
+  {
+   "id": "t7-39",
+   "subtema": "7.3",
+   "enunciado": "Um investidor só compra os ativos que todos estão comprando, pensando que, se der errado, pelo menos não errou sozinho. O viés é:",
+   "alternativas": [
+    "Excesso de confiança",
+    "Representatividade",
+    "Aversão ao arrependimento",
+    "Ilusão de controle"
+   ],
+   "correta": 2,
+   "explicacao": "Seguir a manada para diluir o arrependimento caracteriza a aversão ao arrependimento. Quem tem excesso de confiança tende a agir por conta própria, não a seguir a maioria."
+  },
+  {
+   "id": "t7-40",
+   "subtema": "7.3",
+   "enunciado": "Um investidor vendeu uma ação que depois subiu 40%. Desde então, não consegue tomar nenhuma decisão de venda e mantém tudo como está, com medo de sentir aquilo de novo. O viés predominante é:",
+   "alternativas": [
+    "Hindsight",
+    "Aversão à perda",
+    "Ancoragem",
+    "Aversão ao arrependimento"
+   ],
+   "correta": 3,
+   "explicacao": "Ele não teve prejuízo: a dor é de ter decidido errado. Isso é aversão ao arrependimento. Aversão à perda envolveria a dor de um prejuízo."
+  },
+  {
+   "id": "t7-41",
+   "subtema": "7.4",
+   "enunciado": "Estudos com dados de corretoras mostram que os investidores vendem as ações vencedoras com muito mais frequência que as perdedoras. Esse padrão é chamado de:",
+   "alternativas": [
+    "Efeito janeiro",
+    "Efeito disposição",
+    "Home bias",
+    "Efeito tamanho"
+   ],
+   "correta": 1,
+   "explicacao": "Efeito disposição (Shefrin e Statman; Odean), explicado pela aversão à perda e pela Teoria da Perspectiva."
+  },
+  {
+   "id": "t7-42",
+   "subtema": "7.4",
+   "enunciado": "Barber e Odean mostraram que os investidores que mais giram a carteira têm retorno líquido menor. O viés mais associado a esse comportamento é:",
+   "alternativas": [
+    "Status quo",
+    "Aversão ao arrependimento",
+    "Conservadorismo",
+    "Excesso de confiança"
+   ],
+   "correta": 3,
+   "explicacao": "O excesso de confiança leva a operar demais. O status quo levaria ao contrário: pouca movimentação."
+  },
+  {
+   "id": "t7-43",
+   "subtema": "7.4",
+   "enunciado": "Um investidor brasileiro concentra quase toda a carteira em ativos locais e em ações de empresas que conhece como consumidor. O fenômeno é chamado de:",
+   "alternativas": [
+    "Home bias (viés doméstico), ligado à familiaridade",
+    "Efeito disposição",
+    "Efeito certeza",
+    "Diversificação ingênua"
+   ],
+   "correta": 0,
+   "explicacao": "Home bias é a preferência excessiva por ativos domésticos e familiares, que reduz a diversificação."
+  },
+  {
+   "id": "t7-44",
+   "subtema": "7.4",
+   "enunciado": "Quando muitos investidores extrapolam os retornos recentes de um setor, o efeito agregado mais provável no mercado é:",
+   "alternativas": [
+    "Preços sempre iguais ao valor fundamental",
+    "Queda da volatilidade",
+    "Momentum no curto prazo e sobrevalorização seguida de reversão",
+    "Redução do volume negociado"
+   ],
+   "correta": 2,
+   "explicacao": "Expectativas extrapolativas empurram os preços além do valor (momentum e bolha) e depois vem a reversão."
+  },
+  {
+   "id": "t7-45",
+   "subtema": "7.4",
+   "enunciado": "Um investidor separa o dinheiro em 'reserva segura', 'aposentadoria' e 'aposta', trata cada parte isoladamente e ignora as correlações entre elas. A teoria que descreve carteiras montadas assim é:",
+   "alternativas": [
+    "Teoria moderna de carteiras (Markowitz)",
+    "Teoria comportamental de carteiras (pirâmide em camadas)",
+    "CAPM",
+    "Modelo Black-Litterman"
+   ],
+   "correta": 1,
+   "explicacao": "A teoria comportamental de carteiras (Shefrin e Statman) descreve camadas por objetivo, com contabilidade mental. Markowitz, ao contrário, otimiza a carteira inteira considerando as correlações."
+  },
+  {
+   "id": "t7-46",
+   "subtema": "7.4",
+   "enunciado": "Um plano oferece quatro fundos de renda fixa e um de ações, e os participantes dividem igualmente, ficando com 80% em renda fixa. Quando o menu tem quatro fundos de ações e um de renda fixa, ficam com 80% em ações. Isso mostra:",
+   "alternativas": [
+    "Diversificação ingênua (heurística 1/N), em que o menu oferecido define a alocação",
+    "Alocação estratégica ótima",
+    "Rebalanceamento por bandas",
+    "Ilusão de controle"
+   ],
+   "correta": 0,
+   "explicacao": "A heurística 1/N faz o enquadramento do menu determinar a alocação, em vez da tolerância ao risco do participante."
+  },
+  {
+   "id": "t7-47",
+   "subtema": "7.4",
+   "enunciado": "Um programa em que o participante se compromete hoje a aumentar a contribuição para a previdência a cada aumento salarial futuro combate principalmente o viés de:",
+   "alternativas": [
+    "Hindsight",
+    "Ancoragem",
+    "Autocontrole",
+    "Representatividade"
+   ],
+   "correta": 2,
+   "explicacao": "O compromisso prévio combate a falta de autocontrole e usa a inércia (status quo) a favor; como o salário líquido não cai, também contorna a aversão à perda."
+  },
+  {
+   "id": "t7-48",
+   "subtema": "7.4",
+   "enunciado": "Para um cliente com vieses predominantemente emocionais e patrimônio muito acima das necessidades (baixo risco ao padrão de vida), a abordagem recomendada pela literatura é:",
+   "alternativas": [
+    "Moderar o viés com educação e manter a alocação racional",
+    "Ignorar o viés",
+    "Recusar o cliente",
+    "Adaptar a alocação ao viés, aceitando um desvio controlado da alocação racional"
+   ],
+   "correta": 3,
+   "explicacao": "Viés emocional é difícil de corrigir e o patrimônio folgado permite o desvio: adaptar. Moderar é a recomendação para viés cognitivo com patrimônio apertado."
+  },
+  {
+   "id": "t7-49",
+   "subtema": "7.4",
+   "enunciado": "Para um cliente com vieses predominantemente cognitivos e patrimônio apertado em relação às necessidades, a abordagem recomendada é:",
+   "alternativas": [
+    "Moderar o viés com informação e educação, mantendo a alocação próxima da racional",
+    "Adaptar totalmente a carteira às preferências do cliente",
+    "Aumentar o risco para compensar o patrimônio pequeno",
+    "Deixar o cliente decidir sozinho"
+   ],
+   "correta": 0,
+   "explicacao": "Erros cognitivos são corrigíveis e, com patrimônio apertado, o custo do viés é alto: moderar."
+  },
+  {
+   "id": "t7-50",
+   "subtema": "7.4",
+   "enunciado": "Qual é um benefício de o assessor entender os vieses do cliente?",
+   "alternativas": [
+    "Garantir retorno acima do benchmark",
+    "Dispensar o questionário de suitability",
+    "Relação mais sólida e cliente que segue o plano nos momentos de estresse, com menos decisões impulsivas",
+    "Eliminar a volatilidade da carteira"
+   ],
+   "correta": 2,
+   "explicacao": "Entender o comportamento melhora a relação e a disciplina do cliente. Não garante retorno, não elimina risco e não substitui o suitability."
+  },
+  {
+   "id": "t7-51",
+   "subtema": "7.4",
+   "enunciado": "Um cliente tem baixa tolerância ao risco, prioriza preservar o patrimônio, resiste a mudanças na carteira e se preocupa mais com perdas do que com ganhos. Na tipologia de Pompian, ele é um:",
+   "alternativas": [
+    "Acumulador ativo",
+    "Seguidor amigável",
+    "Preservador passivo",
+    "Individualista independente"
+   ],
+   "correta": 2,
+   "explicacao": "O preservador passivo tem vieses emocionais como aversão à perda e status quo. O acumulador ativo é o oposto: alta tolerância ao risco e excesso de confiança."
+  },
+  {
+   "id": "t7-52",
+   "subtema": "7.4",
+   "enunciado": "Ao lidar com um cliente cujos vieses são predominantemente emocionais, o assessor deve focar a conversa em:",
+   "alternativas": [
+    "Detalhes técnicos, como desvio-padrão e índice de Sharpe",
+    "Como a carteira contribui para as metas de vida e a segurança financeira do cliente",
+    "Aumentar a frequência de operações",
+    "Retornos passados dos fundos"
+   ],
+   "correta": 1,
+   "explicacao": "Com vieses emocionais, a explicação técnica pouco ajuda; funciona mais falar de metas e segurança. A educação com dados é a via para vieses cognitivos."
+  },
+  {
+   "id": "t7-53",
+   "subtema": "7.4",
+   "enunciado": "As respostas ao questionário de perfil mudam conforme as perguntas falam em chance de ganho ou em chance de perda, e também conforme o mercado esteja em alta ou em queda. Isso preocupa porque:",
+   "alternativas": [
+    "O framing e a disponibilidade podem distorcer a medida da tolerância ao risco do cliente",
+    "O questionário passa a ser dispensável",
+    "Indica que o cliente é plenamente racional",
+    "Elimina a necessidade de revisar o perfil"
+   ],
+   "correta": 0,
+   "explicacao": "A forma das perguntas (framing) e o humor recente do mercado (disponibilidade) distorcem o perfil. Por isso o perfilamento deve combinar questionário e conversa."
+  }
+ ]
+}

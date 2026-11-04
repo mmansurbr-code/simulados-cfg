@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFG Tema 2 · Economia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: apostila em coluna de leitura com índice lateral fixo; simulado no fim como "folha de prova". */
+:root{
+  --bg:#f3f5f6; --paper:#ffffff; --ink:#15222c; --muted:#5a6873; --line:#d8dfe3;
+  --accent:#0f6b64; --accent-soft:#e2f0ee; --formula:#fff6e0; --formula-ink:#6a4a00;
+  --ok:#1d7a3e; --ok-soft:#e3f3e8; --bad:#b3261e; --bad-soft:#fbe6e4;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);margin:0}
+.wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px;max-width:1180px;margin:0 auto;padding-inline:24px;padding-block:32px 80px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:14px}
+nav.toc .k{font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+nav.toc a{display:grid;grid-template-columns:34px 1fr;gap:4px;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--accent-soft);outline:none}
+nav.toc a span:first-child{font-family:var(--f-mono);color:var(--accent);font-size:13px}
+nav.toc a.quiz{margin-top:10px;background:var(--accent);color:var(--paper);font-weight:600}
+nav.toc a.quiz span:first-child{color:var(--paper)}
+main{min-width:0}
+header.hero{padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font:650 clamp(32px,5vw,48px)/1.08 var(--f-display);margin:12px 0 14px;text-wrap:balance}
+h2{font:650 30px/1.15 var(--f-display);margin:0 0 6px;text-wrap:balance}
+h3{font:600 17px/1.3 var(--f-body);margin:26px 0 8px}
+.lede{max-width:66ch;color:var(--muted);font-size:17px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section.topic{padding-block:40px 8px;border-bottom:1px solid var(--line)}
+.num{font:500 13px/1 var(--f-mono);color:var(--accent);letter-spacing:.06em}
+.why{color:var(--muted);max-width:66ch;margin:0 0 6px}
+p,li{max-width:70ch}
+ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600}
+td.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.formula{background:var(--formula);color:var(--formula-ink);border-radius:8px;padding:12px 16px;margin:12px 0;font:15px/1.6 var(--f-mono);overflow-x:auto}
+.formula .lbl{display:block;font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+.ex{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:14px 0}
+.ex .lbl{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ex p{margin:6px 0}
+.pegadinha{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:14px 0}
+.pegadinha b:first-child{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--bad);display:block;margin-bottom:6px}
+code{font-family:var(--f-mono);font-size:.92em}
+/* Simulado */
+#simulado{padding-top:44px}
+.qbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 20px}
+.qbar label{font-size:14px;color:var(--muted)}
+select,button{font:inherit}
+select{padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+button{cursor:pointer;border-radius:6px;padding:9px 16px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-weight:600}
+button.ghost{background:transparent;color:var(--accent)}
+button:focus-visible,select:focus-visible,.opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.45;cursor:default}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px}
+.qhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.progress{height:4px;background:var(--line);border-radius:4px;margin:10px 0 18px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.qtext{font:600 18px/1.45 var(--f-body);margin:0 0 16px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:28px 1fr;gap:8px;text-align:left;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-weight:400}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .l{font-family:var(--f-mono);color:var(--muted)}
+.opt.ok{background:var(--ok-soft);border-color:var(--ok)}
+.opt.bad{background:var(--bad-soft);border-color:var(--bad)}
+.opt:disabled{cursor:default;opacity:1}
+.fb{margin-top:16px;padding:12px 16px;border-radius:8px;background:var(--accent-soft)}
+.fb strong.ok{color:var(--ok)} .fb strong.bad{color:var(--bad)}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.score{font:650 44px/1 var(--f-display)}
+.bars{display:grid;gap:8px;margin:18px 0}
+.bar{display:grid;grid-template-columns:minmax(0,210px) 1fr 70px;gap:10px;align-items:center;font-size:14px}
+.bar .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--accent)}
+.bar .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
+.hint{font-size:13px;color:var(--muted)}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:12px;padding-inline:16px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:4px}
+  nav.toc .k{width:100%}
+  nav.toc a{grid-template-columns:auto 1fr;padding:5px 8px;border:1px solid var(--line)}
+  .bar{grid-template-columns:1fr 60px}
+  .bar .t{grid-column:1/-1;order:3}
+}
+@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .wrap{display:block;max-width:none;padding:0}
+  nav.toc{display:none}
+  section.topic{break-inside:auto;padding-block:18px 4px}
+  h2,h3{break-after:avoid}
+  table,.formula,.ex,.pegadinha{break-inside:avoid}
+  .formula{background:#f6f1e2;color:#000}
+  th{background:#e8eef0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <div class="k">Tema 2 · índice</div>
+  <a href="#t21"><span>2.1</span><span>Microeconomia</span></a>
+  <a href="#t22"><span>2.2</span><span>Macroeconomia</span></a>
+  <a href="#simulado" class="quiz"><span>✓</span><span>Simulado (91 questões)</span></a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">CFG · Certificação ANBIMA de Fundamentos em Gestão</div>
+  <h1>Economia</h1>
+  <p class="lede">Apostila do tema 2, que vale de 3% a 7% da prova. Cobre a microeconomia (oferta e demanda, consumidor, firma e estruturas de mercado) e a macroeconomia aplicada ao Brasil: indicadores, SFN, política fiscal, política monetária e inflação, câmbio e contas externas. Cada bloco traz o conceito, a fórmula ou a regra, um exemplo resolvido e a pegadinha mais comum. O simulado no fim corrige na hora e mostra o desempenho por subtema.</p>
+  <div class="meta"><span>Base <b>Orientações de Estudo CFG (D.02.84)</b></span><span>Peso <b>3–7%</b></span><span>Subtemas <b>2.1 a 2.2</b></span></div>
+</header>
+
+<!-- 2.1 -->
+<section class="topic" id="t21">
+  <div class="num">2.1</div>
+  <h2>Microeconomia</h2>
+  <p class="why">Como consumidores e empresas tomam decisões e como os preços se formam em cada tipo de mercado. É a base para entender margens, poder de preço e regulação dos setores em que as empresas investidas atuam.</p>
+
+  <h3>2.1.1 · Oferta e demanda: os princípios</h3>
+  <ul>
+    <li><b>Lei da demanda:</b> com tudo o mais constante (<i>ceteris paribus</i>), quando o preço sobe a quantidade demandada cai. A curva de demanda é negativamente inclinada.</li>
+    <li><b>Lei da oferta:</b> quando o preço sobe, a quantidade ofertada aumenta, porque produzir mais passa a compensar. A curva de oferta é positivamente inclinada.</li>
+    <li><b>Equilíbrio:</b> o preço em que a quantidade demandada é igual à ofertada. Fora dele, o mercado tende a voltar: com preço acima do equilíbrio sobra produto e o preço cai; abaixo, falta produto e o preço sobe.</li>
+  </ul>
+
+  <h3>Movimento ao longo da curva × deslocamento da curva</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Movimento ao longo da curva</th><th>Deslocamento da curva</th></tr>
+    <tr><td>Causa</td><td>Mudança no <b>preço do próprio bem</b></td><td>Mudança em <b>qualquer outro fator</b></td></tr>
+    <tr><td>Nome</td><td>Variação da <b>quantidade</b> demandada (ou ofertada)</td><td>Variação da <b>demanda</b> (ou da oferta)</td></tr>
+    <tr><td>Fatores da demanda</td><td>—</td><td>Renda, preço de substitutos e complementares, gostos, expectativas, número de compradores, crédito</td></tr>
+    <tr><td>Fatores da oferta</td><td>—</td><td>Custo dos insumos, tecnologia, impostos e subsídios, número de vendedores, expectativas, clima (agro)</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th>Choque</th><th>Preço de equilíbrio</th><th>Quantidade de equilíbrio</th></tr>
+    <tr><td>Demanda aumenta (curva para a direita)</td><td class="n">sobe</td><td class="n">sobe</td></tr>
+    <tr><td>Demanda diminui</td><td class="n">cai</td><td class="n">cai</td></tr>
+    <tr><td>Oferta aumenta (curva para a direita)</td><td class="n">cai</td><td class="n">sobe</td></tr>
+    <tr><td>Oferta diminui</td><td class="n">sobe</td><td class="n">cai</td></tr>
+    <tr><td>Demanda e oferta aumentam juntas</td><td class="n">indeterminado</td><td class="n">sobe</td></tr>
+    <tr><td>Demanda sobe e oferta cai</td><td class="n">sobe</td><td class="n">indeterminada</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>"O preço do café subiu e por isso a demanda por café caiu" está errado: a alta do próprio preço reduz a <i>quantidade demandada</i> (movimento ao longo da curva). A <i>demanda</i> só muda (a curva só se desloca) quando muda outro fator, como a renda ou o preço do chá.</div>
+
+  <h3>Funções de demanda e de oferta e suas inversas</h3>
+  <p>A forma direta dá a quantidade em função do preço; a forma inversa isola o preço, que é o que aparece no eixo vertical do gráfico.</p>
+  <div class="formula"><span class="lbl">Funções lineares</span>Demanda: Qd = a − b·P   →   inversa: P = a/b − Qd/b<br>Oferta: Qs = c + d·P   →   inversa: P = −c/d + Qs/d<br>Equilíbrio: Qd = Qs   →   P* = (a − c)/(b + d)</div>
+  <div class="ex"><span class="lbl">Exemplo: equilíbrio</span>
+    <p>Qd = 100 − 2P e Qs = −20 + 4P. Igualando: 100 − 2P = −20 + 4P → 6P = 120 → <b>P* = 20</b> e <b>Q* = 60</b>.</p>
+    <p>Inversas: demanda P = 50 − 0,5Q (preço máximo, ou de reserva, igual a 50); oferta P = 5 + 0,25Q (abaixo de 5 ninguém produz).</p>
+  </div>
+
+  <h3>Excesso de demanda e excesso de oferta</h3>
+  <div class="formula"><span class="lbl">Regra</span>Excesso de demanda (escassez) = Qd − Qs &gt; 0   → preço abaixo do equilíbrio<br>Excesso de oferta (sobra) = Qs − Qd &gt; 0   → preço acima do equilíbrio</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>No mercado acima, a P = 25: Qd = 50 e Qs = 80, logo há <b>excesso de oferta de 30</b>. A P = 15: Qd = 70 e Qs = 40, logo há <b>excesso de demanda de 30</b>.</p>
+  </div>
+
+  <h3>Excedente do consumidor, do produtor e total</h3>
+  <ul>
+    <li><b>Excedente do consumidor (EC):</b> diferença entre o que o consumidor estaria disposto a pagar e o que paga. É a área <b>abaixo da demanda e acima do preço</b>.</li>
+    <li><b>Excedente do produtor (EP):</b> diferença entre o preço recebido e o preço mínimo pelo qual o produtor venderia. É a área <b>acima da oferta e abaixo do preço</b>.</li>
+    <li><b>Excedente total</b> = EC + EP. Em concorrência perfeita, sem falhas de mercado, o equilíbrio o maximiza.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Curvas lineares (áreas de triângulos)</span>EC = ½ × (preço máximo da demanda − P*) × Q*<br>EP = ½ × (P* − preço mínimo da oferta) × Q*</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Com P* = 20, Q* = 60, preço máximo 50 e preço mínimo 5: EC = ½ × 30 × 60 = <b>900</b>; EP = ½ × 15 × 60 = <b>450</b>; excedente total = <b>1.350</b>.</p>
+  </div>
+
+  <h3>Elasticidade-preço da demanda e da oferta</h3>
+  <div class="formula"><span class="lbl">Elasticidades</span>E = %ΔQ / %ΔP<br>No ponto (linear): E = (ΔQ/ΔP) × (P/Q)<br>No arco (ponto médio): %Δ = variação ÷ média dos dois valores</div>
+  <div class="tbl"><table>
+    <tr><th>|E| da demanda</th><th>Classificação</th><th>Se o preço sobe, a receita total…</th></tr>
+    <tr><td class="n">&gt; 1</td><td>Elástica</td><td><b>cai</b></td></tr>
+    <tr><td class="n">= 1</td><td>Unitária</td><td>fica igual (receita máxima)</td></tr>
+    <tr><td class="n">&lt; 1</td><td>Inelástica</td><td><b>sobe</b></td></tr>
+    <tr><td class="n">0 ou ∞</td><td>Perfeitamente inelástica (vertical) ou perfeitamente elástica (horizontal)</td><td>—</td></tr>
+  </table></div>
+  <p><b>O que torna a demanda mais elástica:</b> muitos substitutos próximos, bem supérfluo, peso grande no orçamento, horizonte de tempo mais longo e definição estreita do mercado (uma marca é mais elástica que a categoria). <b>A oferta</b> é mais elástica quanto mais longo o prazo, maior a capacidade ociosa e mais fácil estocar ou mudar a produção.</p>
+  <div class="ex"><span class="lbl">Exemplos</span>
+    <p>No ponto de equilíbrio acima (P = 20, Q = 60), E = −2 × 20/60 = <b>−0,67</b>: inelástica nesse ponto.</p>
+    <p>Pelo ponto médio, se o preço vai de 10 para 12 e a quantidade de 200 para 180: %ΔQ = −20/190 = −10,5% e %ΔP = 2/11 = 18,2%. E = <b>−0,58</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Numa demanda linear a inclinação é constante, mas a elasticidade <b>não</b> é: ela é alta (em módulo) perto do preço máximo e baixa perto do eixo da quantidade. Elasticidade e inclinação são coisas diferentes.</div>
+
+  <h3>Elasticidade cruzada e elasticidade-renda</h3>
+  <div class="formula"><span class="lbl">Fórmulas</span>Cruzada: Exy = %ΔQx / %ΔPy<br>Renda: Er = %ΔQ / %ΔRenda</div>
+  <div class="tbl"><table>
+    <tr><th>Resultado</th><th>Interpretação</th></tr>
+    <tr><td>Exy &gt; 0</td><td>Bens <b>substitutos</b> (café e chá)</td></tr>
+    <tr><td>Exy &lt; 0</td><td>Bens <b>complementares</b> (carro e gasolina)</td></tr>
+    <tr><td>Exy = 0</td><td>Bens independentes</td></tr>
+    <tr><td>Er &gt; 1</td><td>Bem normal <b>de luxo</b> (superior)</td></tr>
+    <tr><td>0 &lt; Er &lt; 1</td><td>Bem normal <b>necessário</b></td></tr>
+    <tr><td>Er &lt; 0</td><td>Bem <b>inferior</b></td></tr>
+  </table></div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>O café sobe 10% e a demanda por chá aumenta 5%: Exy = +0,5, substitutos. A renda cresce 4% e a demanda por viagens internacionais cresce 10%: Er = 2,5, bem de luxo.</p>
+  </div>
+
+  <h3>Intervenção do governo: preços máximos e mínimos, quotas, impostos e subsídios</h3>
+  <div class="tbl"><table>
+    <tr><th>Instrumento</th><th>Só tem efeito se…</th><th>Resultado</th></tr>
+    <tr><td><b>Preço máximo</b> (teto)</td><td>Fica <b>abaixo</b> do equilíbrio</td><td>Escassez (Qd &gt; Qs), filas, mercado paralelo; quantidade negociada = Qs</td></tr>
+    <tr><td><b>Preço mínimo</b> (piso)</td><td>Fica <b>acima</b> do equilíbrio</td><td>Excedente (Qs &gt; Qd), estoques ou compras do governo; quantidade negociada = Qd</td></tr>
+    <tr><td><b>Quota</b></td><td>Fica abaixo da quantidade de equilíbrio</td><td>Quantidade menor, preço maior, renda extra para quem tem a quota</td></tr>
+    <tr><td><b>Imposto por unidade</b></td><td>Sempre</td><td>Preço pago sobe, preço recebido cai, quantidade cai, há perda de peso morto</td></tr>
+    <tr><td><b>Subsídio</b></td><td>Sempre</td><td>Preço pago cai, preço recebido sobe, quantidade sobe acima do eficiente (também gera peso morto)</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Incidência do imposto</span>Parcela paga pelo consumidor = Es / (Es + |Ed|)<br>Quem tem a curva <b>mais inelástica</b> paga a maior parte, não importa de quem o governo cobra.</div>
+  <div class="ex"><span class="lbl">Exemplo: imposto de 6 por unidade cobrado do produtor</span>
+    <p>A oferta passa a ser Qs = −20 + 4(P − 6). Novo equilíbrio: 100 − 2P = −44 + 4P → P = 24 (preço pago pelo consumidor); o produtor recebe 24 − 6 = 18; Q = 52.</p>
+    <p>O consumidor paga 4 dos 6 e o produtor, 2 (a demanda é menos sensível ao preço que a oferta). Arrecadação = 6 × 52 = 312. Peso morto = ½ × 6 × (60 − 52) = <b>24</b>.</p>
+    <p>Com um preço máximo de 15 no mercado original: Qs = 40, Qd = 70, escassez de 30, e só 40 unidades são negociadas.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Teto <i>acima</i> do equilíbrio e piso <i>abaixo</i> do equilíbrio não têm efeito nenhum. E a lei pode mandar o produtor recolher o imposto, mas quem arca com ele depende só das elasticidades.</div>
+
+  <h3>2.1.2 · Demanda do consumidor: restrição orçamentária</h3>
+  <div class="formula"><span class="lbl">Restrição orçamentária</span>Px·X + Py·Y = R<br>Interceptos: R/Px (só X) e R/Py (só Y)   ·   inclinação = −Px/Py</div>
+  <ul>
+    <li>Aumento de renda desloca a reta <b>paralelamente</b> para fora.</li>
+    <li>Mudança no preço de um bem <b>gira</b> a reta em torno do intercepto do outro bem.</li>
+    <li>Renda e todos os preços multiplicados pelo mesmo fator: a reta não muda.</li>
+  </ul>
+
+  <h3>Função de utilidade e curvas de indiferença</h3>
+  <ul>
+    <li><b>Utilidade:</b> índice da satisfação que o consumidor obtém de uma cesta, como U = X·Y. Só a <b>ordem</b> das cestas importa (utilidade ordinal).</li>
+    <li><b>Utilidade marginal (UMg):</b> utilidade extra da última unidade, normalmente decrescente.</li>
+    <li><b>Curva de indiferença:</b> cestas com a mesma utilidade. São negativamente inclinadas, convexas em relação à origem, não se cruzam, e curvas mais afastadas da origem representam mais satisfação.</li>
+    <li><b>Taxa marginal de substituição (TMS):</b> quanto de Y o consumidor aceita trocar por uma unidade a mais de X. É a inclinação da curva de indiferença: TMS = UMgX / UMgY.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Escolha ótima</span>A cesta ótima é onde a curva de indiferença tangencia a reta orçamentária:<br>TMS = UMgX/UMgY = Px/Py   ⇔   UMgX/Px = UMgY/Py</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>R = 120, Px = 4, Py = 6 e U = X·Y. TMS = Y/X = 4/6 → Y = (2/3)X. Na restrição: 4X + 6 × (2/3)X = 120 → 8X = 120 → <b>X = 15, Y = 10</b>. (Com U = X·Y o consumidor gasta metade da renda em cada bem: 60/4 = 15 e 60/6 = 10.)</p>
+  </div>
+
+  <h3>Bens normais × inferiores; substitutos × complementares</h3>
+  <ul>
+    <li><b>Normal:</b> a demanda sobe quando a renda sobe. <b>Inferior:</b> a demanda cai quando a renda sobe (ex.: produtos de segunda linha, transporte público em algumas cidades).</li>
+    <li><b>Substitutos:</b> a alta do preço de um aumenta a demanda pelo outro. <b>Complementares:</b> a alta do preço de um reduz a demanda pelo outro.</li>
+  </ul>
+
+  <h3>Efeito renda e efeito substituição</h3>
+  <p>Quando o preço de X cai, a variação total da quantidade se decompõe em dois efeitos:</p>
+  <ul>
+    <li><b>Efeito substituição:</b> X fica relativamente mais barato e o consumidor troca Y por X, mantendo a mesma utilidade. É <b>sempre</b> no sentido contrário ao preço.</li>
+    <li><b>Efeito renda:</b> o poder de compra aumenta. Para bem normal, reforça o efeito substituição (compra mais X); para bem inferior, vai no sentido oposto.</li>
+    <li><b>Bem de Giffen:</b> bem inferior em que o efeito renda supera o efeito substituição, de modo que a quantidade demandada sobe quando o preço sobe. É raro e viola a lei da demanda.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Todo bem de Giffen é inferior, mas nem todo bem inferior é de Giffen. No bem inferior comum, o efeito substituição ainda domina e a demanda continua negativamente inclinada.</div>
+
+  <h3>2.1.3 · Produção: fatores e funções de produção</h3>
+  <ul>
+    <li><b>Fatores de produção:</b> terra (recursos naturais), trabalho, capital (máquinas, instalações) e capacidade empresarial (organização e risco). Cada um é remunerado por aluguel, salário, juros e lucro, respectivamente.</li>
+    <li><b>Função de produção:</b> o máximo que se produz com cada combinação de fatores, como Q = f(K, L). Um exemplo comum é a Cobb-Douglas Q = A·K<sup>α</sup>·L<sup>β</sup>.</li>
+    <li><b>Curto prazo:</b> pelo menos um fator é fixo (normalmente o capital). <b>Longo prazo:</b> todos os fatores são variáveis.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Produto total, médio e marginal</span>PT = Q   ·   PMe = Q/L   ·   PMg = ΔQ/ΔL<br>PMg &gt; PMe → PMe sobe   ·   PMg &lt; PMe → PMe cai   ·   PMg cruza o PMe no máximo do PMe</div>
+  <div class="ex"><span class="lbl">Exemplo (capital fixo)</span>
+    <div class="tbl"><table>
+      <tr><th>Trabalhadores (L)</th><th>PT</th><th>PMg</th><th>PMe</th></tr>
+      <tr><td class="n">1</td><td class="n">10</td><td class="n">10</td><td class="n">10,0</td></tr>
+      <tr><td class="n">2</td><td class="n">25</td><td class="n">15</td><td class="n">12,5</td></tr>
+      <tr><td class="n">3</td><td class="n">36</td><td class="n">11</td><td class="n">12,0</td></tr>
+      <tr><td class="n">4</td><td class="n">44</td><td class="n">8</td><td class="n">11,0</td></tr>
+      <tr><td class="n">5</td><td class="n">48</td><td class="n">4</td><td class="n">9,6</td></tr>
+    </table></div>
+    <p>O PMg começa a cair a partir do 3º trabalhador: são os <b>retornos marginais decrescentes</b>. O PMe só cai quando o PMg fica abaixo dele (também a partir do 3º).</p>
+    <p>Cobb-Douglas Q = K<sup>0,5</sup>L<sup>0,5</sup>, com K = 16 e L = 4: Q = 4 × 2 = 8. Como 0,5 + 0,5 = 1, os retornos de escala são constantes.</p>
+  </div>
+
+  <h3>Retornos marginais decrescentes × retornos de escala</h3>
+  <ul>
+    <li><b>Lei dos rendimentos marginais decrescentes</b> (curto prazo): acrescentando unidades de um fator variável a um fator fixo, a partir de certo ponto o produto marginal cai.</li>
+    <li><b>Retornos de escala</b> (longo prazo): todos os fatores aumentam na mesma proporção. Na Cobb-Douglas, α + β &gt; 1 dá retornos crescentes; = 1, constantes; &lt; 1, decrescentes.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Retorno marginal decrescente é um fenômeno de <b>curto prazo</b> (um fator fixo). Não implica deseconomia de escala, que é de longo prazo. Uma firma pode ter as duas coisas ao mesmo tempo: PMg decrescente no curto prazo e retornos crescentes de escala.</div>
+
+  <h3>Custos: fixo, variável, total, médio e marginal</h3>
+  <div class="formula"><span class="lbl">Custos</span>CT = CF + CV<br>CFMe = CF/Q   ·   CVMe = CV/Q   ·   CTMe = CT/Q = CFMe + CVMe<br>CMg = ΔCT/ΔQ = ΔCV/ΔQ   (o custo fixo não entra no marginal)<br>O CMg corta o CVMe e o CTMe nos seus pontos de mínimo</div>
+  <ul>
+    <li><b>Custo fixo:</b> não varia com a produção no curto prazo (aluguel, seguro). <b>Custo variável:</b> varia com a produção (matéria-prima, energia).</li>
+    <li>O CFMe cai sempre à medida que Q aumenta (o custo fixo é diluído). CVMe e CTMe têm formato de U, e a distância entre eles (o CFMe) diminui.</li>
+  </ul>
+
+  <h3>Break-even e ponto de encerramento</h3>
+  <div class="tbl"><table>
+    <tr><th>Ponto</th><th>Condição</th><th>Significado</th></tr>
+    <tr><td><b>Break-even</b> (nivelamento)</td><td>P = mínimo do CTMe</td><td>Lucro econômico zero: cobre todos os custos, inclusive o custo de oportunidade</td></tr>
+    <tr><td><b>Encerramento</b> (shutdown)</td><td>P = mínimo do CVMe</td><td>Abaixo disso, a firma para de produzir no curto prazo</td></tr>
+  </table></div>
+  <ul>
+    <li>Entre os dois pontos (CVMe ≤ P &lt; CTMe), a firma <b>continua produzindo no curto prazo com prejuízo</b>, porque a receita cobre o custo variável e ainda paga parte do custo fixo. No longo prazo, sai do mercado se o preço não melhorar.</li>
+    <li>Se P &lt; CVMe, parar é melhor: o prejuízo fica limitado ao custo fixo.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>CF = 100 e CV = 10Q + Q². Então CMg = 10 + 2Q, CVMe = 10 + Q e CTMe = 100/Q + 10 + Q.</p>
+    <p>Mínimo do CTMe: CMg = CTMe → 10 + 2Q = 100/Q + 10 + Q → Q = 10 e CTMe = 30. <b>Preço de break-even = 30.</b> O mínimo do CVMe é 10 (quando Q tende a zero): <b>preço de encerramento = 10</b>.</p>
+    <p>Com P = 20 a firma produz onde P = CMg → Q = 5. Receita 100, custo total 175: prejuízo de 75. Mas o custo variável é 75 e a receita é 100: continuar perde 75, parar perderia 100 (o custo fixo). Ela <b>continua produzindo</b>.</p>
+  </div>
+
+  <h3>Economias e deseconomias de escala</h3>
+  <ul>
+    <li><b>Economias de escala:</b> o custo médio de longo prazo <b>cai</b> quando a produção aumenta. Causas: especialização, divisão do trabalho, diluição de custos fixos elevados, poder de compra, tecnologia indivisível.</li>
+    <li><b>Deseconomias de escala:</b> o custo médio de longo prazo <b>sobe</b>. Causas: burocracia, dificuldade de coordenação e controle, perda de motivação, escassez de insumos.</li>
+    <li><b>Escala mínima eficiente:</b> a menor produção em que o custo médio de longo prazo atinge o mínimo.</li>
+  </ul>
+
+  <h3>Receita total, média e marginal</h3>
+  <div class="formula"><span class="lbl">Receitas</span>RT = P × Q   ·   RMe = RT/Q = P   ·   RMg = ΔRT/ΔQ<br>Concorrência perfeita: P constante → RMg = RMe = P<br>Demanda linear P = a − bQ → RMg = a − 2bQ (mesma origem, inclinação dobrada)</div>
+
+  <h3>Lucro normal × lucro econômico</h3>
+  <ul>
+    <li><b>Lucro contábil</b> = receita − custos explícitos (os que geram desembolso).</li>
+    <li><b>Lucro econômico</b> = receita − custos explícitos − <b>custos implícitos</b> (de oportunidade: o salário que o dono deixou de ganhar, o rendimento que o capital próprio teria em outra aplicação).</li>
+    <li><b>Lucro normal</b> é o lucro contábil que só remunera os custos de oportunidade, ou seja, lucro econômico igual a zero. É o mínimo para manter os recursos naquela atividade.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Receita 1.000, custos explícitos 700, custos de oportunidade 250. Lucro contábil = <b>300</b>; lucro econômico = <b>50</b>. Se os custos de oportunidade fossem 300, o lucro econômico seria zero e a firma estaria obtendo apenas o lucro normal.</p>
+  </div>
+
+  <h3>Maximização de lucro</h3>
+  <div class="formula"><span class="lbl">Regra</span>Produzir a quantidade em que <b>RMg = CMg</b> (com o CMg cortando a RMg de baixo para cima)<br>Se RMg &gt; CMg, vale produzir mais; se RMg &lt; CMg, vale produzir menos</div>
+  <div class="ex"><span class="lbl">Exemplo (firma competitiva)</span>
+    <p>Com o custo acima (CMg = 10 + 2Q) e P = 40: 40 = 10 + 2Q → <b>Q = 15</b>. RT = 600; CT = 100 + 150 + 225 = 475; lucro econômico = <b>125</b>.</p>
+  </div>
+
+  <h3>2.1.4 · Concorrência perfeita</h3>
+  <ul>
+    <li><b>Características:</b> muitos compradores e vendedores, produto <b>homogêneo</b>, livre entrada e saída, informação perfeita, mobilidade de recursos.</li>
+    <li>Nenhuma firma consegue influenciar o preço: todas são <b>tomadoras de preço</b>. O preço sai do equilíbrio do <b>mercado</b>.</li>
+    <li><b>Demanda do mercado</b> é negativamente inclinada; a <b>demanda vista pela firma</b> é <b>horizontal</b> (perfeitamente elástica) no preço de mercado. Se cobrar um centavo a mais, não vende nada.</li>
+    <li>Por isso P = RMe = RMg, e a firma maximiza o lucro onde <b>P = RMg = CMg</b>. A curva de oferta de curto prazo da firma é o trecho do CMg acima do mínimo do CVMe.</li>
+    <li><b>Longo prazo:</b> se há lucro econômico, entram firmas, a oferta aumenta e o preço cai até P = mínimo do CTMe. O lucro econômico vai a <b>zero</b> (só lucro normal). Há <b>eficiência alocativa</b> (P = CMg) e <b>produtiva</b> (produção no mínimo do CTMe).</li>
+  </ul>
+
+  <h3>Monopólio</h3>
+  <ul>
+    <li><b>Características:</b> um único vendedor, produto sem substitutos próximos, <b>barreiras à entrada</b>. A firma é a própria indústria e enfrenta a demanda do mercado: é <b>formadora de preço</b>.</li>
+    <li><b>Origens:</b> controle de insumo essencial, patentes e direitos autorais, concessões e licenças do governo, economias de escala (monopólio natural), efeitos de rede.</li>
+    <li><b>Relação entre preço, RMg e CMg:</b> como precisa baixar o preço para vender mais, a <b>RMg fica abaixo do preço</b>. O monopolista produz onde RMg = CMg e cobra o preço que a demanda aceita nessa quantidade, logo <b>P &gt; RMg = CMg</b>.</li>
+    <li>O monopolista sempre opera no trecho <b>elástico</b> da demanda (onde a RMg é positiva).</li>
+    <li><b>Estratégias de preço:</b> preço único ou <b>discriminação de preços</b>: de 1º grau (cada consumidor paga o máximo que aceita), de 2º grau (preço varia com a quantidade, como descontos por volume) e de 3º grau (preços diferentes por grupo, como meia-entrada e tarifas por região).</li>
+  </ul>
+  <div class="formula"><span class="lbl">Monopólio × concorrência</span>Monopólio: RMg = CMg, P &gt; CMg → preço maior e quantidade menor<br>Concorrência: P = CMg<br>Índice de Lerner (poder de mercado) = (P − CMg)/P = 1/|Ed|</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Demanda P = 100 − 2Q e CMg = 20 constante. RMg = 100 − 4Q = 20 → <b>Q = 20, P = 60</b>; lucro = (60 − 20) × 20 = 800.</p>
+    <p>Em concorrência perfeita seria P = CMg = 20 → Q = 40. O monopólio produz metade e cobra três vezes mais. Peso morto = ½ × (60 − 20) × (40 − 20) = <b>400</b>.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>O monopólio é <b>ineficiente</b> porque P &gt; CMg: há consumidores dispostos a pagar mais do que custa produzir uma unidade extra e que não são atendidos. Essa é a perda de peso morto. O problema não é "ter lucro", e o monopolista não cobra "o preço que quiser": ele escolhe o ponto da curva de demanda.</div>
+
+  <h3>Monopólio natural e sua regulação</h3>
+  <ul>
+    <li>Ocorre quando as <b>economias de escala</b> são tão grandes que uma única firma atende todo o mercado com custo médio menor do que duas ou mais firmas (custo fixo altíssimo e custo marginal baixo: saneamento, distribuição de energia e gás, ferrovias).</li>
+    <li><b>Dilema da regulação:</b> se o regulador impõe <b>P = CMg</b> (eficiência alocativa), como o custo médio está caindo, CMg &lt; CMe e a firma tem prejuízo, precisando de subsídio. Se impõe <b>P = CMe</b> (custo médio), a firma tem lucro econômico zero e se sustenta, mas a quantidade fica um pouco abaixo da eficiente.</li>
+    <li>Outros modelos: <b>taxa de retorno</b> (preço que remunera o capital investido; incentiva superinvestimento) e <b>price cap</b> (teto de preço reajustado por inflação menos um fator de produtividade, o "fator X"), comuns nas agências reguladoras brasileiras.</li>
+  </ul>
+
+  <h3>Concorrência monopolística</h3>
+  <ul>
+    <li><b>Características:</b> muitas firmas, produtos <b>diferenciados</b> (marca, qualidade, localização), livre entrada e saída. Exemplos: restaurantes, roupas, salões de beleza.</li>
+    <li>Cada firma tem alguma margem sobre o preço (demanda negativamente inclinada, mas bem elástica). Produz onde RMg = CMg, com P &gt; CMg.</li>
+    <li><b>Curto prazo:</b> pode ter lucro ou prejuízo econômico. <b>Longo prazo:</b> a entrada (ou saída) de concorrentes desloca a demanda de cada firma até P = CTMe e o lucro econômico vai a <b>zero</b>.</li>
+    <li><b>Eficiência:</b> não é eficiente no sentido estrito. Há <b>capacidade ociosa</b> (produz antes do mínimo do CTMe) e P &gt; CMg. Em compensação, oferece <b>variedade</b>, que os consumidores valorizam.</li>
+  </ul>
+
+  <h3>Oligopólio e seus modelos</h3>
+  <ul>
+    <li><b>Características:</b> poucas firmas grandes, <b>interdependência estratégica</b> (cada uma considera a reação das rivais), barreiras à entrada relevantes, produto homogêneo (aço, cimento) ou diferenciado (automóveis, telefonia).</li>
+    <li>Pode haver <b>conluio</b> (cartel, ilegal), que leva ao resultado de monopólio mas é instável, pois cada membro tem incentivo a trapacear.</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Modelo</th><th>Variável de decisão</th><th>Resultado</th></tr>
+    <tr><td><b>Cournot-Nash</b></td><td>Quantidade, escolhida simultaneamente, tomando a das rivais como dada</td><td>Preço e quantidade entre monopólio e concorrência. Com mais firmas, aproxima-se da concorrência</td></tr>
+    <tr><td><b>Bertrand</b></td><td>Preço, com produto homogêneo</td><td>A disputa leva o preço até o <b>custo marginal</b>: mesmo com duas firmas, resultado igual ao da concorrência perfeita (paradoxo de Bertrand)</td></tr>
+    <tr><td><b>Stackelberg</b></td><td>Quantidade, com uma líder que decide primeiro</td><td>A líder produz mais e lucra mais que a seguidora</td></tr>
+    <tr><td><b>Firma dominante</b></td><td>A dominante fixa o preço; as pequenas (franja competitiva) são tomadoras de preço</td><td>A dominante atende a <b>demanda residual</b> (demanda do mercado menos a oferta da franja) e faz RMg residual = CMg</td></tr>
+    <tr><td><b>Demanda quebrada</b> (Sweezy)</td><td>Preço</td><td>Se uma firma sobe o preço, as rivais não acompanham (demanda elástica acima); se baixa, todas acompanham (inelástica abaixo). A RMg tem um "buraco" e o <b>preço fica rígido</b> mesmo com mudança de custos</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Cournot com demanda P = a − bQ e custo marginal c</span>Cada uma das n firmas: q = (a − c) / [b(n + 1)]<br>Total: Q = n(a − c) / [b(n + 1)]</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>P = 120 − Q e CMg = 30. Duopólio de Cournot: cada firma produz (120 − 30)/3 = <b>30</b>; Q = 60 e <b>P = 60</b>.</p>
+    <p>Comparando: monopólio Q = 45 e P = 75; Bertrand ou concorrência perfeita Q = 90 e P = 30.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>O modelo de demanda quebrada explica a <b>rigidez</b> dos preços, mas não explica como o preço inicial foi determinado. E no Bertrand com produto homogêneo bastam duas firmas para chegar ao preço competitivo.</div>
+
+  <h3>Medidas de concentração: CR e HHI</h3>
+  <div class="formula"><span class="lbl">Índices</span>CRk = soma das participações (%) das k maiores firmas (ex.: CR4)<br>HHI = Σ (participação em %)²   ·   vai de perto de 0 a 10.000 (monopólio)</div>
+  <ul>
+    <li>Referência clássica (guias de concentração horizontal dos EUA de 2010, muito usada em livros-texto): HHI abaixo de 1.500, mercado não concentrado; entre 1.500 e 2.500, moderadamente concentrado; acima de 2.500, altamente concentrado. Autoridades de defesa da concorrência, como o CADE, usam o HHI e sua variação após uma fusão para triar operações.</li>
+    <li><b>Vantagem do HHI sobre o CR:</b> considera todas as firmas e dá mais peso às maiores, captando a desigualdade entre elas.</li>
+    <li><b>Limitações (dos dois):</b> dependem da definição do mercado relevante (produto e região), ignoram importações e concorrência potencial (barreiras à entrada) e não medem diretamente o comportamento (um mercado concentrado pode ser disputado). O CR ignora a distribuição dentro das k maiores e as firmas fora delas.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Quatro firmas com 40%, 30%, 20% e 10%: HHI = 1.600 + 900 + 400 + 100 = <b>3.000</b> (altamente concentrado); CR2 = 70%; CR4 = 100%. Cinco firmas com 20% cada: HHI = 5 × 400 = 2.000 e CR4 = 80%.</p>
+  </div>
+
+  <h3>Teoria dos jogos: equilíbrio de Nash e dilema do prisioneiro</h3>
+  <ul>
+    <li><b>Equilíbrio de Nash:</b> combinação de estratégias em que <b>nenhum jogador consegue melhorar mudando sozinho</b> sua estratégia, dadas as escolhas dos outros.</li>
+    <li><b>Estratégia dominante:</b> a melhor para o jogador qualquer que seja a escolha do outro.</li>
+    <li><b>Dilema do prisioneiro:</b> cada jogador tem estratégia dominante (confessar, ou não cooperar), e o equilíbrio de Nash resultante é <b>pior para os dois</b> do que a cooperação. Explica por que cartéis são instáveis e por que guerras de preço acontecem. A repetição do jogo pode sustentar a cooperação.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo: duas empresas decidem o preço (lucros: A, B)</span>
+    <div class="tbl"><table>
+      <tr><th></th><th>B mantém preço alto</th><th>B baixa o preço</th></tr>
+      <tr><td><b>A mantém preço alto</b></td><td class="n">(10, 10)</td><td class="n">(2, 14)</td></tr>
+      <tr><td><b>A baixa o preço</b></td><td class="n">(14, 2)</td><td class="n">(5, 5)</td></tr>
+    </table></div>
+    <p>Para A, baixar é melhor seja qual for a escolha de B (14 &gt; 10 e 5 &gt; 2), e o mesmo vale para B. O equilíbrio de Nash é <b>(baixa, baixa) = (5, 5)</b>, embora (alto, alto) = (10, 10) fosse melhor para ambos.</p>
+  </div>
+
+  <h3>Monopsônio e oligopsônio</h3>
+  <ul>
+    <li><b>Monopsônio:</b> um <b>único comprador</b> (ex.: a única grande empregadora de uma cidade, um frigorífico que compra todo o gado de uma região). <b>Oligopsônio:</b> poucos compradores (ex.: indústrias de laticínios comprando leite de muitos produtores).</li>
+    <li>O comprador com poder de mercado compra <b>menos</b> e paga <b>menos</b> do que em concorrência, porque o custo marginal de comprar mais uma unidade é maior que o preço (subir o preço para atrair a unidade extra encarece todas as anteriores). Também gera peso morto.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Monopólio e oligopólio são do lado da <b>oferta</b> (poucos vendedores). Monopsônio e oligopsônio são do lado da <b>demanda</b> (poucos compradores).</div>
+</section>
+
+<!-- 2.2 -->
+<section class="topic" id="t22">
+  <div class="num">2.2</div>
+  <h2>Macroeconomia</h2>
+  <p class="why">Os agregados da economia brasileira e as políticas que os movem: é daqui que saem os juros, a inflação e o câmbio que precificam todas as classes de ativos da carteira.</p>
+
+  <h3>2.2.1 · PIB × PNB</h3>
+  <ul>
+    <li><b>PIB (Produto Interno Bruto):</b> valor de todos os bens e serviços <b>finais</b> produzidos <b>dentro do território</b> do país num período, por residentes ou não.</li>
+    <li><b>PNB (Produto Nacional Bruto):</b> valor produzido pelos fatores de produção <b>de propriedade de residentes</b>, aqui ou no exterior.</li>
+    <li>A diferença é a <b>renda líquida enviada (ou recebida) do exterior</b>: juros, lucros e dividendos e salários. O Brasil remete mais renda do que recebe, por isso seu <b>PNB é menor que o PIB</b>.</li>
+    <li><b>Nominal × real:</b> o PIB nominal usa preços correntes; o real usa preços de um ano-base e mede a variação do volume. Deflator implícito = PIB nominal / PIB real.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Identidades</span>PIB (ótica da despesa) = C + I + G + (X − M)<br>PNB = PIB + renda recebida do exterior − renda enviada ao exterior<br>(1 + cresc. nominal) = (1 + cresc. real) × (1 + variação do deflator)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>PIB de 10.000; renda enviada ao exterior 400; renda recebida 100. PNB = 10.000 − 400 + 100 = <b>9.700</b>.</p>
+    <p>O PIB nominal cresce 10% e o deflator sobe 6%: crescimento real = 1,10/1,06 − 1 = <b>3,77%</b> (aproximadamente 4%).</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>"Interno" é critério de <b>território</b>; "nacional" é critério de <b>propriedade</b> (residência). O lucro de uma montadora estrangeira produzindo no Brasil entra no PIB brasileiro, mas sai do PNB quando é remetido à matriz. E bens intermediários não entram no PIB (seria dupla contagem).</div>
+
+  <h3>Demanda por moeda</h3>
+  <ul>
+    <li><b>Motivos (Keynes):</b> <b>transação</b> (pagar as despesas do dia a dia), <b>precaução</b> (imprevistos) e <b>especulação</b> (reter moeda à espera de comprar títulos mais baratos quando os juros subirem).</li>
+    <li>A demanda por moeda <b>aumenta com a renda</b> (PIB real) e com o nível de preços, e <b>diminui com a taxa de juros</b>, que é o custo de oportunidade de ficar com moeda que não rende.</li>
+    <li><b>Inovações financeiras</b> (cartões, Pix, aplicação automática, fundos com liquidez diária) <b>reduzem</b> a demanda por moeda em sentido estrito (M1), porque fica fácil manter o dinheiro aplicado até a hora de pagar. Isso aumenta a velocidade de circulação da moeda.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Demanda por moeda</span>Md / P = L(Y, i)   → sobe com a renda real Y, cai com a taxa de juros i</div>
+
+  <h3>Como os indicadores afetam renda fixa, ações e câmbio</h3>
+  <div class="tbl"><table>
+    <tr><th>Surpresa</th><th>Juros e renda fixa prefixada</th><th>Ações</th><th>Real (R$)</th></tr>
+    <tr><td><b>Inflação acima do esperado</b></td><td>Expectativa de Selic maior: taxas sobem, preços dos prefixados <b>caem</b>; títulos IPCA+ protegem o principal</td><td>Tendem a <b>cair</b> (taxa de desconto maior, margens pressionadas)</td><td>Efeito misto: juros maiores atraem capital (apreciação), mas inflação alta corrói a moeda no longo prazo</td></tr>
+    <tr><td><b>Emprego e renda fortes</b> (economia aquecida)</td><td>Pressão inflacionária → taxas sobem, prefixados caem</td><td>Lucros maiores ajudam, mas juros maiores atrapalham; efeito líquido depende de qual domina</td><td>Tende a apreciar (juros e crescimento atraem capital)</td></tr>
+    <tr><td><b>Desaceleração</b> (desemprego subindo, PIB fraco)</td><td>Expectativa de corte de juros → prefixados <b>sobem</b></td><td>Lucros menores, mas juros menores; setores cíclicos sofrem mais</td><td>Tende a depreciar (juros menores, menos fluxo)</td></tr>
+  </table></div>
+
+  <h3>Indicadores e rumos da política econômica</h3>
+  <ul>
+    <li>O Banco Central reage principalmente à <b>inflação corrente e às expectativas</b> (boletim Focus), ao <b>hiato do produto</b> (PIB, desemprego, utilização da capacidade), ao <b>câmbio</b> (repasse para preços) e ao <b>quadro fiscal</b> (que afeta prêmio de risco e expectativas).</li>
+    <li>Inflação acima da meta e economia aquecida → política monetária <b>contracionista</b> (alta da Selic). Desemprego alto e inflação controlada → espaço para cortes.</li>
+    <li>Na política fiscal, arrecadação e dívida em alta trajetória levam a ajustes (corte de despesas, aumento de tributos) para cumprir as regras fiscais.</li>
+  </ul>
+
+  <h3>Como a taxa de juros é determinada</h3>
+  <ul>
+    <li><b>Mercado monetário (preferência pela liquidez):</b> a taxa de juros iguala a oferta de moeda (definida pelo Banco Central) à demanda por moeda. Se o BC <b>aumenta a oferta de moeda</b>, os juros <b>caem</b>; se reduz, os juros <b>sobem</b>.</li>
+    <li><b>Fundos emprestáveis:</b> a taxa de juros iguala a poupança (oferta de fundos) ao investimento (demanda de fundos). Déficit público aumenta a demanda por fundos e eleva os juros.</li>
+    <li>Na prática, os bancos centrais modernos <b>fixam uma meta para a taxa de curto prazo</b> (no Brasil, a meta Selic) e ajustam a liquidez (quantidade de reservas) para que a taxa efetiva fique na meta. A moeda passa a ser endógena: a taxa é a variável de controle.</li>
+    <li>Juros mais altos reduzem consumo e investimento (equilíbrio com renda menor) e atraem capital externo.</li>
+  </ul>
+
+  <h3>Taxas de juros de referência no Brasil: Selic, TLP, TBF e TR</h3>
+  <div class="tbl"><table>
+    <tr><th>Taxa</th><th>O que é</th><th>Onde aparece</th></tr>
+    <tr><td><b>Meta Selic</b></td><td>Taxa básica de juros, definida pelo <b>Copom</b></td><td>Instrumento da política monetária; regra da poupança</td></tr>
+    <tr><td><b>Taxa Selic (over, efetiva)</b></td><td>Taxa média ponderada pelo volume das operações compromissadas de <b>um dia</b> lastreadas em <b>títulos públicos federais</b>, registradas no sistema Selic</td><td>Remunera a LFT (Tesouro Selic); referência de custo do dinheiro com lastro público; corrige tributos pagos em atraso</td></tr>
+    <tr><td><b>TLP</b> (Taxa de Longo Prazo)</td><td>Criada em 2018 para substituir a TJLP nos novos contratos do BNDES. Composta pelo <b>IPCA mais uma taxa real</b> calculada a partir dos rendimentos das NTN-B (Tesouro IPCA+) de 5 anos. Calculada pelo BC</td><td>Financiamentos do BNDES; aproxima o custo desses empréstimos ao custo de captação do Tesouro e reduz o subsídio implícito</td></tr>
+    <tr><td><b>TBF</b> (Taxa Básica Financeira)</td><td>Taxa prefixada de referência para o prazo de um mês, apurada pelo BC com metodologia definida pelo CMN (originalmente a partir das taxas de captação de CDB/RDB prefixados de 30 dias dos maiores bancos)</td><td>Base para o cálculo da TR; referência de captação a prazo</td></tr>
+    <tr><td><b>TR</b> (Taxa Referencial)</td><td>Calculada a partir da TBF aplicando-se um <b>redutor</b> definido pelo CMN. Pode ser zero (ficou zerada por vários anos)</td><td>Correção da <b>poupança</b>, do <b>FGTS</b> e de financiamentos habitacionais (SFH)</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Regra da poupança (Lei 12.703/2012)</span>Meta Selic &gt; 8,5% a.a. → 0,5% ao mês + TR<br>Meta Selic ≤ 8,5% a.a. → 70% da meta Selic + TR</div>
+  <div class="ex"><span class="lbl">Impacto nos contratos</span>
+    <p>Um financiamento imobiliário corrigido pela TR fica praticamente prefixado quando a TR é zero. Um contrato atrelado ao IPCA (como a TLP) transfere ao tomador o risco de inflação. Um contrato pós-fixado em Selic ou CDI transfere ao tomador o risco de alta dos juros: se o Copom eleva a Selic, a prestação sobe.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>A <b>meta</b> Selic é fixada pelo Copom; a <b>Selic over</b> é apurada no mercado (operações compromissadas com títulos públicos). O BC atua no mercado aberto para manter a over colada na meta. E a TR <b>não</b> é calculada a partir da Selic: vem da TBF com um redutor.</div>
+
+  <h3>Taxa DI e mercado interfinanceiro</h3>
+  <ul>
+    <li><b>Mercado interfinanceiro:</b> onde os bancos trocam reservas entre si. Quem fechou o dia com sobra de caixa empresta a quem ficou com falta, por meio dos <b>Depósitos Interfinanceiros (DI)</b>, títulos que só circulam entre instituições financeiras e não têm incidência de IR nem são oferecidos ao público.</li>
+    <li><b>Taxa DI</b> (também chamada de CDI): calculada e divulgada pela <b>B3</b> como a taxa média das operações de DI de <b>um dia</b> (over) entre instituições de conglomerados diferentes, expressa em % ao ano, base <b>252 dias úteis</b>.</li>
+    <li>Diferença para a Selic: o DI não tem lastro em título público (é risco de crédito bancário), mas na prática fica muito próximo da Selic over, normalmente poucos centésimos abaixo.</li>
+    <li><b>Usos:</b> principal referência dos pós-fixados privados (CDB a 100% do CDI, debêntures DI + spread, LCI/LCA), benchmark de fundos de renda fixa e multimercados, base do <b>DI futuro</b> na B3 (de onde sai a curva de juros prefixada) e dos swaps.</li>
+  </ul>
+
+  <h3>Índices de preços: IPCA, INPC e IGPs</h3>
+  <div class="tbl"><table>
+    <tr><th>Índice</th><th>Instituto</th><th>Período de coleta</th><th>Cobertura e composição</th><th>Uso principal</th></tr>
+    <tr><td><b>IPCA</b></td><td>IBGE</td><td>Mês cheio (1º ao último dia)</td><td>Famílias com renda de 1 a 40 salários mínimos, nas principais regiões metropolitanas e capitais</td><td><b>Índice oficial da meta de inflação</b>; NTN-B</td></tr>
+    <tr><td><b>INPC</b></td><td>IBGE</td><td>Mês cheio</td><td>Famílias com renda de 1 a 5 salários mínimos</td><td>Reajustes salariais e de benefícios (salário mínimo, INSS)</td></tr>
+    <tr><td><b>IGP-M</b></td><td>FGV</td><td>Dia 21 do mês anterior ao dia 20 do mês de referência</td><td>Média ponderada: <b>60% IPA</b> (preços ao produtor), <b>30% IPC</b> (consumidor), <b>10% INCC</b> (construção)</td><td>Aluguéis, tarifas (energia, telefonia em contratos antigos), contratos financeiros</td></tr>
+    <tr><td><b>IGP-DI</b></td><td>FGV</td><td>Mês cheio (1º ao último dia)</td><td>Mesma estrutura 60/30/10</td><td>Série histórica longa; contratos e indicadores macro</td></tr>
+    <tr><td><b>IGP-10</b></td><td>FGV</td><td>Dia 11 do mês anterior ao dia 10 do mês de referência</td><td>Mesma estrutura 60/30/10</td><td>Prévia e contratos específicos</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Índice de Laspeyres (cesta do período-base)</span>I = Σ (p<sub>t</sub> × q<sub>0</sub>) / Σ (p<sub>0</sub> × q<sub>0</sub>) × 100<br>Variação no período = I<sub>final</sub> / I<sub>inicial</sub> − 1</div>
+  <ul>
+    <li><b>Problemas dos índices:</b>
+      <ul>
+        <li><b>Viés de substituição:</b> a cesta é fixa, mas o consumidor troca o que encareceu por substitutos mais baratos. O Laspeyres tende a <b>superestimar</b> a inflação.</li>
+        <li><b>Viés de qualidade:</b> parte do aumento de preço reflete produtos melhores, não inflação.</li>
+        <li><b>Novos produtos</b> demoram a entrar na cesta; mudança de pontos de venda (lojas mais baratas, internet) também não é captada.</li>
+        <li>A cesta representa uma família típica, não cada investidor; pesos defasados até a nova pesquisa de orçamentos (POF).</li>
+        <li>Os <b>IGPs</b> têm 60% de preços ao produtor, muito influenciados por <b>commodities e câmbio</b>, por isso são mais voláteis e podem se afastar muito do IPCA (como em 2020 e 2021).</li>
+      </ul></li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>O IGP-M <b>não</b> é calculado pelo IBGE e não é o índice da meta. A meta de inflação usa o IPCA. E o IGP-M fecha no dia 20: ele "sai antes" porque coleta até o dia 20 do próprio mês.</div>
+
+  <h3>2.2.2 · Sistema Financeiro Nacional: CMN, Banco Central e CVM</h3>
+  <div class="tbl"><table>
+    <tr><th>Órgão</th><th>Natureza</th><th>Principais atribuições</th></tr>
+    <tr><td><b>CMN</b> (Conselho Monetário Nacional)</td><td>Órgão <b>normativo</b> máximo do SFN. Membros: Ministro da Fazenda (presidente), Ministro do Planejamento e Orçamento e Presidente do Banco Central</td><td>Fixa a <b>meta de inflação</b>; estabelece diretrizes das políticas monetária, creditícia e cambial; regula a constituição e o funcionamento das instituições financeiras; disciplina o crédito; define limites (como o compulsório máximo e regras prudenciais)</td></tr>
+    <tr><td><b>Banco Central do Brasil</b></td><td>Autarquia <b>executora</b> e supervisora, com autonomia definida pela Lei Complementar 179/2021 (mandatos fixos da diretoria, não coincidentes com o do Presidente da República)</td><td>Objetivo fundamental: <b>estabilidade de preços</b>; também zelar pela estabilidade e eficiência do sistema financeiro, suavizar as flutuações da atividade e fomentar o pleno emprego. Executa a política monetária (Copom) e cambial, emite moeda, administra as reservas internacionais, recolhe o compulsório, faz o redesconto, autoriza e <b>fiscaliza as instituições financeiras</b>, regula o sistema de pagamentos</td></tr>
+    <tr><td><b>CVM</b> (Comissão de Valores Mobiliários)</td><td>Autarquia em regime especial vinculada ao Ministério da Fazenda</td><td>Regula e fiscaliza o <b>mercado de valores mobiliários</b> (ações, debêntures, cotas de fundos, derivativos): companhias abertas, ofertas públicas, fundos de investimento, gestores e administradores, bolsas. Protege o investidor, combate fraudes e manipulação, aplica sanções</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>Quem <b>fixa</b> a meta de inflação é o CMN; quem <b>persegue</b> a meta, definindo a Selic, é o Banco Central (Copom). E quem fiscaliza fundos e gestores é a CVM, não o BC.</div>
+
+  <h3>Instituições financeiras e suas funções</h3>
+  <div class="tbl"><table>
+    <tr><th>Instituição</th><th>Função econômica</th></tr>
+    <tr><td><b>Banco comercial</b></td><td>Capta <b>depósitos à vista</b> (por isso cria moeda escritural) e a prazo; empresta no curto e médio prazo</td></tr>
+    <tr><td><b>Banco de investimento</b></td><td><b>Não</b> capta depósito à vista. Capta a prazo e financia capital fixo e de giro de médio e longo prazo; faz <b>underwriting</b> (estruturação e distribuição de ofertas), fusões e aquisições, gestão de recursos</td></tr>
+    <tr><td><b>Banco múltiplo</b></td><td>Reúne pelo menos <b>duas carteiras</b> (comercial, investimento, crédito imobiliário, crédito e financiamento, arrendamento, desenvolvimento), sendo uma delas obrigatoriamente comercial ou de investimento. É a forma dos grandes bancos brasileiros</td></tr>
+    <tr><td><b>Corretora (CTVM)</b> e <b>distribuidora (DTVM)</b> de títulos e valores mobiliários</td><td>Intermediam compra e venda de títulos e valores mobiliários para clientes, participam de ofertas, administram carteiras e custodiam. Desde 2009 as DTVMs também podem operar diretamente em bolsa, e a diferença prática entre as duas ficou pequena</td></tr>
+    <tr><td><b>Corretora de câmbio</b></td><td>Intermedia operações de câmbio entre clientes e bancos e opera câmbio de menor valor (turismo, remessas)</td></tr>
+    <tr><td><b>Corretora de mercadorias e futuros</b></td><td>Intermedia contratos derivativos e de mercadorias na bolsa (agro, índices, juros, câmbio)</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Regulação × desregulamentação × inovação:</b> a regulação prudencial (capital mínimo de Basileia, compulsório, liquidez) protege a estabilidade mas encarece a intermediação. A desregulamentação e as inovações (fintechs, bancos digitais, Pix, open finance, plataformas de investimento) aumentam a concorrência e reduzem custos e spreads, mas exigem que a regulação acompanhe o risco que migra para fora dos bancos tradicionais.</li>
+  </ul>
+
+  <h3>Criação de moeda pelos bancos e o multiplicador</h3>
+  <ul>
+    <li>Quando um banco comercial empresta parte de um depósito, o dinheiro emprestado volta ao sistema como novo depósito, que pode ser emprestado de novo. Assim os bancos criam <b>moeda escritural</b> (depósitos à vista).</li>
+    <li>O limite é dado pelo <b>depósito compulsório</b> (e pelas reservas voluntárias e pelo dinheiro que o público retém em espécie).</li>
+  </ul>
+  <div class="formula"><span class="lbl">Multiplicador bancário (sem vazamento para papel-moeda)</span>Multiplicador = 1 / r   (r = taxa de reserva/compulsório)<br>Depósitos totais = depósito inicial / r<br>Novos empréstimos do sistema = depósito inicial × (1 − r) / r<br>Empréstimo que o primeiro banco pode fazer = depósito × (1 − r)<br><span class="lbl" style="margin-top:8px">Com o público retendo papel-moeda</span>m = M1 / Base = 1 / [1 − d(1 − r)]   (d = fração de M1 mantida em depósitos à vista)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Depósito inicial de 1.000 e compulsório de 20%. O primeiro banco pode emprestar 800. No sistema todo: depósitos totais = 1.000 / 0,2 = <b>5.000</b>; multiplicador = 5; novos empréstimos = 5.000 − 1.000 = <b>4.000</b>.</p>
+    <p>Se o público mantém só metade de M1 em depósitos (d = 0,5): m = 1 / (1 − 0,5 × 0,8) = 1,67. O vazamento para papel-moeda reduz bastante o multiplicador.</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>Leia o que a questão pede: <b>depósitos totais</b> (D/r), <b>moeda criada / novos empréstimos</b> (D/r − D) ou o <b>empréstimo de um único banco</b> (D × (1 − r)). E compulsório maior significa multiplicador <b>menor</b>.</div>
+
+  <h3>Objetivos do Banco Central, Balanço de Pagamentos e ferramentas de política</h3>
+  <ul>
+    <li><b>Objetivos do BC:</b> estabilidade de preços (principal), solidez e eficiência do sistema financeiro, suavizar flutuações da atividade e fomentar o pleno emprego.</li>
+    <li>O <b>resultado do Balanço de Pagamentos</b> afeta o BC: superávit (entrada líquida de dólares) que o BC compra eleva as reservas e injeta reais na economia; déficit coberto com venda de reservas retira reais. Por isso o BC costuma <b>esterilizar</b> essas operações com compromissadas.</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Política</th><th>Ferramentas</th><th>Risco se usada incorretamente</th></tr>
+    <tr><td><b>Monetária</b></td><td>Taxa Selic (mercado aberto), compulsório, redesconto, comunicação</td><td>Frouxa demais: inflação e perda de credibilidade. Apertada demais: recessão e desemprego desnecessários</td></tr>
+    <tr><td><b>Fiscal</b></td><td>Gastos, tributos, transferências</td><td>Expansão excessiva: dívida insustentável, prêmio de risco, juros altos, crowding-out, inflação. Ajuste brusco na recessão: aprofunda a crise</td></tr>
+    <tr><td><b>Cambial</b></td><td>Compra e venda de reservas, swaps cambiais, regime cambial</td><td>Defender câmbio artificial: perda de reservas e ataque especulativo (Brasil, 1999). Câmbio muito desvalorizado: inflação</td></tr>
+    <tr><td><b>Creditícia e regulatória</b></td><td>Direcionamento de crédito, regras prudenciais</td><td>Crédito excessivo gera bolhas; aperto excessivo trava a economia</td></tr>
+  </table></div>
+
+  <h3>Sistema de Pagamentos Brasileiro (SPB)</h3>
+  <ul>
+    <li><b>Função:</b> transferir recursos e liquidar operações financeiras com segurança. A reestruturação de 2002 (Lei 10.214/2001) deu ao sistema a <b>liquidação em tempo real</b> e as <b>contrapartes centrais</b> com garantias, reduzindo o risco sistêmico (o BC deixou de cobrir saques a descoberto das reservas).</li>
+    <li><b>Regulador:</b> o Banco Central, que também opera os sistemas centrais.</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Sistema</th><th>Quem opera</th><th>O que liquida</th><th>Como</th></tr>
+    <tr><td><b>STR</b> (Sistema de Transferência de Reservas)</td><td>Banco Central</td><td>Transferências entre contas de reservas bancárias; é o núcleo do SPB, onde todas as câmaras liquidam seus saldos finais</td><td>Liquidação <b>bruta em tempo real</b> (LBTR), operação a operação</td></tr>
+    <tr><td><b>Selic</b> (Sistema Especial de Liquidação e de Custódia)</td><td>Banco Central</td><td>Registro, custódia e liquidação de <b>títulos públicos federais</b> (compra e venda, compromissadas, leilões do Tesouro)</td><td>Bruta em tempo real, com entrega contra pagamento (<b>DVP</b>): o título só sai quando o dinheiro entra</td></tr>
+    <tr><td><b>Clearing B3</b></td><td>B3</td><td><b>Ações</b>, derivativos (listados e de balcão), câmbio interbancário, títulos em bolsa</td><td>Atua como <b>contraparte central</b>: compensação <b>multilateral</b> dos saldos, com garantias (margens) depositadas pelos participantes</td></tr>
+    <tr><td>Balcão B3 (antiga Cetip)</td><td>B3</td><td>Registro e custódia de títulos privados (CDB, debêntures, LCI, LCA, CRI)</td><td>Bruta ou multilateral, conforme a operação</td></tr>
+    <tr><td><b>SPI</b> (Pix)</td><td>Banco Central</td><td>Pagamentos instantâneos</td><td>Bruta, em tempo real, 24 horas por dia, 7 dias por semana</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>O <b>Selic</b> sistema (custódia de títulos públicos, do BC) não é a <b>Selic</b> taxa, embora a taxa leve o nome do sistema porque é apurada nele. Títulos privados e ações ficam na B3, não no Selic.</div>
+
+  <h3>2.2.3 · Política fiscal: necessidade de financiamento do setor público (NFSP)</h3>
+  <ul>
+    <li><b>NFSP</b> é o quanto o setor público (governo central, estados, municípios e estatais) precisa tomar emprestado num período. Corresponde ao <b>déficit</b> e é medida "abaixo da linha" pelo BC (variação da dívida líquida).</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Conceito</th><th>O que inclui</th><th>Uso</th></tr>
+    <tr><td><b>Primário</b></td><td>Receitas − despesas <b>não financeiras</b> (exclui os juros)</td><td>Mostra o esforço fiscal do governo; base das metas fiscais</td></tr>
+    <tr><td><b>Nominal</b></td><td>Primário + <b>juros nominais</b> da dívida</td><td>Necessidade total de financiamento; o conceito "cheio"</td></tr>
+    <tr><td><b>Operacional</b></td><td>Primário + <b>juros reais</b> (exclui a correção monetária da dívida)</td><td>Útil em períodos de inflação alta</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Resultado e dívida</span>Déficit nominal = déficit primário + juros nominais   (ou juros − superávit primário)<br>Superávit primário que estabiliza a dívida/PIB: s = d × (r − g) / (1 + g)<br>(d = dívida/PIB, r = juro real da dívida, g = crescimento real do PIB)</div>
+  <div class="ex"><span class="lbl">Exemplos</span>
+    <p>Superávit primário de 1% do PIB e juros nominais de 6% do PIB: déficit nominal = 6% − 1% = <b>5% do PIB</b>. É esse o tamanho da NFSP nominal, e a dívida tende a crescer.</p>
+    <p>Dívida de 80% do PIB, juro real de 5% e crescimento real de 2%: s = 80% × 0,03 / 1,02 = <b>2,35% do PIB</b> de superávit primário só para manter a dívida estável.</p>
+  </div>
+  <ul>
+    <li><b>Efeito sobre a política fiscal e a dívida:</b> déficit nominal é financiado com emissão de títulos (aumento da dívida) ou, no limite, de moeda (inflacionário, vedado ao BC financiar o Tesouro diretamente). Dívida alta exige primário maior e reduz o espaço para política anticíclica.</li>
+  </ul>
+
+  <h3>Fontes de recursos para o investimento e influência fiscal nos mercados</h3>
+  <div class="formula"><span class="lbl">Identidade poupança-investimento</span>I = S privada + S do governo + S externa<br>S externa = déficit em transações correntes (M − X na versão simples)</div>
+  <ul>
+    <li>Se o governo tem déficit (poupança pública negativa), sobra menos poupança para o investimento privado, ou o país precisa de mais poupança externa (déficit em conta corrente).</li>
+    <li><b>Nos mercados de capitais:</b> déficit e dívida altos aumentam a oferta de títulos públicos e o <b>prêmio de risco</b>, elevam os juros longos (curva mais inclinada), encarecem o custo de capital das empresas, reduzem o valor das ações e tendem a depreciar o câmbio. Disciplina fiscal crível faz o contrário.</li>
+  </ul>
+
+  <h3>Curva de Laffer</h3>
+  <ul>
+    <li>Relaciona a <b>alíquota</b> de imposto à <b>arrecadação</b>. Com alíquota 0% a arrecadação é zero; com 100% também, porque ninguém tem incentivo a produzir ou declarar renda.</li>
+    <li>Existe uma alíquota que <b>maximiza a arrecadação</b>. Acima dela, <b>reduzir</b> a alíquota <b>aumenta</b> a arrecadação (mais atividade, menos sonegação e elisão).</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>A curva <b>não</b> diz que cortar imposto sempre aumenta a arrecadação: isso só vale se a alíquota estiver <b>acima</b> da que maximiza a receita. Abaixo dela, cortar a alíquota reduz a arrecadação.</div>
+
+  <h3>Crowding-out (efeito deslocamento)</h3>
+  <ul>
+    <li>O governo aumenta gastos financiados com dívida → demanda por fundos aumenta → <b>juros sobem</b> → o <b>investimento privado cai</b> (e o consumo financiado também). Parte do estímulo fiscal é "expulsa" pela redução do gasto privado.</li>
+    <li>O efeito é maior perto do pleno emprego e quando a economia é fechada ao capital externo; é menor em recessão profunda com juros já baixos. Numa economia aberta com câmbio flutuante, o capital que entra atraído pelos juros aprecia o câmbio e reduz as exportações líquidas.</li>
+  </ul>
+
+  <h3>Efeitos intergeracionais da política fiscal</h3>
+  <ul>
+    <li>Déficits de hoje viram dívida que será paga com <b>impostos futuros</b>: a geração atual consome e a futura paga. O crowding-out também reduz o estoque de capital herdado pelas próximas gerações, diminuindo a renda futura.</li>
+    <li><b>Contabilidade geracional:</b> estima o peso líquido (impostos menos benefícios) de cada geração ao longo da vida. Previdência em <b>regime de repartição</b> com envelhecimento da população é o exemplo clássico de transferência entre gerações.</li>
+    <li><b>Equivalência ricardiana</b> (Barro): se as famílias anteciparem os impostos futuros, poupam o corte de impostos financiado com dívida e o consumo não muda. É uma hipótese teórica que raramente se verifica integralmente.</li>
+    <li>Gasto em investimento público (infraestrutura, educação) que eleva a produtividade beneficia também as gerações futuras, o que justifica parte do financiamento por dívida.</li>
+  </ul>
+
+  <h3>Multiplicadores: gastos, impostos e orçamento equilibrado</h3>
+  <div class="formula"><span class="lbl">Multiplicadores keynesianos (PMgC = c)</span>Gastos: kG = 1 / (1 − c)<br>Impostos (lump-sum): kT = −c / (1 − c)<br>Orçamento equilibrado (ΔG = ΔT): kG + kT = 1<br>Com alíquota proporcional t e importações m: kG = 1 / [1 − c(1 − t) + m]</div>
+  <ul>
+    <li>O multiplicador de gastos é <b>maior em módulo</b> que o de impostos: o gasto entra inteiro na demanda, enquanto o corte de imposto vira consumo só na proporção c (o resto é poupado).</li>
+    <li>Aumentar gastos e impostos no mesmo valor <b>eleva</b> a renda exatamente nesse valor (teorema de Haavelmo).</li>
+    <li>Impostos proporcionais e importações <b>reduzem</b> o multiplicador (vazamentos), e são estabilizadores automáticos.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>c = 0,8. kG = 1/0,2 = <b>5</b>; kT = −0,8/0,2 = <b>−4</b>; orçamento equilibrado = <b>1</b>. Um aumento de 10 nos gastos eleva a renda em 50; um corte de 10 nos impostos, em 40; gastos e impostos subindo 10 cada, em 10.</p>
+    <p>Com alíquota de 25%: kG = 1 / (1 − 0,8 × 0,75) = 1/0,4 = <b>2,5</b>.</p>
+  </div>
+
+  <h3>Política fiscal discricionária e o ciclo de negócios</h3>
+  <ul>
+    <li><b>Discricionária:</b> decisão ativa do governo (novo programa de gastos, mudança de alíquotas). Na <b>recessão</b>, política expansionista para fechar o hiato recessivo; no <b>superaquecimento</b>, contracionista para conter a inflação.</li>
+    <li><b>Estabilizadores automáticos:</b> funcionam sem decisão nova: arrecadação progressiva cai na recessão e sobe na expansão; seguro-desemprego e transferências sobem na recessão.</li>
+    <li><b>Limitações:</b> <b>defasagens</b> (de reconhecimento, de decisão/aprovação legislativa e de impacto), que podem fazer o estímulo chegar quando a economia já se recuperou; crowding-out; dívida elevada; viés político a favor da expansão; expectativas (equivalência ricardiana).</li>
+  </ul>
+
+  <h3>Ferramentas da política fiscal: expansionistas × contracionistas</h3>
+  <div class="tbl"><table>
+    <tr><th>Expansionista</th><th>Contracionista</th></tr>
+    <tr><td>Aumentar gastos (consumo e investimento do governo)</td><td>Cortar gastos</td></tr>
+    <tr><td>Reduzir impostos</td><td>Aumentar impostos</td></tr>
+    <tr><td>Aumentar transferências (programas sociais, seguro-desemprego)</td><td>Reduzir transferências e subsídios</td></tr>
+    <tr><td><b>Consequências:</b> mais demanda, produto e emprego no curto prazo; risco de inflação, déficit, dívida maior, juros maiores e crowding-out</td><td><b>Consequências:</b> menos inflação e dívida, menor prêmio de risco e juros; no curto prazo, menos produto e emprego</td></tr>
+  </table></div>
+
+  <h3>2.2.4 · Funções da moeda</h3>
+  <ul>
+    <li><b>Meio de troca:</b> elimina a necessidade da dupla coincidência de desejos do escambo. É a função que caracteriza a moeda.</li>
+    <li><b>Unidade de conta:</b> padrão para expressar preços e comparar valores.</li>
+    <li><b>Reserva de valor:</b> transfere poder de compra para o futuro. É a função mais prejudicada pela inflação.</li>
+    <li>Alguns autores acrescentam o <b>padrão de pagamentos diferidos</b> (contratos expressos em moeda).</li>
+  </ul>
+
+  <h3>Criação e destruição de moeda</h3>
+  <ul>
+    <li><b>Cria moeda</b> toda operação que aumenta os meios de pagamento (M1) em poder do público: banco concede <b>empréstimo</b>; banco compra ativo do público (título, imóvel, dólar) pagando com depósito; BC compra dólares ou títulos do público.</li>
+    <li><b>Destrói moeda:</b> o público <b>paga empréstimo</b> ao banco; banco vende ativo ao público; público compra título do governo ou do BC.</li>
+    <li><b>Não alteram M1:</b> operações só entre membros do público (João paga a Maria) ou só entre bancos; troca de papel-moeda por depósito à vista (saque e depósito mudam a composição, não o total).</li>
+    <li>A <b>base monetária</b> (papel-moeda em poder do público + reservas bancárias) é controlada pelo BC; os bancos comerciais multiplicam a base criando depósitos à vista.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Sacar dinheiro no caixa eletrônico <b>não</b> cria moeda: troca depósito à vista por papel-moeda, os dois dentro do M1. Já um banco que concede crédito creditando a conta do cliente cria moeda.</div>
+
+  <h3>Agregados monetários: M1, M2, M3 e M4</h3>
+  <div class="tbl"><table>
+    <tr><th>Agregado</th><th>Composição (definição do Banco Central)</th><th>Liquidez</th></tr>
+    <tr><td><b>M1</b> (meios de pagamento restritos)</td><td>Papel-moeda em poder do público + depósitos à vista</td><td>Máxima: não rende juros</td></tr>
+    <tr><td><b>M2</b></td><td>M1 + depósitos de poupança + títulos privados emitidos por instituições depositárias (CDB, LCI, LCA, LF etc.) e depósitos especiais remunerados</td><td>Alta</td></tr>
+    <tr><td><b>M3</b></td><td>M2 + cotas de fundos (de renda fixa) + operações compromissadas com títulos públicos federais em poder do público</td><td>Menor</td></tr>
+    <tr><td><b>M4</b></td><td>M3 + títulos públicos de alta liquidez em poder do público</td><td>A mais ampla</td></tr>
+  </table></div>
+  <p>Os agregados vão do mais líquido ao menos líquido, cada um contendo o anterior. As inovações financeiras deslocam recursos de M1 para os agregados mais amplos. O Banco Central já revisou a metodologia algumas vezes, mas a lógica de "M1 é o que paga contas, os seguintes acrescentam ativos que rendem" se mantém.</p>
+
+  <h3>Metas de inflação: uso e limitações</h3>
+  <ul>
+    <li><b>Regime de metas</b> (no Brasil desde 1999): o <b>CMN</b> fixa a meta para o <b>IPCA</b> e o intervalo de tolerância; o BC, via Copom, ajusta a Selic para atingi-la. Desde 2025 a meta é <b>contínua</b> (3% com tolerância de 1,5 p.p.), apurada pela inflação acumulada em 12 meses; se ficar fora do intervalo por seis meses seguidos, o BC deve explicar publicamente o descumprimento (carta ao Ministro da Fazenda) e dizer como e quando voltará à meta.</li>
+    <li><b>Vantagens:</b> transparência, ancoragem das expectativas, responsabilização do BC, flexibilidade para reagir a choques.</li>
+    <li><b>Limitações:</b> <b>defasagem</b> longa entre a decisão e o efeito na inflação (vários trimestres); choques de oferta (alimentos, energia, câmbio) que os juros não controlam diretamente; custo em produto e emprego para desinflacionar; dominância fiscal (quando a dívida é alta, juros maiores podem piorar o risco e o câmbio); preços administrados pouco sensíveis aos juros; perda de credibilidade se a meta é descumprida com frequência.</li>
+  </ul>
+
+  <h3>Cálculo de índices de inflação; inflação × variação de nível de preços</h3>
+  <div class="formula"><span class="lbl">Inflação a partir do índice e acumulada</span>Inflação no período = Índice<sub>final</sub> / Índice<sub>inicial</sub> − 1<br>Acumulada = (1 + i<sub>1</sub>) × (1 + i<sub>2</sub>) × … × (1 + i<sub>n</sub>) − 1   (composta, não somada)<br>Média mensal equivalente = (1 + acumulada)<sup>1/n</sup> − 1</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>IPCA de 0,5%, 0,4% e 0,6% em três meses: acumulado = 1,005 × 1,004 × 1,006 − 1 = <b>1,51%</b> (a soma simples daria 1,50%).</p>
+  </div>
+  <ul>
+    <li><b>Inflação</b> é a alta <b>contínua e generalizada</b> dos preços. Uma mudança de <b>preço relativo</b> ou um aumento pontual do nível de preços (um choque único de tarifa, um imposto novo) eleva o índice uma vez, mas não é inflação se não se propagar e persistir.</li>
+    <li><b>Deflação</b> é a queda generalizada; <b>desinflação</b> é a redução da taxa de inflação (os preços continuam subindo, mais devagar).</li>
+  </ul>
+
+  <h3>Inflação antecipada × não antecipada e seus efeitos</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Antecipada (esperada)</th><th>Não antecipada (surpresa)</th></tr>
+    <tr><td>Contratos</td><td>Já embutida em juros e salários</td><td>Não estava nos contratos</td></tr>
+    <tr><td>Custos</td><td>Custos de "sola de sapato" (reduzir saldo em moeda), custos de menu (remarcar preços), distorções tributárias</td><td>Os anteriores e, sobretudo, <b>redistribuição arbitrária de renda e riqueza</b></td></tr>
+    <tr><td>Quem perde</td><td>—</td><td><b>Credores</b> de contratos prefixados, assalariados com reajuste fixo, detentores de moeda e aposentados sem correção</td></tr>
+    <tr><td>Quem ganha</td><td>—</td><td><b>Devedores</b> prefixados (inclusive o governo), empregadores no curto prazo</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Mercado de trabalho:</b> inflação acima da esperada reduz o <b>salário real</b> fixado nos contratos, as empresas contratam mais no curto prazo e o desemprego cai temporariamente. Quando os trabalhadores percebem, renegociam e o efeito se desfaz.</li>
+    <li><b>Mercado de capitais:</b> o juro real efetivamente obtido pelos credores prefixados cai (pode ficar negativo). A incerteza leva os poupadores a exigir <b>prêmio de risco inflacionário</b>, encurta prazos, estimula a indexação e reduz a oferta de crédito de longo prazo e o investimento.</li>
+  </ul>
+
+  <h3>Curva de Phillips de curto e de longo prazo</h3>
+  <ul>
+    <li><b>Curto prazo:</b> relação <b>inversa</b> entre inflação e desemprego: com as expectativas dadas, a política pode reduzir o desemprego à custa de mais inflação.</li>
+    <li><b>Longo prazo</b> (Friedman e Phelps): as expectativas se ajustam, e a curva é <b>vertical</b> na <b>taxa natural de desemprego</b> (NAIRU, a taxa que não acelera a inflação). Não existe troca permanente: tentar manter o desemprego abaixo da natural só gera inflação crescente.</li>
+    <li>A curva de curto prazo <b>se desloca para cima</b> quando a inflação esperada sobe ou há choque de oferta.</li>
+    <li><b>Mudanças na taxa natural:</b> ela cai com mais flexibilidade do mercado de trabalho, melhor casamento entre vagas e trabalhadores (informação, qualificação) e menos rigidez; sobe com seguro-desemprego mais generoso, salário mínimo muito acima da produtividade, rigidezes e mudanças estruturais (desemprego estrutural).</li>
+  </ul>
+  <div class="formula"><span class="lbl">Curva de Phillips aumentada pelas expectativas</span>π = π<sup>e</sup> − β × (u − u<sub>n</sub>)   (+ choques de oferta)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Inflação esperada de 4%, β = 0,5, taxa natural de 8% e desemprego efetivo de 6%: π = 4% − 0,5 × (6% − 8%) = <b>5%</b>. Desemprego abaixo do natural pressiona a inflação para cima da esperada.</p>
+  </div>
+
+  <h3>Inflação, taxa nominal de juros e oferta de capital (efeito Fisher)</h3>
+  <div class="formula"><span class="lbl">Equação de Fisher</span>(1 + i nominal) = (1 + r real) × (1 + π)<br>r real = (1 + i) / (1 + π) − 1   ·   aproximação: i ≈ r + π</div>
+  <ul>
+    <li>Quando a inflação <b>esperada</b> sobe, os poupadores exigem e os tomadores aceitam juros nominais maiores, para manter o juro real (efeito Fisher).</li>
+    <li>A <b>oferta de capital</b> (poupança) responde ao juro <b>real</b> esperado. Se a inflação supera a esperada, o juro real realizado cai e desestimula a oferta de capital; mais incerteza inflacionária exige prêmio maior.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Selic de 12% e IPCA de 4,5%: juro real = 1,12 / 1,045 − 1 = <b>7,18%</b>. A aproximação 12 − 4,5 = 7,5% superestima o juro real.</p>
+  </div>
+
+  <h3>Teoria Quantitativa da Moeda</h3>
+  <div class="formula"><span class="lbl">Equação de trocas</span>M × V = P × Y<br>Em taxas: (1 + %ΔM)(1 + %ΔV) = (1 + %ΔP)(1 + %ΔY)   ·   aproximação: %ΔM + %ΔV ≈ %ΔP + %ΔY</div>
+  <ul>
+    <li><b>Premissas:</b> a velocidade de circulação V é estável (determinada por hábitos e instituições de pagamento) e o produto real Y é determinado por fatores reais (está no pleno emprego). Logo, variações de M se transmitem <b>proporcionalmente aos preços</b>: a moeda é <b>neutra</b> no longo prazo.</li>
+    <li>Conclusão monetarista: "a inflação é sempre e em toda parte um fenômeno monetário" (Friedman). Críticas: V varia (inovações financeiras), e no curto prazo a moeda afeta o produto.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>A oferta de moeda cresce 10%, a velocidade é constante e o PIB real cresce 3%: inflação ≈ 10% − 3% = 7% (exata: 1,10 / 1,03 − 1 = <b>6,80%</b>).</p>
+  </div>
+
+  <h3>Instrumentos de política monetária do Banco Central</h3>
+  <div class="tbl"><table>
+    <tr><th>Instrumento</th><th>Como funciona</th><th>Para contrair (apertar)</th></tr>
+    <tr><td><b>Operações de mercado aberto</b></td><td>Compra e venda de títulos públicos, principalmente <b>operações compromissadas</b>, para ajustar a liquidez e manter a Selic over na meta. É o instrumento mais usado e mais flexível</td><td>BC <b>vende</b> títulos (retira reservas)</td></tr>
+    <tr><td><b>Depósito compulsório</b></td><td>Parcela dos depósitos que os bancos recolhem ao BC. Afeta o multiplicador e o crédito; é usado também como instrumento prudencial (colchão de liquidez)</td><td><b>Aumenta</b> a alíquota</td></tr>
+    <tr><td><b>Redesconto / assistência de liquidez</b></td><td>Empréstimo do BC aos bancos (de última instância), com taxa e garantias</td><td>Encarece ou restringe o redesconto</td></tr>
+    <tr><td><b>Comunicação</b> (forward guidance)</td><td>Sinalização dos próximos passos em comunicados, atas e relatórios, que movem a curva de juros futura</td><td>Sinaliza juros altos por mais tempo</td></tr>
+  </table></div>
+
+  <h3>O Copom e a taxa de juros</h3>
+  <ul>
+    <li>O <b>Comitê de Política Monetária</b> é formado pela diretoria colegiada do BC (presidente e diretores) e se reúne <b>oito vezes por ano</b>, em encontros de dois dias.</li>
+    <li>Define a <b>meta para a taxa Selic</b> e seu viés de comunicação. A decisão sai num comunicado ao fim da reunião; a <b>ata</b> é publicada na semana seguinte; trimestralmente o BC publica o relatório de política monetária (antigo Relatório de Inflação) com projeções.</li>
+    <li>A mesa de operações do BC então atua no mercado aberto para manter a Selic over próxima da meta. A Selic influencia toda a estrutura de juros (DI, crédito, títulos), o câmbio, o preço dos ativos, o crédito e, com defasagem, a demanda e a inflação.</li>
+    <li>O Copom decide com base nas projeções de inflação no <b>horizonte relevante</b> (cerca de 18 meses à frente), nas expectativas, no hiato do produto, no câmbio e no balanço de riscos.</li>
+  </ul>
+
+  <h3>Políticas para estabilizar o nível de preços</h3>
+  <div class="tbl"><table>
+    <tr><th>Política</th><th>Como atua</th><th>Contraponto</th></tr>
+    <tr><td><b>Monetária contracionista</b> (metas de inflação)</td><td>Juros altos reduzem demanda e ancoram expectativas</td><td>Custo em produto e emprego; demora a fazer efeito</td></tr>
+    <tr><td><b>Fiscal contracionista</b></td><td>Menos gasto e mais imposto reduzem demanda e risco</td><td>Politicamente difícil; reduz atividade</td></tr>
+    <tr><td><b>Âncora cambial</b></td><td>Câmbio fixo ou administrado segura preços dos bens comerciáveis (Plano Real 1994–1999)</td><td>Exige reservas e juros altos; vulnerável a ataques especulativos</td></tr>
+    <tr><td><b>Desindexação e reformas</b></td><td>Quebra a inércia inflacionária (URV no Plano Real)</td><td>Precisa de coordenação e credibilidade</td></tr>
+    <tr><td><b>Congelamento e controle de preços</b> (política de rendas)</td><td>Fixa preços e salários por decreto</td><td>Ataca o sintoma: gera escassez, mercado paralelo e inflação reprimida (planos Cruzado, Bresser, Verão, Collor)</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>Inflação de <b>demanda</b> (economia aquecida) responde bem a juros. Inflação de <b>custos</b> ou de choque de oferta (seca, petróleo) responde mal: subir juros para combatê-la derruba ainda mais a atividade. O BC normalmente combate só os efeitos secundários do choque.</div>
+
+  <h3>Regra de Taylor e curva de juros</h3>
+  <div class="formula"><span class="lbl">Regra de Taylor</span>i = r* + π + 0,5 × (π − π*) + 0,5 × hiato do produto<br>r* = juro real neutro   ·   π* = meta de inflação   ·   hiato = (PIB efetivo − potencial) / potencial</div>
+  <ul>
+    <li>Indica a taxa nominal "adequada": sobe com a inflação acima da meta e com a economia acima do potencial. Se a taxa efetiva está <b>abaixo</b> da de Taylor, a política está frouxa (estimulativa); se <b>acima</b>, apertada (contracionista).</li>
+    <li>Pelo princípio de Taylor, o juro nominal deve subir <b>mais que um para um</b> com a inflação, para que o juro real suba.</li>
+    <li><b>Limitações:</b> r* e o hiato não são observáveis (são estimados), os pesos são arbitrários, e a regra ignora câmbio, risco fiscal e estabilidade financeira.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>r* = 4,5%, inflação de 6%, meta de 3%, hiato de −1%: i = 4,5 + 6 + 0,5 × 3 + 0,5 × (−1) = <b>11,5%</b>. Com a Selic em 10%, a política estaria frouxa segundo a regra.</p>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Formato da curva de juros (DI futuro)</th><th>Leitura usual</th></tr>
+    <tr><td><b>Positivamente inclinada</b> (normal)</td><td>Mercado espera juros curtos subindo ou cobra prêmio de prazo; expectativa de crescimento ou de inflação maior</td></tr>
+    <tr><td><b>Invertida</b> (negativa)</td><td>Juros curtos acima dos longos: mercado espera <b>cortes</b> da Selic à frente, política monetária apertada, possível desaceleração ou recessão</td></tr>
+    <tr><td><b>Plana</b></td><td>Transição; juros estáveis esperados</td></tr>
+  </table></div>
+  <ul>
+    <li>A diferença entre a curva prefixada e a de juros reais (NTN-B) dá a <b>inflação implícita</b> (breakeven), que o BC acompanha como medida de expectativa e de credibilidade.</li>
+  </ul>
+
+  <h3>2.2.5 · Câmbio: fatores que apreciam ou depreciam a moeda</h3>
+  <ul>
+    <li><b>Cotação no Brasil:</b> R$ por US$ (ex.: 5,00). O dólar é a moeda <b>base</b> e o real é a moeda de <b>contagem</b> (cotada). Taxa <b>subindo</b> = real se <b>depreciando</b>.</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Fator</th><th>Efeito sobre o real</th></tr>
+    <tr><td>Superávit na balança comercial e em transações correntes</td><td>Entra mais dólar → <b>aprecia</b></td></tr>
+    <tr><td>Entrada de capital (investimento direto, carteira) por juros altos, crescimento ou melhora do risco-país</td><td><b>Aprecia</b></td></tr>
+    <tr><td>Saída de capital (aversão global a risco, piora fiscal, alta dos juros americanos)</td><td><b>Deprecia</b></td></tr>
+    <tr><td>Reservas internacionais elevadas</td><td>Dão capacidade de intervenção e reduzem o risco de crise → menor volatilidade e risco-país</td></tr>
+    <tr><td>Alta dos preços das commodities exportadas (termos de troca)</td><td><b>Aprecia</b></td></tr>
+    <tr><td>Inflação doméstica acima da externa (longo prazo)</td><td><b>Deprecia</b> (paridade do poder de compra)</td></tr>
+  </table></div>
+
+  <h3>Regimes cambiais</h3>
+  <div class="tbl"><table>
+    <tr><th>Regime</th><th>Como funciona</th><th>Exemplo</th></tr>
+    <tr><td><b>Câmbio fixo / currency board</b></td><td>Paridade fixa. No currency board, a emissão de moeda local é 100% lastreada em reservas da moeda âncora: o país abre mão da política monetária</td><td>Argentina 1991–2001 (conversibilidade), Hong Kong</td></tr>
+    <tr><td><b>Flutuante (livre)</b></td><td>Taxa definida pela oferta e demanda; BC não intervém. Política monetária independente, câmbio absorve choques</td><td>Teórico; poucos países flutuam sem nenhuma intervenção</td></tr>
+    <tr><td><b>Flutuação suja</b> (dirty floating)</td><td>Flutuante, mas o BC intervém (compra e venda de dólares, swaps) para reduzir volatilidade excessiva, sem defender um nível</td><td><b>Brasil desde 1999</b> (junto com o regime de metas de inflação)</td></tr>
+    <tr><td><b>Bandas cambiais</b> (crawling band / crawling peg)</td><td>Taxa flutua dentro de limites definidos pelo BC; na crawling band, os limites são ajustados periodicamente (por exemplo, pela diferença de inflação)</td><td>Brasil 1995–1999 (bandas e minibandas do Plano Real)</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>Trindade impossível: um país não consegue ter ao mesmo tempo <b>câmbio fixo</b>, <b>livre mobilidade de capitais</b> e <b>política monetária independente</b>. Quem fixa o câmbio com capitais livres perde a política monetária, caso extremo do currency board.</div>
+
+  <h3>Taxa spot × forward; prêmio ou desconto</h3>
+  <ul>
+    <li><b>Spot (à vista):</b> negociada hoje para liquidação imediata (no Brasil, em até D+2). <b>Forward (a termo):</b> taxa contratada hoje para liquidação numa data futura (NDF no balcão, dólar futuro na B3).</li>
+  </ul>
+  <div class="formula"><span class="lbl">Prêmio ou desconto a termo da moeda base</span>Prêmio (desconto) = F / S − 1   (positivo = prêmio, negativo = desconto)<br>Anualizado (prazo em dias corridos, base 360) = (F/S − 1) × 360 / dias</div>
+  <div class="pegadinha"><b>Pegadinha</b>Prêmio a termo <b>não</b> é previsão de alta do dólar: ele reflete basicamente o <b>diferencial de juros</b> (paridade coberta). Como os juros no Brasil são maiores que nos EUA, o dólar a termo é negociado com prêmio sobre o spot.</div>
+
+  <h3>Apreciação e depreciação absoluta e percentual</h3>
+  <div class="formula"><span class="lbl">Cotação S = moeda de contagem por unidade da moeda base</span>Variação absoluta = S<sub>1</sub> − S<sub>0</sub><br>Variação % da moeda <b>base</b> = S<sub>1</sub> / S<sub>0</sub> − 1<br>Variação % da moeda de <b>contagem</b> = S<sub>0</sub> / S<sub>1</sub> − 1</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>O dólar passa de R$ 5,00 para R$ 5,50. Variação absoluta: +R$ 0,50. O dólar <b>aprecia 10%</b> (5,50/5,00 − 1). O real <b>deprecia 9,09%</b> (5,00/5,50 − 1).</p>
+  </div>
+  <div class="pegadinha"><b>Pegadinha</b>As duas variações <b>não</b> são simétricas: alta de 10% do dólar não é queda de 10% do real. Use sempre o inverso da cotação para a moeda de contagem.</div>
+
+  <h3>A relevância da taxa de câmbio para a economia</h3>
+  <ul>
+    <li><b>Inflação:</b> o repasse cambial (pass-through) encarece importados, insumos e commodities cotadas em dólar (combustíveis, alimentos); por isso o câmbio pesa nas decisões do Copom.</li>
+    <li><b>Comércio exterior e atividade:</b> real depreciado favorece exportadores e substituição de importações; apreciado barateia importações e máquinas.</li>
+    <li><b>Balanços e dívida:</b> empresas e governo com dívida em dólar sem hedge sofrem com a depreciação (descasamento cambial).</li>
+    <li><b>Carteiras:</b> afeta o retorno de ativos no exterior, de empresas exportadoras e a atratividade do Brasil para o capital estrangeiro.</li>
+  </ul>
+
+  <h3>Taxa de câmbio nominal × real</h3>
+  <div class="formula"><span class="lbl">Câmbio real</span>q = S × P* / P<br>S = câmbio nominal (R$/US$)   ·   P* = preços externos   ·   P = preços domésticos<br>Variação: (1 + %Δq) = (1 + %ΔS) × (1 + π*) / (1 + π)</div>
+  <ul>
+    <li><b>Nominal:</b> preço de uma moeda em outra. <b>Real:</b> preço relativo dos bens estrangeiros em termos de bens nacionais, ou seja, a <b>competitividade</b>.</li>
+    <li>q <b>subindo</b> = depreciação real: produtos brasileiros ficam relativamente mais baratos → estimula <b>exportações</b> e desestimula <b>importações</b>.</li>
+    <li>Se o câmbio nominal fica parado e a inflação brasileira é maior que a externa, o real se <b>aprecia em termos reais</b> e a competitividade cai.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Câmbio nominal estável em 5,00 durante um ano em que a inflação foi de 10% no Brasil e zero nos EUA: q passa de 5,00 × 100/100 = 5,00 para 5,00 × 100/110 = <b>4,55</b>. Houve <b>apreciação real</b> de cerca de 9%, embora o câmbio nominal não tenha mudado.</p>
+  </div>
+
+  <h3>Balança comercial e Balanço de Pagamentos</h3>
+  <div class="tbl"><table>
+    <tr><th>Conta (BPM6, usado pelo BC desde 2015)</th><th>O que registra</th></tr>
+    <tr><td><b>Transações correntes</b></td><td><b>Balança comercial</b> (exportações − importações de bens) + <b>serviços</b> (fretes, viagens, aluguel de equipamentos, royalties) + <b>renda primária</b> (juros, lucros e dividendos, salários) + <b>renda secundária</b> (transferências unilaterais, como remessas de imigrantes e doações)</td></tr>
+    <tr><td><b>Conta capital</b></td><td>Transferências de capital e ativos não financeiros não produzidos (marcas, direitos); valores pequenos</td></tr>
+    <tr><td><b>Conta financeira</b></td><td><b>Investimento direto</b> (IDP, participação no capital de empresas e empréstimos intercompanhia), <b>investimento em carteira</b> (ações e títulos), derivativos, outros investimentos (empréstimos, depósitos, crédito comercial) e <b>ativos de reserva</b></td></tr>
+    <tr><td>Erros e omissões</td><td>Diferença estatística</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Lógica do fechamento</span>Saldo em transações correntes + conta capital + entrada líquida de capitais financeiros (exceto reservas) + erros e omissões = variação das reservas<br>Déficit em transações correntes = necessidade de financiamento externo (poupança externa)</div>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Déficit em transações correntes de US$ 50 bi, conta capital zero, entrada líquida de investimento direto de US$ 70 bi e demais fluxos zerados. As reservas <b>aumentam US$ 20 bi</b> (−50 + 70).</p>
+  </div>
+  <ul>
+    <li>A balança comercial brasileira costuma ser <b>superavitária</b> (commodities), mas os déficits em <b>serviços</b> e em <b>renda primária</b> (remessa de lucros e juros) tendem a deixar as transações correntes deficitárias, financiadas sobretudo por investimento direto.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Superávit comercial <b>não</b> garante superávit em transações correntes: é preciso somar serviços e rendas. E o investimento direto entra na <b>conta financeira</b>, não nas transações correntes; já os lucros e dividendos que ele gera entram na renda primária.</div>
+
+  <h3>Reservas internacionais, câmbio e Balanço de Pagamentos</h3>
+  <ul>
+    <li>As reservas são os ativos externos líquidos do BC. Variam com o resultado do Balanço de Pagamentos e com as intervenções: quando o BC <b>compra</b> dólares, as reservas sobem e o real tende a se <b>depreciar</b> (ou deixa de se apreciar); quando <b>vende</b>, as reservas caem e o real é sustentado.</li>
+    <li>Reservas grandes funcionam como <b>seguro</b>: reduzem o risco-país e a probabilidade de crise cambial e permitem intervir em momentos de estresse. O custo é a diferença entre os juros pagos na dívida interna (Selic) e o rendimento das reservas (juros americanos).</li>
+    <li>Compras de reservas aumentam a base monetária; o BC <b>esteriliza</b> o efeito vendendo títulos em compromissadas, para não perder o controle da Selic.</li>
+  </ul>
+
+  <h3>Paridade do poder de compra (PPC)</h3>
+  <div class="formula"><span class="lbl">PPC</span>Absoluta: S = P / P*   (o mesmo bem custa o mesmo em qualquer país; "lei do preço único")<br>Relativa: S<sub>1</sub> = S<sub>0</sub> × (1 + π doméstica) / (1 + π externa)   ·   aproximação: %ΔS ≈ π − π*</div>
+  <ul>
+    <li>A moeda do país com inflação <b>maior</b> se <b>deprecia</b> na proporção do diferencial de inflação. Funciona melhor no longo prazo; no curto, custos de transporte, tarifas, bens não comercializáveis e fluxos de capital causam grandes desvios (o índice Big Mac ilustra a versão absoluta).</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Câmbio de R$ 5,00; inflação esperada de 5% no Brasil e 2% nos EUA. PPC relativa: S<sub>1</sub> = 5,00 × 1,05 / 1,02 = <b>R$ 5,147</b> por dólar.</p>
+  </div>
+
+  <h3>Paridade de taxa de juros (coberta)</h3>
+  <div class="formula"><span class="lbl">Paridade coberta de juros (cotação R$/US$)</span>F = S × (1 + i<sub>R$</sub>) / (1 + i<sub>US$</sub>)   (taxas do período até o vencimento)<br>Isolando: i<sub>R$</sub> = (F/S) × (1 + i<sub>US$</sub>) − 1   ·   i<sub>US$</sub> = (1 + i<sub>R$</sub>) × S/F − 1<br>Convenção de mercado no Brasil: real exponencial base 252 (dias úteis); dólar linear base 360 (dias corridos)</div>
+  <ul>
+    <li>A moeda com <b>juros maiores</b> negocia com <b>desconto</b> a termo; a de juros menores, com prêmio. Se a paridade não vale, há <b>arbitragem</b> sem risco (tomar emprestado numa moeda, converter, aplicar na outra e travar o termo).</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>S = 5,00; juros de 12% ao ano no Brasil e 5% nos EUA; prazo de 1 ano. F = 5,00 × 1,12 / 1,05 = <b>5,3333</b>. Prêmio do dólar a termo = 5,3333/5,00 − 1 = <b>6,67%</b>, igual a 1,12/1,05 − 1.</p>
+  </div>
+
+  <h3>Cupom cambial: limpo e sujo</h3>
+  <ul>
+    <li><b>Cupom cambial</b> é a <b>taxa de juros em dólar</b> paga no mercado brasileiro: o rendimento de uma aplicação em reais (DI) descontada a variação cambial. Equivale ao juro em dólar "onshore" e difere da taxa americana pelo <b>risco-país</b> e pelas condições de liquidez em dólar no Brasil.</li>
+    <li>É negociado na B3 por meio do <b>DDI</b> (cupom cambial futuro) e do <b>FRA de cupom</b> (FRC). Convenção: <b>linear, base 360</b> dias corridos.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Cupom cambial</span>Cupom (período) = (1 + juro em R$ do período) / (F / S) − 1<br>Cupom anual (linear 360) = cupom do período × 360 / dias corridos<br>Ex post: (1 + DI acumulado) / (1 + variação cambial) − 1</div>
+  <div class="tbl"><table>
+    <tr><th></th><th>Cupom sujo</th><th>Cupom limpo</th></tr>
+    <tr><td>Taxa de câmbio inicial usada</td><td><b>PTAX do dia anterior</b> (D−1), que é a referência dos contratos futuros da B3</td><td><b>Taxa à vista do dia</b> (spot de D0)</td></tr>
+    <tr><td>Leitura</td><td>Contaminado pela variação cambial entre a PTAX de ontem e o spot de hoje</td><td>Reflete só o juro em dólar a partir de hoje; é o que se usa para precificar e para comparar com a taxa externa</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Fatores que mexem no cupom:</b> diferencial entre juro interno e externo, <b>risco-país</b> (sobe o cupom), escassez de dólares no mercado doméstico (sobe), demanda por hedge, intervenções do BC (swaps e linhas em dólar reduzem o cupom), tributação (IOF) e expectativas de câmbio.</li>
+  </ul>
+  <div class="ex"><span class="lbl">Exemplo</span>
+    <p>Spot de R$ 5,00, dólar a termo de 60 dias corridos (42 úteis) a R$ 5,08, juro prefixado de 12% ao ano. Juro em reais no período = 1,12<sup>42/252</sup> − 1 = 1,907%. F/S = 1,016. Cupom do período = 1,01907 / 1,016 − 1 = 0,302%. Anualizado: 0,302% × 360/60 = <b>1,81% ao ano</b>.</p>
+    <p>Ex post: se o DI acumulou 2% num trimestre de 90 dias e o dólar subiu 1,5%, o cupom foi 1,02/1,015 − 1 = 0,49% no período, ou 1,97% ao ano (linear 360).</p>
+  </div>
+
+  <h3>Swap cambial como instrumento de política cambial</h3>
+  <ul>
+    <li>No <b>swap cambial tradicional</b>, o BC fica <b>vendido em dólar</b>: paga ao investidor a <b>variação cambial mais o cupom cambial</b> e recebe a <b>taxa DI</b>. A liquidação é em <b>reais</b>, pela diferença.</li>
+    <li>Equivale a uma <b>venda de dólar no mercado futuro</b>: oferece proteção (hedge) a quem precisa, sem gastar as reservas. Isso reduz a demanda por dólar à vista e <b>contém a depreciação</b> do real (aprecia ou segura o câmbio spot). Também reduz o cupom cambial.</li>
+    <li>O <b>swap reverso</b> é o contrário (BC comprado em dólar) e é usado quando se quer conter apreciação ou reduzir o estoque de swaps.</li>
+    <li>Custo: se o real se depreciar mais que o diferencial de juros, o BC tem prejuízo com os swaps (pago pelo Tesouro).</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Leilão de swap cambial tradicional <b>não</b> reduz as reservas, porque não há entrega de dólares (liquida em reais). Para injetar dólar à vista o BC usa a venda de reservas no spot ou os leilões de linha (venda com compromisso de recompra).</div>
+</section>
+
+<!-- Simulado -->
+<section id="simulado">
+  <div class="num">Simulado</div>
+  <h2>91 questões do tema 2</h2>
+  <p class="why">A correção sai a cada resposta. No fim aparecem a nota por subtema e a lista dos erros para revisar.</p>
+  <div class="qbar">
+    <label for="filt">Questões:</label>
+    <select id="filt"><option value="all">Todas (91)</option><option value="2.1">Só 2.1 (39)</option><option value="2.2">Só 2.2 (52)</option></select>
+    <label><input type="checkbox" id="shuf"> embaralhar</label>
+    <button id="start">Começar</button>
+  </div>
+  <div id="quiz"></div>
+</section>
+
+</main>
+</div>
+
+<script>
+const Q=[
+{s:"2.1",q:"Uma queda no preço da carne, tudo o mais constante, provoca no mercado de carne:",o:["Deslocamento da curva de demanda para a direita","Deslocamento da curva de oferta para a esquerda","Aumento da quantidade demandada, com movimento ao longo da curva de demanda","Redução da demanda por carne"],a:2,e:"A mudança no preço do próprio bem gera movimento ao longo da curva (variação da quantidade demandada). A curva só se desloca quando muda outro fator, como renda ou preço de substitutos."},
+{s:"2.1",q:"Qual fator desloca para a direita a curva de demanda por um bem normal?",o:["Aumento da renda dos consumidores","Queda do preço do próprio bem","Queda do preço de um bem substituto","Aumento do custo dos insumos"],a:0,e:"Para bem normal, mais renda aumenta a demanda em todos os preços. O próprio preço gera movimento ao longo da curva; o substituto mais barato desloca a demanda para a esquerda; o custo dos insumos afeta a oferta."},
+{s:"2.1",q:"Uma geada destrói parte da safra de café. No mercado de café, espera-se que:",o:["O preço caia e a quantidade suba","Preço e quantidade subam","Preço e quantidade caiam","O preço suba e a quantidade caia"],a:3,e:"É uma redução da oferta (curva para a esquerda): o preço de equilíbrio sobe e a quantidade cai."},
+{s:"2.1",q:"Se a demanda e a oferta de um bem aumentam ao mesmo tempo, pode-se afirmar que:",o:["O preço sobe e a quantidade é indeterminada","A quantidade sobe e o efeito sobre o preço é indeterminado","O preço cai e a quantidade sobe","Preço e quantidade caem"],a:1,e:"As duas mudanças elevam a quantidade. Sobre o preço, a demanda empurra para cima e a oferta para baixo: o resultado depende da intensidade de cada deslocamento."},
+{s:"2.1",q:"Num mercado com Qd = 200 − 4P e Qs = 20 + 2P, o preço e a quantidade de equilíbrio são:",o:["P = 36,7 e Q = 53,3","P = 30 e Q = 80","P = 20 e Q = 120","P = 30 e Q = 60"],a:1,e:"200 − 4P = 20 + 2P → 6P = 180 → P = 30. Q = 200 − 120 = 80 (e 20 + 60 = 80)."},
+{s:"2.1",q:"No mesmo mercado (Qd = 200 − 4P e Qs = 20 + 2P), se o preço for fixado em 25, haverá:",o:["Excesso de oferta de 30","Excesso de demanda de 100","Equilíbrio","Excesso de demanda de 30"],a:3,e:"A P = 25: Qd = 100 e Qs = 70. Como Qd > Qs, há escassez (excesso de demanda) de 30. Preço abaixo do equilíbrio sempre gera excesso de demanda."},
+{s:"2.1",q:"A forma inversa da função de demanda Qd = 200 − 4P é:",o:["P = 50 − 0,25Q","P = 200 − 4Q","P = 50 − 4Q","P = 0,25Q − 50"],a:0,e:"Isolando P: 4P = 200 − Q → P = 50 − 0,25Q. O intercepto 50 é o preço máximo (de reserva)."},
+{s:"2.1",q:"Num mercado com demanda Qd = 200 − 4P e equilíbrio em P = 30 e Q = 80, o excedente do consumidor é:",o:["1.200","1.600","800","2.400"],a:2,e:"O preço máximo é 50 (Qd = 0). EC = ½ × (50 − 30) × 80 = 800."},
+{s:"2.1",q:"O preço de um bem sobe de 10 para 11 e a quantidade demandada cai de 1.000 para 850. Usando as variações sobre os valores iniciais, a elasticidade-preço e o efeito na receita total são:",o:["−0,67; demanda inelástica e a receita total sobe","−1,5; demanda elástica e a receita total sobe","−0,15; demanda inelástica e a receita total cai","−1,5; demanda elástica e a receita total cai"],a:3,e:"%ΔQ = −15% e %ΔP = +10% → E = −1,5 (elástica). A receita vai de 10.000 para 9.350: quando a demanda é elástica, subir o preço reduz a receita."},
+{s:"2.1",q:"Qual característica torna a demanda por um bem mais inelástica?",o:["Existência de muitos substitutos próximos","Horizonte de tempo longo para o consumidor se ajustar","Bem essencial, com poucos substitutos e pequeno peso no orçamento","Bem supérfluo"],a:2,e:"Poucos substitutos, essencialidade e pequeno peso no orçamento reduzem a sensibilidade ao preço. As demais alternativas tornam a demanda mais elástica."},
+{s:"2.1",q:"O preço do bem A sobe 8% e a quantidade demandada do bem B cai 4%. A elasticidade cruzada e a relação entre os bens são:",o:["+0,5; substitutos","−0,5; complementares","−2,0; complementares","+2,0; substitutos"],a:1,e:"Exy = %ΔQb / %ΔPa = −4% / 8% = −0,5. Sinal negativo indica complementares."},
+{s:"2.1",q:"A renda dos consumidores sobe 5% e a demanda por um bem cai 2%. A elasticidade-renda e a classificação do bem são:",o:["−0,4; bem inferior","0,4; bem normal necessário","−2,5; bem de Giffen","2,5; bem de luxo"],a:0,e:"Er = −2% / 5% = −0,4. Elasticidade-renda negativa caracteriza bem inferior. Giffen depende da resposta ao preço, não só à renda."},
+{s:"2.1",q:"O governo cria um imposto por unidade, recolhido pelos produtores, num mercado com demanda muito inelástica e oferta elástica. O ônus do imposto recai:",o:["Principalmente sobre os produtores, porque são eles que recolhem","Igualmente sobre os dois lados, por definição","Principalmente sobre os consumidores","Inteiramente sobre o governo"],a:2,e:"A incidência depende das elasticidades, não de quem recolhe: o lado mais inelástico arca com a maior parte. Aqui, os consumidores."},
+{s:"2.1",q:"Um preço máximo fixado abaixo do preço de equilíbrio provoca:",o:["Escassez, porque a quantidade demandada supera a ofertada","Excedente de produção","Nenhum efeito sobre o mercado","Aumento da quantidade negociada"],a:0,e:"Com teto abaixo do equilíbrio, Qd > Qs: faltam produtos, surgem filas e mercado paralelo, e a quantidade negociada cai para a ofertada."},
+{s:"2.1",q:"Um preço mínimo fixado abaixo do preço de equilíbrio:",o:["Gera excesso de oferta","Gera escassez","Reduz a quantidade negociada","Não tem efeito sobre o mercado"],a:3,e:"O piso só tem efeito se ficar acima do equilíbrio. Abaixo dele, o mercado continua no preço de equilíbrio, que já respeita o mínimo."},
+{s:"2.1",q:"Um consumidor tem renda de 200; o bem X custa 10 e o bem Y custa 5. Sobre a restrição orçamentária (Y no eixo vertical), é correto afirmar:",o:["Ele compra no máximo 40 unidades de X, e a inclinação é −0,5","Ele compra no máximo 20 unidades de X, e a inclinação da reta é −2","Ele compra no máximo 20 unidades de X, e a inclinação é −0,5","Ele compra no máximo 10 unidades de X, e a inclinação é −2"],a:1,e:"Máximo de X = 200/10 = 20; máximo de Y = 200/5 = 40. Inclinação = −Px/Py = −10/5 = −2."},
+{s:"2.1",q:"Com renda de 200, Px = 10, Py = 5 e utilidade U = X·Y, a cesta ótima é:",o:["X = 20 e Y = 10","X = 10 e Y = 20","X = 15 e Y = 10","X = 10 e Y = 10"],a:1,e:"Ótimo: TMS = Y/X = Px/Py = 2 → Y = 2X. Na restrição: 10X + 5(2X) = 200 → X = 10 e Y = 20. Com U = X·Y gasta-se metade da renda em cada bem (100/10 e 100/5)."},
+{s:"2.1",q:"Na escolha ótima do consumidor (solução interior), vale a condição:",o:["UMgX = UMgY","Px = Py","Compra-se apenas o bem mais barato","TMS = Px/Py, ou seja, UMgX/Px = UMgY/Py"],a:3,e:"No ótimo a curva de indiferença tangencia a reta orçamentária: a utilidade marginal por real gasto é igual nos dois bens."},
+{s:"2.1",q:"Um bem de Giffen é:",o:["Um bem inferior cujo efeito renda supera o efeito substituição, de modo que a quantidade demandada sobe quando o preço sobe","Um bem normal com efeito renda forte","Qualquer bem inferior","Um bem de luxo com elasticidade-renda maior que 1"],a:0,e:"Todo Giffen é inferior, mas não basta ser inferior: o efeito renda precisa superar o efeito substituição, invertendo a lei da demanda."},
+{s:"2.1",q:"Quando o preço de um bem cai, o efeito substituição:",o:["Aumenta a quantidade apenas se o bem for normal","Reduz a quantidade se o bem for inferior","Sempre aumenta a quantidade demandada desse bem","É sempre nulo"],a:2,e:"O efeito substituição vai sempre no sentido contrário ao preço. O que muda entre bens normais e inferiores é o sinal do efeito renda."},
+{s:"2.1",q:"Com capital fixo, ao passar de 4 para 5 trabalhadores a produção vai de 50 para 62 unidades. O produto marginal do 5º trabalhador e o produto médio com 5 trabalhadores são:",o:["PMg = 12,4 e PMe = 12","PMg = 62 e PMe = 12","PMg = 12 e PMe = 10","PMg = 12 e PMe = 12,4"],a:3,e:"PMg = 62 − 50 = 12. PMe = 62 / 5 = 12,4."},
+{s:"2.1",q:"A lei dos rendimentos marginais decrescentes afirma que:",o:["No longo prazo, com todos os fatores variáveis, o custo médio sobe","O produto total cai desde a primeira unidade de trabalho","Com pelo menos um fator fixo, o produto marginal do fator variável passa a cair a partir de certo ponto","É o mesmo que deseconomia de escala"],a:2,e:"É um conceito de curto prazo (fator fixo). Deseconomia de escala é de longo prazo, quando todos os fatores variam."},
+{s:"2.1",q:"Uma firma tem custo fixo de 200 e custo variável CV = 5Q + 0,5Q². O preço de break-even (mínimo do custo total médio) é:",o:["5","25","20","30"],a:1,e:"CTMe = 200/Q + 5 + 0,5Q, mínimo onde CMg = CTMe: 5 + Q = 200/Q + 5 + 0,5Q → Q = 20. CTMe = 10 + 5 + 10 = 25. O 5 é o preço de encerramento (mínimo do CVMe)."},
+{s:"2.1",q:"Com a mesma firma (CF = 200, CV = 5Q + 0,5Q²) num mercado competitivo com preço 35, a quantidade que maximiza o lucro e o lucro econômico são:",o:["Q = 30 e lucro de 250","Q = 35 e lucro zero","Q = 30 e prejuízo de 250","Q = 20 e lucro de 200"],a:0,e:"P = CMg → 35 = 5 + Q → Q = 30. RT = 1.050; CT = 200 + 150 + 450 = 800; lucro = 250. Com Q = 20 o lucro seria só 200."},
+{s:"2.1",q:"Uma firma competitiva enfrenta preço acima do mínimo do custo variável médio, mas abaixo do mínimo do custo total médio. No curto prazo, ela deve:",o:["Encerrar a produção imediatamente","Produzir com lucro econômico positivo","Continuar produzindo, com prejuízo menor que o custo fixo","Produzir onde o preço iguala o custo total médio"],a:2,e:"A receita cobre o custo variável e ainda paga parte do custo fixo. Parar daria prejuízo igual ao custo fixo inteiro, que é maior. No longo prazo, sem melhora de preço, ela sai."},
+{s:"2.1",q:"Uma empresa teve receita de 500 mil e custos explícitos de 380 mil. O dono deixou de ganhar 90 mil de salário em outro emprego e 40 mil de rendimento sobre o capital investido. Os lucros contábil e econômico são:",o:["Contábil de 120 mil e econômico de −10 mil","Contábil de 120 mil e econômico de 30 mil","Contábil de −10 mil e econômico de 120 mil","Contábil de 250 mil e econômico de 120 mil"],a:0,e:"Contábil = 500 − 380 = 120 mil. Econômico = 120 − 90 − 40 = −10 mil: a empresa não chega a cobrir o lucro normal (custos de oportunidade)."},
+{s:"2.1",q:"Em concorrência perfeita, a curva de demanda vista pela firma individual é:",o:["Negativamente inclinada, igual à demanda do mercado","Vertical","Positivamente inclinada","Horizontal no preço de mercado, com P = RMe = RMg"],a:3,e:"A firma é tomadora de preço: vende quanto quiser ao preço de mercado e nada acima dele. A demanda do mercado continua negativamente inclinada."},
+{s:"2.1",q:"No equilíbrio de longo prazo em concorrência perfeita:",o:["As firmas têm lucro econômico positivo permanente","O lucro econômico é zero e P = CMg = mínimo do CTMe","As firmas operam com capacidade ociosa e P > CMg","O preço fica acima do custo marginal"],a:1,e:"A livre entrada elimina o lucro econômico. O resultado tem eficiência alocativa (P = CMg) e produtiva (mínimo do CTMe). Capacidade ociosa é típica da concorrência monopolística."},
+{s:"2.1",q:"Um monopolista enfrenta demanda P = 80 − Q e custo marginal constante de 20. A quantidade e o preço que maximizam seu lucro são:",o:["Q = 60 e P = 20","Q = 30 e P = 50","Q = 40 e P = 40","Q = 30 e P = 20"],a:1,e:"RMg = 80 − 2Q = 20 → Q = 30; P = 80 − 30 = 50. Q = 60 e P = 20 seria o resultado competitivo (P = CMg)."},
+{s:"2.1",q:"O monopólio é considerado ineficiente porque:",o:["Obtém lucro econômico","Opera no trecho inelástico da demanda","Tem custo fixo elevado","Cobra preço acima do custo marginal e produz menos que o socialmente eficiente, gerando peso morto"],a:3,e:"Com P > CMg, há consumidores dispostos a pagar mais que o custo de uma unidade extra que não são atendidos. O monopolista opera no trecho elástico, não no inelástico."},
+{s:"2.1",q:"Num monopólio natural, se o regulador impõe preço igual ao custo marginal:",o:["A firma tem prejuízo, porque o custo marginal fica abaixo do custo médio, que é decrescente","A firma passa a ter lucro extraordinário","O resultado é igual ao do monopólio não regulado","A produção cai abaixo da do monopólio"],a:0,e:"Com fortes economias de escala, o custo médio cai e fica acima do marginal. P = CMg não cobre o custo médio e exige subsídio; por isso é comum regular com P = CMe ou price cap."},
+{s:"2.1",q:"No longo prazo, em concorrência monopolística:",o:["As firmas mantêm lucro econômico positivo graças à diferenciação","P = CMg e a produção ocorre no mínimo do CTMe","O lucro econômico é zero, com capacidade ociosa e preço acima do custo marginal","Sobra uma única firma"],a:2,e:"A livre entrada zera o lucro econômico (P = CTMe), mas a demanda de cada firma é inclinada: ela produz antes do mínimo do CTMe e com P > CMg. Em troca, há variedade."},
+{s:"2.1",q:"No modelo de Bertrand com produto homogêneo e custos marginais iguais, duas firmas chegam a:",o:["Preço de monopólio","Preço entre o de monopólio e o competitivo, como em Cournot","Preço rígido, como na demanda quebrada","Preço igual ao custo marginal, como em concorrência perfeita"],a:3,e:"Cada firma tem incentivo a cobrar um pouco menos que a rival até P = CMg (paradoxo de Bertrand)."},
+{s:"2.1",q:"Duopólio de Cournot com demanda P = 100 − Q e custo marginal de 10 para as duas firmas. A produção de cada firma e o preço de mercado são:",o:["45 cada e P = 10","22,5 cada e P = 55","30 cada e P = 40","30 cada e P = 70"],a:2,e:"q = (a − c) / 3b = (100 − 10)/3 = 30. Q = 60 e P = 100 − 60 = 40, entre o monopólio (P = 55) e a concorrência (P = 10)."},
+{s:"2.1",q:"O modelo da curva de demanda quebrada (Sweezy) é usado para explicar:",o:["O paradoxo de Bertrand","A rigidez de preços em oligopólios","Por que o preço iguala o custo marginal","A atuação da firma dominante"],a:1,e:"Se uma firma sobe o preço, as rivais não acompanham; se baixa, todas acompanham. A RMg fica descontínua e o preço tende a ficar estável mesmo com mudanças de custo."},
+{s:"2.1",q:"Um setor tem quatro firmas com participações de 50%, 25%, 15% e 10%. O HHI e o CR3 são:",o:["HHI de 3.450 e CR3 de 90%","HHI de 100 e CR3 de 90%","HHI de 3.450 e CR3 de 75%","HHI de 2.500 e CR3 de 90%"],a:0,e:"HHI = 2.500 + 625 + 225 + 100 = 3.450. CR3 = 50 + 25 + 15 = 90%."},
+{s:"2.1",q:"Duas empresas escolhem o preço ao mesmo tempo. Se ambas mantêm preço alto, lucram 10 cada; se ambas baixam, 5 cada; se só uma baixa, ela lucra 14 e a outra 2. O equilíbrio de Nash é:",o:["Ambas mantêm preço alto (10, 10)","Uma baixa e a outra mantém (14, 2)","Ambas baixam o preço (5, 5)","Não há equilíbrio de Nash"],a:2,e:"Baixar é estratégia dominante para cada uma (14 > 10 e 5 > 2). O equilíbrio (5, 5) é pior para as duas que (10, 10): é o dilema do prisioneiro."},
+{s:"2.1",q:"Um monopsônio é um mercado com:",o:["Um único comprador, que tende a comprar menos e pagar menos do que em concorrência","Um único vendedor","Poucos vendedores e muitos compradores","Muitos compradores e muitos vendedores de produtos diferenciados"],a:0,e:"Monopsônio é o poder de mercado do lado da compra. Um único vendedor é monopólio; poucos vendedores, oligopólio."},
+{s:"2.1",q:"No modelo de firma dominante:",o:["Todas as firmas escolhem quantidades simultaneamente","A firma dominante sempre cobra preço igual ao custo marginal","As pequenas firmas definem o preço de mercado","A firma dominante fixa o preço e atende a demanda residual, enquanto as pequenas firmas são tomadoras de preço"],a:3,e:"A demanda residual é a demanda do mercado menos a oferta da franja competitiva. A dominante faz RMg residual = CMg e as pequenas aceitam o preço."},
+{s:"2.2",q:"Um país tem PIB de 2.000. Enviou ao exterior 120 de renda (juros, lucros e salários) e recebeu 30. O PNB é:",o:["2.090","1.910","2.150","1.850"],a:1,e:"PNB = PIB − renda enviada + renda recebida = 2.000 − 120 + 30 = 1.910. Quem envia mais renda do que recebe, como o Brasil, tem PNB menor que o PIB."},
+{s:"2.2",q:"Consumo de 600, investimento de 200, gastos do governo de 250, exportações de 150 e importações de 180. O PIB pela ótica da despesa é:",o:["1.380","1.020","1.200","1.050"],a:1,e:"PIB = C + I + G + X − M = 600 + 200 + 250 + 150 − 180 = 1.020. As importações são subtraídas."},
+{s:"2.2",q:"O lucro gerado por uma montadora estrangeira instalada no Brasil e remetido à matriz:",o:["Entra no PIB e no PNB do Brasil","Entra no PNB do Brasil, mas não no PIB","Não entra em nenhum dos dois","Entra no PIB do Brasil, mas não no PNB do Brasil"],a:3,e:"O PIB segue o território (a produção ocorreu aqui). O PNB segue a propriedade: a renda remetida pertence a não residentes."},
+{s:"2.2",q:"A difusão do Pix, dos cartões e da aplicação automática tende a:",o:["Reduzir a demanda por moeda (M1) e elevar a velocidade de circulação","Aumentar a demanda por moeda (M1)","Não afetar a demanda por moeda","Reduzir a velocidade de circulação da moeda"],a:0,e:"Inovações financeiras permitem manter menos saldo parado em moeda que não rende, reduzindo a demanda por M1 e aumentando a velocidade."},
+{s:"2.2",q:"Um IPCA muito acima do esperado tende, em geral, a:",o:["Valorizar os títulos prefixados","Reduzir a expectativa para a Selic","Elevar as taxas futuras de juros e desvalorizar os títulos prefixados","Não afetar a curva de juros"],a:2,e:"O mercado passa a esperar Selic mais alta; as taxas prefixadas sobem e o preço dos títulos prefixados cai."},
+{s:"2.2",q:"No modelo de preferência pela liquidez, se o Banco Central aumenta a oferta de moeda, com a demanda por moeda constante:",o:["A taxa de juros sobe","A taxa de juros não muda","A demanda por moeda cai","A taxa de juros cai"],a:3,e:"Mais moeda ofertada que a demandada à taxa inicial: o excesso vai para títulos, o preço dos títulos sobe e os juros caem até o novo equilíbrio."},
+{s:"2.2",q:"A Taxa Selic (over) é:",o:["A taxa média das operações de DI de um dia entre bancos, sem lastro em título","A taxa definida pelo CMN para os financiamentos do BNDES","A taxa média ponderada das operações compromissadas de um dia lastreadas em títulos públicos federais, registradas no Selic","A taxa calculada a partir da TBF com aplicação de um redutor"],a:2,e:"A Selic over é apurada no sistema Selic com as compromissadas de um dia. O Copom define a meta e o BC atua para mantê-la próxima. A primeira alternativa descreve a taxa DI; a última, a TR."},
+{s:"2.2",q:"Sobre a TR (Taxa Referencial), é correto afirmar:",o:["É igual à meta Selic","É calculada a partir da TBF com aplicação de um redutor e corrige a poupança e o FGTS","É composta pelo IPCA mais o juro real das NTN-B de 5 anos","É calculada pela B3 com base nas operações de DI"],a:1,e:"A TR vem da TBF com um redutor definido pelo CMN e pode ser zero. IPCA + juro real das NTN-B descreve a TLP."},
+{s:"2.2",q:"A TLP (Taxa de Longo Prazo):",o:["É formada pelo IPCA mais uma taxa real baseada nas NTN-B de 5 anos e é usada nos financiamentos do BNDES","É a média das taxas de CDB prefixados de 30 dias","É a taxa das compromissadas de um dia","É fixada livremente pela diretoria do BNDES"],a:0,e:"A TLP substituiu a TJLP nos novos contratos do BNDES a partir de 2018, aproximando o custo desses empréstimos ao do Tesouro."},
+{s:"2.2",q:"Com a meta Selic em 10% ao ano, a caderneta de poupança rende:",o:["70% da meta Selic + TR","100% do CDI","0,5% ao mês + TR","Apenas a TR"],a:2,e:"Pela Lei 12.703/2012, com Selic acima de 8,5% ao ano a poupança paga 0,5% ao mês + TR. A regra de 70% da Selic + TR vale com Selic de até 8,5%."},
+{s:"2.2",q:"A Taxa DI:",o:["É calculada pela B3 com base nas operações de DI de um dia entre instituições de conglomerados diferentes, em % ao ano, base 252","É fixada pelo Copom a cada reunião","É calculada pelo Banco Central com base nas operações compromissadas","É a taxa do redesconto"],a:0,e:"O DI é o custo do dinheiro entre bancos sem lastro em título público. Fica muito próximo da Selic over e é a referência dos pós-fixados privados e do DI futuro."},
+{s:"2.2",q:"Sobre o IPCA, é correto afirmar:",o:["É calculado pela FGV para famílias com renda de 1 a 5 salários mínimos","Tem 60% de peso em preços ao produtor","É coletado do dia 21 do mês anterior ao dia 20 do mês de referência","É calculado pelo IBGE para famílias com renda de 1 a 40 salários mínimos e é o índice oficial da meta de inflação"],a:3,e:"A faixa de 1 a 5 salários mínimos é a do INPC (também do IBGE). O peso de 60% do IPA e a coleta de 21 a 20 são características do IGP-M (FGV)."},
+{s:"2.2",q:"A composição do IGP-M é:",o:["50% IPCA e 50% INPC, calculado pelo IBGE","60% IPA, 30% IPC e 10% INCC, calculado pela FGV","Apenas preços ao consumidor","40% IPA, 40% IPC e 20% INCC, calculado pelo IBGE"],a:1,e:"Os IGPs (IGP-M, IGP-DI, IGP-10) têm a mesma estrutura 60/30/10 e diferem no período de coleta. O peso alto do IPA os torna sensíveis a commodities e câmbio."},
+{s:"2.2",q:"Cabe ao Conselho Monetário Nacional (CMN):",o:["Executar a política monetária e fiscalizar os bancos","Fixar a meta de inflação e as diretrizes das políticas monetária, creditícia e cambial","Fiscalizar os fundos de investimento e as companhias abertas","Calcular a Taxa DI"],a:1,e:"O CMN é o órgão normativo. A execução da política monetária e a fiscalização dos bancos cabem ao BC; fundos e companhias abertas, à CVM; o DI é calculado pela B3."},
+{s:"2.2",q:"É atribuição da CVM:",o:["Emitir papel-moeda","Definir a meta para a taxa Selic","Administrar as reservas internacionais","Regular e fiscalizar o mercado de valores mobiliários, como companhias abertas, ofertas públicas e fundos de investimento"],a:3,e:"Emissão de moeda, Selic (Copom) e reservas são atribuições do Banco Central."},
+{s:"2.2",q:"Sobre os bancos de investimento, é correto afirmar:",o:["Não captam depósitos à vista e atuam em underwriting e no financiamento de médio e longo prazo","Captam depósitos à vista e criam moeda escritural","Operam apenas câmbio de turismo","São obrigatoriamente bancos múltiplos"],a:0,e:"Só quem capta depósito à vista (banco comercial ou múltiplo com carteira comercial) cria moeda escritural. O banco de investimento capta a prazo."},
+{s:"2.2",q:"Um depósito inicial de 500 entra no sistema bancário. Com compulsório de 25% e sem vazamentos, o total de novos empréstimos que o sistema pode gerar é:",o:["375","2.000","1.500","125"],a:2,e:"Depósitos totais = 500 / 0,25 = 2.000. Novos empréstimos = 2.000 − 500 = 1.500, ou 500 × 0,75 / 0,25. O primeiro banco sozinho empresta 375."},
+{s:"2.2",q:"O sistema que registra, custodia e liquida os títulos públicos federais, com entrega contra pagamento, é o:",o:["STR","Clearing B3","SPI (Pix)","Selic"],a:3,e:"O Selic, operado pelo BC, liquida títulos públicos federais em tempo real com DVP. O STR transfere reservas; a Clearing B3 liquida ações e derivativos; o SPI, o Pix."},
+{s:"2.2",q:"Sobre a Clearing B3, é correto afirmar:",o:["Liquida apenas títulos públicos federais","É operada pelo Banco Central","Atua como contraparte central e liquida ações e derivativos de forma multilateral, com garantias dos participantes","Não exige garantias dos participantes"],a:2,e:"A contraparte central assume o risco de cada lado e se protege com margens. Títulos públicos federais ficam no Selic, operado pelo BC."},
+{s:"2.2",q:"O setor público teve déficit primário de 1% do PIB e pagou juros nominais de 7% do PIB. O resultado nominal é:",o:["Déficit de 6% do PIB","Déficit de 8% do PIB","Superávit de 6% do PIB","Déficit de 1% do PIB"],a:1,e:"Resultado nominal = primário + juros. Com déficit primário, os dois se somam: 1% + 7% = 8% do PIB de déficit nominal (NFSP)."},
+{s:"2.2",q:"A dívida pública é de 75% do PIB, o juro real da dívida é de 6% e o PIB cresce 2% ao ano em termos reais. O superávit primário que estabiliza a relação dívida/PIB é de aproximadamente:",o:["2,9% do PIB","4,5% do PIB","6,0% do PIB","Zero"],a:0,e:"s = d × (r − g) / (1 + g) = 75% × 0,04 / 1,02 ≈ 2,94% do PIB."},
+{s:"2.2",q:"Segundo a curva de Laffer:",o:["Reduzir alíquotas sempre aumenta a arrecadação","A arrecadação cresce indefinidamente com a alíquota","Acima da alíquota que maximiza a arrecadação, reduzir a alíquota pode aumentar a arrecadação","A arrecadação é máxima com alíquota de 100%"],a:2,e:"Com 0% ou 100% a arrecadação é zero. Só no trecho acima da alíquota ótima o corte eleva a receita; abaixo dela, reduz."},
+{s:"2.2",q:"O efeito crowding-out ocorre quando:",o:["O aumento do gasto público financiado por dívida eleva os juros e reduz o investimento privado","O aumento do gasto público eleva o investimento privado pelo multiplicador","A redução de impostos reduz o consumo","A emissão de moeda reduz a inflação"],a:0,e:"O governo disputa a poupança disponível com o setor privado: os juros sobem e parte do investimento privado é deslocada."},
+{s:"2.2",q:"Numa economia com propensão marginal a consumir de 0,75, sem impostos proporcionais nem comércio exterior, um aumento de 10 nos gastos do governo e, alternativamente, um corte de 10 nos impostos elevam a renda, respectivamente, em:",o:["40 e 40","30 e 40","10 e 7,5","40 e 30"],a:3,e:"kG = 1/(1 − 0,75) = 4 → ΔY = 40. kT = −0,75/0,25 = −3 → corte de 10 eleva a renda em 30. O gasto entra inteiro na demanda; o corte de imposto, só na parte consumida."},
+{s:"2.2",q:"O multiplicador do orçamento equilibrado (aumento de gastos financiado por aumento igual de impostos) é igual a:",o:["0","1","1/(1 − c)","−c/(1 − c)"],a:1,e:"kG + kT = 1/(1 − c) − c/(1 − c) = 1. A renda sobe exatamente o valor do aumento do gasto (teorema de Haavelmo)."},
+{s:"2.2",q:"Sobre os efeitos intergeracionais da política fiscal:",o:["A política fiscal não tem efeitos entre gerações","Déficits financiados por dívida transferem parte do custo para gerações futuras, por meio de impostos futuros e menor estoque de capital","Pela equivalência ricardiana, um corte de impostos financiado com dívida sempre aumenta o consumo","Investimento público em infraestrutura só beneficia a geração atual"],a:1,e:"A dívida de hoje é paga com impostos de amanhã, e o crowding-out reduz o capital herdado. A equivalência ricardiana diz o oposto da terceira alternativa: o consumo não mudaria."},
+{s:"2.2",q:"É exemplo de política fiscal contracionista:",o:["Ampliação de programas de transferência de renda","Redução do imposto de renda","Redução da taxa Selic","Aumento de impostos acompanhado de corte de gastos"],a:3,e:"Mais impostos e menos gastos reduzem a demanda agregada. Reduzir a Selic é política monetária (expansionista)."},
+{s:"2.2",q:"Uma limitação importante da política fiscal discricionária é:",o:["As defasagens de reconhecimento, decisão e impacto, que podem fazer o estímulo chegar quando a economia já se recuperou","Atuar sem nenhuma defasagem","Não afetar a demanda agregada","Ser decidida pelo Copom"],a:0,e:"As defasagens, sobretudo a de aprovação no Legislativo, podem tornar a política pró-cíclica. Os estabilizadores automáticos não têm a defasagem de decisão."},
+{s:"2.2",q:"A função da moeda mais prejudicada pela inflação alta é a de:",o:["Meio de troca","Unidade de conta","Reserva de valor","Nenhuma delas"],a:2,e:"A inflação corrói o poder de compra guardado em moeda. Em inflação muito alta, também a unidade de conta é afetada (indexação), mas a reserva de valor é a primeira a sofrer."},
+{s:"2.2",q:"Qual operação cria moeda, aumentando os meios de pagamento (M1)?",o:["Saque de dinheiro no caixa eletrônico","Pagamento de um empréstimo ao banco","Transferência entre as contas de dois clientes","Concessão de empréstimo por um banco comercial, creditado na conta do cliente"],a:3,e:"O empréstimo cria um depósito à vista novo. O saque só troca depósito por papel-moeda (ambos no M1); a quitação de empréstimo destrói moeda; transferências entre o público não alteram o total."},
+{s:"2.2",q:"O agregado monetário M1 é composto por:",o:["Depósitos à vista + depósitos de poupança","Base monetária + operações compromissadas","Papel-moeda em poder do público + depósitos à vista","Papel-moeda emitido + reservas bancárias"],a:2,e:"M1 são os meios de pagamento restritos, que não rendem juros. Papel-moeda em poder do público + reservas bancárias é a base monetária."},
+{s:"2.2",q:"No regime de metas de inflação brasileiro:",o:["O Copom fixa a meta e o CMN define a Selic","O CMN fixa a meta para o IPCA e o Copom define a Selic para atingi-la","O Ministério da Fazenda fixa a Selic","A meta é definida para o IGP-M"],a:1,e:"O CMN define a meta (IPCA) e a tolerância; o BC, por meio do Copom, persegue a meta com a Selic."},
+{s:"2.2",q:"O IPCA foi de 0,8% num mês e de 1,2% no mês seguinte. A inflação acumulada nos dois meses é:",o:["2,01%","2,00%","1,00%","0,40%"],a:0,e:"Acumula-se por produto: 1,008 × 1,012 − 1 = 2,0096% ≈ 2,01%. A soma simples (2,00%) subestima."},
+{s:"2.2",q:"Uma inflação muito acima da esperada (não antecipada):",o:["Beneficia os credores de contratos prefixados","Não redistribui renda","Beneficia os devedores de contratos prefixados","Aumenta o salário real dos contratos com reajuste fixo"],a:2,e:"O valor real das dívidas prefixadas cai, transferindo riqueza dos credores para os devedores. Salários com reajuste fixo perdem poder de compra."},
+{s:"2.2",q:"Pela curva de Phillips aumentada pelas expectativas, com inflação esperada de 5%, coeficiente β = 0,4, taxa natural de desemprego de 7% e desemprego efetivo de 9%, a inflação será:",o:["4,2%","5,8%","5,0%","3,0%"],a:0,e:"π = πe − β(u − un) = 5% − 0,4 × (9% − 7%) = 4,2%. Desemprego acima da taxa natural faz a inflação ficar abaixo da esperada."},
+{s:"2.2",q:"No longo prazo, segundo Friedman e Phelps, a curva de Phillips é:",o:["Negativamente inclinada, com troca permanente entre inflação e desemprego","Horizontal na meta de inflação","Positivamente inclinada","Vertical na taxa natural de desemprego"],a:3,e:"Quando as expectativas se ajustam, não há troca permanente: o desemprego volta à taxa natural, qualquer que seja a inflação."},
+{s:"2.2",q:"Com taxa nominal de 13,75% ao ano e inflação de 5%, o juro real pela equação de Fisher é:",o:["8,75%","8,33%","18,44%","9,19%"],a:1,e:"r = 1,1375 / 1,05 − 1 = 8,33%. A subtração simples (8,75%) é só uma aproximação; 18,44% multiplica em vez de dividir."},
+{s:"2.2",q:"Pela teoria quantitativa da moeda, se a oferta de moeda cresce 8%, a velocidade é constante e o PIB real cresce 2%, a inflação será de aproximadamente:",o:["10%","6%","8%","2%"],a:1,e:"%ΔM + %ΔV ≈ %ΔP + %ΔY → 8% + 0 ≈ π + 2% → π ≈ 6% (exata: 1,08/1,02 − 1 = 5,9%)."},
+{s:"2.2",q:"O Comitê de Política Monetária (Copom):",o:["Fixa a meta de inflação","É formado pelos ministros da Fazenda e do Planejamento","Define a TR","Reúne-se oito vezes por ano e define a meta para a taxa Selic"],a:3,e:"O Copom é formado pela diretoria do BC. A meta de inflação é fixada pelo CMN, que reúne os ministros e o presidente do BC."},
+{s:"2.2",q:"Pela regra de Taylor (pesos de 0,5), com juro real neutro de 5%, meta de inflação de 3%, inflação de 5% e hiato do produto de +2%, a taxa nominal recomendada é:",o:["12%","10%","11%","13%"],a:0,e:"i = r* + π + 0,5(π − π*) + 0,5 × hiato = 5 + 5 + 0,5 × 2 + 0,5 × 2 = 12%."},
+{s:"2.2",q:"Uma curva de juros invertida (taxas curtas acima das longas) costuma indicar:",o:["Expectativa de alta da Selic à frente","Prêmio de prazo elevado e economia em aceleração","Política monetária apertada no presente e expectativa de cortes da Selic à frente","Inflação implícita negativa"],a:2,e:"Juros longos abaixo dos curtos refletem a expectativa de queda dos juros curtos, frequentemente associada a desaceleração."},
+{s:"2.2",q:"O dólar passa de R$ 4,80 para R$ 5,40. A variação do real em relação ao dólar foi:",o:["Depreciação de 12,5%","Apreciação de 11,11%","Apreciação de 12,5%","Depreciação de 11,11%"],a:3,e:"O real é a moeda de contagem: 4,80 / 5,40 − 1 = −11,11%. Os 12,5% são a apreciação do dólar (5,40 / 4,80 − 1)."},
+{s:"2.2",q:"Spot de R$ 5,20 por dólar, juros de 11% ao ano no Brasil e 4,5% nos EUA. Pela paridade coberta, o dólar a termo de 1 ano é de aproximadamente:",o:["R$ 4,90","R$ 5,77","R$ 5,52","R$ 5,20"],a:2,e:"F = 5,20 × 1,11 / 1,045 ≈ 5,5234. A moeda com juros menores (dólar) negocia com prêmio a termo. R$ 4,90 inverte a fórmula."},
+{s:"2.2",q:"O câmbio é de R$ 5,00, a inflação esperada é de 6% no Brasil e de 2% nos EUA. Pela paridade do poder de compra relativa, o câmbio esperado em um ano é de aproximadamente:",o:["R$ 4,81","R$ 5,20","R$ 5,40","R$ 5,10"],a:1,e:"S1 = 5,00 × 1,06 / 1,02 ≈ 5,196. A moeda com inflação maior (real) se deprecia. R$ 4,81 inverte a fórmula."},
+{s:"2.2",q:"Desde 1999, o regime cambial brasileiro é melhor descrito como:",o:["Flutuação suja: câmbio flutuante com intervenções do Banco Central","Currency board","Bandas cambiais ajustáveis","Câmbio fixo"],a:0,e:"Em 1999 o Brasil abandonou as bandas e adotou o câmbio flutuante, com intervenções (venda de reservas, swaps) para conter volatilidade excessiva."},
+{s:"2.2",q:"Com o câmbio nominal estável e a inflação brasileira acima da americana, ocorre:",o:["Depreciação real do real, que favorece as exportações","Nenhuma mudança no câmbio real","Apreciação real do real, que reduz a competitividade das exportações","Depreciação nominal do real"],a:2,e:"q = S × P*/P cai quando P sobe mais que P* com S parado: os produtos brasileiros ficam relativamente mais caros."},
+{s:"2.2",q:"Um país tem déficit de US$ 30 bi em transações correntes, entrada líquida de US$ 45 bi em investimento direto e saída líquida de US$ 5 bi em investimento em carteira. Sem outros fluxos, as reservas internacionais:",o:["Aumentam US$ 10 bi","Caem US$ 10 bi","Aumentam US$ 80 bi","Caem US$ 20 bi"],a:0,e:"Variação das reservas = −30 + 45 − 5 = +10. A entrada de capital mais que financia o déficit corrente."},
+{s:"2.2",q:"Um país com superávit na balança comercial:",o:["Tem necessariamente superávit em transações correntes","Não pode receber investimento estrangeiro","Tem necessariamente reservas crescentes","Pode ter déficit em transações correntes, se os déficits em serviços e renda primária forem maiores"],a:3,e:"Transações correntes = balança comercial + serviços + renda primária + renda secundária. É o caso típico do Brasil: superávit comercial e déficit em serviços e rendas."},
+{s:"2.2",q:"Quando o Banco Central compra dólares no mercado à vista, sem esterilizar:",o:["As reservas caem e o real tende a se apreciar","As reservas sobem, a base monetária aumenta e o real tende a se depreciar","As reservas não se alteram","A meta Selic cai automaticamente"],a:1,e:"O BC paga em reais pelos dólares: aumenta a base monetária e a demanda por dólar. Por isso costuma esterilizar com compromissadas para manter a Selic na meta."},
+{s:"2.2",q:"Num período de 90 dias corridos, o DI acumulado foi de 2% e o dólar subiu 1,5%. O cupom cambial do período, anualizado na convenção linear 360, foi de aproximadamente:",o:["2,00% ao ano","1,97% ao ano","0,49% ao ano","14,0% ao ano"],a:1,e:"Cupom do período = 1,02 / 1,015 − 1 = 0,4926%. Anualizado: 0,4926% × 360/90 = 1,97% ao ano. Os 2,00% vêm da subtração simples (2% − 1,5%) × 4."},
+{s:"2.2",q:"A diferença entre cupom cambial sujo e limpo é que:",o:["O limpo usa a PTAX do dia anterior; o sujo usa a taxa à vista do dia","Os dois usam a PTAX do dia","O sujo inclui o imposto de renda e o limpo não","O sujo usa a PTAX do dia anterior como taxa inicial; o limpo usa a taxa à vista do dia"],a:3,e:"Os contratos da B3 usam a PTAX de D−1, o que \"suja\" o cupom com a variação cambial entre ontem e hoje. O cupom limpo parte do spot do dia."},
+{s:"2.2",q:"Num leilão de swap cambial tradicional, o Banco Central:",o:["Paga a variação cambial mais o cupom e recebe o DI, oferecendo hedge e contendo a depreciação do real sem usar reservas","Fica comprado em dólar e pressiona a cotação para cima","Vende dólares das reservas no mercado à vista","Compra títulos públicos para reduzir a Selic"],a:0,e:"O swap tradicional equivale a uma venda de dólar futuro liquidada em reais. Atende a demanda por proteção e alivia a pressão no spot sem mexer nas reservas. Comprado em dólar é o swap reverso."}
+];
+const $=s=>document.querySelector(s);
+let L=[],i=0,ans=[];
+function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+$('#start').onclick=()=>{
+  const f=$('#filt').value;L=Q.filter(x=>f==='all'||x.s===f);
+  if($('#shuf').checked)L=L.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);
+  // alternativas sempre embaralhadas, para a letra certa não se repetir
+  L=L.map(x=>{if(x.f)return x;const p=x.o.map((o,k)=>[Math.random(),o,k]).sort((a,b)=>a[0]-b[0]);return {...x,o:p.map(v=>v[1]),a:p.findIndex(v=>v[2]===x.a)}});
+  i=0;ans=[];show();
+};
+function show(){
+  const x=L[i];
+  $('#quiz').innerHTML=`<div class="card"><div class="qhead"><span>Questão ${i+1} de ${L.length}</span><span>Subtema ${x.s}</span></div>
+  <div class="progress"><i style="width:${i/L.length*100}%"></i></div>
+  <p class="qtext">${esc(x.q)}</p><div class="opts">${x.o.map((o,k)=>`<button class="opt" data-k="${k}"><span class="l">${'ABCD'[k]})</span><span>${esc(o)}</span></button>`).join('')}</div>
+  <div id="fb"></div><div class="nav2"><span></span><button id="next" disabled>${i+1<L.length?'Próxima':'Ver resultado'}</button></div></div>`;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+  $('#next').onclick=()=>{i++;i<L.length?show():result()};
+}
+function pick(k){
+  const x=L[i],ok=k===x.a;ans[i]=ok;
+  document.querySelectorAll('.opt').forEach((b,j)=>{b.disabled=true;if(j===x.a)b.classList.add('ok');else if(j===k)b.classList.add('bad')});
+  $('#fb').innerHTML=`<div class="fb"><strong class="${ok?'ok':'bad'}">${ok?'Certo.':'Errado. Resposta: '+'ABCD'[x.a]+'.'}</strong> ${esc(x.e)}</div>`;
+  $('#next').disabled=false;$('#next').focus();
+}
+function result(){
+  const n=ans.filter(Boolean).length,by={};
+  L.forEach((x,j)=>{by[x.s]=by[x.s]||[0,0];by[x.s][1]++;if(ans[j])by[x.s][0]++});
+  const wrong=L.map((x,j)=>[x,j]).filter(([x,j])=>!ans[j]);
+  $('#quiz').innerHTML=`<div class="card"><div class="score">${n}/${L.length}</div><p class="hint">${Math.round(n/L.length*100)}% de acerto. A prova da CFG exige 70%.</p>
+  <div class="bars">${Object.keys(by).sort().map(s=>{const [a,t]=by[s];return `<div class="bar"><span>Subtema ${s}</span><span class="t"><i style="width:${a/t*100}%"></i></span><span class="v">${a}/${t}</span></div>`}).join('')}</div>
+  ${wrong.length?`<h3>Para revisar</h3><ul>${wrong.map(([x])=>`<li><b>${x.s}</b> · ${esc(x.q)}<br><span class="hint">Resposta: ${esc(x.o[x.a])}. ${esc(x.e)}</span></li>`).join('')}</ul>`:'<p>Nenhum erro.</p>'}
+  <div class="nav2"><button class="ghost" onclick="document.getElementById('start').click()">Refazer</button></div></div>`;
+}
+</script>
+</body>
+</html>

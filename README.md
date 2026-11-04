@@ -11,14 +11,20 @@ tela inicial e abre sem internet depois do primeiro acesso.
 | Tema | Peso na prova | Apostila | Questões |
 |---|---|---|---|
 | 1 · Métodos Quantitativos | 8–12% | 5 tópicos | 62 |
+| 2 · Economia | 3–7% | 2 tópicos | 91 |
+| 3 · Análise de Relatórios Financeiros | 3–7% | 3 tópicos | 56 |
+| 4 · Finanças Corporativas | 3–7% | 5 tópicos | 80 |
 | 5 · Mercados e Instrumentos Financeiros | 13–17% | 7 tópicos | 41 |
 | 6 · Teoria Moderna de Carteiras e Precificação de Ativos | 8–12% | 8 tópicos | 78 |
+| 7 · Finanças Comportamentais | 3–7% | 4 tópicos | 53 |
+| 8 · Política de Investimento (IPS) | 3–7% | 3 tópicos | 54 |
 | 9 · Alocação de Ativos | 13–17% | 3 tópicos | 33 |
+| 10 · Novas Tecnologias em Finanças | 3–7% | 4 tópicos | 54 |
 | 11 · Ética e Autorregulação | 8–12% | 4 tópicos | 63 |
 | 12 · Legislação e Regulação | 8–12% | 4 tópicos | 93 |
-| Revisão geral (outros temas) | — | — | 10 |
+| Revisão geral | — | — | 10 |
 
-Faltam os temas 2, 3, 4, 7, 8 e 10 (cada um com peso de 3–7%).
+Os 12 temas do programa estão cobertos: 768 questões comentadas.
 
 - **Estudar:** lê cada tópico, marca como lido e pratica só aquele subtema.
 - **Praticar:** treino (corrige a cada questão) ou simulado (3 min por questão,
