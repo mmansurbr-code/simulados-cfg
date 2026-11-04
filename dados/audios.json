@@ -1,0 +1,1070 @@
+[
+ {
+  "tema": "t1",
+  "numero": 1,
+  "titulo": "Métodos Quantitativos",
+  "faixas": [
+   {
+    "sub": "1.1",
+    "rotulo": "Conteúdo",
+    "titulo": "1.1 · Conteúdo · Valor do dinheiro no tempo",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 430,
+    "bytes": 2582312
+   },
+   {
+    "sub": "1.1",
+    "rotulo": "Perguntas",
+    "titulo": "1.1 · Perguntas · Valor do dinheiro no tempo",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 833,
+    "bytes": 4995896
+   },
+   {
+    "sub": "1.2",
+    "rotulo": "Conteúdo",
+    "titulo": "1.2 · Conteúdo · Conceitos básicos de estatística",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 419,
+    "bytes": 2516944
+   },
+   {
+    "sub": "1.2",
+    "rotulo": "Perguntas",
+    "titulo": "1.2 · Perguntas · Conceitos básicos de estatística",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 576,
+    "bytes": 3456112
+   },
+   {
+    "sub": "1.3",
+    "rotulo": "Conteúdo",
+    "titulo": "1.3 · Conteúdo · Conceitos básicos de probabilidade",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 414,
+    "bytes": 2486417
+   },
+   {
+    "sub": "1.3",
+    "rotulo": "Perguntas",
+    "titulo": "1.3 · Perguntas · Conceitos básicos de probabilidade",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 565,
+    "bytes": 3393329
+   },
+   {
+    "sub": "1.4",
+    "rotulo": "Conteúdo",
+    "titulo": "1.4 · Conteúdo · Amostragem, estimação e testes de hipótese",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 388,
+    "bytes": 2329899
+   },
+   {
+    "sub": "1.4",
+    "rotulo": "Perguntas",
+    "titulo": "1.4 · Perguntas · Amostragem, estimação e testes de hipótese",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.4 - Faixa 2 - Perguntas.mp3",
+    "seg": 595,
+    "bytes": 3571611
+   },
+   {
+    "sub": "1.5",
+    "rotulo": "Conteúdo",
+    "titulo": "1.5 · Conteúdo · Regressão linear simples e múltipla",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.5 - Faixa 1 - Conteudo.mp3",
+    "seg": 411,
+    "bytes": 2464099
+   },
+   {
+    "sub": "1.5",
+    "rotulo": "Perguntas",
+    "titulo": "1.5 · Perguntas · Regressão linear simples e múltipla",
+    "arquivo": "apostilas/audio/Tema 01 - Metodos Quantitativos/CFG 1.5 - Faixa 2 - Perguntas.mp3",
+    "seg": 693,
+    "bytes": 4157684
+   }
+  ]
+ },
+ {
+  "tema": "t2",
+  "numero": 2,
+  "titulo": "Economia",
+  "faixas": [
+   {
+    "sub": "2.1",
+    "rotulo": "Conteúdo",
+    "titulo": "2.1 · Conteúdo · Microeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 747,
+    "bytes": 4485101
+   },
+   {
+    "sub": "2.1",
+    "rotulo": "Perguntas (parte 1 de 3)",
+    "titulo": "2.1 · Perguntas (parte 1 de 3) · Microeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.1 - Faixa 2 - Perguntas (parte 1 de 3).mp3",
+    "seg": 681,
+    "bytes": 4083788
+   },
+   {
+    "sub": "2.1",
+    "rotulo": "Perguntas (parte 2 de 3)",
+    "titulo": "2.1 · Perguntas (parte 2 de 3) · Microeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.1 - Faixa 2 - Perguntas (parte 2 de 3).mp3",
+    "seg": 764,
+    "bytes": 4582748
+   },
+   {
+    "sub": "2.1",
+    "rotulo": "Perguntas (parte 3 de 3)",
+    "titulo": "2.1 · Perguntas (parte 3 de 3) · Microeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.1 - Faixa 2 - Perguntas (parte 3 de 3).mp3",
+    "seg": 450,
+    "bytes": 2697644
+   },
+   {
+    "sub": "2.2",
+    "rotulo": "Conteúdo",
+    "titulo": "2.2 · Conteúdo · Macroeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 735,
+    "bytes": 4412381
+   },
+   {
+    "sub": "2.2",
+    "rotulo": "Perguntas (parte 1 de 4)",
+    "titulo": "2.2 · Perguntas (parte 1 de 4) · Macroeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.2 - Faixa 2 - Perguntas (parte 1 de 4).mp3",
+    "seg": 726,
+    "bytes": 4355948
+   },
+   {
+    "sub": "2.2",
+    "rotulo": "Perguntas (parte 2 de 4)",
+    "titulo": "2.2 · Perguntas (parte 2 de 4) · Macroeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.2 - Faixa 2 - Perguntas (parte 2 de 4).mp3",
+    "seg": 704,
+    "bytes": 4225196
+   },
+   {
+    "sub": "2.2",
+    "rotulo": "Perguntas (parte 3 de 4)",
+    "titulo": "2.2 · Perguntas (parte 3 de 4) · Macroeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.2 - Faixa 2 - Perguntas (parte 3 de 4).mp3",
+    "seg": 725,
+    "bytes": 4348748
+   },
+   {
+    "sub": "2.2",
+    "rotulo": "Perguntas (parte 4 de 4)",
+    "titulo": "2.2 · Perguntas (parte 4 de 4) · Macroeconomia",
+    "arquivo": "apostilas/audio/Tema 02 - Economia/CFG 2.2 - Faixa 2 - Perguntas (parte 4 de 4).mp3",
+    "seg": 371,
+    "bytes": 2229356
+   }
+  ]
+ },
+ {
+  "tema": "t3",
+  "numero": 3,
+  "titulo": "Análise de Relatórios Financeiros",
+  "faixas": [
+   {
+    "sub": "3.1",
+    "rotulo": "Conteúdo",
+    "titulo": "3.1 · Conteúdo · Principais demonstrações contábeis",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 1040,
+    "bytes": 6237920
+   },
+   {
+    "sub": "3.1",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "3.1 · Perguntas (parte 1 de 2) · Principais demonstrações contábeis",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.1 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 671,
+    "bytes": 4028687
+   },
+   {
+    "sub": "3.1",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "3.1 · Perguntas (parte 2 de 2) · Principais demonstrações contábeis",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.1 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 425,
+    "bytes": 2551823
+   },
+   {
+    "sub": "3.2",
+    "rotulo": "Conteúdo",
+    "titulo": "3.2 · Conteúdo · Análise financeira das demonstrações contábeis",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 773,
+    "bytes": 4640685
+   },
+   {
+    "sub": "3.2",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "3.2 · Perguntas (parte 1 de 2) · Análise financeira das demonstrações contábeis",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.2 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 696,
+    "bytes": 4176300
+   },
+   {
+    "sub": "3.2",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "3.2 · Perguntas (parte 2 de 2) · Análise financeira das demonstrações contábeis",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.2 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 366,
+    "bytes": 2194140
+   },
+   {
+    "sub": "3.3",
+    "rotulo": "Conteúdo",
+    "titulo": "3.3 · Conteúdo · Manipulação de informações financeiras e detecção de fraudes",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 566,
+    "bytes": 3396973
+   },
+   {
+    "sub": "3.3",
+    "rotulo": "Perguntas",
+    "titulo": "3.3 · Perguntas · Manipulação de informações financeiras e detecção de fraudes",
+    "arquivo": "apostilas/audio/Tema 03 - Analise de Relatorios Financeiros/CFG 3.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 516,
+    "bytes": 3096877
+   }
+  ]
+ },
+ {
+  "tema": "t4",
+  "numero": 4,
+  "titulo": "Finanças Corporativas",
+  "faixas": [
+   {
+    "sub": "4.1",
+    "rotulo": "Conteúdo",
+    "titulo": "4.1 · Conteúdo · Orçamento de capital",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 597,
+    "bytes": 3581523
+   },
+   {
+    "sub": "4.1",
+    "rotulo": "Perguntas",
+    "titulo": "4.1 · Perguntas · Orçamento de capital",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 821,
+    "bytes": 4928787
+   },
+   {
+    "sub": "4.2",
+    "rotulo": "Conteúdo",
+    "titulo": "4.2 · Conteúdo · Estrutura de capital e custo de capital",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 733,
+    "bytes": 4399893
+   },
+   {
+    "sub": "4.2",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "4.2 · Perguntas (parte 1 de 2) · Estrutura de capital e custo de capital",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.2 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 798,
+    "bytes": 4790868
+   },
+   {
+    "sub": "4.2",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "4.2 · Perguntas (parte 2 de 2) · Estrutura de capital e custo de capital",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.2 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 185,
+    "bytes": 1112532
+   },
+   {
+    "sub": "4.3",
+    "rotulo": "Conteúdo",
+    "titulo": "4.3 · Conteúdo · Proventos, emissão e recompra de ações",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 749,
+    "bytes": 4494215
+   },
+   {
+    "sub": "4.3",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "4.3 · Perguntas (parte 1 de 2) · Proventos, emissão e recompra de ações",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.3 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 771,
+    "bytes": 4626278
+   },
+   {
+    "sub": "4.3",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "4.3 · Perguntas (parte 2 de 2) · Proventos, emissão e recompra de ações",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.3 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 404,
+    "bytes": 2424374
+   },
+   {
+    "sub": "4.4",
+    "rotulo": "Conteúdo",
+    "titulo": "4.4 · Conteúdo · Reestruturação de empresas",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 583,
+    "bytes": 3498442
+   },
+   {
+    "sub": "4.4",
+    "rotulo": "Perguntas",
+    "titulo": "4.4 · Perguntas · Reestruturação de empresas",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.4 - Faixa 2 - Perguntas.mp3",
+    "seg": 707,
+    "bytes": 4240907
+   },
+   {
+    "sub": "4.5",
+    "rotulo": "Conteúdo",
+    "titulo": "4.5 · Conteúdo · Governança corporativa",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.5 - Faixa 1 - Conteudo.mp3",
+    "seg": 499,
+    "bytes": 2996454
+   },
+   {
+    "sub": "4.5",
+    "rotulo": "Perguntas",
+    "titulo": "4.5 · Perguntas · Governança corporativa",
+    "arquivo": "apostilas/audio/Tema 04 - Financas Corporativas/CFG 4.5 - Faixa 2 - Perguntas.mp3",
+    "seg": 503,
+    "bytes": 3020358
+   }
+  ]
+ },
+ {
+  "tema": "t5",
+  "numero": 5,
+  "titulo": "Mercados e Instrumentos Financeiros",
+  "faixas": [
+   {
+    "sub": "5.1",
+    "rotulo": "Conteúdo",
+    "titulo": "5.1 · Conteúdo · Organização e funcionamento dos mercados",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 421,
+    "bytes": 2524885
+   },
+   {
+    "sub": "5.1",
+    "rotulo": "Perguntas",
+    "titulo": "5.1 · Perguntas · Organização e funcionamento dos mercados",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 374,
+    "bytes": 2245669
+   },
+   {
+    "sub": "5.2",
+    "rotulo": "Conteúdo",
+    "titulo": "5.2 · Conteúdo · Índices",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 339,
+    "bytes": 2031939
+   },
+   {
+    "sub": "5.2",
+    "rotulo": "Perguntas",
+    "titulo": "5.2 · Perguntas · Índices",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 186,
+    "bytes": 1117539
+   },
+   {
+    "sub": "5.3",
+    "rotulo": "Conteúdo",
+    "titulo": "5.3 · Conteúdo · Renda variável",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 314,
+    "bytes": 1884922
+   },
+   {
+    "sub": "5.3",
+    "rotulo": "Perguntas",
+    "titulo": "5.3 · Perguntas · Renda variável",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 201,
+    "bytes": 1207258
+   },
+   {
+    "sub": "5.4",
+    "rotulo": "Conteúdo",
+    "titulo": "5.4 · Conteúdo · Renda fixa e análise de crédito",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 528,
+    "bytes": 3171580
+   },
+   {
+    "sub": "5.4",
+    "rotulo": "Perguntas",
+    "titulo": "5.4 · Perguntas · Renda fixa e análise de crédito",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.4 - Faixa 2 - Perguntas.mp3",
+    "seg": 382,
+    "bytes": 2292892
+   },
+   {
+    "sub": "5.5",
+    "rotulo": "Conteúdo",
+    "titulo": "5.5 · Conteúdo · Investimentos alternativos",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.5 - Faixa 1 - Conteudo.mp3",
+    "seg": 336,
+    "bytes": 2018997
+   },
+   {
+    "sub": "5.5",
+    "rotulo": "Perguntas",
+    "titulo": "5.5 · Perguntas · Investimentos alternativos",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.5 - Faixa 2 - Perguntas.mp3",
+    "seg": 133,
+    "bytes": 801046
+   },
+   {
+    "sub": "5.6",
+    "rotulo": "Conteúdo",
+    "titulo": "5.6 · Conteúdo · Derivativos",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.6 - Faixa 1 - Conteudo.mp3",
+    "seg": 388,
+    "bytes": 2331607
+   },
+   {
+    "sub": "5.6",
+    "rotulo": "Perguntas",
+    "titulo": "5.6 · Perguntas · Derivativos",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.6 - Faixa 2 - Perguntas.mp3",
+    "seg": 267,
+    "bytes": 1604839
+   },
+   {
+    "sub": "5.7",
+    "rotulo": "Conteúdo",
+    "titulo": "5.7 · Conteúdo · Melhor execução de ordens (best execution)",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.7 - Faixa 1 - Conteudo.mp3",
+    "seg": 294,
+    "bytes": 1766584
+   },
+   {
+    "sub": "5.7",
+    "rotulo": "Perguntas",
+    "titulo": "5.7 · Perguntas · Melhor execução de ordens (best execution)",
+    "arquivo": "apostilas/audio/Tema 05 - Mercados e Instrumentos Financeiros/CFG 5.7 - Faixa 2 - Perguntas.mp3",
+    "seg": 96,
+    "bytes": 574840
+   }
+  ]
+ },
+ {
+  "tema": "t6",
+  "numero": 6,
+  "titulo": "Teoria Moderna de Carteiras",
+  "faixas": [
+   {
+    "sub": "6.1",
+    "rotulo": "Conteúdo",
+    "titulo": "6.1 · Conteúdo · Teoria da utilidade esperada",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 464,
+    "bytes": 2781903
+   },
+   {
+    "sub": "6.1",
+    "rotulo": "Perguntas",
+    "titulo": "6.1 · Perguntas · Teoria da utilidade esperada",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 471,
+    "bytes": 2826543
+   },
+   {
+    "sub": "6.2",
+    "rotulo": "Conteúdo",
+    "titulo": "6.2 · Conteúdo · Fronteira eficiente",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 407,
+    "bytes": 2441334
+   },
+   {
+    "sub": "6.2",
+    "rotulo": "Perguntas",
+    "titulo": "6.2 · Perguntas · Fronteira eficiente",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 499,
+    "bytes": 2996598
+   },
+   {
+    "sub": "6.3",
+    "rotulo": "Conteúdo",
+    "titulo": "6.3 · Conteúdo · A introdução do ativo livre de risco",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 348,
+    "bytes": 2090857
+   },
+   {
+    "sub": "6.3",
+    "rotulo": "Perguntas",
+    "titulo": "6.3 · Perguntas · A introdução do ativo livre de risco",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 402,
+    "bytes": 2415577
+   },
+   {
+    "sub": "6.4",
+    "rotulo": "Conteúdo",
+    "titulo": "6.4 · Conteúdo · Risco sistemático e não sistemático",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 332,
+    "bytes": 1993081
+   },
+   {
+    "sub": "6.4",
+    "rotulo": "Perguntas",
+    "titulo": "6.4 · Perguntas · Risco sistemático e não sistemático",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.4 - Faixa 2 - Perguntas.mp3",
+    "seg": 245,
+    "bytes": 1469497
+   },
+   {
+    "sub": "6.5",
+    "rotulo": "Conteúdo",
+    "titulo": "6.5 · Conteúdo · Beta e a reta característica",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.5 - Faixa 1 - Conteudo.mp3",
+    "seg": 342,
+    "bytes": 2052256
+   },
+   {
+    "sub": "6.5",
+    "rotulo": "Perguntas",
+    "titulo": "6.5 · Perguntas · Beta e a reta característica",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.5 - Faixa 2 - Perguntas.mp3",
+    "seg": 232,
+    "bytes": 1393169
+   },
+   {
+    "sub": "6.6",
+    "rotulo": "Conteúdo",
+    "titulo": "6.6 · Conteúdo · Modelos de precificação de ações",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.6 - Faixa 1 - Conteudo.mp3",
+    "seg": 673,
+    "bytes": 4040040
+   },
+   {
+    "sub": "6.6",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "6.6 · Perguntas (parte 1 de 2) · Modelos de precificação de ações",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.6 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 798,
+    "bytes": 4789143
+   },
+   {
+    "sub": "6.6",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "6.6 · Perguntas (parte 2 de 2) · Modelos de precificação de ações",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.6 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 801,
+    "bytes": 4808727
+   },
+   {
+    "sub": "6.7",
+    "rotulo": "Conteúdo",
+    "titulo": "6.7 · Conteúdo · Modelos de índice",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.7 - Faixa 1 - Conteudo.mp3",
+    "seg": 306,
+    "bytes": 1835382
+   },
+   {
+    "sub": "6.7",
+    "rotulo": "Perguntas",
+    "titulo": "6.7 · Perguntas · Modelos de índice",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.7 - Faixa 2 - Perguntas.mp3",
+    "seg": 156,
+    "bytes": 938406
+   },
+   {
+    "sub": "6.8",
+    "rotulo": "Conteúdo",
+    "titulo": "6.8 · Conteúdo · Modelos multifatores",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.8 - Faixa 1 - Conteudo.mp3",
+    "seg": 450,
+    "bytes": 2698520
+   },
+   {
+    "sub": "6.8",
+    "rotulo": "Perguntas",
+    "titulo": "6.8 · Perguntas · Modelos multifatores",
+    "arquivo": "apostilas/audio/Tema 06 - Teoria Moderna de Carteiras/CFG 6.8 - Faixa 2 - Perguntas.mp3",
+    "seg": 474,
+    "bytes": 2844248
+   }
+  ]
+ },
+ {
+  "tema": "t7",
+  "numero": 7,
+  "titulo": "Finanças Comportamentais",
+  "faixas": [
+   {
+    "sub": "7.1",
+    "rotulo": "Conteúdo",
+    "titulo": "7.1 · Conteúdo · Teoria tradicional versus finanças comportamentais",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 549,
+    "bytes": 3292548
+   },
+   {
+    "sub": "7.1",
+    "rotulo": "Perguntas",
+    "titulo": "7.1 · Perguntas · Teoria tradicional versus finanças comportamentais",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 491,
+    "bytes": 2944356
+   },
+   {
+    "sub": "7.2",
+    "rotulo": "Conteúdo",
+    "titulo": "7.2 · Conteúdo · Teoria da Perspectiva (Prospect Theory)",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 395,
+    "bytes": 2368920
+   },
+   {
+    "sub": "7.2",
+    "rotulo": "Perguntas",
+    "titulo": "7.2 · Perguntas · Teoria da Perspectiva (Prospect Theory)",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 483,
+    "bytes": 2901576
+   },
+   {
+    "sub": "7.3",
+    "rotulo": "Conteúdo",
+    "titulo": "7.3 · Conteúdo · Erros cognitivos e vieses emocionais",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 601,
+    "bytes": 3607749
+   },
+   {
+    "sub": "7.3",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "7.3 · Perguntas (parte 1 de 2) · Erros cognitivos e vieses emocionais",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.3 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 645,
+    "bytes": 3870564
+   },
+   {
+    "sub": "7.3",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "7.3 · Perguntas (parte 2 de 2) · Erros cognitivos e vieses emocionais",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.3 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 212,
+    "bytes": 1272804
+   },
+   {
+    "sub": "7.4",
+    "rotulo": "Conteúdo",
+    "titulo": "7.4 · Conteúdo · Vieses na prática: investidores, carteiras e assessoria",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 521,
+    "bytes": 3127097
+   },
+   {
+    "sub": "7.4",
+    "rotulo": "Perguntas",
+    "titulo": "7.4 · Perguntas · Vieses na prática: investidores, carteiras e assessoria",
+    "arquivo": "apostilas/audio/Tema 07 - Financas Comportamentais/CFG 7.4 - Faixa 2 - Perguntas.mp3",
+    "seg": 599,
+    "bytes": 3592361
+   }
+  ]
+ },
+ {
+  "tema": "t8",
+  "numero": 8,
+  "titulo": "Política de Investimento",
+  "faixas": [
+   {
+    "sub": "8.1",
+    "rotulo": "Conteúdo",
+    "titulo": "8.1 · Conteúdo · O processo de gestão de carteiras individuais e institucionais",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 289,
+    "bytes": 1735920
+   },
+   {
+    "sub": "8.1",
+    "rotulo": "Perguntas",
+    "titulo": "8.1 · Perguntas · O processo de gestão de carteiras individuais e institucionais",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 244,
+    "bytes": 1465200
+   },
+   {
+    "sub": "8.2",
+    "rotulo": "Conteúdo",
+    "titulo": "8.2 · Conteúdo · A composição de um IPS individual",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 564,
+    "bytes": 3383828
+   },
+   {
+    "sub": "8.2",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "8.2 · Perguntas (parte 1 de 2) · A composição de um IPS individual",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.2 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 597,
+    "bytes": 3585155
+   },
+   {
+    "sub": "8.2",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "8.2 · Perguntas (parte 2 de 2) · A composição de um IPS individual",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.2 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 686,
+    "bytes": 4115219
+   },
+   {
+    "sub": "8.3",
+    "rotulo": "Conteúdo",
+    "titulo": "8.3 · Conteúdo · A composição de um IPS institucional",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 579,
+    "bytes": 3475127
+   },
+   {
+    "sub": "8.3",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "8.3 · Perguntas (parte 1 de 2) · A composição de um IPS institucional",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.3 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 717,
+    "bytes": 4304294
+   },
+   {
+    "sub": "8.3",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "8.3 · Perguntas (parte 2 de 2) · A composição de um IPS institucional",
+    "arquivo": "apostilas/audio/Tema 08 - Politica de Investimento/CFG 8.3 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 193,
+    "bytes": 1159766
+   }
+  ]
+ },
+ {
+  "tema": "t9",
+  "numero": 9,
+  "titulo": "Alocação de Ativos",
+  "faixas": [
+   {
+    "sub": "9.1",
+    "rotulo": "Conteúdo",
+    "titulo": "9.1 · Conteúdo · Estratégias básicas de alocação de ativos",
+    "arquivo": "apostilas/audio/Tema 09 - Alocacao de Ativos/CFG 9.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 446,
+    "bytes": 2675785
+   },
+   {
+    "sub": "9.1",
+    "rotulo": "Perguntas",
+    "titulo": "9.1 · Perguntas · Estratégias básicas de alocação de ativos",
+    "arquivo": "apostilas/audio/Tema 09 - Alocacao de Ativos/CFG 9.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 499,
+    "bytes": 2996761
+   },
+   {
+    "sub": "9.2",
+    "rotulo": "Conteúdo",
+    "titulo": "9.2 · Conteúdo · Métodos de alocação",
+    "arquivo": "apostilas/audio/Tema 09 - Alocacao de Ativos/CFG 9.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 330,
+    "bytes": 1979378
+   },
+   {
+    "sub": "9.2",
+    "rotulo": "Perguntas",
+    "titulo": "9.2 · Perguntas · Métodos de alocação",
+    "arquivo": "apostilas/audio/Tema 09 - Alocacao de Ativos/CFG 9.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 436,
+    "bytes": 2617442
+   },
+   {
+    "sub": "9.3",
+    "rotulo": "Conteúdo",
+    "titulo": "9.3 · Conteúdo · Rebalanceamento de carteiras",
+    "arquivo": "apostilas/audio/Tema 09 - Alocacao de Ativos/CFG 9.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 416,
+    "bytes": 2499224
+   },
+   {
+    "sub": "9.3",
+    "rotulo": "Perguntas",
+    "titulo": "9.3 · Perguntas · Rebalanceamento de carteiras",
+    "arquivo": "apostilas/audio/Tema 09 - Alocacao de Ativos/CFG 9.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 379,
+    "bytes": 2276024
+   }
+  ]
+ },
+ {
+  "tema": "t10",
+  "numero": 10,
+  "titulo": "Novas Tecnologias em Finanças",
+  "faixas": [
+   {
+    "sub": "10.1",
+    "rotulo": "Conteúdo",
+    "titulo": "10.1 · Conteúdo · Fintechs e seus segmentos, inclusive na gestão de investimentos",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 434,
+    "bytes": 2604680
+   },
+   {
+    "sub": "10.1",
+    "rotulo": "Perguntas",
+    "titulo": "10.1 · Perguntas · Fintechs e seus segmentos, inclusive na gestão de investimentos",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 552,
+    "bytes": 3309992
+   },
+   {
+    "sub": "10.2",
+    "rotulo": "Conteúdo",
+    "titulo": "10.2 · Conteúdo · Blockchain e Distributed Ledger Technology (DLT)",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 444,
+    "bytes": 2667592
+   },
+   {
+    "sub": "10.2",
+    "rotulo": "Perguntas",
+    "titulo": "10.2 · Perguntas · Blockchain e Distributed Ledger Technology (DLT)",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 576,
+    "bytes": 3459160
+   },
+   {
+    "sub": "10.3",
+    "rotulo": "Conteúdo",
+    "titulo": "10.3 · Conteúdo · Abordagens quantitativas: HFT, robo-advisors, algo-trading e machine learning",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 479,
+    "bytes": 2872245
+   },
+   {
+    "sub": "10.3",
+    "rotulo": "Perguntas",
+    "titulo": "10.3 · Perguntas · Abordagens quantitativas: HFT, robo-advisors, algo-trading e machine learning",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 658,
+    "bytes": 3950949
+   },
+   {
+    "sub": "10.4",
+    "rotulo": "Conteúdo",
+    "titulo": "10.4 · Conteúdo · Open Banking / Open Finance, Sandbox Regulatório e RegTech",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 498,
+    "bytes": 2986275
+   },
+   {
+    "sub": "10.4",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "10.4 · Perguntas (parte 1 de 2) · Open Banking / Open Finance, Sandbox Regulatório e RegTech",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.4 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 689,
+    "bytes": 4133826
+   },
+   {
+    "sub": "10.4",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "10.4 · Perguntas (parte 2 de 2) · Open Banking / Open Finance, Sandbox Regulatório e RegTech",
+    "arquivo": "apostilas/audio/Tema 10 - Novas Tecnologias em Financas/CFG 10.4 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 128,
+    "bytes": 767970
+   }
+  ]
+ },
+ {
+  "tema": "t11",
+  "numero": 11,
+  "titulo": "Ética e Autorregulação",
+  "faixas": [
+   {
+    "sub": "11.1",
+    "rotulo": "Conteúdo",
+    "titulo": "11.1 · Conteúdo · Princípios gerais de ética aplicada a profissionais de investimentos",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 464,
+    "bytes": 2786841
+   },
+   {
+    "sub": "11.1",
+    "rotulo": "Perguntas",
+    "titulo": "11.1 · Perguntas · Princípios gerais de ética aplicada a profissionais de investimentos",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.1 - Faixa 2 - Perguntas.mp3",
+    "seg": 655,
+    "bytes": 3932649
+   },
+   {
+    "sub": "11.2",
+    "rotulo": "Conteúdo",
+    "titulo": "11.2 · Conteúdo · Aspectos ASG (Ambiental, Social e Governança)",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 507,
+    "bytes": 3045585
+   },
+   {
+    "sub": "11.2",
+    "rotulo": "Perguntas",
+    "titulo": "11.2 · Perguntas · Aspectos ASG (Ambiental, Social e Governança)",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 609,
+    "bytes": 3656001
+   },
+   {
+    "sub": "11.3",
+    "rotulo": "Conteúdo",
+    "titulo": "11.3 · Conteúdo · Código ANBIMA de Certificação",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 309,
+    "bytes": 1854691
+   },
+   {
+    "sub": "11.3",
+    "rotulo": "Perguntas",
+    "titulo": "11.3 · Perguntas · Código ANBIMA de Certificação",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 501,
+    "bytes": 3006403
+   },
+   {
+    "sub": "11.4",
+    "rotulo": "Conteúdo",
+    "titulo": "11.4 · Conteúdo · Regulação e melhores práticas",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 472,
+    "bytes": 2835619
+   },
+   {
+    "sub": "11.4",
+    "rotulo": "Perguntas (parte 1 de 2)",
+    "titulo": "11.4 · Perguntas (parte 1 de 2) · Regulação e melhores práticas",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.4 - Faixa 2 - Perguntas (parte 1 de 2).mp3",
+    "seg": 771,
+    "bytes": 4625410
+   },
+   {
+    "sub": "11.4",
+    "rotulo": "Perguntas (parte 2 de 2)",
+    "titulo": "11.4 · Perguntas (parte 2 de 2) · Regulação e melhores práticas",
+    "arquivo": "apostilas/audio/Tema 11 - Etica e Autorregulacao/CFG 11.4 - Faixa 2 - Perguntas (parte 2 de 2).mp3",
+    "seg": 674,
+    "bytes": 4042498
+   }
+  ]
+ },
+ {
+  "tema": "t12",
+  "numero": 12,
+  "titulo": "Legislação e Regulação",
+  "faixas": [
+   {
+    "sub": "12.1",
+    "rotulo": "Conteúdo",
+    "titulo": "12.1 · Conteúdo · Normas legais e infralegais",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.1 - Faixa 1 - Conteudo.mp3",
+    "seg": 1040,
+    "bytes": 6238335
+   },
+   {
+    "sub": "12.1",
+    "rotulo": "Perguntas (parte 1 de 5)",
+    "titulo": "12.1 · Perguntas (parte 1 de 5) · Normas legais e infralegais",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.1 - Faixa 2 - Perguntas (parte 1 de 5).mp3",
+    "seg": 766,
+    "bytes": 4596462
+   },
+   {
+    "sub": "12.1",
+    "rotulo": "Perguntas (parte 2 de 5)",
+    "titulo": "12.1 · Perguntas (parte 2 de 5) · Normas legais e infralegais",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.1 - Faixa 2 - Perguntas (parte 2 de 5).mp3",
+    "seg": 744,
+    "bytes": 4465998
+   },
+   {
+    "sub": "12.1",
+    "rotulo": "Perguntas (parte 3 de 5)",
+    "titulo": "12.1 · Perguntas (parte 3 de 5) · Normas legais e infralegais",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.1 - Faixa 2 - Perguntas (parte 3 de 5).mp3",
+    "seg": 696,
+    "bytes": 4175262
+   },
+   {
+    "sub": "12.1",
+    "rotulo": "Perguntas (parte 4 de 5)",
+    "titulo": "12.1 · Perguntas (parte 4 de 5) · Normas legais e infralegais",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.1 - Faixa 2 - Perguntas (parte 4 de 5).mp3",
+    "seg": 748,
+    "bytes": 4490190
+   },
+   {
+    "sub": "12.1",
+    "rotulo": "Perguntas (parte 5 de 5)",
+    "titulo": "12.1 · Perguntas (parte 5 de 5) · Normas legais e infralegais",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.1 - Faixa 2 - Perguntas (parte 5 de 5).mp3",
+    "seg": 266,
+    "bytes": 1595646
+   },
+   {
+    "sub": "12.2",
+    "rotulo": "Conteúdo",
+    "titulo": "12.2 · Conteúdo · Compliance e PLD/FT",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.2 - Faixa 1 - Conteudo.mp3",
+    "seg": 469,
+    "bytes": 2814007
+   },
+   {
+    "sub": "12.2",
+    "rotulo": "Perguntas",
+    "titulo": "12.2 · Perguntas · Compliance e PLD/FT",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.2 - Faixa 2 - Perguntas.mp3",
+    "seg": 518,
+    "bytes": 3111223
+   },
+   {
+    "sub": "12.3",
+    "rotulo": "Conteúdo",
+    "titulo": "12.3 · Conteúdo · Tributação de ações (mercado à vista)",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.3 - Faixa 1 - Conteudo.mp3",
+    "seg": 305,
+    "bytes": 1833678
+   },
+   {
+    "sub": "12.3",
+    "rotulo": "Perguntas",
+    "titulo": "12.3 · Perguntas · Tributação de ações (mercado à vista)",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.3 - Faixa 2 - Perguntas.mp3",
+    "seg": 362,
+    "bytes": 2173807
+   },
+   {
+    "sub": "12.4",
+    "rotulo": "Conteúdo",
+    "titulo": "12.4 · Conteúdo · Tributação de títulos públicos e privados de renda fixa",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.4 - Faixa 1 - Conteudo.mp3",
+    "seg": 346,
+    "bytes": 2078208
+   },
+   {
+    "sub": "12.4",
+    "rotulo": "Perguntas",
+    "titulo": "12.4 · Perguntas · Tributação de títulos públicos e privados de renda fixa",
+    "arquivo": "apostilas/audio/Tema 12 - Legislacao e Regulacao/CFG 12.4 - Faixa 2 - Perguntas.mp3",
+    "seg": 353,
+    "bytes": 2115792
+   }
+  ]
+ }
+]

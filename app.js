@@ -4,6 +4,7 @@
 //   #/tema/<id>       tópicos de um tema
 //   #/tema/<id>/<top> leitura de um tópico da apostila
 //   #/praticar        montar um treino ou simulado
+//   #/ouvir           áudios de cada subtema (conteúdo e perguntas), com tocador contínuo
 //   #/quiz            questão em andamento (só existe enquanto há sessão)
 //   #/mais            backup do progresso e banco de questões extra
 
@@ -18,6 +19,7 @@ let store = {
   q: {},      // id -> {v: vezes respondida, a: acertos, ok: acertou na última}
   lido: {},   // "<tema>/<topico>" -> data em que marcou como lido
   extras: [], // questões importadas de pacotes .json
+  audio: { faixa: null, t: 0, vel: 1 }, // última faixa ouvida, posição e velocidade
 };
 try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s) store = Object.assign(store, s); } catch (e) {}
 function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
@@ -73,7 +75,7 @@ function aviso(texto, acao, rotulo) {
   if (!acao) aviso.t = setTimeout(() => { a.hidden = true; }, 3500);
 }
 function render(...nos) {
-  const t = $("tela"); t.innerHTML = ""; t.append(...nos);
+  const t = $("tela"); t.innerHTML = ""; t.append(...nos.flat().filter(n => n != null && n !== false));
   window.scrollTo(0, 0);
 }
 function marcarAba(aba) {
@@ -91,6 +93,7 @@ function rota() {
   if (p[0] === "tema" && p[2]) return telaTopico(p[1], p[2]);
   if (p[0] === "tema") return telaTema(p[1]);
   if (p[0] === "praticar") return telaPraticar();
+  if (p[0] === "ouvir") return telaOuvir();
   if (p[0] === "mais") return telaMais();
   if (p[0] === "quiz") return S ? telaQuestao() : (location.hash = "#/praticar");
   location.hash = "#/";
@@ -340,6 +343,146 @@ function fim() {
           el("p", { class: "muted" }, x.q.explicacao));
       }))
   );
+}
+
+// ---------- ouvir ----------
+// Lista em dados/audios.json (gerada por ferramentas/audio.py). O tocador fica fora da #tela,
+// então continua tocando ao trocar de aba; ao fim de uma faixa passa para a seguinte do tema.
+const CACHE_AUDIO = "cfg-audio"; // o sw.js serve daqui os áudios baixados (sem internet)
+let AUDIOS = null;
+const T = { fila: [], i: -1 };   // fila do tocador: faixas do tema em ordem
+const abertos = new Set();       // temas expandidos na aba Ouvir (sobrevive ao redesenho)
+const audioEl = new Audio();
+audioEl.preload = "none";
+
+async function carregarAudios() {
+  if (!AUDIOS) { try { AUDIOS = await (await fetch("dados/audios.json")).json(); } catch (e) { AUDIOS = []; } }
+  return AUDIOS;
+}
+function duracao(seg) { const h = Math.floor(seg / 3600), m = Math.round(seg % 3600 / 60); return h ? `${h} h ${m} min` : `${m} min`; }
+function mb(b) { return Math.max(1, Math.round(b / 1048576)) + " MB"; }
+function urlFaixa(f) { return new URL(f.arquivo.split("/").map(encodeURIComponent).join("/"), location.href).href; }
+function relogio(s) { s = Math.floor(s || 0); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+
+function tocar(fila, i, t) {
+  T.fila = fila; T.i = i;
+  const f = fila[i];
+  audioEl.src = urlFaixa(f);
+  audioEl.playbackRate = store.audio.vel || 1;
+  if (t) audioEl.addEventListener("loadedmetadata", () => { audioEl.currentTime = t; }, { once: true });
+  audioEl.play().catch(() => {});
+  store.audio.faixa = f.arquivo; store.audio.t = t || 0; save();
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({ title: f.titulo, artist: "CFG · Estudo e Simulados", album: f.album });
+  }
+  desenharTocador();
+  marcarTocando();
+}
+function proxima(d) { const j = T.i + d; if (j >= 0 && j < T.fila.length) tocar(T.fila, j); }
+audioEl.addEventListener("ended", () => proxima(1));
+audioEl.addEventListener("play", desenharTocador);
+audioEl.addEventListener("pause", desenharTocador);
+audioEl.addEventListener("ratechange", () => { audioEl.playbackRate = store.audio.vel || 1; });
+audioEl.addEventListener("timeupdate", () => {
+  const b = $("tc-barra"); if (b && audioEl.duration) b.value = audioEl.currentTime / audioEl.duration * 1000;
+  const r = $("tc-tempo"); if (r) r.textContent = relogio(audioEl.currentTime) + " / " + relogio(audioEl.duration || 0);
+  if (Math.abs(audioEl.currentTime - store.audio.t) > 5) { store.audio.t = audioEl.currentTime; save(); }
+});
+if ("mediaSession" in navigator) {
+  // botões do volante, do fone e da tela bloqueada
+  const pula = s => () => { audioEl.currentTime = Math.max(0, audioEl.currentTime + s); };
+  [["previoustrack", () => proxima(-1)], ["nexttrack", () => proxima(1)], ["seekbackward", pula(-15)], ["seekforward", pula(15)]]
+    .forEach(([a, fn]) => { try { navigator.mediaSession.setActionHandler(a, fn); } catch (e) {} });
+}
+
+function desenharTocador() {
+  const c = $("tocador"), f = T.fila[T.i];
+  if (!f) { c.hidden = true; document.body.classList.remove("com-tocador"); return; }
+  c.hidden = false; document.body.classList.add("com-tocador");
+  const tocando = !audioEl.paused;
+  c.innerHTML = "";
+  c.append(
+    el("div", { class: "tc-info" }, el("b", null, f.titulo),
+      el("span", { id: "tc-tempo", class: "mono" }, relogio(audioEl.currentTime) + " / " + relogio(audioEl.duration || f.seg))),
+    el("input", { id: "tc-barra", type: "range", min: 0, max: 1000, value: audioEl.duration ? audioEl.currentTime / audioEl.duration * 1000 : 0, "aria-label": "Posição na faixa",
+      oninput: e => { if (audioEl.duration) audioEl.currentTime = e.target.value / 1000 * audioEl.duration; } }),
+    el("div", { class: "tc-botoes" },
+      el("button", { type: "button", "aria-label": "Faixa anterior", disabled: T.i === 0, onclick: () => proxima(-1) }, "⏮"),
+      el("button", { type: "button", "aria-label": "Voltar 15 segundos", onclick: () => { audioEl.currentTime = Math.max(0, audioEl.currentTime - 15); } }, "−15"),
+      el("button", { type: "button", class: "tc-play", "aria-label": tocando ? "Pausar" : "Tocar", onclick: () => tocando ? audioEl.pause() : audioEl.play() }, tocando ? "❚❚" : "▶"),
+      el("button", { type: "button", "aria-label": "Avançar 15 segundos", onclick: () => { audioEl.currentTime += 15; } }, "+15"),
+      el("button", { type: "button", "aria-label": "Próxima faixa", disabled: T.i >= T.fila.length - 1, onclick: () => proxima(1) }, "⏭"),
+      el("button", { type: "button", class: "tc-vel", "aria-label": "Velocidade", onclick: () => {
+        const vs = [1, 1.25, 1.5, 0.85], v = vs[(vs.indexOf(store.audio.vel || 1) + 1) % vs.length];
+        store.audio.vel = v; audioEl.playbackRate = v; save(); desenharTocador();
+      } }, String(store.audio.vel || 1).replace(".", ",") + "×")));
+}
+
+async function baixados() {
+  try { const c = await caches.open(CACHE_AUDIO); return new Set((await c.keys()).map(r => r.url)); } catch (e) { return new Set(); }
+}
+async function baixarTema(t, botao, info) {
+  if (!("caches" in window)) { info.textContent = "Este navegador não permite guardar os áudios."; return; }
+  const c = await caches.open(CACHE_AUDIO), ja = await baixados();
+  botao.disabled = true;
+  let n = 0;
+  for (const f of t.faixas) {
+    const u = urlFaixa(f);
+    if (!ja.has(u)) {
+      try { const r = await fetch(u); if (!r.ok) throw new Error(r.status); await c.put(u, r); }
+      catch (e) { info.textContent = `Parou na faixa ${n + 1}. Confira a internet e toque de novo.`; botao.disabled = false; return; }
+    }
+    n++; info.textContent = `Baixando: ${n} de ${t.faixas.length} faixas…`;
+  }
+  if (location.hash.startsWith("#/ouvir")) telaOuvir();
+}
+async function removerTema(t) {
+  const c = await caches.open(CACHE_AUDIO);
+  await Promise.all(t.faixas.map(f => c.delete(urlFaixa(f))));
+  telaOuvir();
+}
+function marcarTocando() {
+  const atual = T.fila[T.i];
+  document.querySelectorAll(".faixas button[data-arq]").forEach(b => b.classList.toggle("tocando", !!atual && b.dataset.arq === atual.arquivo));
+}
+
+async function telaOuvir() {
+  marcarAba("ouvir");
+  const lista = await carregarAudios(), ja = await baixados();
+  if (!location.hash.startsWith("#/ouvir")) return; // trocou de tela enquanto carregava
+  const filaDe = t => t.faixas.map(f => Object.assign({ album: `CFG Tema ${t.numero} · ${t.titulo}` }, f));
+  const ultima = store.audio.faixa && lista.flatMap(t => t.faixas.map((f, i) => [t, i, f])).find(([, , f]) => f.arquivo === store.audio.faixa);
+  const cards = lista.map(t => {
+    const total = t.faixas.reduce((a, f) => a + f.seg, 0), tam = t.faixas.reduce((a, f) => a + f.bytes, 0);
+    const noCel = t.faixas.every(f => ja.has(urlFaixa(f)));
+    const info = el("p", { class: "nota" }, noCel ? "✓ Guardado no celular: toca sem internet." : `${mb(tam)} para guardar no celular.`);
+    const bt = noCel
+      ? el("button", { class: "btn peq leve", type: "button", onclick: () => removerTema(t) }, "Remover do celular")
+      : el("button", { class: "btn peq leve", type: "button", onclick: e => baixarTema(t, e.currentTarget, info) }, "Baixar para o carro");
+    let sub = null;
+    const itens = [];
+    t.faixas.forEach((f, i) => {
+      if (f.sub !== sub) { sub = f.sub; itens.push(el("li", { class: "sub-titulo" }, f.sub + " · " + f.titulo.split(" · ").slice(2).join(" · "))); }
+      itens.push(el("li", null, el("button", { type: "button", "data-arq": f.arquivo, onclick: () => tocar(filaDe(t), i) },
+        el("span", { class: "ic" }, f.rotulo.startsWith("Conte") ? "♪" : "?"), el("span", null, f.rotulo), el("span", { class: "st" }, duracao(f.seg)))));
+    });
+    return el("details", { class: "painel ouvir-tema", open: abertos.has(t.numero),
+        ontoggle: e => { e.currentTarget.open ? abertos.add(t.numero) : abertos.delete(t.numero); } },
+      el("summary", null, el("span", { class: "eyebrow" }, "Tema " + t.numero), el("b", null, t.titulo),
+        el("span", { class: "nota" }, `${t.faixas.length} faixas · ${duracao(total)}`)),
+      el("button", { class: "btn", type: "button", onclick: () => tocar(filaDe(t), 0) }, "▶ Ouvir o tema do início"),
+      el("ul", { class: "faixas" }, itens),
+      el("div", { class: "linha entre" }, info, bt));
+  });
+  render(
+    el("div", { class: "pilha" }, el("span", { class: "eyebrow" }, "Ouvir"), el("h1", { class: "titulo" }, "Estudar sem ler"),
+      el("p", { class: "muted" }, "Cada subtema tem uma faixa de conteúdo e uma de perguntas. Nas perguntas há uma pausa para você pensar antes da resposta. O tocador passa sozinho para a faixa seguinte e aceita os botões do carro e do fone.")),
+    ultima && !T.fila.length && el("button", { class: "btn cheio", type: "button", onclick: () => tocar(filaDe(ultima[0]), ultima[1], store.audio.t) },
+      "▶ Continuar: " + ultima[2].titulo),
+    lista.length ? cards : el("p", { class: "muted" }, "Ainda não há áudios."),
+    el("p", { class: "nota" }, "Para o carro: toque em “Baixar para o carro” com Wi-Fi. Depois os áudios tocam sem internet, também com a tela bloqueada.")
+  );
+  marcarTocando();
 }
 
 // ---------- mais: backup e pacotes ----------

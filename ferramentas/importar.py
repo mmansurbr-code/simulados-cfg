@@ -87,7 +87,8 @@ def main():
                        "arquivo": f"manuais/{p.name}", "topicos": len(tema["topicos"]), "questoes": len(tema["questoes"])})
         print(f"{tema['titulo']}: {len(tema['questoes'])} questões")
     (DADOS / "temas.json").write_text(json.dumps(indice, ensure_ascii=False, indent=1), encoding="utf-8")
-    atualiza_sw([f"dados/{t['arquivo']}" for t in indice])
+    extras = ["dados/audios.json"] if (DADOS / "audios.json").exists() else []
+    atualiza_sw([f"dados/{t['arquivo']}" for t in indice] + extras)
 
 
 def atualiza_sw(arquivos):

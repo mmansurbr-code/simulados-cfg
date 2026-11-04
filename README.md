@@ -29,6 +29,10 @@ Os 12 temas do programa estão cobertos: 768 questões comentadas.
 - **Estudar:** lê cada tópico, marca como lido e pratica só aquele subtema.
 - **Praticar:** treino (corrige a cada questão) ou simulado (3 min por questão,
   aprovação com 70%), filtrando por tema e por questões novas ou erradas.
+- **Ouvir:** cada subtema tem uma faixa de conteúdo e uma de perguntas (com
+  pausa para pensar antes da resposta), 17 horas no total. O tocador segue
+  sozinho para a próxima faixa e aceita os botões do carro e do fone; "Baixar
+  para o carro" guarda os áudios de um tema no celular para tocar sem internet.
 - **Progresso:** fica no aparelho. Em *Mais* dá para salvar um arquivo e
   carregar em outro aparelho.
 
@@ -40,7 +44,7 @@ Tudo fica em `apostilas/`:
 apostilas/html/        fonte de cada tema (apostila + simulado interativo)
 apostilas/impressao/   versão para imprimir (.docx e .pdf): apostila, simulado e gabarito comentado
 apostilas/kindle/      EPUBs
-apostilas/audio/       áudios
+apostilas/audio/       áudios (MP3 por tema) e roteiros/ com o texto falado
 ```
 
 ## Como atualizar o conteúdo
@@ -50,6 +54,12 @@ Depois de pôr ou alterar uma apostila em `apostilas/html/`:
 ```bash
 python ferramentas/importar.py
 python ferramentas/imprimir.py "apostilas/html/CFG Tema N - ... .html"
+```
+
+Para os áudios (precisa de internet; `pip install edge-tts imageio-ffmpeg`):
+
+```bash
+python ferramentas/audio.py 6      # um tema; sem número, todos
 ```
 
 O `importar.py` regenera `dados/` e atualiza em `sw.js` a lista de arquivos
@@ -66,6 +76,7 @@ apostilas/                          fontes, impressão, Kindle e áudio
 ferramentas/importar.py             apostilas HTML/EPUB -> dados/
 ferramentas/imprimir.py             apostila HTML -> .docx/.pdf para imprimir
 ferramentas/gerar_epub.py           apostilas HTML -> EPUB (Kindle)
+ferramentas/audio.py                roteiros e questões -> MP3 + dados/audios.json
 ferramentas/icones.py               gera os ícones PNG
 ```
 
