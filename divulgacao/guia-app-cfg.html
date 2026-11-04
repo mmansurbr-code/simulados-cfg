@@ -1,0 +1,183 @@
+<title>App de Estudo CFG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: uma folha A4 — faixa de título com endereço e QR, números, gráfico de questões por peso, abas do app e primeiros passos */
+:root{
+  --papel:#FBFAF7;
+  --tinta:#16233A;
+  --tinta-2:#4A5568;
+  --linha:#DCDFE5;
+  --marinho:#1C3F6E;
+  --alto:#D9822B;     /* peso 13–17% */
+  --medio:#2A8C82;    /* peso 8–12% */
+  --baixo:#9AA6B8;    /* peso 3–7% */
+  --fundo-suave:#EEF2F7;
+  --f-display:"Archivo","Segoe UI",Arial,sans-serif;
+  --f-texto:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",Consolas,monospace;
+  color-scheme:light;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:14px;line-height:1.4}
+.folha{max-width:820px;margin:0 auto;padding-block:20px 24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
+
+/* Topo */
+.topo{background:var(--marinho);color:#fff;border-radius:10px;padding:20px 22px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.selo{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#B9CCE6}
+.topo h1{font-family:var(--f-display);font-weight:800;font-size:30px;line-height:1.05;margin:6px 0 6px;text-wrap:balance}
+.topo p{margin:0;color:#DCE6F3;font-size:14.5px;max-width:46ch}
+.endereco{margin-top:12px;display:inline-block;background:#fff;color:var(--marinho);font-family:var(--f-mono);font-size:14px;font-weight:500;padding:7px 11px;border-radius:6px;word-break:break-all}
+.qr{background:#fff;border-radius:8px;padding:8px;width:122px;text-align:center}
+.qr svg,.qr img{display:block;width:106px;height:106px}
+.qr span{display:block;font-size:10px;color:var(--tinta-2);margin-top:3px}
+
+/* Números */
+.numeros{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.num{border-top:3px solid var(--marinho);padding-top:6px}
+.num b{display:block;font-family:var(--f-display);font-size:26px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.num span{font-size:12.5px;color:var(--tinta-2)}
+
+/* Meio: gráfico + abas */
+.meio{display:grid;grid-template-columns:1.15fr 1fr;gap:18px}
+h2{font-family:var(--f-display);font-size:15px;font-weight:700;margin:0 0 4px;letter-spacing:.01em}
+.sub{font-size:12px;color:var(--tinta-2);margin:0 0 8px}
+.legenda{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--tinta-2);margin-bottom:8px}
+.legenda i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.grafico{display:grid;grid-template-columns:auto 1fr;gap:4px 8px;align-items:center;font-size:12px}
+.grafico .rot{white-space:nowrap;color:var(--tinta)}
+.grafico .rot em{font-style:normal;font-family:var(--f-mono);font-size:10.5px;color:var(--tinta-2);margin-right:5px}
+.trilho{position:relative;height:14px}
+.barra{height:100%;border-radius:0 3px 3px 0;display:flex;align-items:center;justify-content:flex-end;padding-right:5px;color:#fff;font-family:var(--f-mono);font-size:10px;font-weight:500;min-width:26px}
+.barra.alto{background:var(--alto)}.barra.medio{background:var(--medio)}.barra.baixo{background:var(--baixo);color:var(--tinta)}
+.dica{margin-top:8px;font-size:12px;background:var(--fundo-suave);border-radius:6px;padding:7px 9px}
+
+.abas{display:flex;flex-direction:column;gap:8px}
+.aba{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:9px 10px;border:1px solid var(--linha);border-radius:8px;background:#fff}
+.ico{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;color:#fff}
+.ico svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.aba h3{margin:0;font-family:var(--f-display);font-size:13.5px;font-weight:700}
+.aba p{margin:2px 0 0;font-size:12.3px;color:var(--tinta-2);line-height:1.35}
+
+/* Passos */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.passo{background:var(--fundo-suave);border-radius:8px;padding:10px 11px}
+.passo>b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--marinho);color:#fff;font-size:12px;margin-bottom:4px}
+.passo h3{margin:0 0 3px;font-family:var(--f-display);font-size:13px}
+.passo p{margin:0;font-size:12px;color:var(--tinta-2);line-height:1.35}
+.rodape{font-size:11px;color:var(--tinta-2);border-top:1px solid var(--linha);padding-top:8px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+@media (max-width:640px){
+  .topo{grid-template-columns:1fr}
+  .qr{justify-self:start}
+  .numeros{grid-template-columns:repeat(2,1fr)}
+  .meio,.passos{grid-template-columns:1fr}
+}
+@media print{
+  body{font-size:13px}
+  .folha{max-width:none;width:210mm;height:297mm;padding:13mm 12mm 10mm;gap:20px;overflow:hidden}
+  .grafico{gap:6px 8px}.trilho{height:15px}.abas{gap:10px}
+  .meio{grid-template-columns:1.15fr 1fr}
+  .passos{grid-template-columns:repeat(3,1fr)}
+  .numeros{grid-template-columns:repeat(4,1fr)}
+  .topo{grid-template-columns:1fr auto}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+
+<main class="folha">
+  <header class="topo">
+    <div>
+      <div class="selo">Certificação CFG · ANBIMA</div>
+      <h1>App de Estudo CFG</h1>
+      <p>Apostilas, simulados comentados e áudios dos 12 temas da prova, no celular. Instala na tela inicial e funciona sem internet.</p>
+      <div class="endereco">mmansurbr-code.github.io/simulados-cfg</div>
+    </div>
+    <div class="qr" aria-label="QR code do endereço do app">
+      <div id="qr"></div>
+      <span>Aponte a câmera</span>
+    </div>
+  </header>
+
+  <section class="numeros" aria-label="O app em números">
+    <div class="num"><b>12</b><span>temas do programa, com apostila</span></div>
+    <div class="num"><b>768</b><span>questões com resposta comentada</span></div>
+    <div class="num"><b>17 h</b><span>de áudio em 123 faixas</span></div>
+    <div class="num"><b>70%</b><span>de acerto para passar no simulado</span></div>
+  </section>
+
+  <section class="meio">
+    <div>
+      <h2>Questões por tema e peso na prova</h2>
+      <p class="sub">A cor mostra quanto cada tema vale no exame.</p>
+      <div class="legenda">
+        <span><i style="background:var(--alto)"></i>13–17%</span>
+        <span><i style="background:var(--medio)"></i>8–12%</span>
+        <span><i style="background:var(--baixo)"></i>3–7%</span>
+      </div>
+      <div class="grafico" id="grafico"></div>
+      <div class="dica"><b>Comece pelos temas 5 e 9:</b> juntos valem até 34% da prova e têm poucas questões. Depois 1, 6, 11 e 12.</div>
+    </div>
+
+    <div class="abas">
+      <h2>O que tem em cada aba</h2>
+      <div class="aba">
+        <div class="ico" style="background:var(--marinho)"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg></div>
+        <div><h3>Início · Estudar</h3><p>Apostila de cada tema dividida em tópicos. Marque o que já leu e pratique só aquele subtema.</p></div>
+      </div>
+      <div class="aba">
+        <div class="ico" style="background:var(--medio)"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <div><h3>Praticar</h3><p><b>Treino</b> corrige a cada questão. <b>Simulado</b> dá 3 min por questão, como na prova. Filtre por tema, questões novas ou erradas.</p></div>
+      </div>
+      <div class="aba">
+        <div class="ico" style="background:var(--alto)"><svg viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z"/></svg></div>
+        <div><h3>Ouvir</h3><p>Cada subtema tem uma faixa de conteúdo e uma de perguntas, com pausa para pensar. Aceita os botões do carro e do fone.</p></div>
+      </div>
+      <div class="aba">
+        <div class="ico" style="background:var(--baixo)"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg></div>
+        <div><h3>Mais</h3><p>Seu progresso fica no celular. Aqui você salva um arquivo para levar o progresso a outro aparelho.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Para começar</h2>
+    <div class="passos">
+      <div class="passo"><b>1</b><h3>Abra o endereço</h3><p>Pelo QR code ou digitando o link no navegador do celular.</p></div>
+      <div class="passo"><b>2</b><h3>Instale na tela inicial</h3><p><b>Android:</b> menu ⋮ › Adicionar à tela inicial.<br><b>iPhone:</b> Safari › Compartilhar › Adicionar à Tela de Início.</p></div>
+      <div class="passo"><b>3</b><h3>Baixe os áudios no Wi-Fi</h3><p>Na aba Ouvir, toque em <b>Baixar para o carro</b> em cada tema. Cada tema ocupa de 15 a 43 MB.</p></div>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <span>Se aparecer “Há uma versão nova do conteúdo”, toque em <b>Atualizar</b>.</span>
+    <span>Material de apoio de estudo. Não substitui o edital oficial da ANBIMA.</span>
+  </footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const temas=[
+ [1,"Métodos Quantitativos",62,"medio"],
+ [2,"Economia",91,"baixo"],
+ [3,"Relatórios Financeiros",56,"baixo"],
+ [4,"Finanças Corporativas",80,"baixo"],
+ [5,"Mercados e Instrumentos",41,"alto"],
+ [6,"Teoria de Carteiras",78,"medio"],
+ [7,"Finanças Comportamentais",53,"baixo"],
+ [8,"Política de Investimento",54,"baixo"],
+ [9,"Alocação de Ativos",33,"alto"],
+ [10,"Novas Tecnologias",54,"baixo"],
+ [11,"Ética e Autorregulação",63,"medio"],
+ [12,"Legislação e Regulação",93,"medio"]
+];
+const max=100, g=document.getElementById("grafico");
+g.innerHTML=temas.map(([n,nome,q,p])=>
+ `<div class="rot"><em>${String(n).padStart(2,"0")}</em>${nome}</div><div class="trilho"><div class="barra ${p}" style="width:${q/max*100}%">${q}</div></div>`).join("");
+try{
+  const qr=qrcode(0,"M");qr.addData("https://mmansurbr-code.github.io/simulados-cfg/");qr.make();
+  document.getElementById("qr").innerHTML=qr.createSvgTag({cellSize:4,margin:0,scalable:true});
+}catch(e){document.getElementById("qr").textContent="QR indisponível";}
+</script>
