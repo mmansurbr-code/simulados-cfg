@@ -1,28 +1,30 @@
 """Converte as apostilas da pasta CFG em dados do app.
 
 Uso (a partir da pasta simulados-cfg):
-    python ferramentas/importar.py ..
+    python ferramentas/importar.py
 
-Lê as apostilas HTML (Tema N - ... .html) e, para temas cujo HTML não traz o
-simulado, as questões do EPUB "todos os temas" da pasta Kindle. Gera:
+Lê as apostilas HTML (apostilas/html/CFG Tema N - ... .html) e, para temas cujo
+HTML não traz o simulado, as questões do EPUB "todos os temas" de
+apostilas/kindle. Gera:
     dados/temas.json          índice dos temas
     dados/tema<N>.json        tópicos (HTML) e questões de cada tema
+e atualiza em sw.js a lista de arquivos guardados para uso offline e a VERSAO.
 """
-import html, json, re, sys, zipfile
+import hashlib, html, json, re, sys, zipfile
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(Path(sys.argv[1]).resolve() / "Kindle"))
+sys.path.insert(0, str(RAIZ / "ferramentas"))
 import gerar_epub  # noqa: E402  (reaproveita o leitor de apostilas do Kindle)
 
-ORIGEM = Path(sys.argv[1]).resolve()
+ORIGEM = RAIZ / "apostilas"
 DADOS = RAIZ / "dados"
 TXT = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 
 
 def questoes_do_epub(n):
     """Lê simulado + gabarito do tema n no EPUB (ordem original das alternativas)."""
-    epub = ORIGEM / "Kindle" / "CFG - Material de estudo (todos os temas).epub"
+    epub = ORIGEM / "kindle" / "CFG - Material de estudo (todos os temas).epub"
     z = zipfile.ZipFile(epub)
     try:
         s = z.read(f"OEBPS/t{n}_simulado.xhtml").decode("utf-8")
@@ -49,7 +51,7 @@ def fixa(opts):
 def main():
     DADOS.mkdir(exist_ok=True)
     indice = []
-    for p in sorted(ORIGEM.glob("CFG Tema *.html"), key=lambda p: int(re.search(r"Tema (\d+)", p.name).group(1))):
+    for p in sorted((ORIGEM / "html").glob("CFG Tema *.html"), key=lambda p: int(re.search(r"Tema (\d+)", p.name).group(1))):
         t = gerar_epub.parse_tema(p)
         n = t["tema"]
         src = p.read_text(encoding="utf-8")
@@ -85,6 +87,18 @@ def main():
                        "arquivo": f"manuais/{p.name}", "topicos": len(tema["topicos"]), "questoes": len(tema["questoes"])})
         print(f"{tema['titulo']}: {len(tema['questoes'])} questões")
     (DADOS / "temas.json").write_text(json.dumps(indice, ensure_ascii=False, indent=1), encoding="utf-8")
+    atualiza_sw([f"dados/{t['arquivo']}" for t in indice])
+
+
+def atualiza_sw(arquivos):
+    """Põe todos os temas no cache offline e troca a VERSAO quando o conteúdo muda."""
+    sw = RAIZ / "sw.js"
+    src = sw.read_text(encoding="utf-8")
+    linha = ", ".join(f'"{a}"' for a in ["dados/temas.json"] + arquivos) + ","
+    src = re.sub(r'^  "dados/.*$', lambda m: "  " + linha, src, flags=re.M)
+    h = hashlib.sha1(b"".join((RAIZ / a).read_bytes() for a in ["dados/temas.json"] + arquivos)).hexdigest()[:8]
+    src = re.sub(r'const VERSAO = "[^"]*";', f'const VERSAO = "cfg-{h}";', src)
+    sw.write_text(src, encoding="utf-8")
 
 
 if __name__ == "__main__":

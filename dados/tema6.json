@@ -1,0 +1,1065 @@
+{
+ "id": "t6",
+ "numero": 6,
+ "titulo": "Teoria Moderna de Carteiras e Modelos de Precificação de Ativos",
+ "resumo": "Apostila do tema 6, com peso de 8% a 12% na prova. Vai da utilidade esperada e da fronteira de Markowitz ao CAPM, ao APT e aos modelos de avaliação de ações por dividendos, fluxo de caixa livre e múltiplos. Cada bloco traz o conceito, a fórmula, um exemplo resolvido e as pegadinhas mais comuns.",
+ "topicos": [
+  {
+   "id": "t61",
+   "rotulo": "6.1 Teoria da utilidade esperada",
+   "html": "<div class=\"num\">6.1</div>\n  <h2>Teoria da utilidade esperada</h2>\n  <p class=\"why\">A base de tudo o que vem depois: como medir retorno e risco e como um investidor escolhe entre alternativas arriscadas.</p>\n\n  <h3>Risco e retorno na utilidade esperada</h3>\n  <ul>\n    <li><b>Retorno esperado:</b> a média dos retornos possíveis, ponderada pela probabilidade de cada cenário.</li>\n    <li><b>Risco:</b> a dispersão dos retornos em torno da média, medida pela <b>variância</b> (σ²) ou pelo <b>desvio-padrão</b> (σ).</li>\n    <li>O investidor não maximiza o retorno esperado, e sim a <b>utilidade esperada</b> da riqueza: a média, ponderada pelas probabilidades, da satisfação que cada resultado lhe dá. Dois investidores podem preferir carteiras diferentes diante das mesmas alternativas.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Medidas com cenários</span>E(R) = Σ pₛ · Rₛ<br>σ² = Σ pₛ · [Rₛ − E(R)]²   ·   σ = √σ²<br>Cov(A,B) = Σ pₛ · [R_A,ₛ − E(R_A)] · [R_B,ₛ − E(R_B)]<br>ρ(A,B) = Cov(A,B) / (σ_A · σ_B)   (entre −1 e +1)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo resolvido</span>\n    <div class=\"tbl\"><table>\n      <tr><th>Cenário</th><th>Probabilidade</th><th>Ação A</th><th>Ação B</th></tr>\n      <tr><td>Expansão</td><td class=\"n\">30%</td><td class=\"n\">20%</td><td class=\"n\">4%</td></tr>\n      <tr><td>Normal</td><td class=\"n\">50%</td><td class=\"n\">10%</td><td class=\"n\">8%</td></tr>\n      <tr><td>Recessão</td><td class=\"n\">20%</td><td class=\"n\">−10%</td><td class=\"n\">10%</td></tr>\n    </table></div>\n    <p><b>Retornos esperados:</b> E(A) = 0,3×20 + 0,5×10 + 0,2×(−10) = 6 + 5 − 2 = <b>9%</b>. E(B) = 0,3×4 + 0,5×8 + 0,2×10 = 1,2 + 4 + 2 = <b>7,2%</b>.</p>\n    <p><b>Variância de A:</b> 0,3×(11)² + 0,5×(1)² + 0,2×(−19)² = 36,3 + 0,5 + 72,2 = 109 (%²), então σ_A = √109 ≈ <b>10,44%</b>.</p>\n    <p><b>Variância de B:</b> 0,3×(−3,2)² + 0,5×(0,8)² + 0,2×(2,8)² = 3,072 + 0,32 + 1,568 = 4,96 (%²), então σ_B ≈ <b>2,23%</b>.</p>\n    <p><b>Covariância:</b> 0,3×(11)(−3,2) + 0,5×(1)(0,8) + 0,2×(−19)(2,8) = −10,56 + 0,40 − 10,64 = <b>−20,8</b> (%²).</p>\n    <p><b>Correlação:</b> −20,8 / (10,44 × 2,23) ≈ <b>−0,89</b>. B sobe quando A cai, o que é ótimo para diversificar.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Com probabilidades diferentes, não use a média simples. Aqui a média simples de A daria (20 + 10 − 10)/3 = 6,67%, e não 9%.</div>\n\n  <h3>Função de utilidade média-variância</h3>\n  <p>Na prática, a utilidade de uma carteira é resumida por retorno e risco. O resultado é o <b>equivalente certo</b>: a taxa sem risco que deixaria o investidor indiferente à carteira.</p>\n  <div class=\"formula\"><span class=\"lbl\">Utilidade (A = coeficiente de aversão ao risco)</span>U = E(R) − ½ · A · σ²   (retornos em decimal)<br>A &gt; 0: avesso   ·   A = 0: neutro   ·   A &lt; 0: propenso ao risco</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Investidor com A = 4. Carteira com E(R) = 10% e σ = 20%. U = 0,10 − 0,5 × 4 × 0,04 = 0,10 − 0,08 = <b>2%</b>. Se o título público rende 4% sem risco, ele prefere o título, embora a carteira tenha retorno esperado maior.</p>\n  </div>\n\n  <h3>Dominância estocástica</h3>\n  <ul>\n    <li><b>Dominância por média-variância:</b> A domina B se E(A) ≥ E(B) e σ_A ≤ σ_B, com pelo menos uma desigualdade estrita.</li>\n    <li><b>Dominância estocástica de 1ª ordem:</b> a distribuição acumulada de A fica sempre <b>abaixo ou igual</b> à de B. Em todo nível de retorno, a chance de ficar abaixo dele é menor (ou igual) em A. <b>Qualquer investidor que prefira mais a menos</b> (não saciável) escolhe A, seja ele avesso, neutro ou propenso ao risco.</li>\n    <li><b>Dominância estocástica de 2ª ordem:</b> a <b>área acumulada</b> sob a distribuição acumulada de A é sempre menor ou igual à de B. Vale para investidores <b>não saciáveis e avessos ao risco</b>. Caso típico: mesma média, mas A com menos dispersão.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Recomendando uma carteira</span>\n    <p><b>Caso 1:</b> A rende 8% ou 12%, e B rende 6% ou 12%, cada resultado com 50%. No cenário ruim A ganha (8 &gt; 6) e no bom empata. A domina B de <b>1ª ordem</b>: recomende A para qualquer investidor.</p>\n    <p><b>Caso 2:</b> C rende 10% com certeza. D rende 0% ou 20%, com 50% cada. As médias são iguais (10%), mas D tem risco. Não há dominância de 1ª ordem (D pode render 20%), mas C domina D de <b>2ª ordem</b>: recomende C para o investidor avesso ao risco. Um investidor propenso ao risco poderia preferir D.</p>\n  </div>\n\n  <h3>Formatos das curvas de utilidade</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Conceito</th><th>Curva U(riqueza)</th><th>Curva de indiferença no plano σ × E(R)</th><th>Comportamento</th></tr>\n    <tr><td><b>Não saciabilidade</b></td><td>Sempre <b>crescente</b> (U′ &gt; 0)</td><td>Curvas mais altas (mais a noroeste) são melhores</td><td>Mais riqueza é sempre preferível. Se houvesse saciedade, a curva ficaria plana a partir de certo nível de riqueza e mais dinheiro não traria utilidade adicional</td></tr>\n    <tr><td><b>Aversão ao risco</b></td><td><b>Côncava</b> (U″ &lt; 0): cada real a mais vale menos</td><td>Inclinação <b>positiva</b> e convexa: exige mais retorno para aceitar mais risco</td><td>Recusa um jogo justo. Paga para reduzir risco (seguro)</td></tr>\n    <tr><td><b>Neutralidade</b></td><td><b>Linear</b> (U″ = 0)</td><td><b>Horizontais</b>: só o retorno esperado importa</td><td>Indiferente a um jogo justo</td></tr>\n    <tr><td><b>Propensão ao risco</b></td><td><b>Convexa</b> (U″ &gt; 0)</td><td>Inclinação <b>negativa</b>: aceita menos retorno para ter mais risco</td><td>Aceita jogos justos e até desfavoráveis (loteria)</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Quanto mais avesso ao risco, mais <b>inclinada</b> é a curva de indiferença no plano risco × retorno. A curva horizontal é do investidor neutro, não do \"muito conservador\".</div>\n\n  <h3>Evidências de aversão ao risco</h3>\n  <ul>\n    <li>As pessoas <b>compram seguros</b>, pagando um prêmio maior que a perda esperada.</li>\n    <li>Historicamente, ações rendem mais que títulos públicos: existe um <b>prêmio de risco</b> positivo, que só faz sentido se o mercado exige compensação pelo risco.</li>\n    <li>Os investidores <b>diversificam</b> e, entre duas aplicações com o mesmo retorno esperado, escolhem a menos volátil.</li>\n    <li>A aversão ao risco costuma ser <b>decrescente em valor absoluto</b> conforme a riqueza aumenta: quem tem mais patrimônio arrisca mais reais.</li>\n  </ul>\n\n  <h3>Utilidade esperada × Teoria da Perspectiva</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Utilidade esperada (von Neumann-Morgenstern)</th><th>Teoria da Perspectiva (Kahneman e Tversky, 1979)</th></tr>\n    <tr><td>Natureza</td><td>Normativa: como um investidor racional <i>deveria</i> decidir</td><td>Descritiva: como as pessoas <i>de fato</i> decidem</td></tr>\n    <tr><td>Referência</td><td>Riqueza final total</td><td><b>Ganhos e perdas</b> em relação a um ponto de referência</td></tr>\n    <tr><td>Formato</td><td>Côncava em toda a extensão (avesso)</td><td>Em <b>S</b>: côncava nos ganhos e <b>convexa nas perdas</b></td></tr>\n    <tr><td>Perdas</td><td>Tratadas como menos riqueza</td><td><b>Aversão à perda:</b> a curva é mais inclinada nas perdas. Perder 100 dói cerca de 2 a 2,5 vezes mais do que ganhar 100 agrada</td></tr>\n    <tr><td>Probabilidades</td><td>Usadas como são</td><td>Distorcidas: probabilidades pequenas são superestimadas</td></tr>\n    <tr><td>Comportamento previsto</td><td>Aversão ao risco sempre</td><td>Avesso ao risco nos ganhos e <b>propenso ao risco nas perdas</b> (efeito disposição: segura a ação perdedora e vende a vencedora cedo). A forma de apresentar o problema (<i>framing</i>) muda a escolha</td></tr>\n  </table></div>"
+  },
+  {
+   "id": "t62",
+   "rotulo": "6.2 Fronteira eficiente",
+   "html": "<div class=\"num\">6.2</div>\n  <h2>Fronteira eficiente</h2>\n  <p class=\"why\">O modelo de Markowitz: como a correlação reduz o risco e como encontrar as melhores combinações de risco e retorno.</p>\n\n  <h3>Efeito da diversificação</h3>\n  <ul>\n    <li>O retorno esperado da carteira é sempre a <b>média ponderada</b> dos retornos dos ativos.</li>\n    <li>O risco da carteira é <b>menor ou igual</b> à média ponderada dos riscos. Só é igual quando a correlação é +1. Quanto menor a correlação, maior o ganho da diversificação.</li>\n    <li>Com muitos ativos, a variância de cada um deixa de importar e o que sobra é a <b>covariância média</b> entre eles.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Carteira com n ativos de pesos iguais</span>σp² = σ̄² / n + (1 − 1/n) · Cov̄   →   quando n cresce, σp² → Cov̄</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Ações com σ = 40% (σ² = 0,16) e correlação média de 0,3 (Cov̄ = 0,3 × 0,4 × 0,4 = 0,048). Com 10 ações: σp² = 0,016 + 0,9 × 0,048 = 0,0592, σp ≈ 24,3%. Com infinitas ações: σp² = 0,048, σp ≈ <b>21,9%</b>. Esse piso é o risco que a diversificação não elimina.</p>\n  </div>\n\n  <h3>Risco de carteira com dois e três ativos</h3>\n  <div class=\"formula\"><span class=\"lbl\">Dois ativos</span>E(Rp) = w_A · E(R_A) + w_B · E(R_B)<br>σp² = w_A²σ_A² + w_B²σ_B² + 2 · w_A · w_B · ρ_AB · σ_A · σ_B</div>\n  <div class=\"formula\"><span class=\"lbl\">Três ativos</span>σp² = w₁²σ₁² + w₂²σ₂² + w₃²σ₃² + 2w₁w₂ρ₁₂σ₁σ₂ + 2w₁w₃ρ₁₃σ₁σ₃ + 2w₂w₃ρ₂₃σ₂σ₃</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo com três ativos</span>\n    <p>Pesos 50%, 30% e 20%. σ₁ = 20%, σ₂ = 10%, σ₃ = 15%. ρ₁₂ = 0,2, ρ₁₃ = 0,5, ρ₂₃ = 0.</p>\n    <p>Termos de variância: 0,25×400 + 0,09×100 + 0,04×225 = 100 + 9 + 9 = 118. Termos de covariância: 2×0,5×0,3×0,2×20×10 = 12; 2×0,5×0,2×0,5×20×15 = 30; o terceiro é zero. σp² = 118 + 12 + 30 = 160 (%²), então σp ≈ <b>12,65%</b>, abaixo da média ponderada dos σ (16%).</p>\n  </div>\n\n  <h3>Correlação perfeita positiva, negativa e nula</h3>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: 50% em A e 50% em B</span>\n    <p>A: E(R) = 12%, σ = 20%. B: E(R) = 6%, σ = 10%. O retorno esperado é 9% em todos os casos.</p>\n    <div class=\"tbl\"><table>\n      <tr><th>Correlação</th><th>Conta</th><th>σ da carteira</th></tr>\n      <tr><td class=\"n\">ρ = +1</td><td>Média ponderada: 0,5×20 + 0,5×10</td><td class=\"n\"><b>15%</b> (nenhuma redução)</td></tr>\n      <tr><td class=\"n\">ρ = 0,3</td><td>√(100 + 25 + 2×0,25×0,3×200) = √155</td><td class=\"n\">12,45%</td></tr>\n      <tr><td class=\"n\">ρ = 0</td><td>√(0,25×400 + 0,25×100) = √125</td><td class=\"n\"><b>11,18%</b></td></tr>\n      <tr><td class=\"n\">ρ = −1</td><td>|0,5×20 − 0,5×10|</td><td class=\"n\"><b>5%</b></td></tr>\n    </table></div>\n  </div>\n  <div class=\"formula\"><span class=\"lbl\">ρ = −1: carteira de risco zero</span>w_A = σ_B / (σ_A + σ_B)   →   no exemplo: 10/30 = 33,3% em A e 66,7% em B<br>σp = |⅓×20 − ⅔×10| = 0   ·   E(Rp) = ⅓×12 + ⅔×6 = 8%</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Com ρ = +1 não há benefício de diversificação: o risco é a média ponderada. Com ρ = 0 ainda há benefício (e muito). Só com ρ = −1 é possível zerar o risco.</div>\n\n  <h3>Matriz de correlações (e de covariâncias)</h3>\n  <ul>\n    <li>É <b>quadrada</b> (n × n) e <b>simétrica</b>: ρ_AB = ρ_BA.</li>\n    <li>A <b>diagonal principal</b> é toda igual a <b>1</b> (correlação de um ativo com ele mesmo). Na matriz de covariâncias, a diagonal traz as <b>variâncias</b>.</li>\n    <li>Fora da diagonal há n(n − 1) células, mas só <b>n(n − 1)/2 correlações distintas</b>. Com 3 ativos são 3; com 10, são 45.</li>\n  </ul>\n\n  <h3>Curva envoltória, carteira de variância mínima e fronteira eficiente</h3>\n  <ul>\n    <li><b>Curva envoltória</b> (fronteira de variância mínima): no gráfico com σ no eixo horizontal e E(R) no vertical, é a linha que liga, para cada retorno esperado, a carteira de <b>menor risco</b> possível. Tem o formato de uma bala (hipérbole) deitada, aberta para a direita. Todas as carteiras possíveis ficam sobre ela ou à sua direita.</li>\n    <li><b>Carteira de variância mínima global (CVM):</b> o ponto <b>mais à esquerda</b> da curva envoltória. Nenhuma combinação tem risco menor.</li>\n    <li><b>Fronteira eficiente:</b> o trecho da curva envoltória <b>acima da CVM</b>. Abaixo dela, as carteiras são dominadas (há outra com o mesmo risco e mais retorno).</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">CVM com dois ativos</span>w_A = (σ_B² − ρ·σ_A·σ_B) / (σ_A² + σ_B² − 2ρ·σ_A·σ_B)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>σ_A = 20%, σ_B = 10%, ρ = 0. w_A = 100 / (400 + 100) = <b>20%</b> e w_B = 80%. σp² = 0,04×400 + 0,64×100 = 16 + 64 = 80, então σp ≈ <b>8,94%</b>, menor até que o risco do ativo B sozinho (10%).</p>\n  </div>\n\n  <h3>Carteira ótima e por que ela muda de investidor para investidor</h3>\n  <ul>\n    <li>A carteira ótima é o ponto em que a <b>curva de indiferença mais alta</b> do investidor <b>tangencia</b> a fronteira eficiente.</li>\n    <li>A fronteira é a mesma para todos que usam as mesmas estimativas, mas as curvas de indiferença dependem da aversão ao risco. O investidor mais avesso (curvas mais inclinadas) fica perto da CVM; o mais tolerante, mais acima e à direita na fronteira.</li>\n  </ul>\n\n  <h3>Limitações de Markowitz</h3>\n  <ul>\n    <li><b>Muitas estimativas:</b> para n ativos são n retornos, n variâncias e n(n − 1)/2 covariâncias, ou seja, <b>n(n + 3)/2</b> parâmetros. Com 100 ativos, são 5.150.</li>\n    <li><b>Sensível a erros de estimativa</b>, principalmente nos retornos esperados (\"maximizador de erros\"), o que gera carteiras instáveis e concentradas.</li>\n    <li>Modelo de <b>um período</b>; supõe que a variância descreve bem o risco (retornos normais ou utilidade quadrática); ignora custos de transação, impostos, liquidez e passivos.</li>\n    <li>Parâmetros históricos e correlações <b>mudam no tempo</b>, em especial em crises, quando tendem a subir.</li>\n  </ul>"
+  },
+  {
+   "id": "t63",
+   "rotulo": "6.3 A introdução do ativo livre de risco",
+   "html": "<div class=\"num\">6.3</div>\n  <h2>A introdução do ativo livre de risco</h2>\n  <p class=\"why\">Com um ativo sem risco, a fronteira curva vira uma reta e todos os investidores passam a carregar a mesma carteira de risco.</p>\n\n  <h3>Teorema da Separação (Tobin)</h3>\n  <ul>\n    <li>Combinando o ativo livre de risco com uma carteira de risco, as possibilidades formam uma <b>reta</b> que sai de Rf. A melhor reta é a que <b>tangencia</b> a fronteira eficiente. O ponto de tangência é a <b>carteira de mercado (M)</b>.</li>\n    <li>A decisão se separa em duas etapas:\n      <ul>\n        <li><b>Decisão de investimento</b> (igual para todos): qual carteira de risco ter. Resposta: M.</li>\n        <li><b>Decisão de financiamento</b> (pessoal): quanto pôr em M e quanto no ativo livre de risco, segundo a aversão ao risco.</li>\n      </ul></li>\n    <li>A nova fronteira eficiente é a reta. Ela domina a curva de Markowitz em todos os pontos, exceto em M, onde as duas se tocam.</li>\n  </ul>\n\n  <h3>Linha de Mercado de Capitais (CML) e alavancagem</h3>\n  <div class=\"formula\"><span class=\"lbl\">CML</span>E(Rp) = Rf + [(E(R_M) − Rf) / σ_M] · σp<br>Inclinação = índice de Sharpe de M   ·   peso em M = σp / σ_M</div>\n  <ul>\n    <li><b>Entre Rf e M:</b> carteira de empréstimo (parte aplicada em Rf, parte em M).</li>\n    <li><b>Em M:</b> 100% na carteira de mercado.</li>\n    <li><b>À direita de M:</b> carteira <b>alavancada</b>: o investidor toma emprestado a Rf e aplica mais de 100% em M. Retorno e risco crescem juntos, na mesma reta.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Rf = 5%, E(R_M) = 13%, σ_M = 20%. Inclinação = (13 − 5)/20 = 0,4.</p>\n    <p><b>Risco dado, retorno pedido:</b> σp = 10% → E(Rp) = 5 + 0,4 × 10 = <b>9%</b> (50% em M e 50% em Rf). σp = 30% → E(Rp) = 5 + 0,4 × 30 = <b>17%</b> (150% em M, tomando 50% emprestado).</p>\n    <p><b>Retorno dado, risco pedido:</b> E(Rp) = 11% → σp = (11 − 5)/0,4 = <b>15%</b> (75% em M).</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>A CML vale só para carteiras <b>eficientes</b> (Rf + M). Um ativo isolado fica abaixo dela, e seu retorno exigido vem da SML, que usa beta e não σ.</div>\n\n  <h3>Relaxando as hipóteses</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Hipótese relaxada</th><th>Efeito</th></tr>\n    <tr><td>Sem custos de transação e impostos</td><td>Com custos, não vale a pena corrigir pequenos desvios de preço: surge uma <b>faixa</b> em torno da SML em que os ativos não são arbitrados. Com impostos diferentes entre investidores, cada um enxerga retornos líquidos diferentes e as carteiras ótimas deixam de ser iguais.</td></tr>\n    <tr><td>Vendas a descoberto permitidas</td><td>Sem venda a descoberto (pesos ≥ 0), a fronteira eficiente fica <b>restrita</b>: igual ou abaixo da original e com um ponto final no ativo de maior retorno. Em equilíbrio, como todos os ativos têm peso positivo em M, o CAPM continua valendo.</td></tr>\n    <tr><td>Tomar e aplicar à taxa sem risco</td><td>Se a taxa de captação (Rb) é maior que a de aplicação (Rf), a CML <b>se quebra</b>: uma reta de Rf até a tangência M_L, um trecho curvo da fronteira e outra reta, menos inclinada, a partir da tangência com Rb. Sem ativo livre de risco algum, vale o <b>CAPM de beta zero</b> (Black), com SML mais plana e intercepto E(R_Z) &gt; Rf.</td></tr>\n    <tr><td>Expectativas homogêneas</td><td>Com expectativas diferentes, cada investidor calcula a sua fronteira e a <b>sua própria carteira tangente</b>. Não há mais uma única carteira de mercado ótima para todos; a carteira de mercado observada é uma média das carteiras individuais, e o CAPM vale só de forma aproximada.</td></tr>\n  </table></div>"
+  },
+  {
+   "id": "t64",
+   "rotulo": "6.4 Risco sistemático e não sistemático",
+   "html": "<div class=\"num\">6.4</div>\n  <h2>Risco sistemático e não sistemático</h2>\n  <p class=\"why\">Qual parte do risco o mercado paga e qual parte ele ignora.</p>\n\n  <h3>As duas parcelas do risco total</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Sistemático</th><th>Não sistemático</th></tr>\n    <tr><td>Outros nomes</td><td>De mercado, não diversificável</td><td>Específico, idiossincrático, diversificável</td></tr>\n    <tr><td>Origem</td><td>Fatores que afetam todos os ativos: juros, inflação, PIB, câmbio, crises políticas</td><td>Eventos da empresa ou do setor: greve, perda de um contrato, fraude, troca de diretoria</td></tr>\n    <tr><td>Medida</td><td><b>Beta</b> (β)</td><td>Variância do resíduo, σ²(e)</td></tr>\n    <tr><td>Com diversificação</td><td><b>Permanece</b></td><td><b>Tende a zero</b></td></tr>\n    <tr><td>Remunerado?</td><td><b>Sim</b> (prêmio de risco)</td><td><b>Não</b></td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Decomposição</span>σ_i² = β_i² · σ_M² + σ²(e_i)<br>R² = β_i² · σ_M² / σ_i²   (fração do risco que é sistemática)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>σ_i = 30%, β = 1,2, σ_M = 20%. Variância sistemática = 1,44 × 0,04 = 0,0576 (σ = 24%). Variância total = 0,09. Variância não sistemática = 0,09 − 0,0576 = 0,0324, ou seja, σ(e) = <b>18%</b>. R² = 0,0576/0,09 = <b>64%</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>As <b>variâncias</b> se somam, não os desvios-padrão. O risco específico do exemplo é 18%, e não 30% − 24% = 6%.</div>\n\n  <h3>Por que o risco diversificável não ganha prêmio</h3>\n  <ul>\n    <li>Um risco que pode ser eliminado de graça, apenas diversificando, não precisa ser carregado. Se ele pagasse prêmio, todos comprariam o ativo, diversificariam o risco e o preço subiria até o prêmio sumir.</li>\n    <li>O investidor marginal que forma os preços é diversificado. Para ele, só importa quanto o ativo contribui para o risco da carteira, isto é, o <b>beta</b>.</li>\n    <li>Consequência: dois ativos com o mesmo beta têm o mesmo retorno esperado, ainda que o risco total de um seja muito maior.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Atenção à redação</b>O programa escreve que o investidor \"não deveria esperar retorno adicional ao assumir risco sistemático\". A ideia cobrada é a do CAPM: só o risco <b>sistemático</b> é remunerado; quem assume risco <b>não sistemático</b> (diversificável) não deve esperar retorno adicional por ele.</div>"
+  },
+  {
+   "id": "t65",
+   "rotulo": "6.5 Beta e a reta característica",
+   "html": "<div class=\"num\">6.5</div>\n  <h2>Beta e a reta característica</h2>\n  <p class=\"why\">Como medir o risco sistemático de um ativo e estimá-lo por regressão.</p>\n\n  <h3>Beta</h3>\n  <ul>\n    <li>O beta mede a <b>sensibilidade</b> do retorno do ativo ao retorno do mercado. β = 1,3 significa que, em média, quando o mercado sobe 1%, o ativo sobe 1,3%.</li>\n    <li>β = 1: risco sistemático igual ao do mercado. β &gt; 1: agressivo. 0 &lt; β &lt; 1: defensivo. β = 0: sem risco sistemático. β &lt; 0: anda contra o mercado.</li>\n    <li>O beta de uma carteira é a <b>média ponderada</b> dos betas. O beta do mercado é 1.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Beta</span>β_i = Cov(R_i, R_M) / σ_M² = ρ_iM · σ_i / σ_M<br>β_carteira = Σ w_i · β_i</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplos</span>\n    <p>Cov(i, M) = 0,018 e σ_M = 12% (σ_M² = 0,0144): β = 0,018/0,0144 = <b>1,25</b>.</p>\n    <p>ρ = 0,6, σ_i = 30%, σ_M = 20%: β = 0,6 × 30/20 = <b>0,9</b>. Repare que o ativo é mais volátil que o mercado e mesmo assim tem beta menor que 1.</p>\n  </div>\n\n  <h3>Reta característica</h3>\n  <p>É a regressão linear dos retornos do ativo contra os retornos do mercado. Muitas vezes é escrita em excessos de retorno sobre Rf.</p>\n  <div class=\"formula\"><span class=\"lbl\">Reta característica</span>R_i,t = α_i + β_i · R_M,t + e_i,t<br>(ou R_i − Rf = α_i + β_i · (R_M − Rf) + e_i)<br>Inclinação (coeficiente angular): β = Cov(R_i, R_M) / Var(R_M)<br>Intercepto (coeficiente linear): α = R̄_i − β · R̄_M</div>\n  <ul>\n    <li>A <b>inclinação</b> é o beta: o risco sistemático.</li>\n    <li>O <b>intercepto</b> é o alfa: o retorno médio que não é explicado pelo mercado. Na versão em excessos de retorno, é o <b>alfa de Jensen</b>: positivo significa desempenho acima do previsto pelo CAPM.</li>\n    <li>A <b>dispersão dos pontos</b> em torno da reta é o risco não sistemático. O R² da regressão é a fração do risco total que é sistemática.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: estimando a reta com quatro períodos</span>\n    <div class=\"tbl\"><table>\n      <tr><th>Período</th><th>R_M</th><th>R_i</th><th>R_M − R̄_M</th><th>R_i − R̄_i</th><th>Produto</th><th>(R_M − R̄_M)²</th></tr>\n      <tr><td>1</td><td class=\"n\">4%</td><td class=\"n\">8%</td><td class=\"n\">2</td><td class=\"n\">4</td><td class=\"n\">8</td><td class=\"n\">4</td></tr>\n      <tr><td>2</td><td class=\"n\">−2%</td><td class=\"n\">−3%</td><td class=\"n\">−4</td><td class=\"n\">−7</td><td class=\"n\">28</td><td class=\"n\">16</td></tr>\n      <tr><td>3</td><td class=\"n\">6%</td><td class=\"n\">9%</td><td class=\"n\">4</td><td class=\"n\">5</td><td class=\"n\">20</td><td class=\"n\">16</td></tr>\n      <tr><td>4</td><td class=\"n\">0%</td><td class=\"n\">2%</td><td class=\"n\">−2</td><td class=\"n\">−2</td><td class=\"n\">4</td><td class=\"n\">4</td></tr>\n      <tr><td>Soma / média</td><td class=\"n\">R̄ = 2%</td><td class=\"n\">R̄ = 4%</td><td></td><td></td><td class=\"n\">60</td><td class=\"n\">40</td></tr>\n    </table></div>\n    <p>β = 60/40 = <b>1,5</b> (o divisor n se cancela). α = 4 − 1,5 × 2 = <b>1%</b>. Reta característica: R_i = 1% + 1,5 · R_M.</p>\n  </div>"
+  },
+  {
+   "id": "t66",
+   "rotulo": "6.6 Modelos de precificação de ações",
+   "html": "<div class=\"num\">6.6</div>\n  <h2>Modelos de precificação de ações</h2>\n  <p class=\"why\">O maior subtema: CAPM e SML para a taxa exigida, e os modelos de avaliação por dividendos, fluxo de caixa livre e múltiplos.</p>\n\n  <h3>Fatores</h3>\n  <p>Um <b>fator</b> é uma variável <b>sistemática</b>, comum a muitos ativos, que ajuda a explicar seus retornos: o retorno do mercado, o PIB, a inflação, os juros, o tamanho da empresa, a relação entre valor patrimonial e preço. A sensibilidade de cada ativo a um fator é o seu <b>beta</b> naquele fator. O CAPM é um modelo de <b>um fator</b> (a carteira de mercado).</p>\n\n  <h3>CAPM: premissas</h3>\n  <ul>\n    <li>Investidores <b>avessos ao risco</b> e que decidem por <b>média e variância</b>, num horizonte de <b>um período</b>.</li>\n    <li><b>Expectativas homogêneas</b>: todos estimam os mesmos retornos, variâncias e covariâncias.</li>\n    <li>Todos podem <b>aplicar e tomar emprestado à taxa livre de risco</b> sem limite.</li>\n    <li>Mercados perfeitos: <b>sem custos de transação nem impostos</b>, ativos infinitamente divisíveis, investidores <b>tomadores de preço</b> e informação disponível a todos.</li>\n    <li>Todos os ativos são negociáveis (inclusive os que formam a carteira de mercado).</li>\n  </ul>\n\n  <h3>CAPM e a SML</h3>\n  <div class=\"formula\"><span class=\"lbl\">CAPM / Security Market Line</span>E(R_i) = Rf + β_i · [E(R_M) − Rf]<br>[E(R_M) − Rf] = prêmio de risco de mercado   ·   β_i · [E(R_M) − Rf] = prêmio de risco do ativo</div>\n  <div class=\"ex\"><span class=\"lbl\">Calculando qualquer variável</span>\n    <p><b>Retorno exigido:</b> Rf = 10%, E(R_M) = 16%, β = 1,3. E(R) = 10 + 1,3 × 6 = <b>17,8%</b>.</p>\n    <p><b>Beta:</b> se E(R) = 14%, com Rf = 10% e E(R_M) = 16%: β = (14 − 10)/6 = <b>0,67</b>.</p>\n    <p><b>Retorno do mercado:</b> E(R) = 15%, Rf = 9%, β = 1,5. Prêmio de mercado = (15 − 9)/1,5 = 4%, então E(R_M) = <b>13%</b>.</p>\n    <p><b>Taxa livre de risco com dois ativos:</b> X tem β = 0,8 e E(R) = 10%; Y tem β = 1,6 e E(R) = 14%. Inclinação = (14 − 10)/(1,6 − 0,8) = 5% por unidade de beta. Rf = 10 − 0,8 × 5 = <b>6%</b>.</p>\n  </div>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>CML</th><th>SML</th></tr>\n    <tr><td>Eixo horizontal</td><td>Risco total (σ)</td><td><b>Beta</b> (risco sistemático)</td></tr>\n    <tr><td>Vale para</td><td>Apenas carteiras eficientes</td><td><b>Qualquer</b> ativo ou carteira, eficiente ou não</td></tr>\n    <tr><td>Inclinação</td><td>(E(R_M) − Rf)/σ_M</td><td>E(R_M) − Rf</td></tr>\n  </table></div>\n\n  <h3>Ação subavaliada ou superavaliada</h3>\n  <ul>\n    <li>Compare o <b>retorno esperado pelo analista</b> (pelo preço atual e pelas projeções) com o <b>retorno exigido</b> pelo CAPM. A diferença é o alfa.</li>\n    <li>Esperado &gt; exigido: o ponto fica <b>acima da SML</b>, a ação está <b>subavaliada</b> (barata) → <b>comprar</b>.</li>\n    <li>Esperado &lt; exigido: <b>abaixo da SML</b>, <b>superavaliada</b> (cara) → <b>vender</b> ou vender a descoberto.</li>\n    <li>Sobre a SML: <b>corretamente avaliada</b>.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Ação a R$ 50, com preço esperado de R$ 55 em um ano e dividendo de R$ 2. Retorno esperado = (55 + 2 − 50)/50 = <b>14%</b>. Com β = 1,0, Rf = 8% e E(R_M) = 15%, o CAPM exige 15%. Alfa = 14 − 15 = −1%: ponto abaixo da SML, ação <b>superavaliada</b>, a decisão é vender.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Acima da SML é <b>barata</b>, não cara. Se o ativo oferece mais retorno do que o risco exige, é porque o preço está baixo. Com a compra, o preço sobe e o retorno cai até a SML.</div>\n\n  <h3>Problemas e críticas ao CAPM</h3>\n  <ul>\n    <li><b>Crítica de Roll:</b> a verdadeira carteira de mercado (todos os ativos, inclusive imóveis e capital humano) não é observável. Testar o CAPM com um índice de ações testa apenas se esse índice é eficiente.</li>\n    <li>O <b>beta é instável</b> e depende do período, da frequência dos dados e do índice usado.</li>\n    <li>Na prática a SML observada é <b>mais plana</b>: ativos de beta baixo rendem mais e os de beta alto, menos do que o previsto.</li>\n    <li><b>Anomalias:</b> tamanho, valor (P/VPA baixo), momento. Fatores além do beta explicam retornos, o que deu origem aos modelos multifatores.</li>\n    <li>As <b>premissas são irreais</b>: um período, sem custos e impostos, captação ilimitada à taxa livre de risco, expectativas homogêneas.</li>\n  </ul>\n\n  <h3>Fluxo de caixa descontado: dividendos ou fluxo de caixa livre?</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Dividendos (DDM)</th><th>Fluxo de caixa livre (FCFF/FCFE)</th></tr>\n    <tr><td>Vantagens</td><td>Simples; é o que o minoritário de fato recebe; dividendos são menos voláteis que lucros</td><td>Mede a capacidade de gerar caixa; serve para empresas que não pagam dividendos</td></tr>\n    <tr><td>Desvantagens</td><td>Depende da política de dividendos, que pode não refletir a capacidade de pagar</td><td>Exige mais projeções; o FCF pode ser negativo em fases de investimento</td></tr>\n    <tr><td>Use quando</td><td>A empresa paga dividendos; a política é estável e ligada à lucratividade; a análise é do ponto de vista do <b>minoritário</b></td><td>A empresa não paga ou paga muito diferente da capacidade; o FCF acompanha a lucratividade; a análise é do ponto de vista do <b>controle</b> (aquisição)</td></tr>\n  </table></div>\n\n  <h3>Modelo de Gordon (crescimento constante)</h3>\n  <div class=\"formula\"><span class=\"lbl\">Gordon</span>V₀ = D₁ / (r − g) = D₀ · (1 + g) / (r − g)   (exige r &gt; g)<br>r = D₁ / P₀ + g   (dividend yield esperado + crescimento)<br>Prêmio de risco = D₁ / P₀ + g − Rf</div>\n  <ul>\n    <li><b>Premissas:</b> dividendos crescem a uma taxa <b>constante para sempre</b>; r e g constantes; <b>r &gt; g</b>; o payout e o ROE são estáveis.</li>\n    <li><b>Quando usar:</b> empresa <b>madura e estável</b>, que paga dividendos com política previsível e cresce a uma taxa igual ou inferior à da economia (setores como energia elétrica e saneamento). Também serve para estimar a taxa exigida ou o prêmio de risco implícito de um índice.</li>\n    <li><b>Limitações:</b> muito <b>sensível a r − g</b>; não funciona se g ≥ r; não serve para empresas em forte crescimento, com crescimento irregular ou que não pagam dividendos.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo com taxa exigida pelo CAPM</span>\n    <p>Rf = 6%, β = 1,2, prêmio de mercado = 5%. r = 6 + 1,2 × 5 = <b>12%</b>. Último dividendo pago D₀ = R$ 2,00, g = 5%. D₁ = 2,00 × 1,05 = 2,10. V₀ = 2,10/(0,12 − 0,05) = <b>R$ 30,00</b>.</p>\n  </div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: prêmio de risco pelo Gordon</span>\n    <p>O índice tem dividend yield esperado de 4%, e os dividendos devem crescer 6% ao ano. A taxa livre de risco é 7%. Retorno exigido implícito = 4 + 6 = 10%. Prêmio de risco = 10 − 7 = <b>3%</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O Gordon usa o dividendo do <b>próximo</b> ano (D₁). Se o enunciado dá o último dividendo pago (D₀), multiplique por (1 + g). No exemplo, usar D₀ daria 28,57 em vez de 30.</div>\n\n  <h3>Estimando as variáveis do DDM</h3>\n  <ul>\n    <li><b>Taxa exigida (r):</b> em geral vem do CAPM (Rf + β × prêmio), do Gordon invertido (D₁/P₀ + g) ou de um modelo multifator.</li>\n    <li><b>Crescimento (g):</b> pela <b>média geométrica</b> do histórico de dividendos, pelo <b>crescimento sustentável</b> (g = b × ROE) ou por projeções de analistas.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Crescimento</span>Média geométrica: g = (D_final / D_inicial)^(1/n) − 1   (n = número de intervalos)<br>Sustentável: g = b × ROE   ·   b = taxa de retenção = 1 − payout<br>DuPont: ROE = (Lucro líquido / Receita) × (Receita / Ativo) × (Ativo / PL) = margem × giro × alavancagem</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplos</span>\n    <p><b>Média geométrica:</b> dividendos de R$ 1,00 em 2021 e R$ 1,4641 em 2025 (4 intervalos). g = (1,4641)^(1/4) − 1 = <b>10%</b>. A média aritmética do crescimento acumulado (46,41%/4 = 11,6%) está errada.</p>\n    <p><b>DuPont + payout:</b> margem líquida 10%, giro 1,2, alavancagem 1,5 → ROE = 0,10 × 1,2 × 1,5 = 18%. Payout de 40% → b = 60%. g = 0,6 × 18% = <b>10,8%</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Na fórmula de crescimento sustentável entra a <b>retenção</b> (b), não o payout. Com payout de 40%, b é 60%.</div>\n\n  <h3>DDM para um, dois e vários períodos</h3>\n  <div class=\"formula\"><span class=\"lbl\">DDM</span>Um período: V₀ = (D₁ + P₁) / (1 + r)<br>Vários períodos: V₀ = D₁/(1+r) + D₂/(1+r)² + … + (D_n + P_n)/(1+r)ⁿ<br>Dois estágios: dividendos do 1º estágio a valor presente + P_n/(1+r)ⁿ, com P_n = D_(n+1)/(r − g_longo)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo de um período</span>\n    <p>D₁ = R$ 2, preço esperado em um ano P₁ = R$ 40, r = 10%. V₀ = (2 + 40)/1,10 = <b>R$ 38,18</b>.</p>\n  </div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo de dois estágios</span>\n    <p>D₀ = R$ 1,00. Crescimento de 20% nos anos 1 e 2 e de 5% para sempre depois disso. r = 12%.</p>\n    <p>D₁ = 1,20. D₂ = 1,44. D₃ = 1,44 × 1,05 = 1,512. Valor terminal no ano 2: P₂ = 1,512/(0,12 − 0,05) = 21,60.</p>\n    <p>V₀ = 1,20/1,12 + (1,44 + 21,60)/1,12² = 1,0714 + 23,04/1,2544 = 1,0714 + 18,3673 = <b>R$ 19,44</b>.</p>\n  </div>\n  <ul>\n    <li><b>Vantagens do DDM:</b> base teórica clara (o valor é o que o acionista recebe); os estágios permitem modelar uma fase de crescimento alto seguida de maturidade.</li>\n    <li><b>Limitações:</b> depende muito do valor terminal (que costuma ser a maior parte do valor) e das premissas de r e g; não serve para empresas que não pagam dividendos; a passagem brusca entre estágios é pouco realista (o modelo H e o de três estágios suavizam isso).</li>\n  </ul>\n\n  <h3>Valor terminal</h3>\n  <p>É o valor, no fim do horizonte explícito, de todos os fluxos posteriores. Há dois métodos:</p>\n  <ul>\n    <li><b>Gordon:</b> P_n = D_(n+1)/(r − g). Consistente com os fundamentos, mas muito sensível a g.</li>\n    <li><b>Múltiplo:</b> P_n = múltiplo justo (P/L, EV/EBITDA) × métrica do ano n (ou n + 1). Prático, mas importa para o modelo os eventuais erros de preço dos comparáveis.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo com múltiplo</span>\n    <p>Lucro por ação projetado para o ano 3: R$ 3,00. P/L terminal de 12x. Valor terminal no ano 3 = 12 × 3 = <b>R$ 36,00</b>. A valor presente, com r = 12%: 36/1,12³ = 36/1,4049 ≈ R$ 25,62.</p>\n  </div>\n\n  <h3>FCFF e FCFE</h3>\n  <ul>\n    <li><b>FCFF</b> (fluxo de caixa livre para a firma): o caixa disponível para <b>todos os financiadores</b> (credores e acionistas) depois dos impostos, do capex e do capital de giro. Desconta-se pelo <b>WACC</b> e obtém-se o <b>valor da firma</b>; subtraindo a dívida, chega-se ao valor do patrimônio.</li>\n    <li><b>FCFE</b> (fluxo de caixa livre para o acionista): o que sobra para os <b>acionistas</b> depois também de pagar juros e de captar ou amortizar dívida. Desconta-se pelo <b>custo do capital próprio (r)</b> e obtém-se <b>direto o valor do patrimônio</b>.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Taxas</span>FCFF → WACC = w_E · r_E + w_D · r_D · (1 − t)<br>FCFE → r_E (custo do capital próprio, por exemplo pelo CAPM)</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Descontar FCFE pelo WACC (ou FCFF por r_E) é erro de consistência. Fluxo da firma vai com taxa da firma; fluxo do acionista, com taxa do acionista.</div>\n\n  <h3>Calculando FCFF e FCFE a partir das demonstrações</h3>\n  <div class=\"formula\"><span class=\"lbl\">FCFF</span>A partir do lucro líquido: FCFF = LL + D&amp;A + Juros·(1 − t) − FCInv − WCInv<br>A partir do EBIT: FCFF = EBIT·(1 − t) + D&amp;A − FCInv − WCInv<br>A partir do EBITDA: FCFF = EBITDA·(1 − t) + D&amp;A·t − FCInv − WCInv<br>A partir do CFO: FCFF = CFO + Juros·(1 − t) − FCInv</div>\n  <div class=\"formula\"><span class=\"lbl\">FCFE</span>FCFE = FCFF − Juros·(1 − t) + Endividamento líquido<br>FCFE = LL + D&amp;A − FCInv − WCInv + Endividamento líquido<br>FCFE = CFO − FCInv + Endividamento líquido</div>\n  <p>FCInv = investimento em capital fixo (capex líquido). WCInv = investimento em capital de giro. D&amp;A = depreciação e amortização (despesas que não saem do caixa). Endividamento líquido = novas dívidas − amortizações.</p>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo com as quatro bases</span>\n    <p>EBIT = 500, D&amp;A = 100, juros = 50, alíquota = 30%, FCInv = 150, WCInv = 30, endividamento líquido = +40. Lucro líquido = (500 − 50) × 0,7 = 315. EBITDA = 600. CFO = LL + D&amp;A − WCInv = 385.</p>\n    <div class=\"tbl\"><table>\n      <tr><th>Base</th><th>Conta</th><th>FCFF</th></tr>\n      <tr><td>Lucro líquido</td><td>315 + 100 + 50×0,7 − 150 − 30</td><td class=\"n\">270</td></tr>\n      <tr><td>EBIT</td><td>500×0,7 + 100 − 150 − 30</td><td class=\"n\">270</td></tr>\n      <tr><td>EBITDA</td><td>600×0,7 + 100×0,3 − 150 − 30</td><td class=\"n\">270</td></tr>\n      <tr><td>CFO</td><td>385 + 35 − 150</td><td class=\"n\">270</td></tr>\n    </table></div>\n    <p>FCFE = 270 − 35 + 40 = <b>275</b>. Pelo lucro líquido: 315 + 100 − 150 − 30 + 40 = 275.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Na conta a partir do EBITDA, a depreciação volta só pelo <b>benefício fiscal</b> (D&amp;A × t), porque o EBITDA já está antes da depreciação. E os juros entram <b>líquidos de imposto</b> no FCFF, porque o benefício fiscal da dívida já está no WACC.</div>\n\n  <h3>Projetando FCFF e FCFE</h3>\n  <ul>\n    <li><b>Crescimento constante:</b> aplica-se uma taxa de crescimento ao fluxo atual (FCFF₁ = FCFF₀ × (1 + g)). Simples, mas só vale se a relação entre os componentes for estável.</li>\n    <li><b>Projeção por componentes</b> (mais comum): projetam-se as vendas e, a partir delas, o EBIT, o capex e o capital de giro, em geral como <b>percentual do aumento das vendas</b>. Para o FCFE, supõe-se uma proporção alvo de dívida (DR) financiando os investimentos líquidos: FCFE = LL − (1 − DR) × (FCInv − D&amp;A) − (1 − DR) × WCInv.</li>\n  </ul>\n\n  <h3>Lucro líquido e EBITDA não são fluxo de caixa</h3>\n  <ul>\n    <li><b>Lucro líquido:</b> inclui despesas sem caixa (depreciação, provisões), ganhos e perdas não recorrentes e <b>ignora</b> os investimentos em capital fixo e de giro.</li>\n    <li><b>EBITDA:</b> é um fluxo antes de juros, então é medida <b>da firma</b> e, se usado, deve ir contra o valor da firma (EV). Mas ignora os <b>impostos</b> pagos e os <b>investimentos</b> necessários para manter a operação, por isso superestima o caixa disponível, sobretudo em empresas intensivas em capital.</li>\n  </ul>\n\n  <h3>Modelos de um e de dois estágios</h3>\n  <div class=\"formula\"><span class=\"lbl\">Um estágio (crescimento estável)</span>Valor da firma = FCFF₁ / (WACC − g)   ·   Patrimônio = Valor da firma − Dívida<br>Patrimônio = FCFE₁ / (r − g)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo de um estágio</span>\n    <p>FCFF₀ = 270, g = 4%, WACC = 10%, dívida = 1.000, 100 ações. FCFF₁ = 280,8. Firma = 280,8/0,06 = 4.680. Patrimônio = 3.680, ou <b>R$ 36,80 por ação</b>.</p>\n  </div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo de dois estágios</span>\n    <p>FCFF₁ = 100, FCFF₂ = 110, depois crescimento de 4% para sempre. WACC = 10%, dívida = 500. Valor terminal no ano 2 = 110 × 1,04/(0,10 − 0,04) = 1.906,67. Firma = 100/1,1 + (110 + 1.906,67)/1,1² = 90,91 + 1.666,67 = 1.757,58. Patrimônio = 1.757,58 − 500 = <b>1.257,58</b>.</p>\n  </div>\n  <ul>\n    <li><b>Um estágio:</b> empresa <b>madura</b>, crescendo perto da economia, com capex próximo da depreciação e estrutura de capital estável.</li>\n    <li><b>Dois estágios:</b> empresa com uma fase de <b>crescimento alto</b> (ou de investimentos fortes, com FCF baixo ou negativo) que depois converge para a maturidade. A premissa é que a passagem de uma fase para a outra é brusca.</li>\n  </ul>\n\n  <h3>Análise de sensibilidade</h3>\n  <p>Mostra como o valor muda quando se alteram as premissas incertas, em especial a <b>taxa de desconto</b>, o <b>crescimento</b> de longo prazo e as margens. Ajuda a ver quais variáveis merecem mais pesquisa e qual a faixa razoável de valor.</p>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>D₁ = R$ 2. Com r = 10% e g = 5%: V = 2/0,05 = R$ 40. Se g sobe para 6%: V = 2/0,04 = R$ 50 (+25%). Se r sobe para 11% com g = 5%: V = 2/0,06 = R$ 33,33 (−17%). Quanto menor r − g, mais explosiva a sensibilidade.</p>\n  </div>\n\n  <h3>Quando o FCFF é preferível ao FCFE</h3>\n  <ul>\n    <li>Empresa <b>muito alavancada</b> ou com <b>estrutura de capital em mudança</b>: projetar FCFE exigiria projetar cada captação e amortização, e o FCFE fica volátil.</li>\n    <li>FCFE <b>negativo</b> (por exemplo, por amortizações pesadas), enquanto o FCFF é positivo.</li>\n    <li>Análise de <b>aquisição</b> ou de toda a firma.</li>\n    <li><b>Vantagens do FCFE:</b> vai direto ao valor do acionista e é adequado para empresas com dívida estável. <b>Limitações:</b> fica distorcido por mudanças no endividamento e pode ser negativo.</li>\n  </ul>\n\n  <h3>Avaliação por múltiplos</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Múltiplo</th><th>Uso típico</th><th>Cuidado</th></tr>\n    <tr><td><b>P/L</b> (preço/lucro)</td><td>O mais usado; empresas lucrativas</td><td>Não serve com lucro negativo; o lucro tem itens não recorrentes</td></tr>\n    <tr><td><b>P/VPA</b> (preço/valor patrimonial)</td><td>Bancos e empresas intensivas em ativos financeiros</td><td>Ignora intangíveis</td></tr>\n    <tr><td><b>P/Receita</b></td><td>Empresas com prejuízo ou jovens</td><td>Ignora margens e custos</td></tr>\n    <tr><td><b>P/FCL</b></td><td>Empresas com caixa estável</td><td>FCL pode oscilar muito</td></tr>\n    <tr><td><b>EV/EBITDA</b></td><td>Comparar empresas com estruturas de capital diferentes e intensivas em capital</td><td>Ignora capex e impostos</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Importância dos fundamentos:</b> um múltiplo só é comparável se as empresas tiverem risco (r), crescimento (g) e payout parecidos. O P/L justificado mostra isso: mais crescimento e menos risco justificam múltiplo maior.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Múltiplos</span>P/L justificado (lucro futuro): P₀/L₁ = payout / (r − g)<br>PEG = (P/L) / g   (g em pontos percentuais)<br>EV = valor de mercado das ações + dívida bruta − caixa (+ minoritários + preferenciais)<br>EV/EBITDA = EV / EBITDA</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplos</span>\n    <p><b>P/L justificado:</b> payout 40%, r = 12%, g = 8%: P₀/L₁ = 0,40/0,04 = <b>10x</b>.</p>\n    <p><b>PEG:</b> P/L de 15x e crescimento esperado de 12% ao ano: PEG = 15/12 = <b>1,25</b>. PEG abaixo de 1 sugere ação barata em relação ao crescimento; entre empresas comparáveis, prefere-se a de menor PEG. O PEG supõe relação linear entre P/L e crescimento e ignora o risco.</p>\n    <p><b>EV/EBITDA:</b> valor de mercado R$ 800 milhões, dívida R$ 300 milhões, caixa R$ 100 milhões. EV = 800 + 300 − 100 = 1.000. EBITDA = 125. EV/EBITDA = <b>8x</b>.</p>\n    <p><b>Avaliando pelo múltiplo:</b> os pares negociam a 7x EV/EBITDA. A empresa tem EBITDA de 200, dívida líquida de 400 e 50 ações. EV = 1.400. Patrimônio = 1.400 − 400 = 1.000. Preço justo = <b>R$ 20 por ação</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>EV/EBITDA dá o valor da <b>firma</b>: é preciso subtrair a dívida líquida para chegar às ações. Já o P/L multiplicado pelo lucro dá direto o valor das ações.</div>\n\n  <h3>Múltiplos no valor terminal de um DCF</h3>\n  <ul>\n    <li>No DCF de vários estágios, o valor terminal pode ser calculado como <b>múltiplo × métrica do último ano</b> (ex.: EV/EBITDA terminal × EBITDA do ano n, para FCFF; P/L terminal × lucro, para DDM ou FCFE).</li>\n    <li><b>Vantagem:</b> ancorado no mercado e fácil de explicar. <b>Desvantagem:</b> se os comparáveis estão caros ou baratos, o erro passa para o valor; e o múltiplo atual pode não ser adequado para uma empresa já madura no ano n.</li>\n    <li>Boa prática: comparar com o valor terminal por Gordon e verificar o crescimento implícito no múltiplo.</li>\n  </ul>"
+  },
+  {
+   "id": "t67",
+   "rotulo": "6.7 Modelos de índice",
+   "html": "<div class=\"num\">6.7</div>\n  <h2>Modelos de índice</h2>\n  <p class=\"why\">A simplificação de Sharpe: todos os ativos se relacionam só por meio de um índice comum.</p>\n\n  <h3>Modelo de índice único</h3>\n  <ul>\n    <li>Supõe que os retornos dos ativos só se movem juntos porque reagem a um mesmo <b>índice</b> (o mercado). Os resíduos de ativos diferentes não são correlacionados.</li>\n    <li>Com isso, as covariâncias saem dos betas e o número de estimativas cai de n(n + 3)/2 para <b>3n + 2</b> (n alfas, n betas, n variâncias residuais, além do retorno esperado e da variância do índice). Com 100 ativos: 302, em vez de 5.150.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Modelo de índice único</span>R_i = α_i + β_i · R_M + e_i<br>E(R_i) = α_i + β_i · E(R_M)<br>σ_i² = β_i² · σ_M² + σ²(e_i)   ·   Cov(R_i, R_j) = β_i · β_j · σ_M²</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>α = 1%, β = 1,2, E(R_M) = 10%. E(R) = 1 + 1,2 × 10 = <b>13%</b>.</p>\n    <p>Covariância entre A (β = 1,2) e B (β = 0,8) com σ_M = 20%: 1,2 × 0,8 × 0,04 = <b>0,0384</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>No modelo de índice, o α é parte do retorno esperado (intercepto da regressão em retornos totais). No CAPM em equilíbrio, o alfa esperado é zero.</div>"
+  },
+  {
+   "id": "t68",
+   "rotulo": "6.8 Modelos multifatores",
+   "html": "<div class=\"num\">6.8</div>\n  <h2>Modelos multifatores</h2>\n  <p class=\"why\">Quando um só fator não explica bem os retornos: modelos macroeconômicos, APT e modelos de fatores fundamentais.</p>\n\n  <h3>Tipos de modelos multifatores</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Tipo</th><th>Fatores</th><th>Sensibilidades</th></tr>\n    <tr><td><b>Macroeconômico</b></td><td><b>Surpresas</b> em variáveis da economia (PIB, inflação, juros, confiança)</td><td>Estimadas por regressão</td></tr>\n    <tr><td><b>Fundamental</b></td><td>Retornos associados a atributos das empresas (P/L, tamanho, dividend yield, alavancagem)</td><td>Os próprios atributos, <b>padronizados</b></td></tr>\n    <tr><td><b>Estatístico</b></td><td>Extraídos dos dados (análise fatorial, componentes principais)</td><td>Estimadas; os fatores não têm interpretação econômica clara</td></tr>\n  </table></div>\n\n  <h3>Modelo de fatores macroeconômicos</h3>\n  <div class=\"formula\"><span class=\"lbl\">Modelo macro</span>R_i = E(R_i) + b_i1 · F₁ + b_i2 · F₂ + … + e_i<br>F = surpresa do fator = valor realizado − valor esperado</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Ação com E(R) = 10%, sensibilidade de 1,5 ao PIB e de −0,8 à inflação. Esperava-se PIB de 3% e veio 4% (surpresa +1). Esperava-se inflação de 4% e veio 4,5% (surpresa +0,5). R = 10 + 1,5 × 1 − 0,8 × 0,5 = 10 + 1,5 − 0,4 = <b>11,1%</b> (com resíduo zero).</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>No modelo macro, o fator é a <b>surpresa</b>, não o nível. Usar o PIB de 4% e a inflação de 4,5% inteiros é o erro clássico. Se não houver surpresa alguma, o retorno é o esperado.</div>\n\n  <h3>APT (Arbitrage Pricing Theory), Ross (1976)</h3>\n  <ul>\n    <li><b>Premissas:</b> os retornos seguem um modelo de fatores; há ativos suficientes para formar carteiras <b>bem diversificadas</b> (risco específico eliminado); e <b>não existem oportunidades de arbitragem</b> persistentes.</li>\n    <li>Conclusão: carteiras com a mesma exposição aos fatores precisam ter o mesmo retorno esperado. Caso contrário, compra-se a mais barata, vende-se a mais cara e lucra-se sem risco e sem capital.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">APT</span>Um fator: E(R_i) = Rf + β_i · λ₁<br>Vários fatores: E(R_i) = Rf + β_i1 · λ₁ + β_i2 · λ₂ + … + β_ik · λ_k<br>λ = prêmio de risco do fator (retorno de uma carteira com β = 1 no fator − Rf)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplos</span>\n    <p><b>Um fator:</b> Rf = 5%, λ = 6%, β = 1,2. E(R) = 5 + 1,2 × 6 = <b>12,2%</b>.</p>\n    <p><b>Dois fatores:</b> Rf = 5%, λ₁ = 4%, λ₂ = 2%, β₁ = 1,2, β₂ = 0,5. E(R) = 5 + 4,8 + 1,0 = <b>10,8%</b>.</p>\n    <p><b>Arbitragem:</b> as carteiras bem diversificadas A e B têm β = 1 no único fator, mas A promete 12% e B 10%. Compra-se A e vende-se B no mesmo valor: exposição ao fator zero, investimento zero e ganho de 2%. A pressão de compra e venda elimina a diferença.</p>\n  </div>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>CAPM</th><th>APT</th></tr>\n    <tr><td>Fatores</td><td>Um: a carteira de mercado</td><td>Vários, não especificados pela teoria</td></tr>\n    <tr><td>Base</td><td>Equilíbrio com investidores de média-variância</td><td><b>Ausência de arbitragem</b></td></tr>\n    <tr><td>Carteira de mercado</td><td>Indispensável (e não observável)</td><td><b>Não é necessária</b></td></tr>\n    <tr><td>Premissas sobre investidores</td><td>Fortes: média-variância, expectativas homogêneas, um período, captação à taxa livre</td><td>Mais fracas: basta preferirem mais riqueza a menos</td></tr>\n    <tr><td>Distribuição dos retornos</td><td>Normal ou utilidade quadrática</td><td>Não exige normalidade</td></tr>\n    <tr><td>Validade</td><td>Todo ativo, individualmente</td><td>Carteiras bem diversificadas (para um ativo isolado, aproximadamente)</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Críticas ao APT:</b> a teoria <b>não diz quais são os fatores</b> nem quantos; os prêmios λ são instáveis e difíceis de estimar; os resultados mudam conforme os fatores escolhidos; vale com exatidão só para carteiras bem diversificadas.</li>\n  </ul>\n\n  <h3>Modelos de fatores fundamentais</h3>\n  <ul>\n    <li>As sensibilidades são os <b>atributos padronizados</b> da empresa. Os fatores são os retornos associados a esses atributos, estimados por regressão em cada período (corte transversal).</li>\n    <li><b>Premissa:</b> atributos como tamanho, valor e dividend yield explicam as diferenças de retorno entre ações.</li>\n    <li><b>Fama-French (três fatores):</b> mercado, tamanho (SMB: pequenas menos grandes) e valor (HML: P/VPA baixo menos alto). Carhart acrescentou o momento.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Fatores fundamentais</span>Sensibilidade padronizada: b = (atributo da empresa − média dos atributos) / desvio-padrão dos atributos<br>R_i = a + b_i1 · F₁ + b_i2 · F₂ + … + e_i<br>Fama-French: E(R_i) − Rf = β_i · [E(R_M) − Rf] + s_i · SMB + h_i · HML</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplos</span>\n    <p><b>Padronização:</b> a empresa tem P/L de 20; a média do universo é 15 e o desvio-padrão é 5. Sensibilidade = (20 − 15)/5 = <b>1,0</b>.</p>\n    <p><b>Retorno:</b> intercepto 2%; sensibilidades de 1,0 ao dividend yield e de −1,0 ao P/L; retornos dos fatores de 0,5% e −1%. R = 2 + 1,0 × 0,5 + (−1,0) × (−1) = <b>3,5%</b>.</p>\n    <p><b>Fama-French:</b> Rf = 5%, β = 1,1, prêmio de mercado 6%, s = 0,4 com SMB = 2%, h = −0,2 com HML = 3%. E(R) = 5 + 6,6 + 0,8 − 0,6 = <b>11,8%</b>.</p>\n  </div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t6-1",
+   "subtema": "6.1",
+   "enunciado": "Uma ação tem três cenários: expansão (30%) com retorno de 20%, normal (50%) com 10% e recessão (20%) com −10%. O retorno esperado é:",
+   "alternativas": [
+    "6,7%",
+    "10,0%",
+    "9,0%",
+    "11,0%"
+   ],
+   "correta": 2,
+   "explicacao": "E(R) = 0,3×20 + 0,5×10 + 0,2×(−10) = 6 + 5 − 2 = 9%. A alternativa de 6,7% é a média simples, que ignora as probabilidades."
+  },
+  {
+   "id": "t6-2",
+   "subtema": "6.1",
+   "enunciado": "Dois ativos têm covariância de 0,006. O desvio-padrão do primeiro é 20% e o do segundo, 10%. A correlação entre eles é:",
+   "alternativas": [
+    "0,30",
+    "0,06",
+    "0,03",
+    "0,60"
+   ],
+   "correta": 0,
+   "explicacao": "ρ = Cov/(σA·σB) = 0,006/(0,20 × 0,10) = 0,006/0,02 = 0,30."
+  },
+  {
+   "id": "t6-3",
+   "subtema": "6.1",
+   "enunciado": "Um investidor com coeficiente de aversão ao risco A = 3 avalia uma carteira com retorno esperado de 12% e desvio-padrão de 20%, e um título sem risco que paga 7%. Pela função U = E(R) − ½Aσ², o equivalente certo da carteira e a escolha do investidor são:",
+   "alternativas": [
+    "12%; prefere a carteira",
+    "9%; prefere a carteira",
+    "7%; é indiferente",
+    "6%; prefere o título sem risco"
+   ],
+   "correta": 3,
+   "explicacao": "U = 0,12 − 0,5 × 3 × 0,04 = 0,12 − 0,06 = 6%. Como 6% é menor que os 7% sem risco, ele prefere o título."
+  },
+  {
+   "id": "t6-4",
+   "subtema": "6.1",
+   "enunciado": "A carteira A rende 8% ou 12% e a carteira B rende 6% ou 12%, cada resultado com 50% de probabilidade. É correto afirmar que:",
+   "alternativas": [
+    "B domina A, pois tem maior variância",
+    "A domina B de 1ª ordem, e qualquer investidor que prefira mais a menos escolhe A",
+    "Não há dominância, pois as duas podem render 12%",
+    "A domina B apenas para investidores propensos ao risco"
+   ],
+   "correta": 1,
+   "explicacao": "No cenário ruim A ganha (8% contra 6%) e no bom empata. A distribuição acumulada de A fica sempre abaixo ou igual à de B: dominância de 1ª ordem, válida para todo investidor não saciável, qualquer que seja sua atitude diante do risco."
+  },
+  {
+   "id": "t6-5",
+   "subtema": "6.1",
+   "enunciado": "A carteira C rende 10% com certeza e a carteira D rende 0% ou 20%, com 50% de chance cada. Para um investidor avesso ao risco, a recomendação e o conceito que a justifica são:",
+   "alternativas": [
+    "D, por dominância de 1ª ordem",
+    "D, porque tem maior retorno máximo",
+    "C, por dominância estocástica de 2ª ordem",
+    "Indiferente, porque os retornos esperados são iguais"
+   ],
+   "correta": 2,
+   "explicacao": "As médias são iguais (10%), mas D tem risco. Não há dominância de 1ª ordem, mas C domina D de 2ª ordem, critério que vale para investidores avessos ao risco. Só o investidor neutro seria indiferente."
+  },
+  {
+   "id": "t6-6",
+   "subtema": "6.1",
+   "enunciado": "Um investidor cuja função de utilidade da riqueza é convexa (a utilidade marginal cresce com a riqueza) é classificado como:",
+   "alternativas": [
+    "Propenso ao risco",
+    "Neutro ao risco",
+    "Avesso ao risco",
+    "Saciado"
+   ],
+   "correta": 0,
+   "explicacao": "Utilidade convexa caracteriza propensão ao risco. A côncava caracteriza aversão e a linear, neutralidade."
+  },
+  {
+   "id": "t6-7",
+   "subtema": "6.1",
+   "enunciado": "No plano com desvio-padrão no eixo horizontal e retorno esperado no vertical, curvas de indiferença horizontais representam um investidor:",
+   "alternativas": [
+    "Que não prefere mais riqueza a menos",
+    "Extremamente avesso ao risco",
+    "Propenso ao risco",
+    "Neutro ao risco"
+   ],
+   "correta": 3,
+   "explicacao": "Curvas horizontais indicam que só o retorno esperado importa, sem exigir compensação pelo risco: neutralidade. O avesso tem curvas positivamente inclinadas, tanto mais inclinadas quanto maior a aversão."
+  },
+  {
+   "id": "t6-8",
+   "subtema": "6.1",
+   "enunciado": "Qual fato é evidência de que os investidores são, em geral, avessos ao risco?",
+   "alternativas": [
+    "A existência de loterias",
+    "O prêmio histórico positivo das ações sobre os títulos públicos e a compra generalizada de seguros",
+    "O fato de os investidores concentrarem a carteira em um só ativo",
+    "A preferência por ativos mais voláteis com o mesmo retorno esperado"
+   ],
+   "correta": 1,
+   "explicacao": "Pagar seguro acima da perda esperada e exigir um prêmio para carregar ações mostram aversão ao risco. Loterias são exceções pontuais, e concentrar a carteira ou preferir volatilidade contraria a aversão."
+  },
+  {
+   "id": "t6-9",
+   "subtema": "6.1",
+   "enunciado": "Segundo a Teoria da Perspectiva (Kahneman e Tversky), a função de valor é:",
+   "alternativas": [
+    "Côncava para ganhos e perdas, definida sobre a riqueza total",
+    "Linear, pois os investidores são neutros ao risco",
+    "Côncava nos ganhos, convexa nas perdas e mais inclinada nas perdas",
+    "Convexa nos ganhos e côncava nas perdas"
+   ],
+   "correta": 2,
+   "explicacao": "A função em S é definida sobre ganhos e perdas em relação a um ponto de referência: aversão ao risco nos ganhos, propensão ao risco nas perdas e aversão à perda (perdas pesam mais). A utilidade esperada clássica é que é côncava sobre a riqueza total."
+  },
+  {
+   "id": "t6-10",
+   "subtema": "6.2",
+   "enunciado": "Carteira com 50% em A (σ = 20%) e 50% em B (σ = 10%), com correlação zero. O desvio-padrão da carteira é:",
+   "alternativas": [
+    "11,18%",
+    "12,45%",
+    "15,0%",
+    "5,0%"
+   ],
+   "correta": 0,
+   "explicacao": "σ² = 0,25×400 + 0,25×100 = 125 (%²), σ ≈ 11,18%. 15% seria com ρ = +1, 12,45% com ρ = 0,3 e 5% com ρ = −1."
+  },
+  {
+   "id": "t6-11",
+   "subtema": "6.2",
+   "enunciado": "Dois ativos têm σA = 25% e σB = 15% e correlação +1. Uma carteira com 60% em A e 40% em B tem desvio-padrão de:",
+   "alternativas": [
+    "19,0%",
+    "25,0%",
+    "15,0%",
+    "21,0%"
+   ],
+   "correta": 3,
+   "explicacao": "Com ρ = +1, não há benefício de diversificação: σ = 0,6 × 25 + 0,4 × 15 = 15 + 6 = 21%."
+  },
+  {
+   "id": "t6-12",
+   "subtema": "6.2",
+   "enunciado": "Os ativos A (σ = 20%) e B (σ = 10%) têm correlação −1. A proporção em A que zera o risco da carteira é:",
+   "alternativas": [
+    "20%",
+    "33,3%",
+    "50%",
+    "66,7%"
+   ],
+   "correta": 1,
+   "explicacao": "w_A = σB/(σA + σB) = 10/30 = 33,3%. Confere: ⅓×20 − ⅔×10 = 0."
+  },
+  {
+   "id": "t6-13",
+   "subtema": "6.2",
+   "enunciado": "Os ativos A (σ = 20%) e B (σ = 10%) não são correlacionados. A carteira de variância mínima tem quanto em A?",
+   "alternativas": [
+    "50%",
+    "33,3%",
+    "20%",
+    "80%"
+   ],
+   "correta": 2,
+   "explicacao": "w_A = σB²/(σA² + σB²) = 100/500 = 20%. O risco resultante (≈ 8,94%) é menor até que o de B sozinho, e 80% é o peso de B, não de A."
+  },
+  {
+   "id": "t6-14",
+   "subtema": "6.2",
+   "enunciado": "Em uma carteira de n ações com pesos iguais, à medida que n cresce muito, a variância da carteira se aproxima:",
+   "alternativas": [
+    "Da covariância média entre as ações",
+    "Da variância média das ações",
+    "De zero",
+    "Da variância da ação mais arriscada"
+   ],
+   "correta": 0,
+   "explicacao": "σp² = σ̄²/n + (1 − 1/n)·Cov̄. O primeiro termo some e sobra a covariância média, que é o risco sistemático."
+  },
+  {
+   "id": "t6-15",
+   "subtema": "6.2",
+   "enunciado": "Quantas correlações distintas (fora da diagonal) existem na matriz de correlações de 10 ativos?",
+   "alternativas": [
+    "10",
+    "100",
+    "90",
+    "45"
+   ],
+   "correta": 3,
+   "explicacao": "n(n − 1)/2 = 10×9/2 = 45. A matriz tem 100 células, 10 na diagonal (todas iguais a 1) e 90 fora dela, mas é simétrica, então só 45 são distintas."
+  },
+  {
+   "id": "t6-16",
+   "subtema": "6.2",
+   "enunciado": "Sobre a matriz de correlações de uma carteira, é correto afirmar:",
+   "alternativas": [
+    "A diagonal principal traz as variâncias dos ativos",
+    "Ela é simétrica e sua diagonal principal é composta de valores iguais a 1",
+    "Os valores fora da diagonal podem ir de 0 a infinito",
+    "Cada correlação aparece uma única vez na matriz"
+   ],
+   "correta": 1,
+   "explicacao": "A correlação de um ativo com ele mesmo é 1, e ρ_AB = ρ_BA. A diagonal com variâncias é a da matriz de covariâncias. Correlações vão de −1 a +1 e cada uma aparece duas vezes."
+  },
+  {
+   "id": "t6-17",
+   "subtema": "6.2",
+   "enunciado": "A fronteira eficiente de Markowitz corresponde:",
+   "alternativas": [
+    "A toda a curva envoltória (fronteira de variância mínima)",
+    "Ao trecho da curva envoltória abaixo da carteira de variância mínima global",
+    "Ao trecho da curva envoltória acima da carteira de variância mínima global",
+    "À reta que liga o ativo livre de risco à carteira de mercado"
+   ],
+   "correta": 2,
+   "explicacao": "Abaixo da carteira de variância mínima, há sempre outra carteira com o mesmo risco e mais retorno. A reta com o ativo livre de risco é a CML, assunto do 6.3."
+  },
+  {
+   "id": "t6-18",
+   "subtema": "6.2",
+   "enunciado": "Dois investidores usam as mesmas estimativas e, portanto, a mesma fronteira eficiente, mas escolhem carteiras diferentes. Isso acontece porque:",
+   "alternativas": [
+    "Eles têm aversões ao risco diferentes, e a carteira ótima é a tangência da curva de indiferença de cada um com a fronteira",
+    "A fronteira eficiente depende da riqueza de cada um",
+    "Um deles cometeu um erro, já que a carteira ótima é única",
+    "Um deles escolheu uma carteira abaixo da fronteira"
+   ],
+   "correta": 0,
+   "explicacao": "A carteira ótima é o ponto em que a curva de indiferença mais alta toca a fronteira. Curvas mais inclinadas (mais aversão) levam a carteiras mais perto da variância mínima."
+  },
+  {
+   "id": "t6-19",
+   "subtema": "6.2",
+   "enunciado": "Para aplicar o modelo de Markowitz a 50 ativos, quantos parâmetros (retornos, variâncias e covariâncias) precisam ser estimados?",
+   "alternativas": [
+    "152",
+    "1.275",
+    "2.500",
+    "1.325"
+   ],
+   "correta": 3,
+   "explicacao": "n(n + 3)/2 = 50×53/2 = 1.325: 50 retornos, 50 variâncias e 1.225 covariâncias. 152 seria o modelo de índice único (3n + 2)."
+  },
+  {
+   "id": "t6-20",
+   "subtema": "6.3",
+   "enunciado": "Rf = 5%, E(R_M) = 13% e σ_M = 20%. Pela CML, uma carteira eficiente com desvio-padrão de 10% tem retorno esperado de:",
+   "alternativas": [
+    "6,5%",
+    "9,0%",
+    "10,0%",
+    "13,0%"
+   ],
+   "correta": 1,
+   "explicacao": "Inclinação = (13 − 5)/20 = 0,4. E(Rp) = 5 + 0,4 × 10 = 9%. É uma carteira com 50% em M e 50% no ativo livre de risco."
+  },
+  {
+   "id": "t6-21",
+   "subtema": "6.3",
+   "enunciado": "Com Rf = 5%, E(R_M) = 13% e σ_M = 20%, um investidor quer retorno esperado de 17% numa carteira eficiente. O risco e a composição dessa carteira são:",
+   "alternativas": [
+    "σ = 26%, com 130% em M",
+    "σ = 20%, com 100% em M",
+    "σ = 30%, com 150% em M financiados por empréstimo de 50% a Rf",
+    "σ = 30%, com 100% em M e 50% em Rf"
+   ],
+   "correta": 2,
+   "explicacao": "σp = (17 − 5)/0,4 = 30%. Peso em M = 30/20 = 1,5: o investidor toma 50% emprestado a Rf (carteira alavancada, à direita de M na CML)."
+  },
+  {
+   "id": "t6-22",
+   "subtema": "6.3",
+   "enunciado": "O Teorema da Separação de Tobin afirma que:",
+   "alternativas": [
+    "A escolha da carteira de risco (M) é a mesma para todos e independe da aversão ao risco, que só define quanto aplicar em M e no ativo livre de risco",
+    "Cada investidor deve escolher uma carteira de risco diferente",
+    "O risco sistemático se separa do não sistemático com diversificação",
+    "A política de dividendos não afeta o valor da empresa"
+   ],
+   "correta": 0,
+   "explicacao": "A decisão de investimento (qual carteira de risco: M) separa-se da decisão de financiamento (quanto em M e quanto em Rf), que depende da aversão ao risco. A última alternativa é Modigliani-Miller."
+  },
+  {
+   "id": "t6-23",
+   "subtema": "6.3",
+   "enunciado": "Uma carteira localizada na CML à direita da carteira de mercado M representa:",
+   "alternativas": [
+    "Investimento parcial no ativo livre de risco",
+    "Uma carteira com venda a descoberto da carteira de mercado",
+    "Uma carteira ineficiente",
+    "Uma carteira alavancada, com captação à taxa livre de risco para aplicar mais de 100% em M"
+   ],
+   "correta": 3,
+   "explicacao": "À direita de M, o peso em M passa de 100%, financiado por empréstimo a Rf. O risco e o retorno esperado aumentam ao longo da mesma reta."
+  },
+  {
+   "id": "t6-24",
+   "subtema": "6.3",
+   "enunciado": "Se a taxa de captação dos investidores for maior que a taxa de aplicação sem risco, a Linha de Mercado de Capitais:",
+   "alternativas": [
+    "Continua sendo uma única reta",
+    "Passa a ter dois trechos retos de inclinações diferentes, ligados por um trecho curvo da fronteira",
+    "Se desloca paralelamente para cima",
+    "Deixa de existir"
+   ],
+   "correta": 1,
+   "explicacao": "Até a tangência com a taxa de aplicação vale uma reta; depois, um trecho da fronteira de Markowitz; e, a partir da tangência com a taxa de captação, outra reta menos inclinada."
+  },
+  {
+   "id": "t6-25",
+   "subtema": "6.3",
+   "enunciado": "Ao relaxar a hipótese de expectativas homogêneas:",
+   "alternativas": [
+    "Todos continuam escolhendo a mesma carteira tangente",
+    "O ativo livre de risco deixa de existir",
+    "Cada investidor passa a ter sua própria fronteira e sua própria carteira tangente, e o CAPM vale apenas de forma aproximada",
+    "A SML passa a usar o desvio-padrão no lugar do beta"
+   ],
+   "correta": 2,
+   "explicacao": "Com estimativas diferentes, cada um calcula a sua fronteira e a sua carteira tangente. A carteira de mercado observada é uma média das carteiras individuais."
+  },
+  {
+   "id": "t6-26",
+   "subtema": "6.3",
+   "enunciado": "Com Rf = 5%, E(R_M) = 13% e σ_M = 20%, uma carteira eficiente com 25% de desvio-padrão tem índice de Sharpe de:",
+   "alternativas": [
+    "0,40",
+    "0,48",
+    "0,52",
+    "0,68"
+   ],
+   "correta": 0,
+   "explicacao": "Na CML, todas as carteiras eficientes têm o mesmo Sharpe, igual ao de M: (13 − 5)/20 = 0,40. Confere: E(Rp) = 5 + 0,4×25 = 15%, e (15 − 5)/25 = 0,40."
+  },
+  {
+   "id": "t6-27",
+   "subtema": "6.4",
+   "enunciado": "Ao aumentar o número de ativos de uma carteira bem diversificada:",
+   "alternativas": [
+    "Os riscos sistemático e não sistemático caem na mesma proporção",
+    "O risco total tende a zero",
+    "O risco sistemático tende a zero e o não sistemático permanece",
+    "O risco não sistemático tende a zero e o risco sistemático permanece"
+   ],
+   "correta": 3,
+   "explicacao": "A diversificação elimina o risco específico, mas não o risco de mercado, que afeta todos os ativos."
+  },
+  {
+   "id": "t6-28",
+   "subtema": "6.4",
+   "enunciado": "Uma ação tem desvio-padrão de 30% e beta de 1,2. O desvio-padrão do mercado é 20%. O desvio-padrão do risco não sistemático é:",
+   "alternativas": [
+    "6%",
+    "18%",
+    "10%",
+    "24%"
+   ],
+   "correta": 1,
+   "explicacao": "Variância sistemática = 1,2² × 0,04 = 0,0576. Variância total = 0,09. Não sistemática = 0,0324, então σ(e) = 18%. 6% é o erro de subtrair desvios-padrão em vez de variâncias, e 24% é o risco sistemático."
+  },
+  {
+   "id": "t6-29",
+   "subtema": "6.4",
+   "enunciado": "Na mesma ação (σ = 30%, β = 1,2, σ_M = 20%), a fração da variância total explicada pelo mercado (R²) é:",
+   "alternativas": [
+    "36%",
+    "80%",
+    "64%",
+    "120%"
+   ],
+   "correta": 2,
+   "explicacao": "R² = β²σ_M²/σ² = 0,0576/0,09 = 64%. Os 36% restantes são risco específico."
+  },
+  {
+   "id": "t6-30",
+   "subtema": "6.4",
+   "enunciado": "Qual evento é exemplo de risco não sistemático?",
+   "alternativas": [
+    "Greve que paralisa as fábricas de uma única empresa",
+    "Alta inesperada da taxa Selic",
+    "Recessão global",
+    "Desvalorização forte do real"
+   ],
+   "correta": 0,
+   "explicacao": "A greve afeta só aquela empresa e pode ser diversificada. Juros, recessão e câmbio afetam todo o mercado."
+  },
+  {
+   "id": "t6-31",
+   "subtema": "6.4",
+   "enunciado": "Por que o mercado não oferece prêmio de risco pelo risco não sistemático?",
+   "alternativas": [
+    "Porque ele é sempre menor que o risco sistemático",
+    "Porque a regulação proíbe",
+    "Porque não pode ser medido",
+    "Porque pode ser eliminado sem custo pela diversificação, e quem forma os preços é o investidor diversificado"
+   ],
+   "correta": 3,
+   "explicacao": "Um risco que se elimina de graça não precisa ser carregado. Se pagasse prêmio, a procura pelo ativo subiria o preço até o prêmio sumir. Só o beta (risco sistemático) é remunerado."
+  },
+  {
+   "id": "t6-32",
+   "subtema": "6.5",
+   "enunciado": "A covariância entre a ação e o mercado é 0,018 e o desvio-padrão do mercado é 12%. O beta da ação é:",
+   "alternativas": [
+    "0,15",
+    "1,25",
+    "0,80",
+    "1,50"
+   ],
+   "correta": 1,
+   "explicacao": "β = Cov/σ_M² = 0,018/0,0144 = 1,25. A pegadinha é dividir pelo desvio-padrão (0,018/0,12 = 0,15) em vez da variância."
+  },
+  {
+   "id": "t6-33",
+   "subtema": "6.5",
+   "enunciado": "Uma ação tem desvio-padrão de 30% e correlação de 0,6 com o mercado, cujo desvio-padrão é 20%. O beta é:",
+   "alternativas": [
+    "0,40",
+    "1,50",
+    "0,90",
+    "1,80"
+   ],
+   "correta": 2,
+   "explicacao": "β = ρ·σ_i/σ_M = 0,6 × 30/20 = 0,9. Mesmo mais volátil que o mercado, a ação tem beta menor que 1 por causa da correlação baixa."
+  },
+  {
+   "id": "t6-34",
+   "subtema": "6.5",
+   "enunciado": "Numa amostra, o retorno médio de uma ação foi 14% e o do mercado, 10%. O beta estimado é 1,2. O intercepto da reta característica é:",
+   "alternativas": [
+    "2%",
+    "−2%",
+    "4%",
+    "12%"
+   ],
+   "correta": 0,
+   "explicacao": "α = R̄_i − β·R̄_M = 14 − 1,2 × 10 = 2%."
+  },
+  {
+   "id": "t6-35",
+   "subtema": "6.5",
+   "enunciado": "Na reta característica R_i = α + β·R_M + e, o coeficiente angular e a dispersão dos pontos em torno da reta representam, respectivamente:",
+   "alternativas": [
+    "O alfa e o risco sistemático",
+    "O retorno esperado e o risco total",
+    "O beta e o risco sistemático",
+    "O beta e o risco não sistemático"
+   ],
+   "correta": 3,
+   "explicacao": "A inclinação é o beta (risco sistemático). A dispersão dos resíduos em torno da reta é o risco específico."
+  },
+  {
+   "id": "t6-36",
+   "subtema": "6.5",
+   "enunciado": "Uma carteira tem 40% em uma ação de beta 1,5 e 60% em uma ação de beta 0,5. O beta da carteira é:",
+   "alternativas": [
+    "1,00",
+    "0,90",
+    "1,10",
+    "2,00"
+   ],
+   "correta": 1,
+   "explicacao": "β = 0,4 × 1,5 + 0,6 × 0,5 = 0,6 + 0,3 = 0,9. O beta da carteira é a média ponderada dos betas."
+  },
+  {
+   "id": "t6-37",
+   "subtema": "6.6",
+   "enunciado": "Rf = 10%, retorno esperado do mercado = 16% e beta = 1,3. Pelo CAPM, o retorno exigido da ação é:",
+   "alternativas": [
+    "13,0%",
+    "20,8%",
+    "17,8%",
+    "23,0%"
+   ],
+   "correta": 2,
+   "explicacao": "E(R) = 10 + 1,3 × (16 − 10) = 10 + 7,8 = 17,8%. 20,8% seria multiplicar o retorno do mercado inteiro (1,3 × 16), sem descontar Rf."
+  },
+  {
+   "id": "t6-38",
+   "subtema": "6.6",
+   "enunciado": "Uma ação tem retorno exigido de 14% pelo CAPM. Rf = 10% e o retorno esperado do mercado é 16%. O beta implícito é:",
+   "alternativas": [
+    "0,67",
+    "0,88",
+    "1,40",
+    "1,50"
+   ],
+   "correta": 0,
+   "explicacao": "β = (14 − 10)/(16 − 10) = 4/6 ≈ 0,67."
+  },
+  {
+   "id": "t6-39",
+   "subtema": "6.6",
+   "enunciado": "Uma ação com beta 1,5 tem retorno exigido de 15% e Rf = 9%. O retorno esperado da carteira de mercado é:",
+   "alternativas": [
+    "10,0%",
+    "12,0%",
+    "15,0%",
+    "13,0%"
+   ],
+   "correta": 3,
+   "explicacao": "Prêmio de mercado = (15 − 9)/1,5 = 4%. E(R_M) = 9 + 4 = 13%."
+  },
+  {
+   "id": "t6-40",
+   "subtema": "6.6",
+   "enunciado": "Dois ativos estão sobre a SML: X com beta 0,8 e retorno esperado de 10%, e Y com beta 1,6 e retorno esperado de 14%. A taxa livre de risco é:",
+   "alternativas": [
+    "4%",
+    "6%",
+    "5%",
+    "8%"
+   ],
+   "correta": 1,
+   "explicacao": "Inclinação = (14 − 10)/(1,6 − 0,8) = 5% por unidade de beta (é o prêmio de mercado). Rf = 10 − 0,8 × 5 = 6%."
+  },
+  {
+   "id": "t6-41",
+   "subtema": "6.6",
+   "enunciado": "O CAPM exige 17,8% de uma ação, mas o analista espera que ela renda 20%. A ação está:",
+   "alternativas": [
+    "Superavaliada, abaixo da SML; deve ser vendida",
+    "Corretamente avaliada",
+    "Subavaliada, acima da SML; deve ser comprada",
+    "Subavaliada, abaixo da SML; deve ser vendida"
+   ],
+   "correta": 2,
+   "explicacao": "Retorno esperado acima do exigido (alfa de +2,2%) coloca o ponto acima da SML: a ação está barata. A compra eleva o preço e reduz o retorno até a SML."
+  },
+  {
+   "id": "t6-42",
+   "subtema": "6.6",
+   "enunciado": "Uma ação custa R$ 50. Espera-se preço de R$ 55 em um ano e dividendo de R$ 2. Beta = 1,0, Rf = 8% e retorno esperado do mercado = 15%. A conclusão é:",
+   "alternativas": [
+    "Superavaliada, com alfa de −1%; vender",
+    "Subavaliada, com alfa de +1%; comprar",
+    "Corretamente avaliada",
+    "Superavaliada, com alfa de −5%; vender"
+   ],
+   "correta": 0,
+   "explicacao": "Retorno esperado = (55 + 2 − 50)/50 = 14%. O CAPM exige 8 + 1,0 × 7 = 15%. Alfa = −1%: abaixo da SML, cara. Esquecer o dividendo daria 10% e alfa de −5%."
+  },
+  {
+   "id": "t6-43",
+   "subtema": "6.6",
+   "enunciado": "Uma diferença correta entre a CML e a SML é:",
+   "alternativas": [
+    "A CML usa beta e a SML usa desvio-padrão",
+    "A inclinação da SML é o índice de Sharpe do mercado",
+    "As duas valem apenas para carteiras eficientes",
+    "A SML vale para qualquer ativo ou carteira e usa o beta; a CML vale só para carteiras eficientes e usa o desvio-padrão"
+   ],
+   "correta": 3,
+   "explicacao": "A SML mede o risco pelo beta e serve para qualquer ativo. A CML mede o risco total e vale só para combinações eficientes de Rf e M. A inclinação da CML é que é o Sharpe do mercado."
+  },
+  {
+   "id": "t6-44",
+   "subtema": "6.6",
+   "enunciado": "Qual das alternativas NÃO é premissa do CAPM?",
+   "alternativas": [
+    "Investidores avessos ao risco que decidem por média e variância",
+    "Expectativas heterogêneas entre os investidores",
+    "Possibilidade de aplicar e tomar emprestado sem limite à taxa livre de risco",
+    "Ausência de custos de transação e de impostos"
+   ],
+   "correta": 1,
+   "explicacao": "O CAPM supõe expectativas homogêneas: todos estimam os mesmos parâmetros e por isso chegam à mesma carteira tangente."
+  },
+  {
+   "id": "t6-45",
+   "subtema": "6.6",
+   "enunciado": "São críticas ou problemas do CAPM:",
+   "alternativas": [
+    "A carteira de mercado verdadeira não é observável (crítica de Roll)",
+    "Os betas estimados são instáveis no tempo",
+    "Fatores como tamanho e valor explicam retornos além do beta",
+    "Todas as anteriores"
+   ],
+   "correta": 3,
+   "explicacao": "As três são críticas clássicas. Some-se a elas a SML empírica mais plana que a teórica e o realismo baixo das premissas.",
+   "fixa": true
+  },
+  {
+   "id": "t6-46",
+   "subtema": "6.6",
+   "enunciado": "O último dividendo pago foi R$ 2,00, a taxa de crescimento é 5% ao ano para sempre e o retorno exigido é 12%. Pelo modelo de Gordon, o valor da ação é:",
+   "alternativas": [
+    "R$ 16,67",
+    "R$ 28,57",
+    "R$ 30,00",
+    "R$ 42,00"
+   ],
+   "correta": 2,
+   "explicacao": "D₁ = 2,00 × 1,05 = 2,10. V₀ = 2,10/(0,12 − 0,05) = 30,00. R$ 28,57 é o erro de usar D₀ no lugar de D₁."
+  },
+  {
+   "id": "t6-47",
+   "subtema": "6.6",
+   "enunciado": "Rf = 6%, beta = 1,2 e prêmio de risco de mercado = 5%. O dividendo esperado para o próximo ano é R$ 3,00 e o crescimento perpétuo é 7%. O valor da ação é:",
+   "alternativas": [
+    "R$ 60,00",
+    "R$ 42,86",
+    "R$ 64,20",
+    "R$ 75,00"
+   ],
+   "correta": 0,
+   "explicacao": "r pelo CAPM = 6 + 1,2 × 5 = 12%. V₀ = 3,00/(0,12 − 0,07) = 60,00. Como o dividendo dado já é o do próximo ano, não se multiplica por 1,07 (o que daria 64,20)."
+  },
+  {
+   "id": "t6-48",
+   "subtema": "6.6",
+   "enunciado": "O índice de ações tem dividend yield esperado de 4% e os dividendos devem crescer 6% ao ano. A taxa livre de risco é 7%. O prêmio de risco implícito pelo modelo de Gordon é:",
+   "alternativas": [
+    "10%",
+    "4%",
+    "6%",
+    "3%"
+   ],
+   "correta": 3,
+   "explicacao": "r = D₁/P₀ + g = 4 + 6 = 10%. Prêmio = 10 − 7 = 3%. 10% é o retorno exigido total, não o prêmio."
+  },
+  {
+   "id": "t6-49",
+   "subtema": "6.6",
+   "enunciado": "Uma empresa tem margem líquida de 10%, giro do ativo de 1,2, multiplicador de alavancagem (ativo/PL) de 1,5 e payout de 40%. A taxa de crescimento sustentável dos dividendos é:",
+   "alternativas": [
+    "7,2%",
+    "10,8%",
+    "12,0%",
+    "18,0%"
+   ],
+   "correta": 1,
+   "explicacao": "ROE (DuPont) = 0,10 × 1,2 × 1,5 = 18%. Retenção = 1 − 0,4 = 60%. g = 0,6 × 18% = 10,8%. Usar o payout no lugar da retenção dá 7,2%."
+  },
+  {
+   "id": "t6-50",
+   "subtema": "6.6",
+   "enunciado": "Os dividendos de uma empresa passaram de R$ 1,00 em 2021 para R$ 1,4641 em 2025. A taxa de crescimento pela média geométrica é:",
+   "alternativas": [
+    "9,2%",
+    "11,6%",
+    "10,0%",
+    "46,4%"
+   ],
+   "correta": 2,
+   "explicacao": "São 4 intervalos: g = (1,4641/1,00)^(1/4) − 1 = 10%. 11,6% é a média aritmética do crescimento acumulado (46,41%/4), que superestima a taxa."
+  },
+  {
+   "id": "t6-51",
+   "subtema": "6.6",
+   "enunciado": "D₀ = R$ 1,00; os dividendos crescem 20% nos anos 1 e 2 e depois 5% para sempre; o retorno exigido é 12%. O valor da ação hoje é aproximadamente:",
+   "alternativas": [
+    "R$ 19,44",
+    "R$ 18,37",
+    "R$ 15,00",
+    "R$ 21,60"
+   ],
+   "correta": 0,
+   "explicacao": "D₁ = 1,20, D₂ = 1,44, D₃ = 1,512. P₂ = 1,512/0,07 = 21,60. V₀ = 1,20/1,12 + (1,44 + 21,60)/1,12² = 1,07 + 18,37 = 19,44. R$ 21,60 é o preço no ano 2, ainda não trazido a valor presente."
+  },
+  {
+   "id": "t6-52",
+   "subtema": "6.6",
+   "enunciado": "O modelo de Gordon de um estágio é mais adequado para avaliar:",
+   "alternativas": [
+    "Uma startup de tecnologia que não paga dividendos",
+    "Uma empresa que deve crescer 30% ao ano pelos próximos cinco anos",
+    "Uma empresa em recuperação judicial",
+    "Uma distribuidora de energia madura, com política de dividendos estável e crescimento próximo ao da economia"
+   ],
+   "correta": 3,
+   "explicacao": "O Gordon supõe crescimento constante e perpétuo, abaixo do retorno exigido, e dividendos previsíveis. Empresas sem dividendos, em crise ou em forte crescimento pedem outros modelos (FCF, múltiplos ou DDM de vários estágios)."
+  },
+  {
+   "id": "t6-53",
+   "subtema": "6.6",
+   "enunciado": "Na avaliação por fluxo de caixa descontado, o uso do fluxo de caixa livre no lugar dos dividendos é mais indicado quando:",
+   "alternativas": [
+    "A empresa paga dividendos estáveis ligados aos lucros e a análise é do minoritário",
+    "A empresa não paga dividendos ou paga muito diferente da sua capacidade, ou a análise é do ponto de vista de quem vai adquirir o controle",
+    "A empresa é uma concessionária madura",
+    "O analista quer simplificar as projeções"
+   ],
+   "correta": 1,
+   "explicacao": "O controlador decide o uso do caixa, então o valor para ele é o fluxo de caixa livre. Dividendos estáveis e perspectiva do minoritário favorecem o DDM."
+  },
+  {
+   "id": "t6-54",
+   "subtema": "6.6",
+   "enunciado": "Lucro líquido = 315, depreciação = 100, despesa de juros = 50, alíquota de IR = 30%, investimento em capital fixo = 150 e investimento em capital de giro = 30. O FCFF é:",
+   "alternativas": [
+    "235",
+    "250",
+    "270",
+    "285"
+   ],
+   "correta": 2,
+   "explicacao": "FCFF = LL + D&A + Juros×(1 − t) − FCInv − WCInv = 315 + 100 + 35 − 150 − 30 = 270. Somar os juros brutos (50) daria 285, e não somá-los daria 235."
+  },
+  {
+   "id": "t6-55",
+   "subtema": "6.6",
+   "enunciado": "Uma empresa tem FCFF de 270, despesa de juros de 50, alíquota de 30% e captou dívida líquida de 40 no ano. O FCFE é:",
+   "alternativas": [
+    "275",
+    "260",
+    "195",
+    "345"
+   ],
+   "correta": 0,
+   "explicacao": "FCFE = FCFF − Juros×(1 − t) + Endividamento líquido = 270 − 35 + 40 = 275."
+  },
+  {
+   "id": "t6-56",
+   "subtema": "6.6",
+   "enunciado": "A partir do EBITDA, o FCFF é calculado como:",
+   "alternativas": [
+    "EBITDA − FCInv − WCInv",
+    "EBITDA − Juros − Impostos",
+    "EBITDA × (1 − t) + D&A − FCInv − WCInv",
+    "EBITDA × (1 − t) + D&A × t − FCInv − WCInv"
+   ],
+   "correta": 3,
+   "explicacao": "Como o EBITDA está antes da depreciação, ela volta apenas pelo benefício fiscal (D&A × t). Somar a D&A inteira seria contar duas vezes; ignorar impostos superestima o caixa."
+  },
+  {
+   "id": "t6-57",
+   "subtema": "6.6",
+   "enunciado": "As taxas de desconto apropriadas para FCFF e FCFE são, respectivamente:",
+   "alternativas": [
+    "Custo do capital próprio e WACC",
+    "WACC e custo do capital próprio",
+    "Taxa livre de risco e WACC",
+    "WACC nos dois casos"
+   ],
+   "correta": 1,
+   "explicacao": "O FCFF pertence a todos os financiadores e é descontado pelo WACC, resultando no valor da firma. O FCFE pertence aos acionistas e é descontado pelo custo do capital próprio, resultando no valor do patrimônio."
+  },
+  {
+   "id": "t6-58",
+   "subtema": "6.6",
+   "enunciado": "O FCFF de próximo ano será 280,8, com crescimento perpétuo de 4%. O WACC é 10%, a dívida é 1.000 e há 100 ações. O valor por ação é:",
+   "alternativas": [
+    "R$ 28,08",
+    "R$ 46,80",
+    "R$ 36,80",
+    "R$ 56,80"
+   ],
+   "correta": 2,
+   "explicacao": "Valor da firma = 280,8/(0,10 − 0,04) = 4.680. Patrimônio = 4.680 − 1.000 = 3.680, ou R$ 36,80 por ação. R$ 46,80 esquece de subtrair a dívida."
+  },
+  {
+   "id": "t6-59",
+   "subtema": "6.6",
+   "enunciado": "O modelo FCFF tende a ser preferível ao FCFE quando a empresa:",
+   "alternativas": [
+    "É muito alavancada ou está mudando a estrutura de capital, e o FCFE é negativo ou muito volátil",
+    "Tem dívida estável e baixa",
+    "Paga todo o lucro como dividendos",
+    "Não tem dívida alguma"
+   ],
+   "correta": 0,
+   "explicacao": "Com alavancagem alta ou em mudança, projetar o FCFE exige projetar cada captação e amortização. O FCFF evita isso e trata a estrutura de capital pelo WACC."
+  },
+  {
+   "id": "t6-60",
+   "subtema": "6.6",
+   "enunciado": "Sobre o uso do lucro líquido e do EBITDA como medida de fluxo de caixa, é correto afirmar:",
+   "alternativas": [
+    "O EBITDA é um bom substituto do FCFE",
+    "O lucro líquido inclui a captação de dívida",
+    "O lucro líquido já desconta o capex",
+    "O EBITDA ignora impostos e os investimentos em capital fixo e de giro, superestimando o caixa disponível"
+   ],
+   "correta": 3,
+   "explicacao": "O EBITDA está antes de juros (é medida da firma, não do acionista) e não desconta impostos nem investimentos. O lucro líquido inclui itens sem caixa e não desconta capex nem capital de giro."
+  },
+  {
+   "id": "t6-61",
+   "subtema": "6.6",
+   "enunciado": "No modelo de Gordon com D₁ = R$ 2 e r = 10%, o que acontece com o valor da ação se a taxa de crescimento passar de 5% para 6%?",
+   "alternativas": [
+    "Sobe cerca de 2,5%",
+    "Sobe 25%",
+    "Sobe 10%",
+    "Não muda"
+   ],
+   "correta": 1,
+   "explicacao": "Com g = 5%: 2/0,05 = 40. Com g = 6%: 2/0,04 = 50. Alta de 25%. A sensibilidade é grande porque r − g é pequeno, e por isso se faz análise de sensibilidade."
+  },
+  {
+   "id": "t6-62",
+   "subtema": "6.6",
+   "enunciado": "Uma empresa tem payout de 40%, retorno exigido de 12% e crescimento perpétuo de 8%. O P/L justificado sobre o lucro do próximo ano é:",
+   "alternativas": [
+    "3,3x",
+    "5,0x",
+    "10,0x",
+    "15,0x"
+   ],
+   "correta": 2,
+   "explicacao": "P₀/L₁ = payout/(r − g) = 0,40/0,04 = 10x. Usar a retenção (60%) daria 15x."
+  },
+  {
+   "id": "t6-63",
+   "subtema": "6.6",
+   "enunciado": "Uma ação negocia a P/L de 15x e seu lucro deve crescer 12% ao ano. O PEG é:",
+   "alternativas": [
+    "1,25",
+    "0,80",
+    "1,80",
+    "3,00"
+   ],
+   "correta": 0,
+   "explicacao": "PEG = (P/L)/g = 15/12 = 1,25, com g em pontos percentuais. Entre empresas comparáveis, o PEG menor indica ação mais barata em relação ao crescimento."
+  },
+  {
+   "id": "t6-64",
+   "subtema": "6.6",
+   "enunciado": "Valor de mercado das ações = R$ 800 milhões, dívida bruta = R$ 300 milhões, caixa = R$ 100 milhões e EBITDA = R$ 125 milhões. O EV/EBITDA é:",
+   "alternativas": [
+    "6,4x",
+    "7,2x",
+    "9,6x",
+    "8,0x"
+   ],
+   "correta": 3,
+   "explicacao": "EV = 800 + 300 − 100 = 1.000. EV/EBITDA = 1.000/125 = 8x. 6,4x usa só o valor de mercado e 9,6x esquece de subtrair o caixa."
+  },
+  {
+   "id": "t6-65",
+   "subtema": "6.6",
+   "enunciado": "Empresas comparáveis negociam a 7x EV/EBITDA. A empresa avaliada tem EBITDA de 200, dívida líquida de 400 e 50 ações. O preço justo por ação é:",
+   "alternativas": [
+    "R$ 28,00",
+    "R$ 20,00",
+    "R$ 36,00",
+    "R$ 8,00"
+   ],
+   "correta": 1,
+   "explicacao": "EV = 7 × 200 = 1.400. Patrimônio = 1.400 − 400 = 1.000. Preço = 1.000/50 = R$ 20. R$ 28 esquece de subtrair a dívida líquida e R$ 36 a soma em vez de subtrair."
+  },
+  {
+   "id": "t6-66",
+   "subtema": "6.6",
+   "enunciado": "Num DCF de três anos, o analista usa P/L terminal de 12x sobre o lucro por ação projetado de R$ 3,00 no ano 3. Com retorno exigido de 12%, o valor presente do valor terminal é aproximadamente:",
+   "alternativas": [
+    "R$ 32,14",
+    "R$ 28,70",
+    "R$ 25,62",
+    "R$ 36,00"
+   ],
+   "correta": 2,
+   "explicacao": "Valor terminal = 12 × 3,00 = 36,00 no ano 3. Valor presente = 36/1,12³ = 36/1,4049 ≈ 25,62. R$ 36,00 é o valor no ano 3, antes de descontar."
+  },
+  {
+   "id": "t6-67",
+   "subtema": "6.7",
+   "enunciado": "Pelo modelo de índice único, uma ação com alfa de 1%, beta de 1,2 e retorno esperado do índice de 10% tem retorno esperado de:",
+   "alternativas": [
+    "13,0%",
+    "12,0%",
+    "11,0%",
+    "13,2%"
+   ],
+   "correta": 0,
+   "explicacao": "E(R) = α + β·E(R_M) = 1 + 1,2 × 10 = 13%. 12% esquece o alfa e 13,2% multiplica o alfa pelo beta."
+  },
+  {
+   "id": "t6-68",
+   "subtema": "6.7",
+   "enunciado": "No modelo de índice único, a covariância entre A (β = 1,2) e B (β = 0,8), com desvio-padrão do mercado de 20%, é:",
+   "alternativas": [
+    "0,0192",
+    "0,9600",
+    "0,1920",
+    "0,0384"
+   ],
+   "correta": 3,
+   "explicacao": "Cov = β_A·β_B·σ_M² = 1,2 × 0,8 × 0,04 = 0,0384. Usar σ_M (0,20) em vez de σ_M² daria 0,192."
+  },
+  {
+   "id": "t6-69",
+   "subtema": "6.7",
+   "enunciado": "Para 100 ativos, quantos parâmetros o modelo de índice único exige, comparado aos 5.150 de Markowitz?",
+   "alternativas": [
+    "102",
+    "302",
+    "200",
+    "4.950"
+   ],
+   "correta": 1,
+   "explicacao": "3n + 2 = 302: 100 alfas, 100 betas, 100 variâncias residuais, mais o retorno esperado e a variância do índice. A redução vem de supor que os resíduos não são correlacionados."
+  },
+  {
+   "id": "t6-70",
+   "subtema": "6.8",
+   "enunciado": "Num modelo macroeconômico, uma ação tem retorno esperado de 10%, sensibilidade de 1,5 ao PIB e de −0,8 à inflação. O PIB esperado era 3% e veio 4%; a inflação esperada era 4% e veio 4,5%. Com resíduo zero, o retorno realizado é:",
+   "alternativas": [
+    "8,9%",
+    "10,0%",
+    "11,1%",
+    "12,4%"
+   ],
+   "correta": 2,
+   "explicacao": "Os fatores são as surpresas: +1 no PIB e +0,5 na inflação. R = 10 + 1,5 × 1 − 0,8 × 0,5 = 11,1%. 12,4% usa os níveis (10 + 6 − 3,6)."
+  },
+  {
+   "id": "t6-71",
+   "subtema": "6.8",
+   "enunciado": "Nos modelos de fatores macroeconômicos, os fatores representam:",
+   "alternativas": [
+    "As surpresas, isto é, a diferença entre o valor realizado e o esperado das variáveis",
+    "Os níveis das variáveis macroeconômicas",
+    "Atributos das empresas, como P/L e tamanho",
+    "Componentes estatísticos sem interpretação econômica"
+   ],
+   "correta": 0,
+   "explicacao": "Só a parte inesperada move os preços, porque o esperado já está no preço. Atributos de empresas são do modelo fundamental e componentes sem interpretação, do modelo estatístico."
+  },
+  {
+   "id": "t6-72",
+   "subtema": "6.8",
+   "enunciado": "Pelo APT de um fator, com Rf = 5%, prêmio do fator de 6% e sensibilidade de 1,2, o retorno esperado é:",
+   "alternativas": [
+    "7,2%",
+    "11,0%",
+    "13,2%",
+    "12,2%"
+   ],
+   "correta": 3,
+   "explicacao": "E(R) = 5 + 1,2 × 6 = 12,2%."
+  },
+  {
+   "id": "t6-73",
+   "subtema": "6.8",
+   "enunciado": "Pelo APT de dois fatores, com Rf = 5%, prêmios λ₁ = 4% e λ₂ = 2% e sensibilidades β₁ = 1,2 e β₂ = 0,5, o retorno esperado é:",
+   "alternativas": [
+    "9,8%",
+    "10,8%",
+    "11,0%",
+    "12,8%"
+   ],
+   "correta": 1,
+   "explicacao": "E(R) = 5 + 1,2 × 4 + 0,5 × 2 = 5 + 4,8 + 1,0 = 10,8%."
+  },
+  {
+   "id": "t6-74",
+   "subtema": "6.8",
+   "enunciado": "As carteiras bem diversificadas A e B têm sensibilidade 1,0 ao único fator do modelo, mas A tem retorno esperado de 12% e B, de 10%. Segundo o APT:",
+   "alternativas": [
+    "Não há o que fazer, pois ambas têm o mesmo risco",
+    "Deve-se comprar B, que é menos arriscada",
+    "Há arbitragem: comprar A e vender B no mesmo valor dá 2% sem risco e sem capital",
+    "Há arbitragem: comprar B e vender A"
+   ],
+   "correta": 2,
+   "explicacao": "Mesma exposição ao fator exige mesmo retorno. A carteira comprada em A e vendida em B tem fator zero e investimento zero, mas rende 2%. Essa pressão elimina a diferença."
+  },
+  {
+   "id": "t6-75",
+   "subtema": "6.8",
+   "enunciado": "Uma diferença entre o APT e o CAPM é que o APT:",
+   "alternativas": [
+    "Baseia-se na ausência de arbitragem, admite vários fatores e não exige a carteira de mercado nem retornos normais",
+    "Exige a identificação da carteira de mercado",
+    "Supõe que todos os investidores decidem por média e variância",
+    "Vale apenas para ativos individuais e não para carteiras"
+   ],
+   "correta": 0,
+   "explicacao": "O APT tem premissas mais fracas: retornos gerados por fatores, carteiras bem diversificadas e ausência de arbitragem. O CAPM depende da carteira de mercado e da média-variância."
+  },
+  {
+   "id": "t6-76",
+   "subtema": "6.8",
+   "enunciado": "Uma crítica frequente ao APT é que:",
+   "alternativas": [
+    "Exige que a carteira de mercado seja observável",
+    "Supõe expectativas homogêneas e um período",
+    "Admite um único fator",
+    "A teoria não especifica quais nem quantos fatores devem ser usados"
+   ],
+   "correta": 3,
+   "explicacao": "O APT diz que o retorno depende de fatores sistemáticos, mas não diz quais são. A escolha fica empírica, e os resultados mudam com ela."
+  },
+  {
+   "id": "t6-77",
+   "subtema": "6.8",
+   "enunciado": "Num modelo de fatores fundamentais, uma empresa tem P/L de 20, enquanto a média do universo é 15 e o desvio-padrão é 5. A sensibilidade padronizada da empresa ao fator P/L é:",
+   "alternativas": [
+    "0,25",
+    "1,00",
+    "1,33",
+    "4,00"
+   ],
+   "correta": 1,
+   "explicacao": "Sensibilidade = (20 − 15)/5 = 1,0. Nos modelos fundamentais as sensibilidades são os atributos padronizados, e os fatores são estimados por regressão."
+  },
+  {
+   "id": "t6-78",
+   "subtema": "6.8",
+   "enunciado": "Pelo modelo de três fatores de Fama-French, com Rf = 5%, beta de mercado 1,1, prêmio de mercado 6%, s = 0,4 com SMB = 2% e h = −0,2 com HML = 3%, o retorno esperado é:",
+   "alternativas": [
+    "11,6%",
+    "12,4%",
+    "11,8%",
+    "13,0%"
+   ],
+   "correta": 2,
+   "explicacao": "E(R) = 5 + 1,1 × 6 + 0,4 × 2 − 0,2 × 3 = 5 + 6,6 + 0,8 − 0,6 = 11,8%. 13,0% ignora o sinal negativo de h."
+  }
+ ]
+}

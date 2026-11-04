@@ -1,10 +1,11 @@
 // Offline: rede primeiro (conteúdo sempre atualizado quando há internet),
-// cache como reserva. Ao mudar a lista de arquivos, troque a VERSAO.
-const VERSAO = "cfg-v1";
+// cache como reserva. A linha de dados/ e a VERSAO são atualizadas pelo
+// ferramentas/importar.py; ao mudar app.js ou estilo.css, troque a VERSAO à mão.
+const VERSAO = "cfg-9ee7ca17";
 const ARQUIVOS = [
   "./", "index.html", "estilo.css", "app.js", "manifest.webmanifest",
   "icones/icone.svg", "icones/icone-192.png", "icones/icone-512.png", "icones/icone-180.png",
-  "dados/temas.json", "dados/tema5.json", "dados/tema9.json", "dados/manuais/revisao.json",
+  "dados/temas.json", "dados/tema1.json", "dados/tema5.json", "dados/tema6.json", "dados/tema9.json", "dados/tema11.json", "dados/tema12.json", "dados/manuais/revisao.json",
 ];
 
 self.addEventListener("install", e => {

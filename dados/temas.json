@@ -1,5 +1,14 @@
 [
  {
+  "id": "t1",
+  "numero": 1,
+  "titulo": "Métodos Quantitativos",
+  "resumo": "Apostila do tema 1, que vale de 8% a 12% da prova e serve de base para os temas de renda fixa, ações, derivativos e gestão de carteiras. Cada bloco traz o conceito, a fórmula, um exemplo resolvido passo a passo (com a sequência na HP 12C quando ajuda) e as pegadinhas mais comuns.",
+  "arquivo": "tema1.json",
+  "topicos": 5,
+  "questoes": 62
+ },
+ {
   "id": "t5",
   "numero": 5,
   "titulo": "Mercados e Instrumentos Financeiros",
@@ -9,6 +18,15 @@
   "questoes": 41
  },
  {
+  "id": "t6",
+  "numero": 6,
+  "titulo": "Teoria Moderna de Carteiras e Modelos de Precificação de Ativos",
+  "resumo": "Apostila do tema 6, com peso de 8% a 12% na prova. Vai da utilidade esperada e da fronteira de Markowitz ao CAPM, ao APT e aos modelos de avaliação de ações por dividendos, fluxo de caixa livre e múltiplos. Cada bloco traz o conceito, a fórmula, um exemplo resolvido e as pegadinhas mais comuns.",
+  "arquivo": "tema6.json",
+  "topicos": 8,
+  "questoes": 78
+ },
+ {
   "id": "t9",
   "numero": 9,
   "titulo": "Alocação de Ativos",
@@ -16,6 +34,24 @@
   "arquivo": "tema9.json",
   "topicos": 3,
   "questoes": 33
+ },
+ {
+  "id": "t11",
+  "numero": 11,
+  "titulo": "Ética e Autorregulação",
+  "resumo": "Apostila do tema 11, que vale de 8% a 12% da prova. Ele junta a ética do profissional de investimentos (dever fiduciário, informação privilegiada, manipulação), os temas ASG e a autorregulação da ANBIMA: o Código de Certificação, o Código de Ofertas Públicas, o Código de Administração e Gestão de Recursos de Terceiros (já adaptado à Resolução CVM 175) e o Código de Serviços Qualificados. Cada bloco traz o conceito, a regra, um caso e as pegadinhas mais comuns.",
+  "arquivo": "tema11.json",
+  "topicos": 4,
+  "questoes": 63
+ },
+ {
+  "id": "t12",
+  "numero": 12,
+  "titulo": "Legislação e Regulação",
+  "resumo": "Apostila do tema 12, que vale de 8% a 12% da prova. Cobre a Lei 6.385 e os crimes de mercado, o fundo no Código Civil, as Resoluções CVM 21, 175, 160, 30 e 62, as regras de EFPC, RPPS e previdência aberta, a agenda ASG, compliance e PLD/FT e a tributação de ações e renda fixa. Cada bloco traz o conceito, a regra, um caso e a pegadinha mais comum.",
+  "arquivo": "tema12.json",
+  "topicos": 4,
+  "questoes": 93
  },
  {
   "id": "rev",

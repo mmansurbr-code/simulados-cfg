@@ -1,0 +1,1240 @@
+{
+ "id": "t12",
+ "numero": 12,
+ "titulo": "Legislação e Regulação",
+ "resumo": "Apostila do tema 12, que vale de 8% a 12% da prova. Cobre a Lei 6.385 e os crimes de mercado, o fundo no Código Civil, as Resoluções CVM 21, 175, 160, 30 e 62, as regras de EFPC, RPPS e previdência aberta, a agenda ASG, compliance e PLD/FT e a tributação de ações e renda fixa. Cada bloco traz o conceito, a regra, um caso e a pegadinha mais comum.",
+ "topicos": [
+  {
+   "id": "t121",
+   "rotulo": "12.1 Normas legais e infralegais",
+   "html": "<div class=\"num\">12.1</div>\n  <h2>Normas legais e infralegais</h2>\n  <p class=\"why\">O mapa das regras que um gestor precisa conhecer: a lei do mercado de capitais, o fundo no Código Civil, as resoluções da CVM sobre gestão, fundos, ofertas, investidores e ilícitos, e as regras do CMN para fundos de pensão, RPPS e previdência aberta.</p>\n\n  <h3>12.1.1 · Lei 6.385/76 (Lei do Mercado de Capitais): disposições gerais</h3>\n  <ul>\n    <li><b>Atividades abrangidas:</b> emissão e distribuição de valores mobiliários; negociação e intermediação; organização e funcionamento das bolsas e balcões; <b>administração de carteiras e custódia</b>; auditoria das companhias abertas; e os serviços de consultor e analista de valores mobiliários.</li>\n    <li><b>Valores mobiliários (art. 2º):</b> ações, debêntures e bônus de subscrição; cupons, direitos e recibos de subscrição; certificados de depósito de valores mobiliários; cédulas de debêntures; <b>cotas de fundos de investimento</b>; notas comerciais; contratos futuros, de opções e outros derivativos; e, <b>quando ofertados publicamente</b>, quaisquer títulos ou <b>contratos de investimento coletivo</b> que gerem direito de participação, parceria ou remuneração cujos rendimentos venham do esforço do empreendedor ou de terceiros.</li>\n    <li><b>Não são valores mobiliários pela lei:</b> os <b>títulos da dívida pública</b> federal, estadual ou municipal e os títulos cambiais de responsabilidade de instituição financeira (exceto debêntures). É por isso que o Tesouro Direto e o CDB não são regulados pela CVM.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Órgão</th><th>Papel</th><th>Exemplos</th></tr>\n    <tr><td><b>CMN</b></td><td>Órgão normativo de cúpula: define a <b>política</b></td><td>Política de organização e funcionamento do mercado; regular o uso do crédito no mercado; fixar a orientação geral da CVM</td></tr>\n    <tr><td><b>CVM</b></td><td>Autarquia em regime especial vinculada ao Ministério da Fazenda: <b>regulamenta, fiscaliza e pune</b></td><td>Registrar companhias e ofertas; autorizar gestores, analistas e consultores; fiscalizar o mercado; instaurar processos sancionadores</td></tr>\n  </table></div>\n\n  <h3>Distribuição de valores mobiliários</h3>\n  <ul>\n    <li><b>Regra:</b> nenhuma emissão pública pode ser distribuída sem <b>prévio registro na CVM</b>, que pode dispensá-lo em casos previstos em norma.</li>\n    <li><b>Atos de distribuição:</b> venda, promessa de venda, oferta à venda ou subscrição e a aceitação de pedido de venda ou subscrição, quando praticados pelo emissor, seus fundadores ou pessoas equiparadas.</li>\n    <li><b>O que torna a emissão pública:</b> uso de listas, boletins, folhetos, prospectos ou anúncios dirigidos ao público; procura de investidores por meio de empregados, agentes ou corretores; negociação em loja, escritório ou estabelecimento aberto ao público ou por serviços públicos de comunicação.</li>\n    <li><b>Sistema de distribuição:</b> instituições financeiras e sociedades que distribuem emissões (por conta própria ou do emissor), corretoras e distribuidoras, agentes autônomos (assessores), bolsas, balcões organizados e câmaras de compensação e liquidação. Todos precisam de autorização da CVM para atuar.</li>\n  </ul>\n\n  <h3>Gestão profissional</h3>\n  <p>O exercício profissional da administração de carteiras de outras pessoas depende de <b>autorização prévia da CVM</b>. A lei diz que isso alcança a <b>gestão profissional</b> de recursos ou valores mobiliários entregues ao administrador <b>com autorização para que ele compre ou venda valores mobiliários por conta do cliente</b> (o comitente). O ponto central é a <b>discricionariedade</b>: quem decide é o gestor.</p>\n\n  <h3>Crimes contra o mercado de capitais</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Crime</th><th>Conduta</th><th>Pena</th></tr>\n    <tr><td><b>Manipulação do mercado</b> (art. 27-C)</td><td>Operações simuladas ou outras manobras fraudulentas destinadas a elevar, manter ou baixar a cotação, o preço ou o volume de um valor mobiliário</td><td class=\"n\">reclusão 1 a 8 anos + multa até 3× a vantagem</td></tr>\n    <tr><td><b>Uso indevido de informação privilegiada</b> (art. 27-D)</td><td>Usar informação relevante ainda não divulgada, capaz de gerar vantagem indevida, negociando valores mobiliários em nome próprio ou de terceiros</td><td class=\"n\">reclusão 1 a 5 anos + multa até 3× a vantagem</td></tr>\n    <tr><td><b>Exercício irregular</b> de cargo, profissão, atividade ou função (art. 27-E)</td><td>Atuar como administrador de carteira, assessor, auditor, analista, agente fiduciário etc. <b>sem autorização ou registro</b>, <b>ainda que de graça</b></td><td class=\"n\">detenção 6 meses a 2 anos + multa</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Manipulação: o dolo específico</span>Não basta mexer no preço. A conduta precisa ter o <b>fim de obter vantagem indevida ou lucro</b>, para si ou para outrem, <b>ou de causar dano a terceiros</b>.<br>Comprar muito e empurrar o preço por convicção de investimento, sem simulação nem fraude, não é crime.</div>\n\n  <h3>Insider trading: primário, secundário e dever de sigilo</h3>\n  <ul>\n    <li><b>Insider primário:</b> quem tem acesso direto à informação por causa do cargo ou da relação com o emissor (administradores, controladores, empregados, assessores, auditores, bancos da operação). Tem <b>dever de sigilo</b>. Se negociar, a pena é <b>aumentada em 1/3</b>.</li>\n    <li><b>Insider secundário:</b> quem recebe a informação de outra pessoa (o <i>tippee</i>) e negocia. Desde a Lei 13.506/2017 o crime <b>não exige mais o dever de sigilo</b>, então o insider secundário também comete o crime do art. 27-D.</li>\n    <li><b>Repassar já é crime:</b> incorre na mesma pena quem <b>repassa</b> informação sigilosa sobre fato relevante a que teve acesso por causa do cargo ou de relação comercial, profissional ou de confiança com o emissor, <b>mesmo que não negocie</b>.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span>\n    <p>O diretor de uma companhia conta ao cunhado que a empresa será comprada. O cunhado compra ações antes do fato relevante. O diretor responde pelo repasse (art. 27-D, § 1º). O cunhado responde como insider secundário (art. 27-D, caput). Se o próprio diretor tivesse comprado, a pena dele seria aumentada em 1/3.</p>\n  </div>\n\n  <h3>Conduta adequada × conduta criminosa e o dever de reportar</h3>\n  <ul>\n    <li><b>Adequado:</b> negociar com base em análise de informações públicas, respeitar períodos de vedação (<i>blackout</i>), registrar e justificar ordens, ter autorização da CVM antes de exercer atividade que a exija.</li>\n    <li><b>Criminoso:</b> negociar ou repassar informação privilegiada; simular negócios para mexer no preço; gerir recursos de terceiros sem autorização.</li>\n    <li><b>Omissão imprópria</b> (art. 13, § 2º, do Código Penal): quem tem o <b>dever de agir</b> (por lei, por ter assumido a responsabilidade de evitar o resultado, como o diretor de compliance, ou por ter criado o risco) e <b>podia agir</b>, mas fica inerte diante de um crime, pode responder pelo crime como se o tivesse praticado. Por isso, ao identificar indícios, o profissional deve reportar internamente e às autoridades (CVM, COAF, conforme o caso).</li>\n  </ul>\n\n  <h3>Penalidades administrativas da CVM (art. 11)</h3>\n  <ul>\n    <li>Advertência; <b>multa</b>; inabilitação temporária, <b>até 20 anos</b>, para cargo de administrador ou conselheiro fiscal de companhia aberta ou de entidade que dependa de autorização da CVM; suspensão da autorização ou registro; inabilitação temporária, até 20 anos, para atividades reguladas; proibição temporária, até 20 anos, de praticar certas atividades ou operações; proibição temporária, até 10 anos, de atuar em uma ou mais modalidades de operação no mercado.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Teto da multa da CVM: o maior entre</span>R$ 50 milhões · 2× o valor da emissão ou operação irregular · 3× a vantagem obtida ou a perda evitada · 2× o prejuízo causado aos investidores</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>A CVM <b>não</b> aplica pena de prisão. Reclusão e detenção são penas criminais, impostas pelo Judiciário em ação do Ministério Público. A CVM aplica sanções administrativas e comunica os indícios de crime ao MP.</div>\n\n  <h3>12.1.2 · O fundo no Código Civil (Lei da Liberdade Econômica, arts. 1.368-C a 1.368-F)</h3>\n  <ul>\n    <li><b>Natureza:</b> o fundo é uma <b>comunhão de recursos</b>, constituída sob a forma de <b>condomínio de natureza especial</b>, destinada a aplicar em ativos financeiros, bens e direitos de qualquer natureza. <b>Não se aplicam</b> a ele as regras do condomínio geral do Código Civil (por exemplo, o direito de cada condômino pedir a divisão da coisa).</li>\n    <li><b>Quem regula:</b> a <b>CVM</b>. O registro do regulamento na CVM basta para dar publicidade e efeitos perante terceiros.</li>\n    <li><b>Fundos criados por lei específica</b> e regulados pela CVM seguem essas regras <b>no que couber</b>.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>O regulamento pode prever</th><th>Detalhe</th></tr>\n    <tr><td>Responsabilidade do <b>cotista limitada</b> ao valor de suas cotas</td><td>Se um fundo que não tinha a limitação passa a tê-la, ela só vale para <b>fatos ocorridos depois</b> da mudança do regulamento</td></tr>\n    <tr><td>Responsabilidade dos <b>prestadores limitada</b> ao cumprimento dos deveres de cada um, <b>sem solidariedade</b></td><td>Na avaliação, consideram-se os <b>riscos inerentes</b> aos mercados em que o fundo atua e a natureza de <b>obrigação de meio</b> dos serviços (o gestor não promete resultado)</td></tr>\n    <tr><td><b>Classes de cotas</b> com direitos e obrigações distintos</td><td>Com possibilidade de <b>patrimônio segregado</b> por classe, que só responde pelas obrigações da própria classe</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Quem responde pelas dívidas:</b> o próprio <b>fundo</b> responde diretamente pelas obrigações legais e contratuais que assume. Os prestadores de serviço <b>não respondem</b> por essas obrigações, mas respondem pelos <b>prejuízos que causarem com dolo ou má-fé</b>.</li>\n    <li><b>Sem patrimônio suficiente</b> (fundo com responsabilidade limitada): aplicam-se as regras de <b>insolvência civil</b> (arts. 955 a 965 do Código Civil).</li>\n    <li><b>Quem pode pedir a insolvência:</b> os <b>credores</b>, os <b>cotistas</b> (por deliberação própria, conforme o regulamento) ou a <b>CVM</b>.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>\"Limitar a responsabilidade do prestador\" não é blindagem total. Ele continua respondendo pelos prejuízos que causar com dolo ou má-fé e pelo descumprimento dos próprios deveres. O que acaba é a solidariedade automática entre os prestadores.</div>\n\n  <h3>12.1.3 · Resolução CVM 21 (administração de carteiras)</h3>\n  <ul>\n    <li><b>Definição:</b> administração de carteiras é o exercício profissional de atividades ligadas, direta ou indiretamente, ao funcionamento, à manutenção e à gestão de uma carteira de valores mobiliários, incluindo a aplicação de recursos no mercado por conta do investidor.</li>\n    <li><b>Duas categorias de registro:</b> <b>gestor de recursos</b> (decide os investimentos) e <b>administrador fiduciário</b> (controla, processa e responde pela estrutura do fundo). Uma pessoa jurídica pode ter as duas.</li>\n    <li><b>O que o administrador de carteiras pode fazer:</b> gerir carteiras e fundos, administrar fundos (fiduciário) e <b>distribuir cotas dos fundos que administra ou gere</b>.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Registro de pessoa física</th><th>Registro de pessoa jurídica</th></tr>\n    <tr><td>Graduação em curso superior; <b>certificação aprovada pela CVM</b> (na prática, CGA ou CGE da ANBIMA para gestores), ou experiência profissional reconhecida pela CVM em caráter excepcional; reputação ilibada; não estar inabilitado nem condenado por crimes financeiros, contra o mercado, lavagem etc.</td><td>Sede no Brasil e administração de carteiras no objeto social; <b>diretor estatutário responsável pela gestão</b> (registrado na CVM como PF); <b>diretor responsável por compliance</b> (cumprimento de regras e controles internos); <b>diretor responsável por gestão de risco</b>, que pode ser o mesmo de compliance. Os diretores de compliance e risco <b>não podem</b> atuar na gestão</td></tr>\n  </table></div>\n\n  <h3>Site, conduta e vedações</h3>\n  <ul>\n    <li><b>Na internet, obrigatoriamente:</b> formulário de referência atualizado; código de ética; manual de regras, procedimentos e controles internos; política de gestão de risco; política de compra e venda de valores mobiliários por administradores, empregados e pela própria empresa; manual de precificação dos ativos; política de rateio e divisão de ordens entre carteiras.</li>\n    <li><b>Conduta:</b> boa-fé, transparência, diligência e lealdade com o cliente; buscar os objetivos de investimento do cliente; cumprir o contrato ou regulamento; <b>transferir ao cliente</b> qualquer benefício ou vantagem obtido por ser administrador (rebates, por exemplo); informar à CVM indícios de violação da regulação.</li>\n    <li><b>Vedações:</b> fazer <b>promessa de retorno</b> ou propaganda que garanta rentabilidade; atuar como contraparte das carteiras que administra (salvo exceções autorizadas); prestar fiança, aval ou coobrigação; contrair empréstimos em nome dos clientes (salvo exceções); negociar para <b>gerar corretagem ou rebate</b> (churning); mudar as características do serviço sem formalização prévia.</li>\n  </ul>\n\n  <h3>Controles internos, risco, segregação, fiduciário e distribuição</h3>\n  <ul>\n    <li><b>Controles internos (compliance):</b> regras e procedimentos escritos, testes periódicos e treinamento. O diretor de compliance entrega aos órgãos de administração, <b>até o último dia útil de abril</b>, um <b>relatório anual</b> sobre o ano civil anterior, com as conclusões dos exames, as deficiências e o cronograma para saná-las. O relatório fica à disposição da CVM.</li>\n    <li><b>Gestão de risco:</b> política escrita que permita monitorar, medir e ajustar permanentemente os riscos de cada carteira (mercado, liquidez, concentração, contraparte, crédito e operacional), com técnicas, periodicidade e responsáveis definidos, e relatórios de exposição para quem decide.</li>\n    <li><b>Segregação de atividades:</b> separar a gestão das demais atividades da empresa que gerem conflito (como intermediação e distribuição de outros produtos); controlar o acesso a informações confidenciais (<i>chinese wall</i>); regras de confidencialidade; treinamento; e segregação física e de sistemas quando necessária.</li>\n    <li><b>Administrador fiduciário:</b> responde pelos serviços de controle e processamento dos ativos, escrituração de cotas, auditoria e demais estruturas do fundo, e deve <b>fiscalizar os terceiros</b> que contratar.</li>\n    <li><b>Atuando como distribuidor</b> (só dos fundos que administra ou gere): passa a cumprir as regras de <b>cadastro e PLD</b> (Res. CVM 50), <b>suitability</b> (Res. CVM 30) e demais regras de distribuição, e indica um <b>diretor responsável</b> pela atividade.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O diretor de gestão <b>não pode</b> acumular compliance nem risco. Já o diretor de compliance <b>pode</b> ser o mesmo de risco.</div>\n\n  <h3>12.1.4 · Resolução CVM 175 (parte geral)</h3>\n  <ul>\n    <li><b>Estrutura:</b> <b>fundo</b> → <b>classes</b> (cada uma com <b>patrimônio segregado</b> e registro próprio) → <b>subclasses</b> (sem patrimônio próprio). Todas as classes pertencem à mesma categoria do fundo. Subclasses só podem diferir por <b>público-alvo</b>, <b>prazos e condições</b> de aplicação, amortização e resgate e <b>taxas</b>.</li>\n    <li><b>Constituição:</b> por deliberação conjunta dos <b>prestadores de serviços essenciais</b> (administrador e gestor), que aprovam o regulamento. O registro de funcionamento na CVM é <b>automático</b>, com o envio dos documentos pelo administrador.</li>\n    <li><b>Classe aberta</b> admite resgate. <b>Classe fechada</b> não admite: o investidor sai por negociação no mercado, amortização ou liquidação.</li>\n    <li><b>Responsabilidade limitada:</b> se o regulamento limita a responsabilidade do cotista ao valor subscrito, a classe ganha o sufixo \"<b>Responsabilidade Limitada</b>\". Sem essa previsão, os cotistas respondem por eventual PL negativo.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Termo</th><th>Significado</th></tr>\n    <tr><td>Cotas</td><td>Escriturais e nominativas, frações do patrimônio da classe. Valor da cota = PL da classe ÷ número de cotas</td></tr>\n    <tr><td>Emissão (classe aberta)</td><td>Pelo valor da cota do dia ou do dia seguinte à integralização, conforme o regulamento</td></tr>\n    <tr><td>Subscrição × integralização</td><td>Subscrição é o compromisso de comprar as cotas; integralização é o pagamento, em regra em dinheiro</td></tr>\n    <tr><td>Resgate</td><td>O cotista devolve as cotas e recebe o valor, seguindo os prazos de conversão e pagamento do regulamento</td></tr>\n    <tr><td>Amortização</td><td>Pagamento uniforme a todos os cotistas de parte do valor das cotas, <b>sem reduzir o número de cotas</b></td></tr>\n    <tr><td>Informação privilegiada</td><td>É vedado negociar cotas em mercados organizados usando informação relevante não divulgada. A norma presume o uso quando quem negocia tinha a informação, e presume que diretores do gestor e do administrador a têm. O prestador que se afasta do fundo e negocia em até 3 meses também é presumido</td></tr>\n  </table></div>\n\n  <h3>Divulgação, comunicação e assembleias</h3>\n  <ul>\n    <li><b>Meio eletrônico é a regra:</b> o que a norma manda \"enviar\", \"comunicar\" ou \"disponibilizar\" deve estar acessível aos cotistas por meio eletrônico, e a obrigação se cumpre na data em que a informação fica acessível. O regulamento pode prever envio físico a quem pedir, dizendo quem paga o custo.</li>\n    <li><b>Manifestações do cotista</b> (\"atestado\", \"ciência\", \"concordância\") podem ser eletrônicas, desde que o procedimento esteja no regulamento, seja verificável e fique armazenado pelo administrador.</li>\n    <li><b>Fato relevante:</b> o administrador divulga imediatamente qualquer fato que possa influir no preço das cotas ou na decisão de investir.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Assembleia geral</th><th>Assembleia especial</th></tr>\n    <tr><td>Quem é convocado</td><td><b>Todos os cotistas do fundo</b></td><td>Só os cotistas de <b>uma classe ou subclasse</b></td></tr>\n    <tr><td>Matérias</td><td>Comuns a todas as classes (ex.: alteração da parte geral do regulamento, demonstrações contábeis do fundo)</td><td>De interesse exclusivo da classe ou subclasse</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Regras-chave da assembleia</span>Convocação com 10 dias de antecedência, no mínimo · instala-se com qualquer número de cotistas<br>Deliberação por maioria dos votos dos presentes (o regulamento pode exigir quórum qualificado)<br>Podem convocar: prestadores essenciais ou cotistas com 5% das cotas · resumo das decisões em até 30 dias<br>Não votam: prestadores de serviço, seus sócios, diretores e empregados, partes relacionadas e cotistas em conflito</div>\n\n  <h3>Prestadores essenciais, remuneração e vedações</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Administrador (fiduciário)</th><th>Gestor</th></tr>\n    <tr><td>Função</td><td>Administração do fundo</td><td>Gestão da carteira: negociar ativos, observar limites de composição e concentração, gerir liquidez, exercer o direito de voto</td></tr>\n    <tr><td>Contrata em nome do fundo</td><td>Tesouraria e controle e processamento dos ativos; escrituração das cotas; auditoria independente</td><td>Intermediação; <b>distribuição de cotas</b>; consultoria; agência de rating; formador de mercado; cogestão</td></tr>\n    <tr><td>Remuneração</td><td><b>Taxa de administração</b></td><td><b>Taxa de gestão</b> (e taxa de performance, quando houver)</td></tr>\n  </table></div>\n  <ul>\n    <li>Além delas, há a <b>taxa máxima de distribuição</b> (para os distribuidores) e as taxas de ingresso e de saída, pagas pelo cotista à classe.</li>\n    <li><b>Vedações aos prestadores essenciais, em nome do fundo:</b> receber depósito em conta corrente; contrair ou conceder empréstimos (salvo exceções); vender cotas à prestação; <b>garantir rendimento predeterminado</b>; usar recursos da classe para pagar seguro contra perdas dos cotistas; praticar atos de liberalidade.</li>\n    <li><b>Conduta:</b> os prestadores respondem por seus próprios atos e omissões, cada um na sua esfera. É vedado ao gestor receber vantagem que comprometa sua independência e é vedado repassar informação relevante não divulgada.</li>\n    <li><b>Carteira:</b> o patrimônio deve estar aplicado nos ativos previstos no regulamento e nas regras da categoria. Uma classe não pode investir em cotas de outra classe do mesmo fundo.</li>\n    <li><b>Desenquadramento passivo:</b> o gestor não é punido quando o limite é rompido por fatos alheios à sua vontade. Se o desenquadramento durar <b>15 dias úteis consecutivos</b>, ele envia explicações à CVM e informa o reenquadramento assim que ocorrer.</li>\n  </ul>\n\n  <h3>Classes restritas, exclusivas e previdenciárias</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Classe</th><th>Definição</th><th>Consequência</th></tr>\n    <tr><td><b>Restrita</b></td><td>Destinada exclusivamente a <b>investidores qualificados e profissionais</b></td><td>Mais flexibilidade: integralizar e resgatar em ativos, resgate só em datas definidas, cobrar taxas por qualquer critério, prestar garantias, subclasses com direitos econômicos e políticos distintos</td></tr>\n    <tr><td><b>Exclusiva</b></td><td>Um único investidor profissional, ou cotistas com vínculo societário familiar ou vinculados por interesse único e indissociável</td><td>A própria classe é considerada investidor profissional</td></tr>\n    <tr><td><b>Previdenciária</b> (art. 116)</td><td>Para recursos de entidades abertas ou fechadas de previdência, RPPS, planos de previdência aberta e seguros de pessoas (regras do CNSP) e FAPI</td><td>Indica no cadastro da CVM a condição de previdenciária e o plano a que está vinculada, e segue também as regras do CMN para aquele investidor</td></tr>\n  </table></div>\n\n  <h3>Encargos</h3>\n  <p><b>Encargos</b> são despesas que podem ser debitadas diretamente da classe, fora das taxas dos prestadores essenciais. Exemplos: tributos sobre os ativos; registro e publicação de documentos; correspondência aos cotistas; <b>auditor independente</b>; corretagens e emolumentos; honorários advocatícios na defesa do fundo; despesas de assembleia; liquidação, registro e custódia; câmbio; as próprias taxas de administração, gestão e máxima de distribuição; formador de mercado; agência de rating. Qualquer despesa <b>não listada</b> como encargo corre por conta do prestador essencial que a contratou.</p>\n\n  <h3>Patrimônio líquido negativo e insolvência da classe</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Responsabilidade do cotista</th><th>O que acontece com o PL negativo</th></tr>\n    <tr><td><b>Ilimitada</b></td><td>Os <b>cotistas cobrem</b> o PL negativo com novos aportes (sem prejuízo da responsabilidade do prestador que agiu com dolo ou má-fé)</td></tr>\n    <tr><td><b>Limitada</b></td><td><b>Na hora:</b> fechar para resgates e não amortizar; não aceitar novas subscrições; avisar o gestor; divulgar fato relevante; cancelar resgates pendentes.<br><b>Em até 20 dias:</b> elaborar com o gestor um plano de resolução e convocar assembleia (em até 2 dias úteis após o plano).<br><b>Se o plano não for aprovado,</b> os cotistas escolhem: aportar recursos; cindir, fundir ou incorporar a classe; liquidá-la (se não restarem obrigações); ou mandar o administrador pedir a insolvência</td></tr>\n  </table></div>\n  <ul>\n    <li>Se a assembleia não se instalar ou não decidir, o <b>administrador deve pedir a declaração judicial de insolvência</b> da classe.</li>\n    <li>A <b>CVM</b> também pode pedir a insolvência quando o PL negativo ameaçar o funcionamento do mercado ou a integridade do sistema financeiro.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Com responsabilidade limitada, o cotista não é chamado a cobrir o rombo, e é justamente por isso que a classe pode acabar em insolvência. Com responsabilidade ilimitada, o rombo é coberto pelos cotistas.</div>\n\n  <h3>12.1.5 · Resolução CVM 160 (ofertas públicas)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Tema</th><th>Regra</th></tr>\n    <tr><td>Registro e dispensa</td><td>Toda oferta pública a investidores no Brasil precisa de registro na CVM (rito <b>automático</b> ou <b>ordinário</b>) ou de dispensa. A CVM pode <b>dispensar o registro ou alguns requisitos</b> conforme as características da oferta, o interesse público e a proteção ao investidor. Algumas ofertas nem se sujeitam à norma (ex.: lote único e indivisível para um único investidor)</td></tr>\n    <tr><td>Lote adicional</td><td>A critério do ofertante, sem novo registro: até <b>25%</b> da quantidade inicial (limite dispensado em ofertas só para profissionais)</td></tr>\n    <tr><td>Lote suplementar</td><td>Opção outorgada aos <b>coordenadores</b> para <b>estabilização de preços</b>: até <b>15%</b> da quantidade inicial, nas mesmas condições e preço</td></tr>\n    <tr><td>Distribuição parcial</td><td>Só se prevista, com montante mínimo. Se o mínimo não for atingido (ou se não houver previsão e faltar colocar), a oferta é cancelada e os valores são <b>devolvidos</b> aos investidores. O investidor pode condicionar sua adesão</td></tr>\n    <tr><td>Instituições intermediárias</td><td>A oferta precisa de ao menos um <b>coordenador</b> registrado. O <b>coordenador líder</b> conduz a oferta com diligência. Os demais participantes do consórcio devem integrar o sistema de distribuição</td></tr>\n    <tr><td>Prospecto e lâmina</td><td>Prospecto com as informações completas. <b>Lâmina</b> que resume as características essenciais e os principais <b>fatores de risco</b>, de forma consistente com o prospecto</td></tr>\n    <tr><td>Consulta de viabilidade</td><td>Mesmo antes do protocolo, permite-se consulta <b>sigilosa</b> a potenciais <b>investidores profissionais</b>, sem vincular as partes e com compromisso de sigilo</td></tr>\n    <tr><td>Coleta de intenções e reservas</td><td>O <i>bookbuilding</i> (coleta de intenções para formar preço) só começa após o aviso ao mercado. Reservas são admitidas nas condições da norma e não se confundem com o <i>bookbuilding</i></td></tr>\n    <tr><td>Conflito de interesses</td><td>Ofertante e consórcio não negociam valores mobiliários do emissor durante a oferta. Com excesso de demanda <b>superior a 1/3</b>, é vedada a colocação para <b>pessoas vinculadas</b> (com exceções, como o formador de mercado)</td></tr>\n    <tr><td>Material publicitário</td><td><b>Não depende de aprovação prévia</b> da CVM, mas é enviado a ela em até 1 dia útil após o uso. Deve dizer que é material publicitário, advertir que o investimento tem risco e indicar o prospecto (\"Leia o prospecto antes de aceitar a oferta…\")</td></tr>\n    <tr><td>Período de distribuição</td><td>Subscrição em no máximo <b>180 dias</b> do anúncio de início</td></tr>\n    <tr><td>Veracidade</td><td>O <b>ofertante</b> responde pela suficiência, veracidade, precisão, consistência e atualidade das informações; o coordenador líder deve agir com diligência para assegurá-las</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Adicional = 25%, decidido pelo <b>ofertante</b>. Suplementar = 15%, outorgado aos <b>coordenadores</b> para estabilização. A prova adora trocar os dois.</div>\n\n  <h3>12.1.6 · Resolução CMN 4.994/22 (EFPC, fundos de pensão)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Segmento</th><th>Limite por plano</th><th>Exemplos</th></tr>\n    <tr><td>Renda fixa</td><td class=\"n\">até 100%</td><td>Títulos públicos federais até 100%; ativos de bancos e de companhias abertas até 80%; FIDC, CCB, CRA e outros até 20%</td></tr>\n    <tr><td>Renda variável</td><td class=\"n\">até 70%</td><td>Ações em segmento especial de governança até 70%; demais ações até 50%; BDR e ETF internacionais até 10%; ouro até 3%</td></tr>\n    <tr><td>Estruturado</td><td class=\"n\">até 20%</td><td>FIP, multimercados (até 15%), COE e outros</td></tr>\n    <tr><td>Imobiliário</td><td class=\"n\">até 20%</td><td>FII, CRI e CCI</td></tr>\n    <tr><td>Operações com participantes</td><td class=\"n\">até 15%</td><td>Empréstimos e financiamentos imobiliários aos participantes</td></tr>\n    <tr><td>Exterior</td><td class=\"n\">até 10%</td><td>Fundos de investimento no exterior, BDR etc.</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Limites por emissor e de concentração</span>Por emissor (% dos recursos do plano): Tesouro Nacional 100% · instituição financeira bancária 20% · demais emissores 10%<br>Concentração (todos os recursos da EFPC): até 25% do PL de uma mesma IF, FIDC, FII, ETF ou fundo estruturado · até 25% do capital votante de uma companhia · até 15% de FIP e fundos no exterior</div>\n  <ul>\n    <li><b>Empréstimo de valores mobiliários:</b> permitido, conforme regras do CMN e da CVM. Os ativos emprestados continuam contando nos limites.</li>\n    <li><b>Derivativos:</b> só com avaliação prévia de risco, controles adequados, registro em bolsa ou balcão organizado e contraparte central. Depósito de margem até <b>15%</b> e prêmios de opções pagos até <b>5%</b>. Nada de posição a descoberto ou com perda ilimitada.</li>\n    <li><b>Fundos — ativo final × consolidação:</b> em regra, as aplicações em fundos são <b>consolidadas</b> com as diretas (<i>look-through</i>): olha-se o que o fundo tem dentro. Alguns fundos são tratados como <b>ativo final</b>, contando pela cota: FIDC, FII, ETF, fundos estruturados e certos fundos no exterior.</li>\n    <li><b>Desenquadramento passivo</b> (valorização, bonificação, resgate em fundo, reorganização etc.): <b>não é infração</b>. O excesso deve ser eliminado em até <b>2 anos</b>, e é vedado fazer novas aplicações que o agravem. Contraste com a Res. CVM 175, em que o gestor de um fundo que fica 15 dias úteis desenquadrado se explica à CVM.</li>\n    <li><b>Vedações:</b> operações entre planos da mesma EFPC (salvo exceções); conceder crédito (fora das operações com participantes); títulos de pessoas físicas ou de sociedades limitadas; ações de companhias fechadas ou fora de mercado organizado (salvo exceções); derivativos a descoberto ou com perda ilimitada; <b>day trade</b> (salvo exceções); prestar fiança ou aval; aplicar em ativos virtuais. Um fundo cujo público é EFPC precisa respeitar essas vedações para poder receber o dinheiro dela.</li>\n  </ul>\n\n  <h3>12.1.7 · Resolução CMN 4.963/21 (RPPS)</h3>\n  <ul>\n    <li><b>Política anual de investimentos:</b> aprovada pelo órgão superior do RPPS <b>antes do início de cada exercício</b>, com modelo de gestão, estratégia de alocação, meta de rentabilidade (atrelada à meta atuarial), limites por segmento, critérios de seleção de gestores e de precificação, e controle de riscos.</li>\n    <li><b>Atenção:</b> a 4.963 foi substituída pela Res. CMN 5.272/2025, em vigor desde fevereiro de 2026. O programa da CFG ainda cita a 4.963, que é a base desta apostila.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Segmento</th><th>Limite (sem Pró-Gestão)</th><th>Fundos típicos</th></tr>\n    <tr><td>Renda fixa</td><td class=\"n\">até 100%</td><td>Títulos públicos federais e fundos 100% títulos públicos (100%); fundos de renda fixa em geral (60%); ativos de bancos (20%); FIDC sênior e crédito privado (5%)</td></tr>\n    <tr><td>Renda variável</td><td class=\"n\">até 30%</td><td>Fundos de ações e ETFs de ações</td></tr>\n    <tr><td>Exterior</td><td class=\"n\">até 10%</td><td>Fundos de investimento no exterior e BDR</td></tr>\n    <tr><td>Estruturados</td><td class=\"n\">até 15%</td><td>Multimercados, FIP e fundos de ações mercado de acesso</td></tr>\n    <tr><td>Fundos imobiliários</td><td class=\"n\">até 5%</td><td>FII</td></tr>\n    <tr><td>Empréstimos consignados</td><td class=\"n\">até 5%</td><td>Aos segurados</td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Limites gerais da gestão do RPPS</span>Cotas de um mesmo fundo: até 20% dos recursos do RPPS (exceto fundos 100% títulos públicos)<br>Participação no fundo: até 15% do PL do fundo (5% em FIDC e crédito privado)<br>Gestora: o total do RPPS sob uma mesma gestora até 5% dos recursos de terceiros que ela gere<br>Quanto maior o nível no Pró-Gestão (certificação de boa gestão), maiores os limites</div>\n\n  <h3>12.1.8 · Previdência privada aberta: FIE, PGBL e VGBL</h3>\n  <ul>\n    <li><b>Classe previdenciária</b> (art. 116 da Res. CVM 175): é o veículo usado para montar os <b>FIEs</b>, que seguem também as regras do CNSP e do CMN.</li>\n    <li><b>FIE</b> (Fundo de Investimento Especialmente Constituído): fundo aberto cujos únicos cotistas são, direta ou indiretamente, <b>seguradoras e entidades abertas de previdência (EAPC)</b>. Recebe os recursos de PGBL e VGBL durante o diferimento.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Veículo</th><th>Quem pode ser cotista</th></tr>\n    <tr><td><b>FIE Tipo I</b></td><td>Somente seguradoras e EAPC</td></tr>\n    <tr><td><b>FIE Tipo II</b></td><td>Somente FIEs Tipo I</td></tr>\n    <tr><td><b>FIFE</b></td><td>Fundo que recebe recursos de FIEs; só FIEs são cotistas. Para os limites, o FIE soma a própria carteira e a dos FIFEs em que investe</td></tr>\n  </table></div>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>PGBL</th><th>VGBL</th></tr>\n    <tr><td>Natureza</td><td>Plano de <b>previdência complementar aberta</b></td><td><b>Seguro de pessoas</b> com cobertura por sobrevivência</td></tr>\n    <tr><td>Remuneração no diferimento</td><td colspan=\"2\">Rentabilidade dos FIEs, <b>sem garantia mínima</b>, na modalidade de contribuição variável</td></tr>\n    <tr><td>Dedução no IR</td><td>Contribuições dedutíveis até <b>12% da renda bruta tributável</b> (declaração completa)</td><td>Não dedutível</td></tr>\n    <tr><td>IR no resgate</td><td>Sobre o <b>valor total</b> resgatado</td><td>Só sobre os <b>rendimentos</b></td></tr>\n    <tr><td>Subtipos (Res. CNSP 349 e 348)</td><td>PGBL, <b>PGBL Programado</b> (pagamentos financeiros programados no diferimento), PRGP, PRSA, PAGP, PRI e PDR</td><td>VGBL, <b>VGBL Programado</b> e os equivalentes VRGP, VRSA, VAGP, VRI e VDR</td></tr>\n  </table></div>\n  <p class=\"hint\">As Res. CNSP 348 e 349 foram revogadas em 2024 (pelas Res. CNSP 464 e 463), mas são as citadas no programa. Siglas: R = remuneração garantida, A = atualização garantida, P = performance, RI = renda imediata, DR = desempenho referenciado.</p>\n  <div class=\"tbl\"><table>\n    <tr><th>FIE pela Res. CMN 4.993/22 (Anexo)</th><th>Renda fixa</th><th>Renda variável</th><th>Imóveis</th><th>Câmbio</th><th>Outros</th></tr>\n    <tr><td>Planos abertos e seguros com sobrevivência, no diferimento</td><td class=\"n\">100%</td><td class=\"n\">70%</td><td class=\"n\">20%</td><td class=\"n\">20%</td><td class=\"n\">20%</td></tr>\n    <tr><td>FIE para Participantes Qualificados (exclusivo desse público)</td><td class=\"n\">100%</td><td class=\"n\">100%</td><td class=\"n\">40%</td><td class=\"n\">40%</td><td class=\"n\">40%</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Outras regras para FIEs:</b> limites por emissor (União 100%; fundos 49%; instituição financeira 25%; companhia aberta 15%; FIDC, FII e FIP 10%; demais 5%); derivativos só sem alavancagem (perda limitada ao PL, sem venda de opção a descoberto, com contraparte central), com margem até 15% e prêmios até 5% do PL; vedação a ativos emitidos pela própria seguradora ou partes relacionadas.</li>\n  </ul>\n\n  <h3>12.1.9 · Resolução CVM 30 (investidor profissional e qualificado)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Investidor profissional</th><th>Investidor qualificado</th></tr>\n    <tr><td>Instituições financeiras; seguradoras e sociedades de capitalização; EAPC e EFPC; fundos de investimento; clubes geridos por administrador autorizado; administradores de carteira, analistas, consultores e assessores autorizados pela CVM, <b>quanto aos recursos próprios</b>; investidores não residentes; PF ou PJ com <b>mais de R$ 10 milhões</b> em aplicações financeiras que atestem essa condição por escrito</td><td>Todo investidor profissional; PF ou PJ com <b>mais de R$ 1 milhão</b> em aplicações financeiras que atestem essa condição por escrito; pessoas aprovadas em exames ou com certificações aceitas pela CVM para registro de assessor, gestor, analista ou consultor, quanto aos recursos próprios; clubes geridos por cotistas qualificados</td></tr>\n  </table></div>\n  <ul><li><b>RPPS</b> só é profissional ou qualificado se reconhecido como tal pela regulamentação do Ministério da Previdência.</li></ul>\n  <div class=\"ex\"><span class=\"lbl\">Classifique</span>\n    <p>Ana tem R$ 3 milhões aplicados e assina a declaração: <b>qualificada</b>. Bruno tem a CGA mas não é registrado na CVM: <b>qualificado</b>. Carla é gestora autorizada pela CVM, investindo recursos próprios: <b>profissional</b>. Uma fundação de previdência (EFPC): <b>profissional</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Ter certificação (CPA-20, CEA, CGA) torna a pessoa <b>qualificada</b>. Ser <b>registrado</b> na CVM como gestor, analista, consultor ou assessor torna <b>profissional</b>, mas só para os recursos próprios.</div>\n\n  <h3>12.1.10 · Resolução CVM 62 (ilícitos de mercado)</h3>\n  <ul>\n    <li><b>Tipologia aberta:</b> a norma define os ilícitos por conceitos amplos e não fecha uma lista de condutas. Novas práticas (por exemplo, com algoritmos) podem se encaixar nos conceitos, o que obriga o profissional a se <b>atualizar</b> sempre.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Ilícito</th><th>O que é</th><th>Objetivo vedado</th></tr>\n    <tr><td><b>Condições artificiais</b> de demanda, oferta ou preço</td><td>Negociações em que o participante, por ação ou omissão dolosa, altera o fluxo de ordens de compra ou venda</td><td>Criar uma demanda, oferta ou preço que não existe de verdade</td></tr>\n    <tr><td><b>Manipulação de preços</b></td><td>Processo ou artifício destinado a elevar, manter ou baixar a cotação</td><td>Induzir terceiros a comprar ou vender</td></tr>\n    <tr><td><b>Operação fraudulenta</b></td><td>Uso de ardil ou artifício para induzir ou manter terceiros em erro</td><td>Obter vantagem patrimonial ilícita</td></tr>\n    <tr><td><b>Prática não equitativa</b></td><td>Conduta que coloca uma das partes em posição indevida de desequilíbrio ou desigualdade</td><td>Tirar proveito da posição privilegiada</td></tr>\n  </table></div>\n  <div class=\"tbl\"><table>\n    <tr><th>Exemplo notório</th><th>Como funciona</th></tr>\n    <tr><td><b>Spoofing</b></td><td>Inserir ofertas relevantes <b>sem intenção de executá-las</b>, para induzir os outros a negociar, e cancelá-las em seguida</td></tr>\n    <tr><td><b>Layering</b></td><td>Variação do spoofing: <b>várias ofertas em camadas</b> de preço num lado do livro para pressionar o preço, executando no outro lado</td></tr>\n    <tr><td><b>Money pass</b></td><td>Transferir dinheiro entre comitentes por meio de negócios com <b>resultado combinado</b> (ex.: opções ilíquidas a preços fora do mercado). É operação fraudulenta</td></tr>\n    <tr><td><b>Manipulação de benchmark</b></td><td>Negociar para distorcer um índice ou preço de referência (fechamento, Ptax, taxas de juros) e lucrar com posições atreladas a ele</td></tr>\n    <tr><td><b>Churning</b></td><td><b>Giro excessivo</b> da carteira do cliente para gerar corretagem ou rebate. Prática não equitativa</td></tr>\n    <tr><td><b>Insider trading</b></td><td>Negociar com informação relevante não divulgada (regulado pela Res. CVM 44 e crime pelo art. 27-D)</td></tr>\n    <tr><td><b>Front running</b></td><td>Negociar <b>antes</b> de uma ordem de cliente ou fundo que se sabe que vai mexer no preço, para lucrar com ela. Prática não equitativa</td></tr>\n  </table></div>\n\n  <h3>12.1.11 · Regulação e autorregulação ASG</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Norma</th><th>Assunto</th></tr>\n    <tr><td>Res. CMN 4.943/21</td><td>Inclui os riscos <b>social, ambiental e climático</b> na estrutura de gerenciamento de riscos das instituições financeiras (alterando a Res. 4.557)</td></tr>\n    <tr><td>Res. CMN 4.944/21</td><td>O mesmo para as instituições com estrutura simplificada de gestão de riscos (segmento S5)</td></tr>\n    <tr><td>Res. CMN 4.945/21</td><td><b>PRSAC</b>: Política de Responsabilidade Social, Ambiental e Climática que as instituições do SFN devem ter e implementar</td></tr>\n    <tr><td>Res. BCB 139/21</td><td>Divulgação do <b>Relatório de Riscos e Oportunidades Sociais, Ambientais e Climáticas (GRSAC)</b>, na linha do TCFD</td></tr>\n    <tr><td>IN BCB 153/21</td><td>As <b>tabelas padronizadas</b> do relatório GRSAC</td></tr>\n    <tr><td>Res. CMN 4.661/18</td><td>Norma de EFPC (antecessora da 4.994) que passou a pedir que se considerem, <b>sempre que possível</b>, os aspectos ASG na análise de riscos</td></tr>\n    <tr><td>Res. CVM 59/21, alterada pela Res. CVM 87/22</td><td>Informações ASG no <b>formulário de referência</b> das companhias abertas, no modelo \"pratique ou explique\"</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>As normas do CMN e do BCB miram as <b>instituições financeiras</b> (risco e política socioambiental). As da CVM miram a <b>transparência</b> ao investidor (formulário de referência e, nos fundos, a vedação a denominações ASG sem lastro na política de investimento).</div>"
+  },
+  {
+   "id": "t122",
+   "rotulo": "12.2 Compliance e PLD/FT",
+   "html": "<div class=\"num\">12.2</div>\n  <h2>Compliance e PLD/FT</h2>\n  <p class=\"why\">A função que garante que a gestora cumpre as regras, administra conflitos de interesse e não é usada para lavar dinheiro ou financiar o terrorismo.</p>\n\n  <h3>Compliance nas gestoras e administradoras (Código ANBIMA de Administração e Gestão de Recursos de Terceiros)</h3>\n  <ul>\n    <li>A função de <b>compliance é obrigatória</b>, com <b>diretor responsável</b>, estrutura compatível com o porte e a complexidade da instituição, e <b>independência</b> e autonomia em relação às áreas de negócio (o diretor de compliance não pode ser o de gestão).</li>\n    <li>Ela mantém as políticas por escrito, monitora seu cumprimento, conduz testes e treinamentos e reporta à alta administração, inclusive por meio do relatório anual de controles internos.</li>\n  </ul>\n\n  <h3>Segregação e conflitos de interesse: ações recomendadas</h3>\n  <ul>\n    <li>Segregar funções e áreas que geram conflito (gestão × distribuição, tesouraria, banco de investimento), com <b>controle de acesso</b> a informações e sistemas (<i>chinese wall</i>).</li>\n    <li><b>Política de investimentos pessoais</b> dos colaboradores, com pré-aprovação, períodos de vedação e lista restrita.</li>\n    <li><b>Política de rateio e divisão de ordens</b> justa entre carteiras e regras para operações entre fundos da mesma casa.</li>\n    <li>Regras sobre presentes, entretenimento e <i>soft dollar</i>; <b>divulgar</b> aos clientes os conflitos que não puderem ser eliminados; termo de confidencialidade e treinamento periódico.</li>\n  </ul>\n\n  <h3>Lei 9.613/98 (lavagem de dinheiro)</h3>\n  <ul>\n    <li><b>Crime (Cap. I):</b> <b>ocultar ou dissimular</b> a natureza, origem, localização, disposição, movimentação ou propriedade de bens, direitos ou valores provenientes, direta ou indiretamente, de <b>infração penal</b>. Pena: reclusão de 3 a 10 anos e multa. Desde a Lei 12.683/2012, <b>qualquer infração penal</b> pode ser o crime antecedente.</li>\n    <li><b>Etapas típicas:</b> colocação (o dinheiro entra no sistema), ocultação ou estratificação (camadas de operações para apagar o rastro) e integração (o dinheiro volta com aparência lícita).</li>\n    <li><b>Pessoas sujeitas (Cap. V):</b> quem capta, intermedeia ou aplica recursos de terceiros; quem custodia, emite, distribui, liquida, negocia, intermedeia ou <b>administra títulos e valores mobiliários</b>. <b>Gestores e administradores de fundos estão incluídos.</b></li>\n    <li><b>Identificação e registros (Cap. VI):</b> identificar os clientes e manter o cadastro atualizado; registrar todas as transações; ter políticas e controles proporcionais ao porte; cadastrar-se no COAF; <b>guardar por no mínimo 5 anos</b> a partir do encerramento da conta ou da conclusão da transação.</li>\n    <li><b>Comunicação (Cap. VII):</b> dar especial atenção às operações com indícios de lavagem e comunicá-las ao <b>COAF</b>, <b>sem dar ciência ao cliente</b>. A comunicação de boa-fé não gera responsabilidade civil ou administrativa e não fere o sigilo bancário (LC 105/2001).</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Sanções administrativas (Cap. VIII, art. 12)</span>Advertência · multa até o maior entre 2× o valor da operação, 2× o lucro obtido ou que seria obtido, ou R$ 20 milhões<br>Inabilitação de até 10 anos para cargo de administrador · cassação ou suspensão da autorização para funcionar</div>\n\n  <h3>Resolução CVM 50 (PLD/FT no mercado de valores mobiliários)</h3>\n  <ul>\n    <li><b>Âmbito:</b> todos que atuam no mercado de valores mobiliários (intermediários, administradores, <b>gestores</b>, custodiantes, consultores etc.). A finalidade é prevenir lavagem de dinheiro, financiamento do terrorismo e da proliferação de armas de destruição em massa.</li>\n    <li><b>Abordagem baseada em risco (ABR):</b> política de PLD/FT aprovada pela alta administração e <b>avaliação interna de risco</b> que classifica por risco (no mínimo baixo, médio e alto) os <b>clientes</b>, <b>produtos e serviços</b>, <b>canais de distribuição</b> e ambientes de negociação, além dos <b>funcionários e prestadores de serviços relevantes</b>. Mais risco, mais diligência.</li>\n    <li><b>Diretor estatutário de PLD</b>, que elabora o <b>relatório anual de avaliação interna de risco</b> (até o último dia útil de abril) para a alta administração.</li>\n    <li><b>Cadastro:</b> identificação do cliente e do <b>beneficiário final</b> (a pessoa natural por trás da estrutura), atualizado periodicamente conforme o risco. <b>Registros</b> de todas as operações.</li>\n    <li><b>Conservação:</b> cadastros e registros por no mínimo <b>5 anos</b>.</li>\n    <li><b>Monitoramento e comunicação:</b> monitorar as operações atípicas; concluída a análise que confirma o indício, comunicar ao <b>COAF em até 24 horas</b>, sem avisar o cliente. Se nada houve no ano, enviar a <b>declaração anual de não ocorrência</b> até o último dia útil de abril.</li>\n    <li><b>Sanções do CSNU:</b> cumprir <b>imediatamente e sem aviso prévio</b> ao sancionado as ordens de <b>indisponibilidade de ativos</b> do Conselho de Segurança da ONU (Lei 13.810/2019), comunicando CVM, Ministério da Justiça e COAF.</li>\n  </ul>\n\n  <h3>Pessoa Exposta Politicamente (PEP)</h3>\n  <ul>\n    <li>Agentes públicos que ocupam ou ocuparam nos <b>últimos 5 anos</b> cargos relevantes: mandatos eletivos federais; ministros de Estado; presidentes e diretores de autarquias, fundações e estatais federais; membros dos tribunais superiores, do CNJ e do CNMP; PGR e chefes do Ministério Público; membros do TCU; presidentes e tesoureiros nacionais de partidos; governadores, secretários estaduais, deputados estaduais, presidentes de tribunais estaduais; prefeitos, vereadores e secretários municipais, entre outros. Também PEPs estrangeiros e dirigentes de organizações internacionais.</li>\n    <li><b>Familiares</b> (parentes em linha reta ou colateral até o 2º grau, cônjuge, companheiro e enteados) e <b>estreitos colaboradores</b> recebem diligência reforçada.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso: o que a gestora deve fazer</span>\n    <p>Um novo cliente PJ, de estrutura societária complexa com <i>offshore</i>, quer aplicar R$ 30 milhões e pede pressa. Ações: identificar o beneficiário final; checar se há PEP e listas restritivas (inclusive do CSNU); classificar como alto risco; pedir origem dos recursos; aprovação da alta administração; monitoramento reforçado. Se surgirem indícios depois da análise, comunicar ao COAF em 24 horas, sem avisar o cliente.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Comunicar ao COAF <b>não</b> exige certeza do crime: bastam indícios. E é proibido avisar o cliente (<i>tipping off</i>).</div>"
+  },
+  {
+   "id": "t123",
+   "rotulo": "12.3 Tributação de ações (mercado à vista)",
+   "html": "<div class=\"num\">12.3</div>\n  <h2>Tributação de ações (mercado à vista)</h2>\n  <p class=\"why\">Quanto de imposto sai do ganho com ações, para o investidor residente e para o estrangeiro.</p>\n\n  <div class=\"tbl\"><table>\n    <tr><th>Item</th><th>Pessoa física residente</th></tr>\n    <tr><td>Imposto</td><td>IR sobre o <b>ganho líquido</b>. IOF não incide na compra e venda de ações em bolsa</td></tr>\n    <tr><td>Fato gerador</td><td>A <b>alienação</b> com ganho, apurado <b>mensalmente</b></td></tr>\n    <tr><td>Base de cálculo</td><td>Valor de venda − custo médio de aquisição (com corretagem e emolumentos), menos prejuízos a compensar</td></tr>\n    <tr><td>Alíquota</td><td><b>15%</b> em operações comuns (swing trade) · <b>20%</b> em day trade</td></tr>\n    <tr><td>IRRF (\"dedo-duro\")</td><td><b>0,005%</b> do valor de venda nas operações comuns · <b>1%</b> do ganho no day trade. É descontado do DARF</td></tr>\n    <tr><td>Pagamento</td><td>DARF pelo próprio investidor até o <b>último dia útil do mês seguinte</b></td></tr>\n    <tr><td>Isenção</td><td>Vendas totais de ações no mercado à vista de até <b>R$ 20 mil no mês</b> (operações comuns). Não vale para day trade</td></tr>\n    <tr><td>Prejuízos</td><td>Compensáveis sem prazo: operações comuns com operações comuns, day trade só com day trade</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Pessoa jurídica:</b> o ganho entra na apuração do IRPJ e da CSLL (lucro real ou presumido); não há isenção dos R$ 20 mil.</li>\n    <li><b>Proventos:</b> juros sobre capital próprio têm IR de 15% na fonte. Dividendos eram isentos; a Lei 15.270/2025 criou, a partir de 2026, retenção de 10% sobre dividendos acima de R$ 50 mil por mês pagos pela mesma empresa à mesma pessoa física, e de 10% para não residentes. Confira qual versão a prova cobra.</li>\n    <li><b>Não residente</b> que investe pelas regras do CMN e da CVM (o antigo \"investidor 4.373\") e <b>não está em paraíso fiscal</b>: ganhos em operações em <b>bolsa são isentos</b> de IR. Se for de <b>paraíso fiscal</b> (jurisdição de tributação favorecida), é tributado como residente.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Cálculos</span>\n    <p><b>Swing trade:</b> em junho, a PF vende R$ 50.000 em ações com custo médio de R$ 42.000. Ganho de 8.000 × 15% = 1.200. IRRF = 0,005% × 50.000 = 2,50. <b>DARF = 1.197,50.</b></p>\n    <p><b>Isenção:</b> em maio vendeu só R$ 18.000, com lucro de R$ 4.000. As vendas do mês ficaram abaixo de R$ 20 mil, então o ganho é <b>isento</b>.</p>\n    <p><b>Day trade:</b> ganho de R$ 2.000 × 20% = 400. IRRF = 1% × 2.000 = 20. <b>DARF = 380.</b></p>\n    <p><b>Compensação:</b> se a PF tinha prejuízo de R$ 3.000 em operações comuns, o swing trade acima paga 15% × (8.000 − 3.000) = 750, menos 2,50 = 747,50.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Os R$ 20 mil são de <b>vendas</b> no mês (o volume alienado), não de lucro. Quem vendeu R$ 25 mil com R$ 500 de lucro paga IR; quem vendeu R$ 19 mil com R$ 5 mil de lucro, não.</div>"
+  },
+  {
+   "id": "t124",
+   "rotulo": "12.4 Tributação de títulos públicos e privados de renda fixa",
+   "html": "<div class=\"num\">12.4</div>\n  <h2>Tributação de títulos públicos e privados de renda fixa</h2>\n  <p class=\"why\">A tabela regressiva, o IOF dos primeiros 30 dias, as isenções e o tratamento do estrangeiro.</p>\n\n  <div class=\"tbl\"><table>\n    <tr><th>Item</th><th>Regra</th></tr>\n    <tr><td>Impostos</td><td><b>IR</b> sobre o rendimento e <b>IOF</b> nos resgates em menos de 30 dias</td></tr>\n    <tr><td>Fato gerador</td><td>Resgate, venda, vencimento ou <b>pagamento de cupom</b></td></tr>\n    <tr><td>Base de cálculo</td><td>Rendimento = valor de resgate ou venda − valor aplicado (descontado o IOF, quando houver)</td></tr>\n    <tr><td>Responsável</td><td>Retenção na fonte pela instituição (no Tesouro Direto, o agente de custódia). Para a PF, a retenção é <b>definitiva</b></td></tr>\n  </table></div>\n  <div class=\"formula\"><span class=\"lbl\">Tabela regressiva de IR (prazo desde a aplicação)</span>até 180 dias: 22,5% · de 181 a 360 dias: 20% · de 361 a 720 dias: 17,5% · acima de 720 dias: 15%<br>IOF: alíquota regressiva sobre o rendimento, de 96% no 1º dia a 0% a partir do 30º dia</div>\n  <ul>\n    <li><b>Cupons:</b> cada pagamento de cupom é tributado pela alíquota correspondente ao prazo decorrido desde a aplicação.</li>\n    <li><b>Isentos de IR para pessoa física:</b> LCI, LCA, CRI, CRA, CPR, LIG e <b>debêntures incentivadas</b> de infraestrutura (Lei 12.431). Para pessoa jurídica, esses títulos são tributados.</li>\n    <li><b>Pessoa jurídica:</b> mesma tabela regressiva na fonte, mas o IR retido é <b>antecipação</b>, compensada no IRPJ (lucro real ou presumido). Os rendimentos também entram na base da CSLL.</li>\n    <li><b>Não residente</b> (pelas regras do CMN e da CVM, fora de paraíso fiscal): <b>títulos públicos federais com alíquota zero</b>; debêntures incentivadas também com alíquota zero; demais títulos privados com <b>15%</b>. Se for de paraíso fiscal, segue as regras do residente.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Cálculos</span>\n    <p><b>CDB, 400 dias:</b> aplicou R$ 10.000 e resgatou R$ 11.200. Rendimento de 1.200 × 17,5% = 210. Líquido: R$ 10.990.</p>\n    <p><b>CDB, 200 dias:</b> mesmo rendimento de 1.200 × 20% = <b>240</b>.</p>\n    <p><b>LCA, 400 dias, PF:</b> isenta. Para empatar com o CDB de 17,5%, a LCA precisa render 82,5% do CDB (1 − 0,175).</p>\n    <p><b>Estrangeiro (fora de paraíso fiscal) em NTN-B:</b> alíquota zero. Em debênture comum: 15%.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O prazo da tabela regressiva conta da <b>data da aplicação</b>, não do vencimento do título. E o IOF entra antes: o IR incide sobre o rendimento já descontado do IOF.</div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t12-1",
+   "subtema": "12.1",
+   "enunciado": "Pela Lei 6.385/76, NÃO é valor mobiliário:",
+   "alternativas": [
+    "Debênture",
+    "Cota de fundo de investimento",
+    "Contrato derivativo",
+    "Título da dívida pública federal"
+   ],
+   "correta": 3,
+   "explicacao": "A lei exclui expressamente os títulos da dívida pública (federal, estadual e municipal) e os títulos cambiais de instituição financeira, exceto debêntures. Por isso o Tesouro Direto não é regulado pela CVM."
+  },
+  {
+   "id": "t12-2",
+   "subtema": "12.1",
+   "enunciado": "Um título ou contrato de investimento coletivo é valor mobiliário quando:",
+   "alternativas": [
+    "For emitido por instituição financeira",
+    "For ofertado publicamente e gerar direito de participação, parceria ou remuneração cujos rendimentos vêm do esforço do empreendedor ou de terceiros",
+    "Tiver prazo superior a um ano",
+    "For registrado em cartório"
+   ],
+   "correta": 1,
+   "explicacao": "É o conceito amplo do art. 2º, IX: oferta pública, investimento coletivo e rendimento que depende do esforço de terceiros. Prazo ou emissor não definem o enquadramento."
+  },
+  {
+   "id": "t12-3",
+   "subtema": "12.1",
+   "enunciado": "Pela Lei 6.385, definir a política a ser observada na organização e no funcionamento do mercado de valores mobiliários compete:",
+   "alternativas": [
+    "Ao Conselho Monetário Nacional",
+    "À CVM",
+    "À B3",
+    "À ANBIMA"
+   ],
+   "correta": 0,
+   "explicacao": "O CMN define a política e a orientação geral. A CVM regulamenta, fiscaliza e pune dentro dessa política."
+  },
+  {
+   "id": "t12-4",
+   "subtema": "12.1",
+   "enunciado": "Caracteriza emissão pública de valores mobiliários, nos termos da Lei 6.385:",
+   "alternativas": [
+    "A venda negociada privadamente a um único investidor conhecido",
+    "A transferência de ações por herança",
+    "A procura de subscritores por meio de empregados, agentes ou corretores, ou o uso de prospectos e anúncios dirigidos ao público",
+    "A doação de ações a um filho"
+   ],
+   "correta": 2,
+   "explicacao": "A lei lista como emissão pública o uso de listas, prospectos e anúncios ao público, a procura de investidores por agentes ou corretores e a negociação em estabelecimento aberto ao público ou por meios de comunicação."
+  },
+  {
+   "id": "t12-5",
+   "subtema": "12.1",
+   "enunciado": "Segundo a Lei 6.385, a autorização prévia da CVM para administração de carteiras alcança a gestão profissional de recursos entregues ao administrador:",
+   "alternativas": [
+    "Somente quando houver taxa de performance",
+    "Com autorização para que ele compre ou venda valores mobiliários por conta do cliente",
+    "Somente de clientes pessoa jurídica",
+    "Apenas acima de R$ 10 milhões"
+   ],
+   "correta": 1,
+   "explicacao": "O que caracteriza a gestão profissional é a discricionariedade: o administrador decide comprar e vender por conta do comitente. Taxa, tipo de cliente ou valor não importam."
+  },
+  {
+   "id": "t12-6",
+   "subtema": "12.1",
+   "enunciado": "Para configurar o crime de manipulação do mercado (art. 27-C), além das operações simuladas ou manobras fraudulentas para alterar cotação, preço ou volume, é preciso:",
+   "alternativas": [
+    "Que o agente seja administrador da companhia",
+    "Que o prejuízo comprovado supere R$ 1 milhão",
+    "Que a operação ocorra no balcão",
+    "O fim de obter vantagem indevida ou lucro, para si ou para outrem, ou de causar dano a terceiros"
+   ],
+   "correta": 3,
+   "explicacao": "É o dolo específico do tipo. Sem a finalidade de vantagem indevida, lucro ou dano, a simples influência no preço não é crime."
+  },
+  {
+   "id": "t12-7",
+   "subtema": "12.1",
+   "enunciado": "Um analista ouve, num restaurante, diretores comentando uma aquisição não divulgada e compra ações da empresa-alvo. Pela Lei 6.385, após a Lei 13.506/2017:",
+   "alternativas": [
+    "Pode responder pelo crime de uso indevido de informação privilegiada (insider secundário), porque o tipo não exige mais dever de sigilo",
+    "Não há crime, porque ele não tinha dever de sigilo",
+    "Só haveria crime se ele fosse administrador",
+    "Comete manipulação de mercado"
+   ],
+   "correta": 0,
+   "explicacao": "A redação atual do art. 27-D pune quem usa informação relevante não divulgada para obter vantagem, tenha ou não dever de sigilo. O dever de sigilo só agrava a pena (insider primário, +1/3)."
+  },
+  {
+   "id": "t12-8",
+   "subtema": "12.1",
+   "enunciado": "No crime de uso indevido de informação privilegiada, a pena é aumentada em 1/3 quando o agente:",
+   "alternativas": [
+    "Negocia por meio de fundo de investimento",
+    "É investidor estrangeiro",
+    "Usa informação de que deva manter sigilo (insider primário)",
+    "Tem lucro inferior a R$ 100 mil"
+   ],
+   "correta": 2,
+   "explicacao": "O § 2º do art. 27-D agrava a pena de quem tinha o dever de sigilo, como administradores e empregados do emissor."
+  },
+  {
+   "id": "t12-9",
+   "subtema": "12.1",
+   "enunciado": "O diretor financeiro de uma companhia conta a um amigo um fato relevante ainda não divulgado. Nenhum dos dois negocia. O diretor:",
+   "alternativas": [
+    "Não cometeu crime, porque ninguém negociou",
+    "Incorre na mesma pena do insider, por repassar informação sigilosa de fato relevante obtida em razão do cargo",
+    "Só responde se o amigo lucrar",
+    "Comete exercício irregular de profissão"
+   ],
+   "correta": 1,
+   "explicacao": "O § 1º do art. 27-D pune o repasse em si, de quem teve acesso à informação pelo cargo ou por relação com o emissor. Não exige que alguém negocie."
+  },
+  {
+   "id": "t12-10",
+   "subtema": "12.1",
+   "enunciado": "Uma pessoa gere, de graça, as carteiras de ações de vários amigos, decidindo as compras e vendas, sem autorização da CVM. Pela Lei 6.385:",
+   "alternativas": [
+    "Não há ilícito, pois a atividade é gratuita",
+    "Configura o crime de exercício irregular de atividade (art. 27-E), ainda que a título gratuito",
+    "Há apenas infração ao Código ANBIMA",
+    "É manipulação de mercado"
+   ],
+   "correta": 1,
+   "explicacao": "O art. 27-E pune quem exerce atividade que exige autorização ou registro sem tê-los, ainda que de graça. A pena é de detenção de 6 meses a 2 anos e multa."
+  },
+  {
+   "id": "t12-11",
+   "subtema": "12.1",
+   "enunciado": "O diretor de compliance de uma gestora descobre que um operador está manipulando preços e decide não fazer nada. Do ponto de vista penal, ele:",
+   "alternativas": [
+    "Não responde, pois não praticou a conduta",
+    "Pode responder por omissão imprópria, pois tinha o dever de agir e podia evitar o resultado",
+    "Só pode ser advertido pela ANBIMA",
+    "Só responde se tiver lucrado"
+   ],
+   "correta": 1,
+   "explicacao": "Pelo art. 13, § 2º, do Código Penal, quem tem o dever de evitar o resultado (por lei, por ter assumido essa responsabilidade ou por ter criado o risco) e podia agir responde pelo crime que deixou acontecer."
+  },
+  {
+   "id": "t12-12",
+   "subtema": "12.1",
+   "enunciado": "NÃO é penalidade que a CVM pode aplicar em processo administrativo sancionador:",
+   "alternativas": [
+    "Advertência",
+    "Multa",
+    "Inabilitação temporária de até 20 anos",
+    "Reclusão"
+   ],
+   "correta": 3,
+   "explicacao": "Reclusão é pena criminal, imposta pelo Judiciário. A CVM aplica advertência, multa, suspensão, inabilitação e proibições temporárias, e comunica ao Ministério Público os indícios de crime."
+  },
+  {
+   "id": "t12-13",
+   "subtema": "12.1",
+   "enunciado": "A multa aplicada pela CVM pode chegar ao maior entre os seguintes valores:",
+   "alternativas": [
+    "R$ 500 mil ou 50% da operação",
+    "R$ 50 milhões, 2× o valor da emissão ou operação irregular, 3× a vantagem obtida ou perda evitada, ou 2× o prejuízo causado aos investidores",
+    "R$ 1 milhão, sem alternativas",
+    "10% do patrimônio do infrator"
+   ],
+   "correta": 1,
+   "explicacao": "São os parâmetros do art. 11, § 1º, da Lei 6.385, com a redação da Lei 13.506/2017."
+  },
+  {
+   "id": "t12-14",
+   "subtema": "12.1",
+   "enunciado": "Pelo Código Civil, com as regras da Lei da Liberdade Econômica, o fundo de investimento é:",
+   "alternativas": [
+    "Uma sociedade anônima de capital fechado",
+    "Uma comunhão de recursos constituída como condomínio de natureza especial, à qual não se aplicam as regras do condomínio geral",
+    "Um consórcio de investidores",
+    "Uma pessoa física equiparada"
+   ],
+   "correta": 1,
+   "explicacao": "O art. 1.368-C define o fundo como condomínio de natureza especial e afasta os arts. 1.314 a 1.358-A (condomínio geral)."
+  },
+  {
+   "id": "t12-15",
+   "subtema": "12.1",
+   "enunciado": "Pelo Código Civil, a competência para disciplinar os fundos de investimento é:",
+   "alternativas": [
+    "Do Banco Central",
+    "Do CMN",
+    "Da CVM",
+    "Da ANBIMA"
+   ],
+   "correta": 2,
+   "explicacao": "O § 2º do art. 1.368-C atribui à CVM a disciplina dos fundos. O registro do regulamento na CVM basta para a publicidade perante terceiros."
+  },
+  {
+   "id": "t12-16",
+   "subtema": "12.1",
+   "enunciado": "Um fundo que não limitava a responsabilidade dos cotistas altera o regulamento para limitá-la ao valor das cotas. A limitação alcança:",
+   "alternativas": [
+    "Todos os fatos, inclusive os anteriores à mudança",
+    "Somente as dívidas trabalhistas",
+    "Somente os fatos ocorridos depois da mudança do regulamento",
+    "Nenhum fato até nova aprovação da CVM"
+   ],
+   "correta": 2,
+   "explicacao": "O § 1º do art. 1.368-D diz que a adoção da responsabilidade limitada só abrange fatos posteriores à mudança. Credores antigos não são prejudicados.",
+   "fixa": true
+  },
+  {
+   "id": "t12-17",
+   "subtema": "12.1",
+   "enunciado": "Pelo art. 1.368-E do Código Civil, os prestadores de serviços do fundo:",
+   "alternativas": [
+    "Não respondem pelas obrigações do fundo, mas respondem pelos prejuízos que causarem com dolo ou má-fé",
+    "Respondem solidariamente por todas as obrigações do fundo",
+    "Nunca respondem por nada",
+    "Respondem só perante a ANBIMA"
+   ],
+   "correta": 0,
+   "explicacao": "O fundo responde diretamente pelas próprias obrigações. O prestador só responde pelos prejuízos que causar agindo com dolo ou má-fé."
+  },
+  {
+   "id": "t12-18",
+   "subtema": "12.1",
+   "enunciado": "Na avaliação da responsabilidade dos prestadores de serviço do fundo, o Código Civil manda considerar:",
+   "alternativas": [
+    "O resultado do fundo no ano",
+    "O porte do prestador",
+    "Os riscos inerentes às aplicações nos mercados de atuação do fundo e a natureza de obrigação de meio dos serviços",
+    "A opinião da maioria dos cotistas"
+   ],
+   "correta": 2,
+   "explicacao": "O gestor tem obrigação de meio (agir com diligência), não de resultado. Uma perda causada pelo risco normal do mercado não gera, por si só, responsabilidade."
+  },
+  {
+   "id": "t12-19",
+   "subtema": "12.1",
+   "enunciado": "Pelo Código Civil, a insolvência de um fundo com responsabilidade limitada pode ser requerida judicialmente:",
+   "alternativas": [
+    "Somente pelo administrador",
+    "Somente pelo Ministério Público",
+    "Somente pelo Banco Central",
+    "Pelos credores, pelos cotistas (por deliberação própria, conforme o regulamento) ou pela CVM"
+   ],
+   "correta": 3,
+   "explicacao": "É o § 2º do art. 1.368-E. Na falta de patrimônio, aplicam-se as regras da insolvência civil."
+  },
+  {
+   "id": "t12-20",
+   "subtema": "12.1",
+   "enunciado": "O registro de administrador de carteiras na CVM (Res. CVM 21) pode ser feito nas categorias:",
+   "alternativas": [
+    "Gestor de recursos e administrador fiduciário",
+    "Gestor e distribuidor",
+    "Custodiante e escriturador",
+    "Consultor e analista"
+   ],
+   "correta": 0,
+   "explicacao": "São duas categorias: gestor de recursos (decide os investimentos) e administrador fiduciário (estrutura, controle e processamento). Uma PJ pode ter as duas."
+  },
+  {
+   "id": "t12-21",
+   "subtema": "12.1",
+   "enunciado": "Sobre os diretores de uma gestora pessoa jurídica registrada pela Res. CVM 21, é correto afirmar:",
+   "alternativas": [
+    "O diretor de gestão pode acumular o compliance",
+    "Basta um único diretor para todas as funções",
+    "Deve haver diretor responsável pela gestão e diretor(es) de compliance e de risco, que podem ser a mesma pessoa, sem acumular a gestão",
+    "O diretor de risco é dispensado se a gestora tiver menos de 10 fundos"
+   ],
+   "correta": 2,
+   "explicacao": "Compliance e risco podem ficar com o mesmo diretor, mas nenhum deles pode atuar na gestão, para preservar a independência."
+  },
+  {
+   "id": "t12-22",
+   "subtema": "12.1",
+   "enunciado": "NÃO precisa estar no site do administrador de carteiras, pela Res. CVM 21:",
+   "alternativas": [
+    "Formulário de referência",
+    "Código de ética",
+    "Política de rateio e divisão de ordens",
+    "Relação nominal dos cotistas e de seus saldos"
+   ],
+   "correta": 3,
+   "explicacao": "O site deve trazer formulário de referência, código de ética, manual de controles internos, políticas de risco, de investimentos pessoais e de rateio e o manual de precificação. Dados dos cotistas são sigilosos."
+  },
+  {
+   "id": "t12-23",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CVM 21, o relatório anual de controles internos (compliance) deve ser entregue aos órgãos de administração até:",
+   "alternativas": [
+    "O último dia útil de abril, sobre o ano civil anterior",
+    "O último dia útil de janeiro",
+    "31 de dezembro do próprio ano",
+    "Não há prazo"
+   ],
+   "correta": 0,
+   "explicacao": "O diretor de compliance entrega até o último dia útil de abril o relatório do ano anterior, com conclusões, deficiências e cronograma de correção. O relatório fica à disposição da CVM."
+  },
+  {
+   "id": "t12-24",
+   "subtema": "12.1",
+   "enunciado": "É vedado ao administrador de carteiras:",
+   "alternativas": [
+    "Transferir ao cliente benefícios obtidos em razão de sua condição",
+    "Ter código de ética publicado",
+    "Fazer promessas quanto a retornos futuros da carteira",
+    "Manter política de gestão de risco"
+   ],
+   "correta": 2,
+   "explicacao": "Promessa de retorno e propaganda que garanta rentabilidade são vedadas. Repassar benefícios ao cliente (como rebates) é dever, não vedação."
+  },
+  {
+   "id": "t12-25",
+   "subtema": "12.1",
+   "enunciado": "Uma gestora quer distribuir as cotas dos fundos que ela mesma gere. Pela Res. CVM 21:",
+   "alternativas": [
+    "É proibido; só bancos e corretoras distribuem",
+    "Pode distribuir qualquer fundo do mercado",
+    "Depende de autorização do Banco Central",
+    "Pode, mas só os fundos que administra ou gere, cumprindo regras de cadastro, suitability e PLD e com diretor responsável pela distribuição"
+   ],
+   "correta": 3,
+   "explicacao": "O administrador de carteiras pode distribuir apenas os fundos sob sua administração ou gestão e assume as obrigações de um distribuidor nessa atividade."
+  },
+  {
+   "id": "t12-26",
+   "subtema": "12.1",
+   "enunciado": "Na Res. CVM 175, a assembleia especial de cotistas é aquela:",
+   "alternativas": [
+    "Convocada por cotistas com 5% das cotas",
+    "Para a qual são convocados somente os cotistas de determinada classe ou subclasse",
+    "Que aprova as contas do administrador",
+    "Realizada exclusivamente por meio eletrônico"
+   ],
+   "correta": 1,
+   "explicacao": "A assembleia geral reúne todos os cotistas do fundo. A especial reúne só uma classe ou subclasse e trata de matérias de interesse exclusivo dela."
+  },
+  {
+   "id": "t12-27",
+   "subtema": "12.1",
+   "enunciado": "Fora das classes restritas, as subclasses de uma classe podem ser diferenciadas apenas por:",
+   "alternativas": [
+    "Público-alvo, prazos e condições de aplicação, amortização e resgate, e taxas",
+    "Política de investimento e carteira própria",
+    "Patrimônio segregado",
+    "Tratamento tributário"
+   ],
+   "correta": 0,
+   "explicacao": "Subclasses não têm patrimônio próprio nem carteira própria. A Res. 175 limita as diferenças a público-alvo, prazos e condições e taxas."
+  },
+  {
+   "id": "t12-28",
+   "subtema": "12.1",
+   "enunciado": "Na Res. CVM 175, a amortização de cotas é:",
+   "alternativas": [
+    "O resgate total pedido por um cotista",
+    "O pagamento uniforme a todos os cotistas da classe de parte do valor de suas cotas, sem reduzir o número de cotas",
+    "A compra de cotas no mercado secundário",
+    "A cobrança da taxa de administração"
+   ],
+   "correta": 1,
+   "explicacao": "A amortização devolve parte do valor a todos igualmente e mantém o número de cotas. O resgate é pedido individual do cotista."
+  },
+  {
+   "id": "t12-29",
+   "subtema": "12.1",
+   "enunciado": "O administrador verifica que o PL de uma classe com responsabilidade limitada ficou negativo. Imediatamente, ele deve:",
+   "alternativas": [
+    "Chamar os cotistas para aportar recursos",
+    "Liquidar a classe no mesmo dia",
+    "Fechar para resgates, não aceitar subscrições, comunicar o gestor, divulgar fato relevante e cancelar os resgates pendentes",
+    "Pedir a insolvência no mesmo dia"
+   ],
+   "correta": 2,
+   "explicacao": "São as medidas imediatas do art. 122, I. Depois vêm o plano de resolução (em até 20 dias) e a assembleia. Os cotistas não são obrigados a aportar, porque a responsabilidade é limitada."
+  },
+  {
+   "id": "t12-30",
+   "subtema": "12.1",
+   "enunciado": "A assembleia que deveria deliberar sobre o PL negativo de uma classe com responsabilidade limitada não se instala por falta de quórum. O administrador deve:",
+   "alternativas": [
+    "Ingressar com pedido de declaração judicial de insolvência da classe",
+    "Aguardar um ano e convocar outra",
+    "Cobrar os cotistas judicialmente",
+    "Transferir o déficit ao gestor"
+   ],
+   "correta": 0,
+   "explicacao": "Pelo art. 122, § 7º, sem instalação ou sem decisão por uma das alternativas, o administrador deve pedir a insolvência da classe."
+  },
+  {
+   "id": "t12-31",
+   "subtema": "12.1",
+   "enunciado": "Numa classe cujo regulamento NÃO limita a responsabilidade dos cotistas, o patrimônio líquido negativo:",
+   "alternativas": [
+    "É absorvido pelo administrador",
+    "É coberto pelo FGC",
+    "É perdoado automaticamente",
+    "Deve ser coberto pelos cotistas"
+   ],
+   "correta": 3,
+   "explicacao": "Sem limitação, os cotistas respondem pelo PL negativo (art. 18, parágrafo único). O prestador só responde se agiu com dolo ou má-fé."
+  },
+  {
+   "id": "t12-32",
+   "subtema": "12.1",
+   "enunciado": "É vedado aos prestadores de serviços essenciais, em nome do fundo:",
+   "alternativas": [
+    "Contratar auditoria independente",
+    "Garantir rendimento predeterminado aos cotistas",
+    "Contratar a distribuição de cotas",
+    "Divulgar fato relevante"
+   ],
+   "correta": 1,
+   "explicacao": "O art. 101 veda garantir rendimento, receber depósito em conta corrente, contrair ou conceder empréstimos (salvo exceções), vender cotas à prestação, pagar seguro contra perdas e atos de liberalidade."
+  },
+  {
+   "id": "t12-33",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CVM 175, considera-se restrita a classe:",
+   "alternativas": [
+    "Com um único cotista",
+    "Fechada para novas aplicações",
+    "Destinada exclusivamente a investidores qualificados e profissionais",
+    "Destinada a RPPS"
+   ],
+   "correta": 2,
+   "explicacao": "É a definição do art. 111. Classe com um único investidor profissional é a classe exclusiva (art. 115). A destinada a recursos de previdência é a previdenciária (art. 116)."
+  },
+  {
+   "id": "t12-34",
+   "subtema": "12.1",
+   "enunciado": "Pode ser debitado diretamente da classe como encargo do fundo:",
+   "alternativas": [
+    "Despesa de marketing do gestor",
+    "Honorários e despesas do auditor independente",
+    "Salário dos analistas do gestor",
+    "Aluguel do escritório do administrador"
+   ],
+   "correta": 1,
+   "explicacao": "O auditor está na lista de encargos do art. 117. Despesas não listadas correm por conta do prestador essencial que as contratou."
+  },
+  {
+   "id": "t12-35",
+   "subtema": "12.1",
+   "enunciado": "Na Res. CVM 175, contratar o distribuidor de cotas em nome do fundo é obrigação do:",
+   "alternativas": [
+    "Administrador",
+    "Custodiante",
+    "Gestor",
+    "Auditor"
+   ],
+   "correta": 2,
+   "explicacao": "O art. 85 coloca entre as obrigações do gestor a contratação de intermediação, distribuição, consultoria, rating, formador de mercado e cogestão. O administrador contrata controle e processamento, escrituração e auditoria."
+  },
+  {
+   "id": "t12-36",
+   "subtema": "12.1",
+   "enunciado": "O desenquadramento passivo de uma classe regida pela Res. CVM 175 dura 15 dias úteis consecutivos. O gestor deve:",
+   "alternativas": [
+    "Encaminhar à CVM suas explicações para o desenquadramento",
+    "Liquidar a classe",
+    "Pagar multa automática",
+    "Não fazer nada até o reenquadramento"
+   ],
+   "correta": 0,
+   "explicacao": "Pelo art. 90, o desenquadramento passivo não gera punição, mas após 15 dias úteis o gestor se explica à CVM e depois informa o reenquadramento."
+  },
+  {
+   "id": "t12-37",
+   "subtema": "12.1",
+   "enunciado": "Numa oferta pública ao público em geral (Res. CVM 160), o lote adicional pode aumentar a quantidade ofertada em até:",
+   "alternativas": [
+    "15%, para estabilização",
+    "35%",
+    "50%",
+    "25%, a critério do ofertante e sem novo registro"
+   ],
+   "correta": 3,
+   "explicacao": "O lote adicional (art. 50) é decisão do ofertante, limitada a 25% da quantidade inicial (limite dispensado em ofertas só para profissionais). Os 15% são do lote suplementar."
+  },
+  {
+   "id": "t12-38",
+   "subtema": "12.1",
+   "enunciado": "Sobre o lote suplementar na Res. CVM 160, é correto:",
+   "alternativas": [
+    "É outorgado aos coordenadores para estabilização de preços, até 15% da quantidade inicial",
+    "Pode chegar a 25%, a critério do ofertante",
+    "É proibido no rito automático",
+    "É sempre destinado a pessoas vinculadas"
+   ],
+   "correta": 0,
+   "explicacao": "O lote suplementar (art. 51) serve à estabilização de preços, nas mesmas condições da oferta, e não pode passar de 15%."
+  },
+  {
+   "id": "t12-39",
+   "subtema": "12.1",
+   "enunciado": "Numa oferta com excesso de demanda superior a 1/3 da quantidade inicialmente ofertada, em regra:",
+   "alternativas": [
+    "Pessoas vinculadas têm prioridade",
+    "A oferta é cancelada",
+    "É vedada a colocação para pessoas vinculadas, salvo exceções como o formador de mercado",
+    "A CVM fixa o preço"
+   ],
+   "correta": 2,
+   "explicacao": "O art. 56 da Res. 160 protege o investidor externo: com demanda muito acima da oferta, as pessoas vinculadas ao ofertante e ao consórcio ficam de fora, salvo as exceções da norma."
+  },
+  {
+   "id": "t12-40",
+   "subtema": "12.1",
+   "enunciado": "Antes mesmo do protocolo do pedido de registro, a Res. CVM 160 permite:",
+   "alternativas": [
+    "Receber reservas de investidores de varejo",
+    "Consulta sigilosa a potenciais investidores profissionais sobre a viabilidade da oferta, sem vincular as partes",
+    "Publicar anúncio da oferta na TV",
+    "Vender os valores mobiliários a pessoas vinculadas"
+   ],
+   "correta": 1,
+   "explicacao": "É a sondagem do art. 6º: só com profissionais, sem aceitação de ofertas nem pagamento, e com compromisso de sigilo dos consultados."
+  },
+  {
+   "id": "t12-41",
+   "subtema": "12.1",
+   "enunciado": "O material publicitário de uma oferta pública regida pela Res. CVM 160:",
+   "alternativas": [
+    "Depende de aprovação prévia da CVM",
+    "É proibido em qualquer oferta",
+    "Só pode ser usado após o encerramento",
+    "Não depende de aprovação prévia, mas deve ser enviado à CVM em até 1 dia útil após o uso e conter as advertências exigidas"
+   ],
+   "correta": 3,
+   "explicacao": "A Res. 160 acabou com a aprovação prévia. O material deve dizer que é publicitário, advertir sobre o risco e indicar o prospecto."
+  },
+  {
+   "id": "t12-42",
+   "subtema": "12.1",
+   "enunciado": "Uma oferta sem garantia firme prevê distribuição parcial com montante mínimo de R$ 100 milhões, mas capta só R$ 80 milhões. Consequência:",
+   "alternativas": [
+    "A oferta é concluída com R$ 80 milhões",
+    "A oferta é cancelada e os valores pagos são devolvidos aos investidores",
+    "O coordenador é obrigado a comprar o restante",
+    "O prazo é prorrogado sem limite"
+   ],
+   "correta": 1,
+   "explicacao": "Sem atingir o mínimo da distribuição parcial, a oferta é cancelada e os recursos devolvidos (art. 73, § 3º)."
+  },
+  {
+   "id": "t12-43",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CVM 160, a subscrição de uma oferta pública deve ocorrer no prazo máximo de:",
+   "alternativas": [
+    "30 dias",
+    "90 dias",
+    "180 dias contados do anúncio de início",
+    "360 dias"
+   ],
+   "correta": 2,
+   "explicacao": "É o art. 48 da Res. 160."
+  },
+  {
+   "id": "t12-44",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CMN 4.994, o limite máximo do segmento de renda variável para os recursos de um plano de EFPC é de:",
+   "alternativas": [
+    "30%",
+    "50%",
+    "100%",
+    "70%"
+   ],
+   "correta": 3,
+   "explicacao": "Renda variável até 70% (ações em segmento especial de governança). Ações fora desses segmentos ficam limitadas a 50%."
+  },
+  {
+   "id": "t12-45",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CMN 4.994, os segmentos imobiliário e estruturado têm limite de até ___ cada, e o segmento exterior de até ___:",
+   "alternativas": [
+    "20% e 10%",
+    "10% e 20%",
+    "15% e 15%",
+    "30% e 5%"
+   ],
+   "correta": 0,
+   "explicacao": "Estruturado 20%, imobiliário 20%, operações com participantes 15%, exterior 10%."
+  },
+  {
+   "id": "t12-46",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CMN 4.994, o limite de alocação dos recursos de um plano em ativos de uma mesma instituição financeira bancária é de:",
+   "alternativas": [
+    "10%",
+    "20%",
+    "25%",
+    "100%"
+   ],
+   "correta": 1,
+   "explicacao": "Por emissor: Tesouro Nacional 100%, instituição financeira bancária 20% e demais emissores 10%. Os 25% são limites de concentração (participação no PL ou no capital do emissor)."
+  },
+  {
+   "id": "t12-47",
+   "subtema": "12.1",
+   "enunciado": "Uma EFPC estoura um limite porque as ações que tinha subiram muito (desenquadramento passivo). Pela Res. CMN 4.994:",
+   "alternativas": [
+    "É infração punida com multa",
+    "Exige venda imediata",
+    "Não é infração; o excesso deve ser eliminado em até 2 anos, vedadas novas aplicações que o agravem",
+    "Deve ser comunicado ao COAF"
+   ],
+   "correta": 2,
+   "explicacao": "O desenquadramento passivo não é infração. O prazo de ajuste é de 2 anos, sem novos aportes que aumentem o excesso."
+  },
+  {
+   "id": "t12-48",
+   "subtema": "12.1",
+   "enunciado": "Um fundo destinado a receber recursos de EFPC NÃO pode, por causa das vedações da Res. CMN 4.994:",
+   "alternativas": [
+    "Comprar títulos públicos federais",
+    "Operar day trade (salvo exceções) ou derivativos a descoberto",
+    "Investir em ações do Novo Mercado",
+    "Emprestar ações por meio de serviço autorizado"
+   ],
+   "correta": 1,
+   "explicacao": "Day trade (salvo exceções), posições a descoberto ou com perda ilimitada, fiança, aval e crédito fora das operações com participantes estão entre as vedações."
+  },
+  {
+   "id": "t12-49",
+   "subtema": "12.1",
+   "enunciado": "Para verificar os limites da Res. CMN 4.994, as aplicações da EFPC em cotas de fundos:",
+   "alternativas": [
+    "Nunca são consolidadas",
+    "São sempre tratadas como ativo final",
+    "Só são consolidadas se o fundo for exclusivo",
+    "Em regra são consolidadas com as aplicações diretas (look-through), exceto fundos tratados como ativo final, como FIDC, FII, ETF e estruturados"
+   ],
+   "correta": 3,
+   "explicacao": "A regra é olhar através do fundo e somar o que ele tem às aplicações diretas. Alguns fundos, pela natureza, contam como ativo final."
+  },
+  {
+   "id": "t12-50",
+   "subtema": "12.1",
+   "enunciado": "Sobre a política de investimentos de um RPPS (Res. CMN 4.963):",
+   "alternativas": [
+    "É facultativa",
+    "É aprovada pela CVM",
+    "Deve ser anual e aprovada pelo órgão superior do RPPS antes do início do exercício",
+    "É definida pelo gestor de cada fundo"
+   ],
+   "correta": 2,
+   "explicacao": "A política anual é obrigatória e define modelo de gestão, alocação, meta de rentabilidade, limites e critérios de seleção e de risco."
+  },
+  {
+   "id": "t12-51",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CMN 4.963, as aplicações de um RPPS em cotas de um mesmo fundo (exceto fundos 100% títulos públicos) não podem passar de ___ dos recursos do RPPS, e a participação do RPPS não pode passar de ___ do PL do fundo:",
+   "alternativas": [
+    "20% e 15%",
+    "10% e 25%",
+    "15% e 20%",
+    "5% e 5%"
+   ],
+   "correta": 0,
+   "explicacao": "Até 20% dos recursos do RPPS num mesmo fundo e até 15% do PL do fundo (5% em FIDC e crédito privado). Há ainda o limite de 5% dos recursos de terceiros geridos pela mesma gestora."
+  },
+  {
+   "id": "t12-52",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CMN 4.963, o limite do segmento de renda variável para um RPPS sem nível de Pró-Gestão é de:",
+   "alternativas": [
+    "10%",
+    "30%",
+    "50%",
+    "70%"
+   ],
+   "correta": 1,
+   "explicacao": "Renda variável até 30%. O limite sobe com o nível de Pró-Gestão. Os 70% são da EFPC (Res. 4.994)."
+  },
+  {
+   "id": "t12-53",
+   "subtema": "12.1",
+   "enunciado": "Um FIE Tipo II é aquele cujos cotistas são:",
+   "alternativas": [
+    "Pessoas físicas participantes de PGBL",
+    "Seguradoras e EAPC diretamente",
+    "EFPCs",
+    "Exclusivamente FIEs Tipo I"
+   ],
+   "correta": 3,
+   "explicacao": "FIE Tipo I tem como cotistas seguradoras e EAPC. FIE Tipo II tem como cotistas só FIEs Tipo I. O FIFE recebe recursos de FIEs."
+  },
+  {
+   "id": "t12-54",
+   "subtema": "12.1",
+   "enunciado": "Sobre PGBL e VGBL, é correto afirmar:",
+   "alternativas": [
+    "No VGBL, as contribuições são dedutíveis até 12% da renda bruta tributável",
+    "No PGBL, as contribuições são dedutíveis até 12% da renda bruta tributável e o IR incide sobre o valor total resgatado; no VGBL, só sobre os rendimentos",
+    "Ambos são isentos de IR no resgate",
+    "No PGBL, o IR incide apenas sobre os rendimentos"
+   ],
+   "correta": 1,
+   "explicacao": "Quem deduz na entrada (PGBL) paga IR sobre tudo na saída. O VGBL não deduz e paga IR só sobre o ganho."
+  },
+  {
+   "id": "t12-55",
+   "subtema": "12.1",
+   "enunciado": "Pelo art. 116 da Res. CVM 175, é previdenciária a classe constituída para aplicar recursos de:",
+   "alternativas": [
+    "Somente EFPC",
+    "Somente pessoas físicas com PGBL",
+    "Entidades abertas ou fechadas de previdência, RPPS, planos de previdência aberta e seguros de pessoas, e FAPI",
+    "Apenas seguradoras de ramos elementares"
+   ],
+   "correta": 2,
+   "explicacao": "O art. 116 lista esses quatro grupos. A classe indica no cadastro da CVM sua condição de previdenciária e o plano vinculado."
+  },
+  {
+   "id": "t12-56",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CMN 4.993, um FIE que recebe recursos de PGBL e VGBL no diferimento, não destinado a Participantes Qualificados, pode alocar em renda variável até:",
+   "alternativas": [
+    "30%",
+    "49%",
+    "100%",
+    "70%"
+   ],
+   "correta": 3,
+   "explicacao": "Planos abertos e seguros com sobrevivência no diferimento: até 70% em renda variável. FIE para Participantes Qualificados: até 100%. Os 49% são de outros segmentos e do limite por fundo."
+  },
+  {
+   "id": "t12-57",
+   "subtema": "12.1",
+   "enunciado": "Uma pessoa física tem R$ 3 milhões em aplicações financeiras e atesta essa condição por escrito. Pela Res. CVM 30, ela é:",
+   "alternativas": [
+    "Investidora profissional",
+    "Investidora qualificada, mas não profissional",
+    "Investidora de varejo",
+    "Investidora institucional"
+   ],
+   "correta": 1,
+   "explicacao": "Acima de R$ 1 milhão (com atestado) é qualificado. Profissional exige mais de R$ 10 milhões."
+  },
+  {
+   "id": "t12-58",
+   "subtema": "12.1",
+   "enunciado": "É investidor profissional pela Res. CVM 30, independentemente de patrimônio:",
+   "alternativas": [
+    "Pessoa aprovada na CPA-20",
+    "Pessoa física com R$ 2 milhões",
+    "Entidade fechada de previdência complementar",
+    "Clube de investimento gerido por um cotista"
+   ],
+   "correta": 2,
+   "explicacao": "Instituições financeiras, seguradoras, EAPC, EFPC e fundos são profissionais pela própria natureza. Certificados são qualificados."
+  },
+  {
+   "id": "t12-59",
+   "subtema": "12.1",
+   "enunciado": "Pela Res. CVM 30, um gestor pessoa física autorizado pela CVM, em relação aos seus recursos próprios, é investidor:",
+   "alternativas": [
+    "Profissional",
+    "De varejo",
+    "Qualificado, apenas",
+    "Não residente"
+   ],
+   "correta": 0,
+   "explicacao": "Administradores de carteira, analistas, consultores e assessores autorizados pela CVM são profissionais quanto aos recursos próprios. Quem só tem a certificação é qualificado."
+  },
+  {
+   "id": "t12-60",
+   "subtema": "12.1",
+   "enunciado": "A Res. CVM 62 adota uma tipologia aberta para os ilícitos de mercado. Isso significa que:",
+   "alternativas": [
+    "Os ilícitos são definidos por conceitos amplos, e os exemplos não são exaustivos, exigindo atualização constante dos profissionais",
+    "Só são ilícitas as condutas expressamente listadas",
+    "As condutas só são ilícitas se houver lucro",
+    "A CVM não pode punir práticas novas"
+   ],
+   "correta": 0,
+   "explicacao": "A norma descreve conceitos (condições artificiais, manipulação, operação fraudulenta, prática não equitativa) que alcançam práticas novas. Cabe ao profissional se atualizar."
+  },
+  {
+   "id": "t12-61",
+   "subtema": "12.1",
+   "enunciado": "Inserir ofertas relevantes no livro sem intenção de executá-las, para induzir outros participantes a negociar, e cancelá-las logo depois é:",
+   "alternativas": [
+    "Churning",
+    "Front running",
+    "Spoofing",
+    "Money pass"
+   ],
+   "correta": 2,
+   "explicacao": "É o spoofing. O layering é a variação com várias ofertas em camadas de preço."
+  },
+  {
+   "id": "t12-62",
+   "subtema": "12.1",
+   "enunciado": "O operador de uma gestora compra ações para a própria conta minutos antes de executar uma grande ordem de compra de um fundo da casa. A conduta é:",
+   "alternativas": [
+    "Hedge",
+    "Layering",
+    "Money pass",
+    "Front running, uma prática não equitativa"
+   ],
+   "correta": 3,
+   "explicacao": "Antecipar-se à ordem de cliente ou fundo para lucrar com o impacto dela é front running, que põe o cliente em desvantagem indevida."
+  },
+  {
+   "id": "t12-63",
+   "subtema": "12.1",
+   "enunciado": "Dois comitentes fazem negócios combinados com opções ilíquidas a preços fora do mercado para transferir dinheiro de um para o outro. A prática é chamada de:",
+   "alternativas": [
+    "Money pass",
+    "Spoofing",
+    "Churning",
+    "Manipulação de benchmark"
+   ],
+   "correta": 0,
+   "explicacao": "Money pass é a transferência de recursos entre comitentes por meio de operações com resultado predeterminado. É uma operação fraudulenta."
+  },
+  {
+   "id": "t12-64",
+   "subtema": "12.1",
+   "enunciado": "Churning é:",
+   "alternativas": [
+    "Negociar antes de uma ordem de cliente",
+    "Inserir ordens falsas no livro",
+    "Girar excessivamente a carteira do cliente para gerar corretagem ou rebate",
+    "Usar informação privilegiada"
+   ],
+   "correta": 2,
+   "explicacao": "O giro excessivo beneficia o intermediário ou gestor com receitas e prejudica o cliente com custos. É prática não equitativa e vedada também pela Res. CVM 21."
+  },
+  {
+   "id": "t12-65",
+   "subtema": "12.1",
+   "enunciado": "A Res. CMN 4.945/2021 trata:",
+   "alternativas": [
+    "Da Política de Responsabilidade Social, Ambiental e Climática (PRSAC) das instituições do sistema financeiro",
+    "Da tributação de títulos verdes",
+    "Dos limites de aplicação de EFPC",
+    "Das ofertas públicas de títulos ASG"
+   ],
+   "correta": 0,
+   "explicacao": "A 4.945 exige a PRSAC. A 4.943 e a 4.944 incluem os riscos social, ambiental e climático no gerenciamento de riscos."
+  },
+  {
+   "id": "t12-66",
+   "subtema": "12.1",
+   "enunciado": "A Res. BCB 139 e a IN BCB 153 tratam:",
+   "alternativas": [
+    "Da prevenção à lavagem de dinheiro",
+    "Do relatório de riscos e oportunidades sociais, ambientais e climáticas (GRSAC) e de suas tabelas padronizadas",
+    "Do registro de gestores",
+    "Do câmbio de investidores estrangeiros"
+   ],
+   "correta": 1,
+   "explicacao": "A Res. BCB 139 exige o relatório GRSAC, na linha do TCFD, e a IN BCB 153 traz as tabelas padronizadas."
+  },
+  {
+   "id": "t12-67",
+   "subtema": "12.2",
+   "enunciado": "Pelo Código ANBIMA de Administração e Gestão de Recursos de Terceiros, a função de compliance deve:",
+   "alternativas": [
+    "Ser exercida pelo diretor de gestão",
+    "Ser terceirizada obrigatoriamente",
+    "Existir apenas acima de R$ 1 bilhão sob gestão",
+    "Existir com diretor responsável e estrutura compatível, com independência em relação às áreas de negócio"
+   ],
+   "correta": 3,
+   "explicacao": "O compliance é obrigatório, independente e proporcional ao porte. O diretor de gestão não pode acumulá-lo."
+  },
+  {
+   "id": "t12-68",
+   "subtema": "12.2",
+   "enunciado": "A mesma empresa faz gestão de fundos e banco de investimento. Para mitigar o conflito de interesses, a ação mais adequada é:",
+   "alternativas": [
+    "Compartilhar livremente as informações entre as áreas",
+    "Segregar funções e controlar acessos (chinese wall), ter política de investimentos pessoais e divulgar aos clientes os conflitos remanescentes",
+    "Unificar as mesas de operação",
+    "Ignorar o conflito enquanto o cliente não reclamar"
+   ],
+   "correta": 1,
+   "explicacao": "Segregação, controle de acesso, políticas escritas e transparência sobre os conflitos que não podem ser eliminados são as recomendações centrais."
+  },
+  {
+   "id": "t12-69",
+   "subtema": "12.2",
+   "enunciado": "Pela Lei 9.613/98, o crime de lavagem de dinheiro consiste em:",
+   "alternativas": [
+    "Ocultar ou dissimular a natureza, origem, localização, disposição, movimentação ou propriedade de bens provenientes, direta ou indiretamente, de infração penal",
+    "Sonegar tributos",
+    "Operar sem registro na CVM",
+    "Usar informação privilegiada"
+   ],
+   "correta": 0,
+   "explicacao": "É a definição do art. 1º. Desde a Lei 12.683/2012, o crime antecedente pode ser qualquer infração penal."
+  },
+  {
+   "id": "t12-70",
+   "subtema": "12.2",
+   "enunciado": "Os gestores de recursos estão sujeitos aos mecanismos de controle da Lei 9.613?",
+   "alternativas": [
+    "Não, só os bancos",
+    "Só se tiverem clientes estrangeiros",
+    "Sim, pois administram carteiras de títulos e valores mobiliários",
+    "Só se tiverem mais de 50 funcionários"
+   ],
+   "correta": 2,
+   "explicacao": "O art. 9º alcança quem capta, aplica ou administra recursos de terceiros e quem administra títulos e valores mobiliários."
+  },
+  {
+   "id": "t12-71",
+   "subtema": "12.2",
+   "enunciado": "Pela Lei 9.613 e pela Res. CVM 50, os cadastros e os registros de transações devem ser guardados por, no mínimo:",
+   "alternativas": [
+    "1 ano",
+    "10 anos",
+    "5 anos, contados do encerramento da conta ou da conclusão da transação",
+    "Por tempo indeterminado"
+   ],
+   "correta": 2,
+   "explicacao": "O prazo mínimo é de 5 anos, e a autoridade pode estendê-lo."
+  },
+  {
+   "id": "t12-72",
+   "subtema": "12.2",
+   "enunciado": "Concluída a análise que caracterizou uma operação como suspeita de lavagem, o gestor deve comunicá-la ao COAF:",
+   "alternativas": [
+    "Em até 30 dias, avisando o cliente",
+    "Em até 24 horas, sem dar ciência ao cliente",
+    "Em até 5 dias úteis, com cópia ao cliente",
+    "Até o fim do ano"
+   ],
+   "correta": 1,
+   "explicacao": "A comunicação é feita em 24 horas da conclusão da análise e é proibido avisar o cliente. Feita de boa-fé, não gera responsabilidade nem fere o sigilo."
+  },
+  {
+   "id": "t12-73",
+   "subtema": "12.2",
+   "enunciado": "NÃO está entre as sanções administrativas do art. 12 da Lei 9.613:",
+   "alternativas": [
+    "Advertência",
+    "Multa de até R$ 20 milhões (ou 2× a operação ou o lucro)",
+    "Prisão administrativa",
+    "Inabilitação de até 10 anos para cargo de administrador"
+   ],
+   "correta": 2,
+   "explicacao": "As sanções são advertência, multa, inabilitação de até 10 anos e cassação ou suspensão da autorização. Prisão só existe na esfera criminal."
+  },
+  {
+   "id": "t12-74",
+   "subtema": "12.2",
+   "enunciado": "A Res. CVM 50 exige que a política de PLD/FT siga:",
+   "alternativas": [
+    "Uma abordagem baseada em risco, com avaliação interna que classifica clientes, produtos, canais e prestadores relevantes e funcionários",
+    "O mesmo tratamento para todos os clientes",
+    "Apenas o valor de cada operação",
+    "Uma lista fixa de clientes de risco definida pela CVM"
+   ],
+   "correta": 0,
+   "explicacao": "Na abordagem baseada em risco, a diligência é proporcional ao risco: mais controles para quem tem mais risco."
+  },
+  {
+   "id": "t12-75",
+   "subtema": "12.2",
+   "enunciado": "Uma resolução do Conselho de Segurança da ONU determina a indisponibilidade de ativos de um cliente da gestora. A gestora deve:",
+   "alternativas": [
+    "Esperar decisão judicial brasileira",
+    "Avisar o cliente para que ele resgate",
+    "Consultar a ANBIMA antes de agir",
+    "Cumprir imediatamente e sem aviso prévio ao sancionado, comunicando à CVM, ao Ministério da Justiça e ao COAF"
+   ],
+   "correta": 3,
+   "explicacao": "A Lei 13.810/2019 e a Res. CVM 50 exigem cumprimento imediato e sem aviso, com as comunicações às autoridades."
+  },
+  {
+   "id": "t12-76",
+   "subtema": "12.2",
+   "enunciado": "Por quanto tempo após deixar o cargo uma pessoa continua sendo considerada PEP?",
+   "alternativas": [
+    "1 ano",
+    "2 anos",
+    "5 anos",
+    "Por toda a vida"
+   ],
+   "correta": 2,
+   "explicacao": "A condição de PEP vale para quem exerce ou exerceu o cargo nos últimos 5 anos. Familiares e estreitos colaboradores também recebem atenção reforçada."
+  },
+  {
+   "id": "t12-77",
+   "subtema": "12.2",
+   "enunciado": "Uma gestora não identificou nenhuma operação suspeita no ano. Pela Res. CVM 50, ela deve:",
+   "alternativas": [
+    "Enviar a declaração anual de não ocorrência até o último dia útil de abril",
+    "Não fazer nada",
+    "Comunicar o Banco Central em janeiro",
+    "Publicar um aviso no site"
+   ],
+   "correta": 0,
+   "explicacao": "Mesmo sem comunicações, a instituição declara anualmente, pelo SISCOAF, a não ocorrência de operações a comunicar."
+  },
+  {
+   "id": "t12-78",
+   "subtema": "12.3",
+   "enunciado": "A alíquota de IR sobre o ganho líquido de pessoa física residente em operações comuns (swing trade) e em day trade com ações é, respectivamente:",
+   "alternativas": [
+    "15% e 15%",
+    "20% e 15%",
+    "15% e 20%",
+    "22,5% e 20%"
+   ],
+   "correta": 2,
+   "explicacao": "Operações comuns: 15%. Day trade: 20%. A tabela regressiva é da renda fixa, não das ações."
+  },
+  {
+   "id": "t12-79",
+   "subtema": "12.3",
+   "enunciado": "Em maio, uma pessoa física vendeu R$ 18.000 em ações no mercado à vista (operações comuns), com lucro de R$ 4.000. O IR devido é:",
+   "alternativas": [
+    "R$ 600",
+    "R$ 0, porque as vendas do mês ficaram abaixo de R$ 20 mil",
+    "R$ 800",
+    "R$ 720"
+   ],
+   "correta": 1,
+   "explicacao": "A isenção vale para vendas totais de até R$ 20 mil no mês em ações à vista, em operações comuns. O que conta é o volume vendido, não o lucro."
+  },
+  {
+   "id": "t12-80",
+   "subtema": "12.3",
+   "enunciado": "Em junho, uma pessoa física vendeu R$ 50.000 em ações (operação comum) com custo médio de R$ 42.000, sem prejuízos a compensar. Descontado o IRRF de 0,005%, o DARF é de:",
+   "alternativas": [
+    "R$ 1.197,50",
+    "R$ 1.200,00",
+    "R$ 1.600,00",
+    "R$ 0"
+   ],
+   "correta": 0,
+   "explicacao": "Ganho de 8.000 × 15% = 1.200. IRRF = 0,005% × 50.000 = 2,50. DARF = 1.200 − 2,50 = 1.197,50."
+  },
+  {
+   "id": "t12-81",
+   "subtema": "12.3",
+   "enunciado": "Uma pessoa física teve ganho de R$ 2.000 em day trade no mês. Descontado o IRRF de 1% sobre o ganho, o DARF é de:",
+   "alternativas": [
+    "R$ 400",
+    "R$ 300",
+    "R$ 380",
+    "R$ 0, por isenção"
+   ],
+   "correta": 2,
+   "explicacao": "20% × 2.000 = 400. IRRF = 1% × 2.000 = 20. DARF = 380. Não há isenção de R$ 20 mil no day trade."
+  },
+  {
+   "id": "t12-82",
+   "subtema": "12.3",
+   "enunciado": "O prejuízo de uma pessoa física em day trade pode ser compensado com:",
+   "alternativas": [
+    "Lucros em operações comuns",
+    "Rendimentos de renda fixa",
+    "Dividendos recebidos",
+    "Somente lucros em day trade, sem prazo para compensar"
+   ],
+   "correta": 3,
+   "explicacao": "Day trade compensa só com day trade, e operações comuns só com operações comuns. Não há prazo de prescrição para a compensação."
+  },
+  {
+   "id": "t12-83",
+   "subtema": "12.3",
+   "enunciado": "Um investidor não residente, de país que não é paraíso fiscal, investindo pelas regras do CMN e da CVM, tem ganho com ações em bolsa no Brasil. A tributação desse ganho é:",
+   "alternativas": [
+    "15%",
+    "Isenção de IR",
+    "20%",
+    "Tabela regressiva de 22,5% a 15%"
+   ],
+   "correta": 1,
+   "explicacao": "Os ganhos do investidor estrangeiro em operações em bolsa são isentos de IR, desde que ele não seja de jurisdição de tributação favorecida."
+  },
+  {
+   "id": "t12-84",
+   "subtema": "12.3",
+   "enunciado": "Se o investidor não residente for de paraíso fiscal (jurisdição de tributação favorecida), seus ganhos em bolsa com ações:",
+   "alternativas": [
+    "São tributados pelas mesmas regras do residente",
+    "São isentos",
+    "Têm alíquota zero",
+    "Só pagam IOF"
+   ],
+   "correta": 0,
+   "explicacao": "O benefício de isenção não vale para paraísos fiscais, que seguem o regime do residente (15% ou 20%)."
+  },
+  {
+   "id": "t12-85",
+   "subtema": "12.3",
+   "enunciado": "O IR de pessoa física sobre o ganho líquido com ações é apurado ___ e pago via DARF até ___:",
+   "alternativas": [
+    "Anualmente; 30 de abril",
+    "Mensalmente; o último dia útil do mês seguinte",
+    "Em cada venda; o dia seguinte",
+    "Semestralmente; o último dia útil do semestre"
+   ],
+   "correta": 1,
+   "explicacao": "A apuração é mensal e o pagamento vai até o último dia útil do mês seguinte ao do ganho."
+  },
+  {
+   "id": "t12-86",
+   "subtema": "12.4",
+   "enunciado": "Uma pessoa física resgata um CDB 400 dias depois da aplicação. A alíquota de IR é de:",
+   "alternativas": [
+    "22,5%",
+    "20%",
+    "15%",
+    "17,5%"
+   ],
+   "correta": 3,
+   "explicacao": "De 361 a 720 dias, a alíquota é 17,5%. Até 180 dias: 22,5%; de 181 a 360: 20%; acima de 720: 15%."
+  },
+  {
+   "id": "t12-87",
+   "subtema": "12.4",
+   "enunciado": "Uma pessoa física aplica R$ 10.000 em um CDB e resgata R$ 11.200 após 200 dias. O IR retido é de:",
+   "alternativas": [
+    "R$ 270",
+    "R$ 210",
+    "R$ 240",
+    "R$ 180"
+   ],
+   "correta": 2,
+   "explicacao": "Rendimento de 1.200; 200 dias está na faixa de 181 a 360 dias, com 20%. IR = 240."
+  },
+  {
+   "id": "t12-88",
+   "subtema": "12.4",
+   "enunciado": "São isentos de IR para pessoa física:",
+   "alternativas": [
+    "CDB e Tesouro Selic",
+    "LCI, LCA, CRI, CRA e debêntures incentivadas",
+    "Debêntures comuns",
+    "Tesouro IPCA+ e LTN"
+   ],
+   "correta": 1,
+   "explicacao": "A isenção vale só para a pessoa física. Títulos públicos, CDB e debêntures comuns seguem a tabela regressiva."
+  },
+  {
+   "id": "t12-89",
+   "subtema": "12.4",
+   "enunciado": "O IOF incide sobre o rendimento de aplicações de renda fixa resgatadas:",
+   "alternativas": [
+    "Em menos de 30 dias, com alíquota regressiva",
+    "Após 720 dias",
+    "Em qualquer prazo, à alíquota de 0,38%",
+    "Nunca"
+   ],
+   "correta": 0,
+   "explicacao": "O IOF começa em 96% do rendimento no 1º dia e zera a partir do 30º dia. O IR incide sobre o rendimento já líquido do IOF."
+  },
+  {
+   "id": "t12-90",
+   "subtema": "12.4",
+   "enunciado": "Um investidor não residente, de país que não é paraíso fiscal, investindo pelas regras do CMN e da CVM, recebe rendimentos de títulos públicos federais. A alíquota de IR é:",
+   "alternativas": [
+    "15%",
+    "22,5%",
+    "Zero",
+    "10%"
+   ],
+   "correta": 2,
+   "explicacao": "Títulos públicos federais têm alíquota zero para o não residente fora de paraíso fiscal. Títulos privados comuns pagam 15%."
+  },
+  {
+   "id": "t12-91",
+   "subtema": "12.4",
+   "enunciado": "Para uma pessoa jurídica tributada pelo lucro real, o IR retido na fonte sobre aplicações de renda fixa:",
+   "alternativas": [
+    "É definitivo",
+    "É isento",
+    "Não existe",
+    "É antecipação, compensada com o IRPJ devido"
+   ],
+   "correta": 3,
+   "explicacao": "Para a PJ, a retenção na fonte é antecipação: os rendimentos entram no lucro e o IR retido é deduzido do IRPJ apurado."
+  },
+  {
+   "id": "t12-92",
+   "subtema": "12.4",
+   "enunciado": "Num título com pagamento de cupom semestral, o IR da pessoa física incide:",
+   "alternativas": [
+    "Só no vencimento",
+    "Em cada pagamento de cupom, pela alíquota da tabela regressiva conforme o prazo desde a aplicação, e também no vencimento ou na venda",
+    "Nunca sobre os cupons",
+    "Só se houver venda antes do vencimento"
+   ],
+   "correta": 1,
+   "explicacao": "O pagamento de cupom é fato gerador. O primeiro cupom semestral, com cerca de 180 dias, costuma pagar 22,5%, e os seguintes vão caindo."
+  },
+  {
+   "id": "t12-93",
+   "subtema": "12.4",
+   "enunciado": "Um investidor não residente, de país que não é paraíso fiscal, recebe juros de uma debênture comum (não incentivada). A alíquota de IR é:",
+   "alternativas": [
+    "15%",
+    "Isenção",
+    "Tabela regressiva de 22,5% a 15%",
+    "25%"
+   ],
+   "correta": 0,
+   "explicacao": "Rendimentos de renda fixa privada do investidor estrangeiro pelas regras do CMN e da CVM pagam 15%. Títulos públicos federais e debêntures incentivadas têm alíquota zero."
+  }
+ ]
+}

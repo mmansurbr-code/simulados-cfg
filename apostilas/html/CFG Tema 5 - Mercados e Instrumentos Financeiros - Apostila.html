@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFG Tema 5 · Mercados e Instrumentos – Apostila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: apostila em coluna de leitura com índice lateral fixo; simulado no fim como "folha de prova". */
+:root{
+  --bg:#f3f5f6; --paper:#ffffff; --ink:#15222c; --muted:#5a6873; --line:#d8dfe3;
+  --accent:#0f6b64; --accent-soft:#e2f0ee; --formula:#fff6e0; --formula-ink:#6a4a00;
+  --ok:#1d7a3e; --ok-soft:#e3f3e8; --bad:#b3261e; --bad-soft:#fbe6e4;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171d; --paper:#16212a; --ink:#e4ebef; --muted:#97a6b0; --line:#2a3945;
+  --accent:#5cc2b8; --accent-soft:#16332f; --formula:#2c2412; --formula-ink:#f0cf86;
+  --ok:#6fd08f; --ok-soft:#173222; --bad:#ff8a80; --bad-soft:#3a1c1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);margin:0}
+.wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px;max-width:1180px;margin:0 auto;padding-inline:24px;padding-block:32px 80px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:14px}
+nav.toc .k{font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+nav.toc a{display:grid;grid-template-columns:34px 1fr;gap:4px;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--accent-soft);outline:none}
+nav.toc a span:first-child{font-family:var(--f-mono);color:var(--accent);font-size:13px}
+nav.toc a.quiz{margin-top:10px;background:var(--accent);color:var(--paper);font-weight:600}
+nav.toc a.quiz span:first-child{color:var(--paper)}
+main{min-width:0}
+header.hero{padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font:650 clamp(32px,5vw,48px)/1.08 var(--f-display);margin:12px 0 14px;text-wrap:balance}
+h2{font:650 30px/1.15 var(--f-display);margin:0 0 6px;text-wrap:balance}
+h3{font:600 17px/1.3 var(--f-body);margin:26px 0 8px}
+.lede{max-width:66ch;color:var(--muted);font-size:17px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+section.topic{padding-block:40px 8px;border-bottom:1px solid var(--line)}
+.num{font:500 13px/1 var(--f-mono);color:var(--accent);letter-spacing:.06em}
+.why{color:var(--muted);max-width:66ch;margin:0 0 6px}
+p,li{max-width:70ch}
+ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600}
+td.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.formula{background:var(--formula);color:var(--formula-ink);border-radius:8px;padding:12px 16px;margin:12px 0;font:15px/1.6 var(--f-mono);overflow-x:auto}
+.formula .lbl{display:block;font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+.ex{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:14px 0}
+.ex .lbl{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ex p{margin:6px 0}
+.pegadinha{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:14px 0}
+.pegadinha b:first-child{font:600 11px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--bad);display:block;margin-bottom:6px}
+code{font-family:var(--f-mono);font-size:.92em}
+/* Simulado */
+#simulado{padding-top:44px}
+.qbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 20px}
+.qbar label{font-size:14px;color:var(--muted)}
+select,button{font:inherit}
+select{padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+button{cursor:pointer;border-radius:6px;padding:9px 16px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-weight:600}
+button.ghost{background:transparent;color:var(--accent)}
+button:focus-visible,select:focus-visible,.opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.45;cursor:default}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px}
+.qhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:13px/1.4 var(--f-mono);color:var(--muted)}
+.progress{height:4px;background:var(--line);border-radius:4px;margin:10px 0 18px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.qtext{font:600 18px/1.45 var(--f-body);margin:0 0 16px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:28px 1fr;gap:8px;text-align:left;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-weight:400}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .l{font-family:var(--f-mono);color:var(--muted)}
+.opt.ok{background:var(--ok-soft);border-color:var(--ok)}
+.opt.bad{background:var(--bad-soft);border-color:var(--bad)}
+.opt:disabled{cursor:default;opacity:1}
+.fb{margin-top:16px;padding:12px 16px;border-radius:8px;background:var(--accent-soft)}
+.fb strong.ok{color:var(--ok)} .fb strong.bad{color:var(--bad)}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.score{font:650 44px/1 var(--f-display)}
+.bars{display:grid;gap:8px;margin:18px 0}
+.bar{display:grid;grid-template-columns:minmax(0,210px) 1fr 70px;gap:10px;align-items:center;font-size:14px}
+.bar .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--accent)}
+.bar .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
+.hint{font-size:13px;color:var(--muted)}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:12px;padding-inline:16px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:4px}
+  nav.toc .k{width:100%}
+  nav.toc a{grid-template-columns:auto 1fr;padding:5px 8px;border:1px solid var(--line)}
+  .bar{grid-template-columns:1fr 60px}
+  .bar .t{grid-column:1/-1;order:3}
+}
+@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .wrap{display:block;max-width:none;padding:0}
+  nav.toc{display:none}
+  section.topic{break-inside:auto;padding-block:18px 4px}
+  h2,h3{break-after:avoid}
+  table,.formula,.ex,.pegadinha{break-inside:avoid}
+  .formula{background:#f6f1e2;color:#000}
+  th{background:#e8eef0}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <div class="k">Tema 5 · índice</div>
+  <a href="#t51"><span>5.1</span><span>Organização dos mercados</span></a>
+  <a href="#t52"><span>5.2</span><span>Índices</span></a>
+  <a href="#t53"><span>5.3</span><span>Renda variável</span></a>
+  <a href="#t54"><span>5.4</span><span>Renda fixa e crédito</span></a>
+  <a href="#t55"><span>5.5</span><span>Alternativos</span></a>
+  <a href="#t56"><span>5.6</span><span>Derivativos</span></a>
+  <a href="#t57"><span>5.7</span><span>Best execution</span></a>
+  </nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">CFG · Certificação ANBIMA de Fundamentos em Gestão</div>
+  <h1>Mercados e Instrumentos Financeiros</h1>
+  <p class="lede">Apostila do tema 5, junto com o 9 o de maior peso da prova (13% a 17%). Cada bloco traz o conceito, a fórmula quando há cálculo e as pegadinhas mais comuns.</p>
+  <div class="meta"><span>Programa <b>rev. 30/07/2026</b></span><span>Peso <b>13–17%</b></span><span>Subtemas <b>5.1 a 5.7</b></span></div>
+</header>
+
+<!-- 5.1 -->
+<section class="topic" id="t51">
+  <div class="num">5.1</div>
+  <h2>Organização e funcionamento dos mercados</h2>
+  <p class="why">Onde e como os ativos são emitidos, negociados, registrados e liquidados.</p>
+
+  <h3>Primário × secundário</h3>
+  <ul>
+    <li><b>Primário:</b> o emissor vende o título pela primeira vez e o dinheiro vai para ele (IPO, follow-on primário, emissão de debênture).</li>
+    <li><b>Secundário:</b> investidores negociam entre si. O emissor não capta nada, mas é esse mercado que dá liquidez e formação de preço.</li>
+  </ul>
+
+  <h3>Bolsa × balcão</h3>
+  <ul>
+    <li><b>Bolsa:</b> ambiente de negociação multilateral, com pregão eletrônico, transparência de ofertas e contraparte central (a clearing da B3).</li>
+    <li><b>Balcão organizado:</b> ambiente administrado por entidade autorizada, com registro das operações, sem as mesmas exigências de bolsa.</li>
+    <li><b>Balcão não organizado:</b> negociação bilateral entre as partes, com registro para fins de controle.</li>
+  </ul>
+  <p><b>Formador de mercado (market maker):</b> instituição que se compromete a manter ofertas de compra e de venda, dentro de um spread máximo, para dar liquidez ao ativo.</p>
+
+  <h3>Tipos de ordem</h3>
+  <div class="tbl"><table>
+    <tr><th>Ordem</th><th>O que faz</th></tr>
+    <tr><td>A mercado</td><td>Executa imediatamente pelo melhor preço disponível.</td></tr>
+    <tr><td>Limitada</td><td>Executa só ao preço definido ou melhor.</td></tr>
+    <tr><td>Stop (stop loss)</td><td>É disparada quando o preço atinge o gatilho. Serve para limitar a perda.</td></tr>
+    <tr><td>Stop gain / start</td><td>Disparada na alta, para realizar ganho ou entrar numa tendência de alta.</td></tr>
+    <tr><td>Administrada</td><td>O investidor define a quantidade e a corretora escolhe o momento de executar.</td></tr>
+    <tr><td>Discricionária</td><td>O gestor define as condições e a distribuição entre os clientes (típica de gestores de carteiras).</td></tr>
+    <tr><td>Casada</td><td>Compra e venda vinculadas: só executa se as duas pontas executarem.</td></tr>
+  </table></div>
+
+  <h3>Registro e liquidação</h3>
+  <ul>
+    <li><b>SELIC:</b> sistema do Banco Central onde ficam registrados e são liquidados os <b>títulos públicos federais</b>. A liquidação é bruta e em tempo real.</li>
+    <li><b>B3:</b> atua como bolsa, balcão, central depositária e clearing (contraparte central). Ações à vista liquidam em <b>D+2</b>. Também registra títulos privados (CDB, debêntures, CRI e outros) e derivativos.</li>
+  </ul>
+
+  <h3>Ofertas públicas</h3>
+  <div class="tbl"><table>
+    <tr><th>Mecanismo</th><th>Característica</th></tr>
+    <tr><td>Garantia firme</td><td>O coordenador se obriga a <b>subscrever as sobras</b> não colocadas no mercado. O emissor tem a captação garantida.</td></tr>
+    <tr><td>Melhores esforços</td><td>O coordenador só se compromete a tentar vender. O risco de não colocação fica com o emissor.</td></tr>
+    <tr><td>Leilão holandês</td><td>O preço começa alto e vai baixando até a demanda cobrir a oferta. Todos pagam o preço de corte.</td></tr>
+    <tr><td>Bookbuilding</td><td>O coordenador coleta intenções de investimento e reservas numa faixa indicativa. O preço final sai da demanda.</td></tr>
+    <tr><td>Lote suplementar (green shoe)</td><td>Até 15% a mais, para atender excesso de demanda, com possibilidade de <b>estabilização de preço</b> pelo agente estabilizador.</td></tr>
+    <tr><td>Lote adicional (hot issue)</td><td>Aumento da oferta pelo emissor, sem novo pedido, até 25% (Res. CVM 160).</td></tr>
+    <tr><td>Competitive bids</td><td>Os coordenadores disputam o mandato apresentando propostas de preço e condições.</td></tr>
+  </table></div>
+  <p><b>Etapas de divulgação:</b> <i>pilot fishing</i>, <i>premarketing</i>, <i>predeal research</i> e leitura de mercado (consultas de viabilidade antes da oferta) → definição da faixa de preço → <b>roadshow</b> (apresentação aos investidores).</p>
+
+  <h3>Funcionamento da B3</h3>
+  <ul>
+    <li><b>Venda a descoberto:</b> vender um ativo que não se tem, em geral depois de tomá-lo emprestado. A aposta é na queda.</li>
+    <li><b>Aluguel de ações (BTB):</b> o <b>doador</b> empresta e recebe uma taxa. O <b>tomador</b> usa a ação (para vender a descoberto, por exemplo) e deposita garantias.</li>
+    <li><b>Compra com margem:</b> compra alavancada com crédito da corretora, com o ativo como garantia.</li>
+    <li><b>Margem de manutenção:</b> nível mínimo de garantia que precisa ser mantido. Se o valor cai abaixo dela, vem a <b>chamada de margem</b>: o investidor deposita mais ou a posição é liquidada.</li>
+    <li><b>Termo:</b> compra ou venda com liquidação numa data futura, a preço já combinado (o preço à vista mais juros).</li>
+    <li><b>Custos de execução:</b> corretagem, emolumentos e taxa de liquidação, além de spread e impacto de mercado.</li>
+  </ul>
+
+  <h3>Segmentos de listagem</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Nível 1</th><th>Nível 2</th><th>Novo Mercado</th></tr>
+    <tr><td>Ações</td><td>ON e PN</td><td>ON e PN (PN com direitos adicionais)</td><td><b>Somente ON</b></td></tr>
+    <tr><td>Free float mínimo</td><td>25%</td><td>25%</td><td>25% (ou 15% em certos casos)</td></tr>
+    <tr><td>Tag along</td><td>80% das ON (mínimo legal)</td><td>100% para ON e PN</td><td>100%</td></tr>
+    <tr><td>Conselho</td><td>Regras legais</td><td>Mínimo de 5 membros, com independentes</td><td>Independentes (2 ou 20%)</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>O tag along legal da Lei 6.404 (art. 254-A) é de 80% do preço, e só para ON. Os 100% são exigência dos segmentos N2 e Novo Mercado.</div>
+</section>
+
+<!-- 5.2 -->
+<section class="topic" id="t52">
+  <div class="num">5.2</div>
+  <h2>Índices</h2>
+  <p class="why">Um índice é uma carteira teórica que serve de referência (benchmark) e de base para fundos passivos e derivativos.</p>
+  <h3>Índices de ações no Brasil</h3>
+  <div class="tbl"><table>
+    <tr><th>Índice</th><th>O que mede</th></tr>
+    <tr><td>Ibovespa</td><td>O principal índice da B3: as ações mais negociadas, ponderadas pelo valor de mercado do free float, com limite de peso por ativo. Carteira revista a cada quadrimestre.</td></tr>
+    <tr><td>IBrX-100 / IBrX-50</td><td>As 100 ou as 50 ações mais negociadas.</td></tr>
+    <tr><td>IGC · IGCT · IGC-NM</td><td>Empresas com governança diferenciada (N1, N2 e NM); o IGCT só as mais líquidas; o IGC-NM só o Novo Mercado.</td></tr>
+    <tr><td>ITAG</td><td>Empresas com tag along acima do mínimo legal.</td></tr>
+    <tr><td>ISE</td><td>Sustentabilidade empresarial.</td></tr>
+    <tr><td>ICO2</td><td>Carbono eficiente: pondera pela emissão de gases de efeito estufa.</td></tr>
+    <tr><td>IEE</td><td>Setor de energia elétrica.</td></tr>
+    <tr><td>MLCX · SMLL</td><td>Mid-large caps e small caps.</td></tr>
+    <tr><td>IDIV</td><td>Empresas boas pagadoras de dividendos.</td></tr>
+    <tr><td>IFIX</td><td>Fundos de investimento imobiliário.</td></tr>
+  </table></div>
+  <h3>Índices de ações no exterior</h3>
+  <ul>
+    <li><b>S&P 500:</b> 500 grandes empresas dos EUA, ponderadas por valor de mercado.</li>
+    <li><b>Dow Jones:</b> 30 empresas, <b>ponderado por preço</b>, o que o diferencia dos demais.</li>
+    <li><b>Nasdaq-100:</b> as 100 maiores empresas não financeiras da Nasdaq, com viés de tecnologia.</li>
+    <li><b>Nikkei 225:</b> Japão, também ponderado por preço. <b>FTSE 100:</b> Reino Unido. <b>Hang Seng:</b> Hong Kong.</li>
+    <li><b>MSCI World:</b> mercados desenvolvidos. <b>MSCI Emerging Markets:</b> emergentes. <b>Russell 2000:</b> small caps dos EUA.</li>
+    <li><b>Índices ASG:</b> S&P ESG, DJSI (Dow Jones Sustainability) e FTSE4Good.</li>
+  </ul>
+  <h3>Renda fixa: família IMA (ANBIMA)</h3>
+  <div class="tbl"><table>
+    <tr><th>Índice</th><th>Títulos</th><th>Indexador</th></tr>
+    <tr><td>IRF-M</td><td>LTN e NTN-F</td><td>Prefixado</td></tr>
+    <tr><td>IMA-B</td><td>NTN-B</td><td>IPCA</td></tr>
+    <tr><td>IMA-C</td><td>NTN-C</td><td>IGP-M</td></tr>
+    <tr><td>IMA-S</td><td>LFT</td><td>Selic</td></tr>
+    <tr><td>IMA-Geral</td><td>Todos acima</td><td>Carteira ampla de títulos públicos</td></tr>
+  </table></div>
+  <p>Há ainda os subíndices por prazo: IRF-M 1 e IRF-M 1+, IMA-B 5 e IMA-B 5+.</p>
+  <p><b>Renda fixa no exterior:</b> Bloomberg (Barclays) Aggregate, com títulos grau de investimento; Bloomberg EM; FTSE WorldBIG; e <b>J.P. Morgan EMBI</b>, de títulos soberanos de emergentes em dólar, que é a base do "risco-país".</p>
+</section>
+
+<!-- 5.3 -->
+<section class="topic" id="t53">
+  <div class="num">5.3</div>
+  <h2>Renda variável</h2>
+  <h3>Produtos</h3>
+  <ul>
+    <li><b>ON (ordinária):</b> dá direito a voto.</li>
+    <li><b>PN (preferencial):</b> em geral sem voto, com preferência no recebimento de dividendos ou no reembolso de capital. Em companhias novas, as PN são limitadas a 50% do capital.</li>
+    <li><b>Units:</b> certificado que representa um pacote de ativos, por exemplo 1 ON + 2 PN.</li>
+    <li><b>ADR:</b> recibo negociado nos EUA que representa ações de empresa estrangeira (brasileira, por exemplo).
+      <ul>
+        <li><b>Nível I:</b> balcão (OTC), sem captação.</li>
+        <li><b>Nível II:</b> listado em bolsa (NYSE ou Nasdaq), sem captação.</li>
+        <li><b>Nível III:</b> listado e com <b>oferta pública, ou seja, capta recursos</b>.</li>
+        <li><b>Regra 144A:</b> colocação privada para investidores qualificados (QIBs).</li>
+      </ul></li>
+    <li><b>BDR:</b> certificado emitido no Brasil que representa valores mobiliários de emissor estrangeiro.
+      <ul>
+        <li><b>Patrocinado</b> (níveis I, II e III): o emissor contrata a depositária.</li>
+        <li><b>Não patrocinado:</b> a depositária emite sem a participação do emissor.</li>
+      </ul></li>
+  </ul>
+  <h3>Valores de uma ação e retorno</h3>
+  <ul>
+    <li><b>Nominal:</b> capital social dividido pelo número de ações (quando o estatuto fixa esse valor).</li>
+    <li><b>Patrimonial (VPA):</b> PL dividido pelo número de ações.</li>
+    <li><b>Liquidação:</b> o que o acionista receberia se a empresa fosse encerrada.</li>
+    <li><b>Mercado:</b> a cotação em bolsa.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Retorno total</span>Retorno = (P₁ − P₀ + D) / P₀ = ganho de capital + dividend yield</div>
+  <div class="formula"><span class="lbl">ROE · modelo DuPont</span>ROE = Lucro/PL = (Lucro/Vendas) × (Vendas/Ativo) × (Ativo/PL)<br>ROE = margem líquida × giro do ativo × alavancagem</div>
+  <div class="ex"><span class="lbl">Exemplo</span><p>Margem líquida de 10%, giro de 1,2 e ativo/PL de 2 → ROE = 0,10 × 1,2 × 2 = <b>24%</b>.</p></div>
+</section>
+
+<!-- 5.4 -->
+<section class="topic" id="t54">
+  <div class="num">5.4</div>
+  <h2>Renda fixa e análise de crédito</h2>
+  <h3>Características e precificação</h3>
+  <ul>
+    <li><b>Elementos:</b> prazo, valor de face (VF), taxa de cupom e indexador.</li>
+    <li><b>Prefixado:</b> a taxa é conhecida na compra. <b>Pós-fixado:</b> segue um indexador (Selic, DI, IPCA, IGP-M).</li>
+    <li><b>Preço e taxa andam em sentidos opostos.</b> Quanto maior o prazo (e a duration), maior a oscilação do preço.</li>
+    <li><b>Ágio e deságio:</b> o título negocia acima (ágio) ou abaixo (deságio) do valor de face, conforme a taxa de mercado em relação à taxa do título.</li>
+    <li><b>Marcação na curva:</b> o preço evolui pela taxa contratada. <b>Marcação a mercado:</b> o preço é recalculado pela taxa de mercado do dia.</li>
+    <li><b>Preço sujo = preço limpo + juros acumulados</b> desde o último cupom.</li>
+    <li><b>Resgate antecipado (call):</b> o emissor pode recomprar o título antes do vencimento. Isso tem valor para o emissor e risco de reinvestimento para o investidor.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Título prefixado sem cupom (LTN)</span>PU = VF / (1 + i)^(du/252)</div>
+  <div class="ex"><span class="lbl">Exemplo</span><p>LTN com VF de R$ 1.000, taxa de 11% a.a. e 252 dias úteis até o vencimento: PU = 1.000 / 1,11 = <b>R$ 900,90</b>. Se a taxa sobe para 12%, o PU cai para R$ 892,86.</p></div>
+  <div class="formula"><span class="lbl">Taxa a termo (forward)</span>(1 + i₂)^t₂ = (1 + i₁)^t₁ × (1 + f)^(t₂−t₁)</div>
+  <div class="ex"><span class="lbl">Exemplo</span><p>A taxa de 1 ano é 10% e a de 2 anos é 11%. A taxa a termo do 1º para o 2º ano é f = 1,11² / 1,10 − 1 = <b>12,01%</b>.</p></div>
+
+  <h3>Títulos públicos federais</h3>
+  <div class="tbl"><table>
+    <tr><th>Título</th><th>Remuneração</th><th>Cupom</th></tr>
+    <tr><td>LTN</td><td>Prefixada</td><td>Não; paga o VF de R$ 1.000 no vencimento</td></tr>
+    <tr><td>NTN-F</td><td>Prefixada</td><td>10% a.a., pago semestralmente</td></tr>
+    <tr><td>LFT</td><td>Selic</td><td>Não</td></tr>
+    <tr><td>NTN-B</td><td>IPCA + taxa</td><td>6% a.a., pago semestralmente (a NTN-B Principal não tem cupom)</td></tr>
+    <tr><td>NTN-C</td><td>IGP-M + taxa</td><td>Semestral</td></tr>
+  </table></div>
+  <p><b>LCD (Letra de Crédito do Desenvolvimento):</b> título de bancos de desenvolvimento, como o BNDES, lastreado em crédito para projetos de desenvolvimento, com isenção de IR para pessoa física (Lei 14.937/2024).</p>
+
+  <h3>Títulos privados</h3>
+  <div class="tbl"><table>
+    <tr><th>Título</th><th>Emissor / lastro</th><th>FGC</th><th>Observações</th></tr>
+    <tr><td>CDB</td><td>Banco</td><td>Sim</td><td>Captação bancária. FGC de até R$ 250 mil por CPF/CNPJ por instituição.</td></tr>
+    <tr><td>LF</td><td>Instituição financeira</td><td>Não</td><td>Prazo mínimo de 24 meses. Pode ser subordinada e compor capital.</td></tr>
+    <tr><td>Debênture</td><td>S.A. (aberta ou fechada)</td><td>Não</td><td>Simples, conversível ou permutável. As incentivadas (Lei 12.431, infraestrutura) são isentas de IR para PF.</td></tr>
+    <tr><td>Nota promissória / nota comercial</td><td>Empresas</td><td>Não</td><td>Dívida de curto prazo (commercial paper).</td></tr>
+    <tr><td>CCB</td><td>Tomador em favor de IF</td><td>Não</td><td>Título executivo extrajudicial. Pode ser cedida e virar lastro de CCCB.</td></tr>
+    <tr><td>Cotas de FIDC</td><td>Fundo de recebíveis</td><td>Não</td><td>Cotas sênior, mezanino e subordinada. A subordinada absorve as primeiras perdas.</td></tr>
+    <tr><td>LIG</td><td>Banco, com carteira de ativos garantidores</td><td>Não</td><td>Dupla garantia (o banco e a carteira segregada). Isenta de IR para PF.</td></tr>
+    <tr><td>CRI / CRA</td><td>Securitizadora; lastro imobiliário ou do agronegócio</td><td>Não</td><td>Isentos de IR para PF. O risco é do lastro e da estrutura.</td></tr>
+    <tr><td>LCI / LCA</td><td>Banco; lastro imobiliário ou do agronegócio</td><td><b>Sim</b></td><td>Isentas de IR para PF. Prazo mínimo definido pelo CMN.</td></tr>
+    <tr><td>DPGE</td><td>Banco</td><td>Garantia especial</td><td>Depósito a prazo com garantia especial do FGC, com limite próprio.</td></tr>
+    <tr><td>CPR</td><td>Produtor rural / cooperativa</td><td>Não</td><td>Liquidação física (entrega do produto) ou financeira.</td></tr>
+    <tr><td>CDCA</td><td>Cooperativas e empresas da cadeia agro</td><td>Não</td><td>Lastreado em recebíveis de negócios com produtores rurais.</td></tr>
+    <tr><td>Compromissada</td><td>Banco, com lastro em título</td><td>Em regra, não</td><td>Venda com compromisso de recompra, em geral com lastro em título público.</td></tr>
+  </table></div>
+  <div class="pegadinha"><b>Pegadinha</b>Isentos de IR para PF: LCI, LCA, CRI, CRA, LIG, debêntures incentivadas e LCD. Com FGC, só os bancários CDB, LCI e LCA (o DPGE tem garantia especial própria). <b>CRI, CRA, LIG e LF não têm FGC.</b></div>
+
+  <h3>Títulos ASG</h3>
+  <ul>
+    <li><b>Green bonds e social bonds:</b> os recursos têm <b>uso definido</b>, em projetos ambientais ou sociais.</li>
+    <li><b>Sustainability-linked bonds (SLB):</b> os recursos são de uso livre. As condições financeiras (o cupom) mudam conforme o emissor cumpra ou não metas de desempenho (KPIs).</li>
+    <li><b>Títulos ODS:</b> atrelados aos Objetivos de Desenvolvimento Sustentável. <b>Títulos de transição:</b> financiam a migração de setores intensivos em carbono.</li>
+  </ul>
+  <p><b>Liquidez de um título:</b> medida pelo spread entre compra e venda, pelo volume, pelo giro e pela frequência de negócios.</p>
+
+  <h3>Análise de crédito</h3>
+  <ul>
+    <li><b>Os 5 Cs:</b>
+      <ul>
+        <li><b>Caráter:</b> histórico e disposição de pagar.</li>
+        <li><b>Capacidade:</b> geração de caixa para pagar.</li>
+        <li><b>Capital:</b> solidez patrimonial.</li>
+        <li><b>Colateral:</b> as garantias.</li>
+        <li><b>Condições:</b> o ambiente econômico e setorial.</li>
+      </ul></li>
+    <li><b>Qualitativa:</b> gestão, governança, setor e posição competitiva. <b>Quantitativa:</b> demonstrações financeiras, índices e modelos estatísticos (scoring).</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Espécie de garantia (debêntures)</th><th>Prioridade</th></tr>
+    <tr><td>Real</td><td>Bens específicos vinculados (hipoteca, penhor, alienação fiduciária). É a mais forte.</td></tr>
+    <tr><td>Flutuante</td><td>Privilégio geral sobre o ativo da empresa, sem bem específico.</td></tr>
+    <tr><td>Quirografária</td><td>Sem preferência: concorre com os credores comuns.</td></tr>
+    <tr><td>Subordinada</td><td>Recebe depois dos quirografários. É a mais fraca.</td></tr>
+  </table></div>
+  <h3>Ratings</h3>
+  <div class="tbl"><table>
+    <tr><th>Faixa</th><th>S&P / Fitch</th><th>Moody's</th></tr>
+    <tr><td>Grau de investimento (topo)</td><td class="n">AAA, AA+, AA, AA−, A+, A, A−</td><td class="n">Aaa, Aa1, Aa2, Aa3, A1, A2, A3</td></tr>
+    <tr><td><b>Último grau de investimento</b></td><td class="n">BBB+, BBB, <b>BBB−</b></td><td class="n">Baa1, Baa2, <b>Baa3</b></td></tr>
+    <tr><td>Especulativo</td><td class="n">BB+ para baixo … D</td><td class="n">Ba1 para baixo … C</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Consistência vertical:</b> coerência entre as notas do mesmo emissor em prazos e níveis diferentes (curto × longo prazo, emissor × emissão).</li>
+    <li><b>Consistência horizontal:</b> a mesma nota deve significar o mesmo risco entre setores, países e tipos de emissor.</li>
+    <li><b>Riscos de usar ratings:</b> conflito de interesse (quem paga a agência é o emissor), defasagem em relação ao mercado, rebaixamentos bruscos em cadeia e dependência excessiva da nota sem análise própria.</li>
+  </ul>
+</section>
+
+<!-- 5.5 -->
+<section class="topic" id="t55">
+  <div class="num">5.5</div>
+  <h2>Investimentos alternativos</h2>
+  <ul>
+    <li><b>Estruturas:</b> private equity, venture capital, hedge funds, imobiliário, infraestrutura, commodities e crédito estruturado. No Brasil, os veículos típicos são FIP, FII, FIDC e Fiagro.</li>
+    <li><b>Características:</b> baixa liquidez, horizonte longo, avaliação por modelo (e não por cotação), taxas mais altas (gestão e performance), assimetria de informação e capital comprometido chamado aos poucos (capital calls).</li>
+    <li><b>Fontes de retorno:</b> prêmio de iliquidez, habilidade do gestor, alavancagem e melhoria operacional das investidas.</li>
+    <li><b>Mitigadores de risco:</b> diversificação por safra (vintage) e por gestor, covenants, governança (assento em conselho, comitê de investimento), due diligence e estrutura de subordinação.</li>
+    <li><b>Curva J:</b> retornos negativos nos primeiros anos (taxas pagas e investimentos ainda não maduros), que viram positivos com os desinvestimentos.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Indicadores de desempenho</span>DPI = distribuições / capital integralizado<br>RVPI = valor residual / capital integralizado<br>TVPI = (distribuições + valor residual) / capital integralizado = DPI + RVPI<br>TIR: taxa que zera o fluxo de chamadas e distribuições · MOIC: múltiplo sobre o capital investido</div>
+  <p><b>Due diligence e papéis:</b> o <b>GP</b> (gestor) toma as decisões e o <b>LP</b> (investidor) aporta o capital. A due diligence cobre a tese de investimento, o histórico (track record), a equipe e a parte operacional (controles, custódia, avaliação e conflitos de interesse).</p>
+</section>
+
+<!-- 5.6 -->
+<section class="topic" id="t56">
+  <div class="num">5.6</div>
+  <h2>Derivativos</h2>
+  <h3>Mercado doméstico</h3>
+  <ul>
+    <li><b>Na B3:</b> contratos financeiros (DI1, dólar, Ibovespa, cupom cambial DDI e FRA), agropecuários (boi, milho, café, soja) e minicontratos (mini índice WIN, mini dólar WDO).</li>
+    <li><b>Garantias:</b> margem inicial depositada e <b>ajuste diário</b> das posições, com a clearing como contraparte central.</li>
+    <li><b>Balcão:</b> contratos sob medida (termo de moeda/NDF, swaps, opções flexíveis), registrados na B3, com risco de contraparte.</li>
+  </ul>
+  <h3>Futuro × termo</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Futuro</th><th>Termo</th></tr>
+    <tr><td>Padronização</td><td>Contrato padronizado, em bolsa</td><td>Pode ser customizado, em bolsa ou balcão</td></tr>
+    <tr><td>Ajuste</td><td><b>Ajuste diário</b></td><td>Liquidação no vencimento</td></tr>
+    <tr><td>Saída antecipada</td><td>Basta zerar a posição</td><td>Mais difícil</td></tr>
+  </table></div>
+  <div class="formula"><span class="lbl">Preço futuro (custo de carregamento)</span>F = S × (1 + r)^t<br>Moeda: F = S × (1 + i_BRL) / (1 + i_USD)<br>DI futuro: PU = 100.000 / (1 + taxa)^(du/252)</div>
+  <div class="ex"><span class="lbl">Exemplos</span><p>Dólar à vista de 5,00, juro de 12% no Brasil e de 5% nos EUA, prazo de 1 ano: F = 5,00 × 1,12 / 1,05 = <b>5,3333</b>.</p><p>DI futuro a 12% a.a. com 252 dias úteis: PU = 100.000 / 1,12 = <b>89.285,71</b>. Quem está <b>comprado em taxa</b> (vendido em PU) ganha quando a taxa sobe.</p></div>
+  <h3>Opções</h3>
+  <ul>
+    <li><b>Call:</b> direito de comprar. <b>Put:</b> direito de vender. O <b>titular</b> paga o prêmio e tem o direito; o <b>lançador</b> recebe o prêmio e tem a obrigação.</li>
+    <li><b>Europeia:</b> exercício só no vencimento. <b>Americana:</b> exercício a qualquer momento até o vencimento.</li>
+    <li><b>Moneyness de uma call:</b> ITM quando S > K, ATM quando S ≈ K, OTM quando S < K. Na put é o contrário.</li>
+  </ul>
+  <div class="formula"><span class="lbl">Resultado no vencimento (titular)</span>Call: máx(S − K, 0) − prêmio · break-even = K + prêmio<br>Put: máx(K − S, 0) − prêmio · break-even = K − prêmio<br>Perda máxima do titular = prêmio · Perda do lançador de call a descoberto = ilimitada</div>
+  <div class="ex"><span class="lbl">Exemplo</span><p>Compra de call com strike 30 e prêmio de 2. Com a ação a 35 no vencimento: 35 − 30 − 2 = <b>+3</b>. O break-even é 32.</p></div>
+  <div class="tbl"><table>
+    <tr><th>Estratégia</th><th>Montagem</th><th>Visão</th></tr>
+    <tr><td>Call spread (trava de alta)</td><td>Compra call de strike menor e vende call de strike maior</td><td>Alta moderada, com custo e ganho limitados</td></tr>
+    <tr><td>Put spread (trava de baixa)</td><td>Compra put de strike maior e vende put de strike menor</td><td>Baixa moderada</td></tr>
+    <tr><td>Straddle comprado</td><td>Compra call e put de <b>mesmo</b> strike</td><td>Movimento forte em qualquer direção (alta volatilidade)</td></tr>
+    <tr><td>Strangle comprado</td><td>Compra call e put de strikes <b>diferentes</b> (OTM)</td><td>Alta volatilidade, com prêmio menor</td></tr>
+    <tr><td>Butterfly</td><td>Três strikes, na proporção 1 : −2 : 1</td><td>Preço estável, baixa volatilidade</td></tr>
+    <tr><td>Collar</td><td>Com o ativo na carteira: compra put e vende call</td><td>Proteção a custo baixo, abrindo mão da alta</td></tr>
+    <tr><td>Box</td><td>Trava de alta com call mais trava de baixa com put, nos mesmos strikes</td><td>Resultado fixo: <b>renda fixa sintética</b></td></tr>
+    <tr><td>Cap / floor</td><td>Opções sobre taxa de juros</td><td>Teto ou piso para o custo da dívida</td></tr>
+  </table></div>
+  <p><b>Opções com barreira:</b> a opção passa a existir (<i>knock-in</i>: up-and-in, down-and-in) ou deixa de existir (<i>knock-out</i>: up-and-out, down-and-out) quando o preço atinge a barreira. Por isso são mais baratas que as opções comuns.</p>
+  <div class="formula"><span class="lbl">Black-Scholes · insumos e gregas</span>Insumos: S (preço), K (strike), T (prazo), r (juros), σ (volatilidade)<br>Delta: sensibilidade do prêmio ao preço do ativo · Gama: variação do delta<br>Theta: perda de valor com o tempo · Vega: sensibilidade à volatilidade · Rô: sensibilidade aos juros</div>
+  <h3>Swaps</h3>
+  <ul>
+    <li>Troca de indexadores sobre um valor de referência (notional), <b>sem troca do principal</b>. Liquida-se só a diferença.</li>
+    <li><b>Tipos:</b> juros (DI × pré), moeda (DI × dólar + cupom), ações (retorno de índice ou de ação) e <b>CDS</b> (proteção contra evento de crédito de um emissor).</li>
+    <li><b>Exemplo:</b> quem está ativo em pré e passivo em DI ganha se o DI acumulado ficar abaixo da taxa prefixada.</li>
+  </ul>
+</section>
+
+<!-- 5.7 -->
+<section class="topic" id="t57">
+  <div class="num">5.7</div>
+  <h2>Melhor execução de ordens (best execution)</h2>
+  <ul>
+    <li><b>Conceito:</b> buscar o melhor resultado para o cliente, considerando preço, custos, rapidez, probabilidade de execução e de liquidação, tamanho e natureza da ordem. Não se resume ao menor preço.</li>
+    <li><b>Análise da execução:</b> comparar os preços executados com referências de mercado (VWAP, preço de chegada) e registrar as evidências.</li>
+    <li><b>Escolha de corretoras:</b> critérios objetivos e documentados (qualidade de execução, custo, solidez, research), com avaliação periódica.</li>
+    <li><b>Soft dollars:</b> benefícios que a corretora oferece em troca do fluxo de ordens, como research ou sistemas. São aceitáveis só se ajudarem a gestão em benefício dos clientes, estiverem previstos em política e forem transparentes. Não podem encarecer a corretagem paga pelo fundo.</li>
+    <li><b>Segurança das ordens:</b> plataformas eletrônicas, gravação de ligações e trilha de auditoria.</li>
+    <li><b>Equidade entre fundos e contas:</b> ordens agrupadas devem ser alocadas por <b>critério definido previamente</b> (rateio proporcional, preço médio), nunca depois de ver o resultado. Transferências de ativos entre fundos só a preço de mercado e sem favorecer ninguém.</li>
+    <li><b>Erro de trading:</b> identificar, registrar e corrigir, deixando o cliente sem prejuízo. A perda fica com a gestora; o ganho, em regra, fica com o fundo.</li>
+  </ul>
+  <div class="pegadinha"><b>Pegadinha</b>Definir a alocação de uma ordem agrupada <i>depois</i> da execução, ou escolher qual fundo recebe o melhor preço, é quebra de equidade entre clientes, mesmo que o total executado esteja certo.</div>
+</section>
+
+</main>
+</div>
+
+
+</body>
+</html>

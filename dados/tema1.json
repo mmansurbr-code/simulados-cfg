@@ -1,0 +1,843 @@
+{
+ "id": "t1",
+ "numero": 1,
+ "titulo": "Métodos Quantitativos",
+ "resumo": "Apostila do tema 1, que vale de 8% a 12% da prova e serve de base para os temas de renda fixa, ações, derivativos e gestão de carteiras. Cada bloco traz o conceito, a fórmula, um exemplo resolvido passo a passo (com a sequência na HP 12C quando ajuda) e as pegadinhas mais comuns.",
+ "topicos": [
+  {
+   "id": "t11",
+   "rotulo": "1.1 Valor do dinheiro no tempo",
+   "html": "<div class=\"num\">1.1</div>\n  <h2>Valor do dinheiro no tempo</h2>\n  <p class=\"why\">Um real hoje vale mais que um real amanhã. Toda a precificação de títulos, ações e projetos começa aqui: trazer fluxos a valor presente ou levá-los a valor futuro com a taxa certa.</p>\n\n  <h3>Três leituras da mesma taxa de juros</h3>\n  <ul>\n    <li><b>Taxa de retorno exigida:</b> o mínimo que o investidor aceita para abrir mão do dinheiro hoje.</li>\n    <li><b>Taxa de desconto:</b> a taxa usada para trazer um fluxo futuro a valor presente.</li>\n    <li><b>Custo de oportunidade:</b> o retorno que se deixa de ganhar na <b>melhor alternativa de risco equivalente</b>. Quem consome hoje \"paga\" o rendimento que deixou de receber.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Composição da taxa</span>Taxa nominal ≈ taxa real livre de risco + inflação esperada + prêmios de risco (crédito, liquidez, prazo)<br>Fisher (exata): (1 + nominal) = (1 + real) × (1 + inflação)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>O CDI esperado é 10,4% a.a. e a inflação esperada é 4,0%. A taxa real é 1,104 / 1,04 − 1 = <b>6,15% a.a.</b> (a subtração simples, 6,4%, superestima).</p>\n  </div>\n\n  <h3>Taxa nominal × taxa efetiva</h3>\n  <p>A taxa <b>nominal</b> (ou \"anual capitalizada m vezes\") é só uma convenção de cotação. A taxa <b>efetiva</b> anual (TEA, ou EAR) é o que o dinheiro realmente rende em um ano, já com os juros sobre juros.</p>\n  <div class=\"formula\"><span class=\"lbl\">Taxa efetiva anual</span>TEA = (1 + i<sub>nom</sub> / m)<sup>m</sup> − 1     (m = 2 semestral, 4 trimestral, 12 mensal, 365 ou 252 diária)<br>Capitalização contínua: TEA = e<sup>r</sup> − 1     ·     taxa contínua equivalente: r = ln(1 + TEA)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: 12% a.a. nominal com várias capitalizações</span>\n    <div class=\"tbl\"><table>\n      <tr><th>Capitalização</th><th>Conta</th><th>TEA</th></tr>\n      <tr><td>Anual</td><td class=\"n\">1,12 − 1</td><td class=\"n\">12,00%</td></tr>\n      <tr><td>Semestral</td><td class=\"n\">1,06² − 1</td><td class=\"n\">12,36%</td></tr>\n      <tr><td>Trimestral</td><td class=\"n\">1,03⁴ − 1</td><td class=\"n\">12,55%</td></tr>\n      <tr><td>Mensal</td><td class=\"n\">1,01¹² − 1</td><td class=\"n\">12,68%</td></tr>\n      <tr><td>Diária (365)</td><td class=\"n\">(1 + 0,12/365)³⁶⁵ − 1</td><td class=\"n\">12,75%</td></tr>\n      <tr><td>Contínua</td><td class=\"n\">e<sup>0,12</sup> − 1</td><td class=\"n\">12,75%</td></tr>\n    </table></div>\n    <p>Quanto mais frequente a capitalização, maior a TEA, mas o ganho é decrescente: o limite é a capitalização contínua.</p>\n  </div>\n\n  <h3>Convenção brasileira: base 252 dias úteis</h3>\n  <p>No Brasil, CDI, Selic e títulos públicos são cotados em <b>taxa efetiva anual, base 252 dias úteis</b> (exponencial). Converter para dia útil ou para um prazo qualquer é sempre por potência, nunca por divisão.</p>\n  <div class=\"formula\"><span class=\"lbl\">Conversão de prazos (juros compostos)</span>Taxa diária = (1 + TEA)<sup>1/252</sup> − 1<br>Fator no prazo = (1 + TEA)<sup>DU/252</sup>     ·     Taxa equivalente: (1 + i<sub>1</sub>)<sup>n<sub>1</sub></sup> = (1 + i<sub>2</sub>)<sup>n<sub>2</sub></sup></div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: CDI de 10,40% a.a.</span>\n    <p>Taxa por dia útil: 1,104<sup>1/252</sup> − 1 = <b>0,03927%</b> (dividir 10,4% por 252 daria 0,04127%, errado).</p>\n    <p>R$ 1.000 aplicados por 63 dias úteis: 1.000 × 1,104<sup>63/252</sup> = <b>R$ 1.025,04</b>, ou seja, 2,50% no período.</p>\n    <p>Em capitalização contínua, a mesma taxa seria ln(1,104) = <b>9,89% a.a.</b>, e o fator do prazo seria e<sup>0,0989 × 63/252</sup> = 1,02504 (mesmo resultado, outra forma de escrever).</p>\n    <p><b>HP 12C</b> (taxa diária): 1,104 <code>ENTER</code> 252 <code>1/x</code> <code>y<sup>x</sup></code> 1 <code>−</code> 100 <code>×</code>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Taxa contínua e taxa efetiva não são a mesma coisa. Retornos contínuos (logarítmicos) <b>somam</b> no tempo (r<sub>total</sub> = r<sub>1</sub> + r<sub>2</sub>); retornos efetivos (discretos) se <b>multiplicam</b> ((1+R<sub>1</sub>)(1+R<sub>2</sub>) − 1). Somar retornos discretos é erro clássico.</div>\n\n  <h3>Valor presente e valor futuro de um fluxo único</h3>\n  <div class=\"formula\"><span class=\"lbl\">Fluxo único</span>VF = VP × (1 + i)<sup>n</sup>     ·     VP = VF / (1 + i)<sup>n</sup><br>Contínua: VF = VP × e<sup>r·t</sup>     ·     VP = VF × e<sup>−r·t</sup></div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>R$ 5.000 a 0,8% a.m. por 18 meses: VF = 5.000 × 1,008<sup>18</sup> = <b>R$ 5.771,11</b>.</p>\n    <p>Quanto vale hoje R$ 20.000 a receber em 4 anos, a 9% a.a.? VP = 20.000 / 1,09<sup>4</sup> = <b>R$ 14.168,50</b>.</p>\n    <p><b>HP 12C:</b> 20000 <code>FV</code> 4 <code>n</code> 9 <code>i</code> <code>PV</code> → −14.168,50 (o sinal negativo indica saída de caixa).</p>\n  </div>\n\n  <h3>Anuidades (séries uniformes)</h3>\n  <p>Fluxos iguais (PMT) em intervalos iguais. Na <b>postecipada</b> (modo END, o padrão) o primeiro pagamento ocorre ao fim do 1º período; na <b>antecipada</b> (modo BEGIN), no ato. A antecipada vale a postecipada × (1 + i), tanto no VP quanto no VF.</p>\n  <div class=\"formula\"><span class=\"lbl\">Anuidade postecipada</span>VP = PMT × [1 − (1 + i)<sup>−n</sup>] / i<br>VF = PMT × [(1 + i)<sup>n</sup> − 1] / i<br>Antecipada: multiplicar o resultado por (1 + i)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Valor presente de 24 parcelas mensais de R$ 800 a 1% a.m.: VP = 800 × (1 − 1,01<sup>−24</sup>) / 0,01 = <b>R$ 16.994,71</b>. Se a 1ª parcela for paga no ato (antecipada): 16.994,71 × 1,01 = <b>R$ 17.164,66</b>.</p>\n    <p>Parcela de um financiamento de R$ 30.000 em 10 meses a 1,2% a.m.: PMT = 30.000 × 0,012 / (1 − 1,012<sup>−10</sup>) = <b>R$ 3.201,54</b>.</p>\n    <p>Juntar R$ 1.000 por mês durante 60 meses a 0,7% a.m.: VF = 1.000 × (1,007<sup>60</sup> − 1) / 0,007 = <b>R$ 74.248,04</b>.</p>\n    <p><b>HP 12C</b> (parcela): <code>g</code> <code>END</code>, 30000 <code>PV</code> 10 <code>n</code> 1,2 <code>i</code> <code>PMT</code>. Para antecipada use <code>g</code> <code>BEG</code>.</p>\n  </div>\n\n  <h3>Perpetuidade (só valor presente)</h3>\n  <div class=\"formula\"><span class=\"lbl\">Perpetuidade</span>VP = PMT / i     (primeiro fluxo daqui a um período)<br>Com crescimento g (Gordon): VP = PMT<sub>1</sub> / (i − g),   com i &gt; g</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Uma ação preferencial paga R$ 1,50 por ano para sempre e o retorno exigido é 10%: VP = 1,50 / 0,10 = <b>R$ 15,00</b>.</p>\n    <p>Um dividendo acabou de ser pago (D<sub>0</sub> = R$ 2,00), cresce 5% a.a. e o retorno exigido é 13%: D<sub>1</sub> = 2,10 e VP = 2,10 / (0,13 − 0,05) = <b>R$ 26,25</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Gordon usa o fluxo do <b>próximo</b> período (D<sub>1</sub>), não o que acabou de ser pago. E a perpetuidade não tem valor futuro: ela nunca termina. Se o primeiro fluxo é hoje (perpetuidade antecipada), some o fluxo de hoje: VP = PMT + PMT / i.</div>\n\n  <h3>Fluxos de caixa irregulares</h3>\n  <p>Desconte cada fluxo pelo seu prazo e some. Na HP 12C use o registro de fluxos: <code>g</code> <code>CF0</code>, <code>g</code> <code>CFj</code> (e <code>g</code> <code>Nj</code> para fluxos repetidos), informe <code>i</code> e tecle <code>f</code> <code>NPV</code>.</p>\n  <div class=\"formula\"><span class=\"lbl\">Série irregular</span>VP = CF<sub>1</sub>/(1+i) + CF<sub>2</sub>/(1+i)² + … + CF<sub>n</sub>/(1+i)<sup>n</sup><br>VF = soma de CF<sub>t</sub> × (1+i)<sup>n−t</sup></div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Fluxos de R$ 500, R$ 800 e R$ 1.200 ao fim dos anos 1, 2 e 3, a 8% a.a.:</p>\n    <p>500/1,08 + 800/1,08² + 1.200/1,08³ = 462,96 + 685,87 + 952,60 = <b>R$ 2.101,43</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Na HP 12C, o <code>CF0</code> é o fluxo da data zero. Se não houver fluxo hoje, digite 0 em <code>CF0</code>; caso contrário todos os fluxos ficam um período \"adiantados\" e o VP sai maior.</div>"
+  },
+  {
+   "id": "t12",
+   "rotulo": "1.2 Conceitos básicos de estatística",
+   "html": "<div class=\"num\">1.2</div>\n  <h2>Conceitos básicos de estatística</h2>\n  <p class=\"why\">Resumir uma série de retornos em poucos números: onde fica o centro, quão espalhada é e como ela anda junto com outra série.</p>\n\n  <h3>População × amostra</h3>\n  <p><b>População</b> é o conjunto completo (todas as observações possíveis); <b>amostra</b> é um subconjunto dela. Medidas da população são <b>parâmetros</b> (μ, σ); medidas da amostra são <b>estatísticas</b> (x̄, s). Isso muda o denominador da variância.</p>\n\n  <h3>Medidas de tendência central</h3>\n  <ul>\n    <li><b>Média aritmética:</b> soma das observações dividida por n. É sensível a valores extremos (outliers).</li>\n    <li><b>Mediana:</b> o valor do meio com os dados <b>ordenados</b>; com n par, a média dos dois centrais. É robusta a outliers.</li>\n    <li><b>Moda:</b> o valor mais frequente. Pode não existir ou haver mais de uma (bimodal).</li>\n    <li><b>Média geométrica</b> (retorno composto por período): [(1+R<sub>1</sub>)(1+R<sub>2</sub>)…(1+R<sub>n</sub>)]<sup>1/n</sup> − 1. É sempre ≤ média aritmética.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: retornos mensais de 3%, −1%, 4%, 2% e 7%</span>\n    <p>Média = (3 − 1 + 4 + 2 + 7) / 5 = <b>3%</b>. Ordenando (−1, 2, 3, 4, 7), a mediana é o 3º valor: <b>3%</b>. Não há moda (nenhum valor se repete).</p>\n  </div>\n\n  <h3>Quantis: quartis, quintis, decis e percentis</h3>\n  <p>Dividem os dados ordenados em partes iguais: <b>quartis</b> em 4 (Q1 = P25, Q2 = mediana = P50, Q3 = P75), <b>quintis</b> em 5 (P20, P40…), <b>decis</b> em 10 e <b>percentis</b> em 100.</p>\n  <div class=\"formula\"><span class=\"lbl\">Posição do percentil y (dados ordenados)</span>L<sub>y</sub> = (n + 1) × y / 100<br>Se a posição não for inteira, interpole entre os dois valores vizinhos.<br>Intervalo interquartil (IQR) = Q3 − Q1</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: 1, 3, 4, 6, 7, 9, 12, 15 (n = 8)</span>\n    <p>Q1: L = 9 × 0,25 = 2,25 → entre o 2º (3) e o 3º (4) valor: 3 + 0,25 × (4 − 3) = <b>3,25</b>.</p>\n    <p>Q3: L = 9 × 0,75 = 6,75 → entre o 6º (9) e o 7º (12): 9 + 0,75 × (12 − 9) = <b>11,25</b>. IQR = 11,25 − 3,25 = 8.</p>\n  </div>\n\n  <h3>Medidas de dispersão</h3>\n  <div class=\"formula\"><span class=\"lbl\">Variância e desvio-padrão</span>População: σ² = Σ(x − μ)² / n     ·     Amostra: s² = Σ(x − x̄)² / (n − 1)<br>Desvio-padrão = √variância (mesma unidade dos dados)<br>Coeficiente de variação: CV = σ / média (risco por unidade de retorno)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: os mesmos retornos 3, −1, 4, 2, 7 (%)</span>\n    <p>Desvios em relação à média 3: 0, −4, 1, −1, 4. Quadrados: 0, 16, 1, 1, 16. Soma = 34.</p>\n    <p>Se for a população: σ² = 34 / 5 = 6,8 e σ = <b>2,61%</b>. Se for uma amostra: s² = 34 / 4 = 8,5 e s = <b>2,92%</b>.</p>\n    <p><b>HP 12C:</b> digite cada valor e tecle <code>Σ+</code>; depois <code>g</code> <code>s</code> dá o desvio-padrão <b>amostral</b> (n − 1). Para o populacional, faça <code>g</code> <code>x̄</code>, <code>Σ+</code> e então <code>g</code> <code>s</code>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Divide-se por n − 1 na amostra porque a média amostral já \"consumiu\" um grau de liberdade; dividir por n subestimaria a variância. A HP 12C sempre calcula o desvio <b>amostral</b>.</div>\n\n  <h3>Covariância e correlação</h3>\n  <div class=\"formula\"><span class=\"lbl\">Covariância e correlação</span>Cov<sub>amostral</sub>(X,Y) = Σ(x − x̄)(y − ȳ) / (n − 1)     (populacional: divide por n)<br>ρ = Cov(X,Y) / (σ<sub>X</sub> × σ<sub>Y</sub>)     ·     −1 ≤ ρ ≤ +1     ·     Cov = ρ × σ<sub>X</sub> × σ<sub>Y</sub></div>\n  <ul>\n    <li>A covariância indica o <b>sentido</b> da relação, mas seu tamanho depende das unidades; não dá para comparar.</li>\n    <li>A correlação é padronizada: +1 = relação linear perfeita no mesmo sentido; −1 = perfeita em sentido oposto; 0 = <b>ausência de relação linear</b> (pode haver relação não linear).</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>X = 3, −1, 4, 2, 7 (média 3) e Y = 2, 0, 3, 1, 4 (média 2). Produtos dos desvios: 0×0 + (−4)(−2) + 1×1 + (−1)(−1) + 4×2 = 18.</p>\n    <p>Cov amostral = 18 / 4 = <b>4,5</b>. s<sub>X</sub> = 2,915 e s<sub>Y</sub> = √(10/4) = 1,581. ρ = 4,5 / (2,915 × 1,581) = <b>0,976</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Correlação não implica causalidade, e correlação zero não implica independência (só ausência de relação <i>linear</i>). Outliers podem criar ou destruir correlação (correlação espúria).</div>\n\n  <h3>Dados em forma gráfica</h3>\n  <ul>\n    <li><b>Histograma / distribuição de frequências:</b> mostra o formato da distribuição (simetria, caudas, número de picos).</li>\n    <li><b>Assimetria positiva</b> (cauda longa à direita): <b>média &gt; mediana &gt; moda</b>. <b>Assimetria negativa</b> (cauda à esquerda, típica de retornos de ações e de vendas de opções): média &lt; mediana &lt; moda. Na simétrica, as três coincidem.</li>\n    <li><b>Curtose:</b> mede o peso das caudas. Normal tem curtose 3 (excesso 0). <b>Leptocúrtica</b> (curtose &gt; 3): caudas gordas e pico alto, comum em retornos financeiros, o que torna eventos extremos mais prováveis do que a normal sugere. Platicúrtica: caudas finas.</li>\n    <li><b>Box plot:</b> a caixa vai de Q1 a Q3 (o IQR), a linha interna é a mediana e as hastes mostram os extremos; pontos isolados são outliers.</li>\n    <li><b>Gráfico de dispersão:</b> uma nuvem inclinada para cima indica correlação positiva; para baixo, negativa; sem padrão, perto de zero.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Para decorar</b>Na assimetria, a média é \"puxada\" para o lado da cauda. A mediana fica sempre entre a média e a moda.</div>"
+  },
+  {
+   "id": "t13",
+   "rotulo": "1.3 Conceitos básicos de probabilidade",
+   "html": "<div class=\"num\">1.3</div>\n  <h2>Conceitos básicos de probabilidade</h2>\n  <p class=\"why\">Retornos futuros são variáveis aleatórias. Valor esperado e variância viram retorno e risco da carteira, e a normal é a régua de quase todas as contas de risco (VaR, intervalos, testes).</p>\n\n  <h3>Variáveis aleatórias e distribuições</h3>\n  <ul>\n    <li><b>Variável aleatória:</b> quantidade cujo resultado é incerto (ex.: o retorno do Ibovespa no próximo mês).</li>\n    <li><b>Discreta:</b> assume valores contáveis (número de defaults numa carteira, número de altas em 10 dias). Cada valor tem probabilidade positiva.</li>\n    <li><b>Contínua:</b> assume qualquer valor num intervalo (retorno, taxa de juros). A probabilidade de um valor exato é <b>zero</b>; só faz sentido a probabilidade de um intervalo (a área sob a curva de densidade).</li>\n    <li><b>Distribuição de probabilidade:</b> especifica as probabilidades de todos os resultados possíveis. Duas propriedades: cada probabilidade está entre 0 e 1 e a soma (ou a área total) é 1. A <b>função de distribuição acumulada</b> F(x) = P(X ≤ x).</li>\n  </ul>\n\n  <h3>Valor esperado e variância</h3>\n  <div class=\"formula\"><span class=\"lbl\">Variável aleatória</span>E(X) = Σ p<sub>i</sub> × x<sub>i</sub><br>Var(X) = Σ p<sub>i</sub> × [x<sub>i</sub> − E(X)]²     ·     σ = √Var</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: três cenários para uma ação</span>\n    <div class=\"tbl\"><table>\n      <tr><th>Cenário</th><th>Prob.</th><th>Retorno</th><th>p × R</th><th>p × (R − E)²</th></tr>\n      <tr><td>Recessão</td><td class=\"n\">25%</td><td class=\"n\">−5%</td><td class=\"n\">−1,25</td><td class=\"n\">0,25 × 225 = 56,25</td></tr>\n      <tr><td>Normal</td><td class=\"n\">50%</td><td class=\"n\">10%</td><td class=\"n\">5,00</td><td class=\"n\">0</td></tr>\n      <tr><td>Expansão</td><td class=\"n\">25%</td><td class=\"n\">25%</td><td class=\"n\">6,25</td><td class=\"n\">0,25 × 225 = 56,25</td></tr>\n      <tr><td colspan=\"3\"><b>Total</b></td><td class=\"n\"><b>E = 10%</b></td><td class=\"n\"><b>Var = 112,5 (%²) → σ = 10,61%</b></td></tr>\n    </table></div>\n  </div>\n\n  <h3>Retorno e risco de uma carteira</h3>\n  <div class=\"formula\"><span class=\"lbl\">Carteira de dois ativos</span>E(R<sub>p</sub>) = w<sub>A</sub>·E(R<sub>A</sub>) + w<sub>B</sub>·E(R<sub>B</sub>)<br>σ²<sub>p</sub> = w<sub>A</sub>²σ<sub>A</sub>² + w<sub>B</sub>²σ<sub>B</sub>² + 2·w<sub>A</sub>·w<sub>B</sub>·ρ<sub>AB</sub>·σ<sub>A</sub>·σ<sub>B</sub></div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>70% em ações (E = 12%, σ = 15%) e 30% em renda fixa (E = 7%, σ = 5%), com ρ = 0,2.</p>\n    <p>E(R<sub>p</sub>) = 0,7 × 12 + 0,3 × 7 = <b>10,5%</b>.</p>\n    <p>σ²<sub>p</sub> = (0,7 × 15)² + (0,3 × 5)² + 2 × 0,7 × 0,3 × 0,2 × 15 × 5 = 110,25 + 2,25 + 6,30 = 118,8 → σ<sub>p</sub> = <b>10,90%</b>, abaixo da média ponderada dos desvios (12,0%).</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O retorno esperado da carteira é sempre a média ponderada; o risco <b>só</b> é a média ponderada quando ρ = +1. Com ρ &lt; 1 há ganho de diversificação. Com ρ = −1 é possível montar uma carteira de risco zero.</div>\n\n  <h3>Distribuições que caem na prova</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Distribuição</th><th>Tipo</th><th>Características</th><th>Uso em finanças</th></tr>\n    <tr><td><b>Uniforme</b></td><td>Discreta ou contínua</td><td>Todos os resultados (ou intervalos de mesmo tamanho) igualmente prováveis. Contínua entre a e b: P(x<sub>1</sub> ≤ X ≤ x<sub>2</sub>) = (x<sub>2</sub> − x<sub>1</sub>)/(b − a); média (a + b)/2</td><td>Geração de números aleatórios em simulações</td></tr>\n    <tr><td><b>Binomial</b></td><td>Discreta</td><td>n tentativas independentes, cada uma com sucesso (p) ou fracasso (1 − p). P(X = x) = C(n,x)·p<sup>x</sup>·(1−p)<sup>n−x</sup>; média n·p; variância n·p·(1−p)</td><td>Árvores binomiais de preços de ativos e opções; número de defaults</td></tr>\n    <tr><td><b>Normal</b></td><td>Contínua</td><td>Simétrica em forma de sino, definida só por μ e σ; média = mediana = moda; assimetria 0, curtose 3; vai de −∞ a +∞</td><td>Retornos de carteiras, VaR paramétrico, intervalos e testes</td></tr>\n    <tr><td><b>Lognormal</b></td><td>Contínua</td><td>Se ln(X) é normal, X é lognormal. Só valores <b>positivos</b>; assimétrica à direita</td><td>Modelar <b>preços</b> de ativos (Black-Scholes)</td></tr>\n  </table></div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo binomial</span>\n    <p>A probabilidade de um fundo bater o benchmark num trimestre é 60%, independente entre trimestres. A chance de bater em exatamente 3 de 4 trimestres é C(4,3) × 0,6³ × 0,4 = 4 × 0,216 × 0,4 = <b>34,56%</b>.</p>\n  </div>\n\n  <h3>Normal padrão e escore z</h3>\n  <p>Qualquer normal vira a <b>normal padrão</b> (μ = 0, σ = 1) pela padronização. O z diz a quantos desvios-padrão o valor está da média.</p>\n  <div class=\"formula\"><span class=\"lbl\">Padronização</span>z = (x − μ) / σ     ·     x = μ + z × σ</div>\n  <div class=\"tbl\"><table>\n    <tr><th>Valor de z</th><th>Confiança bicaudal (área entre −z e +z)</th><th>Área numa cauda só</th><th>Uso típico</th></tr>\n    <tr><td class=\"n\">1,645</td><td class=\"n\">90%</td><td class=\"n\">5%</td><td>VaR de 95%; teste unicaudal a 5%</td></tr>\n    <tr><td class=\"n\">1,96</td><td class=\"n\">95%</td><td class=\"n\">2,5%</td><td>IC de 95%; teste bicaudal a 5%</td></tr>\n    <tr><td class=\"n\">2,33</td><td class=\"n\">98%</td><td class=\"n\">1%</td><td>VaR de 99%; teste unicaudal a 1%</td></tr>\n    <tr><td class=\"n\">2,576</td><td class=\"n\">99%</td><td class=\"n\">0,5%</td><td>IC de 99%; teste bicaudal a 1%</td></tr>\n  </table></div>\n  <p>Regra prática: μ ± 1σ contém ≈ 68% das observações, μ ± 2σ ≈ 95% e μ ± 3σ ≈ 99,7%.</p>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>O retorno anual de um fundo é normal com μ = 8% e σ = 10%. Qual a probabilidade de perder mais de 2% (R &lt; −2%)? z = (−2 − 8)/10 = −1. P(Z &lt; −1) ≈ <b>15,9%</b> (metade dos 32% que ficam fora de ±1σ).</p>\n    <p>Retorno que só é pior em 5% dos anos (VaR de 95%): x = 8 − 1,645 × 10 = <b>−8,45%</b>. Intervalo com 95% dos retornos: 8 ± 1,96 × 10 = <b>−11,6% a 27,6%</b>.</p>\n  </div>\n\n  <h3>Lognormal e preços de ativos</h3>\n  <ul>\n    <li>Se os retornos <b>contínuos</b> (ln(P<sub>1</sub>/P<sub>0</sub>)) são normais, o preço P<sub>1</sub> = P<sub>0</sub>·e<sup>r</sup> é <b>lognormal</b>.</li>\n    <li>Por isso a lognormal é adequada a preços: o preço <b>nunca fica negativo</b> (perda máxima de 100%), enquanto a normal permitiria valores negativos.</li>\n    <li>Ela é <b>assimétrica à direita</b>: o ganho é ilimitado, a perda é limitada. É a hipótese do modelo de Black-Scholes.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Os <b>retornos contínuos</b> são normais; os <b>preços</b> são lognormais. A prova costuma inverter: \"os preços seguem distribuição normal\" está errado.</div>"
+  },
+  {
+   "id": "t14",
+   "rotulo": "1.4 Amostragem, estimação e testes de hipótese",
+   "html": "<div class=\"num\">1.4</div>\n  <h2>Amostragem, estimação e testes de hipótese</h2>\n  <p class=\"why\">Como tirar conclusões sobre a população (ex.: o retorno médio \"verdadeiro\" de um gestor) a partir de uma amostra limitada, e com que grau de confiança.</p>\n\n  <h3>Amostragem</h3>\n  <ul>\n    <li><b>Amostragem aleatória simples:</b> cada elemento da população tem a <b>mesma probabilidade</b> de ser escolhido. <b>Estratificada:</b> divide a população em grupos (ex.: setores, ratings) e sorteia dentro de cada um, na proporção da população; é usada para montar carteiras que replicam índices de renda fixa.</li>\n    <li><b>Erro amostral:</b> diferença entre a estatística da amostra e o parâmetro da população.</li>\n    <li><b>Teorema central do limite:</b> para n grande (n ≥ 30), a média amostral tem distribuição aproximadamente normal, com média μ e variância σ²/n, <b>qualquer que seja</b> a distribuição da população.</li>\n  </ul>\n\n  <h3>Variância e erro-padrão da média amostral</h3>\n  <div class=\"formula\"><span class=\"lbl\">Média amostral</span>Var(x̄) = σ² / n     ·     erro-padrão: σ<sub>x̄</sub> = σ / √n<br>Se σ é desconhecido, usa-se s: s<sub>x̄</sub> = s / √n</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Retornos mensais de um fundo com σ = 3%, amostra de 36 meses. Variância da média = 9 / 36 = 0,25 (%²); erro-padrão = 3 / √36 = <b>0,5%</b>.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O erro-padrão cai com a <b>raiz</b> de n. Para cortá-lo pela metade é preciso <b>quadruplicar</b> a amostra, não dobrar.</div>\n\n  <h3>Estimativa por ponto × por intervalo</h3>\n  <ul>\n    <li><b>Por ponto:</b> um único número (a média amostral 0,9% é a estimativa pontual de μ).</li>\n    <li><b>Por intervalo (intervalo de confiança):</b> uma faixa que, com certo nível de confiança (1 − α), contém o parâmetro. \"IC de 95%\" quer dizer que, se repetíssemos a amostragem muitas vezes, 95% dos intervalos construídos conteriam μ.</li>\n    <li>Propriedades desejáveis de um estimador: <b>não viesado</b> (acerta na média), <b>eficiente</b> (menor variância) e <b>consistente</b> (melhora com n).</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">IC para a média (população normal, σ conhecido ou n grande)</span>IC = x̄ ± z<sub>α/2</sub> × σ / √n<br>90%: z = 1,645   ·   95%: z = 1,96   ·   99%: z = 2,576<br>(σ desconhecido e amostra pequena: troca-se z pelo t de Student com n − 1 graus de liberdade)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Média amostral de 0,9% a.m., σ = 3%, n = 36. Erro-padrão = 0,5%.</p>\n    <p>IC 95% = 0,9 ± 1,96 × 0,5 = 0,9 ± 0,98 → <b>−0,08% a 1,88%</b>. IC 99% = 0,9 ± 2,576 × 0,5 → <b>−0,39% a 2,19%</b>.</p>\n    <p>Quanto <b>maior a confiança</b>, <b>mais largo</b> o intervalo. Quanto maior n, mais estreito.</p>\n  </div>\n\n  <h3>Como se monta um teste de hipóteses</h3>\n  <ol>\n    <li>Formular <b>H<sub>0</sub></b> (hipótese nula, a que se quer rejeitar; <b>sempre contém a igualdade</b>: =, ≤ ou ≥) e <b>H<sub>a</sub></b> (alternativa, o que se quer provar).</li>\n    <li>Escolher a estatística de teste (z ou t) e o nível de significância α.</li>\n    <li>Definir a regra de decisão (valor crítico).</li>\n    <li>Calcular a estatística: z = (x̄ − μ<sub>0</sub>) / (σ/√n).</li>\n    <li>Decidir: se |estatística| &gt; valor crítico, <b>rejeita-se H<sub>0</sub></b>; senão, \"não se rejeita\" (nunca se \"aceita\" H<sub>0</sub>).</li>\n  </ol>\n\n  <h3>Unicaudal × bicaudal</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Teste</th><th>Hipóteses</th><th>Valor crítico (α = 5%)</th><th>Rejeita se</th></tr>\n    <tr><td>Bicaudal</td><td>H<sub>0</sub>: μ = μ<sub>0</sub> · H<sub>a</sub>: μ ≠ μ<sub>0</sub></td><td class=\"n\">±1,96</td><td>|z| &gt; 1,96</td></tr>\n    <tr><td>Unicaudal à direita</td><td>H<sub>0</sub>: μ ≤ μ<sub>0</sub> · H<sub>a</sub>: μ &gt; μ<sub>0</sub></td><td class=\"n\">+1,645</td><td>z &gt; 1,645</td></tr>\n    <tr><td>Unicaudal à esquerda</td><td>H<sub>0</sub>: μ ≥ μ<sub>0</sub> · H<sub>a</sub>: μ &lt; μ<sub>0</sub></td><td class=\"n\">−1,645</td><td>z &lt; −1,645</td></tr>\n  </table></div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: o gestor gera retorno positivo?</span>\n    <p>Mesmos dados: x̄ = 0,9%, erro-padrão 0,5%. z = (0,9 − 0) / 0,5 = <b>1,80</b>.</p>\n    <p>Bicaudal a 5% (H<sub>a</sub>: μ ≠ 0): 1,80 &lt; 1,96 → <b>não rejeita</b> H<sub>0</sub>. Unicaudal a 5% (H<sub>a</sub>: μ &gt; 0): 1,80 &gt; 1,645 → <b>rejeita</b> H<sub>0</sub>; há evidência de retorno positivo.</p>\n    <p>Repare que o IC de 95% (−0,08% a 1,88%) contém o zero, o que é coerente com não rejeitar no teste bicaudal de 5%.</p>\n  </div>\n\n  <h3>Erros tipo I e tipo II</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Decisão</th><th>H<sub>0</sub> verdadeira</th><th>H<sub>0</sub> falsa</th></tr>\n    <tr><td>Rejeitar H<sub>0</sub></td><td><b>Erro tipo I</b> (probabilidade α = nível de significância)</td><td>Decisão correta (probabilidade 1 − β = <b>poder do teste</b>)</td></tr>\n    <tr><td>Não rejeitar H<sub>0</sub></td><td>Decisão correta (1 − α = nível de confiança)</td><td><b>Erro tipo II</b> (probabilidade β)</td></tr>\n  </table></div>\n  <ul>\n    <li><b>p-valor:</b> o menor nível de significância com que H<sub>0</sub> seria rejeitada. Rejeita-se H<sub>0</sub> quando p-valor &lt; α.</li>\n    <li>Para um dado n, <b>reduzir α aumenta β</b>. A única forma de reduzir os dois ao mesmo tempo é aumentar a amostra.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O nível de significância é a probabilidade do erro <b>tipo I</b> (rejeitar uma H<sub>0</sub> verdadeira), não do tipo II. E um teste unicaudal a 5% usa 1,645, não 1,96: os 5% ficam todos de um lado.</div>"
+  },
+  {
+   "id": "t15",
+   "rotulo": "1.5 Regressão linear simples e múltipla",
+   "html": "<div class=\"num\">1.5</div>\n  <h2>Regressão linear simples e múltipla</h2>\n  <p class=\"why\">A ferramenta que estima o beta de uma ação, o alfa de um gestor e a sensibilidade de um ativo a fatores macro. A prova cobra leitura de saída de regressão.</p>\n\n  <h3>O modelo e seus elementos</h3>\n  <div class=\"formula\"><span class=\"lbl\">Regressão simples e múltipla</span>Simples: Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>·X<sub>i</sub> + ε<sub>i</sub><br>Múltipla: Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>·X<sub>1i</sub> + b<sub>2</sub>·X<sub>2i</sub> + … + b<sub>k</sub>·X<sub>ki</sub> + ε<sub>i</sub><br>Estimativa: Ŷ = b̂<sub>0</sub> + b̂<sub>1</sub>·X     (mínimos quadrados ordinários: minimiza Σ ε²)</div>\n  <ul>\n    <li><b>Variável dependente (Y):</b> a que se quer explicar (ex.: retorno do fundo).</li>\n    <li><b>Variável independente (X):</b> a explicativa (ex.: retorno do Ibovespa).</li>\n    <li><b>Intercepto (b<sub>0</sub>):</b> o valor esperado de Y quando todos os X são zero. No modelo de mercado, é o <b>alfa</b>.</li>\n    <li><b>Coeficiente angular (b<sub>1</sub>):</b> variação esperada de Y para uma unidade a mais de X. No modelo de mercado, é o <b>beta</b>. Na regressão múltipla, cada coeficiente é o efeito daquele X <b>mantendo os demais constantes</b>.</li>\n    <li><b>Termo aleatório (resíduo, ε):</b> a parte de Y que o modelo não explica. Supõe-se média zero, variância constante (homocedasticidade), resíduos não correlacionados entre si e independentes de X.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: valor estimado</span>\n    <p>Retorno do fundo (%) = 0,2 + 1,1 × retorno do Ibovespa (%). Se o Ibovespa render 3% no mês: Ŷ = 0,2 + 1,1 × 3 = <b>3,5%</b>.</p>\n    <p>Múltipla: Retorno = 1,0 + 0,9 × Ibov − 0,4 × Δjuros. Com Ibov = 2% e Δjuros = 0,5 p.p.: 1,0 + 1,8 − 0,2 = <b>2,6%</b>.</p>\n  </div>\n\n  <h3>Qualidade do ajuste: ANOVA, R² e erro-padrão da estimativa</h3>\n  <div class=\"formula\"><span class=\"lbl\">Decomposição da variação</span>SQT (total) = SQR (explicada pela regressão) + SQE (resíduos)<br>R² = SQR / SQT = 1 − SQE / SQT     ·     na simples, R² = ρ²<sub>XY</sub><br>EPE (erro-padrão da estimativa) = √[SQE / (n − k − 1)]<br>F = [SQR / k] / [SQE / (n − k − 1)]     (k = nº de variáveis independentes)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: tabela ANOVA (n = 60 meses, k = 1)</span>\n    <div class=\"tbl\"><table>\n      <tr><th>Fonte</th><th>gl</th><th>Soma dos quadrados</th><th>Média dos quadrados</th></tr>\n      <tr><td>Regressão</td><td class=\"n\">k = 1</td><td class=\"n\">105</td><td class=\"n\">105 / 1 = 105</td></tr>\n      <tr><td>Resíduo</td><td class=\"n\">n − k − 1 = 58</td><td class=\"n\">45</td><td class=\"n\">45 / 58 = 0,776</td></tr>\n      <tr><td>Total</td><td class=\"n\">59</td><td class=\"n\">150</td><td class=\"n\"></td></tr>\n    </table></div>\n    <p>R² = 105 / 150 = <b>0,70</b>: o Ibovespa explica 70% da variação do retorno do fundo. EPE = √0,776 = <b>0,88%</b>. F = 105 / 0,776 = <b>135,3</b>, muito alto: o modelo, como um todo, é significativo.</p>\n  </div>\n  <ul>\n    <li><b>Teste F (ANOVA):</b> H<sub>0</sub>: todos os coeficientes angulares = 0. Rejeitar H<sub>0</sub> significa que pelo menos um X explica Y. Na regressão simples, F = t².</li>\n    <li><b>R² ajustado:</b> na múltipla, o R² sempre sobe ao incluir variáveis, mesmo inúteis; o ajustado penaliza o número de variáveis e só sobe se a nova variável agregar.</li>\n  </ul>\n\n  <h3>Teste t e intervalo de confiança de um coeficiente</h3>\n  <div class=\"formula\"><span class=\"lbl\">Coeficiente</span>t = (b̂ − b<sub>H0</sub>) / EP(b̂)     com n − k − 1 graus de liberdade<br>IC = b̂ ± t<sub>crítico</sub> × EP(b̂)<br>Rejeita H<sub>0</sub> se |t| &gt; t<sub>crítico</sub>  ⇔  b<sub>H0</sub> fora do IC  ⇔  p-valor &lt; α</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo: beta estimado 1,1 com erro-padrão 0,15 (t crítico 5% bicaudal ≈ 2,00)</span>\n    <p><b>O beta é significativo?</b> H<sub>0</sub>: b = 0 · H<sub>a</sub>: b ≠ 0. t = 1,1 / 0,15 = <b>7,33</b> &gt; 2,00 → rejeita H<sub>0</sub>.</p>\n    <p><b>O beta é diferente de 1?</b> H<sub>0</sub>: b = 1. t = (1,1 − 1) / 0,15 = <b>0,67</b> &lt; 2,00 → não rejeita: não há evidência de que o fundo seja mais arriscado que o mercado.</p>\n    <p><b>IC de 95%:</b> 1,1 ± 2,00 × 0,15 = <b>0,80 a 1,40</b>. Contém 1 e não contém 0, coerente com os dois testes.</p>\n  </div>\n\n  <h3>Intervalo de confiança para o valor previsto de Y</h3>\n  <div class=\"formula\"><span class=\"lbl\">Previsão</span>IC = Ŷ ± t<sub>crítico</sub> × s<sub>f</sub>     (s<sub>f</sub> = erro-padrão da previsão, maior que o EPE porque inclui a incerteza dos coeficientes)</div>\n  <div class=\"ex\"><span class=\"lbl\">Exemplo</span>\n    <p>Ŷ = 3,5%, s<sub>f</sub> = 0,9% e t crítico 2,00: IC 95% = 3,5 ± 1,8 → <b>1,7% a 5,3%</b>.</p>\n  </div>\n\n  <h3>Como ler a saída de uma regressão</h3>\n  <ul>\n    <li>Olhe primeiro o <b>F</b> (o modelo serve?), depois os <b>t</b> ou <b>p-valores</b> de cada coeficiente (cada variável serve?), depois o <b>R²</b> (quanto explica?) e o sinal e tamanho dos coeficientes (faz sentido econômico?).</li>\n    <li>Um coeficiente com p-valor de 0,03 é significativo a 5%, mas não a 1%.</li>\n  </ul>\n\n  <h3>Limitações da regressão</h3>\n  <ul>\n    <li><b>Instabilidade dos parâmetros:</b> relações estimadas no passado mudam (betas de crise × de calmaria).</li>\n    <li><b>Correlação não é causalidade</b>, e relações espúrias aparecem com séries de tendência.</li>\n    <li><b>Heterocedasticidade</b> (variância dos resíduos não constante) e <b>autocorrelação</b> dos resíduos distorcem os erros-padrão e, portanto, os testes t.</li>\n    <li><b>Multicolinearidade</b> (na múltipla): X muito correlacionados entre si inflam os erros-padrão; o R² e o F podem ser altos com t individuais baixos.</li>\n    <li>A regressão linear só captura relações <b>lineares</b>, e se outros participantes usam a mesma relação ela pode deixar de funcionar.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>R² alto não prova causalidade nem que o modelo é bom para prever. E um coeficiente não significativo não quer dizer que a variável não importa; pode ser falta de dados ou multicolinearidade.</div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t1-1",
+   "subtema": "1.1",
+   "enunciado": "Ao descontar um fluxo de caixa futuro, a taxa de desconto apropriada representa, conceitualmente:",
+   "alternativas": [
+    "A taxa de inflação passada",
+    "A taxa de juros do cheque especial",
+    "O custo de oportunidade: o retorno da melhor alternativa de risco equivalente",
+    "A taxa que torna o valor presente igual ao valor futuro"
+   ],
+   "correta": 2,
+   "explicacao": "A taxa de desconto é o retorno exigido, isto é, o custo de oportunidade: quanto se deixaria de ganhar numa alternativa de mesmo risco."
+  },
+  {
+   "id": "t1-2",
+   "subtema": "1.1",
+   "enunciado": "Qual a taxa efetiva anual de uma taxa nominal de 12% a.a. capitalizada mensalmente?",
+   "alternativas": [
+    "12,68%",
+    "12,00%",
+    "12,36%",
+    "12,55%"
+   ],
+   "correta": 0,
+   "explicacao": "TEA = (1 + 0,12/12)^12 − 1 = 1,01^12 − 1 = 12,68%. 12,36% seria a capitalização semestral e 12,55% a trimestral."
+  },
+  {
+   "id": "t1-3",
+   "subtema": "1.1",
+   "enunciado": "Uma aplicação paga 8% a.a. com capitalização trimestral. A taxa efetiva anual é:",
+   "alternativas": [
+    "8,00%",
+    "8,16%",
+    "8,33%",
+    "8,24%"
+   ],
+   "correta": 3,
+   "explicacao": "Taxa trimestral = 8%/4 = 2%. TEA = 1,02^4 − 1 = 8,24%."
+  },
+  {
+   "id": "t1-4",
+   "subtema": "1.1",
+   "enunciado": "Uma taxa de 10% a.a. com capitalização contínua equivale a qual taxa efetiva anual?",
+   "alternativas": [
+    "10,00%",
+    "10,52%",
+    "10,47%",
+    "10,25%"
+   ],
+   "correta": 1,
+   "explicacao": "TEA = e^0,10 − 1 = 10,52%. É o limite máximo para 10% nominal: a mensal daria 10,47%."
+  },
+  {
+   "id": "t1-5",
+   "subtema": "1.1",
+   "enunciado": "Qual a taxa anual com capitalização contínua equivalente a uma taxa efetiva de 12% a.a.?",
+   "alternativas": [
+    "12,00%",
+    "11,33%",
+    "11,39%",
+    "10,71%"
+   ],
+   "correta": 1,
+   "explicacao": "r = ln(1,12) = 11,33%. Na HP 12C: 1,12 g LN."
+  },
+  {
+   "id": "t1-6",
+   "subtema": "1.1",
+   "enunciado": "O CDI está em 13,65% a.a. (base 252 dias úteis). A taxa equivalente por dia útil é, aproximadamente:",
+   "alternativas": [
+    "0,0542%",
+    "0,0355%",
+    "0,0379%",
+    "0,0508%"
+   ],
+   "correta": 3,
+   "explicacao": "No Brasil a conversão é exponencial: 1,1365^(1/252) − 1 = 0,0508%. Dividir 13,65% por 252 daria 0,0542%, que é juros simples."
+  },
+  {
+   "id": "t1-7",
+   "subtema": "1.1",
+   "enunciado": "Um investidor aplica R$ 10.000 a 1% a.m. por 24 meses, com juros compostos. O valor de resgate é:",
+   "alternativas": [
+    "R$ 12.697,35",
+    "R$ 12.400,00",
+    "R$ 12.824,32",
+    "R$ 11.268,25"
+   ],
+   "correta": 0,
+   "explicacao": "VF = 10.000 × 1,01^24 = R$ 12.697,35. HP 12C: 10000 CHS PV, 24 n, 1 i, FV. Juros simples dariam R$ 12.400,00."
+  },
+  {
+   "id": "t1-8",
+   "subtema": "1.1",
+   "enunciado": "Quanto vale hoje um título que paga R$ 50.000 daqui a 3 anos, se a taxa de desconto é 10% a.a.?",
+   "alternativas": [
+    "R$ 35.000,00",
+    "R$ 38.461,54",
+    "R$ 37.565,74",
+    "R$ 41.322,31"
+   ],
+   "correta": 2,
+   "explicacao": "VP = 50.000 / 1,10^3 = 50.000 / 1,331 = R$ 37.565,74."
+  },
+  {
+   "id": "t1-9",
+   "subtema": "1.1",
+   "enunciado": "Qual o valor presente de 12 parcelas mensais de R$ 1.000, a primeira daqui a um mês, à taxa de 1,5% a.m.?",
+   "alternativas": [
+    "R$ 12.000,00",
+    "R$ 11.071,12",
+    "R$ 10.036,65",
+    "R$ 10.907,51"
+   ],
+   "correta": 3,
+   "explicacao": "VP = 1.000 × (1 − 1,015^−12) / 0,015 = R$ 10.907,51. HP 12C (END): 1000 PMT, 12 n, 1,5 i, PV."
+  },
+  {
+   "id": "t1-10",
+   "subtema": "1.1",
+   "enunciado": "Um contrato de aluguel prevê 24 pagamentos mensais de R$ 2.000, o primeiro no ato da assinatura. A 1% a.m., o valor presente do contrato é:",
+   "alternativas": [
+    "R$ 42.486,77",
+    "R$ 42.911,64",
+    "R$ 48.000,00",
+    "R$ 37.803,17"
+   ],
+   "correta": 1,
+   "explicacao": "Anuidade antecipada (BEGIN): VP postecipado = 2.000 × (1 − 1,01^−24)/0,01 = R$ 42.486,77; × 1,01 = R$ 42.911,64."
+  },
+  {
+   "id": "t1-11",
+   "subtema": "1.1",
+   "enunciado": "Um financiamento de R$ 100.000 será pago em 60 parcelas mensais iguais e postecipadas, a 1,2% a.m. O valor de cada parcela é:",
+   "alternativas": [
+    "R$ 2.347,61",
+    "R$ 1.666,67",
+    "R$ 2.866,67",
+    "R$ 2.319,78"
+   ],
+   "correta": 0,
+   "explicacao": "PMT = 100.000 × 0,012 / (1 − 1,012^−60) = R$ 2.347,61. HP 12C: 100000 PV, 60 n, 1,2 i, PMT. Com 1ª parcela no ato (BEGIN) seria R$ 2.319,78."
+  },
+  {
+   "id": "t1-12",
+   "subtema": "1.1",
+   "enunciado": "Um investidor deposita R$ 500 ao fim de cada mês, por 36 meses, numa aplicação que rende 0,9% a.m. O saldo ao fim do período é:",
+   "alternativas": [
+    "R$ 18.000,00",
+    "R$ 21.337,26",
+    "R$ 21.146,94",
+    "R$ 24.851,61"
+   ],
+   "correta": 2,
+   "explicacao": "VF = 500 × (1,009^36 − 1) / 0,009 = R$ 21.146,94. Se os depósitos fossem no início de cada mês, seria R$ 21.337,26."
+  },
+  {
+   "id": "t1-13",
+   "subtema": "1.1",
+   "enunciado": "Uma perpetuidade paga R$ 500 por mês, começando daqui a um mês. Com taxa de desconto de 0,8% a.m., seu valor presente é:",
+   "alternativas": [
+    "R$ 63.000,00",
+    "R$ 62.500,00",
+    "R$ 400,00",
+    "R$ 50.000,00"
+   ],
+   "correta": 1,
+   "explicacao": "VP = PMT / i = 500 / 0,008 = R$ 62.500,00. Se o primeiro pagamento fosse hoje, somaria 500 (R$ 63.000,00)."
+  },
+  {
+   "id": "t1-14",
+   "subtema": "1.1",
+   "enunciado": "Uma empresa acabou de pagar dividendo de R$ 5,00 por ação, que deve crescer 4% a.a. para sempre. Com retorno exigido de 12% a.a., o valor da ação é:",
+   "alternativas": [
+    "R$ 62,50",
+    "R$ 41,67",
+    "R$ 43,33",
+    "R$ 65,00"
+   ],
+   "correta": 3,
+   "explicacao": "D1 = 5,00 × 1,04 = 5,20. VP = 5,20 / (0,12 − 0,04) = R$ 65,00. Usar D0 (5,00/0,08 = 62,50) é o erro clássico."
+  },
+  {
+   "id": "t1-15",
+   "subtema": "1.1",
+   "enunciado": "Um projeto gera R$ 1.000, R$ 2.000 e R$ 3.000 ao fim dos anos 1, 2 e 3. A 10% a.a., o valor presente desses fluxos é:",
+   "alternativas": [
+    "R$ 6.000,00",
+    "R$ 5.454,55",
+    "R$ 4.815,93",
+    "R$ 4.507,89"
+   ],
+   "correta": 2,
+   "explicacao": "VP = 1.000/1,1 + 2.000/1,1^2 + 3.000/1,1^3 = 909,09 + 1.652,89 + 2.253,94 = R$ 4.815,93. HP 12C: 0 g CF0, 1000 g CFj, 2000 g CFj, 3000 g CFj, 10 i, f NPV."
+  },
+  {
+   "id": "t1-16",
+   "subtema": "1.2",
+   "enunciado": "Os retornos mensais (%) de um fundo foram: 2, 4, 4, 5, 7, 9 e 11. Média, mediana e moda são, respectivamente:",
+   "alternativas": [
+    "6%, 5% e 4%",
+    "5%, 6% e 4%",
+    "6%, 4% e 5%",
+    "5%, 5% e 4%"
+   ],
+   "correta": 0,
+   "explicacao": "Média = 42/7 = 6%. Mediana = 4º valor ordenado = 5%. Moda = valor mais frequente = 4%.",
+   "fixa": true
+  },
+  {
+   "id": "t1-17",
+   "subtema": "1.2",
+   "enunciado": "Num conjunto de retornos com alguns valores extremos (outliers), a medida de tendência central MENOS afetada por esses valores é:",
+   "alternativas": [
+    "A média aritmética",
+    "A média ponderada",
+    "A mediana",
+    "A amplitude"
+   ],
+   "correta": 2,
+   "explicacao": "A mediana depende só da posição dos valores ordenados, por isso é robusta a outliers. A média aritmética é puxada por eles."
+  },
+  {
+   "id": "t1-18",
+   "subtema": "1.2",
+   "enunciado": "Uma amostra de quatro retornos anuais apresentou 2%, 4%, 6% e 8%. O desvio-padrão amostral é:",
+   "alternativas": [
+    "2,58%",
+    "2,24%",
+    "6,67%",
+    "5,00%"
+   ],
+   "correta": 0,
+   "explicacao": "Média = 5. Desvios ao quadrado: 9 + 1 + 1 + 9 = 20. s² = 20/(4−1) = 6,67 → s = 2,58%. Dividindo por n daria o populacional, 2,24%."
+  },
+  {
+   "id": "t1-19",
+   "subtema": "1.2",
+   "enunciado": "Ao calcular a variância de uma AMOSTRA, divide-se a soma dos quadrados dos desvios por n − 1, e não por n, porque:",
+   "alternativas": [
+    "A HP 12C só aceita n − 1",
+    "Isso reduz o valor da variância",
+    "A média amostral é sempre igual à da população",
+    "Assim a variância amostral é um estimador não viesado da variância da população"
+   ],
+   "correta": 3,
+   "explicacao": "A média amostral já usa os dados (perde-se um grau de liberdade). Dividir por n subestimaria a variância populacional."
+  },
+  {
+   "id": "t1-20",
+   "subtema": "1.2",
+   "enunciado": "Dez retornos ordenados (%): 3, 5, 7, 8, 10, 12, 15, 18, 20, 25. Usando a posição (n + 1) × y/100, o terceiro quartil é:",
+   "alternativas": [
+    "18,0%",
+    "18,5%",
+    "20,0%",
+    "19,6%"
+   ],
+   "correta": 1,
+   "explicacao": "Posição = 11 × 0,75 = 8,25 → entre o 8º (18) e o 9º (20) valor: 18 + 0,25 × 2 = 18,5%. 19,6% seria o percentil 80."
+  },
+  {
+   "id": "t1-21",
+   "subtema": "1.2",
+   "enunciado": "O terceiro quartil, o oitavo decil e o quarto quintil correspondem, respectivamente, aos percentis:",
+   "alternativas": [
+    "75, 80 e 40",
+    "75, 80 e 80",
+    "30, 80 e 40",
+    "75, 8 e 4"
+   ],
+   "correta": 1,
+   "explicacao": "Q3 = P75; 8º decil = 8 × 10 = P80; 4º quintil = 4 × 20 = P80.",
+   "fixa": true
+  },
+  {
+   "id": "t1-22",
+   "subtema": "1.2",
+   "enunciado": "A covariância entre os retornos de A e B é 0,0012. O desvio-padrão de A é 4% e o de B é 5%. O coeficiente de correlação é:",
+   "alternativas": [
+    "0,06",
+    "0,24",
+    "1,67",
+    "0,60"
+   ],
+   "correta": 3,
+   "explicacao": "ρ = Cov / (σA × σB) = 0,0012 / (0,04 × 0,05) = 0,0012 / 0,002 = 0,60."
+  },
+  {
+   "id": "t1-23",
+   "subtema": "1.2",
+   "enunciado": "Três observações de X e Y: (2; 3), (4; 7) e (6; 8). A covariância amostral entre X e Y é:",
+   "alternativas": [
+    "5,00",
+    "3,33",
+    "0,94",
+    "10,00"
+   ],
+   "correta": 0,
+   "explicacao": "Médias: X = 4, Y = 6. Produtos dos desvios: (−2)(−3) + 0 × 1 + 2 × 2 = 10. Cov amostral = 10/(3−1) = 5,00. Dividindo por n (populacional) daria 3,33."
+  },
+  {
+   "id": "t1-24",
+   "subtema": "1.2",
+   "enunciado": "Uma distribuição de retornos apresenta assimetria positiva (cauda longa à direita). A relação esperada entre as medidas de tendência central é:",
+   "alternativas": [
+    "Média < mediana < moda",
+    "Média = mediana = moda",
+    "Média > mediana > moda",
+    "Moda > média > mediana"
+   ],
+   "correta": 2,
+   "explicacao": "Na assimetria positiva, os valores extremos à direita puxam a média para cima: média > mediana > moda. Na negativa, a ordem se inverte."
+  },
+  {
+   "id": "t1-25",
+   "subtema": "1.2",
+   "enunciado": "Os retornos diários de um ativo apresentam curtose de 6. Comparada à normal, essa distribuição é:",
+   "alternativas": [
+    "Platicúrtica, com caudas mais finas",
+    "Mesocúrtica, igual à normal",
+    "Assimétrica à esquerda, necessariamente",
+    "Leptocúrtica, com caudas mais grossas e eventos extremos mais frequentes"
+   ],
+   "correta": 3,
+   "explicacao": "A normal tem curtose 3 (excesso zero). Curtose 6 (excesso 3) indica distribuição leptocúrtica: pico alto e caudas gordas."
+  },
+  {
+   "id": "t1-26",
+   "subtema": "1.2",
+   "enunciado": "O fundo A tem retorno médio de 8% e desvio-padrão de 12%; o fundo B, retorno médio de 12% e desvio de 15%. Pelo coeficiente de variação:",
+   "alternativas": [
+    "A tem menor risco por unidade de retorno (CV de 1,50 contra 1,25)",
+    "B tem menor risco por unidade de retorno (CV de 1,25 contra 1,50)",
+    "A é melhor por ter desvio-padrão menor",
+    "Os dois são equivalentes"
+   ],
+   "correta": 1,
+   "explicacao": "CV = σ/média. A: 12/8 = 1,50. B: 15/12 = 1,25. Menor CV = menos risco por unidade de retorno."
+  },
+  {
+   "id": "t1-27",
+   "subtema": "1.2",
+   "enunciado": "Num gráfico box plot, a caixa central representa:",
+   "alternativas": [
+    "O intervalo entre o primeiro e o terceiro quartil, com a mediana marcada dentro dela",
+    "A média mais ou menos um desvio-padrão",
+    "O intervalo entre o menor e o maior valor",
+    "O intervalo de confiança de 95% da média"
+   ],
+   "correta": 0,
+   "explicacao": "A caixa vai de Q1 a Q3 (intervalo interquartil, com 50% dos dados) e a linha interna é a mediana. Pontos fora das hastes são outliers."
+  },
+  {
+   "id": "t1-28",
+   "subtema": "1.3",
+   "enunciado": "Uma ação pode render −10% (probabilidade 20%), 8% (50%) ou 20% (30%). O retorno esperado é:",
+   "alternativas": [
+    "6,0%",
+    "9,0%",
+    "8,0%",
+    "10,0%"
+   ],
+   "correta": 2,
+   "explicacao": "E(R) = 0,2 × (−10) + 0,5 × 8 + 0,3 × 20 = −2 + 4 + 6 = 8,0%. A média simples dos cenários (6,0%) ignora as probabilidades."
+  },
+  {
+   "id": "t1-29",
+   "subtema": "1.3",
+   "enunciado": "Com os mesmos cenários (−10% com 20%, 8% com 50% e 20% com 30%; retorno esperado de 8%), o desvio-padrão do retorno é:",
+   "alternativas": [
+    "108,00%",
+    "10,39%",
+    "12,33%",
+    "8,00%"
+   ],
+   "correta": 1,
+   "explicacao": "Var = 0,2 × (−18)² + 0,5 × 0² + 0,3 × 12² = 64,8 + 0 + 43,2 = 108,0 (%²). σ = √108 = 10,39%."
+  },
+  {
+   "id": "t1-30",
+   "subtema": "1.3",
+   "enunciado": "Uma carteira tem 60% no ativo A (retorno esperado de 12%) e 40% no ativo B (retorno esperado de 8%). O retorno esperado da carteira é:",
+   "alternativas": [
+    "10,0%",
+    "9,6%",
+    "20,0%",
+    "10,4%"
+   ],
+   "correta": 3,
+   "explicacao": "E(Rp) = 0,6 × 12 + 0,4 × 8 = 7,2 + 3,2 = 10,4%. O retorno esperado da carteira é sempre a média ponderada."
+  },
+  {
+   "id": "t1-31",
+   "subtema": "1.3",
+   "enunciado": "Carteira com 60% em A (σ = 20%) e 40% em B (σ = 10%), com correlação de 0,3 entre eles. O desvio-padrão da carteira é:",
+   "alternativas": [
+    "16,00%",
+    "12,65%",
+    "13,74%",
+    "188,80%"
+   ],
+   "correta": 2,
+   "explicacao": "σp² = 0,36 × 400 + 0,16 × 100 + 2 × 0,6 × 0,4 × 0,3 × 20 × 10 = 144 + 16 + 28,8 = 188,8. σp = 13,74%. 16% seria a média ponderada (só vale com ρ = 1)."
+  },
+  {
+   "id": "t1-32",
+   "subtema": "1.3",
+   "enunciado": "Qual das variáveis abaixo é uma variável aleatória CONTÍNUA?",
+   "alternativas": [
+    "O retorno diário de uma ação",
+    "O número de empresas que darão default no ano",
+    "O número de dias de alta da bolsa no mês",
+    "O resultado do lançamento de um dado"
+   ],
+   "correta": 0,
+   "explicacao": "Retornos podem assumir qualquer valor num intervalo (contínua). Contagens (defaults, dias de alta, faces do dado) são discretas."
+  },
+  {
+   "id": "t1-33",
+   "subtema": "1.3",
+   "enunciado": "A probabilidade de um gestor bater o benchmark em cada mês é 50%, de forma independente. A probabilidade de bater em exatamente 3 dos próximos 5 meses é:",
+   "alternativas": [
+    "12,50%",
+    "60,00%",
+    "31,25%",
+    "50,00%"
+   ],
+   "correta": 2,
+   "explicacao": "Binomial: C(5,3) × 0,5³ × 0,5² = 10 × 0,03125 = 31,25%."
+  },
+  {
+   "id": "t1-34",
+   "subtema": "1.3",
+   "enunciado": "Uma variável segue distribuição uniforme contínua entre 0 e 10. A probabilidade de ela ficar entre 2 e 5 é:",
+   "alternativas": [
+    "30%",
+    "20%",
+    "50%",
+    "3%"
+   ],
+   "correta": 0,
+   "explicacao": "Na uniforme contínua, P = (5 − 2) / (10 − 0) = 3/10 = 30%."
+  },
+  {
+   "id": "t1-35",
+   "subtema": "1.3",
+   "enunciado": "O retorno anual de um fundo é normal com média 8% e desvio-padrão 12%. O escore z correspondente a um retorno de 2% é:",
+   "alternativas": [
+    "0,50",
+    "−0,17",
+    "−6,00",
+    "−0,50"
+   ],
+   "correta": 3,
+   "explicacao": "z = (x − μ)/σ = (2 − 8)/12 = −0,50. O retorno está meio desvio-padrão abaixo da média."
+  },
+  {
+   "id": "t1-36",
+   "subtema": "1.3",
+   "enunciado": "Os retornos anuais de uma carteira são normais, com média 10% e desvio-padrão 20%. O intervalo que contém aproximadamente 95% dos retornos é:",
+   "alternativas": [
+    "−22,9% a 42,9%",
+    "−29,2% a 49,2%",
+    "−10,0% a 30,0%",
+    "−41,5% a 61,5%"
+   ],
+   "correta": 1,
+   "explicacao": "95% bicaudal → z = 1,96. 10 ± 1,96 × 20 = 10 ± 39,2 → −29,2% a 49,2%."
+  },
+  {
+   "id": "t1-37",
+   "subtema": "1.3",
+   "enunciado": "O retorno anual de um fundo é normal com média 8% e desvio-padrão 10%. A probabilidade de o retorno ser inferior a −2% é de aproximadamente:",
+   "alternativas": [
+    "32%",
+    "16%",
+    "5%",
+    "84%"
+   ],
+   "correta": 1,
+   "explicacao": "z = (−2 − 8)/10 = −1. Como ±1σ contém cerca de 68%, cada cauda tem cerca de 16% (exato: 15,9%)."
+  },
+  {
+   "id": "t1-38",
+   "subtema": "1.3",
+   "enunciado": "A distribuição lognormal é usada para modelar preços de ativos porque:",
+   "alternativas": [
+    "É simétrica e vai de −∞ a +∞",
+    "Supõe que os preços sejam normalmente distribuídos",
+    "Só se aplica a variáveis discretas",
+    "Não admite valores negativos e é assimétrica à direita, coerente com perda limitada a 100%"
+   ],
+   "correta": 3,
+   "explicacao": "Se os retornos contínuos são normais, os preços são lognormais: sempre positivos, com cauda longa à direita. É a hipótese do Black-Scholes."
+  },
+  {
+   "id": "t1-39",
+   "subtema": "1.4",
+   "enunciado": "Os retornos de uma população têm desvio-padrão de 20%. Para uma amostra aleatória de 100 observações, o erro-padrão da média amostral é:",
+   "alternativas": [
+    "2,0%",
+    "0,2%",
+    "20,0%",
+    "4,0%"
+   ],
+   "correta": 0,
+   "explicacao": "Erro-padrão = σ/√n = 20%/√100 = 20%/10 = 2,0%."
+  },
+  {
+   "id": "t1-40",
+   "subtema": "1.4",
+   "enunciado": "A população tem desvio-padrão de 0,15. A variância da média amostral, para n = 25, é:",
+   "alternativas": [
+    "0,0225",
+    "0,0300",
+    "0,0009",
+    "0,0060"
+   ],
+   "correta": 2,
+   "explicacao": "Var(x̄) = σ²/n = 0,0225/25 = 0,0009. O erro-padrão seria √0,0009 = 0,03."
+  },
+  {
+   "id": "t1-41",
+   "subtema": "1.4",
+   "enunciado": "Mantidos os demais fatores, se o tamanho da amostra passar de 25 para 100 observações, a amplitude do intervalo de confiança da média:",
+   "alternativas": [
+    "Cai para um quarto",
+    "Dobra",
+    "Não se altera",
+    "Cai pela metade"
+   ],
+   "correta": 3,
+   "explicacao": "A amplitude é proporcional a σ/√n. √100/√25 = 10/5 = 2, então o intervalo fica com metade da largura."
+  },
+  {
+   "id": "t1-42",
+   "subtema": "1.4",
+   "enunciado": "Numa amostra de 64 meses, o retorno médio de um fundo foi 1,2% a.m. O desvio-padrão populacional é 4%. O intervalo de confiança de 95% para o retorno médio é:",
+   "alternativas": [
+    "0,38% a 2,02%",
+    "0,22% a 2,18%",
+    "−6,64% a 9,04%",
+    "−0,09% a 2,49%"
+   ],
+   "correta": 1,
+   "explicacao": "Erro-padrão = 4/√64 = 0,5%. IC = 1,2 ± 1,96 × 0,5 = 1,2 ± 0,98 → 0,22% a 2,18%."
+  },
+  {
+   "id": "t1-43",
+   "subtema": "1.4",
+   "enunciado": "Amostra de 25 anos com retorno médio de 8% a.a.; desvio-padrão populacional de 10% (população normal). O intervalo de confiança de 99% para a média é:",
+   "alternativas": [
+    "2,85% a 13,15%",
+    "4,08% a 11,92%",
+    "3,34% a 12,66%",
+    "−17,76% a 33,76%"
+   ],
+   "correta": 0,
+   "explicacao": "Erro-padrão = 10/√25 = 2%. IC 99% = 8 ± 2,576 × 2 = 8 ± 5,152 → 2,85% a 13,15%."
+  },
+  {
+   "id": "t1-44",
+   "subtema": "1.4",
+   "enunciado": "A respeito de estimativas, é correto afirmar:",
+   "alternativas": [
+    "A estimativa por intervalo dispensa o erro-padrão",
+    "Quanto maior o nível de confiança, mais estreito o intervalo",
+    "A estimativa por ponto é um único valor; a por intervalo dá uma faixa associada a um nível de confiança",
+    "A média amostral é uma estimativa por intervalo"
+   ],
+   "correta": 2,
+   "explicacao": "A média amostral é estimativa pontual. O intervalo usa o erro-padrão, e mais confiança exige um intervalo mais largo."
+  },
+  {
+   "id": "t1-45",
+   "subtema": "1.4",
+   "enunciado": "Na amostragem aleatória simples:",
+   "alternativas": [
+    "A população é dividida em grupos e sorteia-se dentro de cada grupo",
+    "Cada elemento da população tem a mesma probabilidade de ser selecionado",
+    "O pesquisador escolhe os elementos mais representativos",
+    "Usam-se todos os elementos da população"
+   ],
+   "correta": 1,
+   "explicacao": "Essa é a definição da amostragem aleatória simples. Dividir em grupos e sortear dentro deles é a amostragem estratificada; usar todos é censo."
+  },
+  {
+   "id": "t1-46",
+   "subtema": "1.4",
+   "enunciado": "O erro tipo I em um teste de hipóteses consiste em:",
+   "alternativas": [
+    "Não rejeitar a hipótese nula quando ela é falsa",
+    "Rejeitar a hipótese alternativa quando ela é falsa",
+    "Usar o valor crítico errado",
+    "Rejeitar a hipótese nula quando ela é verdadeira"
+   ],
+   "correta": 3,
+   "explicacao": "Erro tipo I = rejeitar H0 verdadeira; sua probabilidade é o nível de significância α. Não rejeitar H0 falsa é o erro tipo II."
+  },
+  {
+   "id": "t1-47",
+   "subtema": "1.4",
+   "enunciado": "Mantido o tamanho da amostra, reduzir o nível de significância de um teste de 5% para 1%:",
+   "alternativas": [
+    "Diminui as probabilidades dos dois erros",
+    "Aumenta a probabilidade de erro tipo I",
+    "Diminui a probabilidade de erro tipo I e aumenta a de erro tipo II",
+    "Não afeta o erro tipo II"
+   ],
+   "correta": 2,
+   "explicacao": "α é a probabilidade do erro tipo I. Ficando mais difícil rejeitar H0, cresce a chance de não rejeitar uma H0 falsa (tipo II). Só aumentar n reduz os dois."
+  },
+  {
+   "id": "t1-48",
+   "subtema": "1.4",
+   "enunciado": "Um analista quer testar se o alfa de um gestor é positivo. As hipóteses corretas são:",
+   "alternativas": [
+    "H0: alfa ≤ 0 e Ha: alfa > 0, teste unicaudal",
+    "H0: alfa > 0 e Ha: alfa ≤ 0, teste unicaudal",
+    "H0: alfa = 0 e Ha: alfa ≠ 0, teste unicaudal",
+    "H0: alfa ≠ 0 e Ha: alfa = 0, teste bicaudal"
+   ],
+   "correta": 0,
+   "explicacao": "O que se quer provar vai na alternativa (alfa > 0); a nula contém a igualdade (alfa ≤ 0). Como só interessa um lado, o teste é unicaudal à direita."
+  },
+  {
+   "id": "t1-49",
+   "subtema": "1.4",
+   "enunciado": "Para testar se o retorno médio mensal de um fundo é diferente de zero, usou-se uma amostra de 64 meses com média de 0,46% e desvio-padrão populacional de 2%. A 5% de significância:",
+   "alternativas": [
+    "Rejeita-se H0 tanto no teste bicaudal quanto no unicaudal",
+    "Não se rejeita H0 em nenhum dos dois testes",
+    "No teste bicaudal não se rejeita H0, mas num teste unicaudal (Ha: μ > 0) se rejeitaria",
+    "Rejeita-se H0 no bicaudal, mas não no unicaudal"
+   ],
+   "correta": 2,
+   "explicacao": "Erro-padrão = 2/√64 = 0,25. z = 0,46/0,25 = 1,84. Bicaudal: 1,84 < 1,96 → não rejeita. Unicaudal: 1,84 > 1,645 → rejeita."
+  },
+  {
+   "id": "t1-50",
+   "subtema": "1.5",
+   "enunciado": "Uma regressão estimou: Retorno do fundo (%) = 0,5 + 1,2 × Retorno do Ibovespa (%). Se o Ibovespa render 3% no mês, o retorno estimado do fundo é:",
+   "alternativas": [
+    "4,1%",
+    "3,6%",
+    "3,5%",
+    "5,1%"
+   ],
+   "correta": 0,
+   "explicacao": "Ŷ = 0,5 + 1,2 × 3 = 0,5 + 3,6 = 4,1%."
+  },
+  {
+   "id": "t1-51",
+   "subtema": "1.5",
+   "enunciado": "Modelo de regressão múltipla: Y = 2,0 + 0,8 X1 − 0,5 X2. Para X1 = 5 e X2 = 4, o valor estimado de Y é:",
+   "alternativas": [
+    "8,0",
+    "6,0",
+    "2,0",
+    "4,0"
+   ],
+   "correta": 3,
+   "explicacao": "Ŷ = 2,0 + 0,8 × 5 − 0,5 × 4 = 2,0 + 4,0 − 2,0 = 4,0. Esquecer o sinal negativo de X2 daria 8,0."
+  },
+  {
+   "id": "t1-52",
+   "subtema": "1.5",
+   "enunciado": "Na regressão múltipla Y = b0 + b1 X1 + b2 X2 + ε, o coeficiente b1 representa:",
+   "alternativas": [
+    "A correlação entre Y e X1",
+    "A variação esperada em Y para um aumento de uma unidade em X1, mantendo X2 constante",
+    "O valor de Y quando X1 = 0",
+    "A proporção da variância de Y explicada por X1"
+   ],
+   "correta": 1,
+   "explicacao": "Cada coeficiente angular da múltipla é o efeito parcial da sua variável, com as demais constantes. O valor de Y com todos os X nulos é o intercepto."
+  },
+  {
+   "id": "t1-53",
+   "subtema": "1.5",
+   "enunciado": "Numa regressão com 50 observações, o coeficiente angular estimado é 1,2 e seu erro-padrão é 0,4. Com valor crítico t de 2,01 (5%, bicaudal), o teste H0: b1 = 0:",
+   "alternativas": [
+    "Não rejeita H0, pois t = 0,33",
+    "Rejeita H0, pois t = 3,00",
+    "Rejeita H0, pois t = 0,48",
+    "Não rejeita H0, pois t = 1,20"
+   ],
+   "correta": 1,
+   "explicacao": "t = (1,2 − 0)/0,4 = 3,00 > 2,01 → rejeita H0: o coeficiente é estatisticamente diferente de zero."
+  },
+  {
+   "id": "t1-54",
+   "subtema": "1.5",
+   "enunciado": "O beta estimado de uma ação é 0,80, com erro-padrão de 0,25. Usando t crítico de 2,0, o intervalo de confiança de 95% para o beta é:",
+   "alternativas": [
+    "0,55 a 1,05",
+    "0,39 a 1,21",
+    "0,00 a 1,60",
+    "0,30 a 1,30"
+   ],
+   "correta": 3,
+   "explicacao": "IC = 0,80 ± 2,0 × 0,25 = 0,80 ± 0,50 → 0,30 a 1,30. Como contém 1, não se rejeita beta = 1 a 5%."
+  },
+  {
+   "id": "t1-55",
+   "subtema": "1.5",
+   "enunciado": "O beta estimado de um fundo é 1,15, com erro-padrão de 0,10. Testa-se H0: beta = 1 contra Ha: beta ≠ 1 a 5% (t crítico = 1,98). A conclusão é:",
+   "alternativas": [
+    "Não rejeitar H0, pois t = 1,50",
+    "Rejeitar H0, pois t = 11,50",
+    "Rejeitar H0, pois t = 1,50 é positivo",
+    "Não rejeitar H0, pois t = 0,15"
+   ],
+   "correta": 0,
+   "explicacao": "t = (1,15 − 1)/0,10 = 1,50 < 1,98 → não rejeita: não há evidência de que o beta seja diferente de 1. Usar 1,15/0,10 = 11,5 testaria beta = 0."
+  },
+  {
+   "id": "t1-56",
+   "subtema": "1.5",
+   "enunciado": "Na tabela ANOVA de uma regressão, a soma dos quadrados total é 200 e a soma dos quadrados dos resíduos é 120. O R² é:",
+   "alternativas": [
+    "0,60",
+    "0,67",
+    "0,40",
+    "1,67"
+   ],
+   "correta": 2,
+   "explicacao": "SQ da regressão = 200 − 120 = 80. R² = 80/200 = 0,40: a regressão explica 40% da variação de Y. 0,60 seria a parte não explicada."
+  },
+  {
+   "id": "t1-57",
+   "subtema": "1.5",
+   "enunciado": "Numa regressão linear simples, a correlação entre a variável dependente e a independente é 0,7. O coeficiente de determinação é:",
+   "alternativas": [
+    "0,70",
+    "0,84",
+    "0,30",
+    "0,49"
+   ],
+   "correta": 3,
+   "explicacao": "Na regressão simples, R² = ρ² = 0,7² = 0,49."
+  },
+  {
+   "id": "t1-58",
+   "subtema": "1.5",
+   "enunciado": "Regressão com 25 observações e 2 variáveis independentes: SQ da regressão = 60 e SQ dos resíduos = 40. A estatística F é:",
+   "alternativas": [
+    "1,50",
+    "16,50",
+    "18,00",
+    "17,25"
+   ],
+   "correta": 1,
+   "explicacao": "MQReg = 60/2 = 30. MQRes = 40/(25 − 2 − 1) = 40/22 = 1,818. F = 30/1,818 = 16,50."
+  },
+  {
+   "id": "t1-59",
+   "subtema": "1.5",
+   "enunciado": "Numa regressão, o intercepto e o termo aleatório representam, respectivamente:",
+   "alternativas": [
+    "O valor esperado de Y quando as variáveis independentes são zero, e a parte de Y não explicada pelo modelo",
+    "A sensibilidade de Y a X, e o erro de medida de X",
+    "O R² do modelo, e o erro-padrão do coeficiente",
+    "O valor médio de X, e a variância de Y"
+   ],
+   "correta": 0,
+   "explicacao": "O intercepto (b0) é o Y estimado com X = 0 (o alfa no modelo de mercado). O termo aleatório (ε) é o resíduo, com média zero."
+  },
+  {
+   "id": "t1-60",
+   "subtema": "1.5",
+   "enunciado": "O retorno previsto de um fundo é 4,1%, com erro-padrão da previsão de 1,5%. Com t crítico de 2,0, o intervalo de confiança de 95% para o valor previsto é:",
+   "alternativas": [
+    "2,6% a 5,6%",
+    "−1,8% a 10,0%",
+    "1,1% a 7,1%",
+    "2,1% a 6,1%"
+   ],
+   "correta": 2,
+   "explicacao": "IC = Ŷ ± t × sf = 4,1 ± 2,0 × 1,5 = 4,1 ± 3,0 → 1,1% a 7,1%."
+  },
+  {
+   "id": "t1-61",
+   "subtema": "1.5",
+   "enunciado": "Um coeficiente de regressão apresentou p-valor de 0,03. É correto concluir que ele é:",
+   "alternativas": [
+    "Significativo a 1%, mas não a 5%",
+    "Significativo a 5%, mas não a 1%",
+    "Significativo a 1% e a 5%",
+    "Não significativo a nenhum nível usual"
+   ],
+   "correta": 1,
+   "explicacao": "Rejeita-se H0 quando p-valor < α. 0,03 < 0,05 (rejeita a 5%), mas 0,03 > 0,01 (não rejeita a 1%)."
+  },
+  {
+   "id": "t1-62",
+   "subtema": "1.5",
+   "enunciado": "Constitui limitação da análise de regressão:",
+   "alternativas": [
+    "Ela permite calcular intervalos de confiança para os coeficientes",
+    "O R² varia entre 0 e 1",
+    "Ela pode incluir mais de uma variável independente",
+    "As relações estimadas podem mudar com o tempo (instabilidade dos parâmetros)"
+   ],
+   "correta": 3,
+   "explicacao": "Instabilidade dos parâmetros, heterocedasticidade, autocorrelação, multicolinearidade e confusão entre correlação e causalidade são as limitações clássicas."
+  }
+ ]
+}

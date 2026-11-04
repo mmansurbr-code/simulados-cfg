@@ -1,0 +1,849 @@
+{
+ "id": "t11",
+ "numero": 11,
+ "titulo": "Ética e Autorregulação",
+ "resumo": "Apostila do tema 11, que vale de 8% a 12% da prova. Ele junta a ética do profissional de investimentos (dever fiduciário, informação privilegiada, manipulação), os temas ASG e a autorregulação da ANBIMA: o Código de Certificação, o Código de Ofertas Públicas, o Código de Administração e Gestão de Recursos de Terceiros (já adaptado à Resolução CVM 175) e o Código de Serviços Qualificados. Cada bloco traz o conceito, a regra, um caso e as pegadinhas mais comuns.",
+ "topicos": [
+  {
+   "id": "t111",
+   "rotulo": "11.1 Princípios gerais de ética aplicada a profissionais de investimentos",
+   "html": "<div class=\"num\">11.1</div>\n  <h2>Princípios gerais de ética aplicada a profissionais de investimentos</h2>\n  <p class=\"why\">O profissional de investimentos administra dinheiro que não é dele. Toda a ética da profissão nasce daí: o interesse do cliente vem antes do interesse do profissional e da instituição.</p>\n\n  <h3>Princípios fundamentais</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Princípio</th><th>O que significa na prática</th></tr>\n    <tr><td><b>Integridade e honestidade</b></td><td>Não mentir, não omitir o que é relevante, não fazer promessa de resultado.</td></tr>\n    <tr><td><b>Lealdade</b></td><td>Colocar o interesse do cliente acima do próprio e do da instituição.</td></tr>\n    <tr><td><b>Diligência e competência</b></td><td>Analisar antes de decidir, documentar, manter-se atualizado. O padrão é o cuidado que uma pessoa prudente teria com os próprios negócios.</td></tr>\n    <tr><td><b>Transparência</b></td><td>Informar riscos, custos, remunerações indiretas (rebates) e conflitos de interesse.</td></tr>\n    <tr><td><b>Equidade</b></td><td>Tratar todos os clientes de forma justa: nenhum cliente ou fundo é favorecido em detrimento de outro.</td></tr>\n    <tr><td><b>Confidencialidade</b></td><td>Guardar sigilo sobre dados e operações dos clientes, inclusive depois de sair da instituição.</td></tr>\n    <tr><td><b>Independência e objetividade</b></td><td>Não deixar presentes, pressões comerciais ou relações pessoais influenciarem a decisão de investimento.</td></tr>\n    <tr><td><b>Cumprimento das normas</b></td><td>Conhecer e cumprir as leis, a regulação da CVM e do Banco Central, a autorregulação e as políticas internas.</td></tr>\n  </table></div>\n\n  <h3>Conflitos de interesse</h3>\n  <ul>\n    <li><b>Conflito de interesse</b> é a situação em que o interesse do profissional ou da instituição pode afastar a decisão do melhor interesse do cliente. Exemplos: aplicar em fundos da própria casa por causa da taxa, receber rebate de um distribuidor, operar a carteira pessoal nos mesmos ativos dos clientes.</li>\n    <li>A ordem de tratamento é: <b>evitar</b> quando possível; se não for possível, <b>mitigar</b> (barreiras, políticas, aprovação do compliance) e <b>divulgar</b> ao cliente.</li>\n    <li>Ferramentas usuais: política de investimentos pessoais, política de presentes e entretenimento, <b>segregação de atividades</b> (a chamada <i>chinese wall</i>, barreira de informação entre gestão de recursos e áreas como banco de investimento ou tesouraria) e política de rateio de ordens.</li>\n  </ul>\n\n  <h3>Dever fiduciário</h3>\n  <p>Quem administra recursos de terceiros tem <b>dever fiduciário</b>: uma relação de confiança em que o profissional deve agir no <b>melhor interesse do cliente</b>. Ele tem dois componentes:</p>\n  <ul>\n    <li><b>Dever de lealdade:</b> pôr o interesse do cliente em primeiro lugar, evitar ou divulgar conflitos, não obter vantagem indevida às custas do cliente.</li>\n    <li><b>Dever de cuidado (diligência):</b> decidir com análise, prudência e conhecimento, respeitar a política de investimento e o perfil do cliente, acompanhar os investimentos.</li>\n  </ul>\n  <p>O dever fiduciário é o que dá credibilidade à indústria. Sem ele, o investidor não teria por que entregar a gestão do seu patrimônio a terceiros. Ele <b>não</b> é uma promessa de resultado: um gestor diligente e leal pode perder dinheiro; o que ele não pode é perder por negligência ou por favorecer interesses próprios.</p>\n  <div class=\"ex\"><span class=\"lbl\">Caso: front running</span>\n    <p>Um operador recebe ordem para comprar um lote grande de uma ação para vários fundos. Antes de executar, compra a mesma ação na conta pessoal, sabendo que a ordem dos fundos vai pressionar o preço. Isso é <b>front running</b>: ele usa a informação da ordem do cliente em benefício próprio. Viola o dever de lealdade e a política de investimentos pessoais, e pode configurar ilícito.</p>\n  </div>\n\n  <h3>Uso ético das informações</h3>\n  <p><b>Informação privilegiada</b> é a informação <b>relevante</b> (capaz de influenciar o preço ou a decisão dos investidores) e <b>ainda não divulgada</b> ao mercado. A regra é simples: quem tem informação privilegiada <b>não negocia e não repassa</b>.</p>\n  <div class=\"formula\"><span class=\"lbl\">Insider trading (Lei 6.385/76, art. 27-D)</span>Crime: usar informação relevante ainda não divulgada, capaz de gerar vantagem indevida, negociando valores mobiliários<br>Pena: reclusão de 1 a 5 anos + multa de até 3 vezes a vantagem ilícita obtida<br>Também incorre na mesma pena quem REPASSA informação sigilosa obtida por cargo ou relação com o emissor<br>Pena aumentada em 1/3 se o agente tinha dever de sigilo</div>\n  <ul>\n    <li>Desde a Lei 13.506/2017, o crime alcança <b>qualquer pessoa</b> que use a informação, não só os administradores do emissor. Ouvir sem querer uma conversa no elevador não autoriza negociar.</li>\n    <li>No plano administrativo, a <b>Resolução CVM 44/2021</b> trata da divulgação de fato relevante e da vedação à negociação. Um exemplo de regra: os administradores, controladores e a companhia não podem negociar nos <b>15 dias</b> anteriores à divulgação das informações trimestrais (ITR) e anuais (DFP).</li>\n    <li><b>Teoria do mosaico:</b> o analista pode juntar informações públicas com informações não públicas <b>não relevantes</b> e chegar a uma conclusão relevante. Isso é análise legítima, não insider trading.</li>\n  </ul>\n\n  <h3>Manipulação de mercado e outras práticas vedadas</h3>\n  <div class=\"formula\"><span class=\"lbl\">Manipulação de mercado (Lei 6.385/76, art. 27-C)</span>Crime: realizar operações simuladas ou manobras fraudulentas para alterar artificialmente o funcionamento do mercado, com o fim de obter vantagem indevida ou causar dano<br>Pena: reclusão de 1 a 8 anos + multa de até 3 vezes a vantagem ilícita obtida</div>\n  <p>A <b>Resolução CVM 62/2022</b> veda, no plano administrativo, quatro práticas:</p>\n  <div class=\"tbl\"><table>\n    <tr><th>Prática vedada</th><th>Exemplo</th></tr>\n    <tr><td><b>Condições artificiais de demanda, oferta ou preço</b></td><td>Negócios entre contas do mesmo grupo para simular liquidez (<i>wash trade</i>); ofertas que não se pretende executar para atrair outros investidores (<i>spoofing</i>, <i>layering</i>).</td></tr>\n    <tr><td><b>Manipulação de preços</b></td><td>Comprar pequenos lotes no fechamento do último dia do mês para inflar o preço e a cota do fundo (<i>marking the close</i>).</td></tr>\n    <tr><td><b>Operação fraudulenta</b></td><td>Usar ardil ou artifício para induzir terceiros a erro, como divulgar boato falso para derrubar uma ação.</td></tr>\n    <tr><td><b>Prática não equitativa</b></td><td>Colocar uma parte em posição de desequilíbrio indevido, como transferir operações lucrativas de um fundo para a conta do gestor.</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Insider trading é uso de <i>informação</i>; manipulação é atuação para mexer artificialmente no <i>preço ou no volume</i>. Front running usa a informação da <i>ordem do cliente</i>, não um fato relevante do emissor. E informação recebida \"por acaso\" continua proibida de ser usada.</div>"
+  },
+  {
+   "id": "t112",
+   "rotulo": "11.2 Aspectos ASG (Ambiental, Social e Governança)",
+   "html": "<div class=\"num\">11.2</div>\n  <h2>Aspectos ASG (Ambiental, Social e Governança)</h2>\n  <p class=\"why\">Riscos ambientais, sociais e de governança viram risco financeiro: multas, perda de licença, processos, perda de clientes, custo de capital mais alto. Por isso entram na análise de investimentos.</p>\n\n  <h3>Os três pilares e como afetam o desempenho</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Pilar</th><th>Temas típicos</th><th>Como chega ao resultado da empresa</th></tr>\n    <tr><td><b>Ambiental (A)</b></td><td>Mudança climática e emissões de gases de efeito estufa, uso de água, resíduos, desmatamento, biodiversidade, poluição</td><td>Multas e passivos ambientais, custo de carbono, perda de licença de operação, ativos que perdem valor (\"encalhados\"), mas também oportunidades (energia limpa, eficiência)</td></tr>\n    <tr><td><b>Social (S)</b></td><td>Condições de trabalho, saúde e segurança, direitos humanos na cadeia de fornecedores, diversidade, relação com comunidades, privacidade de dados, relação com clientes</td><td>Processos trabalhistas, greves, boicotes, perda de reputação, dificuldade de atrair talentos</td></tr>\n    <tr><td><b>Governança (G)</b></td><td>Conselho com membros independentes, direitos dos minoritários, transações com partes relacionadas, remuneração dos executivos, auditoria e controles, ética e anticorrupção</td><td>Desvios, fraudes, expropriação de minoritários, decisões ruins de alocação de capital. Boa governança tende a reduzir o custo de capital</td></tr>\n  </table></div>\n  <ul>\n    <li><b>Riscos climáticos</b> se dividem em <b>físicos</b> (eventos extremos, secas, enchentes, mudanças de longo prazo no clima) e de <b>transição</b> (novas leis, taxação de carbono, mudança tecnológica e de preferência dos consumidores rumo a uma economia de baixo carbono).</li>\n    <li><b>Emissões:</b> escopo 1 são as diretas da empresa; escopo 2, as indiretas pela energia comprada; escopo 3, as demais indiretas da cadeia de valor (fornecedores e uso dos produtos vendidos).</li>\n    <li>Na governança brasileira, os segmentos especiais da B3 (Novo Mercado, Nível 2, Nível 1) exigem práticas além da lei. O Novo Mercado, por exemplo, admite só ações ordinárias.</li>\n  </ul>\n\n  <h3>Investimento ASG, responsável e sustentável</h3>\n  <p><b>Investimento responsável</b> é o que considera fatores ASG junto com os financeiros, para gerir risco e gerar retorno sustentável de longo prazo. As principais estratégias:</p>\n  <div class=\"tbl\"><table>\n    <tr><th>Estratégia</th><th>Como funciona</th></tr>\n    <tr><td><b>Exclusão</b> (filtro negativo)</td><td>Exclui setores ou empresas (armas, tabaco, carvão) ou condutas (trabalho escravo).</td></tr>\n    <tr><td><b>Filtro positivo / best-in-class</b></td><td>Escolhe as empresas com melhor desempenho ASG de cada setor.</td></tr>\n    <tr><td><b>Integração ASG</b></td><td>Inclui os fatores ASG na análise fundamentalista (fluxo de caixa, taxa de desconto, risco), sem necessariamente excluir nada.</td></tr>\n    <tr><td><b>Engajamento e voto (stewardship)</b></td><td>Usa a posição de acionista para dialogar com a empresa e votar em assembleia por melhorias.</td></tr>\n    <tr><td><b>Investimento temático</b></td><td>Foca em temas como energia renovável, água, saneamento.</td></tr>\n    <tr><td><b>Investimento de impacto</b></td><td>Tem a <b>intenção</b> de gerar impacto socioambiental positivo e <b>mensurável</b>, junto com retorno financeiro.</td></tr>\n  </table></div>\n  <p>Na autorregulação, a ANBIMA distingue as classes que têm <b>objetivo de investimento sustentável</b> (identificadas com o sufixo \"IS\") das que apenas <b>integram questões ASG</b> na gestão. Usar termos como \"ASG\" ou \"sustentável\" no nome exige que a política de investimento e a divulgação de fato reflitam isso. O uso enganoso desses rótulos é o <b>greenwashing</b>.</p>\n\n  <h3>Referências para relatar sustentabilidade</h3>\n  <div class=\"tbl\"><table>\n    <tr><th>Referência</th><th>Origem</th><th>Foco</th></tr>\n    <tr><td><b>GRI</b> (Global Reporting Initiative)</td><td>Organização independente, 1997</td><td>Os <b>impactos</b> da empresa na economia, no meio ambiente e nas pessoas, para <b>todos os públicos</b> (stakeholders). É a referência mais usada em relatórios de sustentabilidade.</td></tr>\n    <tr><td><b>SASB</b> (Sustainability Accounting Standards Board)</td><td>EUA, 2011; hoje sob a Fundação IFRS</td><td>Temas ASG <b>financeiramente materiais</b>, com padrões <b>por setor</b>, pensados para o <b>investidor</b>.</td></tr>\n    <tr><td><b>TCFD</b> (Task Force on Climate-related Financial Disclosures)</td><td>Criada pelo FSB (G20) em 2015; recomendações de 2017</td><td>Riscos e oportunidades <b>climáticos</b>, em <b>4 pilares</b>: governança, estratégia, gestão de riscos, métricas e metas.</td></tr>\n  </table></div>\n  <p>As recomendações do TCFD e os padrões SASB foram incorporados pelo ISSB (da Fundação IFRS) nas normas IFRS S1 e S2. No Brasil, a Resolução CVM 193/2023 trouxe essas normas para o relatório de sustentabilidade das companhias abertas.</p>\n\n  <h3>PRI: Princípios para o Investimento Responsável</h3>\n  <p>Iniciativa de investidores lançada em <b>2006</b> com apoio da ONU (UNEP FI e Pacto Global). A adesão é <b>voluntária</b>; o signatário se compromete com seis princípios e reporta anualmente seu progresso.</p>\n  <ol>\n    <li>Incorporar as questões ASG às análises de investimento e aos processos de decisão.</li>\n    <li>Ser proprietários ativos e incorporar as questões ASG às políticas e práticas de propriedade (voto e engajamento).</li>\n    <li>Buscar divulgação adequada de questões ASG pelas entidades investidas.</li>\n    <li>Promover a aceitação e a implementação dos Princípios no setor de investimentos.</li>\n    <li>Trabalhar em conjunto para ampliar a eficácia na implementação dos Princípios.</li>\n    <li>Relatar as atividades e o progresso na implementação dos Princípios.</li>\n  </ol>\n\n  <h3>Os 17 ODS</h3>\n  <p>Os <b>Objetivos de Desenvolvimento Sustentável</b> são <b>17 objetivos</b> e <b>169 metas</b> da <b>Agenda 2030</b>, aprovada pela ONU em 2015 (sucedem os 8 Objetivos de Desenvolvimento do Milênio).</p>\n  <div class=\"tbl\"><table>\n    <tr><td>1 Erradicação da pobreza</td><td>2 Fome zero e agricultura sustentável</td><td>3 Saúde e bem-estar</td></tr>\n    <tr><td>4 Educação de qualidade</td><td>5 Igualdade de gênero</td><td>6 Água potável e saneamento</td></tr>\n    <tr><td>7 Energia limpa e acessível</td><td>8 Trabalho decente e crescimento econômico</td><td>9 Indústria, inovação e infraestrutura</td></tr>\n    <tr><td>10 Redução das desigualdades</td><td>11 Cidades e comunidades sustentáveis</td><td>12 Consumo e produção responsáveis</td></tr>\n    <tr><td>13 Ação contra a mudança global do clima</td><td>14 Vida na água</td><td>15 Vida terrestre</td></tr>\n    <tr><td>16 Paz, justiça e instituições eficazes</td><td>17 Parcerias e meios de implementação</td><td></td></tr>\n  </table></div>\n  <p><b>Uso na análise:</b> o analista mapeia receitas, investimentos e impactos da empresa contra os ODS (ex.: uma empresa de saneamento contribui para o ODS 6) e o fundo pode reportar a contribuição da carteira para cada objetivo. O cuidado é não declarar alinhamento só pelo setor, sem medir o impacto.</p>\n\n  <h3>Código Brasileiro de Stewardship</h3>\n  <ul>\n    <li>Lançado em <b>2016</b> pela <b>AMEC</b> (Associação de Investidores no Mercado de Capitais), para <b>investidores institucionais</b>: proprietários de recursos (fundos de pensão, seguradoras) e gestores.</li>\n    <li><b>Objetivo:</b> que esses investidores exerçam de forma responsável seu papel de donos (<i>stewardship</i>), monitorando e engajando as investidas para gerar <b>valor de longo prazo</b>.</li>\n    <li>Funciona no regime <b>\"aplique ou explique\"</b>: o signatário aplica os princípios ou explica por que não aplica.</li>\n  </ul>\n  <div class=\"formula\"><span class=\"lbl\">Os 7 princípios</span>1. Implementar e divulgar um programa de stewardship<br>2. Implementar e divulgar mecanismos de gerenciamento de conflitos de interesse<br>3. Considerar aspectos ASG nos processos de investimento e nas atividades de stewardship<br>4. Monitorar os emissores investidos<br>5. Ser ativo e diligente no exercício do direito de voto<br>6. Definir critérios de engajamento coletivo<br>7. Ser transparente quanto às atividades de stewardship</div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>GRI olha o impacto da empresa <i>no mundo</i>, para todos os públicos; SASB olha o que é <i>financeiramente material</i> para o investidor, por setor. O PRI é de 2006 e tem 6 princípios; o Código de Stewardship é da AMEC, de 2016, tem 7 princípios e é \"aplique ou explique\". Nenhum deles é lei.</div>"
+  },
+  {
+   "id": "t113",
+   "rotulo": "11.3 Código ANBIMA de Certificação",
+   "html": "<div class=\"num\">11.3</div>\n  <h2>Código ANBIMA de Certificação</h2>\n  <p class=\"why\">Define quem precisa de qual certificação, como ela é obtida e mantida, e que conduta se espera de quem a tem.</p>\n\n  <h3>Definições (Capítulo I)</h3>\n  <ul>\n    <li><b>Instituições Participantes:</b> as associadas à ANBIMA e as que aderem voluntariamente ao Código. Ficam obrigadas a seguir suas regras.</li>\n    <li><b>Profissionais elegíveis:</b> os que exercem as atividades para as quais o Código exige certificação (distribuição de produtos, gestão de recursos de terceiros e outras).</li>\n    <li><b>Banco de Dados ANBIMA:</b> sistema em que as instituições registram e atualizam os vínculos e a situação de certificação de seus profissionais.</li>\n    <li><b>Certificações:</b> exames que atestam a capacitação, como as de distribuição e as de gestão. Na gestão: <b>CFG</b> (fundamentos), <b>CGA</b> (gestão de recursos de fundos líquidos e carteiras) e <b>CGE</b> (gestão de fundos estruturados).</li>\n  </ul>\n\n  <h3>Objetivo e abrangência (Capítulo II)</h3>\n  <ul>\n    <li><b>Objetivo:</b> elevar a qualificação e a capacitação técnica dos profissionais, contribuindo para a qualidade e a credibilidade do mercado.</li>\n    <li><b>Abrangência:</b> as Instituições Participantes e seus profissionais que exercem atividades elegíveis. A instituição é responsável por garantir que só profissionais certificados exerçam essas atividades.</li>\n  </ul>\n\n  <h3>Princípios gerais de conduta (Capítulo IV)</h3>\n  <p>O profissional certificado deve, em relação ao <b>mercado</b> e à <b>instituição</b> em que atua:</p>\n  <ul>\n    <li>conhecer e cumprir a regulação, a autorregulação e as normas internas da instituição;</li>\n    <li>agir com <b>boa-fé, lealdade, diligência e transparência</b>, com o cuidado que uma pessoa prudente dedica aos próprios negócios;</li>\n    <li>adotar conduta compatível com a <b>idoneidade moral e profissional</b> e zelar pela imagem da instituição e do mercado;</li>\n    <li>não usar informação privilegiada nem obter vantagem indevida; guardar sigilo;</li>\n    <li>evitar práticas que possam prejudicar a relação de confiança com os investidores;</li>\n    <li>informar à instituição situações de conflito de interesse e irregularidades de que tenha conhecimento.</li>\n  </ul>\n\n  <h3>Certificação de gestores de recursos de terceiros (Capítulo VIII, Seção II)</h3>\n  <div class=\"formula\"><span class=\"lbl\">Regras-chave da CGA</span>Quem precisa: profissionais com ALÇADA ou PODER DISCRICIONÁRIO de decisão de investimento (comprar e vender ativos) na gestão de recursos de terceiros<br>Como obter: aprovação na CFG (fundamentos) + prova específica da CGA<br>Validade: INDETERMINADA enquanto o profissional atua na gestão em Instituição Participante<br>Ao deixar a atividade: a validade passa a ter prazo limitado, contado nos termos das regras; sem retorno à atividade ou atualização nesse prazo, a certificação vence</div>\n  <ul>\n    <li>A <b>instituição</b> precisa manter atualizado no Banco de Dados ANBIMA o vínculo e a atividade de cada profissional, porque é isso que sustenta a validade indeterminada.</li>\n    <li>Profissional sem a certificação exigida <b>não pode</b> exercer a atividade elegível: a instituição deve afastá-lo dela até que se certifique.</li>\n    <li><b>Perda da certificação:</b> além do vencimento da validade, a certificação pode ser suspensa ou cancelada por decisão da ANBIMA em caso de descumprimento do Código (por exemplo, fraude no exame ou conduta incompatível com os princípios), sem prejuízo das penalidades à instituição.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso</span>\n    <p>Uma gestora contrata um analista que vai passar a decidir compras e vendas de um fundo multimercado, mas ele ainda não tem a CGA. Ele pode trabalhar como analista, sem alçada, enquanto se prepara. Dar a ele a decisão de investimento antes da certificação descumpre o Código, e a responsabilidade é da instituição.</p>\n  </div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>O que exige CGA é ter <i>poder de decisão</i> sobre o investimento, não o cargo ou o título. Um analista que só recomenda, sem alçada, não precisa dela; um \"analista\" que de fato decide, precisa.</div>"
+  },
+  {
+   "id": "t114",
+   "rotulo": "11.4 Regulação e melhores práticas",
+   "html": "<div class=\"num\">11.4</div>\n  <h2>Regulação e melhores práticas</h2>\n  <p class=\"why\">Os códigos ANBIMA que regem ofertas públicas, fundos, carteiras, gestão de patrimônio e serviços qualificados. É o maior bloco do tema; o foco da prova está em quem faz o quê e no que é vedado.</p>\n\n  <h3>Código de Ofertas Públicas</h3>\n  <ul>\n    <li><b>Objetivo e abrangência (Cap. I):</b> estabelecer princípios e regras para a atuação das Instituições Participantes nas <b>ofertas públicas</b> de valores mobiliários, em especial como <b>coordenadoras</b>, para elevar a qualidade e a transparência das ofertas. Complementa a regulação da CVM (Resolução CVM 160).</li>\n    <li><b>Princípios gerais (Cap. III):</b> boa-fé, transparência, diligência e lealdade; cumprir as obrigações com o investidor; fazer <b>diligência</b> (<i>due diligence</i>) para que as informações do emissor sejam verdadeiras, consistentes e suficientes; evitar e divulgar conflitos de interesse.</li>\n    <li><b>Documentos da oferta (Cap. XIII e Regras):</b> o <b>prospecto</b> (documento completo, com a seção de <b>fatores de risco</b>) e a <b>lâmina</b> (resumo padronizado das características essenciais), além de aviso ao mercado, anúncio de início e anúncio de encerramento. Devem ter linguagem clara e informação suficiente para a decisão.</li>\n    <li><b>Publicidade (Cap. XII e Cap. VI das Regras):</b> o material deve ser <b>consistente com os documentos da oferta</b>, não pode prometer rentabilidade, nem omitir ou minimizar riscos, e deve remeter o investidor ao prospecto e à lâmina, com destaque para os fatores de risco.</li>\n    <li><b>Regras gerais e registro (Cap. III e VII das Regras):</b> as ofertas coordenadas por Instituições Participantes devem ser <b>registradas na ANBIMA</b>, com envio dos documentos e informações nos prazos previstos, alimentando a base de dados de ofertas. O registro na ANBIMA não substitui nem equivale ao registro na CVM.</li>\n  </ul>\n\n  <h3>Código de Administração e Gestão de Recursos de Terceiros</h3>\n  <p>Vigente desde a adaptação à <b>Resolução CVM 175</b>. Vem acompanhado das <b>Regras e Procedimentos</b>, divididas em anexos: Gestão de Patrimônio Financeiro (Anexo I), Carteiras Administradas (Anexo II), regras comuns a todos os fundos (Anexo III) e FIF, os fundos de investimento financeiro (Anexo IV).</p>\n  <ul>\n    <li><b>Objetivo e abrangência (Cap. I):</b> regras para as Instituições Participantes que exercem <b>administração fiduciária</b>, <b>gestão de recursos de terceiros</b> (fundos e carteiras administradas) e <b>gestão de patrimônio financeiro</b>.</li>\n    <li><b>Princípios gerais de conduta (Cap. III):</b> exercer a atividade com boa-fé, transparência, diligência e lealdade; buscar o melhor interesse dos investidores; tratá-los com <b>equidade</b>; evitar e divulgar conflitos de interesse; não fazer promessa de resultado; respeitar a política de investimento e os limites; não praticar atos que ponham em risco a relação fiduciária.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Consistente com os princípios</th><th>Inconsistente com os princípios</th></tr>\n    <tr><td>Divulgar ao investidor que o gestor recebe rebate de fundos investidos</td><td>Escolher o fundo investido pelo rebate, sem vantagem para o cotista</td></tr>\n    <tr><td>Ratear uma ordem agrupada pelo critério previsto na política</td><td>Dar o melhor preço ao fundo que paga taxa de performance</td></tr>\n    <tr><td>Recusar ativo de empresa ligada que não cabe na política da classe</td><td>Comprar papel do próprio grupo para ajudar o caixa do grupo</td></tr>\n    <tr><td>Informar o desenquadramento e reenquadrar</td><td>Esconder o desenquadramento até o fim do mês</td></tr>\n  </table></div>\n\n  <h3>Prestadores de serviços essenciais (Resolução CVM 175)</h3>\n  <div class=\"tbl\"><table>\n    <tr><th></th><th>Administrador fiduciário</th><th>Gestor de recursos</th></tr>\n    <tr><td>Papel</td><td>Constitui o fundo, faz o registro, cuida da estrutura operacional e da informação, calcula a cota e fiscaliza os demais prestadores</td><td>Toma as <b>decisões de investimento</b>: compra, vende, exerce o voto, gere riscos e liquidez da carteira</td></tr>\n    <tr><td>Contrata, em nome do fundo</td><td>Custódia, controladoria e processamento de ativos, escrituração de cotas, tesouraria, auditoria independente</td><td>Intermediação (corretoras), distribuição de cotas, consultoria, classificação de risco, formador de mercado, cogestão</td></tr>\n    <tr><td>Em comum</td><td colspan=\"2\">Cada um responde pelos <b>próprios atos</b>; não há solidariedade presumida entre eles. Ambos têm deveres de diligência, de gestão de liquidez e de cumprimento da política e dos limites.</td></tr>\n  </table></div>\n\n  <h3>Rateio de ordens e crédito privado (gestor)</h3>\n  <ul>\n    <li><b>Rateio e divisão de ordens:</b> quando o gestor agrupa ordens de vários veículos, deve ratear os negócios por <b>critério equitativo, prévio, formalizado e verificável</b> (por exemplo, proporcional ao tamanho de cada ordem a preço médio). A política deve estar por escrito, e o compliance deve poder conferir o rateio.</li>\n    <li><b>Crédito privado:</b> antes de comprar, o gestor deve fazer <b>análise própria</b> do emissor (capacidade de pagamento, setor, governança), das garantias (existência, valor, exequibilidade) e das cláusulas (covenants). O rating de agência é insumo, <b>não substitui</b> a análise. Depois da compra, deve <b>monitorar</b> o ativo continuamente e documentar o processo. Se faltar informação suficiente, não deve comprar.</li>\n  </ul>\n  <div class=\"ex\"><span class=\"lbl\">Caso: rateio</span>\n    <p>O gestor compra 100 mil ações para três fundos em vários negócios, a preços entre R$ 10,00 e R$ 10,40. Pela política, cada fundo recebe sua parte a <b>preço médio</b>. Ele não pode dar os lotes a R$ 10,00 ao fundo com taxa de performance e os de R$ 10,40 a um fundo exclusivo: isso fere a equidade entre cotistas.</p>\n  </div>\n\n  <h3>Gestão de patrimônio financeiro (Anexo I)</h3>\n  <ul>\n    <li>É a gestão do patrimônio financeiro de um investidor (ou família) com <b>atendimento personalizado</b>, alocando os recursos em diferentes veículos e ativos de acordo com uma política individual.</li>\n    <li>Exige um <b>documento de política de investimento</b> do cliente (objetivos, horizonte, perfil de risco, restrições, limites) e um <b>contrato</b> formal antes de começar.</li>\n    <li>O cliente deve receber informações periódicas: posição, rentabilidade, custos e as <b>remunerações</b> que o gestor recebe, inclusive as indiretas.</li>\n  </ul>\n\n  <h3>Carteira administrada (Anexo II)</h3>\n  <ul>\n    <li>Gestão <b>discricionária</b> de uma carteira de valores mobiliários de um investidor, feita por gestor autorizado pela CVM. Os ativos ficam <b>em nome do cliente</b>, não há fundo nem cotas.</li>\n    <li>Exige <b>contrato</b> com conteúdo mínimo: política de investimento e limites, riscos, remuneração e forma de cálculo, informações a enviar e periodicidade, regras sobre aplicação em ativos e fundos ligados ao gestor, prazo e condições de rescisão.</li>\n    <li>Os ativos devem respeitar o contrato e o perfil do cliente. Na <b>publicidade</b>, a rentabilidade divulgada não pode induzir a erro: deve informar período e critério, e trazer o aviso de que rentabilidade passada não garante rentabilidade futura.</li>\n  </ul>\n\n  <h3>Risco, liquidez e limites</h3>\n  <ul>\n    <li><b>Gestão de risco:</b> o gestor deve ter <b>política de gestão de riscos</b> escrita, estrutura e um diretor responsável. Pela Resolução CVM 21, o diretor de risco pode acumular a função de compliance, mas <b>não</b> a de gestão. Os processos, métricas, limites e testes de estresse devem ser documentados.</li>\n    <li><b>Gestão de liquidez:</b> vale para as <b>classes abertas</b>. O gestor (principal responsável) e o administrador devem compatibilizar a liquidez dos ativos com o prazo de resgate e o perfil do passivo (concentração de cotistas, comportamento de resgates), com política documentada, testes de estresse periódicos e monitoramento.</li>\n    <li><b>Limites e enquadramento:</b> o gestor responde por respeitar os limites de composição e concentração ao investir; o administrador fiscaliza. No desenquadramento <b>passivo</b> (causado por fatos alheios ao gestor, como resgates ou variação de preços), o gestor deve reenquadrar a carteira; no desenquadramento <b>ativo</b> (por decisão de compra), há infração.</li>\n    <li>Pela CVM 175, a classe que pode aplicar mais de 50% do patrimônio em ativos de crédito privado deve trazer \"Crédito Privado\" no nome.</li>\n  </ul>\n\n  <h3>Apreçamento e provisão</h3>\n  <ul>\n    <li><b>Por que apreçar:</b> a cota precisa refletir o <b>valor justo</b> dos ativos para que nenhum cotista que entra ou sai ganhe às custas dos outros (<b>evitar transferência de riqueza</b>).</li>\n    <li>É obrigatório para todos os ativos dos veículos. A <b>área de apreçamento deve ser independente da gestão</b>, e o processo deve seguir um <b>manual de apreçamento</b> com fontes, metodologias, critérios para ativos sem negócios e estrutura de governança (comitê).</li>\n    <li><b>Princípios:</b> formalismo, abrangência, melhores práticas, comprometimento, equidade, objetividade, consistência, frequência e transparência.</li>\n    <li><b>Critérios por ativo:</b> renda fixa com preços e taxas de mercado (como as taxas indicativas da ANBIMA para títulos públicos e debêntures) ou modelo quando não houver negócios; renda variável pelo preço de fechamento ou modelo, se ilíquida; derivativos por preços de bolsa ou modelos; ativos no exterior por fontes de preço confiáveis, atentando para fuso horário e câmbio; cotas de outras classes pela cota divulgada.</li>\n    <li><b>Provisão de perdas de direitos creditórios:</b> deve seguir metodologia formal, baseada na perda esperada e revista com frequência, para que a cota não fique inflada por créditos que não serão recebidos.</li>\n  </ul>\n\n  <h3>Risco de capital e fundos de investimento (Caps. XII e XIII)</h3>\n  <ul>\n    <li><b>Risco de capital:</b> a classe que usa estratégias que podem gerar perdas maiores que o patrimônio (derivativos alavancados, venda a descoberto) expõe o cotista a ter de <b>aportar recursos adicionais</b>, se a responsabilidade for ilimitada. Isso deve estar claramente informado nos documentos.</li>\n    <li><b>Responsabilidade dos cotistas:</b> a CVM 175 permite que o regulamento <b>limite a responsabilidade</b> do cotista ao valor subscrito. Nesse caso, se o patrimônio da classe ficar negativo, aplica-se o <b>regime de insolvência</b>: o administrador suspende resgates, comunica o mercado e leva aos cotistas um plano de resolução; eles podem decidir por aporte, cisão, liquidação ou pedido de <b>declaração judicial de insolvência</b>.</li>\n    <li><b>Operações de empréstimo</b> de ativos: permitidas nos limites do regulamento e da regulação, com garantias e controle de risco de contraparte.</li>\n    <li><b>Documentos:</b> regulamento, anexo da classe, apêndice da subclasse, lâmina, termo de adesão e ciência de risco, demonstrações contábeis. O administrador fiduciário responde pela elaboração e divulgação, com informações do gestor.</li>\n    <li><b>Registro na ANBIMA:</b> o administrador fiduciário registra fundos, classes e subclasses na ANBIMA e mantém os dados atualizados.</li>\n  </ul>\n\n  <h3>Remuneração (Anexo III)</h3>\n  <ul>\n    <li>As taxas de administração, gestão, distribuição e <b>performance</b> devem ser divulgadas de forma clara, inclusive a taxa total que o investidor paga.</li>\n    <li><b>Performance:</b> índice de referência compatível com a política da classe; não pode ser cobrada sobre percentual inferior a 100% do índice; respeita a <b>linha d'água</b> (só cobra se a cota superar o valor da última cobrança).</li>\n  </ul>\n\n  <h3>Exercício de voto em assembleias</h3>\n  <ul>\n    <li>O <b>gestor</b> deve ter uma <b>política de exercício de direito de voto</b> escrita e pública, e votar no interesse dos cotistas, informando o teor e a justificativa dos votos.</li>\n    <li><b>Voto obrigatório</b> (exemplos): em ações, eleição de conselheiros, planos de opções, fusões, incorporações, cisões e mudanças de controle; em renda fixa, mudança de prazo, taxa, garantias e condições de pagamento; em cotas de fundos, mudança de política, de prestadores ou de taxas, fusão e liquidação.</li>\n    <li><b>Voto facultativo</b> (exemplos): assembleia em local de difícil acesso sem voto a distância; custo incompatível com a participação; participação total dos veículos do gestor <b>inferior a 5%</b> do ativo e nenhum veículo com <b>mais de 10%</b> de seu patrimônio nele; situação de conflito de interesse; informação insuficiente; ativos de emitentes no exterior.</li>\n  </ul>\n\n  <h3>FIF (Anexo IV)</h3>\n  <ul>\n    <li><b>Limites e enquadramento:</b> limites por emissor e por modalidade de ativo da CVM 175; o gestor enquadra, o administrador fiscaliza e comunica.</li>\n    <li><b>Investimento no exterior:</b> o gestor deve fazer <b>diligência</b> sobre o ativo, o veículo e o gestor estrangeiro (supervisão por regulador, custódia, auditoria, liquidez) e monitorar; o administrador deve ter estrutura para verificar que as regras são cumpridas.</li>\n    <li><b>Classificação de risco:</b> o gestor classifica cada classe numa escala padronizada da ANBIMA, por metodologia documentada e revisada periodicamente, para facilitar a comparação pelo investidor.</li>\n    <li><b>Classificação ANBIMA de FIF:</b> o primeiro nível é a <b>classe de ativos</b> (Renda Fixa, Ações, Multimercados, Cambial, além dos Previdenciários); os níveis seguintes detalham o tipo de gestão e a estratégia (ex.: Renda Fixa Indexados; Ações Dividendos; Multimercados Macro, Long and Short, Juros e Moedas).</li>\n    <li><b>Publicidade:</b> material publicitário e técnico deve ser claro, verdadeiro e consistente com os documentos; comparações devem usar períodos e indicadores equivalentes; simulações devem ser identificadas como tal. Ao divulgar rentabilidade: período mínimo e histórico (mensal e acumulado), avisos obrigatórios (\"rentabilidade passada não é garantia de rentabilidade futura\", \"fundos não contam com garantia do FGC\") e <b>vedação</b> para classes com menos de <b>6 meses</b> de histórico.</li>\n  </ul>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Sob a CVM 175, quem contrata a corretora e o distribuidor é o <i>gestor</i>, não o administrador. E a responsabilidade entre os dois não é solidária: cada um responde pelos próprios atos.</div>\n\n  <h3>Código de Serviços Qualificados ao Mercado de Capitais</h3>\n  <ul>\n    <li><b>Objetivo e abrangência:</b> padrões para as Instituições Participantes que prestam serviços qualificados (custódia, controladoria, escrituração e afins), com princípios de diligência, segregação, confidencialidade, controles e continuidade de negócios.</li>\n  </ul>\n  <div class=\"tbl\"><table>\n    <tr><th>Serviço</th><th>O que faz</th></tr>\n    <tr><td><b>Administração de fundos</b></td><td>Responsável legal pelo fundo: constituição, registro, prestação de informações, fiscalização dos prestadores</td></tr>\n    <tr><td><b>Gestão de fundos</b></td><td>Decisão de investimento da carteira</td></tr>\n    <tr><td><b>Custódia qualificada</b></td><td>Guarda dos ativos, liquidação física e financeira das operações, tratamento de eventos (juros, dividendos, amortizações), conciliação das posições</td></tr>\n    <tr><td><b>Controladoria de ativos</b></td><td>Processamento da carteira: registro das operações, apreçamento, cálculo do patrimônio e da cota, controle de enquadramento</td></tr>\n    <tr><td><b>Controladoria de passivo</b></td><td>Controle dos cotistas: aplicações e resgates, saldos, cálculo e retenção de tributos</td></tr>\n  </table></div>\n  <div class=\"pegadinha\"><b>Pegadinha</b>Guardar os ativos e liquidar as operações é <i>custódia</i>. Calcular a cota é <i>controladoria</i>. Decidir o que comprar é <i>gestão</i>.</div>"
+  }
+ ],
+ "questoes": [
+  {
+   "id": "t11-1",
+   "subtema": "11.1",
+   "enunciado": "Um gestor janta com um amigo, diretor de uma companhia aberta, que comenta que a empresa vai anunciar na semana seguinte a compra de uma concorrente. A conduta adequada do gestor é:",
+   "alternativas": [
+    "Abster-se de negociar as ações e de repassar a informação, e comunicar o compliance da gestora",
+    "Comprar as ações apenas para fundos exclusivos, cujos cotistas aceitam mais risco",
+    "Negociar normalmente, já que não recebeu a informação em razão do cargo",
+    "Esperar dois dias e então comprar, para não caracterizar urgência"
+   ],
+   "correta": 0,
+   "explicacao": "É informação relevante ainda não divulgada. Quem a conhece não negocia (nem para si nem para clientes) e não repassa. Desde a Lei 13.506/2017, o crime alcança qualquer pessoa que use a informação, não só quem a obteve pelo cargo."
+  },
+  {
+   "id": "t11-2",
+   "subtema": "11.1",
+   "enunciado": "Pela Lei 6.385/76, o crime de uso indevido de informação privilegiada (insider trading) tem pena de:",
+   "alternativas": [
+    "Detenção de 6 meses a 2 anos, sem multa",
+    "Reclusão de 1 a 8 anos e multa de até 3 vezes a vantagem ilícita",
+    "Apenas multa administrativa aplicada pela CVM",
+    "Reclusão de 1 a 5 anos e multa de até 3 vezes a vantagem ilícita"
+   ],
+   "correta": 3,
+   "explicacao": "O art. 27-D prevê reclusão de 1 a 5 anos e multa de até 3 vezes a vantagem. A pena de 1 a 8 anos é a da manipulação de mercado (art. 27-C)."
+  },
+  {
+   "id": "t11-3",
+   "subtema": "11.1",
+   "enunciado": "O diretor financeiro de uma companhia aberta conta a um primo, antes da divulgação, que o resultado do trimestre virá muito acima do esperado. O primo compra ações. Em relação ao diretor, é correto afirmar que:",
+   "alternativas": [
+    "Não comete ilícito, pois não negociou",
+    "Só responde se tiver recebido parte do lucro",
+    "Pode responder pelo crime, pois repassar informação sigilosa obtida pelo cargo é punido com a mesma pena",
+    "Comete apenas falta disciplinar interna"
+   ],
+   "correta": 2,
+   "explicacao": "O §1º do art. 27-D pune com a mesma pena quem repassa informação sigilosa de fato relevante a que teve acesso pelo cargo ou relação com o emissor, ainda que não negocie."
+  },
+  {
+   "id": "t11-4",
+   "subtema": "11.1",
+   "enunciado": "No último pregão do mês, um gestor compra pequenos lotes de uma ação pouco líquida nos minutos finais, com o objetivo de elevar o preço de fechamento e, com isso, a cota do fundo. Essa conduta caracteriza:",
+   "alternativas": [
+    "Manipulação de preços",
+    "Insider trading",
+    "Front running",
+    "Prática legítima de gestão ativa"
+   ],
+   "correta": 0,
+   "explicacao": "Atuar para alterar artificialmente o preço de fechamento (marking the close) é manipulação de preços, vedada pela Resolução CVM 62 e crime pelo art. 27-C da Lei 6.385/76. Não há uso de informação privilegiada, por isso não é insider trading."
+  },
+  {
+   "id": "t11-5",
+   "subtema": "11.1",
+   "enunciado": "Um operador recebe a ordem de comprar um grande lote de ações para os fundos da gestora e, antes de executá-la, compra as mesmas ações na sua conta pessoal. Essa prática é chamada de:",
+   "alternativas": [
+    "Churning",
+    "Front running",
+    "Wash trade",
+    "Teoria do mosaico"
+   ],
+   "correta": 1,
+   "explicacao": "Front running é antecipar-se à ordem do cliente para lucrar com o impacto que ela terá no preço. Viola o dever de lealdade. Churning é giro excessivo da carteira; wash trade é negociar consigo mesmo para simular liquidez."
+  },
+  {
+   "id": "t11-6",
+   "subtema": "11.1",
+   "enunciado": "O dever fiduciário de quem administra recursos de terceiros envolve principalmente:",
+   "alternativas": [
+    "Garantir ao cliente rentabilidade mínima igual ao CDI",
+    "Seguir sempre a recomendação da área comercial",
+    "Priorizar os fundos que pagam maior remuneração à instituição",
+    "Lealdade (pôr o interesse do cliente em primeiro lugar) e cuidado (agir com diligência e prudência)"
+   ],
+   "correta": 3,
+   "explicacao": "O dever fiduciário tem os componentes de lealdade e de cuidado. Ele não é promessa de resultado: o gestor pode perder dinheiro sem violar o dever, desde que tenha agido com diligência e lealdade."
+  },
+  {
+   "id": "t11-7",
+   "subtema": "11.1",
+   "enunciado": "Um analista combina relatórios públicos, conversas com fornecedores sobre o volume de pedidos (informação não relevante isoladamente) e dados setoriais, e conclui que a empresa vai superar as expectativas. A recomendação baseada nessa conclusão:",
+   "alternativas": [
+    "É permitida, pela teoria do mosaico",
+    "Configura insider trading, pois usa informação não pública",
+    "Só pode ser feita após autorização da CVM",
+    "Configura manipulação de mercado"
+   ],
+   "correta": 0,
+   "explicacao": "Pela teoria do mosaico, juntar informações públicas com informações não públicas não relevantes é análise legítima. O ilícito seria usar informação relevante não divulgada."
+  },
+  {
+   "id": "t11-8",
+   "subtema": "11.1",
+   "enunciado": "Uma corretora com quem a gestora opera convida o gestor para uma viagem internacional com todas as despesas pagas, durante o período de revisão das corretoras aprovadas. A conduta mais adequada é:",
+   "alternativas": [
+    "Aceitar, pois a viagem não envolve dinheiro",
+    "Aceitar e retribuir com aumento do volume de ordens",
+    "Seguir a política de presentes e entretenimento, informar o compliance e, em regra, recusar um benefício que pode comprometer a independência",
+    "Aceitar desde que não conte aos colegas"
+   ],
+   "correta": 2,
+   "explicacao": "Presentes relevantes de quem depende das decisões do gestor geram conflito de interesse e ameaçam a independência. A política interna e o compliance devem ser seguidos; benefícios desse porte, em regra, são recusados."
+  },
+  {
+   "id": "t11-9",
+   "subtema": "11.1",
+   "enunciado": "Ao deixar a gestora, um profissional copia a lista de clientes com as posições de cada um para usar no novo emprego. Essa conduta viola principalmente o princípio da:",
+   "alternativas": [
+    "Diligência",
+    "Confidencialidade",
+    "Equidade",
+    "Objetividade"
+   ],
+   "correta": 1,
+   "explicacao": "Dados de clientes e de posições são sigilosos, e o dever de confidencialidade continua depois de o profissional deixar a instituição."
+  },
+  {
+   "id": "t11-10",
+   "subtema": "11.1",
+   "enunciado": "Um gestor ouve, sem querer, no elevador, dois executivos de uma companhia aberta discutindo uma oferta de compra ainda não anunciada. Ele pode usar essa informação para operar?",
+   "alternativas": [
+    "Sim, porque não tem relação com a companhia",
+    "Sim, desde que opere só para a carteira própria",
+    "Sim, se esperar a abertura do pregão seguinte",
+    "Não, porque continua sendo informação relevante não divulgada, e a forma como foi obtida não autoriza o uso"
+   ],
+   "correta": 3,
+   "explicacao": "A lei atual alcança qualquer pessoa que use informação relevante não divulgada para obter vantagem. A obtenção acidental não muda isso."
+  },
+  {
+   "id": "t11-11",
+   "subtema": "11.1",
+   "enunciado": "Em uma instituição que tem banco de investimento e gestora de recursos, a barreira de informação (chinese wall) entre as duas áreas serve para:",
+   "alternativas": [
+    "Impedir que informações privilegiadas obtidas pelo banco em operações com emissores cheguem aos gestores",
+    "Garantir que os gestores comprem as emissões coordenadas pelo banco",
+    "Permitir que as áreas compartilhem livremente informações de clientes",
+    "Substituir a política de investimentos pessoais"
+   ],
+   "correta": 0,
+   "explicacao": "A segregação de atividades evita que informações privilegiadas e conflitos de uma área contaminem as decisões de outra, protegendo os cotistas e a integridade do mercado."
+  },
+  {
+   "id": "t11-12",
+   "subtema": "11.1",
+   "enunciado": "Pela Resolução CVM 44, os administradores de uma companhia aberta estão impedidos de negociar suas ações no período que antecede a divulgação das informações trimestrais (ITR) e anuais (DFP) de:",
+   "alternativas": [
+    "5 dias",
+    "30 dias",
+    "15 dias",
+    "60 dias"
+   ],
+   "correta": 2,
+   "explicacao": "A Resolução CVM 44 veda a negociação nos 15 dias anteriores à divulgação do ITR e da DFP, período em que se presume que essas pessoas tenham acesso a informações ainda não divulgadas."
+  },
+  {
+   "id": "t11-13",
+   "subtema": "11.2",
+   "enunciado": "Uma nova lei estabelece taxação sobre as emissões de carbono, aumentando os custos de uma siderúrgica. Para a análise ASG, esse é um exemplo de:",
+   "alternativas": [
+    "Risco físico climático",
+    "Risco de transição climática",
+    "Risco de governança",
+    "Risco social"
+   ],
+   "correta": 1,
+   "explicacao": "Riscos de transição vêm da mudança para uma economia de baixo carbono: novas leis, taxação, tecnologia e preferências. Riscos físicos são os danos causados por eventos climáticos, como enchentes e secas."
+  },
+  {
+   "id": "t11-14",
+   "subtema": "11.2",
+   "enunciado": "As emissões de gases de efeito estufa geradas pelos fornecedores de uma empresa e pelo uso dos produtos que ela vende são classificadas como:",
+   "alternativas": [
+    "Escopo 1",
+    "Escopo 2",
+    "Escopo 3",
+    "Emissões evitadas"
+   ],
+   "correta": 2,
+   "explicacao": "Escopo 1 são as emissões diretas; escopo 2, as indiretas da energia comprada; escopo 3, as demais indiretas da cadeia de valor."
+  },
+  {
+   "id": "t11-15",
+   "subtema": "11.2",
+   "enunciado": "Uma fiscalização encontra trabalhadores em condições análogas à escravidão na cadeia de fornecedores de uma varejista, e as ações caem. Esse evento está ligado principalmente ao pilar:",
+   "alternativas": [
+    "Ambiental",
+    "Governança",
+    "Nenhum, pois envolve fornecedores e não a própria empresa",
+    "Social"
+   ],
+   "correta": 3,
+   "explicacao": "Condições de trabalho e direitos humanos na cadeia de fornecedores são temas sociais, que afetam a reputação, as vendas e geram passivos para a própria empresa."
+  },
+  {
+   "id": "t11-16",
+   "subtema": "11.2",
+   "enunciado": "Uma companhia tem conselho de administração formado só por pessoas ligadas ao controlador, faz grandes contratos com empresas da família controladora e não divulga a remuneração dos diretores. Os riscos descritos são de:",
+   "alternativas": [
+    "Governança",
+    "Ambiental",
+    "Social",
+    "Mercado"
+   ],
+   "correta": 0,
+   "explicacao": "Independência do conselho, transações com partes relacionadas e transparência da remuneração são temas de governança corporativa, que afetam o risco de expropriação dos minoritários e o custo de capital."
+  },
+  {
+   "id": "t11-17",
+   "subtema": "11.2",
+   "enunciado": "Um fundo de ações declara em sua política que não investe em empresas de armas, tabaco e carvão. Essa estratégia de investimento responsável é chamada de:",
+   "alternativas": [
+    "Integração ASG",
+    "Best-in-class",
+    "Exclusão (filtro negativo)",
+    "Investimento de impacto"
+   ],
+   "correta": 2,
+   "explicacao": "Excluir setores ou condutas é o filtro negativo. O best-in-class escolhe as melhores de cada setor; a integração inclui fatores ASG na análise sem necessariamente excluir."
+  },
+  {
+   "id": "t11-18",
+   "subtema": "11.2",
+   "enunciado": "O que caracteriza o investimento de impacto?",
+   "alternativas": [
+    "A exclusão de setores controversos",
+    "A intenção de gerar impacto socioambiental positivo e mensurável, junto com retorno financeiro",
+    "A abdicação de qualquer retorno financeiro",
+    "O investimento exclusivo em títulos públicos verdes"
+   ],
+   "correta": 1,
+   "explicacao": "Intencionalidade e mensuração do impacto são as marcas do investimento de impacto, que busca também retorno financeiro."
+  },
+  {
+   "id": "t11-19",
+   "subtema": "11.2",
+   "enunciado": "A referência de relato de sustentabilidade voltada aos impactos da organização na economia, no meio ambiente e nas pessoas, para todos os públicos interessados, é a:",
+   "alternativas": [
+    "GRI",
+    "SASB",
+    "TCFD",
+    "PRI"
+   ],
+   "correta": 0,
+   "explicacao": "A GRI foca nos impactos da empresa no mundo, para múltiplos stakeholders. O SASB foca nos temas financeiramente materiais para o investidor, por setor."
+  },
+  {
+   "id": "t11-20",
+   "subtema": "11.2",
+   "enunciado": "Uma gestora quer usar padrões de divulgação ASG específicos por setor, focados nos temas financeiramente materiais para investidores. A referência mais adequada é:",
+   "alternativas": [
+    "Os 17 ODS",
+    "O GRI",
+    "O SASB",
+    "O Código Brasileiro de Stewardship"
+   ],
+   "correta": 2,
+   "explicacao": "O SASB tem padrões por setor e foco na materialidade financeira para o investidor. Hoje está sob a Fundação IFRS e serve de base para as normas do ISSB."
+  },
+  {
+   "id": "t11-21",
+   "subtema": "11.2",
+   "enunciado": "As recomendações do TCFD para divulgação de riscos e oportunidades climáticos estão organizadas em quatro pilares:",
+   "alternativas": [
+    "Ambiental, social, governança e ética",
+    "Governança, estratégia, gestão de riscos, métricas e metas",
+    "Escopo 1, escopo 2, escopo 3 e compensação",
+    "Exclusão, integração, engajamento e impacto"
+   ],
+   "correta": 1,
+   "explicacao": "O TCFD, criado pelo FSB, organiza a divulgação em governança, estratégia, gestão de riscos e métricas e metas."
+  },
+  {
+   "id": "t11-22",
+   "subtema": "11.2",
+   "enunciado": "Sobre o PRI (Princípios para o Investimento Responsável), é correto afirmar:",
+   "alternativas": [
+    "É uma lei internacional que obriga gestores a excluir combustíveis fósseis",
+    "Foi criado pela ANBIMA em 2016 e tem 7 princípios",
+    "É uma iniciativa voluntária lançada em 2006 com apoio da ONU, com 6 princípios, e os signatários reportam seu progresso",
+    "Garante aos cotistas retorno mínimo em fundos sustentáveis"
+   ],
+   "correta": 2,
+   "explicacao": "O PRI, de 2006, tem apoio da UNEP FI e do Pacto Global, adesão voluntária e 6 princípios, entre eles incorporar ASG às análises e ser proprietário ativo. Os 7 princípios de 2016 são os do Código de Stewardship da AMEC."
+  },
+  {
+   "id": "t11-23",
+   "subtema": "11.2",
+   "enunciado": "Os Objetivos de Desenvolvimento Sustentável (ODS) da ONU são:",
+   "alternativas": [
+    "8 objetivos com prazo até 2015",
+    "17 objetivos e 169 metas da Agenda 2030",
+    "6 princípios de investimento responsável",
+    "4 pilares de divulgação climática"
+   ],
+   "correta": 1,
+   "explicacao": "Os ODS, aprovados em 2015, são 17 objetivos e 169 metas para 2030. Os 8 objetivos com prazo em 2015 eram os Objetivos de Desenvolvimento do Milênio."
+  },
+  {
+   "id": "t11-24",
+   "subtema": "11.2",
+   "enunciado": "O Código Brasileiro de Stewardship:",
+   "alternativas": [
+    "Foi lançado pela AMEC, é voltado a investidores institucionais e funciona no regime “aplique ou explique”",
+    "É obrigatório para todas as gestoras registradas na CVM",
+    "Trata apenas da divulgação de emissões de carbono pelas companhias",
+    "É o código da B3 para o segmento Novo Mercado"
+   ],
+   "correta": 0,
+   "explicacao": "Lançado pela AMEC em 2016, tem 7 princípios (programa de stewardship, conflitos de interesse, ASG, monitoramento, voto, engajamento coletivo e transparência) e é aplicado no regime aplique ou explique."
+  },
+  {
+   "id": "t11-25",
+   "subtema": "11.2",
+   "enunciado": "Uma gestora lança um fundo com “ASG” no nome, mas a política de investimento não traz nenhum critério socioambiental e a carteira é igual à de um fundo comum. Essa situação caracteriza:",
+   "alternativas": [
+    "Investimento de impacto",
+    "Integração ASG",
+    "Engajamento",
+    "Greenwashing, que contraria a transparência exigida pela regulação e pela autorregulação"
+   ],
+   "correta": 3,
+   "explicacao": "Usar rótulos sustentáveis sem que a gestão os reflita é greenwashing. A regulação e a ANBIMA exigem que a política e a divulgação sejam consistentes com o nome."
+  },
+  {
+   "id": "t11-26",
+   "subtema": "11.3",
+   "enunciado": "O objetivo do Código ANBIMA de Certificação é:",
+   "alternativas": [
+    "Elevar a qualificação e a capacitação técnica dos profissionais que atuam nas Instituições Participantes",
+    "Autorizar o funcionamento de gestoras de recursos",
+    "Substituir o registro dos profissionais na CVM",
+    "Definir a remuneração mínima dos profissionais de mercado"
+   ],
+   "correta": 0,
+   "explicacao": "O Código busca elevar a capacitação técnica dos profissionais, o que contribui para a qualidade e a credibilidade do mercado. A autorização de gestoras é da CVM."
+  },
+  {
+   "id": "t11-27",
+   "subtema": "11.3",
+   "enunciado": "Estão sujeitos ao Código ANBIMA de Certificação:",
+   "alternativas": [
+    "Apenas os bancos associados à ANBIMA",
+    "Todos os investidores pessoas físicas",
+    "As Instituições Participantes (associadas ou aderentes) e seus profissionais que exercem atividades elegíveis",
+    "Apenas as gestoras independentes"
+   ],
+   "correta": 2,
+   "explicacao": "A abrangência alcança as associadas e as instituições que aderem ao Código, e os profissionais que exercem as atividades para as quais o Código exige certificação."
+  },
+  {
+   "id": "t11-28",
+   "subtema": "11.3",
+   "enunciado": "Segundo o Código de Certificação, a CGA é exigida dos profissionais que:",
+   "alternativas": [
+    "Atendem clientes de varejo em agências",
+    "Têm alçada ou poder discricionário de decisão de investimento na gestão de recursos de terceiros",
+    "Trabalham na área de compliance da gestora",
+    "Fazem a controladoria de passivo dos fundos"
+   ],
+   "correta": 1,
+   "explicacao": "A CGA é exigida de quem decide sobre compra e venda de ativos na gestão de recursos de terceiros. O critério é o poder de decisão, não o nome do cargo."
+  },
+  {
+   "id": "t11-29",
+   "subtema": "11.3",
+   "enunciado": "A validade da CGA para o profissional que está atuando na gestão de recursos de terceiros em uma Instituição Participante é:",
+   "alternativas": [
+    "De 1 ano",
+    "De 5 anos, renovável por prova",
+    "Até a próxima mudança do Código",
+    "Indeterminada, enquanto ele permanecer na atividade"
+   ],
+   "correta": 3,
+   "explicacao": "Enquanto o profissional atua na atividade em Instituição Participante, com vínculo atualizado no Banco de Dados ANBIMA, a CGA tem validade indeterminada."
+  },
+  {
+   "id": "t11-30",
+   "subtema": "11.3",
+   "enunciado": "Um gestor com CGA deixa o mercado para tirar um longo período sabático. Em relação à certificação, é correto afirmar que:",
+   "alternativas": [
+    "Ela continua válida para sempre, independentemente de voltar à atividade",
+    "Ela é cancelada imediatamente no dia do desligamento",
+    "A validade passa a ter prazo limitado a partir do desligamento, e ela vence se ele não voltar à atividade ou não se atualizar nesse prazo",
+    "Ela só pode ser mantida se ele pagar anuidade à ANBIMA"
+   ],
+   "correta": 2,
+   "explicacao": "A validade indeterminada depende de estar atuando na atividade. Fora dela, a certificação passa a ter prazo e vence se não houver retorno ou atualização dentro dele."
+  },
+  {
+   "id": "t11-31",
+   "subtema": "11.3",
+   "enunciado": "Uma gestora quer que um analista recém-contratado, ainda sem CGA, passe a decidir as compras e vendas de um fundo enquanto estuda para a prova. Pelo Código de Certificação:",
+   "alternativas": [
+    "Isso não é permitido: ele só pode ter alçada de decisão depois de certificado, e a instituição responde pelo descumprimento",
+    "É permitido por até 12 meses",
+    "É permitido se o diretor de gestão assinar as ordens depois",
+    "É permitido se o fundo for exclusivo"
+   ],
+   "correta": 0,
+   "explicacao": "Profissional sem a certificação exigida não pode exercer a atividade elegível. Ele pode atuar como analista sem alçada até ser aprovado."
+  },
+  {
+   "id": "t11-32",
+   "subtema": "11.3",
+   "enunciado": "Atualmente, para obter a CGA o profissional deve:",
+   "alternativas": [
+    "Apenas comprovar 3 anos de experiência",
+    "Ser aprovado na CFG (fundamentos) e na prova específica da CGA",
+    "Ser aprovado apenas na CPA-20",
+    "Ser indicado pelo diretor da gestora"
+   ],
+   "correta": 1,
+   "explicacao": "A certificação de gestores foi dividida em etapas: a CFG cobre os fundamentos comuns e a prova específica da CGA completa a certificação."
+  },
+  {
+   "id": "t11-33",
+   "subtema": "11.3",
+   "enunciado": "A responsabilidade de registrar e manter atualizados no Banco de Dados ANBIMA os vínculos e a atividade dos profissionais certificados é:",
+   "alternativas": [
+    "Do próprio profissional, exclusivamente",
+    "Da CVM",
+    "Da Instituição Participante a que o profissional está vinculado",
+    "Da B3"
+   ],
+   "correta": 2,
+   "explicacao": "A instituição registra e atualiza o vínculo de seus profissionais no Banco de Dados ANBIMA, o que permite verificar a certificação e sua validade."
+  },
+  {
+   "id": "t11-34",
+   "subtema": "11.3",
+   "enunciado": "Entre os princípios de conduta do profissional certificado, NÃO se inclui:",
+   "alternativas": [
+    "Conhecer e cumprir a regulação e as normas internas da instituição",
+    "Agir com boa-fé, diligência e lealdade",
+    "Usar a condição de certificado para obter vantagem indevida em negociações com clientes",
+    "Informar à instituição situações de conflito de interesse"
+   ],
+   "correta": 2,
+   "explicacao": "O profissional certificado não pode obter vantagem indevida nem usar informação privilegiada. As demais alternativas são deveres previstos no Código."
+  },
+  {
+   "id": "t11-35",
+   "subtema": "11.3",
+   "enunciado": "Durante o exame de certificação, um candidato é flagrado usando material não permitido. A consequência prevista é:",
+   "alternativas": [
+    "Nenhuma, se ele for aprovado",
+    "Apenas uma advertência verbal",
+    "Desconto de pontos na nota",
+    "Cancelamento do exame e sanções previstas no Código, que impedem que ele se certifique por meio de fraude"
+   ],
+   "correta": 3,
+   "explicacao": "A certificação obtida por fraude não é válida: o exame é cancelado e o candidato fica sujeito às sanções do Código, que pode incluir impedimento temporário de nova prova."
+  },
+  {
+   "id": "t11-36",
+   "subtema": "11.4",
+   "enunciado": "Uma instituição coordenadora prepara material publicitário de uma oferta de debêntures. Segundo o Código ANBIMA de Ofertas Públicas, o material deve:",
+   "alternativas": [
+    "Ser consistente com os documentos da oferta, não prometer rentabilidade e remeter o investidor ao prospecto e à lâmina, com destaque para os fatores de risco",
+    "Destacar apenas os pontos positivos, já que os riscos estão no prospecto",
+    "Projetar a rentabilidade esperada como garantida",
+    "Ser aprovado pela ANBIMA antes de qualquer oferta, substituindo o registro na CVM"
+   ],
+   "correta": 0,
+   "explicacao": "A publicidade deve ser consistente com os documentos, clara e sem omitir riscos. O registro na ANBIMA não substitui o da CVM."
+  },
+  {
+   "id": "t11-37",
+   "subtema": "11.4",
+   "enunciado": "Nas ofertas públicas, o documento resumido e padronizado com as características essenciais da oferta e os principais riscos é:",
+   "alternativas": [
+    "O anúncio de encerramento",
+    "A lâmina da oferta",
+    "O aviso ao mercado",
+    "O relatório de rating"
+   ],
+   "correta": 1,
+   "explicacao": "A lâmina é o resumo padronizado da oferta; o prospecto é o documento completo, com a seção de fatores de risco."
+  },
+  {
+   "id": "t11-38",
+   "subtema": "11.4",
+   "enunciado": "Pelo princípio de diligência do Código de Ofertas Públicas, o coordenador deve:",
+   "alternativas": [
+    "Confiar integralmente nas informações fornecidas pelo emissor",
+    "Garantir a colocação de todos os títulos",
+    "Fazer diligência para que as informações do emissor nos documentos sejam verdadeiras, consistentes e suficientes",
+    "Ocultar conflitos de interesse com o emissor para não prejudicar a oferta"
+   ],
+   "correta": 2,
+   "explicacao": "O coordenador faz due diligence sobre as informações e deve evitar e divulgar conflitos de interesse."
+  },
+  {
+   "id": "t11-39",
+   "subtema": "11.4",
+   "enunciado": "Segundo a Resolução CVM 175, os prestadores de serviços essenciais de um fundo de investimento são:",
+   "alternativas": [
+    "O custodiante e o auditor",
+    "O gestor e o consultor",
+    "O distribuidor e o escriturador",
+    "O administrador fiduciário e o gestor de recursos"
+   ],
+   "correta": 3,
+   "explicacao": "A CVM 175 definiu o administrador e o gestor como prestadores de serviços essenciais. Os demais são contratados por eles em nome do fundo."
+  },
+  {
+   "id": "t11-40",
+   "subtema": "11.4",
+   "enunciado": "Sob a Resolução CVM 175, a contratação da corretora que executa as ordens e do distribuidor das cotas, em nome do fundo, cabe:",
+   "alternativas": [
+    "Ao administrador fiduciário",
+    "Ao custodiante",
+    "À assembleia de cotistas",
+    "Ao gestor de recursos"
+   ],
+   "correta": 3,
+   "explicacao": "O gestor contrata intermediação, distribuição, consultoria, classificação de risco, formador de mercado e cogestão. O administrador contrata custódia, controladoria, escrituração, tesouraria e auditoria."
+  },
+  {
+   "id": "t11-41",
+   "subtema": "11.4",
+   "enunciado": "Quanto à responsabilidade entre administrador e gestor sob a Resolução CVM 175, é correto afirmar:",
+   "alternativas": [
+    "Respondem sempre solidariamente por todos os atos do fundo",
+    "O administrador responde por todos os atos do gestor",
+    "Cada prestador responde pelos próprios atos, sem solidariedade presumida",
+    "Nenhum dos dois responde perante os cotistas"
+   ],
+   "correta": 2,
+   "explicacao": "A CVM 175 deixou clara a responsabilidade de cada prestador pelos próprios atos e omissões; a solidariedade não é presumida."
+  },
+  {
+   "id": "t11-42",
+   "subtema": "11.4",
+   "enunciado": "Um gestor compra um lote de ações para três fundos em vários negócios com preços diferentes e atribui os negócios mais baratos ao fundo que paga taxa de performance. Pelo Código ANBIMA, essa conduta:",
+   "alternativas": [
+    "É adequada, pois aumenta a rentabilidade de um dos fundos",
+    "É indiferente, já que os fundos são do mesmo gestor",
+    "É adequada se o fundo beneficiado for o maior",
+    "É inadequada: o rateio deve seguir critério equitativo, prévio, formalizado e verificável, como o preço médio"
+   ],
+   "correta": 3,
+   "explicacao": "A política de rateio e divisão de ordens existe para tratar os veículos com equidade. Favorecer um fundo, em especial o que gera mais remuneração ao gestor, fere o dever fiduciário."
+  },
+  {
+   "id": "t11-43",
+   "subtema": "11.4",
+   "enunciado": "Antes de comprar uma debênture para um fundo, o gestor verifica que ela tem rating AA de uma agência. Segundo as regras de crédito privado da ANBIMA:",
+   "alternativas": [
+    "O gestor deve fazer análise própria do emissor, das garantias e das cláusulas, usando o rating apenas como insumo, e monitorar o ativo depois da compra",
+    "O rating basta e dispensa qualquer outra análise",
+    "A análise é responsabilidade exclusiva do administrador",
+    "Debêntures com rating AA não precisam de monitoramento"
+   ],
+   "correta": 0,
+   "explicacao": "O gestor deve ter processo próprio de análise e de monitoramento contínuo. O rating não substitui essa análise."
+  },
+  {
+   "id": "t11-44",
+   "subtema": "11.4",
+   "enunciado": "A atividade de gestão de patrimônio financeiro caracteriza-se por:",
+   "alternativas": [
+    "Gestão de um único fundo aberto para o varejo",
+    "Custódia de ativos de investidores estrangeiros",
+    "Distribuição de cotas por meio de plataformas digitais",
+    "Atendimento personalizado, com alocação do patrimônio do investidor em diferentes veículos de acordo com uma política de investimento individual"
+   ],
+   "correta": 3,
+   "explicacao": "A gestão de patrimônio é individualizada: parte de uma política de investimento do cliente, formalizada em documento e contrato, e aloca em vários veículos."
+  },
+  {
+   "id": "t11-45",
+   "subtema": "11.4",
+   "enunciado": "Antes de iniciar a gestão de patrimônio financeiro de um cliente, a instituição deve:",
+   "alternativas": [
+    "Apenas abrir uma conta de custódia",
+    "Obter autorização do Banco Central",
+    "Aplicar todo o patrimônio em fundos da própria casa",
+    "Formalizar o contrato e o documento de política de investimento com objetivos, perfil de risco, restrições e limites"
+   ],
+   "correta": 3,
+   "explicacao": "O contrato e a política de investimento são obrigatórios e orientam a gestão e as informações periódicas, que incluem custos e remunerações recebidas pela instituição."
+  },
+  {
+   "id": "t11-46",
+   "subtema": "11.4",
+   "enunciado": "Em relação ao diretor responsável pela gestão de risco de uma gestora, a regulação permite que ele:",
+   "alternativas": [
+    "Acumule a função de diretor de gestão de recursos",
+    "Acumule a função de diretor de compliance, mas não a de gestão",
+    "Seja o mesmo que decide os investimentos, se a gestora for pequena",
+    "Não tenha nenhuma política escrita"
+   ],
+   "correta": 1,
+   "explicacao": "Pela Resolução CVM 21, o diretor de risco pode ser o mesmo de compliance, mas não pode acumular a gestão, para preservar a independência do controle de riscos."
+  },
+  {
+   "id": "t11-47",
+   "subtema": "11.4",
+   "enunciado": "As regras de gestão de liquidez do Código ANBIMA aplicam-se, em especial, às classes:",
+   "alternativas": [
+    "Abertas, nas quais o cotista pode pedir resgate",
+    "Fechadas, sem resgate",
+    "Exclusivas de investidores profissionais, apenas",
+    "Que investem só em títulos públicos"
+   ],
+   "correta": 0,
+   "explicacao": "A gestão de liquidez busca compatibilizar a liquidez dos ativos com os resgates, o que é próprio das classes abertas. Exige política documentada, monitoramento e testes de estresse."
+  },
+  {
+   "id": "t11-48",
+   "subtema": "11.4",
+   "enunciado": "Uma classe ultrapassa o limite de concentração por emissor porque recebeu resgates relevantes, sem nenhuma compra do gestor. Esse desenquadramento é:",
+   "alternativas": [
+    "Ativo, e configura infração imediata",
+    "Irrelevante, sem nenhuma providência",
+    "Passivo, e o gestor deve reenquadrar a carteira, com o administrador fiscalizando",
+    "Motivo para liquidação automática da classe"
+   ],
+   "correta": 2,
+   "explicacao": "Desenquadramento passivo decorre de fatos alheios à vontade do gestor (resgates, variação de preços). Ele deve ser corrigido; o ativo, por decisão de compra, é infração."
+  },
+  {
+   "id": "t11-49",
+   "subtema": "11.4",
+   "enunciado": "O principal objetivo do apreçamento (marcação a mercado) dos ativos de um fundo é:",
+   "alternativas": [
+    "Reduzir a volatilidade da cota",
+    "Refletir o valor justo dos ativos e evitar transferência de riqueza entre cotistas",
+    "Aumentar a taxa de administração",
+    "Permitir que o gestor escolha o preço mais favorável"
+   ],
+   "correta": 1,
+   "explicacao": "Com a cota no valor justo, quem entra ou sai do fundo não ganha às custas dos demais cotistas. Por isso o apreçamento é obrigatório e segue um manual."
+  },
+  {
+   "id": "t11-50",
+   "subtema": "11.4",
+   "enunciado": "Sobre a estrutura de apreçamento exigida pelas Regras e Procedimentos da ANBIMA, é correto afirmar:",
+   "alternativas": [
+    "A área de apreçamento deve ser independente da gestão e seguir um manual de apreçamento com fontes, metodologias e governança",
+    "O gestor define livremente o preço de cada ativo",
+    "O manual é dispensável para fundos com ativos líquidos",
+    "Ativos sem negócios devem ser mantidos pelo custo de aquisição"
+   ],
+   "correta": 0,
+   "explicacao": "A independência da gestão evita conflito de interesse na formação da cota. Ativos sem negócios são apreçados por metodologia prevista no manual, não pelo custo."
+  },
+  {
+   "id": "t11-51",
+   "subtema": "11.4",
+   "enunciado": "Uma classe com responsabilidade ilimitada dos cotistas usa derivativos com alavancagem e sofre perda maior que seu patrimônio. Nesse caso:",
+   "alternativas": [
+    "A perda fica limitada ao valor aplicado",
+    "O administrador cobre o prejuízo",
+    "Os cotistas podem ter de aportar recursos adicionais para cobrir o patrimônio negativo",
+    "O FGC cobre o prejuízo"
+   ],
+   "correta": 2,
+   "explicacao": "Quando a responsabilidade é ilimitada, o risco de capital recai sobre os cotistas. Por isso esse risco precisa estar claramente informado nos documentos."
+  },
+  {
+   "id": "t11-52",
+   "subtema": "11.4",
+   "enunciado": "Se o patrimônio líquido de uma classe com responsabilidade limitada dos cotistas ficar negativo, pela CVM 175:",
+   "alternativas": [
+    "Os cotistas devem aportar recursos ilimitadamente",
+    "Aplica-se o regime de insolvência: o administrador suspende resgates, comunica o mercado e leva aos cotistas um plano de resolução, que pode incluir pedido de declaração judicial de insolvência",
+    "O gestor deve cobrir o patrimônio negativo com recursos próprios",
+    "A classe continua funcionando normalmente"
+   ],
+   "correta": 1,
+   "explicacao": "A responsabilidade limitada protege o cotista além do valor subscrito, e o patrimônio negativo é tratado pelo regime de insolvência previsto na CVM 175."
+  },
+  {
+   "id": "t11-53",
+   "subtema": "11.4",
+   "enunciado": "Uma carteira administrada caracteriza-se por:",
+   "alternativas": [
+    "Emitir cotas negociadas em bolsa",
+    "Reunir recursos de vários investidores em condomínio",
+    "Ter os ativos em nome do próprio cliente, geridos de forma discricionária por gestor autorizado, mediante contrato",
+    "Dispensar contrato quando o cliente é investidor qualificado"
+   ],
+   "correta": 2,
+   "explicacao": "Na carteira administrada não há fundo nem cotas: os ativos são do cliente, e a gestão é regida por contrato com conteúdo mínimo."
+  },
+  {
+   "id": "t11-54",
+   "subtema": "11.4",
+   "enunciado": "Um cliente pede que o contrato de carteira administrada contenha diversas cláusulas. Qual delas NÃO pode constar?",
+   "alternativas": [
+    "Política de investimento e limites",
+    "Remuneração do gestor e forma de cálculo",
+    "Periodicidade das informações enviadas ao cliente",
+    "Garantia de rentabilidade mínima pelo gestor"
+   ],
+   "correta": 3,
+   "explicacao": "Garantir rentabilidade é vedado e incompatível com o dever de transparência. Política, remuneração e informações periódicas fazem parte do conteúdo mínimo do contrato."
+  },
+  {
+   "id": "t11-55",
+   "subtema": "11.4",
+   "enunciado": "Pela classificação ANBIMA dos FIF, o primeiro nível corresponde:",
+   "alternativas": [
+    "À classe de ativos: Renda Fixa, Ações, Multimercados, Cambial (e Previdenciários)",
+    "Ao tamanho do patrimônio",
+    "Ao tipo de investidor (varejo ou qualificado)",
+    "À taxa de administração"
+   ],
+   "correta": 0,
+   "explicacao": "O primeiro nível é a classe de ativos. Os níveis seguintes detalham o tipo de gestão e a estratégia, como Multimercados Macro ou Ações Dividendos."
+  },
+  {
+   "id": "t11-56",
+   "subtema": "11.4",
+   "enunciado": "Uma classe de FIF foi lançada há quatro meses e teve ótimo desempenho. O distribuidor quer divulgar a rentabilidade em material publicitário. Pelas regras da ANBIMA:",
+   "alternativas": [
+    "Pode divulgar, desde que anualize a rentabilidade",
+    "Não pode divulgar, pois é vedada a divulgação de rentabilidade de classes com menos de 6 meses de histórico",
+    "Pode divulgar se comparar com o CDI",
+    "Pode divulgar apenas para investidores profissionais"
+   ],
+   "correta": 1,
+   "explicacao": "Histórico muito curto induz a erro. A divulgação só é permitida com pelo menos 6 meses e com os avisos obrigatórios, como o de que rentabilidade passada não garante rentabilidade futura."
+  },
+  {
+   "id": "t11-57",
+   "subtema": "11.4",
+   "enunciado": "Pela linha d'água, a taxa de performance só pode ser cobrada quando:",
+   "alternativas": [
+    "O valor da cota superar o valor da cota na data da última cobrança efetiva",
+    "O fundo tiver rentabilidade positiva no mês",
+    "O índice de referência for negativo",
+    "O gestor decidir"
+   ],
+   "correta": 0,
+   "explicacao": "A linha d'água impede que o cotista pague performance duas vezes sobre o mesmo ganho: depois de uma perda, a cota precisa recuperar o patamar da última cobrança."
+  },
+  {
+   "id": "t11-58",
+   "subtema": "11.4",
+   "enunciado": "Os fundos sob gestão de uma gestora detêm, somados, 2% das ações de uma companhia, e nenhum deles tem mais de 3% do seu patrimônio nesse papel. Há assembleia para eleger o conselho. Pela política de voto, o voto é:",
+   "alternativas": [
+    "Obrigatório, sem exceção",
+    "Proibido, por conflito de interesse",
+    "Facultativo, pois a participação total é inferior a 5% e nenhum veículo tem mais de 10% do patrimônio no ativo",
+    "Delegado automaticamente ao administrador"
+   ],
+   "correta": 2,
+   "explicacao": "Eleição de conselho é em regra matéria obrigatória, mas a participação pouco relevante (menos de 5% no total e nenhum veículo acima de 10% do patrimônio no ativo) torna o voto facultativo."
+  },
+  {
+   "id": "t11-59",
+   "subtema": "11.4",
+   "enunciado": "Os debenturistas de uma emissão detida por fundos de uma gestora são convocados a deliberar sobre a alteração do prazo de vencimento e da taxa de juros. O gestor:",
+   "alternativas": [
+    "Deve votar, pois mudanças de prazo, taxa e condições de pagamento são matérias de voto obrigatório",
+    "Pode ignorar, pois voto só é obrigatório em ações",
+    "Deve delegar o voto ao emissor",
+    "Só vota se o cotista pedir"
+   ],
+   "correta": 0,
+   "explicacao": "Para ativos de renda fixa, alterações de prazo, taxa, garantias e condições de pagamento estão entre as matérias de voto obrigatório da política de voto."
+  },
+  {
+   "id": "t11-60",
+   "subtema": "11.4",
+   "enunciado": "Uma gestora quer investir parte de um FIF em um fundo no exterior. Pelas regras ANBIMA, o gestor deve:",
+   "alternativas": [
+    "Fazer diligência sobre o veículo e o gestor estrangeiro (supervisão por regulador, custódia, auditoria, liquidez) e monitorar o investimento",
+    "Investir com base apenas no material de marketing do gestor estrangeiro",
+    "Deixar toda a análise para o administrador fiduciário",
+    "Exigir garantia de rentabilidade do gestor estrangeiro"
+   ],
+   "correta": 0,
+   "explicacao": "O gestor responde pela diligência e pelo monitoramento do investimento no exterior; o administrador mantém estrutura para verificar o cumprimento das regras."
+  },
+  {
+   "id": "t11-61",
+   "subtema": "11.4",
+   "enunciado": "Pela regulação, uma classe de FIF que pode aplicar mais de 50% do patrimônio em ativos de crédito privado deve:",
+   "alternativas": [
+    "Ser exclusiva de investidores profissionais",
+    "Incluir a expressão “Crédito Privado” na denominação",
+    "Ter garantia do FGC",
+    "Investir só em debêntures com rating AAA"
+   ],
+   "correta": 1,
+   "explicacao": "O sufixo Crédito Privado alerta o investidor de que a classe pode concentrar mais de metade do patrimônio em risco de crédito de emissores privados."
+  },
+  {
+   "id": "t11-62",
+   "subtema": "11.4",
+   "enunciado": "No Código de Serviços Qualificados, o serviço de guarda dos ativos, liquidação física e financeira das operações e tratamento de eventos como juros e dividendos é:",
+   "alternativas": [
+    "A controladoria de passivo",
+    "A gestão de fundos",
+    "A custódia",
+    "A escrituração de cotas"
+   ],
+   "correta": 2,
+   "explicacao": "Guarda, liquidação e tratamento de eventos são custódia. Controladoria de ativos processa a carteira e calcula a cota; controladoria de passivo controla os cotistas."
+  },
+  {
+   "id": "t11-63",
+   "subtema": "11.4",
+   "enunciado": "O controle das aplicações e dos resgates dos cotistas, dos seus saldos e do cálculo e da retenção de tributos é chamado de:",
+   "alternativas": [
+    "Controladoria de ativos",
+    "Custódia qualificada",
+    "Gestão de patrimônio",
+    "Controladoria de passivo"
+   ],
+   "correta": 3,
+   "explicacao": "O passivo do fundo são os cotistas. A controladoria de ativos cuida da carteira e do cálculo da cota."
+  }
+ ]
+}
